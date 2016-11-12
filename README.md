@@ -1,2 +1,1 @@
-# leetcode
-leetcode java
+Leetcode-Java解法
