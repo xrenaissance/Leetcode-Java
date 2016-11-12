@@ -1,10 +1,12 @@
 package com.inuker.tools;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class main {
 
@@ -19,6 +21,33 @@ public class main {
 
         createSolution();
         appendLeetcode();
+
+        commit();
+    }
+
+    private static void commit() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("git add .").append("\n");
+        sb.append(String.format("git commit -m \"%s\"", mProName)).append("\n");
+        sb.append("git push origin master").append("\n");
+        execute(sb.toString());
+    }
+
+    private static void execute(String cmd) {
+        Runtime run = Runtime.getRuntime();
+        try {
+            Process p = run.exec(cmd);// 启动另一个进程来执行命令
+            BufferedInputStream in = new BufferedInputStream(p.getInputStream());
+            BufferedReader inBr = new BufferedReader(new InputStreamReader(in));
+            String lineStr;
+            while ((lineStr = inBr.readLine()) != null) {
+                System.out.println(lineStr);
+            }
+            inBr.close();
+            in.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static void readProblem() {
