@@ -1,2 +1,2 @@
-314. Binary Tree Vertical Order Traversal
-https://leetcode.com/problems/binary-tree-vertical-order-traversal/
+67. Add Binary
+https://leetcode.com/problems/add-binary/

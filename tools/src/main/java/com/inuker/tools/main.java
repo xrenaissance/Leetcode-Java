@@ -22,7 +22,7 @@ public class main {
         createSolution();
         appendLeetcode();
 
-        commit();
+//        commit();
     }
 
     private static void commit() {
