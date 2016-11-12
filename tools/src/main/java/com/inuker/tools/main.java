@@ -55,7 +55,7 @@ public class main {
         try {
             writer = new FileWriter(file, true);
             String url = String.format("%s%s.md", SOLUTION_URL, mProName);
-            String line = String.format("\n### [**%s**](%s)", mProName, url);
+            String line = String.format("\n### [%s](%s)", mProName, url);
             System.out.println(String.format("append to Leetcodes.md: %s", line));
             writer.write(line);
             writer.close();
