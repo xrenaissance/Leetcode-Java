@@ -1,4 +1,4 @@
-https://leetcode.com/problems/move-zeroes/
+# [283. Move Zeroe](shttps://leetcode.com/problems/move-zeroes/)
 
 `
 这题关键是从前到后遍历，统计有几个0，然后依次给非0的数往前移，最后补零。
