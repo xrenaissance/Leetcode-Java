@@ -1,6 +1,6 @@
 所有题目列表
 ------
 
-|#|Title|Solution|Status|
+|#|Title|Solution|Score|
 |---|----|-----|------|
-|283|Move Zeroes|Java|Done|
+|283|Move Zeroes|Java|80|
