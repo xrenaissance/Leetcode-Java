@@ -3,4 +3,4 @@
 
 |#|Title|Solution|Score|
 |---|----|-----|------|
-|283|Move Zeroes|Java|80|
+|146|[LRU Cache](https://leetcode.com/problems/lru-cache/)|Java|95|

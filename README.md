@@ -1,7 +1,4 @@
-# Leetcode-Java解法
+# Leetcode
 
-[所有题目列表](https://github.com/dingjikerbo/leetcode/blob/master/Leetcodes.md)
-
-[按公司分类](https://github.com/dingjikerbo/leetcode/blob/master/Facebook.md)
-
-[按相似题目分类]()
+ - [所有题目列表](https://github.com/dingjikerbo/leetcode/blob/master/Leetcodes.md)
+ 
