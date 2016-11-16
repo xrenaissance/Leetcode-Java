@@ -51,6 +51,7 @@ public class SlidingWindowMaximum {
     }
 
     // 耗时26ms
+    // queue中存的是索引
     public int[] maxSlidingWindow2(int[] nums, int k) {
         Deque<Integer> queue = new LinkedList<Integer>();
 
