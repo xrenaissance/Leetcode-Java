@@ -18,6 +18,7 @@ public class CopyListWithRandomPointer {
         }
 
         for (RandomListNode p = head; p != null; ) {
+            // 这里一定要判空
             if (p.random != null) {
                 p.next.random = p.random.next;
             }
