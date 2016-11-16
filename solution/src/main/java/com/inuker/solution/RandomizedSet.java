@@ -42,6 +42,7 @@ public class RandomizedSet {
         if (index != lastIndex) {
             int lastVal = mList.get(lastIndex);
             mList.set(index, lastVal);
+            // 这里要注意重新设置lastVal的index
             mMap.put(lastVal, index);
         }
         mList.remove(lastIndex);

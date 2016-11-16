@@ -4,6 +4,7 @@
 |#|Title|Solution|Score|
 |---|----| ----- |----|
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|100|
+|5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindromicSubstring.java)|85|
 |17|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LetterCombinationOfPhoneNumber.java)|85|
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidParentheses.java)|100|
 |42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWater.java)|95|
