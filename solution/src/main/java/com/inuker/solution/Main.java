@@ -1,13 +1,14 @@
 package com.inuker.solution;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] result = new SlidingWindowMaximum().maxSlidingWindow2(new int[] {
-               1,3,1,2,0,5
-        }, 3);
-        for (int n : result) {
-            System.out.print(n + " ");
+        List<String> result = new LetterCombinationOfPhoneNumber().letterCombinations("132");
+        for (String t : result) {
+            System.out.println(String.format("[%s]", t));
         }
+
     }
 }
