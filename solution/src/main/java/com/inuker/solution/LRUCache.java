@@ -8,6 +8,15 @@ import java.util.Map;
  * Created by dingjikerbo on 2016/11/16.
  * https://leetcode.com/problems/lru-cache/
  */
+
+/** Test Cases
+LRUCache cache = new LRUCache(1);
+cache.set(2, 1);
+System.out.println(cache.get(2));
+cache.set(3,2);
+System.out.println(cache.get(2));
+System.out.println(cache.get(3));
+ */
 public class LRUCache {
 
     private int mCapacity;

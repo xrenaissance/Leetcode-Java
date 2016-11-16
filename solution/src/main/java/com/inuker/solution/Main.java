@@ -3,11 +3,11 @@ package com.inuker.solution;
 public class Main {
 
     public static void main(String[] args) {
-        LRUCache cache = new LRUCache(1);
-        cache.set(2, 1);
-        System.out.println(cache.get(2));
-        cache.set(3,2);
-        System.out.println(cache.get(2));
-        System.out.println(cache.get(3));
+        TreeNode root = new TreeNode(1);
+        Codec code = new Codec();
+        String data = code.serialize(root);
+        System.out.println(data);
+        TreeNode node = code.deserialize(data);
+        System.out.println(String.format("%d, %s, %s", node.val, node.left, node.right));
     }
 }
