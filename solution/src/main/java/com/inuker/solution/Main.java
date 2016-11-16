@@ -10,7 +10,4 @@ public class Main {
         System.out.println(cache.get(2));
         System.out.println(cache.get(3));
     }
-
-
-
 }
