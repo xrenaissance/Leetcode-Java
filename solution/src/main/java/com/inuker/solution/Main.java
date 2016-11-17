@@ -8,8 +8,19 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        Set<String> set = new HashSet<String>(Arrays.asList("leet", "code"));
-        boolean result = new WordBreak().wordBreak("leetcode", set);
-        System.out.println(result);
+        boolean flag = new PalindromeLinkedList().isPalindrome(make(new int[] {
+                1,0,0, 1
+        }));
+        System.out.println(flag);
+    }
+
+    private static ListNode make(int[] arr) {
+        ListNode head = new ListNode(arr[0]);
+        ListNode tail = head;
+        for (int i = 1; i < arr.length; i++) {
+            tail.next = new ListNode(arr[i]);
+            tail = tail.next;
+        }
+        return head;
     }
 }
