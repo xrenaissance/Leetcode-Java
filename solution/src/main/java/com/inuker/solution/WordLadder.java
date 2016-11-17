@@ -62,7 +62,7 @@ public class WordLadder {
     }
 
     // 采用双端BFS，耗时28ms
-    // 假设每层分叉因子为k，一共n层，则BFS时间复杂度为O(k^n)，双端BFS时间复杂度为O(2 * K^(n / 2))，显然要快得多
+    // 假设每层分叉因子为k，一共n层，则BFS时间复杂度为O(k^n)，双端BFS时间复杂度为O(2 * k^(n / 2))，显然要快得多
     public int ladderLength2(String beginWord, String endWord, Set<String> wordList) {
         Set<String> beginSet = new HashSet<>();
         beginSet.add(beginWord);
