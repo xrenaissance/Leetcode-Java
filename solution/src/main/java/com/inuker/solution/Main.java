@@ -8,10 +8,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        boolean flag = new PalindromeLinkedList().isPalindrome(make(new int[] {
-                1,0,0, 1
-        }));
-        System.out.println(flag);
+        System.out.println(new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("abcabcbb"));
     }
 
     private static ListNode make(int[] arr) {
