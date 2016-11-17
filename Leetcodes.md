@@ -14,6 +14,7 @@
 |127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadder.java)|70|
 |138|[Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CopyListWithRandomPointer.java)|95|
 |139|[Word Break](https://leetcode.com/problems/word-break/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreak.java)|80|
+|141|[Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LinkedListCycle.java)|75|
 |146|[LRU Cache](https://leetcode.com/problems/lru-cache/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LRUCache.java)|95|
 |155|[Min Stack](https://leetcode.com/problems/min-stack/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinStack.java)|95|
 |200|[Number of Islands](https://leetcode.com/problems/number-of-islands/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslands.java)|85|
