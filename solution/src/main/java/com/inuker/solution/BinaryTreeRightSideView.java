@@ -1,6 +1,5 @@
 package com.inuker.solution;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -9,11 +8,10 @@ import java.util.Queue;
  * Created by dingjikerbo on 2016/11/17.
  */
 
-public class BinaryTreeLevelOrderTraversal {
+public class BinaryTreeRightSideView {
 
-    // 耗时2ms
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new LinkedList<List<Integer>>();
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new LinkedList<Integer>();
 
         if (root == null) {
             return result;
@@ -21,19 +19,11 @@ public class BinaryTreeLevelOrderTraversal {
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         Queue<TreeNode> next = new LinkedList<TreeNode>();
-        queue.add(root);
 
-        List<Integer> cur = null;
+        queue.add(root);
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-
-            if (cur == null) {
-                cur = new LinkedList<Integer>();
-                result.add(cur);
-            }
-
-            cur.add(node.val);
 
             if (node.left != null) {
                 next.add(node.left);
@@ -44,10 +34,10 @@ public class BinaryTreeLevelOrderTraversal {
             }
 
             if (queue.isEmpty()) {
+                result.add(node.val);
                 Queue<TreeNode> temp = queue;
                 queue = next;
                 next = temp;
-                cur = null; // 注意这里要置空
             }
         }
 

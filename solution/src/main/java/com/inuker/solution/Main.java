@@ -8,7 +8,12 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("abcabcbb"));
+        TreeNode node2 = new TreeNode(2);
+        TreeNode root = new TreeNode(1, node2, null);
+        List<Integer> result = new BinaryTreeRightSideView().rightSideView(root);
+        for (Integer n : result) {
+            System.out.print(n + " ");
+        }
     }
 
     private static ListNode make(int[] arr) {
