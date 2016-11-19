@@ -35,6 +35,7 @@
 |239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SlidingWindowMaximum.java)|75|
 |240|[Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Search2DMatrixII.java)|100|
 |242|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidAnagram.java)|100|
+|278|[First Bad Version](https://leetcode.com/problems/first-bad-version/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FirstBadVersion.java)|100|
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MoveZeroes.java)|100|
 |297|[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Codec.java)|80|
 |301|[Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveInvalidParentheses.java)|70|
