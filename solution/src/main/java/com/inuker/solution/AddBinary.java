@@ -1,0 +1,28 @@
+package com.inuker.solution;
+
+/**
+ * Created by dingjikerbo on 2016/11/19.
+ */
+
+public class AddBinary {
+
+    public String addBinary(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+
+        int lena = a.length();
+        int lenb = b.length();
+
+        int carry = 0;
+
+        for (int i = lena - 1, j = lenb - 1; i >= 0 || j >= 0 || carry > 0; i--, j--) {
+            int n1 = (i >= 0 ? a.charAt(i) - '0' : 0);
+            int n2 = (j >= 0 ? b.charAt(j) - '0' : 0);
+            int sum = n1 + n2 + carry;
+
+            sb.insert(0, sum & 1);
+            carry = sum >> 1;
+        }
+
+        return sb.toString();
+    }
+}
