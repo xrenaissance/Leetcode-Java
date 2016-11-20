@@ -8,15 +8,19 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<Integer>> result = new ThreeSum().threeSum(new int[] {
-                -4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0
-        });
-        for (List<Integer> list : result) {
-            for (Integer n : list) {
-                System.out.print(n + " ");
-            }
-            System.out.println();
+        char[] buf = new char[128];
+        int size = new ReadNCharactersGivenRead4II().read(buf, 1);
+        System.out.println(size);
+        for (int i = 0; i < size; i++) {
+            System.out.print(buf[i] + " ");
         }
+        System.out.println();
+        size = new ReadNCharactersGivenRead4II().read(buf, 2);
+        System.out.println(size);
+        for (int i = 0; i < size; i++) {
+            System.out.print(buf[i] + " ");
+        }
+
     }
 
 
