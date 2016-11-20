@@ -8,8 +8,15 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        String s = new IntegerToEnglishWords().numberToWords(1100000);
-        System.out.println(String.format("[%s]", s));
+        List<List<Integer>> result = new ThreeSum().threeSum(new int[] {
+                -4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0
+        });
+        for (List<Integer> list : result) {
+            for (Integer n : list) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
+        }
     }
 
 
