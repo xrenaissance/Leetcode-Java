@@ -8,7 +8,16 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.print(new RegularExpressionMatching().isMatch("aa", "a"));
+        long start = System.nanoTime();
+        StringBuilder sb = new StringBuilder();
+        int len = sb.length();
+        sb.append("hello");
+        System.out.println(System.nanoTime() - start);
+        start = System.nanoTime();
+        sb.setLength(len);
+        System.out.println(System.nanoTime() - start);
+
+
     }
 
 

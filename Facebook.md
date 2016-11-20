@@ -24,3 +24,4 @@ Facebook题目列表
 |157|[Read N Characters Given Read4](https://leetcode.com/problems/read-n-characters-given-read4/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReadNCharactersGivenRead4.java)|
 |23|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeKSortedList.java)|
 |200|[Number of Islands](https://leetcode.com/problems/number-of-islands/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslands.java)|
+|257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|
