@@ -9,6 +9,11 @@ package com.inuker.solution;
  * 下面的写法足够简单和直观了
  * DP也可，但是不推荐
  */
+
+/**
+ * TestCases
+ * ".*"是可以匹配任意字符串的，因为".*"表示0个或多个"."，而"."是可以匹配任意字符的
+ */
 public class RegularExpressionMatching {
 
     // 耗时153ms
