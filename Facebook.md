@@ -25,5 +25,5 @@ Facebook题目列表(24)
 |23|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeKSortedList.java)|
 |200|[Number of Islands](https://leetcode.com/problems/number-of-islands/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslands.java)|
 |76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|
-|282|[Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)||
+|282|[Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExpressionAddOperators.java)|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|

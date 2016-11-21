@@ -50,6 +50,7 @@
 |273|[Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToEnglishWords.java)|75|
 |277|[Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindCelebrity.java)|100|
 |278|[First Bad Version](https://leetcode.com/problems/first-bad-version/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FirstBadVersion.java)|100|
+|282|[Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExpressionAddOperators.java)|50|
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MoveZeroes.java)|100|
 |285|[Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InorderSuccessorInBST.java)|70|
 |297|[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Codec.java)|80|
