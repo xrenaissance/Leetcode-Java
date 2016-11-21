@@ -8,16 +8,8 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        long start = System.nanoTime();
-        StringBuilder sb = new StringBuilder();
-        int len = sb.length();
-        sb.append("hello");
-        System.out.println(System.nanoTime() - start);
-        start = System.nanoTime();
-        sb.setLength(len);
-        System.out.println(System.nanoTime() - start);
-
-
+        String s = new MinimumWindowSubstring().minWindow("ADOBECODEBANC", "ABC");
+        System.out.println(s);
     }
 
 
