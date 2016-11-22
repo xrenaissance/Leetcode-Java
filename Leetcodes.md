@@ -26,6 +26,7 @@
 |75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)|65|
 |76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|50|
 |78|[Subsets](https://leetcode.com/problems/subsets/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Subsets.java)|85|
+|79|[Word Search](https://leetcode.com/problems/word-search/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearch.java)|85|
 |90|[Subsets II](https://leetcode.com/problems/subsets-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SubsetsII.java)|80|
 |91|[Decode Ways](https://leetcode.com/problems/decode-ways/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeWays.java)|75|
 |98|[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidateBinarySearchTree.java)|85|

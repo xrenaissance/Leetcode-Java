@@ -44,3 +44,4 @@ Facebook题目列表(24)
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|
 |49|[Group Anagrams](https://leetcode.com/problems/anagrams/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GroupAnagrams.java)|
 |71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)|
+|79|[Word Search](https://leetcode.com/problems/word-search/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearch.java)|
