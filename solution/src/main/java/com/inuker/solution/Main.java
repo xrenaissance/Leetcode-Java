@@ -8,10 +8,14 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = {1,2,0};
-        new SortColors().sortColors3(nums);
-        for (int n : nums) {
-            System.out.print(n + " ");
+        List<List<Integer>> result = new Subsets().subsets(new int[] {
+                1,2,3
+        });
+        for (List<Integer> list : result) {
+            for (Integer n : list) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
         }
     }
 
