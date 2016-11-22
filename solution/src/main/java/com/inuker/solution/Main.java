@@ -8,7 +8,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        String s = new CountAndSay().countAndSay(4);
+        String s = new SimplifyPath().simplifyPath("/..");
         System.out.println(s);
     }
 }

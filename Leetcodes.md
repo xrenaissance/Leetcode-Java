@@ -22,6 +22,7 @@
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeIntervals.java)|70|
 |57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|75|
 |67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|100|
+|71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)|80|
 |75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)|65|
 |76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|50|
 |78|[Subsets](https://leetcode.com/problems/subsets/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Subsets.java)|85|
