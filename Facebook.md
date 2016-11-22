@@ -48,3 +48,4 @@ Facebook题目列表(24)
 |398|[Random Pick Index](https://leetcode.com/problems/random-pick-index/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RandomPickIndex.java)|
 |128|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestConsecutiveSequence.java)|
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSum.java)|
+|40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumII.java)|
