@@ -13,6 +13,7 @@
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidParentheses.java)|100|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeTwoSortedList.java)|90|
 |23|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeKSortedList.java)|70|
+|28|[ Implement strStr()](https://leetcode.com/problems/implement-strstr/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrStr.java)|70|
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|80|
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSum.java)|70|
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumII.java)|70|

@@ -51,3 +51,4 @@ Facebook题目列表(24)
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumII.java)|
 |216|[Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumIII.java)|
 |377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/combinationSum4.java)|
+|28|[ Implement strStr()](https://leetcode.com/problems/implement-strstr/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrStr.java)|
