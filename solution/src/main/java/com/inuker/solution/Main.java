@@ -8,9 +8,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        WordDictionary dic = new WordDictionary();
-        dic.addWord("abc");
-        dic.addWord("def");
-        System.out.println(dic.search(".eg"));
+        String s = new MultiplyStrings().multiply("10", "9");
+        System.out.println(s);
     }
 }
