@@ -3,7 +3,7 @@ package com.inuker.solution;
 import java.util.Arrays;
 
 /**
- * Created by liwentian on 2016/11/22.
+ * Created by dingjikerbo on 2016/11/22.
  */
 
 public class SortColors {

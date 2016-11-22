@@ -3,7 +3,7 @@ package com.inuker.solution;
 import java.util.Arrays;
 
 /**
- * Created by liwentian on 2016/11/16.
+ * Created by dingjikerbo on 2016/11/16.
  */
 
 public class ProductOfArrayExceptSelf {
