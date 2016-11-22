@@ -8,7 +8,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        String s = new MultiplyStrings().multiply("10", "9");
+        String s = new CountAndSay().countAndSay(4);
         System.out.println(s);
     }
 }

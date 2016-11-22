@@ -13,6 +13,7 @@
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidParentheses.java)|100|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeTwoSortedList.java)|90|
 |23|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeKSortedList.java)|70|
+|38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|80|
 |42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWater.java)|95|
 |43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MultiplyStrings.java)|80|
 |44|[Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WildcardMatching.java)|60|

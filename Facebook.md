@@ -41,3 +41,4 @@ Facebook题目列表(24)
 |43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MultiplyStrings.java)|
 |57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|
 |209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)|
+|38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|
