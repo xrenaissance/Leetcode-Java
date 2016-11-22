@@ -26,6 +26,7 @@
 |98|[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidateBinarySearchTree.java)|85|
 |102|[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeLevelOrderTraversal.java)|85|
 |121|[Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BestTimeBuySellStock.java)|100|
+|125|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidPalindrome.java)|100|
 |127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadder.java)|70|
 |138|[Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CopyListWithRandomPointer.java)|95|
 |139|[Word Break](https://leetcode.com/problems/word-break/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreak.java)|80|
