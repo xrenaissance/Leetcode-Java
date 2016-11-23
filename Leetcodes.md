@@ -34,6 +34,7 @@
 |78|[Subsets](https://leetcode.com/problems/subsets/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Subsets.java)|85|
 |79|[Word Search](https://leetcode.com/problems/word-search/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearch.java)|85|
 |81|[Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInRotatedSortedArrayII.java)|70|
+|84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LargestRectangleInHistogram.java)|70|
 |88|[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeSortedArray.java)|100|
 |90|[Subsets II](https://leetcode.com/problems/subsets-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SubsetsII.java)|80|
 |91|[Decode Ways](https://leetcode.com/problems/decode-ways/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeWays.java)|75|
