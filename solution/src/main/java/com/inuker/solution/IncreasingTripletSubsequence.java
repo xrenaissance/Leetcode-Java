@@ -4,6 +4,7 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/23.
  */
 
+// 是longest increasing subsequence的简化版
 public class IncreasingTripletSubsequence {
 
     public boolean increasingTriplet(int[] nums) {
