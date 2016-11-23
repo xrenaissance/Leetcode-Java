@@ -9,7 +9,7 @@ public class LargestRectangleInHistogram {
     /**
      * 这题关键是对于每根柱子，往两边延伸到某根柱子比自己矮或到边界为止。
      * 暴力办法是依次循环，时间复杂度O(n^2)，空间复杂度O(n)
-     * 采用动态规划延伸的时候可以根据之前的结果跳着走，最优时间复杂度O(n)，最差时间复杂度O(n^2)，空间复杂度O(n)
+     * 采用动态规划延伸的时候可以根据之前的结果跳着走，最优时间复杂度O(n)，最差时间复杂度O(n^2)，平均时间复杂度O(n)，空间复杂度O(n)
      * 采用压栈的方法最巧妙，时间复杂度O(n)，空间复杂度O(n)
      */
 
@@ -46,7 +46,7 @@ public class LargestRectangleInHistogram {
         return max;
     }
 
-
+    // 耗时6ms
     public int largestRectangleArea3(int[] heights) {
         int len = heights.length, max = 0;
 
