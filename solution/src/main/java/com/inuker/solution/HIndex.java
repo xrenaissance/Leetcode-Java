@@ -29,25 +29,8 @@ public class HIndex {
         return citation;
     }
 
-    // 下面会稍微快点，因为提前退出了，仍然是O(nlgn)
-    public int hIndex2(int[] citations) {
-        Arrays.sort(citations);
-
-        int citation = 0;
-        for (int i = citations.length - 1; i >= 0; i--) {
-            if (citations[i] <= citations.length - i) {
-                citation = Math.max(citations[i], citation);
-                break;
-            } else {
-                citation = Math.max(citation, citations.length - i);
-            }
-        }
-
-        return citation;
-    }
-
     // 耗时1ms，时间复杂度O(n)
-    public int hIndex3(int[] citations) {
+    public int hIndex2(int[] citations) {
         int len = citations.length;
 
         int[] f = new int[len + 1];
