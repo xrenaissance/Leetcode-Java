@@ -7,30 +7,39 @@ package com.inuker.solution;
 public class MaximalSquare {
 
     public int maximalSquare(char[][] matrix) {
-        if (matrix.length == 0) {
+        if (matrix == null || matrix.length == 0) {
             return 0;
         }
-        int row = matrix.length, col = matrix[0].length, max = 0;
+
+        int row = matrix.length;
+        int col = matrix[0].length;
+
         int[][] f = new int[row][col];
-        for (int i = 0; i < row; i++) {
-            f[i][0] = matrix[i][0] == '0' ? 0 : 1;
-            max = Math.max(f[i][0], max);
-        }
+
+        int max = 0;
+
         for (int i = 0; i < col; i++) {
-            f[0][i] = matrix[0][i] == '0' ? 0 : 1;
-            max = Math.max(f[0][i], max);
+            f[0][i] = matrix[0][i] == '1' ? 1 : 0;
+            max = Math.max(max, f[0][i]);
         }
+
+        for (int i = 0; i < row; i++) {
+            f[i][0] = matrix[i][0] == '1' ? 1 : 0;
+            max = Math.max(max, f[i][0]);
+        }
+
         for (int i = 1; i < row; i++) {
             for (int j = 1; j < col; j++) {
-                if (f[i][j] == '0') {
+                if (matrix[i][j] == '0') {
                     f[i][j] = 0;
                 } else {
-                    int size = Math.min(f[i - 1][j], f[i][j - 1]);
-                    f[i][j] = Math.min(f[i - 1][j - 1], size) + 1;
+                    int mn = Math.min(f[i - 1][j], f[i][j - 1]);
+                    f[i][j] = Math.min(mn, f[i - 1][j - 1]) + 1;
                     max = Math.max(max, f[i][j]);
                 }
             }
         }
+
         return max * max;
     }
 }
