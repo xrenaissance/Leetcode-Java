@@ -69,3 +69,4 @@ Facebook题目列表(24)
 |117|[Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PopulatingNextRightPointersInEachNodeII.java)|
 |84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LargestRectangleInHistogram.java)|
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)|
+|25|[Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseNodesInKGroup.java)|

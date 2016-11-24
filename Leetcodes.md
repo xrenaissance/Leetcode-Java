@@ -13,6 +13,7 @@
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidParentheses.java)|100|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeTwoSortedList.java)|90|
 |23|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeKSortedList.java)|70|
+|25|[Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseNodesInKGroup.java)|80|
 |28|[ Implement strStr()](https://leetcode.com/problems/implement-strstr/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrStr.java)|70|
 |33|[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInRotatedSortedArray.java)|80|
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|80|
