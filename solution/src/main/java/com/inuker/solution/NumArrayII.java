@@ -4,6 +4,11 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/26.
  */
 
+/**
+ * 关于BIT，可以参考http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
+ * 关于Segment Tree，可以参考 https://discuss.leetcode.com/topic/29918/17-ms-java-solution-with-segment-tree
+ * 这题最直观的解法就是Segment Tree递归算法，可以重点关注
+ */
 public class NumArrayII {
 
     private int[] mNums;
