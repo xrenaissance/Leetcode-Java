@@ -102,5 +102,6 @@
 |377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/combinationSum4.java)|65|
 |380|[Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RandomizedSet.java)|75|
 |387|[First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FirstUniqueCharacterInAString.java)|100|
+|388|[Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestAbsoluteFilePath.java)|65|
 |398|[Random Pick Index](https://leetcode.com/problems/random-pick-index/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RandomPickIndex.java)|80|
 |438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindAllAnagramsInString.java)|95|
