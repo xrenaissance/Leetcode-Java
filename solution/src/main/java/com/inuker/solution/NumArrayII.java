@@ -123,8 +123,6 @@ public class NumArrayII {
 //    }
 //}
 
-
-
 // Your NumArray object will be instantiated and called as such:
 // NumArray numArray = new NumArray(nums);
 // numArray.sumRange(0, 1);
