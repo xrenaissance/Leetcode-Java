@@ -6,16 +6,31 @@ package com.inuker.solution;
 
 public class NumMatrix {
 
+    private int[][] dp;
+
     public NumMatrix(int[][] matrix) {
+        if (matrix.length == 0) {
+            return;
+        }
 
-    }
+        int row = matrix.length;
+        int col = matrix[0].length;
 
-    public void update(int row, int col, int val) {
+        dp = new int[row + 1][col + 1];
 
+        for (int i = 1; i <= row; i++) {
+            for (int j = 1; j <= col; j++) {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1] + matrix[i - 1][j - 1];
+            }
+        }
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
-        return 0;
+        int x0 = Math.min(row1, row2);
+        int y0 = Math.min(col1, col2);
+        int x1 = Math.max(row1, row2);
+        int y1 = Math.max(col1, col2);
+        return dp[x1 + 1][y1 + 1] + dp[x0][y0] - dp[x0][y1 + 1] - dp[x1 + 1][y0];
     }
 }
 
