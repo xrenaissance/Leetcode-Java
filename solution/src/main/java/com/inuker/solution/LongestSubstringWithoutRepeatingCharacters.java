@@ -6,25 +6,26 @@ package com.inuker.solution;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    // 耗时43ms
+    // "abcabcbb"
+    // tmmzuxt
     public int lengthOfLongestSubstring(String s) {
-        int CHAR_MAX = 256;
-        int[] counts = new int[CHAR_MAX];
-        char[] ss = s.toCharArray();
+        int[] counts = new int[256];
+        int len = s.length(), longest = 0;
 
-        int longest = 0;
-        for (int i = 0, j = 0; i < ss.length; i++) {
-            if (++counts[ss[i]] <= 1) {
-                longest = Math.max(longest, i - j + 1);
-            } else {
-                for ( ; j <= i; ) {
-                    --counts[ss[j++]];
-                    if (counts[ss[i]] <= 1) {
+        for (int i = 0, j = 0; i < len; i++) {
+            if (++counts[s.charAt(i)] > 1) {
+                for ( ; j < i; ) {
+                    char c = s.charAt(j++);
+                    counts[c]--;
+                    if (c == s.charAt(i)) {
                         break;
                     }
                 }
             }
+
+            longest = Math.max(longest, i - j + 1);
         }
+
         return longest;
     }
 }

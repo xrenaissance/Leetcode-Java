@@ -1,17 +1,16 @@
 package com.inuker.solution;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
 
 /**
  * Created by dingjikerbo on 16/11/27.
  */
 
-public class LongestSubstringWithAtMostKDistinctCharacters {
+public class LongestSubstringWithAtMostTwoDistinctCharacters {
 
-    // 两个指针，i尽量往后走，当发现不同的字符数key超过k时从j开始收缩，一直到key减少到k为止
-    public int lengthOfLongestSubstringKDistinct(String s, int k) {
-        if (s.length() == 0 || k == 0) {
+    // eceba
+    public int lengthOfLongestSubstringTwoDistinct(String s) {
+        if (s.length() == 0) {
             return 0;
         }
 
@@ -23,7 +22,7 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
                 key++;
             }
 
-            for ( ; j < i && key > k; ) {
+            for ( ; j < i && key > 2; ) {
                 if (--counts[s.charAt(j++)] == 0) {
                     key--;
                 }
