@@ -8,7 +8,7 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        int n = new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring("tmmzuxt");
+        int n = new UniqueBinarySearchTrees().numTrees(19);
         System.out.println(n);
     }
 }
