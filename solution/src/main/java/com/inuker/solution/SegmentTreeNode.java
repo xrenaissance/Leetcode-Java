@@ -1,7 +1,7 @@
 package com.inuker.solution;
 
 /**
- * Created by liwentian on 2016/11/26.
+ * Created by dingjikerbo on 2016/11/26.
  */
 
 public class SegmentTreeNode {

@@ -1,7 +1,7 @@
 package com.inuker.solution;
 
 /**
- * Created by liwentian on 2016/11/24.
+ * Created by dingjikerbo on 2016/11/24.
  */
 
 public class ReverseNodesInKGroup {
