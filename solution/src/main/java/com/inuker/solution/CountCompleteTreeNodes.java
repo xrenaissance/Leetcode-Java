@@ -35,7 +35,15 @@ public class CountCompleteTreeNodes {
         return count;
     }*/
 
+    // 119ms，最差复杂度是O(n),最好是O(lgn)
     public int countNodes(TreeNode root) {
-
+        int left = 0, right = 0;
+        for (TreeNode node = root; node != null; node = node.left, left++);
+        for (TreeNode node = root; node != null; node = node.right, right++);
+        if (left == right) {
+            return (1 << left) - 1;
+        } else {
+            return 1 + countNodes(root.left) + countNodes(root.right);
+        }
     }
 }

@@ -40,3 +40,4 @@
 |100|[Same Tree](https://leetcode.com/problems/same-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SameTree.java)|
 |101|[Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SymmetricTree.java)|
 |112|[Path Sum](https://leetcode.com/problems/path-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSum.java)|
+|222|[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountCompleteTreeNodes.java)|
