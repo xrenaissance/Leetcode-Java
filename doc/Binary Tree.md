@@ -39,3 +39,4 @@
 |114|[Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)||
 |100|[Same Tree](https://leetcode.com/problems/same-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SameTree.java)|
 |101|[Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SymmetricTree.java)|
+|112|[Path Sum](https://leetcode.com/problems/path-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSum.java)|
