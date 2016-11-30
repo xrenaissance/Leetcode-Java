@@ -46,6 +46,7 @@
 |91|[Decode Ways](https://leetcode.com/problems/decode-ways/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeWays.java)|75|
 |96|[Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UniqueBinarySearchTrees.java)|80|
 |98|[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidateBinarySearchTree.java)|85|
+|99|[Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RecoverBinarySearchTree.java)|80|
 |100|[Same Tree](https://leetcode.com/problems/same-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SameTree.java)|100|
 |101|[Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SymmetricTree.java)|95|
 |102|[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeLevelOrderTraversal.java)|85|

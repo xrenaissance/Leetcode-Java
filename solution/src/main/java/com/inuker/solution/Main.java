@@ -8,7 +8,21 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        int n = new UniqueBinarySearchTrees().numTrees(19);
-        System.out.println(n);
+        TreeNode node1 = new TreeNode(1, null, null);
+        TreeNode node4 = new TreeNode(4, node1, null);
+        TreeNode node2 = new TreeNode(2, null, null);
+        TreeNode node3 = new TreeNode(3, node4, node2);
+
+        new RecoverBinarySearchTree().recoverTree(node3);
+        helper(node3);
+    }
+
+    private static void helper(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        helper(root.left);
+        System.out.println(root.val);
+        helper(root.right);
     }
 }
