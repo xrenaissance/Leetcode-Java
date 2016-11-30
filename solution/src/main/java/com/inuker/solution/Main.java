@@ -8,13 +8,14 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        TreeNode node1 = new TreeNode(1, null, null);
-        TreeNode node4 = new TreeNode(4, node1, null);
         TreeNode node2 = new TreeNode(2, null, null);
-        TreeNode node3 = new TreeNode(3, node4, node2);
+        TreeNode node1 = new TreeNode(1, node2, null);
 
-        new RecoverBinarySearchTree().recoverTree(node3);
-        helper(node3);
+        new FlattenBinaryTreeToLinkedList().flatten(node1);
+        while (node1 != null) {
+            System.out.print(node1.val + " ");
+            node1 = node1.right;
+        }
     }
 
     private static void helper(TreeNode root) {
