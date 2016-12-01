@@ -4,7 +4,7 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/20.
  */
 
-public class ReadNCharactersGivenRead4II {
+public abstract class ReadNCharactersGivenRead4II {
 
     private char[] temp = new char[4];
     private int index, size;
@@ -33,16 +33,5 @@ public class ReadNCharactersGivenRead4II {
         return n;
     }
 
-    int time = 0;
-    int read4(char[] buf) {
-        if (time == 0) {
-            buf[0] = 'a';
-            buf[1] = 'b';
-            time = 1;
-            return 1;
-        } else {
-            return 0;
-        }
-
-    }
+    abstract int read4(char[] buf);
 }
