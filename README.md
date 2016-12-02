@@ -1,7 +1,6 @@
 # Leetcode
 
-### **[所有题目列表](https://github.com/dingjikerbo/leetcode/blob/master/Leetcodes.md)**
-### **[Facebook题目列表](https://github.com/dingjikerbo/leetcode/blob/master/Facebook.md)**
+### **[所有题目列表](https://github.com/dingjikerbo/leetcode/blob/master/doc/Leetcodes.md)**
 
 ## **刷题规则**
  - 每道题首次提交时会根据情况赋初始分数，之后第二轮再提交时如果一次过则加5分，否则扣5分。
