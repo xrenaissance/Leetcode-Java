@@ -1,31 +1,16 @@
 package com.inuker.solution;
 
+import java.util.List;
+
 /**
  * Created by liwentian on 2016/12/2.
  */
 
 public class ClosestBinarySearchTreeValueII {
 
-    public int closestValue(TreeNode root, double target) {
-        int closest = root.val;
-        double min = Double.MAX_VALUE;
+    // https://discuss.leetcode.com/topic/22940/ac-clean-java-solution-using-two-stacks/2
+    // https://discuss.leetcode.com/topic/23151/o-logn-java-solution-with-two-stacks-following-hint
+    public List<Integer> closestKValues(TreeNode root, double target, int k) {
 
-        for (TreeNode p = root; p != null; ) {
-            double gap = Math.abs(target - p.val);
-            if (gap < min) {
-                min = gap;
-                closest = p.val;
-            }
-
-            if (target > p.val) {
-                p = p.right;
-            } else if (target < p.val) {
-                p = p.left;
-            } else {
-                break;
-            }
-        }
-
-        return closest;
     }
 }
