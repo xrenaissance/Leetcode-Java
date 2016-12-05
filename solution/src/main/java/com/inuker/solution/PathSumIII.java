@@ -15,6 +15,7 @@ public class PathSumIII {
     /**
      * 当root.val == Sum时，不要return，因为继续往下走可能有路径刚好加起来为0，典型的为[1,-2,1,-1]，目标和为-1
      * 这里隐藏了四条路径，[1,-2], [-2,1], [-1], [1,-2,1,-1]，如果在[1,-2]就return了，那就会掉了[1,-2,1,-1]
+     * 可参考https://discuss.leetcode.com/category/562/path-sum-iii
      */
 
     private int count;
