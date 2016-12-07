@@ -77,6 +77,7 @@
 |144|[Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePreorderTraversal.java)|85|
 |145|[Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePostorderTraversal.java)|80|
 |146|[LRU Cache](https://leetcode.com/problems/lru-cache/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LRUCache.java)|95|
+|149|[Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaxPointsOnALine.java)|60|
 |155|[Min Stack](https://leetcode.com/problems/min-stack/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinStack.java)|95|
 |156|[Binary Tree Upside Down](https://leetcode.com/problems/binary-tree-upside-down/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeUpsideDown.java)|70|
 |157|[Read N Characters Given Read4](https://leetcode.com/problems/read-n-characters-given-read4/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReadNCharactersGivenRead4.java)|80|
