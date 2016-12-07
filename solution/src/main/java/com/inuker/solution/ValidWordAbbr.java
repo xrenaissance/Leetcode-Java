@@ -10,6 +10,7 @@ import java.util.Set;
 
 /**
  * 这道题还挺容易错
+ * 参考https://leetcode.com/articles/unique-word-abbreviation/
  */
 public class ValidWordAbbr {
 /** 这题容易错的地方是unique的理解，即dic中不存在该word，要排除word
