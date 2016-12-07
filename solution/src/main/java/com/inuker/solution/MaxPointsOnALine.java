@@ -1,113 +1,64 @@
 package com.inuker.solution;
 
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
-
-import sun.nio.cs.ext.MacThai;
 
 /**
  * Created by dingjikerbo on 16/12/7.
  */
+
 /**
  * TestCase
  * 边界条件很多，比如有重复的点，有斜率无穷大的线
  * [[3,10],[0,2],[0,2],[3,10]] result = 4
+ * [[2,3],[3,3],[-5,3]] result = 3
  */
 public class MaxPointsOnALine {
 
-    private HashMap<Integer, HashMap<Integer, Set<Integer>>> mSames = new HashMap<>();
-
-    private int mMaxCount;
-
     /**
-     * 给相同的点合并在一起
-     * @param points
+     * 起点固定时，斜率相同，则肯定在一条直线上
      */
-    public void initSames(Point[] points) {
-        for (int i = 0; i < points.length; i++) {
-            Point point = points[i];
-            HashMap map = mSames.get(point.x);
-            if (map == null) {
-                map = new HashMap();
-                mSames.put(point.x, map);
-            }
-            Set set = (Set) map.get(point.y);
-            if (set == null) {
-                set = new HashSet<Integer>();
-                map.put(point.y, set);
-            }
-            set.add(i);
-            mMaxCount = Math.max(mMaxCount, set.size());
-        }
-    }
-
-    /**
-     * 返回该点相同的点
-     */
-    private Set<Integer> getSamePoint(Point point) {
-        HashMap map = mSames.get(point.x);
-        if (map == null) {
-            return Collections.EMPTY_SET;
-        }
-        return (Set<Integer>) map.get(point.y);
-    }
-
-    public int maxPoints(Point[] points) {
-        if (points.length == 0) {
+    // 耗时22ms
+    public int maxPoints2(Point[] points) {
+        if (points.length <= 0) {
             return 0;
-        } else if (points.length == 1) {
-            return 1;
+        }
+        if (points.length <= 2) {
+            return points.length;
         }
 
-        initSames(points);
+        HashMap<Double, Integer> map = new HashMap<Double, Integer>();
 
-        HashMap<Double, HashMap<Double, Set<Integer>>> map = new HashMap<>();
-
+        int result = 0;
         for (int i = 0; i < points.length - 1; i++) {
+            map.clear();
+
+            int samep = 1, max = 0;
+
             for (int j = i + 1; j < points.length; j++) {
-                Set<Integer> set = null;
+                int deltaX = points[j].x - points[i].x;
+                int deltaY = points[j].y - points[i].y;
 
-                int deltaX = points[i].x - points[j].x;
-                int deltaY = points[i].y - points[j].y;
-
-                // y = ax + b
-                double a = 0, b = 0;
-
-                // 相同的点不处理
                 if (deltaX == 0 && deltaY == 0) {
+                    samep++;
                     continue;
                 }
 
-                // 斜率无穷大，这里用了个小技巧
-                if (deltaX == 0) {
-                    a = Double.MAX_VALUE;
-                    b = points[i].x;
+                // 注意算斜率时可能出现k=0.0和-0.0的现象，两个是不一样的，所以这里对deltaY特殊处理
+                double k = deltaX == 0 ? Double.MAX_VALUE : deltaY == 0 ? 0 : (double) deltaY / deltaX;
+
+                if (map.containsKey(k)) {
+                    map.put(k, map.get(k) + 1);
                 } else {
-                    a = 1.0f * deltaY / deltaX;
-                    b = points[i].y - a * points[i].x;
+                    map.put(k, 1);
                 }
 
-                HashMap<Double, Set<Integer>> subMap = map.get(a);
-                if (subMap == null) {
-                    subMap = new HashMap<Double, Set<Integer>>();
-                    map.put(a, subMap);
-                }
-                set = subMap.get(b);
-                if (set == null) {
-                    set = new HashSet<Integer>();
-                    subMap.put(b, set);
-                }
-
-                set.addAll(getSamePoint(points[i]));
-                set.addAll(getSamePoint(points[j]));
-                mMaxCount = Math.max(mMaxCount, set.size());
+                max = Math.max(max, map.get(k));
             }
+
+            result = Math.max(result, max + samep);
         }
 
-        return mMaxCount;
+        return result;
     }
 }
