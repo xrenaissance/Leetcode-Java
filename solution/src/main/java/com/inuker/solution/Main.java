@@ -11,16 +11,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-    }
-
-    static void inorder(TreeNode root, double target, boolean reverse, ArrayList<Integer> list) {
-        if (root == null) return;
-
-        inorder(reverse ? root.right : root.left, target, reverse, list);
-        // early terminate, no need to traverse the whole tree
-        if ((reverse && root.val <= target) || (!reverse && root.val > target)) return;
-        // track the value of current node
-        list.add(root.val);
-        inorder(reverse ? root.left : root.right, target, reverse, list);
+        String str = new LargestNumber().largestNumber(new int[] {
+                3, 30, 34, 5, 9
+        });
+        System.out.println(str);
     }
 }
