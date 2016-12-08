@@ -11,7 +11,6 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        Collections.shuffle();
     }
 
     static void inorder(TreeNode root, double target, boolean reverse, ArrayList<Integer> list) {
