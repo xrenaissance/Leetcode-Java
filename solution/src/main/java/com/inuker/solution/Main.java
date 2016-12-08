@@ -11,9 +11,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> list = new GenerateParentheses().generateParenthesis(3);
-        for (String text : list) {
-            System.out.println(text);
-        }
+        int gap = new MaximumGap().maximumGap(new int[] {
+                3,6,9,1
+        });
+        System.out.println(String.format("gap is %d", gap));
     }
 }
