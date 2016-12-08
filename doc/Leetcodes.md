@@ -98,6 +98,7 @@
 |211|[Add and Search Word - Data structure design](https://leetcode.com/problems/add-and-search-word-data-structure-design/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordDictionary.java)|85|
 |215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)|70|
 |216|[Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumIII.java)|65|
+|217|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ContainsDuplicate.java)|100|
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)|80|
 |222|[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountCompleteTreeNodes.java)|70|
 |223|[ Rectangle Area](https://leetcode.com/problems/rectangle-area/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RectangleArea.java)|95|
