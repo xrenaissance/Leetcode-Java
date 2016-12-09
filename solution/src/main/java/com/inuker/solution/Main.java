@@ -11,9 +11,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int gap = new MaximumGap().maximumGap(new int[] {
-                3,6,9,1
-        });
-        System.out.println(String.format("gap is %d", gap));
+        boolean flag = new ContainsDuplicateIII().containsNearbyAlmostDuplicate(new int[] {
+                -1, Integer.MAX_VALUE
+        }, 1, Integer.MAX_VALUE);
+        System.out.println(flag);
     }
 }
