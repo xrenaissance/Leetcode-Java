@@ -22,6 +22,10 @@ public class WiggleSortII {
         }
     }
 
+    /**
+     * 这个更优解法没看明白
+     */
+    // 时间复杂度O(n)，空间复杂度O(l)
     public void wiggleSort(int[] nums) {
         int len = nums.length;
         int median = findKthLargest(nums, (len + 1) / 2);
