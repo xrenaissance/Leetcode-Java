@@ -15,12 +15,9 @@ public class WiggleSortII {
     public void wiggleSort2(int[] nums) {
         int[] arr = nums.clone();
         Arrays.sort(arr);
-        int n = nums.length, k = (n + 1) / 2;
-        for (int i = 0; 2 * i < n; i++) {
-            nums[2 * i] = arr[i];
-            if (2 * i + 1 < n) {
-                nums[2 * i + 1] = arr[k + i];
-            }
+        int n = nums.length, k = (n - 1) / 2, j = n - 1;
+        for (int i = 0; i < n; i++) {
+            nums[i] = (i & 1) != 0 ? arr[j--] : arr[k--];
         }
     }
 

@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         int[] arr = new int[] {
-                3, 5, 2, 1, 6, 4, 7
+                4,5,5,6
         };
         new WiggleSortII().wiggleSort2(arr);
         for (int n : arr) {
