@@ -12,6 +12,7 @@ import java.util.Arrays;
  */
 public class WiggleSortII {
 
+    // 时间复杂度O(nlgn)，空间复杂度O(n)
     public void wiggleSort2(int[] nums) {
         int[] arr = nums.clone();
         Arrays.sort(arr);
