@@ -21,4 +21,15 @@ public class HouseRobber {
         }
         return dp[n - 1];
     }
+
+    // 这个简洁
+    public int rob2(int[] nums) {
+        int prev = 0, cur = 0;
+        for (int n : nums) {
+            int temp = cur;
+            cur = Math.max(n + prev, cur);
+            prev = temp;
+        }
+        return cur;
+    }
 }
