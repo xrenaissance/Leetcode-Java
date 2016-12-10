@@ -7,6 +7,9 @@ import java.util.Queue;
  * Created by dingjikerbo on 16/12/10.
  */
 
+/**
+ * https://leetcode.com/articles/implement-stack-using-queues/
+ */
 public class MyStack {
 
     private Queue<Integer> mQueue, mQueueTmp;
