@@ -12,6 +12,18 @@ import java.util.Arrays;
  */
 public class WiggleSortII {
 
+    public void wiggleSort2(int[] nums) {
+        int[] arr = nums.clone();
+        Arrays.sort(arr);
+        int n = nums.length, k = (n + 1) / 2;
+        for (int i = 0; 2 * i < n; i++) {
+            nums[2 * i] = arr[i];
+            if (2 * i + 1 < n) {
+                nums[2 * i + 1] = arr[k + i];
+            }
+        }
+    }
+
     public void wiggleSort(int[] nums) {
         int len = nums.length;
         int median = findKthLargest(nums, (len + 1) / 2);

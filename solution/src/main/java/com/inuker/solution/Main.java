@@ -11,7 +11,12 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int n = new ReverseBits().reverseBits2(1);
-        System.out.println(n);
+        int[] arr = new int[] {
+                3, 5, 2, 1, 6, 4, 7
+        };
+        new WiggleSortII().wiggleSort2(arr);
+        for (int n : arr) {
+            System.out.print(n + " ");
+        }
     }
 }
