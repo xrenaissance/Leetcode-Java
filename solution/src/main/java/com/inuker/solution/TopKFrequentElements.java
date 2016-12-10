@@ -16,7 +16,7 @@ import java.util.TreeMap;
 
 public class TopKFrequentElements {
 
-    // 耗时46ms
+    // 耗时46ms，最差复杂度O(nlgn)
     public List<Integer> topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
         for (int n : nums) {
