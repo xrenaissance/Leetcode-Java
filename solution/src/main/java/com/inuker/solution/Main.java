@@ -11,8 +11,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        for (int i = 10; i <= 10; i++) {
-            System.out.println(new GuessNumberHigherOrLowerII().getMoneyAmount(i));
-        }
+        int n = new ReverseBits().reverseBits2(1);
+        System.out.println(n);
     }
 }
