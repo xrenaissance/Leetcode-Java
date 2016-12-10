@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public class CountPrimes {
 
+    // 41ms
     public int countPrimes(int n) {
         boolean[] f = new boolean[n];
         Arrays.fill(f, true);
