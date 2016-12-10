@@ -11,10 +11,8 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        MyQueue queue = new MyQueue();
-        queue.push(1);
-        queue.push(2);
-        System.out.println(queue.peek());
-        System.out.println(queue.peek());
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(new UglyNumberII().nthUglyNumber(i) + " ");
+        }
     }
 }
