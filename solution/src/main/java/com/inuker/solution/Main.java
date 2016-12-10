@@ -11,12 +11,10 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = new int[] {
-                4,5,5,6
-        };
-        new WiggleSortII().wiggleSort2(arr);
-        for (int n : arr) {
-            System.out.print(n + " ");
-        }
+        MyQueue queue = new MyQueue();
+        queue.push(1);
+        queue.push(2);
+        System.out.println(queue.peek());
+        System.out.println(queue.peek());
     }
 }
