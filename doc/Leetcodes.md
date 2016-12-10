@@ -150,6 +150,7 @@
 |346|[Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MovingAverage.java)|95|
 |366|[Find Leaves of Binary Tree](https://leetcode.com/problems/find-leaves-of-binary-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindLeavesOfBinaryTree.java)|60|
 |374|[Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GuessNumberHigherOrLower.java)|100|
+|375|[Guess Number Higher or Lower II](https://leetcode.com/problems/guess-number-higher-or-lower-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GuessNumberHigherOrLowerII.java)|60|
 |377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/combinationSum4.java)|65|
 |380|[Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RandomizedSet.java)|75|
 |384|[Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShuffleAnArray.java)|75|
