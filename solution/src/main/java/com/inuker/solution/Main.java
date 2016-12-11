@@ -11,9 +11,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int count = new SentenceScreenFitting().wordsTyping(new String[] {
-                "abc", "def", "ghi"
-        }, 4, 2);
-        System.out.println(count);
+        String s = new DecodeString().decodeString("3[a]2[bc]");
+        System.out.println(s);
     }
 }
