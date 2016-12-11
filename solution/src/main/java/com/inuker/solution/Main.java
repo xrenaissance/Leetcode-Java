@@ -11,7 +11,11 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String s = new DecodeString().decodeString("3[a]2[bc]");
-        System.out.println(s);
+        List<Integer> counts = new NumberOfIslandsII().numIslands2(3, 3, new int[][] {
+                {0,0}, {0,1}, {1,2}, {2,1}
+        });
+        for (Integer n : counts) {
+            System.out.print(n + " ");
+        }
     }
 }
