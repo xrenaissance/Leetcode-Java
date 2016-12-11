@@ -11,11 +11,19 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> counts = new NumberOfIslandsII().numIslands2(3, 3, new int[][] {
-                {0,0}, {0,1}, {1,2}, {2,1}
-        });
-        for (Integer n : counts) {
-            System.out.print(n + " ");
+        char[][] chars = new char[][] {
+                "OXXOX".toCharArray(),
+                "XOOXO".toCharArray(),
+                "XOXOX".toCharArray(),
+                "OXOOO".toCharArray(),
+                "XXOXO".toCharArray()
+        };
+        new SurroundedRegions().solve(chars);
+        for (int i = 0; i < chars.length; i++) {
+            for (int j = 0; j < chars[0].length; j++) {
+                System.out.print(chars[i][j]);
+            }
+            System.out.println();
         }
     }
 }
