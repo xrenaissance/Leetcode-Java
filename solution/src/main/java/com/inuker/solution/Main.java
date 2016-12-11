@@ -11,8 +11,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            System.out.print(new UglyNumberII().nthUglyNumber(i) + " ");
-        }
+        int count = new SentenceScreenFitting().wordsTyping(new String[] {
+                "abc", "def", "ghi"
+        }, 4, 2);
+        System.out.println(count);
     }
 }
