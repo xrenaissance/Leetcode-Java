@@ -10,12 +10,14 @@ import java.util.List;
 
 /**
  * 经典的UF(Union Find)问题，可翻阅《算法》1.5章
+ * UF时间复杂度和节点个数有关
  */
 public class NumberOfIslandsII {
 
     private int[] mRoots;
     private int mCount;
 
+    // 时间复杂度klgmn
     public List<Integer> numIslands2(int m, int n, int[][] positions) {
         List<Integer> list = new LinkedList<Integer>();
 
