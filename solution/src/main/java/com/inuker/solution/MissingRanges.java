@@ -22,22 +22,14 @@ public class MissingRanges {
             if (n < next) {
                 continue;
             }
-
-            if (n == next) {
-                next++;
-                continue;
+            if (n > next) {
+                list.add(getRange(next, n - 1));
             }
-
-            list.add(getRange(next, n - 1));
-
-            // 这里要注意溢出
             next = (long) n + 1;
         }
-
-        if (next <= upper) {
+        if (upper >= next) {
             list.add(getRange(next, upper));
         }
-
         return list;
     }
 

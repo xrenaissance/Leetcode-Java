@@ -1,10 +1,39 @@
 package com.inuker.solution;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Created by dingjikerbo on 16/12/12.
  */
 
 public class Solution {
+
+    public List<String> findMissingRanges(int[] nums, int lower, int upper) {
+        long next = lower;
+        List<String> list = new LinkedList<String>();
+        for (int n : nums) {
+            if (n < next) {
+                continue;
+            }
+
+            if (n > next) {
+                list.add(getRange(next, n - 1));
+            }
+
+            next = (long) n + 1;
+        }
+
+        if (upper >= next) {
+            list.add(getRange(next, upper));
+        }
+
+        return list;
+    }
+
+    private String getRange(long low, int high) {
+        return low == high ? String.valueOf(low) : low + "->" + high;
+    }
 
     public int maxKilledEnemies(char[][] grid) {
         if (grid.length == 0) {
