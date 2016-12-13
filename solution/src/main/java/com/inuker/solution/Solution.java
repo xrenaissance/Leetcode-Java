@@ -1,5 +1,6 @@
 package com.inuker.solution;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -13,6 +14,47 @@ import java.util.Queue;
 public class Solution {
 
     public List<String> removeInvalidParentheses(String s) {
+        int nl = 0, nr = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                nl++;
+            } else if (s.charAt(i) == ')') {
+                if (nl > 0) {
+                    nl--;
+                } else {
+                    nr++;
+                }
+            }
+        }
+        HashSet<String> set = new HashSet<String>();
+        dfs(s, 0, set, new StringBuilder(), nl, nr, 0);
+        return new LinkedList<String>(set);
+    }
+
+    private void dfs(String s, int i, HashSet<String> set, StringBuilder sb, int nl, int nr, int count) {
+        if (nl < 0 || nr < 0 || count < 0) {
+            return;
+        }
+        if (i == s.length()) {
+            if (nl == 0 && nr == 0 && count == 0) {
+                set.add(sb.toString());
+            }
+            return;
+        }
+        int len = sb.length();
+        if (s.charAt(i) == '(') {
+            dfs(s, i + 1, set, sb, nl - 1, nr, count);
+            dfs(s, i + 1, set, sb.append('('), nl, nr, count + 1);
+        } else if (s.charAt(i) == ')') {
+            dfs(s, i + 1, set, sb, nl, nr - 1, count);
+            dfs(s, i + 1, set, sb.append(')'), nl, nr, count - 1);
+        } else {
+            dfs(s, i + 1, set, sb.append(s.charAt(i)), nl, nr, count);
+        }
+        sb.setLength(len);
+    }
+
+    public List<String> removeInvalidParentheses2(String s) {
         Queue<String> queue = new LinkedList<String>();
         Queue<String> next = new LinkedList<String>();
         HashSet<String> visited = new HashSet<String>();

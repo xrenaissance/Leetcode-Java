@@ -13,8 +13,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        new Solution().maxSubArrayLen(new int[]{
-                1, -1, 5, -2, 3
-        }, 3);
+        List<String> list = new Solution().removeInvalidParentheses("()())()");
+        for (String s : list) {
+            System.out.println(s);
+        }
     }
 }

@@ -21,6 +21,7 @@ public class RemoveInvalidParentheses {
     /**
      * BFS法，遍历s，依次去掉一个'('或')'，然后加入队列，判断是否是合法序列
      * 遇到合法序列，则将该层所有序列都找出来
+     * 最差时间复杂度O(n*2^n)
      */
     // 耗时97ms
     public List<String> removeInvalidParentheses(String s) {
@@ -70,17 +71,21 @@ public class RemoveInvalidParentheses {
         return count == 0;
     }
 
+    /**
+     * 字符串不是合法的序列有两种情况，一种是'('和')'个数不对称，另一种是个数一样，但是顺序有问题，比如")("
+     * 所以判断字符串是否合法的指标有三个，即'('和')'个数一样，且count=0，但是在对比'('和')'个数时要注意，要用增量，而不是全量
+     * 如果用全量，最后返回的结果会包括不是最长的合法串，比如对于"()())()",返回的是"()()","()","(())","()()()","(())()"
+     * 如果用增量就不会有这个问题，只要给有问题的部分减到0即可，而不是全量部分减到0
+     */
     // 耗时9ms，时间复杂度仍然是O(n*2^n)，只不过这里剪枝很多
     public List<String> removeInvalidParentheses2(String s) {
-        if (s.length() == 0) {
-            return Arrays.asList("");
-        }
         int nL = 0, nR = 0;
-        char[] ss = s.toCharArray();
-        for (char c : ss) {
-            if (c == '(') {
+        // 这样统计出来的增量表示的是不平衡度，特别的有')('，nl和nr都为1
+        // 我们要给不平衡度都减到0，就是合法串了
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
                 nL++;
-            } else if (c == ')') {
+            } else if (s.charAt(i) == ')') {
                 if (nL > 0) {
                     nL--;
                 } else {
