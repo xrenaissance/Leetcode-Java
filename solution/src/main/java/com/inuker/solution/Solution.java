@@ -13,6 +13,19 @@ import java.util.Queue;
 
 public class Solution {
 
+    public String addBinary(String a, String b) {
+        StringBuilder sb = new StringBuilder();
+        int i = a.length() - 1, j = b.length() - 1, k = 0;
+        for ( ; i >= 0 || j >= 0 || k > 0; i--, j--) {
+            int i0 = i >= 0 ? a.charAt(i) - '0' : 0;
+            int j0 = j >= 0 ? b.charAt(j) - '0' : 0;
+            int s = i0 + j0 + k;
+            sb.insert(0, s & 1);
+            k = s >> 1;
+        }
+        return sb.toString();
+    }
+
     public int[][] multiply(int[][] A, int[][] B) {
         int[][] result = new int[A.length][B[0].length];
         for (int i = 0; i < A.length; i++) {
@@ -25,16 +38,6 @@ public class Solution {
             }
         }
         return result;
-
-//        int[][] result = new int[A.length][B[0].length];
-//        for (int i = 0; i < A.length; i++) {
-//            for (int j = 0; j < B[0].length; j++) {
-//                for (int k = 0; k < A[0].length; k++) {
-//                    result[i][j] += A[i][k] * B[k][j];
-//                }
-//            }
-//        }
-//        return result;
     }
 
     public List<List<Integer>> verticalOrder(TreeNode root) {
