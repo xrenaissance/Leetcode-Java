@@ -13,6 +13,23 @@ import java.util.Queue;
 
 public class Solution {
 
+    private boolean isBadVersion(int version) {
+        return false;
+    }
+
+    public int firstBadVersion(int n) {
+        int i = 1, j = n;
+        while (i < j) {
+            int mid = i + ((j - i) >>> 1);
+            if (isBadVersion(mid)) {
+                j = mid;
+            } else {
+                i = mid + 1;
+            }
+        }
+        return i;
+    }
+
     private final String[] LESS_20 = {
             "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
             "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"

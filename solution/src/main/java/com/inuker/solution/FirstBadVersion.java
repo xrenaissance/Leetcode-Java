@@ -4,6 +4,9 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/11/19.
  */
 
+/**
+ * https://leetcode.com/articles/first-bad-version/
+ */
 public abstract class FirstBadVersion {
 
     public int firstBadVersion(int n) {
