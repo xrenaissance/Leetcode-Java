@@ -22,54 +22,39 @@ public class BinaryTreeVerticalOrderTraversal {
         if (root == null) {
             return result;
         }
-
         HashMap<TreeNode, Integer> map = new HashMap<TreeNode, Integer>();
         HashMap<Integer, List<Integer>> map2 = new HashMap<Integer, List<Integer>>();
-
-        map.put(root, 0);
-        map2.put(0, new LinkedList<Integer>(Arrays.asList(root.val)));
-
-        traverse(root, map, map2);
-
-        for (int i = minKey; i <= maxKey; i++) {
-            if (map2.containsKey(i)) {
-                result.add(map2.get(i));
-            }
-        }
-
-        return result;
-    }
-
-    private void traverse(TreeNode root, HashMap<TreeNode, Integer> map, HashMap<Integer, List<Integer>> map2) {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
-
+        map.put(root, 0);
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
 
             int index = map.get(node);
+            min = Math.min(min, index);
+            max = Math.max(max, index);
+
+            List<Integer> list = map2.get(index);
+            if (list == null) {
+                list = new LinkedList<Integer>();
+                map2.put(index, list);
+            }
+            list.add(node.val);
 
             if (node.left != null) {
-                saveNodeIndex(node.left, index - 1, map, map2);
                 queue.add(node.left);
+                map.put(node.left, index - 1);
             }
 
             if (node.right != null) {
-                saveNodeIndex(node.right, index + 1, map, map2);
                 queue.add(node.right);
+                map.put(node.right, index + 1);
             }
         }
-    }
-
-    private void saveNodeIndex(TreeNode node, int index, HashMap<TreeNode, Integer> map, HashMap<Integer, List<Integer>> map2) {
-        map.put(node, index);
-        List<Integer> list = map2.get(index);
-        if (list == null) {
-            list = new LinkedList<Integer>();
-            map2.put(index, list);
+        for (int i = min; i <= max; i++) {
+            result.add(map2.get(i));
         }
-        minKey = Math.min(minKey, index);
-        maxKey = Math.max(maxKey, index);
-        list.add(node.val);
+        return result;
     }
 }

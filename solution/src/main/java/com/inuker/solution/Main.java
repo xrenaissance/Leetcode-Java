@@ -13,9 +13,15 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> list = new Solution().removeInvalidParentheses("()())()");
-        for (String s : list) {
-            System.out.println(s);
+        TreeNode node = TreeNode.buildTree(new Integer[] {
+            3, 9, 20, 15, 7
+        });
+        List<List<Integer>> list = new Solution().verticalOrder(node);
+        for (List<Integer> l : list) {
+            for (Integer n : l) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
         }
     }
 }
