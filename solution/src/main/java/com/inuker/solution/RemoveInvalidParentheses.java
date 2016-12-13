@@ -18,50 +18,37 @@ import java.util.Queue;
  */
 public class RemoveInvalidParentheses {
 
+    /**
+     * BFS法，遍历s，依次去掉一个'('或')'，然后加入队列，判断是否是合法序列
+     * 遇到合法序列，则将该层所有序列都找出来
+     */
     // 耗时97ms
     public List<String> removeInvalidParentheses(String s) {
-        if (s.length() == 0) {
-            return Arrays.asList(s);
-        }
-
         Queue<String> queue = new LinkedList<String>();
-        queue.add(s);
-
         Queue<String> next = new LinkedList<String>();
-
         HashSet<String> visited = new HashSet<String>();
-
         List<String> result = new LinkedList<String>();
 
+        queue.add(s);
         while (!queue.isEmpty()) {
             String ss = queue.poll();
-
             if (isValidParentheses(ss)) {
                 result.add(ss);
-            }
-
-            if (result.isEmpty()) {
+            } else {
                 for (int i = 0; i < ss.length(); i++) {
-                    char c = ss.charAt(i);
-                    if (c != '(' && c != ')') {
+                    if (ss.charAt(i) != '(' && ss.charAt(i) != ')') {
                         continue;
                     }
-                    String sub = ss.substring(0, i) + ss.substring(i + 1);
-                    if (!visited.contains(sub)) {
-                        visited.add(sub);
-                        queue.add(sub);
+                    String st = ss.substring(0, i) + ss.substring(i + 1);
+                    if (visited.add(st)) {
+                        next.add(st);
                     }
                 }
             }
 
-            if (queue.isEmpty()) {
-                if (result.isEmpty()) {
-                    Queue<String> temp = queue;
-                    queue = next;
-                    next = temp;
-                } else {
-                    return result;
-                }
+            if (queue.isEmpty() && result.isEmpty()) {
+                queue.addAll(next);
+                next.clear();
             }
         }
 
@@ -69,22 +56,17 @@ public class RemoveInvalidParentheses {
     }
 
     private boolean isValidParentheses(String s) {
-        if (s.length() == 0) {
-            return true;
-        }
-
         int count = 0;
-        char[] ss = s.toCharArray();
-        for (char c : ss) {
-            if (c == '(') {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
                 count++;
-            } else if (c == ')') {
+            } else if (s.charAt(i) == ')') {
+                // 这里要注意如果中途count<0了就非法了
                 if (--count < 0) {
                     return false;
                 }
             }
         }
-
         return count == 0;
     }
 

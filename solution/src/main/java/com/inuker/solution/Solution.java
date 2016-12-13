@@ -1,8 +1,10 @@
 package com.inuker.solution;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Created by dingjikerbo on 16/12/12.
@@ -11,7 +13,49 @@ import java.util.List;
 public class Solution {
 
     public List<String> removeInvalidParentheses(String s) {
+        Queue<String> queue = new LinkedList<String>();
+        Queue<String> next = new LinkedList<String>();
+        HashSet<String> visited = new HashSet<String>();
+        List<String> result = new LinkedList<String>();
 
+        queue.add(s);
+        while (!queue.isEmpty()) {
+            String ss = queue.poll();
+            if (isValidParentheses(ss)) {
+                result.add(ss);
+            } else {
+                for (int i = 0; i < ss.length(); i++) {
+                    if (ss.charAt(i) != '(' && ss.charAt(i) != ')') {
+                        continue;
+                    }
+                    String st = ss.substring(0, i) + ss.substring(i + 1);
+                    if (visited.add(st)) {
+                        next.add(st);
+                    }
+                }
+            }
+
+            if (queue.isEmpty() && result.isEmpty()) {
+                queue.addAll(next);
+                next.clear();
+            }
+        }
+
+        return result;
+    }
+
+    private boolean isValidParentheses(String s) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                count++;
+            } else if (s.charAt(i) == ')') {
+                if (--count < 0) {
+                    return false;
+                }
+            }
+        }
+        return count == 0;
     }
 
     public int maxSubArrayLen(int[] nums, int k) {
