@@ -8,7 +8,7 @@ Facebook题目列表(24)
 |301|[Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveInvalidParentheses.java)|70|
 |314|[Binary Tree Vertical Order Traversal](https://leetcode.com/problems/binary-tree-vertical-order-traversal/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeVerticalOrderTraversal.java)|80|
 |311|[Sparse Matrix Multiplication](https://leetcode.com/problems/sparse-matrix-multiplication/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SparseMatrixMultiplication.java)|90|
-|67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|
+|67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|95|
 |273|[Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToEnglishWords.java)|
 |278|[First Bad Version](https://leetcode.com/problems/first-bad-version/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FirstBadVersion.java)|
 |253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRoomsII.java)|
