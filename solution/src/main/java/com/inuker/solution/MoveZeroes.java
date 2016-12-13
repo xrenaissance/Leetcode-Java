@@ -7,14 +7,13 @@ package com.inuker.solution;
 public class MoveZeroes {
 
     public void moveZeroes(int[] nums) {
-        for (int i = 0, left = 0; left < nums.length; ) {
-            if (i < nums.length) {
-                if (nums[i] != 0) {
-                    nums[left++] = nums[i];
+        for (int i = 0, j = 0; i < nums.length; j++) {
+            if (j < nums.length) {
+                if (nums[j] != 0) {
+                    nums[i++] = nums[j];
                 }
-                i++;
             } else {
-                nums[left++] = 0;
+                nums[i++] = 0;
             }
         }
     }

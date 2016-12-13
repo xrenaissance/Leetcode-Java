@@ -1,5 +1,6 @@
 package com.inuker.solution;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,6 +9,32 @@ import java.util.List;
  */
 
 public class Solution {
+
+    public int maxSubArrayLen(int[] nums, int k) {
+        int maxLen = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int sum = 0;
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j];
+                if (sum == k) {
+                    maxLen = Math.max(maxLen, j - i + 1);
+                }
+            }
+        }
+        return maxLen;
+    }
+
+    public void moveZeroes(int[] nums) {
+        for (int i = 0, j = 0; i < nums.length; j++) {
+            if (j < nums.length) {
+                if (nums[j] != 0) {
+                    nums[i++] = nums[j];
+                }
+            } else {
+                nums[i++] = 0;
+            }
+        }
+    }
 
     public List<String> findMissingRanges(int[] nums, int lower, int upper) {
         long next = lower;

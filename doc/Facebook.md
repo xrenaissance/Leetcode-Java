@@ -1,9 +1,9 @@
 Facebook题目列表(24)
 ----------------
 
-|#|Title|Solution|
-|---|----| ----- |
-|283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MoveZeroes.java)|
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+|283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MoveZeroes.java)|100|
 |325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSizeSubarraySumEqualsK.java)|
 |301|[Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveInvalidParentheses.java)|
 |314|[Binary Tree Vertical Order Traversal](https://leetcode.com/problems/binary-tree-vertical-order-traversal/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeVerticalOrderTraversal.java)|

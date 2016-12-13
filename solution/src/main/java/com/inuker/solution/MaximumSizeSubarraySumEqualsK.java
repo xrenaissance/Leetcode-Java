@@ -11,18 +11,14 @@ public class MaximumSizeSubarraySumEqualsK {
     // 耗时218ms，时间复杂度O(n^2)
     public int maxSubArrayLen(int[] nums, int k) {
         int maxLen = 0;
-
         for (int i = 0; i < nums.length; i++) {
             for (int j = i, sum = 0; j >= 0; j--) {
                 sum += nums[j];
                 if (sum == k) {
-                    if (i - j + 1 > maxLen) {
-                        maxLen = i - j + 1;
-                    }
+                    maxLen = Math.max(maxLen, i - j + 1);
                 }
             }
         }
-
         return maxLen;
     }
 
