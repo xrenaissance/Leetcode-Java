@@ -25,25 +25,19 @@ public class MaximumSizeSubarraySumEqualsK {
     // 耗时29ms，时间复杂度O(n)
     public int maxSubArrayLen2(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-
+        map.put(0, -1);
         for (int i = 0; i < nums.length; i++) {
             nums[i] += i > 0 ? nums[i - 1] : 0;
-
             // 这里要注意判重，map中保存最靠左的，这样子序列能更长
             if (!map.containsKey(nums[i])) {
                 map.put(nums[i], i);
             }
         }
-
         int maxLen = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == k) {
-                maxLen = i + 1;
-            } else if (map.containsKey(nums[i] - k)) {
-                int index = map.get(nums[i] - k);
-                if (index < i) {
-                    maxLen = Math.max(maxLen, i - index);
-                }
+            Integer p = map.get(nums[i] - k);
+            if (p != null) {
+                maxLen = Math.max(maxLen, i - p);
             }
         }
         return maxLen;

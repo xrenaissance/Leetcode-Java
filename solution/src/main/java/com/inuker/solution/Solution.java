@@ -10,15 +10,24 @@ import java.util.List;
 
 public class Solution {
 
+    public List<String> removeInvalidParentheses(String s) {
+
+    }
+
     public int maxSubArrayLen(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        map.put(0, -1);
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] += i > 0 ? nums[i - 1] : 0;
+            if (!map.containsKey(nums[i])) {
+                map.put(nums[i], i);
+            }
+        }
         int maxLen = 0;
         for (int i = 0; i < nums.length; i++) {
-            int sum = 0;
-            for (int j = i; j < nums.length; j++) {
-                sum += nums[j];
-                if (sum == k) {
-                    maxLen = Math.max(maxLen, j - i + 1);
-                }
+            Integer p = map.get(nums[i] - k);
+            if (p != null) {
+                maxLen = Math.max(maxLen, i - p);
             }
         }
         return maxLen;
