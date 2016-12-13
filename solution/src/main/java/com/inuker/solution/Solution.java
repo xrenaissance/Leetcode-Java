@@ -13,6 +13,47 @@ import java.util.Queue;
 
 public class Solution {
 
+    private final String[] LESS_20 = {
+            "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
+            "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+    };
+
+    private final String[] LESS_100 = {
+            "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+    };
+
+    private final String[] THOUSANDS = {
+            "", "Thousand", "Million", "Billion"
+    };
+
+    public String numberToWords(int num) {
+        if (num == 0) {
+            return "Zero";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int count = 0; num > 0; num /= 1000, count++) {
+            int s = num % 1000;
+            if (s > 0) {
+                sb.insert(0, String.format(" %s %s", helper(s), THOUSANDS[count]));
+            }
+        }
+        return sb.toString().trim();
+    }
+
+    private String helper(int num) {
+        StringBuilder sb = new StringBuilder();
+        if (num >= 100) {
+            sb.append(String.format("%s Hundred", LESS_20[num / 100]));
+        }
+        num %= 100;
+        if (num < 20) {
+            sb.append(" " + LESS_20[num]);
+        } else {
+            sb.append(String.format(" %s %s", LESS_100[num / 10], LESS_20[num % 10]));
+        }
+        return sb.toString().trim();
+    }
+
     public String addBinary(String a, String b) {
         StringBuilder sb = new StringBuilder();
         int i = a.length() - 1, j = b.length() - 1, k = 0;

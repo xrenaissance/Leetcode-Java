@@ -13,15 +13,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        TreeNode node = TreeNode.buildTree(new Integer[] {
-            3, 9, 20, 15, 7
-        });
-        List<List<Integer>> list = new Solution().verticalOrder(node);
-        for (List<Integer> l : list) {
-            for (Integer n : l) {
-                System.out.print(n + " ");
-            }
-            System.out.println();
-        }
+        String s = new Solution().numberToWords(1000000);
+        System.out.println(s);
     }
 }

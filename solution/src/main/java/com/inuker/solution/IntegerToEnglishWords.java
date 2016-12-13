@@ -4,6 +4,12 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/11/19.
  */
 
+/**
+ * TestCase
+ * 0
+ * 1001
+ * 1000000
+ */
 public class IntegerToEnglishWords {
 
     private final String[] LESS_20 = {
@@ -19,63 +25,24 @@ public class IntegerToEnglishWords {
             "", "Thousand", "Million", "Billion"
     };
 
-    // 耗时31ms，性能不怎么样，而且代码复杂，容易出错
+    // 这种写法耗时4ms，简洁效率还高
     public String numberToWords(int num) {
         if (num == 0) {
-            return "zero";
+            return "Zero";
         }
 
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; num > 0; num /= 1000, i++) {
-            StringBuilder sb2 = new StringBuilder();
-
-            int n = num % 1000;
-
-            if (n == 0) {
-                continue;
-            }
-
-            int hundred = n / 100;
-            if (hundred > 0) {
-                sb2.append(String.format(" %s hundred", LESS_20[hundred]));
-            }
-
-            n %= 100;
-
-            if (n >= 20) {
-                sb2.append(String.format(" %s", LESS_100[n / 10]));
-                if (n % 10 != 0) {
-                    sb2.append(String.format(" %s", LESS_20[n % 10]));
-                }
-
-            } else if (n > 0) {
-                sb2.append(String.format(" %s", LESS_20[n]));
-            }
-
-            sb.insert(0, String.format("%s %s", sb2.toString(), THOUSANDS[i]));
-        }
-
-        return sb.toString().trim();
-    }
-
-    // 这种写法耗时4ms，简洁效率还高
-    public String numberToWords2(int num) {
-        if (num == 0) return "Zero";
-
-        int i = 0;
         String words = "";
-
-        while (num > 0) {
-            if (num % 1000 != 0)
+        for (int i = 0; num > 0; i++, num /= 1000) {
+            if (num % 1000 != 0) {
                 words = helper(num % 1000) + THOUSANDS[i] + " " + words;
-            num /= 1000;
-            i++;
+            }
         }
-
         return words.trim();
     }
 
+    /**
+     * 求1000以内的
+     */
     private String helper(int num) {
         if (num == 0)
             return "";
