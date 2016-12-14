@@ -9,12 +9,48 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Created by dingjikerbo on 16/12/12.
  */
 
 public class Solution {
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new LinkedList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                result.add(root.val);
+                root = root.right;
+            }
+        }
+        return result;
+    }
+
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode node = null, prev = null;
+        while (!stack.isEmpty() || node != null) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                node = stack.pop();
+                if (prev == p) {
+                    return node;
+                }
+                prev = node;
+                node = node.right;
+            }
+        }
+        return null;
+    }
 
     public int findCelebrity(int n) {
         int candidate = 0;

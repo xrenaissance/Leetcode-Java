@@ -6,32 +6,30 @@ import java.util.Stack;
  * Created by dingjikerbo on 16/11/20.
  */
 
+/**
+ * 有两种方法，用栈做普通的中序遍历，这种没有充分利用BST的特点
+ * 第二种方法比较巧妙，首先遍历到p，然后继续遍历找到p的右子树的最小值
+ */
 public class InorderSuccessorInBST {
 
-    private boolean found;
-    private TreeNode succesor;
-
-    // 耗时5ms
+    // 耗时10ms
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        traverse(root, p);
-        return succesor;
-    }
-
-    private void traverse(TreeNode node, TreeNode p) {
-        if (node == null) {
-            return;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode node = null, prev = null;
+        while (!stack.isEmpty() || node != null) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                node = stack.pop();
+                if (prev == p) {
+                    return node;
+                }
+                prev = node;
+                node = node.right;
+            }
         }
-
-        traverse(node.left, p);
-
-        if (node == p) {
-            found = true;
-        } else if (found && succesor == null) {
-            succesor = node;
-            return;
-        }
-
-        traverse(node.right, p);
+        return null;
     }
 
     // 耗时4ms
