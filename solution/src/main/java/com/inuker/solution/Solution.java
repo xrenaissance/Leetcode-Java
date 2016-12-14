@@ -20,6 +20,44 @@ import java.util.Queue;
  */
 public class Solution {
 
+    private char[] mTmp = new char[4];
+    private int mIndex = 0, mSize = 0;
+
+    public int read(char[] buf, int n) {
+        int i = 0;
+        for (; i < n; ) {
+            if (mIndex < mSize) {
+                buf[i++] = mTmp[mIndex++];
+            } else {
+                mIndex = 0;
+                mSize = read4(mTmp);
+                if (mSize <= 0) {
+                    break;
+                }
+            }
+        }
+        return i;
+    }
+
+    public int read2(char[] buf, int n) {
+        int i = 0;
+        char[] tmp = new char[4];
+        for (; i < n; ) {
+            int size = read4(tmp);
+            for (int j = 0; j < size && i < n; ) {
+                buf[i++] = tmp[j++];
+            }
+            if (size < 4) {
+                break;
+            }
+        }
+        return i;
+    }
+
+    int read4(char[] buf) {
+        return 0;
+    }
+
     public boolean isMatch(String s, String p) {
         int s0 = -1, p0 = -1, j = 0;
         for (int i = 0; i < s.length(); ) {
@@ -43,7 +81,7 @@ public class Solution {
                 return false;
             }
         }
-        for ( ; j < p.length() && p.charAt(j) == '*'; j++);
+        for (; j < p.length() && p.charAt(j) == '*'; j++) ;
         return j >= p.length();
     }
 
@@ -277,7 +315,7 @@ public class Solution {
     public String addBinary(String a, String b) {
         StringBuilder sb = new StringBuilder();
         int i = a.length() - 1, j = b.length() - 1, k = 0;
-        for ( ; i >= 0 || j >= 0 || k > 0; i--, j--) {
+        for (; i >= 0 || j >= 0 || k > 0; i--, j--) {
             int i0 = i >= 0 ? a.charAt(i) - '0' : 0;
             int j0 = j >= 0 ? b.charAt(j) - '0' : 0;
             int s = i0 + j0 + k;
@@ -525,12 +563,12 @@ public class Solution {
     public int wordsTyping(String[] sentence, int rows, int cols) {
         String s = String.join(" ", sentence) + " ";
         int len = s.length(), start = 0;
-        for ( ; rows > 0; rows--) {
+        for (; rows > 0; rows--) {
             start += cols;
             if (s.charAt(start % len) == ' ') {
                 start++;
             } else {
-                for ( ; start >= 0 && s.charAt((start - 1) % len) != ' '; start--);
+                for (; start >= 0 && s.charAt((start - 1) % len) != ' '; start--) ;
             }
         }
         return start / len;
