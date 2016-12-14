@@ -13,7 +13,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int n = new Solution().numDecodings("123");
-        System.out.println(n);
+        boolean flag  = new Solution().isMatch("C", "*?*");
+        System.out.println(flag);
     }
 }

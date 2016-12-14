@@ -8,7 +8,7 @@ public class WildcardMatching {
 
     // 这道题关键是遇到"*"的处理以及后面匹配失败时的回溯
     // 只要有"*"，当后面匹配失败时就有重试的机会
-    public boolean isMatch(String s, String p) {
+    public boolean isMatch2(String s, String p) {
         int is = 0, ip = 0, ks = -1, kp = -1;
 
         while (is < s.length()) {
@@ -18,6 +18,7 @@ public class WildcardMatching {
                 ip++;
             } else if (ip < p.length() && p.charAt(ip) == '*') {
                 // 如果遇到"*"记下s和p当前位置，便于后面匹配失败时回溯，遇到新的"*"时会覆盖之前的"*"
+                // 这里is不递增，仅ip递增
                 ks = is;
                 kp = ip;
                 ip++;
@@ -32,6 +33,7 @@ public class WildcardMatching {
             }
         }
 
+        // 这里要跳过重复的*，如果p也到头了，则是匹配的
         for ( ; ip < p.length() && p.charAt(ip) == '*'; ip++);
         return ip == p.length();
     }

@@ -13,6 +13,7 @@ package com.inuker.solution;
 /**
  * TestCases
  * ".*"是可以匹配任意字符串的，因为".*"表示0个或多个"."，而"."是可以匹配任意字符的
+ * *是不能单独存在的，前面必须跟一个字符，表示该字符出现0次或多次
  */
 public class RegularExpressionMatching {
 

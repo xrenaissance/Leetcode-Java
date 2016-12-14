@@ -14,9 +14,40 @@ import java.util.Queue;
  * Created by dingjikerbo on 16/12/12.
  */
 
+/**
+ * TestCase
+ * S="C", P="*?*"
+ */
 public class Solution {
 
     public boolean isMatch(String s, String p) {
+        int s0 = -1, p0 = -1, j = 0;
+        for (int i = 0; i < s.length(); ) {
+            if (j < p.length()) {
+                if (p.charAt(j) == '*') {
+                    s0 = i;
+                    p0 = j++;
+                } else if (p.charAt(j) == '?' || s.charAt(i) == p.charAt(j)) {
+                    i++;
+                    j++;
+                } else if (s0 != -1) {
+                    i = s0++;
+                    j = p0 + 1;
+                } else {
+                    return false;
+                }
+            } else if (s0 != -1) {
+                i = s0++;
+                j = p0 + 1;
+            } else {
+                return false;
+            }
+        }
+        for ( ; j < p.length() && p.charAt(j) == '*'; j++);
+        return j >= p.length();
+    }
+
+    public boolean isMatch2(String s, String p) {
         if (p.length() == 0) {
             return s.length() == 0;
         }
