@@ -2,6 +2,7 @@ package com.inuker.solution;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,34 +17,25 @@ public class LetterCombinationOfPhoneNumber {
 
     // 耗时3ms
     public List<String> letterCombinations(String digits) {
+        List<String> result = new LinkedList<String>();
         if (digits.length() == 0) {
-            return Collections.emptyList();
+            return result;
         }
-
-        List<String> result = new ArrayList<String>();
-        helper(digits, 0, result, new StringBuilder());
+        helper(digits, 0, new StringBuilder(), result);
         return result;
     }
 
-    private void helper(String digits, int start, List<String> list, StringBuilder sb) {
-        if (start >= digits.length()) {
-            list.add(sb.toString());
+    private void helper(String digits, int k, StringBuilder sb, List<String> result) {
+        if (k == digits.length()) {
+            result.add(sb.toString());
             return;
         }
 
-        String s = ARR[digits.charAt(start) - '0'];
-
-        // 这里要注意单独拿出来处理
-        if (s.length() == 0) {
-            helper(digits, start + 1, list, sb);
-            return;
-        }
-
-        for (int i = 0; i < s.length(); i++) {
-            int len = sb.length();
-            sb.append(s.charAt(i));
-            helper(digits, start + 1, list, sb);
-            sb.setLength(len);
+        int n = digits.charAt(k) - '0';
+        for (int i = 0; i < ARR[n].length(); i++) {
+            sb.append(ARR[n].charAt(i));
+            helper(digits, k + 1, sb, result);
+            sb.deleteCharAt(sb.length() - 1);
         }
     }
 }
