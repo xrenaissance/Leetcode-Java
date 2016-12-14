@@ -14,7 +14,7 @@ Facebook题目列表(24)
 |252|[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRooms.java)|100|
 |253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRoomsII.java)|100|
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeIntervals.java)|100|
-|57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|
+|57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|100|
 |17|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LetterCombinationOfPhoneNumber.java)|
 |91|[Decode Ways](https://leetcode.com/problems/decode-ways/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeWays.java)|
 |10|[Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RegularExpressionMatching.java)|
