@@ -14,11 +14,30 @@ import java.util.Queue;
  * Created by dingjikerbo on 16/12/12.
  */
 
-/**
- * TestCase
- * S="C", P="*?*"
- */
 public class Solution {
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int target = -nums[i];
+            for (int j = i + 1, k = nums.length - 1; j < k; ) {
+                int sum = nums[j] + nums[k];
+                if (sum > target) {
+                    k--;
+                } else if (sum < target) {
+                    j++;
+                } else {
+                    result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    for (j++, k-- ; j < k && nums[j] == nums[j - 1] && nums[k] == nums[k + 1]; j++, k--);
+                }
+            }
+        }
+        return result;
+    }
 
     private char[] mTmp = new char[4];
     private int mIndex = 0, mSize = 0;
