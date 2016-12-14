@@ -16,6 +16,33 @@ import java.util.Queue;
 
 public class Solution {
 
+    public int numDecodings(String s) {
+        if (s.length() == 0) {
+            return 0;
+        }
+        return helper(s, 0, new int[s.length()]);
+    }
+
+    private int helper(String s, int start, int[] f) {
+        if (start >= s.length()) {
+            return 1;
+        }
+        if (s.charAt(start) == '0') {
+            return 0;
+        }
+        if (f[start] > 0) {
+            return f[start];
+        }
+        int num = 0;
+        if (start + 1 < s.length()) {
+            if (s.charAt(start) == '1' || (s.charAt(start) == '2' && s.charAt(start + 1) <= '6')) {
+                num += helper(s, start + 2, f);
+            }
+        }
+        f[start] = num + helper(s, start + 1, f);
+        return f[start];
+    }
+
     private final String[] ARR = {
             "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
     };

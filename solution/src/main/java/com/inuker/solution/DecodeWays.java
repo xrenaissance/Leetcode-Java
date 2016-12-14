@@ -8,6 +8,9 @@ import java.util.Arrays;
 
 /**
  * TestCases
+ * ""
+ * "1"
+ * "1787897759966261825913315262377298132516969578441236833255596967132573482281598412163216914566534565"
  * "7893749912342187894921836847319981199844151766195952528631828655978178193192959793156142441128167383"
  */
 public class DecodeWays {
@@ -74,7 +77,7 @@ public class DecodeWays {
 
     /**
      * 思路三
-    // 这里继续优化，为避免重复运算，对结果进行了缓存，性能非常好
+    // 这里继续优化，为避免重复运算，对结果进行了缓存，性能非常好，耗时2ms
     public int numDecodings(String s) {
         if (s.length() == 0) {
             return 0;
@@ -90,10 +93,10 @@ public class DecodeWays {
         }
 
         if (s[i] == '0') {
-            f[i] = 0;
             return 0;
         }
 
+        // 这里一定要包括等于0，因为0也是要缓存的，表示后面的子串都不可能合法，比如30.......
         if (f[i] >= 0) {
             return f[i];
         }
@@ -104,11 +107,9 @@ public class DecodeWays {
             ways += helper(s, f, i + 2);
         }
 
-        ways += helper(s, f, i + 1);
+        f[i] = ways + helper(s, f, i + 1);
 
-        f[i] = ways;
-
-        return ways;
+        return f[i];
     }
 */
 
