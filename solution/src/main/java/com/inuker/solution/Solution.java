@@ -16,6 +16,28 @@ import java.util.Queue;
 
 public class Solution {
 
+    public int findCelebrity(int n) {
+        int candidate = 0;
+        for (int i = 1; i < n; i++) {
+            if (knows(candidate, i)) {
+                candidate = i;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (i == candidate) {
+                continue;
+            }
+            if (knows(candidate, i) || !knows(i, candidate)) {
+                return -1;
+            }
+        }
+        return candidate;
+    }
+
+    boolean knows(int a, int b) {
+        return false;
+    }
+
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new LinkedList<List<Integer>>();
         Arrays.sort(nums);
