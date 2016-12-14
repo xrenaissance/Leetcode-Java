@@ -16,26 +16,21 @@ public class MeetingRoomsII {
         Arrays.sort(intervals, new Comparator<Interval>() {
             @Override
             public int compare(Interval o1, Interval o2) {
-                return o1.start > o2.start ? 1 : -1;
+                return o1.start - o2.start;
             }
         });
-
         Queue<Interval> queue = new PriorityQueue<Interval>(new Comparator<Interval>() {
             @Override
             public int compare(Interval o1, Interval o2) {
-                return o1.end > o2.end ? 1 : -1;
+                return o1.end - o2.end;
             }
         });
-
         for (Interval interval : intervals) {
-            if (queue.isEmpty() || interval.start < queue.peek().end) {
-                queue.add(interval);
-            } else {
+            if (!queue.isEmpty() && queue.peek().end <= interval.start) {
                 queue.poll();
-                queue.add(interval);
             }
+            queue.add(interval);
         }
-
         return queue.size();
     }
 }

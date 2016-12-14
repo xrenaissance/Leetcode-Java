@@ -1,10 +1,13 @@
 package com.inuker.solution;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
@@ -12,6 +15,75 @@ import java.util.Queue;
  */
 
 public class Solution {
+
+    public List<Interval> merge(List<Interval> intervals) {
+        List<Interval> result = new LinkedList<Interval>();
+        if (intervals.size() == 0) {
+            return result;
+        }
+        Collections.sort(intervals, new Comparator<Interval>() {
+            @Override
+            public int compare(Interval o1, Interval o2) {
+                return o1.start - o2.start;
+            }
+        });
+        Interval prev = null;
+        for (Interval interval : intervals) {
+            if (prev == null) {
+                prev = interval;
+            } else {
+                if (interval.start > prev.end) {
+                    result.add(prev);
+                    prev = interval;
+                } else {
+                    prev.end = Math.max(prev.end, interval.end);
+                }
+            }
+        }
+        if (prev != null) {
+            result.add(prev);
+        }
+        return result;
+    }
+
+    public int minMeetingRooms(Interval[] intervals) {
+        Arrays.sort(intervals, new Comparator<Interval>() {
+            @Override
+            public int compare(Interval o1, Interval o2) {
+                return o1.start - o2.start;
+            }
+        });
+        Queue<Interval> queue = new PriorityQueue<Interval>(new Comparator<Interval>() {
+            @Override
+            public int compare(Interval o1, Interval o2) {
+                return o1.end - o2.end;
+            }
+        });
+        int size = 0;
+        for (Interval interval : intervals) {
+            if (!queue.isEmpty() && queue.peek().end <= interval.start) {
+                queue.poll();
+            }
+            queue.add(interval);
+            size = Math.max(size, queue.size());
+        }
+        return size;
+    }
+
+    public boolean canAttendMeetings(Interval[] intervals) {
+        Arrays.sort(intervals, new Comparator<Interval>() {
+            @Override
+            public int compare(Interval o1, Interval o2) {
+                return o1.start - o2.start;
+            }
+        });
+        for (int i = 1; i < intervals.length; i++) {
+            if (intervals[i].start < intervals[i - 1].end) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private boolean isBadVersion(int version) {
         return false;
