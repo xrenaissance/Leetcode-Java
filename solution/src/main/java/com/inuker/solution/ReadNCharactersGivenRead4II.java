@@ -6,31 +6,23 @@ package com.inuker.solution;
 
 public abstract class ReadNCharactersGivenRead4II {
 
-    private char[] temp = new char[4];
-    private int index, size;
+    private char[] mTmp = new char[4];
+    private int mIndex = 0, mSize = 0;
 
     public int read(char[] buf, int n) {
-        for (int i = 0; i < n; ) {
-            // 先读之前没读完的
-            while (i < n && index < size) {
-                buf[i++] = temp[index++];
-            }
-
-            // 如果读够了先返回，否则重置
-            if (i >= n) {
-                return n;
+        int i = 0;
+        for (; i < n; ) {
+            if (mIndex < mSize) {
+                buf[i++] = mTmp[mIndex++];
             } else {
-                index = 0;
-                size = 0;
-            }
-
-            if (i < n) {
-                if ((size = read4(temp)) == 0) {
-                    return i;
+                mIndex = 0;
+                mSize = read4(mTmp);
+                if (mSize <= 0) {
+                    break;
                 }
             }
         }
-        return n;
+        return i;
     }
 
     abstract int read4(char[] buf);
