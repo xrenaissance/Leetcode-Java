@@ -18,6 +18,38 @@ import java.util.Stack;
 
 public class Solution {
 
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> result = new LinkedList<String>();
+        List<String> list = new LinkedList<String>();
+        if (root != null) {
+            list.add(root.val + "");
+            helper(root, list, result);
+        }
+        return result;
+    }
+
+    private void helper(TreeNode node, List<String> list, List<String> result) {
+        if (node.left == null && node.right == null) {
+            result.add(String.join("->", list));
+            return;
+        }
+        if (node.left != null) {
+            list.add(node.left.val + "");
+            helper(node.left, list, result);
+            list.remove(list.size() - 1);
+        }
+
+        if (node.right != null) {
+            list.add(node.right.val + "");
+            helper(node.right, list, result);
+            list.remove(list.size() - 1);
+        }
+    }
+
+    public List<String> addOperators(String num, int target) {
+        return null;
+    }
+
     public String minWindow(String s, String t) {
         int CHAR_MAX = 256;
         int[] ss = new int[CHAR_MAX];

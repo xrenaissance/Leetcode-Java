@@ -84,6 +84,35 @@ public class BinaryTreePaths {
     }
  */
 
+/** 这种方法耗时5ms
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> result = new LinkedList<String>();
+        List<String> list = new LinkedList<String>();
+        if (root != null) {
+            list.add(root.val + "");
+            helper(root, list, result);
+        }
+        return result;
+    }
+
+    private void helper(TreeNode node, List<String> list, List<String> result) {
+        if (node.left == null && node.right == null) {
+            result.add(String.join("->", list));
+            return;
+        }
+        if (node.left != null) {
+            list.add(node.left.val + "");
+            helper(node.left, list, result);
+            list.remove(list.size() - 1);
+        }
+
+        if (node.right != null) {
+            list.add(node.right.val + "");
+            helper(node.right, list, result);
+            list.remove(list.size() - 1);
+        }
+    }
+*/
     // 耗时2ms，不用StringBuilder，直接用字符串相加，这样写更简洁
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> list = new LinkedList<String>();
