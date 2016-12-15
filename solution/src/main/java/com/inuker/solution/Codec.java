@@ -30,6 +30,7 @@ public class Codec {
     // 这个尽可能短，节省空间
     private static final String NULL = "X";
 
+    /**
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         if (root != null) {
@@ -62,6 +63,7 @@ public class Codec {
         root.right = helper(queue);
         return root;
     }
+     */
 
     /** 下面是非递归版的DFS
     public String serialize(TreeNode root) {
@@ -116,4 +118,49 @@ public class Codec {
         return new TreeNode(Integer.parseInt(text));
     }
      */
+
+    /**
+     * BFS版的
+     */
+    public String serialize(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        StringBuilder sb = new StringBuilder();
+        if (root == null) {
+            return "";
+        }
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node == null) {
+                sb.append(NULL).append(SEP);
+                continue;
+            }
+            sb.append(node.val).append(SEP);
+            queue.add(node.left);
+            queue.add(node.right);
+        }
+        return sb.toString();
+    }
+
+    public TreeNode deserialize(String data) {
+        if (data.length() == 0) {
+            return null;
+        }
+        String[] text = data.split(SEP);
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        TreeNode root = new TreeNode(Integer.parseInt(text[0]));
+        queue.add(root);
+        for (int i = 1; i < text.length; i++) {
+            TreeNode node = queue.poll();
+            if (!text[i].equals(NULL)) {
+                node.left = new TreeNode(Integer.parseInt(text[i]));
+                queue.add(node.left);
+            }
+            if (!text[++i].equals(NULL)) {
+                node.right = new TreeNode(Integer.parseInt(text[i]));
+                queue.add(node.right);
+            }
+        }
+        return root;
+    }
 }
