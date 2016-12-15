@@ -7,35 +7,26 @@ import java.util.Arrays;
  */
 
 public class OneEditDistance {
-
-    // 耗时1ms
+    /**
+     * 最容易错的是结尾的条件sL != tL
+     */
     public boolean isOneEditDistance(String s, String t) {
-        if (s.length() < t.length()) {
-            return isOneEditDistance(t, s);
-        }
-
-        if (s.length() - t.length() > 1) {
+        int sL = s.length(), tL = t.length();
+        if (Math.abs(sL - tL) > 1) {
             return false;
         }
-
-        char[] ss = s.toCharArray();
-        char[] tt = t.toCharArray();
-
-        for (int i = 0; i < ss.length; i++) {
-            if (i >= tt.length || ss[i] != tt[i]) {
-                if (ss.length == tt.length) {
-                    return equals(ss, i + 1, tt, i + 1);
+        if (sL > tL) {
+            return isOneEditDistance(t, s);
+        }
+        for (int i = 0; i < sL; i++) {
+            if (s.charAt(i) != t.charAt(i)) {
+                if (sL < tL) {
+                    return s.substring(i).equals(t.substring(i + 1));
                 } else {
-                    return equals(ss, i + 1, tt, i);
+                    return s.substring(i + 1).equals(t.substring(i + 1));
                 }
             }
         }
-
-        return false;
-    }
-
-    private boolean equals(char[] s, int si, char[] t, int ti) {
-        for ( ; si < s.length && ti < t.length && s[si] == t[ti]; si++, ti++);
-        return si == s.length && ti == t.length;
+        return sL != tL;
     }
 }
