@@ -3,6 +3,7 @@ package com.inuker.solution;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -20,6 +21,58 @@ public class Solution {
     private static final String SEP = ",";
     private static final String NULL = "X";
 
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (!stack.isEmpty() || root != null) {
+            sb.append(root != null ? root.val : NULL).append(SEP);
+
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop().right;
+            }
+        }
+        return sb.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        if (data.length() == 0) {
+            return null;
+        }
+        String[] texts = data.split(SEP);
+        Queue<String> queue = new LinkedList<String>(Arrays.asList(texts));
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode root = getNode(queue), node = root;
+
+        while (!queue.isEmpty()) {
+            if (node == null) {
+                node = stack.pop();
+                node.right = getNode(queue);
+                node = node.right;
+            } else {
+                stack.push(node);
+                node.left = getNode(queue);
+                node = node.left;
+            }
+        }
+
+        return root;
+    }
+
+    private TreeNode getNode(Queue<String> queue) {
+        if (queue.isEmpty()) {
+            return null;
+        }
+        String text = queue.poll();
+        if (text.equals(NULL)) {
+            return null;
+        }
+        return new TreeNode(Integer.parseInt(text));
+    }
+
     public List<Integer> preorderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         List<Integer> result = new LinkedList<Integer>();
@@ -33,43 +86,6 @@ public class Solution {
             }
         }
         return result;
-    }
-
-    public String serialize(TreeNode root) {
-        StringBuilder sb = new StringBuilder();
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        while (!stack.isEmpty() || root != null) {
-            if (root != null) {
-                sb.append(root.val).append(SEP);
-                stack.push(root.right);
-                stack.push(root.left);
-            } else {
-                root = stack.pop();
-            }
-        }
-        return sb.toString();
-    }
-
-    // Decodes your encoded data to tree.
-    public TreeNode deserialize(String data) {
-        String[] texts = data.split(SEP);
-        Queue<String> queue = new LinkedList<String>(Arrays.asList(texts));
-        return helper(queue);
-    }
-
-    private TreeNode helper(Queue<String> queue) {
-        if (queue.isEmpty()) {
-            return null;
-        }
-        String text = queue.poll();
-        if (text.equals(NULL)) {
-            return null;
-        }
-        int val = Integer.valueOf(text);
-        TreeNode root = new TreeNode(val);
-        root.left = helper(queue);
-        root.right = helper(queue);
-        return root;
     }
 
     public List<Integer> inorderTraversal(TreeNode root) {

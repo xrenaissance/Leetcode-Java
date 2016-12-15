@@ -1,8 +1,10 @@
 package com.inuker.solution;
 
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Created by dingjikerbo on 2016/11/16.
@@ -19,9 +21,9 @@ import java.util.Queue;
 
 /**
  * 要注意的是分隔符不要加重复了，比如1,X,,X这样的，重复的话在split时会有空串
+ * 分递归版和非递归版，递归版的如果树大了可能栈溢出
  */
 public class Codec {
-
     // 这里的分隔符是有讲究的，如果换成'.'则在split的时候要转义，但是','不用
     private static final String SEP = ".";
 
@@ -60,4 +62,58 @@ public class Codec {
         root.right = helper(queue);
         return root;
     }
+
+    /** 下面是非递归版的DFS
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (!stack.isEmpty() || root != null) {
+            sb.append(root != null ? root.val : NULL).append(SEP);
+
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop().right;
+            }
+        }
+        return sb.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        if (data.length() == 0) {
+            return null;
+        }
+        String[] texts = data.split(SEP);
+        Queue<String> queue = new LinkedList<String>(Arrays.asList(texts));
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode root = getNode(queue), node = root;
+
+        while (!queue.isEmpty()) {
+            if (node == null) {
+                node = stack.pop();
+                node.right = getNode(queue);
+                node = node.right;
+            } else {
+                stack.push(node);
+                node.left = getNode(queue);
+                node = node.left;
+            }
+        }
+
+        return root;
+    }
+
+    private TreeNode getNode(Queue<String> queue) {
+        if (queue.isEmpty()) {
+            return null;
+        }
+        String text = queue.poll();
+        if (text.equals(NULL)) {
+            return null;
+        }
+        return new TreeNode(Integer.parseInt(text));
+    }
+     */
 }
