@@ -16,6 +16,10 @@ import java.util.Queue;
  TreeNode node = code.deserialize(data);
  System.out.println(String.format("%d, %s, %s", node.val, node.left, node.right));
  */
+
+/**
+ * 要注意的是分隔符不要加重复了，比如1,X,,X这样的，重复的话在split时会有空串
+ */
 public class Codec {
 
     // 这里的分隔符是有讲究的，如果换成'.'则在split的时候要转义，但是','不用
@@ -26,40 +30,34 @@ public class Codec {
 
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
-        serialize(root, sb);
+        if (root != null) {
+            sb.append(root.val).append(SEP);
+            sb.append(serialize(root.left)).append(SEP);
+            sb.append(serialize(root.right));
+        } else {
+            sb.append(NULL);
+        }
         return sb.toString();
     }
 
-    private void serialize(TreeNode root, StringBuilder sb) {
-        if (root == null) {
-            sb.append(NULL).append(SEP);
-        } else {
-            sb.append(root.val).append(SEP);
-            serialize(root.left, sb);
-            serialize(root.right, sb);
-        }
-    }
-
     public TreeNode deserialize(String data) {
-        Queue<String> queue = new LinkedList<String>();
-        queue.addAll(Arrays.asList(data.split(SEP)));
-        return deserialize(queue);
+        String[] texts = data.split(SEP);
+        Queue<String> queue = new LinkedList<String>(Arrays.asList(texts));
+        return helper(queue);
     }
 
-    private TreeNode deserialize(Queue<String> queue) {
+    private TreeNode helper(Queue<String> queue) {
         if (queue.isEmpty()) {
             return null;
         }
-
-        String s = queue.poll();
-
-        if (s.equals(NULL)) {
+        String text = queue.poll();
+        if (text.equals(NULL)) {
             return null;
         }
-
-        TreeNode root = new TreeNode(Integer.valueOf(s));
-        root.left = deserialize(queue);
-        root.right = deserialize(queue);
+        int val = Integer.valueOf(text);
+        TreeNode root = new TreeNode(val);
+        root.left = helper(queue);
+        root.right = helper(queue);
         return root;
     }
 }

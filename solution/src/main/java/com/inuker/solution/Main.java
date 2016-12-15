@@ -13,7 +13,11 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        boolean flag  = new Solution().isMatch("C", "*?*");
-        System.out.println(flag);
+        TreeNode root = TreeNode.buildTree(new Integer[] {
+                1
+        });
+        String t = new Solution().serialize(root);
+        System.out.println(t);
+
     }
 }

@@ -17,6 +17,43 @@ import java.util.Stack;
 
 public class Solution {
 
+    private static final String SEP = ",";
+    private static final String NULL = "X";
+
+    public String serialize(TreeNode root) {
+        StringBuilder sb = new StringBuilder();
+        if (root != null) {
+            sb.append(root.val).append(SEP);
+            sb.append(serialize(root.left)).append(SEP);
+            sb.append(serialize(root.right));
+        } else {
+            sb.append(NULL);
+        }
+        return sb.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        String[] texts = data.split(SEP);
+        Queue<String> queue = new LinkedList<String>(Arrays.asList(texts));
+        return helper(queue);
+    }
+
+    private TreeNode helper(Queue<String> queue) {
+        if (queue.isEmpty()) {
+            return null;
+        }
+        String text = queue.poll();
+        if (text.equals(NULL)) {
+            return null;
+        }
+        int val = Integer.valueOf(text);
+        TreeNode root = new TreeNode(val);
+        root.left = helper(queue);
+        root.right = helper(queue);
+        return root;
+    }
+
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new LinkedList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
