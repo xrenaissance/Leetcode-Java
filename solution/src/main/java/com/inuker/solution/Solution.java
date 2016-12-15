@@ -20,14 +20,32 @@ public class Solution {
     private static final String SEP = ",";
     private static final String NULL = "X";
 
+    public List<Integer> preorderTraversal(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> result = new LinkedList<Integer>();
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                stack.push(root);
+                result.add(root.val);
+                root = root.left;
+            } else {
+                root = stack.pop().right;
+            }
+        }
+        return result;
+    }
+
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
-        if (root != null) {
-            sb.append(root.val).append(SEP);
-            sb.append(serialize(root.left)).append(SEP);
-            sb.append(serialize(root.right));
-        } else {
-            sb.append(NULL);
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                sb.append(root.val).append(SEP);
+                stack.push(root.right);
+                stack.push(root.left);
+            } else {
+                root = stack.pop();
+            }
         }
         return sb.toString();
     }
