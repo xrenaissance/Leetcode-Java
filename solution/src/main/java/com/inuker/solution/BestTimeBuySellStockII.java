@@ -9,6 +9,6 @@ package com.inuker.solution;
 public class BestTimeBuySellStockII {
 
     public int maxProfit(int[] prices) {
-        
+
     }
 }
