@@ -18,6 +18,81 @@ import java.util.Stack;
 
 public class Solution {
 
+    public ListNode mergeKLists(ListNode[] lists) {
+        Queue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
+            @Override
+            public int compare(ListNode o1, ListNode o2) {
+                return o1.val - o2.val;
+            }
+        });
+        for (ListNode node : lists) {
+            if (node != null) {
+                queue.add(node);
+            }
+        }
+        ListNode dummy = new ListNode(0);
+        for (ListNode node = dummy; !queue.isEmpty(); node = node.next) {
+            ListNode next = queue.poll();
+            if (next.next != null) {
+                queue.add(next.next);
+            }
+            node.next = next;
+        }
+        return dummy.next;
+    }
+
+    private int[] mRoots;
+    private int mCount;
+
+    public List<Integer> numIslands2(int m, int n, int[][] positions) {
+        mRoots = new int[m * n];
+        Arrays.fill(mRoots, -1);
+
+        List<Integer> list = new LinkedList<Integer>();
+        for (int[] position : positions) {
+            int x = position[0], y = position[1];
+            int z = x * n + y;
+
+            mRoots[z] = z;
+            mCount++;
+
+            if (x > 0 && mRoots[z - n] != -1) {
+                union(z, z - n);
+            }
+
+            if (x < m - 1 && mRoots[z + n] != -1) {
+                union(z, z + n);
+            }
+
+            if (y > 0 && mRoots[z - 1] != -1) {
+                union(z, z - 1);
+            }
+
+            if (y < n - 1 && mRoots[z + 1] != -1) {
+                union(z, z + 1);
+            }
+
+            list.add(mCount);
+        }
+        return list;
+    }
+
+    private void union(int i, int j) {
+        int i0 = find(i);
+        int j0 = find(j);
+        if (i0 != j0) {
+            mRoots[i0] = j0;
+            mCount--;
+        }
+    }
+
+    private int find(int i) {
+        while (mRoots[i] != i) {
+            i = mRoots[i];
+        }
+        return i;
+    }
+
     private void dfs(char[][] grid, int i, int j) {
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != '1') {
             return;

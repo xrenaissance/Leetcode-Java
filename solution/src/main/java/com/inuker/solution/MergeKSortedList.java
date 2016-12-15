@@ -39,33 +39,29 @@ public class MergeKSortedList {
 
     // 耗时23ms
     // 时间复杂度为O(knlgn)
+    /**
+     * 这里要注意lists中可能有node为null
+     */
     public ListNode mergeKLists2(ListNode[] lists) {
-        Queue<ListNode> queue = new PriorityQueue<ListNode>(new Comparator<ListNode>() {
+        Queue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
             @Override
             public int compare(ListNode o1, ListNode o2) {
-                return o1.val > o2.val ? 1 : -1;
+                return o1.val - o2.val;
             }
         });
-
         for (ListNode node : lists) {
             if (node != null) {
                 queue.add(node);
             }
         }
-
-        ListNode dummy = new ListNode(0), cur = dummy;
-
-        while (!queue.isEmpty()) {
-            ListNode node = queue.poll();
-
-            cur.next = node;
-            cur = cur.next;
-
-            if (node.next != null) {
-                queue.add(node.next);
+        ListNode dummy = new ListNode(0);
+        for (ListNode node = dummy; !queue.isEmpty(); node = node.next) {
+            ListNode next = queue.poll();
+            if (next.next != null) {
+                queue.add(next.next);
             }
+            node.next = next;
         }
-
         return dummy.next;
     }
 
