@@ -38,6 +38,7 @@ Facebook题目列表(24)
 |173|[Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BSTIterator.java)|100|
 |284|[Peeking Iterator](https://leetcode.com/problems/peeking-iterator/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PeekingIterator.java)|100|
 |281|[Zigzag Iterator](https://leetcode.com/problems/zigzag-iterator/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ZigzagIterator.java)|85|
+|251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Vector2D.java)|100|
 |121|[Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BestTimeBuySellStock.java)|
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|
 |139|[Word Break](https://leetcode.com/problems/word-break/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreak.java)|

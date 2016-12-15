@@ -125,6 +125,7 @@
 |242|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidAnagram.java)|100|
 |243|[Shortest Word Distance](https://leetcode.com/problems/shortest-word-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestWordDistance.java)|80|
 |250|[Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountUnivalueSubtrees.java)|70|
+|251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Vector2D.java)|100|
 |252|[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRooms.java)|100|
 |253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRoomsII.java)|90|
 |255|[Verify Preorder Sequence in Binary Search Tree](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/VerifyPreorderSequenceInBinarySearchTree.java)|85|
