@@ -6,6 +6,10 @@ import java.util.Map;
 /**
  * Created by dingjikerbo on 2016/11/16.
  */
+
+/**
+ * https://leetcode.com/articles/two-sum/
+ */
 public class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
