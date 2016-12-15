@@ -5,7 +5,7 @@ import com.inuker.solution.TreeNode;
 import java.util.Stack;
 
 /**
- * Created by liwentian on 2016/12/15.
+ * Created by dingjikerbo on 2016/12/15.
  */
 
 public class BSTIterator {
