@@ -25,6 +25,9 @@ public class ZigzagIterator {
         }
     }
 
+    /**
+     * 这里非常容易错
+     */
     public int next() {
         Iterator itor = mIterators.get(mCurIndex);
         int value = (int) itor.next();

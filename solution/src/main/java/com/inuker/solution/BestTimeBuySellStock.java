@@ -4,6 +4,9 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/11/17.
  */
 
+/**
+ * https://leetcode.com/articles/best-time-buy-and-sell-stock/
+ */
 public class BestTimeBuySellStock {
 
     public int maxProfit(int[] prices) {
