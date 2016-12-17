@@ -19,32 +19,32 @@ Facebook题目列表(24)
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|100|
 |167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumII.java)|100|
 |170|[Two Sum III - Data structure design](https://leetcode.com/problems/two-sum-iii-data-structure-design/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIII.java)|100|
-|75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)|
+|75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)||
 |218|[The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)||
-|43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MultiplyStrings.java)|
-|49|[Group Anagrams](https://leetcode.com/problems/anagrams/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GroupAnagrams.java)|
-|238|[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ProductOfArrayExceptSelf.java)|
-|38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|
-|209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)|
+|43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MultiplyStrings.java)||
+|49|[Group Anagrams](https://leetcode.com/problems/anagrams/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GroupAnagrams.java)||
+|238|[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ProductOfArrayExceptSelf.java)||
+|38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)||
+|209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)||
 |12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToRoman.java)||
 |13|[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RomanToInteger.java)||
-|71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)|
-|128|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestConsecutiveSequence.java)|
-|215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)|
-|28|[ Implement strStr()](https://leetcode.com/problems/implement-strstr/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrStr.java)|
-|88|[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeSortedArray.java)|
-|334|[Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IncreasingTripletSubsequence.java)|
-|33|[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInRotatedSortedArray.java)|
-|50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Pow.java)|
-|286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)|
+|71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)||
+|128|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestConsecutiveSequence.java)||
+|215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)||
+|28|[ Implement strStr()](https://leetcode.com/problems/implement-strstr/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrStr.java)||
+|88|[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeSortedArray.java)||
+|334|[Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IncreasingTripletSubsequence.java)||
+|33|[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInRotatedSortedArray.java)||
+|50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Pow.java)||
+|286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)||
 |269|[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)||
 |68|[Text Justification](https://leetcode.com/problems/text-justification/)||
-|221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)|
-|85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)|
+|221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)||
+|85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)||
 |256|[Paint House](https://leetcode.com/problems/paint-house/)|||
 |265|[Paint House II](https://leetcode.com/problems/paint-house-ii)||
-|168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)||
-|171|[Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)|||
+|168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnTitle.java)||
+|171|[Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnNumber.java)||
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)||
 
 <br/>
