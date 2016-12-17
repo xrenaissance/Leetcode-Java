@@ -163,6 +163,7 @@
 |264|[Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumberII.java)|70|
 |266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)|||
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)|||
+|269|[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AlienDictionary.java)||
 |270|[Closest Binary Search Tree Value](https://leetcode.com/problems/closest-binary-search-tree-value/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ClosestBinarySearchTreeValue.java)|80|
 |271|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EncodeAndDecodeStrings.java)|65|
 |272|[Closest Binary Search Tree Value II](https://leetcode.com/problems/closest-binary-search-tree-value-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ClosestBinarySearchTreeValueII.java)|0|
