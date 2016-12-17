@@ -92,7 +92,7 @@ Facebook题目列表(24)
 |207|[Course Schedule](https://leetcode.com/problems/course-schedule/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseSchedule.java)||
 |210|[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseScheduleII.java)|
 |79|[Word Search](https://leetcode.com/problems/word-search/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearch.java)|
-|212|[Word Search II](https://leetcode.com/problems/word-search-ii/)|||
+|212|[Word Search II](https://leetcode.com/problems/word-search-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearchII.java)||
 |133|[Clone Graph](https://leetcode.com/problems/clone-graph/)||
 |261|[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)||
 |200|[Number of Islands](https://leetcode.com/problems/number-of-islands/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslands.java)|90|
@@ -127,11 +127,11 @@ Facebook题目列表(24)
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumII.java)|70|
 |216|[Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumIII.java)|65|
 |377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/combinationSum4.java)|65|
-|46|[Permutations](https://leetcode.com/problems/permutations/)|||
+|46|[Permutations](https://leetcode.com/problems/permutations/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Permutations.java)||
 |47|[Permutations II](https://leetcode.com/problems/permutations-ii/)|||
-|77|[Combinations](Combinations)|||
-|31|[Next Permutation](https://leetcode.com/problems/next-permutation/)|||
-|60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)|||
+|77|[Combinations](https://leetcode.com/problems/combinations)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Combinations.java)||
+|31|[Next Permutation](https://leetcode.com/problems/next-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NextPermutation.java)||
+|60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PermutationSequence.java)||
 
 <br/>
 
