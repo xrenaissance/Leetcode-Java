@@ -9,8 +9,6 @@ Facebook题目列表(24)
 |67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|95|
 |273|[Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToEnglishWords.java)|80|
 |91|[Decode Ways](https://leetcode.com/problems/decode-ways/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeWays.java)|85|
-|10|[Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RegularExpressionMatching.java)|85|
-|44|[Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WildcardMatching.java)|80|
 |15|[3Sum](https://leetcode.com/problems/3sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThreeSum.java)|85|
 |277|[Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindCelebrity.java)|100|
 |161|[One Edit Distance](https://leetcode.com/problems/one-edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/OneEditDistance.java)|100|
@@ -22,14 +20,14 @@ Facebook题目列表(24)
 |167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumII.java)|100|
 |170|[Two Sum III - Data structure design](https://leetcode.com/problems/two-sum-iii-data-structure-design/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIII.java)|100|
 |75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)|
-|218|[The Skyline Problem](http://baidu.com)||
+|218|[The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)||
 |43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MultiplyStrings.java)|
 |49|[Group Anagrams](https://leetcode.com/problems/anagrams/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GroupAnagrams.java)|
 |238|[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ProductOfArrayExceptSelf.java)|
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|
 |209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)|
-|12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)|||
-|13|[Roman to Integer](http://baidu.com)||
+|12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToRoman.java)||
+|13|[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RomanToInteger.java)||
 |71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)|
 |128|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestConsecutiveSequence.java)|
 |215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)|
@@ -39,14 +37,23 @@ Facebook题目列表(24)
 |33|[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInRotatedSortedArray.java)|
 |50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Pow.java)|
 |286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)|
-|269|[Alien Dictionary](http://baidu.com)||
-|68|[Text Justification]()||
+|269|[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)||
+|68|[Text Justification](https://leetcode.com/problems/text-justification/)||
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)|
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)|
-|265|[Paint House II]()||
-|168|[Excel Sheet Column Title]()||
-|275|[H-Index II](https://leetcode.com/problems/h-index-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HIndexII.java)|
-|410|[Split Array Largest Sum]()||
+|256|[Paint House](https://leetcode.com/problems/paint-house/)|||
+|265|[Paint House II](https://leetcode.com/problems/paint-house-ii)||
+|168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)||
+|171|[Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)|||
+|410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)||
+
+<br/>
+
+## 正则匹配
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+|10|[Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RegularExpressionMatching.java)|85|
+|44|[Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WildcardMatching.java)|80|
 
 <br/>
 
@@ -86,8 +93,8 @@ Facebook题目列表(24)
 |210|[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)||
 |79|[Word Search](https://leetcode.com/problems/word-search/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearch.java)|
 |212|[Word Search II](https://leetcode.com/problems/word-search-ii/)|||
-|133|[Clone Graph](http://baidu.com)||
-|261|[Graph Valid Tree]()||
+|133|[Clone Graph](https://leetcode.com/problems/clone-graph/)||
+|261|[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)||
 |200|[Number of Islands](https://leetcode.com/problems/number-of-islands/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslands.java)|90|
 |305|[Number of Islands II](https://leetcode.com/problems/number-of-islands-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslandsII.java)|85|
 |130|[Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SurroundedRegions.java)|65|
