@@ -174,15 +174,16 @@ Facebook题目列表(24)
 |278|[First Bad Version](https://leetcode.com/problems/first-bad-version/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FirstBadVersion.java)|100|
 |374|[Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GuessNumberHigherOrLower.java)|100|
 |375|[Guess Number Higher or Lower II](https://leetcode.com/problems/guess-number-higher-or-lower-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GuessNumberHigherOrLowerII.java)|60|
-|153|[Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)|||
-|154|[Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)|||
+|153|[Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindMinimumInRotatedSortedArray.java)||
+|154|[Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindMinimumInRotatedSortedArrayII.java)||
 |274|[H-Index](https://leetcode.com/problems/h-index/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HIndex.java)|80|
 |275|[H-Index II](https://leetcode.com/problems/h-index-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HIndexII.java)|75|
 |69|[Sqrt(x)](https://leetcode.com/problems/sqrtx/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Sqrt.java)|
-|287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)|||
-|74|[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)|||
-|34|[Search for a Range](https://leetcode.com/problems/search-for-a-range/)|||
-|35|[Search Insert Position](https://leetcode.com/problems/search-insert-position/)|||
+|287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindTheDuplicateNumber.java)||
+|74|[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Search2DMatrix.java)||
+|240|[Search a 2D Matrix II](https://leetcode.com/problems/search-a-2d-matrix-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Search2DMatrixII.java)|100|
+|34|[Search for a Range](https://leetcode.com/problems/search-for-a-range/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchForARange.java)||
+|35|[Search Insert Position](https://leetcode.com/problems/search-insert-position/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInsertPosition.java)||
 
 <br/>
 
