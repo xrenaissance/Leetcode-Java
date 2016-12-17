@@ -64,8 +64,8 @@ Facebook题目列表(24)
 |27|[Remove Element](https://leetcode.com/problems/remove-element/)|||
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedArray.java)|
 |80|[Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedArrayII.java)|
-|82|[Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)|||
-|83|[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)|||
+|83|[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedList.java)|100|
+|82|[Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedListII.java)|75|
 |203|[Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)|||
 |402|[Remove K Digits](https://leetcode.com/problems/remove-k-digits/)|||
 |316|[Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)|||
@@ -89,8 +89,8 @@ Facebook题目列表(24)
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadder.java)|
-|207|[Course Schedule](https://leetcode.com/problems/course-schedule/)|||
-|210|[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)||
+|207|[Course Schedule](https://leetcode.com/problems/course-schedule/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseSchedule.java)||
+|210|[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseScheduleII.java)|
 |79|[Word Search](https://leetcode.com/problems/word-search/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearch.java)|
 |212|[Word Search II](https://leetcode.com/problems/word-search-ii/)|||
 |133|[Clone Graph](https://leetcode.com/problems/clone-graph/)||
