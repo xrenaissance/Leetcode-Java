@@ -11,6 +11,9 @@ import java.util.Set;
  * Created by dingjikerbo on 16/12/17.
  */
 
+/**
+ * 这道题需要进一步研究
+ */
 public class AlienDictionary {
 
     public String alienOrder(String[] words) {
