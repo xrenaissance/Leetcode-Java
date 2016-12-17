@@ -50,6 +50,7 @@ Facebook题目列表(24)
 |275|[H-Index II](https://leetcode.com/problems/h-index-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HIndexII.java)|
 |410|[Split Array Largest Sum]()||
 
+<br/>
 
 ## Remove from Set
 |#|Title|Solution|Score|
@@ -64,6 +65,8 @@ Facebook题目列表(24)
 |402|[Remove K Digits](https://leetcode.com/problems/remove-k-digits/)|||
 |316|[Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)|||
 
+<br/>
+
 ## 关于区间
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
@@ -75,6 +78,7 @@ Facebook题目列表(24)
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeIntervals.java)|100|
 |57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|100|
 
+<br/>
 
 ## BFS/DFS，动态规划，拓扑，图
 |#|Title|Solution|Score|
@@ -92,6 +96,7 @@ Facebook题目列表(24)
 |139|[Word Break](https://leetcode.com/problems/word-break/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreak.java)|
 |140|[Word Break II](https://leetcode.com/problems/word-break-ii/)|||
 
+<br/>
 
 ## 链表
 |#|Title|Solution|Score|
@@ -100,6 +105,7 @@ Facebook题目列表(24)
 |23|[Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeKSortedList.java)|100|
 |206|[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseLinkedList.java)|
 
+<br/>
 
 ## 排列组合子集
 |#|Title|Solution|Score|
@@ -121,6 +127,8 @@ Facebook题目列表(24)
 |77|[Combinations](Combinations)|||
 |31|[Next Permutation](https://leetcode.com/problems/next-permutation/)|||
 |60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)|||
+
+<br/>
 
 ## 设计
 |#|Title|Solution|Score|
@@ -144,6 +152,7 @@ Facebook题目列表(24)
 |380|[Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RandomizedSet.java)|
 |381|[Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)|||
 
+<br/>
 
 ## Nested List
 |#|Title|Solution|Score|
@@ -152,12 +161,14 @@ Facebook题目列表(24)
 |339|[Nested List Weight Sum](https://leetcode.com/problems/nested-list-weight-sum/)|||
 |364|[Nested List Weight Sum II](https://leetcode.com/problems/nested-list-weight-sum-ii/)|||
 
+<br/>
+
 ## 二分查找
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |278|[First Bad Version](https://leetcode.com/problems/first-bad-version/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FirstBadVersion.java)|100|
 
-
+<br/>
 
 ## 随机采样
 |#|Title|Solution|Score|
@@ -169,6 +180,7 @@ Facebook题目列表(24)
 |138|[Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CopyListWithRandomPointer.java)|95|
 |384|[Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShuffleAnArray.java)|75|
 
+<br/>
 
 ## 关于二叉树
 |#|Title|Solution|Score|
@@ -185,6 +197,7 @@ Facebook题目列表(24)
 |98|[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidateBinarySearchTree.java)|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|100|
 
+<br/>
 
 ## 关于Parentheses
 |#|Title|Solution|Score|
@@ -195,6 +208,8 @@ Facebook题目列表(24)
 |241|[Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)|||
 |32|[Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)|||
 
+<br/>
+
 ## 关于股票交易
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
@@ -204,7 +219,7 @@ Facebook题目列表(24)
 |188|[Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)|||
 |309|[Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)|||
 
-
+<br/>
 
 ## 关于Palindrome
 |#|Title|Solution|Score|
