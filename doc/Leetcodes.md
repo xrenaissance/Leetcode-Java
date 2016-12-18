@@ -158,6 +158,7 @@
 |252|[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRooms.java)|100|
 |253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRoomsII.java)|90|
 |255|[Verify Preorder Sequence in Binary Search Tree](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/VerifyPreorderSequenceInBinarySearchTree.java)|85|
+|256|[Paint House](https://leetcode.com/problems/paint-house/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouse.java)|95|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|80|
 |259|[3Sum Smaller](https://leetcode.com/problems/3sum-smaller/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThreeSumSmaller.java)|95|
 |263|[Ugly Number](https://leetcode.com/problems/ugly-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumber.java)|85|

@@ -39,8 +39,6 @@ Facebook题目列表(24)
 |286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)||
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)||
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)||
-|256|[Paint House](https://leetcode.com/problems/paint-house/)|||
-|265|[Paint House II](https://leetcode.com/problems/paint-house-ii)||
 |168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnTitle.java)||
 |171|[Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnNumber.java)||
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)||
@@ -105,6 +103,8 @@ Facebook题目列表(24)
 |130|[Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SurroundedRegions.java)|65|
 |139|[Word Break](https://leetcode.com/problems/word-break/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreak.java)|
 |140|[Word Break II](https://leetcode.com/problems/word-break-ii/)|||
+|256|[Paint House](https://leetcode.com/problems/paint-house/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouse.java)|95|
+|265|[Paint House II](https://leetcode.com/problems/paint-house-ii)||
 
 <br/>
 
