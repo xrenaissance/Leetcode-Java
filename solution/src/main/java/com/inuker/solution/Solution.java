@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -17,6 +18,65 @@ import java.util.Stack;
  */
 
 public class Solution {
+
+    public String alienOrder(String[] words) {
+        int[] degree = new int[26];
+        Arrays.fill(degree, -1);
+        int count = 0;
+        for (String word : words) {
+            for (char c : word.toCharArray()) {
+                if (degree[c - 'a'] != 0) {
+                    degree[c - 'a'] = 0;
+                    count++;
+                }
+            }
+        }
+        HashMap<Character, Set<Character>> map = new HashMap<>();
+        for (int i = 0; i < words.length - 1; i++) {
+            String first = words[i], second = words[i + 1];
+            int len = Math.min(first.length(), second.length());
+            for (int j = 0; j < len; j++) {
+                if (first.charAt(j) != second.charAt(j)) {
+                    Set<Character> set = map.get(first.charAt(j));
+                    if (set == null) {
+                        set = new HashSet<Character>();
+                        map.put(first.charAt(j), set);
+                    }
+                    if (set.add(second.charAt(j))) {
+                        degree[second.charAt(j) - 'a']++;
+                    }
+                    break;
+                } else {
+                    if (j + 1 >= second.length() && j + 1 < first.length()) {
+                        return "";
+                    }
+                }
+            }
+        }
+        Queue<Character> queue = new LinkedList<Character>();
+        for (int i = 0; i < degree.length; i++) {
+            if (degree[i] == 0) {
+                queue.add((char) ('a' + i));
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        while (!queue.isEmpty()) {
+            Character from = queue.poll();
+            sb.append(from);
+            Set<Character> set = map.get(from);
+            if (set != null) {
+                for (Character to: map.get(from)) {
+                    if (--degree[to - 'a'] == 0) {
+                        queue.add(to);
+                    }
+                }
+            }
+        }
+        if (sb.length() != count) {
+            return "";
+        }
+        return sb.toString();
+    }
 
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> result = new LinkedList<String>();

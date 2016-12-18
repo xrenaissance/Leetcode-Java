@@ -13,8 +13,8 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String order = new AlienDictionary().alienOrder(new String[] {
-                "wrt", "wrf", "er", "ett", "rftt"
+        String order = new Solution().alienOrder(new String[] {
+                "za", "zb", "ca", "cb"
         });
         System.out.println(order);
     }

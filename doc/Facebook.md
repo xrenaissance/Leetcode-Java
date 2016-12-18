@@ -37,8 +37,6 @@ Facebook题目列表(24)
 |33|[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInRotatedSortedArray.java)||
 |50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Pow.java)||
 |286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)||
-|68|[Text Justification](https://leetcode.com/problems/text-justification/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TextJustification.java)||
-|418|[Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SentenceScreenFitting.java)|65|
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)||
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)||
 |256|[Paint House](https://leetcode.com/problems/paint-house/)|||
@@ -48,6 +46,12 @@ Facebook题目列表(24)
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)||
 
 <br/>
+
+## 文本格式化
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+|418|[Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SentenceScreenFitting.java)|65|
+|68|[Text Justification](https://leetcode.com/problems/text-justification/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TextJustification.java)||
 
 ## 正则匹配
 |#|Title|Solution|Score|
