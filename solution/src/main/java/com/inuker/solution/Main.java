@@ -13,9 +13,10 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String order = new Solution().alienOrder(new String[] {
-                "za", "zb", "ca", "cb"
+        int min = new PaintHouseII().minCostII3(new int[][] {
+                {1, 5, 3},
+                {2, 9, 4}
         });
-        System.out.println(order);
+        System.out.println(min);
     }
 }

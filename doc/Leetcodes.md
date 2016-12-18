@@ -163,6 +163,7 @@
 |259|[3Sum Smaller](https://leetcode.com/problems/3sum-smaller/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThreeSumSmaller.java)|95|
 |263|[Ugly Number](https://leetcode.com/problems/ugly-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumber.java)|85|
 |264|[Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumberII.java)|70|
+|265|[Paint House II](https://leetcode.com/problems/paint-house-ii)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouseII.java)|60|
 |266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)|||
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)|||
 |269|[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AlienDictionary.java)||
