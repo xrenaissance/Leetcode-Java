@@ -41,6 +41,7 @@
 |57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|75|
 |60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PermutationSequence.java)||
 |67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|100|
+|68|[Text Justification](https://leetcode.com/problems/text-justification/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TextJustification.java)||
 |69|[Sqrt(x)](https://leetcode.com/problems/sqrtx/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Sqrt.java)|85|
 |71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)|80|
 |72|[Edit Distance](https://leetcode.com/problems/edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EditDistance.java)|75|

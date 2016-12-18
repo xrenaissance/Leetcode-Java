@@ -18,6 +18,46 @@ import java.util.Stack;
 
 public class Solution {
 
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> result = new LinkedList<String>();
+
+        int count = 0, last = 0;
+        for (int first = 0; first < words.length; first = last) {
+            for (last = first, count = 0; last < words.length; last++) {
+                if (count + words[last].length() + last - first > maxWidth) {
+                    break;
+                }
+                count += words[last].length();
+            }
+            StringBuilder sb = new StringBuilder();
+            if (last == words.length || last - first == 1) {
+                for (int i = first; i < last; i++) {
+                    sb.append(words[i]).append(" ");
+                }
+                sb.deleteCharAt(sb.length() - 1);
+                for ( ; sb.length() < maxWidth; sb.append(" "));
+            } else {
+                int spaces = maxWidth - count;
+                int avg = spaces / (last - first - 1);
+                int extraSpaces = spaces - avg * (last - first - 1);
+                for (int i = first; i < last; i++) {
+                    sb.append(words[i]);
+                    if (i < last - 1) {
+                        int curSpaces = avg + (extraSpaces > 0 ? 1 : 0);
+                        for (int j = 0; j < curSpaces; j++) {
+                            sb.append(" ");
+                        }
+                        extraSpaces--;
+                    }
+                }
+            }
+
+            result.add(sb.toString());
+        }
+
+        return result;
+    }
+
     public int maxProfit(int[] prices) {
         if (prices.length == 0) {
             return 0;
