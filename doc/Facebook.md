@@ -41,7 +41,7 @@ Facebook题目列表(24)
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)||
 |168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnTitle.java)||
 |171|[Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnNumber.java)||
-|410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)||
+|410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SplitArrayLargestSum.java)||
 
 <br/>
 
