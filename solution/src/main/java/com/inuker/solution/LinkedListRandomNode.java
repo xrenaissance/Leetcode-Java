@@ -3,7 +3,7 @@ package com.inuker.solution;
 import java.util.Random;
 
 /**
- * Created by liwentian on 2016/12/17.
+ * Created by dingjikerbo on 2016/12/17.
  */
 
 public class LinkedListRandomNode {

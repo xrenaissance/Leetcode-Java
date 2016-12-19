@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Created by liwentian on 2016/12/17.
+ * Created by dingjikerbo on 2016/12/17.
  */
 
 public class CourseScheduleII {

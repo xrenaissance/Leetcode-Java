@@ -3,7 +3,7 @@ package com.inuker.solution;
 import java.util.HashMap;
 
 /**
- * Created by liwentian on 2016/12/15.
+ * Created by dingjikerbo on 2016/12/15.
  */
 
 public class TwoSumIII {

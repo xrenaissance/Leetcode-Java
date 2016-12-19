@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.Vector;
 
 /**
- * Created by liwentian on 2016/12/17.
+ * Created by dingjikerbo on 2016/12/17.
  */
 
 public class RandomizedCollection {
