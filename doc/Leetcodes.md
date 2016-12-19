@@ -165,7 +165,7 @@
 |263|[Ugly Number](https://leetcode.com/problems/ugly-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumber.java)|85|
 |264|[Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumberII.java)|70|
 |265|[Paint House II](https://leetcode.com/problems/paint-house-ii)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouseII.java)|60|
-|266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)|||
+|266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePermutation.java)|100|
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)|||
 |269|[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AlienDictionary.java)||
 |270|[Closest Binary Search Tree Value](https://leetcode.com/problems/closest-binary-search-tree-value/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ClosestBinarySearchTreeValue.java)|80|
@@ -226,7 +226,7 @@
 |395|[Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithAtLeastKRepeatingCharacters.java)|65|
 |398|[Random Pick Index](https://leetcode.com/problems/random-pick-index/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RandomPickIndex.java)|80|
 |404|[Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SumOfLeftLeaves.java)|80|
-|409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)|||
+|409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)||
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SplitArrayLargestSum.java)||
 |412|[Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FizzBuzz.java)|100|
 |418|[Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SentenceScreenFitting.java)|65|
