@@ -63,7 +63,7 @@ Facebook题目列表(24)
 ## Remove from Set
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
-|19|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)|||
+|19|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveNthNodeFromEndOfList.java)||
 |27|[Remove Element](https://leetcode.com/problems/remove-element/)|||
 |26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedArray.java)|
 |80|[Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedArrayII.java)|

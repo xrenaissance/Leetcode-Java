@@ -13,10 +13,14 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int min = new PaintHouseII().minCostII3(new int[][] {
-                {1, 5, 3},
-                {2, 9, 4}
+        List<List<Integer>> result = new Permutations().permute(new int[] {
+                1, 2, 3
         });
-        System.out.println(min);
+        for (List<Integer> list : result) {
+            for (Integer n : list) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
+        }
     }
 }

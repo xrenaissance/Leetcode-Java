@@ -14,6 +14,7 @@
 |13|[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RomanToInteger.java)||
 |15|[3Sum](https://leetcode.com/problems/3sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThreeSum.java)|70|
 |17|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LetterCombinationOfPhoneNumber.java)|85|
+|19|[Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveNthNodeFromEndOfList.java)||
 |20|[Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidParentheses.java)|100|
 |21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeTwoSortedList.java)|90|
 |22|[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GenerateParentheses.java)|80|
