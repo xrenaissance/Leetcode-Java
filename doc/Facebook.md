@@ -69,7 +69,7 @@ Facebook题目列表(24)
 |80|[Remove Duplicates from Sorted Array II](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedArrayII.java)|
 |83|[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedList.java)|100|
 |82|[Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedListII.java)|75|
-|203|[Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)|||
+|203|[Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveLinkedListElements.java)||
 |402|[Remove K Digits](https://leetcode.com/problems/remove-k-digits/)|||
 |316|[Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)|||
 
