@@ -1,7 +1,7 @@
 package com.inuker.solution;
 
 /**
- * Created by liwentian on 2016/12/20.
+ * Created by dingjikerbo on 2016/12/20.
  */
 
 public class RemoveLinkedListElements {
