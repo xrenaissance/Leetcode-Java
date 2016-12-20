@@ -11,7 +11,6 @@ import java.util.List;
 public class Permutations {
 
     public List<List<Integer>> permute(int[] nums) {
-        Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         permute(nums, result, 0);
         return result;
@@ -38,31 +37,4 @@ public class Permutations {
         nums[left] = nums[right];
         nums[right] = temp;
     }
-
-    /** 第二种写法
-    public List<List<Integer>> permute2(int[] nums) {
-        Arrays.sort(nums);
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        List<Integer> path = new ArrayList<Integer>();
-        permute(nums, result, path);
-        return result;
-    }
-
-    public void permute(int[] nums, List<List<Integer>> result, List<Integer> path) {
-        if (path.size() == nums.length) {
-            result.add(new ArrayList<Integer>(path));
-            return;
-        }
-
-        for (int i = 0; i < nums.length; i++) {
-            if (path.contains(nums[i])) {
-                continue;
-            }
-
-            path.add(nums[i]);
-            permute(nums, result, path);
-            path.remove(path.size() - 1);
-        }
-    }
-     */
 }

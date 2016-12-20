@@ -20,33 +20,6 @@ import java.util.Stack;
 
 public class Solution {
 
-    public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> result = new LinkedList<List<Integer>>();
-        helper(nums, 0, new LinkedList<Integer>(), result);
-        return result;
-    }
-
-    private void helper(int[] nums, int start, List<Integer> list, List<List<Integer>> result) {
-        if (start >= nums.length) {
-            result.add(new ArrayList<Integer>(list));
-            return;
-        }
-
-        for (int i = start; i < nums.length; i++) {
-            swap(nums, start, i);
-            list.add(nums[i]);
-            helper(nums, start + 1, list, result);
-            list.remove(list.size() - 1);
-            swap(nums, start, i);
-        }
-    }
-
-    private void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
-    }
-
     public String alienOrder(String[] words) {
         int[] degree = new int[26];
         Arrays.fill(degree, -1);

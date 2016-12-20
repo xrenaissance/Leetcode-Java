@@ -13,14 +13,5 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<Integer>> result = new Permutations().permute(new int[] {
-                1, 2, 3
-        });
-        for (List<Integer> list : result) {
-            for (Integer n : list) {
-                System.out.print(n + " ");
-            }
-            System.out.println();
-        }
     }
 }
