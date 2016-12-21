@@ -207,6 +207,7 @@
 |325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSizeSubarraySumEqualsK.java)|75|
 |328|[Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/OddEvenLinkedList.java)|90|
 |334|[Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IncreasingTripletSubsequence.java)|75|
+|335|[Self Crossing](https://leetcode.com/problems/self-crossing/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SelfCrossing.java)|80|
 |336|[Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePairs.java)||
 |337|[House Robber III](https://leetcode.com/problems/house-robber-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HouseRobberIII.java)|100|
 |339|[Nested List Weight Sum](https://leetcode.com/problems/nested-list-weight-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NestedListWeightSum.java)||
