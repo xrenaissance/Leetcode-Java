@@ -88,7 +88,14 @@ Facebook题目列表(24)
 
 <br/>
 
-## BFS/DFS，动态规划，拓扑，图
+## DP/动态规划
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+
+
+<br/>
+
+## BFS/DFS，拓扑，图
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadder.java)|
@@ -163,6 +170,17 @@ Facebook题目列表(24)
 |307|[Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumArrayII.java)|70|
 |308|[Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumMatrixII.java)|70|
 |271|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EncodeAndDecodeStrings.java)|65|
+
+<br/>
+
+## Range Sum
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+|303|[Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)|||
+|307|[Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)|||
+|304|[Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)|||
+|308|[Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable/)|||
+|327|[Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)|||
 
 <br/>
 

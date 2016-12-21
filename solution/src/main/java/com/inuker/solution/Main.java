@@ -13,8 +13,11 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        new SelfCrossing().isSelfCrossing(new int[] {
-                1,2,3,4,5,2,2
+        List<Integer> result = new CountOfSmallerNumbersAfterSelf().countSmaller(new int[] {
+                5,7,6,3,4,8
         });
+        for (Integer n : result) {
+            System.out.print(n + " ");
+        }
     }
 }
