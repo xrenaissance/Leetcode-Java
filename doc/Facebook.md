@@ -173,7 +173,7 @@ Facebook题目列表(24)
 
 <br/>
 
-## Range Sum
+## 树状数组BIT
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |303|[Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)|||
