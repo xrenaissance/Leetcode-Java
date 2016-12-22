@@ -13,11 +13,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> result = new CountOfSmallerNumbersAfterSelf().countSmaller(new int[] {
-                5,7,6,3,4,8
-        });
-        for (Integer n : result) {
-            System.out.print(n + " ");
-        }
+        int count = new NumberOfDigitOne().countDigitOne2(1410065408);
+        System.out.println(count);
     }
 }
