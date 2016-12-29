@@ -5,7 +5,7 @@ package com.inuker.solution;
  */
 /**
  * 这道题最重要的是no bug，而不是性能
- * 面试中要给所有cases cover到
+ * 要给所有cases cover到
  * 下面的写法足够简单和直观了
  * DP也可，但是不推荐
  */
@@ -29,16 +29,16 @@ public class RegularExpressionMatching {
 
         if (p.charAt(1) != '*') {
             return s.length() > 0 && isEquals(s, p) && isMatch(s.substring(1), p.substring(1));
-        } else {
-            if (s.length() > 0) {
-                if (isEquals(s, p)) {
-                    return isMatch(s, p.substring(2)) || isMatch(s.substring(1), p);
-                } else {
-                    return isMatch(s, p.substring(2));
-                }
+        }
+
+        if (s.length() > 0) {
+            if (isEquals(s, p)) {
+                return isMatch(s, p.substring(2)) || isMatch(s.substring(1), p);
             } else {
                 return isMatch(s, p.substring(2));
             }
+        } else {
+            return isMatch(s, p.substring(2));
         }
     }
 

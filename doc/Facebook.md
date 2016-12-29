@@ -36,7 +36,6 @@ Facebook题目列表(24)
 |334|[Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IncreasingTripletSubsequence.java)||
 |33|[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInRotatedSortedArray.java)||
 |50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Pow.java)||
-|286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)||
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)||
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)||
 |168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnTitle.java)||
@@ -93,12 +92,14 @@ Facebook题目列表(24)
 |---|----| ----- | ----- |
 
 
+
 <br/>
 
 ## BFS/DFS，拓扑，图
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadder.java)|
+|126|[Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)|||
 |207|[Course Schedule](https://leetcode.com/problems/course-schedule/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseSchedule.java)||
 |210|[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseScheduleII.java)|
 |269|[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AlienDictionary.java)||
@@ -113,6 +114,14 @@ Facebook题目列表(24)
 |140|[Word Break II](https://leetcode.com/problems/word-break-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreakII.java)||
 |256|[Paint House](https://leetcode.com/problems/paint-house/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouse.java)|95|
 |265|[Paint House II](https://leetcode.com/problems/paint-house-ii)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouseII.java)|60|
+|286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)||
+|317|[Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestDistanceFromAllBuildings.java)|75|
+|42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWater.java)|95|
+|407|[Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)|||
+|394|[Decode String](https://leetcode.com/problems/decode-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeString.java)|65|
+|329|[Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)|||
+|332|[Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)|||
+|417|[Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)|||
 
 <br/>
 
@@ -143,6 +152,8 @@ Facebook题目列表(24)
 |77|[Combinations](https://leetcode.com/problems/combinations)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Combinations.java)||
 |31|[Next Permutation](https://leetcode.com/problems/next-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NextPermutation.java)||
 |60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PermutationSequence.java)||
+|279|[Perfect Squares](https://leetcode.com/problems/perfect-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PerfectSquares.java)|95|
+
 
 <br/>
 

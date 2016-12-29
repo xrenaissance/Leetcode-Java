@@ -1,28 +1,25 @@
-package com.inuker.solution;
+package com.inuker.solution.test;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/11/16.
+ * Created by liwentian on 2016/12/29.
  */
 
-public class LetterCombinationOfPhoneNumber {
+public class Test1 {
 
     private final String[] ARR = {
             "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
     };
 
-    // 耗时3ms
     public List<String> letterCombinations(String digits) {
-        List<String> result = new LinkedList<String>();
+        List<String> list = new LinkedList<String>();
         if (digits.length() == 0) {
-            return result;
+            return list;
         }
-        helper(digits, 0, result, new StringBuilder());
-        return result;
+        helper(digits, 0, list, new StringBuilder());
+        return list;
     }
 
     private void helper(String digit, int start, List<String> path, StringBuilder sb) {
@@ -38,4 +35,6 @@ public class LetterCombinationOfPhoneNumber {
             sb.deleteCharAt(sb.length() - 1);
         }
     }
+
+
 }
