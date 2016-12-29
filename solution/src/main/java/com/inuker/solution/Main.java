@@ -30,16 +30,7 @@ public class Main {
 //            }
 //            System.out.println();
 //        }
-        HashSet<String> set = new HashSet<String>();
-        set.add("cat");
-        set.add("cats");
-        set.add("and");
-        set.add("sand");
-        set.add("dog");
-        List<String> list = new Test1().wordBreak("catsanddog", set);
-        for (String word : list) {
-            System.out.println(word);
-        }
-        System.out.println(">>>");
+       int cuts = new Test1().minCut("aabb");
+        System.out.println(cuts);
     }
 }

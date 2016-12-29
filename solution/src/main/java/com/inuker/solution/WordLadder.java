@@ -18,46 +18,43 @@ import java.util.Set;
  */
 public class WordLadder {
 
+    /**
+     * 要注意添加节点时要给单词从dict中删掉
+     */
     // 常规的BFS，耗时141ms
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
         Queue<String> queue = new LinkedList<String>();
         Queue<String> next = new LinkedList<String>();
         queue.add(beginWord);
-
         int length = 0;
-
         while (!queue.isEmpty()) {
             String s = queue.poll();
-            char[] ss = s.toCharArray();
-
-            for (int i = 0; i < ss.length; i++) {
-                char c = ss[i];
+            StringBuilder sb = new StringBuilder(s);
+            for (int i = 0; i < s.length(); i++) {
+                char c = s.charAt(i);
                 for (int j = 0; j < 26; j++) {
-                    ss[i] = (char) ('a' + j);
-                    if (ss[i] == c) {
+                    if (j + 'a' == c) {
                         continue;
                     }
-                    String t = new String(ss);
-
-                    if (t.equals(endWord)) {
+                    sb.setCharAt(i, (char) (j + 'a'));
+                    String ss = sb.toString();
+                    if (ss.equals(endWord)) {
                         return length + 2;
                     }
-
-                    if (wordList.remove(t)) {
-                        next.add(t);
+                    if (wordList.contains(ss)) {
+                        wordList.remove(ss);
+                        next.add(ss);
                     }
                 }
-                ss[i] = c;
+                sb.setCharAt(i, c);
             }
 
             if (queue.isEmpty()) {
-                Queue<String> t = queue;
-                queue = next;
-                next = t;
+                queue.addAll(next);
+                next.clear();
                 length++;
             }
         }
-
         return 0;
     }
 

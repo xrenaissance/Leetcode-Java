@@ -1,6 +1,8 @@
 package com.inuker.solution;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -9,30 +11,34 @@ import java.util.List;
 
 public class PalindromePartitioning {
 
+    /**
+     * 容易错的地方
+     * f[0]的初始化
+     * f是开区间,flag是闭区间
+     * j > i-2
+     * i是开区间
+     */
     public List<List<String>> partition(String s) {
-        int len = s.length();
-        List<List<String>>[] result = new List[len + 1];
-        result[0] = new ArrayList<List<String>>();
-        result[0].add(new ArrayList<String>());
+        int n = s.length();
+        List<List<String>>[] f = new LinkedList[n + 1];
+        f[0] = new LinkedList<List<String>>();
+        f[0].add(Collections.EMPTY_LIST);
 
-        boolean[][] pair = new boolean[len][len];
-
-        for (int i = 0; i < len; i++) {
-            result[i + 1] = new ArrayList<List<String>>();
-            for (int left = 0; left <= i; left++) {
-                // 此处i - left <= 2 或 1皆可
-                if (s.charAt(left) == s.charAt(i) && (i-left <= 2 || pair[left + 1][i - 1])) {
-                    pair[left][i] = true;
-                    String str = s.substring(left, i + 1);
-
-                    for (List<String> r : result[left]) {
-                        List<String> ri = new ArrayList<String>(r);
-                        ri.add(str);
-                        result[i + 1].add(ri);
+        boolean[][] flag = new boolean[n][n];
+        for (int i = 0; i < n; i++) {
+            f[i + 1] = new LinkedList<List<String>>();
+            for (int j = 0; j <= i; j++) {
+                if (s.charAt(j) == s.charAt(i) && (j > i - 2 || flag[j + 1][i - 1])) {
+                    flag[j][i] = true;
+                    for (List<String> list : f[j]) {
+                        List<String> list2 = new LinkedList<String>(list);
+                        list2.add(s.substring(j, i + 1));
+                        f[i + 1].add(list2);
                     }
                 }
             }
         }
-        return result[len];
+
+        return f[n];
     }
 }

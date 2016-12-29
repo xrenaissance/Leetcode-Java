@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 
 /**
@@ -19,32 +20,46 @@ import java.util.Set;
 
 public class Test1 {
 
-    public List<String> wordBreak(String s, Set<String> wordDict) {
-        return dfs(s, wordDict, new HashMap<String, List<String>>());
+
+    public int minCut(String s) {
+        int n = s.length();
+        int[] cuts = new int[n + 1];
+        cuts[0] = -1;
+        boolean[][] f = new boolean[n][n];
+        for (int i = 0; i < n; i++) {
+            int cut = Integer.MAX_VALUE;
+            for (int j = 0; j <= i; j++) {
+                if (s.charAt(j) == s.charAt(i) && (j > i - 2 || f[j + 1][i - 1])) {
+                    f[j][i] = true;
+                    cut = Math.min(cut, cuts[j] + 1);
+                }
+            }
+            cuts[i + 1] = cut;
+        }
+        return cuts[n];
     }
 
-    private List<String> dfs(String s, Set<String> wordDict, Map<String, List<String>> map) {
-        if (s.length() == 0) {
-            return Arrays.asList("");
-        }
+    public List<List<String>> partition(String s) {
+        int n = s.length();
+        List<List<String>>[] f = new LinkedList[n + 1];
+        f[0] = new LinkedList<List<String>>();
+        f[0].add(Collections.EMPTY_LIST);
 
-        List<String> result = map.get(s);
-
-        if (result != null) {
-            return result;
-        } else {
-            result = new LinkedList<String>();
-            map.put(s, result);
-        }
-
-        for (String word : wordDict) {
-            if (s.startsWith(word)) {
-                List<String> list = dfs(s.substring(word.length()), wordDict, map);
-                for (String text : list) {
-                    result.add(word + (text.length() > 0 ? " " + text : ""));
+        boolean[][] flag = new boolean[n][n];
+        for (int i = 0; i < n; i++) {
+            f[i + 1] = new LinkedList<List<String>>();
+            for (int j = 0; j <= i; j++) {
+                if (s.charAt(j) == s.charAt(i) && (j > i - 2 || flag[j + 1][i - 1])) {
+                    flag[j][i] = true;
+                    for (List<String> list : f[j]) {
+                        List<String> list2 = new LinkedList<String>(list);
+                        list2.add(s.substring(j, i + 1));
+                        f[i + 1].add(list2);
+                    }
                 }
             }
         }
-        return result;
+
+        return f[n];
     }
 }
