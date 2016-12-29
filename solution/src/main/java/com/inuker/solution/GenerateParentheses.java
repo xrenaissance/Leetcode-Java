@@ -39,13 +39,10 @@ public class GenerateParentheses {
 
         for (int i = 1; i <= n; i++) {
             f[i] = new LinkedList<String>();
-
             for (int j = 0; j <= i - 1; j++) {
-                List<String> lefts = f[j], rights = f[i - j - 1];
-
-                for (String left : lefts) {
-                    for (String right : rights) {
-                        f[i].add(String.format("(%s)%s", left, right));
+                for (String s1 : f[j]) {
+                    for (String s2 : f[i - 1 - j]) {
+                        f[i].add(String.format("(%s)%s", s1, s2));
                     }
                 }
             }
