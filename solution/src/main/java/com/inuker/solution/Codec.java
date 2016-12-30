@@ -20,6 +20,10 @@ import java.util.Stack;
  */
 
 /**
+ * 按中序遍历
+ */
+
+/**
  * 要注意的是分隔符不要加重复了，比如1,X,,X这样的，重复的话在split时会有空串
  * 分递归版和非递归版，递归版的如果树大了可能栈溢出
  */
@@ -30,7 +34,7 @@ public class Codec {
     // 这个尽可能短，节省空间
     private static final String NULL = "X";
 
-    /**
+    /** 递归版的
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         if (root != null) {

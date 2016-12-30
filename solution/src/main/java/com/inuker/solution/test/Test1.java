@@ -21,39 +21,7 @@ import java.util.Set;
 
 public class Test1 {
 
-    private static final String NULL = "#";
-    private static final String SEP = ",";
+    public String minWindow(String s, String t) {
 
-    public String serialize(TreeNode root) {
-        if (root == null) {
-            return NULL;
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append(root.val + SEP);
-        sb.append(serialize(root.left) + SEP);
-        sb.append(serialize(root.right));
-        return sb.toString();
-    }
-
-    // Decodes your encoded data to tree.
-    public TreeNode deserialize(String data) {
-        String[] vals = data.split(",");
-        Queue<String> queue = new LinkedList<String>(Arrays.asList(vals));
-        return helper(queue);
-    }
-
-    private TreeNode helper(Queue<String> queue) {
-        if (queue.isEmpty()) {
-            return null;
-        }
-        String text = queue.poll();
-        if (text.equals(NULL)) {
-            return null;
-        }
-        int val = Integer.valueOf(text);
-        TreeNode root = new TreeNode(val);
-        root.left = helper(queue);
-        root.right = helper(queue);
-        return root;
     }
 }
