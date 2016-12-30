@@ -14,9 +14,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> list = new Test1().removeInvalidParentheses("");
-        for (String text : list) {
-            System.out.println("(" + text + ")");
-        }
+        String word = new Test1().numberToWords(50123);
+        System.out.println(String.format("(%s)", word));
     }
 }

@@ -33,6 +33,9 @@ public class IntegerToEnglishWords {
 
         String words = "";
         for (int i = 0; num > 0; i++, num /= 1000) {
+            /**
+             * 这里要加上num%1000!=0的判断
+             */
             if (num % 1000 != 0) {
                 words = helper(num % 1000) + THOUSANDS[i] + " " + words;
             }
@@ -44,13 +47,17 @@ public class IntegerToEnglishWords {
      * 求1000以内的
      */
     private String helper(int num) {
-        if (num == 0)
+        /**
+         * 这里num == 0的时候要返回""，否则50123会出错，中间多了个空格
+         */
+        if (num == 0) {
             return "";
-        else if (num < 20)
+        } else if (num < 20) {
             return LESS_20[num] + " ";
-        else if (num < 100)
+        } else if (num < 100) {
             return LESS_100[num / 10] + " " + helper(num % 10);
-        else
+        } else {
             return LESS_20[num / 100] + " Hundred " + helper(num % 100);
+        }
     }
 }
