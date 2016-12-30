@@ -37,6 +37,9 @@ public class RemoveInvalidParentheses {
                 result.add(ss);
             } else {
                 for (int i = 0; i < ss.length(); i++) {
+                    /**
+                     * 注意这里如果是非括号要跳过
+                     */
                     if (ss.charAt(i) != '(' && ss.charAt(i) != ')') {
                         continue;
                     }
@@ -68,6 +71,7 @@ public class RemoveInvalidParentheses {
                 }
             }
         }
+        // 最后的返回条件要注意
         return count == 0;
     }
 
