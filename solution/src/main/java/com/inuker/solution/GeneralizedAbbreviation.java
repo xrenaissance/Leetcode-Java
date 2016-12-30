@@ -9,6 +9,6 @@ import java.util.List;
 public class GeneralizedAbbreviation {
 
     public List<String> generateAbbreviations(String word) {
-
+        return null;
     }
 }
