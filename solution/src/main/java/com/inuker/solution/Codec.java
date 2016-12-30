@@ -25,7 +25,7 @@ import java.util.Stack;
  */
 public class Codec {
     // 这里的分隔符是有讲究的，如果换成'.'则在split的时候要转义，但是','不用
-    private static final String SEP = ".";
+    private static final String SEP = ",";
 
     // 这个尽可能短，节省空间
     private static final String NULL = "X";

@@ -1,6 +1,7 @@
 package com.inuker.solution.test;
 
 import com.inuker.solution.PalindromeLinkedList;
+import com.inuker.solution.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,31 +21,39 @@ import java.util.Set;
 
 public class Test1 {
 
-    public boolean isMatch(String s, String p) {
-        if (p.length() == 0) {
-            return s.length() == 0;
-        }
+    private static final String NULL = "#";
+    private static final String SEP = ",";
 
-        if (p.length() == 1) {
-            return s.length() == 1 && isEqual(s, p);
+    public String serialize(TreeNode root) {
+        if (root == null) {
+            return NULL;
         }
-
-        if (p.charAt(1) != '*') {
-            return s.length() > 0 && isEqual(s, p) && isMatch(s.substring(1), p.substring(1));
-        } else {
-            if (s.length() > 0) {
-                if (isEqual(s, p)) {
-                    return isMatch(s, p.substring(2)) || isMatch(s.substring(1), p);
-                } else {
-                    return isMatch(s, p.substring(2));
-                }
-            } else {
-                return isMatch(s, p.substring(2));
-            }
-        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(root.val + SEP);
+        sb.append(serialize(root.left) + SEP);
+        sb.append(serialize(root.right));
+        return sb.toString();
     }
 
-    private boolean isEqual(String s, String p) {
-        return s.charAt(0) == p.charAt(0) || p.charAt(0) == '.';
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        String[] vals = data.split(",");
+        Queue<String> queue = new LinkedList<String>(Arrays.asList(vals));
+        return helper(queue);
+    }
+
+    private TreeNode helper(Queue<String> queue) {
+        if (queue.isEmpty()) {
+            return null;
+        }
+        String text = queue.poll();
+        if (text.equals(NULL)) {
+            return null;
+        }
+        int val = Integer.valueOf(text);
+        TreeNode root = new TreeNode(val);
+        root.left = helper(queue);
+        root.right = helper(queue);
+        return root;
     }
 }
