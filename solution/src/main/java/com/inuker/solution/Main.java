@@ -14,7 +14,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String word = new Test1().numberToWords(50123);
+        String word = new Test1().minWindow("ADOBECODEBANC", "ABC");
         System.out.println(String.format("(%s)", word));
     }
 }

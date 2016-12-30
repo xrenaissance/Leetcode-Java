@@ -11,31 +11,37 @@ public class MinimumWindowSubstring {
 
     // 耗时8ms，时间复杂度O(n)
     public String minWindow(String s, String t) {
-        int CHAR_MAX = 256;
-        int[] ss = new int[CHAR_MAX];
-        int[] tt = new int[CHAR_MAX];
-        for (int i = 0; i < t.length(); i++) {
-            tt[t.charAt(i)]++;
+        int[] cns = new int[256];
+        int[] cnt = new int[256];
+        for (char c : t.toCharArray()) {
+            cnt[c]++;
         }
-        int count = 0, min = Integer.MAX_VALUE, start = 0;
-        for (int i = 0, j = 0; j < s.length(); j++) {
-            if (++ss[s.charAt(j)] <= tt[s.charAt(j)]) {
+        int count = 0, minLen = 0, minStart = 0;
+        for (int i = 0, j = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (++cns[c] <= cnt[c]) {
                 ++count;
             }
+
             if (count >= t.length()) {
-                for ( ; i < j; i++) {
-                    char c = s.charAt(i);
-                    if (tt[c] > 0 && ss[c] <= tt[c]) {
+                for ( ; j < i; j++) {
+                    char cc = s.charAt(j);
+                    if (cnt[cc] == 0) {
+                        continue;
+                    }
+                    if (cns[cc] > cnt[cc]) {
+                        cns[cc]--;
+                    } else {
                         break;
                     }
-                    ss[c]--;
                 }
-                if (j - i + 1 < min) {
-                    min = j - i + 1;
-                    start = i;
+                int len = i - j + 1;
+                if (minLen == 0 || len < minLen) {
+                    minLen = len;
+                    minStart = j;
                 }
             }
         }
-        return min == Integer.MAX_VALUE ? "" : s.substring(start, start + min);
+        return minLen > 0 ? s.substring(minStart, minStart + minLen) : "";
     }
 }
