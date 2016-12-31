@@ -4,6 +4,11 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/23.
  */
 
+import java.util.Stack;
+
+/**
+ * 参考https://leetcode.com/articles/largest-rectangle-histogram/
+ */
 public class LargestRectangleInHistogram {
 
     /**
@@ -65,4 +70,21 @@ public class LargestRectangleInHistogram {
 
         return max;
     }
+
+    /** 注意栈中的是index，不是高度
+    public int largestRectangleArea(int[] heights) {
+        int max = 0;
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i <= heights.length; ) {
+            int height = i == heights.length ? 0 : heights[i];
+            if (stack.isEmpty() || height > heights[stack.peek()]) {
+                stack.push(i++);
+            } else {
+                int top = stack.pop();
+                int left = stack.isEmpty() ? 0 : stack.peek() + 1;
+                max = Math.max(max, heights[top] * (i - 1 - left + 1));
+            }
+        }
+        return max;
+    }*/
 }

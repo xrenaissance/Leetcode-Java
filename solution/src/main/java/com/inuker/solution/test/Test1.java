@@ -21,6 +21,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Random;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  * Created by dingjikerbo on 2016/12/29.
@@ -28,45 +29,39 @@ import java.util.Set;
 
 public class Test1 {
 
-    public List<String> fullJustify(String[] words, int maxWidth) {
-        List<String> list = new LinkedList<>();
-
-        int i = 0, j = 0, count = 0;
-        for (i = 0; i < words.length; i = j) {
-            for (j = i, count = 0; j < words.length; j++) {
-                if (count + words[j].length() + j - i > maxWidth) {
-                    break;
-                }
-                count += words[j].length();
-            }
-            StringBuilder sb = new StringBuilder();
-            if (j == words.length || j - i == 1) {
-                for (int k = i; k < j; k++) {
-                    sb.append(words[k]).append(" ");
-                }
-                sb.deleteCharAt(sb.length() - 1);
-                for (int k = sb.length(); k < maxWidth; k++) {
-                    sb.append(" ");
-                }
+    public int largestRectangleArea(int[] heights) {
+        int max = 0;
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i <= heights.length; ) {
+            int height = i == heights.length ? 0 : heights[i];
+            if (stack.isEmpty() || height > heights[stack.peek()]) {
+                stack.push(i++);
             } else {
-                int space = (maxWidth - count) / (j - i - 1);
-                int extra = maxWidth - count - space * (j - i - 1);
-                for (int k = i; k < j; k++) {
-                    sb.append(words[k]);
-                    if (k == j - 1) {
-                        break;
-                    }
-                    for (int m = 0; m < space; m++) {
-                        sb.append(" ");
-                    }
-                    if (extra-- > 0) {
-                        sb.append(" ");
-                    }
+                int top = stack.pop();
+                int left = stack.isEmpty() ? 0 : stack.peek() + 1;
+                max = Math.max(max, heights[top] * (i - 1 - left + 1));
+            }
+        }
+        return max;
+    }
+
+    public int maximalRectangle(char[][] matrix) {
+        if (matrix.length == 0) {
+            return 0;
+        }
+        int max = 0;
+        int row = matrix.length, col = matrix[0].length;
+        int[] heights = new int[col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (matrix[i][j] == '0') {
+                    heights[j] = 0;
+                } else {
+                    heights[j]++;
                 }
             }
-            list.add(sb.toString());
+            max = Math.max(max, largestRectangleArea(heights));
         }
-
-        return list;
+        return max;
     }
 }

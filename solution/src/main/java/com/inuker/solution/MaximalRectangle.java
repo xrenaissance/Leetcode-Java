@@ -61,6 +61,7 @@ public abstract class MaximalRectangle {
             }
 
             for (int j = col - 1; j >= 0; j--) {
+                // 注意这里不是0，而是字符'0'
                 if (matrix[i][j] == '0') {
                     right[j] = col - 1;
                     rightStart = j - 1;

@@ -14,12 +14,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-
-        List<String> words = new Test1().fullJustify(new String[] {
-                "Listen","to","many,","speak","to","a","few."
-        }, 6);
-        for (String word : words) {
-            System.out.println("(" + word + ")");
-        }
+        int max = new Test1().maximalRectangle(new char[][] {
+                "10100".toCharArray(),"10111".toCharArray(),"11111".toCharArray(),"10010".toCharArray()
+        });
+        System.out.println(max);
     }
 }
