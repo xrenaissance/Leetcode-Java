@@ -3,6 +3,7 @@ package com.inuker.solution.test;
 import com.inuker.solution.Interval;
 import com.inuker.solution.ListNode;
 import com.inuker.solution.PalindromeLinkedList;
+import com.inuker.solution.TreeLinkNode;
 import com.inuker.solution.TreeNode;
 
 import java.sql.ResultSet;
@@ -29,34 +30,20 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public int splitArray(int[] nums, int m) {
-        int max = 0, sum = 0;
-        for (int n : nums) {
-            max = Math.max(max, n);
-            sum += n;
-        }
-        int left = max, right = sum;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            int count = getCount(nums, mid);
-            if (count > m) {
-                left = mid + 1;
-            } else if (count <= m) {
-                right = mid - 1;
-            }
-        }
-        return left;
-    }
+    public void connect(TreeLinkNode root) {
+        for ( ; root != null; root = root.left) {
+            TreeLinkNode dummy = new TreeLinkNode(0), cur = dummy;
+            for (TreeLinkNode node = root; node != null; node = node.next) {
+                if (node.left != null) {
+                    cur.next = node.left;
+                    cur = cur.next;
+                }
 
-    private int getCount(int[] nums, int k) {
-        int sum = 0, count = 1;
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if (sum > k) {
-                count++;
-                sum = nums[i];
+                if (node.right != null) {
+                    cur.next = node.right;
+                    cur = cur.next;
+                }
             }
         }
-        return count;
     }
 }
