@@ -29,24 +29,34 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public ListNode reverseKGroup(ListNode head, int k) {
-        int count = 0;
-        for (ListNode p = head; p != null; p = p.next, count++);
-        ListNode dummy = new ListNode(0), cur = dummy;
-        for (ListNode p = head; p != null; ) {
-            if (count >= k) {
-                for (int i = 0; i < k; i++) {
-                    ListNode next = p.next;
-                    p.next = cur.next;
-                    cur.next = p;
-                    p = next;
-                }
-                count -= k;
-            } else {
-                cur.next = p;
-                break;
+    public int splitArray(int[] nums, int m) {
+        int max = 0, sum = 0;
+        for (int n : nums) {
+            max = Math.max(max, n);
+            sum += n;
+        }
+        int left = max, right = sum;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int count = getCount(nums, mid);
+            if (count > m) {
+                left = mid + 1;
+            } else if (count <= m) {
+                right = mid - 1;
             }
         }
-        return dummy.next;
+        return left;
+    }
+
+    private int getCount(int[] nums, int k) {
+        int sum = 0, count = 1;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (sum > k) {
+                count++;
+                sum = nums[i];
+            }
+        }
+        return count;
     }
 }
