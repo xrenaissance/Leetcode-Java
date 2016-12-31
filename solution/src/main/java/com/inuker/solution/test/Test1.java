@@ -1,5 +1,7 @@
 package com.inuker.solution.test;
 
+import com.inuker.solution.Interval;
+import com.inuker.solution.ListNode;
 import com.inuker.solution.PalindromeLinkedList;
 import com.inuker.solution.TreeNode;
 
@@ -7,11 +9,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 
@@ -21,38 +25,39 @@ import java.util.Set;
 
 public class Test1 {
 
-    public String minWindow(String s, String t) {
-        int[] cns = new int[256];
-        int[] cnt = new int[256];
-        for (char c : t.toCharArray()) {
-            cnt[c]++;
+    public List<int[]> getSkyline(int[][] buildings) {
+        List<int[]> heights = new LinkedList<int[]>();
+        for (int[] building : buildings) {
+            heights.add(new int[] {building[0], -building[2]});
+            heights.add(new int[] {building[1], building[2]});
         }
-        int count = 0, minLen = 0, minStart = 0;
-        for (int i = 0, j = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (++cns[c] <= cnt[c]) {
-                ++count;
+        Collections.sort(heights, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] == o2[0] ? o1[1] - o2[1] : o1[0] - o2[0];
             }
-
-            if (count >= t.length()) {
-                for ( ; j < i; j++) {
-                    char cc = s.charAt(j);
-                    if (cnt[cc] == 0) {
-                        continue;
-                    }
-                    if (cns[cc] > cnt[cc]) {
-                        cns[cc]--;
-                    } else {
-                        break;
-                    }
-                }
-                int len = i - j + 1;
-                if (minLen == 0 || len < minLen) {
-                    minLen = len;
-                    minStart = j;
-                }
+        });
+        Queue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+        queue.add(0);
+        int prev = 0;
+        List<int[]> result = new LinkedList<int[]>();
+        for (int[] height : heights) {
+            if (height[1] < 0) {
+                queue.add(-height[1]);
+            } else {
+                queue.remove(height[1]);
+            }
+            int cur = queue.peek();
+            if (prev != cur) {
+                result.add(new int[] {height[0], cur});
+                prev = cur;
             }
         }
-        return minLen > 0 ? s.substring(minStart, minStart + minLen) : "";
+        return result;
     }
 }

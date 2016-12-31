@@ -27,7 +27,7 @@ import java.util.TreeSet;
  */
 public class TheSkylineProblem {
 
-    // 耗时290ms
+    // 耗时290ms，复杂度O(nlgn+nlgn+n^2)
     public List<int[]> getSkyline(int[][] buildings) {
         List<int[]> heights = new LinkedList<int[]>();
 
@@ -36,6 +36,11 @@ public class TheSkylineProblem {
             heights.add(new int[] {building[1], building[2]});
         }
 
+        /**
+         * 这里排序先按x，x相同则按高度，由于升线高度为负，所以升线越高越靠前，降线越矮越靠前。
+         * x一定时升线高的靠前，因为决定最终结果的是升线最高的那个，如果不是这样，后面处理queue的时候会添加一堆中间结果
+         * x一定时降线矮的靠前，因为不这样的话，后面处理queue的时候会添加一堆中间结果
+         */
         Collections.sort(heights, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
@@ -74,7 +79,7 @@ public class TheSkylineProblem {
     /**
      * 上面PriorityQueue的remove复杂度为O(n)，所以这里换成了TreeMap，删除的复杂度为O(lgn)
      */
-    // 耗时50ms
+    // 耗时50ms，复杂度O(nlgn+nlgn+nlgn)
     public List<int[]> getSkyline2(int[][] buildings) {
         List<int[]> heights = new LinkedList<int[]>();
 
