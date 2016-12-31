@@ -35,7 +35,6 @@ public class LRUCache {
     }
 
     public int get(Integer key) {
-        System.out.println(String.format("get %d", key));
         if (!mMap.containsKey(key)) {
             return -1;
         }
@@ -47,8 +46,6 @@ public class LRUCache {
     }
 
     public void set(Integer key, int value) {
-        System.out.println(String.format("set %d %d", key, value));
-
         if (mMap.containsKey(key)) {
             DNode node = mMap.get(key);
             node.val = value;

@@ -8,6 +8,10 @@ import java.util.HashMap;
 
 public class LongestConsecutiveSequence {
 
+    /**
+     * map中保存的是某个点所在的联通块长度，不过要注意的这个连通块两端的点才是准的，中间的点可能不准
+     * 所以我们每次新插入一个点时，一定要更新连通块两端的点
+     */
     public int longestConsecutive(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 

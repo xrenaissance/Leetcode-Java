@@ -11,32 +11,39 @@ import java.util.List;
 public class ExpressionAddOperators {
 
     public List<String> addOperators(String num, int target) {
-        List<String> rst = new LinkedList<String>();
-        if (num == null || num.length() == 0) return rst;
-        helper(rst, "", num, target, 0, 0, 0);
-        return rst;
+        List<String> result = new LinkedList<String>();
+        if (num.length() == 0) {
+            return result;
+        }
+        helper(num, target, result, "", 0, 0, 0);
+        return result;
     }
 
-    public void helper(List<String> rst, String path, String num, int target, int pos, long eval, long last) {
-        if (pos == num.length()) {
-            if (target == eval) {
-                rst.add(path);
+    public void helper(String num, int target, List<String> result, String path, int index, long value, long last) {
+        if (index == num.length()) {
+            if (target == value) {
+                result.add(path);
             }
             return;
         }
 
-        for (int i = pos; i < num.length(); i++) {
-            if (i != pos && num.charAt(pos) == '0') break;
-            long cur = Long.parseLong(num.substring(pos, i + 1));
-            if (pos == 0) {
+        for (int i = index; i < num.length(); i++) {
+            /**
+             * 高位为0的数是非法的
+             */
+            if (i != index && num.charAt(index) == '0') {
+                break;
+            }
+            long cur = Long.parseLong(num.substring(index, i + 1));
+            if (index == 0) {
                 // 从pos=0开始的，所以不参与运算，只是组成第一个数
-                helper(rst, path + cur, num, target, i + 1, cur, cur);
+                helper(num, target, result, path + cur, i + 1, cur, cur);
             } else {
-                helper(rst, path + "+" + cur, num, target, i + 1, eval + cur, cur);
+                helper(num, target, result, path + "+" + cur, i + 1, value + cur, cur);
 
-                helper(rst, path + "-" + cur, num, target, i + 1, eval - cur, -cur);
+                helper(num, target, result, path + "-" + cur, i + 1, value - cur, -cur);
 
-                helper(rst, path + "*" + cur, num, target, i + 1, eval - last + last * cur, last * cur);
+                helper(num, target, result, path + "*" + cur, i + 1, value - last + last * cur, last * cur);
             }
         }
     }

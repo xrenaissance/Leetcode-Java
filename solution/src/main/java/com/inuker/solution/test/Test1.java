@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -25,39 +26,25 @@ import java.util.Set;
 
 public class Test1 {
 
-    public List<int[]> getSkyline(int[][] buildings) {
-        List<int[]> heights = new LinkedList<int[]>();
-        for (int[] building : buildings) {
-            heights.add(new int[] {building[0], -building[2]});
-            heights.add(new int[] {building[1], building[2]});
+    private class RandomizedSet {
+        /** Initialize your data structure here. */
+        public RandomizedSet() {
+
         }
-        Collections.sort(heights, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] == o2[0] ? o1[1] - o2[1] : o1[0] - o2[0];
-            }
-        });
-        Queue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2 - o1;
-            }
-        });
-        queue.add(0);
-        int prev = 0;
-        List<int[]> result = new LinkedList<int[]>();
-        for (int[] height : heights) {
-            if (height[1] < 0) {
-                queue.add(-height[1]);
-            } else {
-                queue.remove(height[1]);
-            }
-            int cur = queue.peek();
-            if (prev != cur) {
-                result.add(new int[] {height[0], cur});
-                prev = cur;
-            }
+
+        /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+        public boolean insert(int val) {
+
         }
-        return result;
+
+        /** Removes a value from the set. Returns true if the set contained the specified element. */
+        public boolean remove(int val) {
+
+        }
+
+        /** Get a random element from the set. */
+        public int getRandom() {
+
+        }
     }
 }
