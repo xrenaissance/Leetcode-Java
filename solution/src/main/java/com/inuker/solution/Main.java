@@ -14,7 +14,10 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String word = new Test1().minWindow("ADOBECODEBANC", "ABC");
+
+        String word = new Test1().alienOrder(new String[] {
+                "wrt","wrf","er","ett","rftt"
+        });
         System.out.println(String.format("(%s)", word));
     }
 }
