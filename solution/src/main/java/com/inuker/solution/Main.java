@@ -15,9 +15,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String word = new Test1().alienOrder(new String[] {
-                "wrt","wrf","er","ett","rftt"
-        });
-        System.out.println(String.format("(%s)", word));
+        List<String> words = new Test1().fullJustify(new String[] {
+                "Listen","to","many,","speak","to","a","few."
+        }, 6);
+        for (String word : words) {
+            System.out.println("(" + word + ")");
+        }
     }
 }

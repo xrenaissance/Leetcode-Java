@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * 这题应该多做几遍，没什么技巧，就是考码代码能力
+ * 类似题目为https://leetcode.com/problems/sentence-screen-fitting/
  */
 
 /**
@@ -37,6 +38,8 @@ public class TextJustification {
                 count += words[last].length();
             }
             StringBuilder sb = new StringBuilder();
+
+            // 最后一行或者一行只有一个单词的情况
             if (last == words.length || last - first == 1) {
                 for (int i = first; i < last; i++) {
                     sb.append(words[i]).append(" ");

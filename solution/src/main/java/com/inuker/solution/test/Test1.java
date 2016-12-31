@@ -5,6 +5,7 @@ import com.inuker.solution.ListNode;
 import com.inuker.solution.PalindromeLinkedList;
 import com.inuker.solution.TreeNode;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,69 +28,45 @@ import java.util.Set;
 
 public class Test1 {
 
-    public String alienOrder(String[] words) {
-        int[] indegree = new int[26];
-        Arrays.fill(indegree, -1);
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> list = new LinkedList<>();
 
-        int count = 0;
-        for (String word : words) {
-            for (char c : word.toCharArray()) {
-                if (indegree[c - 'a'] != 0) {
-                    indegree[c - 'a'] = 0;
-                    count++;
+        int i = 0, j = 0, count = 0;
+        for (i = 0; i < words.length; i = j) {
+            for (j = i, count = 0; j < words.length; j++) {
+                if (count + words[j].length() + j - i > maxWidth) {
+                    break;
                 }
+                count += words[j].length();
             }
-        }
-
-        HashMap<Character, Set<Character>> map = new HashMap<Character, Set<Character>>();
-
-        for (int i = 0; i < words.length - 1; i++) {
-            String first = words[i], second = words[i + 1];
-            int len = Math.min(first.length(), second.length());
-            for (int j = 0; j < len; j++) {
-                if (first.charAt(j) != second.charAt(j)) {
-                    Set<Character> set = map.get(first.charAt(j));
-                    if (set == null) {
-                        set = new HashSet<Character>();
-                        map.put(first.charAt(j), set);
-                    }
-                    if (set.add(second.charAt(j))) {
-                        indegree[second.charAt(j) - 'a']++;
-                    }
-                } else {
-                    if (j + 1 >= second.length() && j + 1 < first.length()) {
-                        return "";
-                    }
+            StringBuilder sb = new StringBuilder();
+            if (j == words.length || j - i == 1) {
+                for (int k = i; k < j; k++) {
+                    sb.append(words[k]).append(" ");
                 }
-            }
-        }
-
-        Queue<Character> queue = new LinkedList<>();
-        for (int i = 0; i < indegree.length; i++) {
-            if (indegree[i] == 0) {
-                queue.add((char) (i + 'a'));
-            }
-        }
-
-        StringBuilder sb = new StringBuilder();
-        while (!queue.isEmpty()) {
-            char c = queue.poll();
-            sb.append(c);
-
-            Set<Character> set = map.get(c);
-            if (set != null) {
-                for (char cc : set) {
-                    if (--indegree[cc - 'a'] == 0) {
-                        queue.add(cc);
+                sb.deleteCharAt(sb.length() - 1);
+                for (int k = sb.length(); k < maxWidth; k++) {
+                    sb.append(" ");
+                }
+            } else {
+                int space = (maxWidth - count) / (j - i - 1);
+                int extra = maxWidth - count - space * (j - i - 1);
+                for (int k = i; k < j; k++) {
+                    sb.append(words[k]);
+                    if (k == j - 1) {
+                        break;
+                    }
+                    for (int m = 0; m < space; m++) {
+                        sb.append(" ");
+                    }
+                    if (extra-- > 0) {
+                        sb.append(" ");
                     }
                 }
             }
+            list.add(sb.toString());
         }
 
-        if (sb.length() != count) {
-            return "";
-        }
-
-        return sb.toString();
+        return list;
     }
 }
