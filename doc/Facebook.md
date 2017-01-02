@@ -236,6 +236,7 @@ Facebook题目列表(24)
 |404|[Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SumOfLeftLeaves.java)|80|
 |98|[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidateBinarySearchTree.java)|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|100|
+|450|[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DeleteNodeInBST.java)||
 
 <br/>
 
