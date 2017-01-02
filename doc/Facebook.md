@@ -77,9 +77,6 @@ Facebook题目列表(24)
 ## 关于区间
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
-|436|[Find Right Interval](https://leetcode.com/problems/find-right-interval/)|||
-|435|[Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)|||
-|352|[Data Stream as Disjoint Intervals](https://leetcode.com/problems/data-stream-as-disjoint-intervals/)|||
 |252|[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRooms.java)|100|
 |253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRoomsII.java)|100|
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeIntervals.java)|100|
