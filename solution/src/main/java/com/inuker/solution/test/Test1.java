@@ -30,27 +30,27 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public boolean validTree(int n, int[][] edges) {
+    public int countComponents(int n, int[][] edges) {
         // initialize n isolated islands
         int[] nums = new int[n];
+        int count = 0;
         for (int i = 0; i < n; i++) {
             nums[i] = i;
+            count++;
         }
-
         // perform union find
         for (int i = 0; i < edges.length; i++) {
             int x = find(nums, edges[i][0]);
             int y = find(nums, edges[i][1]);
 
-            // if two vertices happen to be in the same set
-            // then there's a cycle
-            if (x == y) return false;
-
-            // union
-            nums[x] = y;
+            if (x != y) {
+                // union
+                nums[x] = y;
+                count--;
+            }
         }
 
-        return edges.length == n - 1;
+        return count;
     }
 
     int find(int nums[], int i) {
