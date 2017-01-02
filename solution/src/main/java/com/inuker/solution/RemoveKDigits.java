@@ -16,12 +16,12 @@ package com.inuker.solution;
 public class RemoveKDigits {
 
     public String removeKdigits(String num, int k) {
-        for (int i = 0, j; i < k; i++) {
+        for (int i = 0, j; i < k && num.length() > 0; i++) {
             num = removeKdigits(num);
             for (j = 0; j < num.length() && num.charAt(j) == '0'; j++);
-            num = (j == num.length() ? "0" : num.substring(j));
+            num = num.substring(j);
         }
-        return num;
+        return num.length() == 0 ? "0" : num;
     }
 
     public String removeKdigits(String num) {
