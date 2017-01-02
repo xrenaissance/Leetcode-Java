@@ -30,21 +30,20 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public void connect(TreeLinkNode root) {
-        if (root == null) {
-            return;
+    public int minCost(int[][] costs) {
+        int n = costs.length;
+        if (n == 0) {
+            return 0;
         }
-        TreeLinkNode dummy = new TreeLinkNode(0), cur = dummy;
-        for (TreeLinkNode p = root; p != null; p = p.next) {
-            if (p.left != null) {
-                cur.next = p.left;
-                cur = cur.next;
-            }
-            if (p.right != null) {
-                cur.next = p.right;
-                cur = cur.next;
-            }
+        int[] f0 = new int[n];
+        int[] f1 = new int[n];
+        int[] f2 = new int[n];
+        for (int i = 0; i < costs.length; i++) {
+            f0[i] = (i > 0 ? Math.min(f1[i - 1], f2[i - 1]) : 0) + costs[i][0];
+            f1[i] = (i > 0 ? Math.min(f0[i - 1], f2[i - 1]) : 0) + costs[i][1];
+            f2[i] = (i > 0 ? Math.min(f0[i - 1], f1[i - 1]) : 0) + costs[i][2];
         }
-        connect(dummy.next);
+        int min = Math.min(f0[n - 1], f1[n - 1]);
+        return Math.min(min, f2[n - 1]);
     }
 }
