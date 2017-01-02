@@ -16,37 +16,6 @@ package com.inuker.solution;
 public class RemoveKDigits {
 
     public String removeKdigits(String num, int k) {
-        for (int j = 0; j < k; j++) {
-            for (int i = 0; i < num.length(); i++) {
-                if (i + 1 < num.length()) {
-                    if (num.charAt(i) > num.charAt(i + 1)) {
-                        return num.substring(0, i) + num.substring(i + 1);
-                    }
-                } else {
-                    return num.substring(0, i);
-                }
-            }
-            for (j = 0; j < num.length() && num.charAt(j) == '0'; j++);
-            num = (j == num.length() ? "0" : num.substring(j));
-        }
-        return num;
-    }
-
-    public String removeKdigits(String num) {
-        for (int i = 0; i < num.length(); i++) {
-            if (i + 1 < num.length()) {
-                if (num.charAt(i) > num.charAt(i + 1)) {
-                    return num.substring(0, i) + num.substring(i + 1);
-                }
-            } else {
-                return num.substring(0, i);
-            }
-        }
-        return null;
-    }
-
-    /**
-    public String removeKdigits(String num, int k) {
         for (int i = 0, j; i < k; i++) {
             num = removeKdigits(num);
             for (j = 0; j < num.length() && num.charAt(j) == '0'; j++);
@@ -67,5 +36,4 @@ public class RemoveKDigits {
         }
         return null;
     }
-     */
 }

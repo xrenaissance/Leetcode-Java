@@ -40,7 +40,6 @@ Facebook题目列表(24)
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)||
 |168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnTitle.java)||
 |171|[Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnNumber.java)||
-|316|[Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicateLetters.java)|70|
 
 <br/>
 
@@ -70,8 +69,8 @@ Facebook题目列表(24)
 |83|[Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedList.java)|100|
 |82|[Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicatesFromSortedListII.java)|75|
 |203|[Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveLinkedListElements.java)||
-|402|[Remove K Digits](https://leetcode.com/problems/remove-k-digits/)|||
-|316|[Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)|||
+|402|[Remove K Digits](https://leetcode.com/problems/remove-k-digits/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveKDigits.java)||
+|316|[Remove Duplicate Letters](https://leetcode.com/problems/remove-duplicate-letters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveDuplicateLetters.java)|70|
 
 <br/>
 
