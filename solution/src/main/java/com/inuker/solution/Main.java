@@ -14,5 +14,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
+        int min = new Test1().minCostII(new int[][] {
+                {4,16},{15,5},{18,17}
+        });
+        System.out.println(min);
     }
 }
