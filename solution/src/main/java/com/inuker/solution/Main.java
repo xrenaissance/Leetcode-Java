@@ -14,14 +14,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<String>> words = new WordSquare().wordSquares(new String[] {
-                "area","lead","wall","lady","ball"
-        });
-        for (List<String> list : words) {
-            for (String word : list) {
-                System.out.print(word + " ");
-            }
-            System.out.println();
-        }
+        int n = new Test1().numDecodings("9371597631128776948387197132267188677349946742344217846154932859125134924241649584251978418763151253");
+        System.out.println(n);
     }
 }

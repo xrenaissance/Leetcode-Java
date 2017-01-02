@@ -14,8 +14,12 @@ import java.util.Arrays;
  * "7893749912342187894921836847319981199844151766195952528631828655978178193192959793156142441128167383"
  */
 public class DecodeWays {
-    /** 思路一
-    // 超时了，有大量的字符串复制，不过思路挺直观的
+    /** 这里推荐第一种和最后一种思路DP */
+
+    /**
+     * 超时了，有大量的字符串复制，不过思路挺直观的
+     * 注意这里s为空时要返回0，但是在递归时s为空要返回1，所以为了区分这两种情况，分出了helper
+     */
     public int numDecodings(String s) {
         if (s.length() == 0) {
             return 0;
@@ -44,7 +48,6 @@ public class DecodeWays {
 
         return ways;
     }
-*/
 
     /** 思路二
     // 这里进行了优化，去掉了字符串复制，但有些cases仍然超时，因为仍然有大量重复运算
@@ -114,28 +117,23 @@ public class DecodeWays {
 */
 
     // DP，耗时2ms，复杂度O(n)
-    public int numDecodings(String s) {
-        if (s == null || s.length() == 0) {
+    public int numDecodings2(String s) {
+        if (s.length() == 0) {
             return 0;
         }
-
-        int len = s.length();
-
-        int[] f = new int[len + 1];
-
+        int n = s.length();
+        int[] f = new int[n + 1];
         f[0] = 1;
         f[1] = s.charAt(0) == '0' ? 0 : 1;
 
-        for (int i = 2; i <= len; i++) {
-            if (s.charAt(i - 2) == '1' || (s.charAt(i - 2) == '2' && s.charAt(i - 1) <= '6')) {
-                f[i] = f[i - 2];
+        for (int i = 1; i < n; i++) {
+            if (s.charAt(i - 1) == '1' || (s.charAt(i - 1) == '2' && s.charAt(i) <= '6')) {
+                f[i + 1] = f[i - 1];
             }
-
-            if (s.charAt(i - 1) != '0') {
-                f[i] += f[i - 1];
+            if (s.charAt(i) != '0') {
+                f[i + 1] += f[i];
             }
         }
-
-        return f[len];
+        return f[n];
     }
 }

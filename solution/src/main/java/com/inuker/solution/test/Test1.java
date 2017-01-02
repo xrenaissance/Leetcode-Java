@@ -30,5 +30,24 @@ import java.util.Stack;
 
 public class Test1 {
 
+    public int numDecodings(String s) {
+        if (s.length() == 0) {
+            return 0;
+        }
+        int n = s.length();
+        int[] f = new int[n + 1];
+        f[0] = 1;
+        f[1] = s.charAt(0) == '0' ? 0 : 1;
+
+        for (int i = 1; i < n; i++) {
+            if (s.charAt(i - 1) == '1' || (s.charAt(i - 1) == '2' && s.charAt(i) <= '6')) {
+                f[i + 1] = f[i - 1];
+            }
+            if (s.charAt(i) != '0') {
+                f[i + 1] += f[i];
+            }
+        }
+        return f[n];
+    }
 
 }
