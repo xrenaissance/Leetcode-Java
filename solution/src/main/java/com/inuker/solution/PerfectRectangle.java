@@ -6,6 +6,10 @@ import java.util.HashSet;
  * Created by dingjikerbo on 17/1/2.
  */
 
+/**
+ * https://discuss.leetcode.com/topic/56052/really-easy-understanding-solution-o-n-java
+ * http://www.cnblogs.com/grandyang/p/5825619.html
+ */
 public class PerfectRectangle {
 
     /**
@@ -49,6 +53,6 @@ public class PerfectRectangle {
             return false;
         }
 
-        return set.size() == 4 && area == (x2-x1) * (y2-y1);
+        return set.size() == 4 && area == (x2 - x1) * (y2 - y1);
     }
 }
