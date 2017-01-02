@@ -177,6 +177,7 @@ Facebook题目列表(24)
 |307|[Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumArrayII.java)|70|
 |308|[Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumMatrixII.java)|70|
 |271|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EncodeAndDecodeStrings.java)|65|
+|295|[Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindMedianFromDataStream.java)||
 
 <br/>
 
