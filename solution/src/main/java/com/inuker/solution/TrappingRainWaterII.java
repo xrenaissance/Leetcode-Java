@@ -8,6 +8,10 @@ import java.util.Queue;
  * Created by dingjikerbo on 2016/11/16.
  */
 
+/**
+ * 思路是从外围开始，选择最短的柱子，以该柱子为标准，计算其四周的柱子所能容纳的水，并且更新四周柱子的高度，并加到小堆中。
+ * 为什么这样呢？一个柱子所能蓄的水和该柱子相邻的四根柱子有关，所以我们从边界开始，不断向中间靠拢，每次都取队列中最短的那根柱子计算
+ */
 public class TrappingRainWaterII {
 
     public int trapRainWater(int[][] heightMap) {
@@ -46,6 +50,9 @@ public class TrappingRainWaterII {
                 if (xx >= 0 && xx < row && yy >= 0 && yy < col && !visited[xx][yy]) {
                     visited[xx][yy] = true;
                     res += Math.max(0, z - heightMap[xx][yy]);
+                    /**
+                     * 这里要更新柱子的高度，因为水平面肯定是Math.max(z, heightMap[xx][yy])
+                     */
                     queue.add(new int[] {xx, yy, Math.max(z, heightMap[xx][yy])});
                 }
             }
