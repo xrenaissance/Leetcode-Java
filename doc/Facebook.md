@@ -141,9 +141,6 @@ Facebook题目列表(24)
 |78|[Subsets](https://leetcode.com/problems/subsets/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Subsets.java)|
 |90|[Subsets II](https://leetcode.com/problems/subsets-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SubsetsII.java)|
 |17|[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LetterCombinationOfPhoneNumber.java)|95|
-|368|[Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/)|||
-|416|[Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)|||
-|254|[Factor Combinations](https://leetcode.com/problems/factor-combinations/)|||
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSum.java)|70|
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumII.java)|70|
 |216|[Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumIII.java)|65|
