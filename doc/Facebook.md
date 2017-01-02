@@ -109,9 +109,6 @@ Facebook题目列表(24)
 |42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWater.java)|95|
 |407|[Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)|||
 |394|[Decode String](https://leetcode.com/problems/decode-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeString.java)|65|
-|329|[Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)|||
-|332|[Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)|||
-|417|[Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/)|||
 
 <br/>
 
