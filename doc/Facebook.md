@@ -183,17 +183,6 @@ Facebook题目列表(24)
 
 <br/>
 
-## 树状数组BIT
-|#|Title|Solution|Score|
-|---|----| ----- | ----- |
-|303|[Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)|||
-|307|[Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)|||
-|304|[Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)|||
-|308|[Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable/)|||
-|327|[Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)|||
-
-<br/>
-
 ## Nested List
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
