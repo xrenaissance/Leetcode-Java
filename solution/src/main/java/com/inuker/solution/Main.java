@@ -14,9 +14,14 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int min = new Test1().minCostII(new int[][] {
-                {4,16},{15,5},{18,17}
+        List<List<String>> words = new WordSquare().wordSquares(new String[] {
+                "area","lead","wall","lady","ball"
         });
-        System.out.println(min);
+        for (List<String> list : words) {
+            for (String word : list) {
+                System.out.print(word + " ");
+            }
+            System.out.println();
+        }
     }
 }

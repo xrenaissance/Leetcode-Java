@@ -30,29 +30,5 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public int minCostII(int[][] costs) {
-        if (costs.length == 0) {
-            return 0;
-        }
-        int n = costs.length, k = costs[0].length;
-        int min = 0, minIndex = -1, subMin = 0;
 
-        for (int i = 0; i < n; i++) {
-            int curMin = Integer.MAX_VALUE, curMinIdx = -1, curSub = Integer.MAX_VALUE;
-            for (int j = 0; j < k; j++) {
-                int value = (j != minIndex ? min : subMin) + costs[i][j];
-                if (value < curMin) {
-                    curSub = curMin;
-                    curMin = value;
-                    curMinIdx = j;
-                } else if (value < curSub) {
-                    curSub = value;
-                }
-            }
-            min = curMin;
-            minIndex = curMinIdx;
-            subMin = curSub;
-        }
-        return min;
-    }
 }
