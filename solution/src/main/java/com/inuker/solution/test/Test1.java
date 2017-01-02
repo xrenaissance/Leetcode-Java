@@ -30,26 +30,32 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public String removeKdigits(String num, int k) {
-        for (int i = 0, j; i < k && num.length() > 0; i++) {
-            num = removeKdigits(num);
-            for (j = 0; j < num.length() && num.charAt(j) == '0'; j++);
-            num = num.substring(j);
+    public boolean validTree(int n, int[][] edges) {
+        // initialize n isolated islands
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = i;
         }
-        return num.length() == 0 ? "0" : num;
+
+        // perform union find
+        for (int i = 0; i < edges.length; i++) {
+            int x = find(nums, edges[i][0]);
+            int y = find(nums, edges[i][1]);
+
+            // if two vertices happen to be in the same set
+            // then there's a cycle
+            if (x == y) return false;
+
+            // union
+            nums[x] = y;
+        }
+
+        return edges.length == n - 1;
     }
 
-    public String removeKdigits(String num) {
-        for (int i = 0; i < num.length(); i++) {
-            if (i + 1 < num.length()) {
-                if (num.charAt(i) > num.charAt(i + 1)) {
-                    return num.substring(0, i) + num.substring(i + 1);
-                }
-            } else {
-                return num.substring(0, i);
-            }
-        }
-        return null;
+    int find(int nums[], int i) {
+        for (; nums[i] != i; i = nums[i]);
+        return i;
     }
 
 }
