@@ -14,7 +14,16 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String s = new RemoveDuplicateLetters().removeDuplicateLetters("cbacdcbc");
-        System.out.println(s);
+        LFUCache cache = new LFUCache(2);
+        cache.set(1, 1);
+        cache.set(2, 2);
+        cache.get(1);
+        cache.set(3, 3);
+        cache.get(2);
+        cache.get(3);
+        cache.set(4, 4);
+        cache.get(1);
+        cache.get(3);
+        cache.get(4);
     }
 }
