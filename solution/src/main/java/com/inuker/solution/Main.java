@@ -14,16 +14,12 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        LFUCache cache = new LFUCache(2);
-        cache.set(1, 1);
-        cache.set(2, 2);
-        cache.get(1);
-        cache.set(3, 3);
-        cache.get(2);
-        cache.get(3);
-        cache.set(4, 4);
-        cache.get(1);
-        cache.get(3);
-        cache.get(4);
+        FindMedianFromDataStream s = new FindMedianFromDataStream();
+        s.addNum(1);
+        s.addNum(2);
+        s.addNum(3);
+        s.addNum(4);
+        double f = s.findMedian();
+        System.out.println(f);
     }
 }
