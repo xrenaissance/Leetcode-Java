@@ -114,6 +114,7 @@ Facebook题目列表(24)
 
 ## Union Find联通问题
 |#|Title|Solution|Score|
+|---|----| ----- | ----- |
 |200|[Number of Islands](https://leetcode.com/problems/number-of-islands/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslands.java)|90|
 |305|[Number of Islands II](https://leetcode.com/problems/number-of-islands-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfIslandsII.java)|85|
 |128|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestConsecutiveSequence.java)||
