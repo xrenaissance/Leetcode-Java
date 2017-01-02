@@ -30,24 +30,27 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public int numDecodings(String s) {
-        if (s.length() == 0) {
-            return 0;
+    public boolean isOneEditDistance(String s, String t) {
+        int sn = s.length(), tn = t.length();
+        if (sn > tn) {
+            return isOneEditDistance(t, s);
         }
-        int n = s.length();
-        int[] f = new int[n + 1];
-        f[0] = 1;
-        f[1] = s.charAt(0) == '0' ? 0 : 1;
-
-        for (int i = 1; i < n; i++) {
-            if (s.charAt(i - 1) == '1' || (s.charAt(i - 1) == '2' && s.charAt(i) <= '6')) {
-                f[i + 1] = f[i - 1];
-            }
-            if (s.charAt(i) != '0') {
-                f[i + 1] += f[i];
+        if (tn - sn > 1) {
+            return false;
+        }
+        if (s.equals(t)) {
+            return false;
+        }
+        for (int i = 0; i < sn; i++) {
+            if (s.charAt(i) != t.charAt(i)) {
+                if (sn == tn) {
+                    return s.substring(i + 1).equals(t.substring(i + 1));
+                } else {
+                    return s.substring(i).equals(t.substring(i + 1));
+                }
             }
         }
-        return f[n];
+        return true;
     }
 
 }
