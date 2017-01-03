@@ -98,36 +98,31 @@ public class RemoveInvalidParentheses {
             }
         }
         HashSet<String> set = new HashSet<>();
-        dfs(s, 0, set, new StringBuilder(), nL, nR, 0);
+        dfs(s, 0, set, "", nL, nR, 0);
         return new LinkedList<String>(set);
     }
 
-    private void dfs(String s, int i, HashSet<String> set, StringBuilder sb, int nL, int nR, int count) {
+    private void dfs(String s, int i, HashSet<String> set, String t, int nL, int nR, int count) {
         if (nL < 0 || nR < 0 || count < 0) {
             return;
         }
 
         if (i == s.length()) {
             if (nL == 0 && nR == 0 && count == 0) {
-                set.add(sb.toString());
+                set.add(t);
             }
             return;
         }
 
         char c = s.charAt(i);
-        int len = sb.length();
-
-        // 要注意下面都要先处理不带c，再处理带c的情况
         if (c == '(') {
-            dfs(s, i + 1, set, sb, nL - 1, nR, count);
-            dfs(s, i + 1, set, sb.append(c), nL, nR, count + 1);
-        } else if (c == ')') {
-            dfs(s, i + 1, set, sb, nL, nR - 1, count);
-            dfs(s, i + 1, set, sb.append(c), nL, nR, count - 1);
+            dfs(s, set, i + 1, t, nL - 1, nR, count);
+            dfs(s, set, i + 1, t + "(", nL, nR, count + 1);
+        } else if (s.charAt(i) == ')') {
+            dfs(s, set, i + 1, t, nL, nR - 1, count);
+            dfs(s, set, i + 1, t + ")", nL, nR, count - 1);
         } else {
-            dfs(s, i + 1, set, sb.append(c), nL, nR, count);
+            dfs(s, set, i + 1, t + c, nL, nR, count);
         }
-
-        sb.setLength(len);
     }
 }
