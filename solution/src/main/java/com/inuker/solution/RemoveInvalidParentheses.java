@@ -116,13 +116,13 @@ public class RemoveInvalidParentheses {
 
         char c = s.charAt(i);
         if (c == '(') {
-            dfs(s, set, i + 1, t, nL - 1, nR, count);
-            dfs(s, set, i + 1, t + "(", nL, nR, count + 1);
+            dfs(s, i + 1, set, t, nL - 1, nR, count);
+            dfs(s, i + 1, set, t + "(", nL, nR, count + 1);
         } else if (s.charAt(i) == ')') {
-            dfs(s, set, i + 1, t, nL, nR - 1, count);
-            dfs(s, set, i + 1, t + ")", nL, nR, count - 1);
+            dfs(s, i + 1, set, t, nL, nR - 1, count);
+            dfs(s, i + 1, set, t + ")", nL, nR, count - 1);
         } else {
-            dfs(s, set, i + 1, t + c, nL, nR, count);
+            dfs(s, i + 1, set, t + c, nL, nR, count);
         }
     }
 }

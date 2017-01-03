@@ -55,6 +55,12 @@ public class RandomizedCollection {
         }
 
         int index = indexes.iterator().next();
+
+        /**
+         * 这里有个地方非常容易错，那就是indexes.remove(index)不能放到下面的if块之后
+         * 为什么呢？假设要remove的数有多个，其中一个恰好在链表末尾，而此处
+         * 选中的index在链表中间，如果下面这句放到if后的话，会将末尾和中间的都删了
+         */
         indexes.remove(index);
 
         if (index < list.size() - 1) {

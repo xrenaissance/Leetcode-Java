@@ -28,34 +28,72 @@ import java.util.Stack;
  * Created by dingjikerbo on 2016/12/29.
  */
 
-public class Test1 {
+public abstract class Test1 {
 
-    public int countComponents(int n, int[][] edges) {
-        // initialize n isolated islands
-        int[] nums = new int[n];
-        int count = 0;
-        for (int i = 0; i < n; i++) {
-            nums[i] = i;
-            count++;
+
+
+    public static class RandomizedCollection {
+
+        HashMap<Integer, Set<Integer>> map;
+        List<Integer> list;
+        Random random;
+
+        /** Initialize your data structure here. */
+        public RandomizedCollection() {
+            map = new HashMap<Integer, Set<Integer>>();
+            list = new ArrayList<>();
+            random = new Random();
         }
-        // perform union find
-        for (int i = 0; i < edges.length; i++) {
-            int x = find(nums, edges[i][0]);
-            int y = find(nums, edges[i][1]);
 
-            if (x != y) {
-                // union
-                nums[x] = y;
-                count--;
+        /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+        public boolean insert(int val) {
+            boolean f = map.containsKey(val);
+            Set<Integer> set = map.get(val);
+            if(set == null) {
+                set = new HashSet<Integer>();
+                map.put(val, set);
             }
+            list.add(val);
+            set.add(list.size() - 1);
+            return !f;
         }
 
-        return count;
+        /** Removes a value from the set. Returns true if the set contained the specified element. */
+        public boolean remove(int val) {
+            Set<Integer> set = map.get(val);
+            if (set == null || set.isEmpty()) {
+                return false;
+            }
+             int idx = set.iterator().next();
+            if (idx != list.size() - 1) {
+                int last = list.get(list.size() - 1);
+                list.set(idx, last);
+                Set<Integer> lastset = map.get(last);
+                lastset.remove(list.size() - 1);
+                lastset.add(idx);
+            }
+            list.remove(list.size() - 1);
+            set.remove(idx);
+            return true;
+        }
+
+        /** Get a random element from the set. */
+        public int getRandom() {
+            return list.get(random.nextInt(list.size()));
+        }
     }
 
-    int find(int nums[], int i) {
-        for (; nums[i] != i; i = nums[i]);
-        return i;
-    }
+    abstract int read4(char[] buf);
+
+    private static final String[] LESS20 = {
+            "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+            "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+    };
+    private static final String[] LESS100 = {
+            "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+    };
+    private static final String[] THOUSAND = {
+            "", "Thousand", "Million", "Billion"
+    };
 
 }

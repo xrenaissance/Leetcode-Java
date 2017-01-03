@@ -14,12 +14,15 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        FindMedianFromDataStream s = new FindMedianFromDataStream();
-        s.addNum(1);
-        s.addNum(2);
-        s.addNum(3);
-        s.addNum(4);
-        double f = s.findMedian();
-        System.out.println(f);
+        Test1.RandomizedCollection s = new Test1.RandomizedCollection();
+        s.insert(4);
+        s.insert(3);
+        s.insert(4);
+        s.insert(2);
+        s.insert(4);
+        s.remove(4);
+        s.remove(3);
+        s.remove(4);
+        s.remove(4);
     }
 }

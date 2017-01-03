@@ -26,6 +26,7 @@ import java.util.Set;
  * 1. 开头要初始化所有出现过的字符的degree为0，且要记下这些字符数count，结尾的时候要对比生成的字典长度是否和count相等，如果不等说明有环，返回空
  * 3. 在对比两个单词时，当first从开头包含second时，是不符合顺序的，如"abc"和"ab"，直接返回空
  * 4. 在设置degreee时要避免重复添加，比如'a'->'b'出现了多次，degree只能加1次
+ * 5. degree设置的时候要注意字符和索引换算
  */
 public class AlienDictionary {
 
