@@ -276,3 +276,78 @@ Facebook题目列表(24)
 |266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePermutation.java)|100|
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)|||
 |409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)||
+
+
+## GlassDoor
+1. Find longest increasing subarray in a given array
+2. 矩阵乘法，矩阵旋转90
+3. decode ways
+4. 二叉树序列化
+5. Longest Increasing Subsequence
+6. Unique Paths i/ii
+7. 所有的DP问题
+8. move zeroes
+9. 链表两两交换，分组交换
+10. combination生成
+11. Lowest common ancestor
+Give an unsorted array, find the kth smallest item
+关于用到桶排序
+Validate BST
+3sUM
+next permutation
+给定一个数字，通过交换各位，生成小于target的最大数
+merge interval, insert interval
+remove invalid parentheses
+meeting rooms ii
+merge k sorted list
+first bad version
+group anagram
+Inorder Successor in BST
+divide two integers
+insert delete getRandom
+Decode String
+Minimum window substring
+Longest Substring with At Most K Distinct Characters,好好准备largest substring系列
+Maximum Size Subarray Sum Equals k
+binary tree path/path sum/Binary Tree Longest Consecutive Sequence
+Kth Largest Element in an Array
+add and search word
+intersection of two arrays i,ii/list
+Flatten Binary Tree to Linked List
+Convert Sorted Array to Binary Search Tree/Convert Sorted List to Binary Search Tree
+median of two sorted arrays/find median from data stream
+Sliding window maximum
+Longest Palindromic Substring
+unique path i/ii
+Flatten Nested List Iterator
+二叉树的遍历递归非递归
+generate parentheses
+number of 1 bits
+encode and decode string
+shortest palindrome
+Maximum Subarray/Maximum Product Subarray
+Longest Valid Parentheses
+basic calculator i/ii
+Minimum Height Trees
+Minimum Depth of Binary Tree
+Valid Number
+Valid Perfect Square
+task schedule with cooldown不是leetcode
+maximum product subarray
+Sudoku Solver
+random pickx相关的
+dot product非lc
+Kth Smallest Element in a Sorted Matrix
+Distinct Subsequences
+sort color 变种，假如有k个color
+
+二叉树，dp
+领英的也刷下
+subarray相关的
+
+
+系统设计
+1. design google map (1) calcalate fastest routes between A and B
+(2) realtime update traffic info collected by users
+
+2. design facebook feed (1) how you store feed (2) machine learning (3) search functionality
