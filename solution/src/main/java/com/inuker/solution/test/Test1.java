@@ -30,56 +30,28 @@ import java.util.Stack;
 
 public abstract class Test1 {
 
+    private final String[] ARR = {
+            "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+    };
 
-
-    public static class RandomizedCollection {
-
-        HashMap<Integer, Set<Integer>> map;
-        List<Integer> list;
-        Random random;
-
-        /** Initialize your data structure here. */
-        public RandomizedCollection() {
-            map = new HashMap<Integer, Set<Integer>>();
-            list = new ArrayList<>();
-            random = new Random();
+    public List<String> letterCombinations(String digits) {
+        List<String> result = new LinkedList<>();
+        if (digits.length() == 0) {
+            return result;
         }
+        helper(digits, 0, "", result);
+        return result;
+    }
 
-        /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
-        public boolean insert(int val) {
-            boolean f = map.containsKey(val);
-            Set<Integer> set = map.get(val);
-            if(set == null) {
-                set = new HashSet<Integer>();
-                map.put(val, set);
-            }
-            list.add(val);
-            set.add(list.size() - 1);
-            return !f;
+    private void helper(String s, int start, String t, List<String> result) {
+        if (start == s.length()) {
+            result.add(t);
+            return;
         }
-
-        /** Removes a value from the set. Returns true if the set contained the specified element. */
-        public boolean remove(int val) {
-            Set<Integer> set = map.get(val);
-            if (set == null || set.isEmpty()) {
-                return false;
-            }
-             int idx = set.iterator().next();
-            if (idx != list.size() - 1) {
-                int last = list.get(list.size() - 1);
-                list.set(idx, last);
-                Set<Integer> lastset = map.get(last);
-                lastset.remove(list.size() - 1);
-                lastset.add(idx);
-            }
-            list.remove(list.size() - 1);
-            set.remove(idx);
-            return true;
-        }
-
-        /** Get a random element from the set. */
-        public int getRandom() {
-            return list.get(random.nextInt(list.size()));
+        int n = s.charAt(start) - '0';
+        String ss = ARR[n];
+        for (char c : ss.toCharArray()) {
+            helper(s, start + 1, t + c, result);
         }
     }
 

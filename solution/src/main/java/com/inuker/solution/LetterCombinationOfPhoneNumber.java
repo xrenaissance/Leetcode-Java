@@ -17,25 +17,22 @@ public class LetterCombinationOfPhoneNumber {
 
     // 耗时3ms
     public List<String> letterCombinations(String digits) {
-        List<String> result = new LinkedList<String>();
+        List<String> result = new LinkedList<>();
         if (digits.length() == 0) {
             return result;
         }
-        helper(digits, 0, result, new StringBuilder());
+        helper(digits, 0, "", result);
         return result;
     }
 
-    private void helper(String digit, int start, List<String> path, StringBuilder sb) {
-        if (start == digit.length()) {
-            path.add(sb.toString());
+    private void helper(String s, int start, String t, List<String> result) {
+        if (start == s.length()) {
+            result.add(t);
             return;
         }
-
-        int n = digit.charAt(start) - '0';
+        int n = s.charAt(start) - '0';
         for (char c : ARR[n].toCharArray()) {
-            sb.append(c);
-            helper(digit, start + 1, path, sb);
-            sb.deleteCharAt(sb.length() - 1);
+            helper(s, start + 1, t + c, result);
         }
     }
 }
