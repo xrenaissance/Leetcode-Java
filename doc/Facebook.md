@@ -279,12 +279,9 @@ Facebook题目列表(24)
 
 
 ## GlassDoor
-1. Find longest increasing subarray in a given array
-2. 矩阵乘法，矩阵旋转90
-3. decode ways
-4. 二叉树序列化
-5. Longest Increasing Subsequence
-6. Unique Paths i/ii
+Rotate Image
+Longest Increasing Subsequence
+Unique Paths i/ii
 7. 所有的DP问题
 8. move zeroes
 9. 链表两两交换，分组交换
