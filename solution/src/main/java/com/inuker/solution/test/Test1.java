@@ -24,36 +24,45 @@ import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
 
+import sun.tools.tree.InlineMethodExpression;
+
 /**
  * Created by dingjikerbo on 2016/12/29.
  */
 
 public abstract class Test1 {
 
+    public List<String> addOperators(String num, int target) {
+        List<String> list = new LinkedList<String>();
+        helper(num, 0, list, target, "", 0, 0);
+        return list;
+    }
+
+    private void helper(String num, int start, List<String> list, int target, String s, long val, long last) {
+        if (start == num.length()) {
+            if (val == target) {
+                list.add(s);
+            }
+            return;
+        }
+        for (int i = start; i < num.length(); i++) {
+            if (i != start && num.charAt(start) == '0') {
+                break;
+            }
+            long n = Long.parseLong(s.substring(start, i + 1));
+            if (start == 0) {
+                helper(num, i + 1, list, target, s + n, n, n);
+            } else {
+                helper(num, i + 1, list, target, s + "+" + n, val + n, n);
+                helper(num, i + 1, list, target, s + "-" + n, val - n, -n);
+                helper(num, i + 1, list, target, s + "*" + n, val - last + last * n, last * n);
+            }
+        }
+    }
+
     private final String[] ARR = {
             "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
     };
-
-    public List<String> letterCombinations(String digits) {
-        List<String> result = new LinkedList<>();
-        if (digits.length() == 0) {
-            return result;
-        }
-        helper(digits, 0, "", result);
-        return result;
-    }
-
-    private void helper(String s, int start, String t, List<String> result) {
-        if (start == s.length()) {
-            result.add(t);
-            return;
-        }
-        int n = s.charAt(start) - '0';
-        String ss = ARR[n];
-        for (char c : ss.toCharArray()) {
-            helper(s, start + 1, t + c, result);
-        }
-    }
 
     abstract int read4(char[] buf);
 
