@@ -1,20 +1,26 @@
 package com.inuker.solution;
 
+import com.inuker.solution.test.Test1;
+
 /**
  * Created by dingjikerbo on 2016/11/22.
  */
 
 public class WordDictionary {
 
-    private TrieNode mRoot = new TrieNode();
+    private class Trie {
+        Trie[] nodes = new Trie[26];
+        String word;
+    }
+
+    Trie root = new Trie();
 
     // Adds a word into the data structure.
     public void addWord(String word) {
-        TrieNode node = mRoot;
-        for (int i = 0; i < word.length(); i++) {
-            char c = word.charAt(i);
+        Trie node = root;
+        for (char c : word.toCharArray()) {
             if (node.nodes[c - 'a'] == null) {
-                node.nodes[c - 'a'] = new TrieNode();
+                node.nodes[c - 'a'] = new Trie();
             }
             node = node.nodes[c - 'a'];
         }
@@ -24,25 +30,29 @@ public class WordDictionary {
     // Returns if the word is in the data structure. A word could
     // contain the dot character '.' to represent any one letter.
     public boolean search(String word) {
-        return search(mRoot, word, 0);
+        return search(root, word, 0);
     }
 
-    private boolean search(TrieNode node, String word, int start) {
-        if (start == word.length()) {
-            return node != null && node.word != null;
-        }
-        if (node == null) {
+    private boolean search(Trie trie, String word, int index) {
+        if (trie == null) {
             return false;
         }
-        if (word.charAt(start) != '.') {
-            return search(node.nodes[word.charAt(start) - 'a'], word, start + 1);
+        if (index == word.length()) {
+            return trie.word != null;
         }
-        for (int i = 0; i < 26; i++) {
-            if (search(node.nodes[i], word, start + 1)) {
-                return true;
+        char c = word.charAt(index);
+        if (c != '.') {
+            return search(trie.nodes[c - 'a'], word, index + 1);
+        } else {
+            for (Trie node : trie.nodes) {
+                if (node != null) {
+                    if (search(node, word, index + 1)) {
+                        return true;
+                    }
+                }
             }
+            return false;
         }
-        return false;
     }
 }
 

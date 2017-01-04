@@ -32,33 +32,57 @@ import sun.tools.tree.InlineMethodExpression;
 
 public abstract class Test1 {
 
-    public List<String> addOperators(String num, int target) {
-        List<String> list = new LinkedList<String>();
-        helper(num, 0, list, target, "", 0, 0);
-        return list;
+    public class WordDictionary {
+
+        Trie root = new Trie();
+
+        // Adds a word into the data structure.
+        public void addWord(String word) {
+            Trie node = root;
+            for (char c : word.toCharArray()) {
+                if (node.nodes[c - 'a'] == null) {
+                    node.nodes[c - 'a'] = new Trie();
+                }
+                node = node.nodes[c - 'a'];
+            }
+            node.word = word;
+        }
+
+        // Returns if the word is in the data structure. A word could
+        // contain the dot character '.' to represent any one letter.
+        public boolean search(String word) {
+            return search(root, word, 0);
+        }
+
+        private boolean search(Trie trie, String word, int index) {
+            if (trie == null) {
+                return false;
+            }
+            if (index == word.length()) {
+                return trie.word != null;
+            }
+            char c = word.charAt(index);
+            if (c != '.') {
+                return search(trie.nodes[c - 'a'], word, index + 1);
+            } else {
+                for (Trie node : trie.nodes) {
+                    if (node != null) {
+                        if (search(node, word, index + 1)) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
     }
 
-    private void helper(String num, int start, List<String> list, int target, String s, long val, long last) {
-        if (start == num.length()) {
-            if (val == target) {
-                list.add(s);
-            }
-            return;
-        }
-        for (int i = start; i < num.length(); i++) {
-            if (i != start && num.charAt(start) == '0') {
-                break;
-            }
-            long n = Long.parseLong(s.substring(start, i + 1));
-            if (start == 0) {
-                helper(num, i + 1, list, target, s + n, n, n);
-            } else {
-                helper(num, i + 1, list, target, s + "+" + n, val + n, n);
-                helper(num, i + 1, list, target, s + "-" + n, val - n, -n);
-                helper(num, i + 1, list, target, s + "*" + n, val - last + last * n, last * n);
-            }
-        }
+    private class Trie {
+        Trie[] nodes = new Trie[26];
+        String word;
     }
+
+    abstract boolean knows(int a, int b);
 
     private final String[] ARR = {
             "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
