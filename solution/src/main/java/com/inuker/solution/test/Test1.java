@@ -2,6 +2,7 @@ package com.inuker.solution.test;
 
 import com.inuker.solution.Interval;
 import com.inuker.solution.ListNode;
+import com.inuker.solution.NestedInteger;
 import com.inuker.solution.PalindromeLinkedList;
 import com.inuker.solution.TreeLinkNode;
 import com.inuker.solution.TreeNode;
@@ -14,6 +15,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,54 +34,38 @@ import sun.tools.tree.InlineMethodExpression;
 
 public abstract class Test1 {
 
-    public class WordDictionary {
+    public class NestedIterator implements Iterator<Integer> {
 
-        Trie root = new Trie();
+        Stack<NestedInteger> mStack = new Stack<NestedInteger>();
 
-        // Adds a word into the data structure.
-        public void addWord(String word) {
-            Trie node = root;
-            for (char c : word.toCharArray()) {
-                if (node.nodes[c - 'a'] == null) {
-                    node.nodes[c - 'a'] = new Trie();
+        public NestedIterator(List<NestedInteger> nestedList) {
+            push(nestedList);
+        }
+
+        private void push(List<NestedInteger> list) {
+            for (int i = list.size() - 1; i >= 0; i--) {
+                mStack.push(list.get(i));
+            }
+        }
+
+        @Override
+        public Integer next() {
+            return mStack.pop().getInteger();
+        }
+
+        @Override
+        public boolean hasNext() {
+            while (!mStack.isEmpty()) {
+                NestedInteger nest = mStack.peek();
+                if (nest.isInteger()) {
+                    return true;
+                } else {
+                    mStack.pop();
+                    push(nest.getList());
                 }
-                node = node.nodes[c - 'a'];
             }
-            node.word = word;
+            return false;
         }
-
-        // Returns if the word is in the data structure. A word could
-        // contain the dot character '.' to represent any one letter.
-        public boolean search(String word) {
-            return search(root, word, 0);
-        }
-
-        private boolean search(Trie trie, String word, int index) {
-            if (trie == null) {
-                return false;
-            }
-            if (index == word.length()) {
-                return trie.word != null;
-            }
-            char c = word.charAt(index);
-            if (c != '.') {
-                return search(trie.nodes[c - 'a'], word, index + 1);
-            } else {
-                for (Trie node : trie.nodes) {
-                    if (node != null) {
-                        if (search(node, word, index + 1)) {
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            }
-        }
-    }
-
-    private class Trie {
-        Trie[] nodes = new Trie[26];
-        String word;
     }
 
     abstract boolean knows(int a, int b);

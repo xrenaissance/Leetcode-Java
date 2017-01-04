@@ -17,6 +17,10 @@ public abstract class NestedIterator implements Iterator<Integer> {
         pushNestedList(nestedList);
     }
 
+    /**
+     * 容易错的地方是NestedInteger有可能是list，而list中没有实在的数据，
+     * 而是若干层套在一起的空，所以hasNext不能只判断栈是否为空
+     */
     @Override
     public boolean hasNext() {
         while (!mStack.isEmpty()) {
