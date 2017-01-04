@@ -34,38 +34,21 @@ import sun.tools.tree.InlineMethodExpression;
 
 public abstract class Test1 {
 
-    public class NestedIterator implements Iterator<Integer> {
-
-        Stack<NestedInteger> mStack = new Stack<NestedInteger>();
-
-        public NestedIterator(List<NestedInteger> nestedList) {
-            push(nestedList);
-        }
-
-        private void push(List<NestedInteger> list) {
-            for (int i = list.size() - 1; i >= 0; i--) {
-                mStack.push(list.get(i));
+    public int largestRectangleArea(int[] heights) {
+        int max = 0;
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i <= heights.length; ) {
+            int height = (i == heights.length ? 0 : heights[i]);
+            if (stack.isEmpty() || height > heights[stack.peek()]) {
+                stack.push(i);
+                i++;
+            } else {
+                int index = stack.pop();
+                int prev = stack.isEmpty() ? 0 : stack.peek() + 1;
+                max = Math.max(max, heights[index] * (i - 1 - prev + 1));
             }
         }
-
-        @Override
-        public Integer next() {
-            return mStack.pop().getInteger();
-        }
-
-        @Override
-        public boolean hasNext() {
-            while (!mStack.isEmpty()) {
-                NestedInteger nest = mStack.peek();
-                if (nest.isInteger()) {
-                    return true;
-                } else {
-                    mStack.pop();
-                    push(nest.getList());
-                }
-            }
-            return false;
-        }
+        return max;
     }
 
     abstract boolean knows(int a, int b);

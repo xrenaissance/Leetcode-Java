@@ -32,6 +32,10 @@ public class InorderSuccessorInBST {
         return null;
     }
 
+    /**
+     * p的下一个节点一定是比p大的，所以这里遍历时当p的值小于当前节点，则当前节点
+     * 可作为备选，同时往左走。如果在遍历过程中遇到仍然比p大的，说明更接近p，则更新备选。
+     */
     // 耗时4ms
     public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
         TreeNode res = null;

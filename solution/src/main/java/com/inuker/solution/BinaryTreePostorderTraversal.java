@@ -14,6 +14,11 @@ import java.util.Stack;
 
 public class BinaryTreePostorderTraversal {
 
+    /**
+     * 先序是中左右，中序是左中右，后序是左右中，所以我们可以给先序调整一下改成中右左，然后倒过来就成了左右中
+     * @param root
+     * @return
+     */
     // 这里虽然最后的结果返回的是对的，但真正访问节点的顺序是不对的，root并不是最后访问的
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> results = new LinkedList<>();
