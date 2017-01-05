@@ -7,6 +7,17 @@ import java.util.Queue;
  * Created by dingjikerbo on 16/11/25.
  */
 
+/**
+ * https://leetcode.com/articles/walls-and-gates/
+ */
+
+/**
+ * 这题BFS我的思路总喜欢是从一个门开始，不停地bfs遍历完所有的房间，计算每个房间到这个门的距离，然后再
+ * 从下一个门开始继续这样遍历，同时如果某个房间到这个门距离更短的话则更新距离，这样效率其实不高的。
+ * 更好的办法是总体bfs，将所有的门加入队列作为队列的第一层，与第一层的门相邻的房间都标为1，同时这些房间作为
+ * bfs的第二层，与第二层相邻的房间都标为2，要注意的是已经标过的房间肯定是该房间距离某个门的最近距离了，就直接跳过，
+ * 只标那些INF的。
+ */
 public class WallsAndGates {
 
     // 耗时7ms
@@ -48,33 +59,37 @@ public class WallsAndGates {
         dfs(rooms, i, j - 1, dis + 1);
     }
 
-    // 耗时19ms
-    public void wallsAndGates2(int[][] rooms) {
-        if (rooms.length == 0 || rooms[0].length == 0) return;
-        Queue<int[]> queue = new LinkedList<>();
-        for (int i = 0; i < rooms.length; i++) {
-            for (int j = 0; j < rooms[0].length; j++) {
-                if (rooms[i][j] == 0) queue.add(new int[]{i, j});
+    private void wallsAndGates2(int[][] rooms) {
+        if (rooms.length == 0) {
+            return;
+        }
+        int row = rooms.length, col = rooms[0].length;
+
+        Queue<int[]> queue = new LinkedList<int[]>();
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (rooms[i][j] == 0) {
+                    queue.add(new int[] {i, j});
+                }
             }
         }
+
+        int[] dx = {-1, 1, 0, 0}, dy = {0, 0, -1, 1};
+
         while (!queue.isEmpty()) {
-            int[] top = queue.remove();
-            int row = top[0], col = top[1];
-            if (row > 0 && rooms[row - 1][col] == Integer.MAX_VALUE) {
-                rooms[row - 1][col] = rooms[row][col] + 1;
-                queue.add(new int[]{row - 1, col});
-            }
-            if (row < rooms.length - 1 && rooms[row + 1][col] == Integer.MAX_VALUE) {
-                rooms[row + 1][col] = rooms[row][col] + 1;
-                queue.add(new int[]{row + 1, col});
-            }
-            if (col > 0 && rooms[row][col - 1] == Integer.MAX_VALUE) {
-                rooms[row][col - 1] = rooms[row][col] + 1;
-                queue.add(new int[]{row, col - 1});
-            }
-            if (col < rooms[0].length - 1 && rooms[row][col + 1] == Integer.MAX_VALUE) {
-                rooms[row][col + 1] = rooms[row][col] + 1;
-                queue.add(new int[]{row, col + 1});
+            int[] pos = queue.poll();
+            int x = pos[0], y = pos[1];
+
+            for (int i = 0; i < dx.length; i++) {
+                int x0 = x + dx[i], y0 = y + dy[i];
+                /**
+                 * 设置过的肯定是最小的值，就不用再设置了
+                 */
+                if (x0 >= 0 && x0 < rooms.length && y0 >= 0 && y0 < rooms[0].length && rooms[x0][y0] == Integer.MAX_VALUE) {
+                    rooms[x0][y0] = rooms[x][y] + 1;
+                    queue.add(new int[] {x0, y0});
+                }
             }
         }
     }

@@ -33,50 +33,48 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        int[] indegree = new int[numCourses];
-        HashMap<Integer, Set<Integer>> map = new HashMap<>();
-        for (int[] f : prerequisites) {
-            int from = f[1], to = f[0];
-            Set<Integer> set = map.get(from);
-            if (set == null) {
-                set = new HashSet<>();
-                map.put(from, set);
-            }
-            /**
-             * 这里要防止同一条边计了多次
-             */
-            if (set.add(to)) {
-                indegree[to]++;
-            }
+    public void wallsAndGates(int[][] rooms) {
+        if (rooms.length == 0) {
+            return;
         }
-        Queue<Integer> queue = new LinkedList<>();
-        List<Integer> list = new LinkedList<>();
-        for (int i = 0; i < indegree.length; i++) {
-            if (indegree[i] == 0) {
-                queue.add(i);
-            }
-        }
-        while (!queue.isEmpty()) {
-            Integer n = queue.poll();
-            Set<Integer> set = map.get(n);
-            if (set != null) {
-                for (Integer k : set) {
-                    if (--indegree[k] == 0) {
-                        list.add(k);
-                        queue.add(k);
-                    }
+        for (int i = 0; i < rooms.length; i++) {
+            for (int j = 0; j < rooms[0].length; j++) {
+                if (rooms[i][j] == 0) {
+                    bfs(rooms, i, j);
                 }
             }
         }
-        if (list.size() != numCourses) {
-            return new int[0];
+    }
+
+    private void bfs(int[][] rooms, int x, int y) {
+        int[] dx = {-1, 1, 0, 0};
+        int[] dy = {0, 0, -1, 1};
+
+        Queue<int[]> queue = new LinkedList<int[]>();
+        Queue<int[]> next = new LinkedList<>();
+        boolean[][] visited = new boolean[rooms.length][rooms[0].length];
+        int distance = 0;
+        queue.add(new int[] {x, y});
+
+        while (!queue.isEmpty()) {
+            int[] pos = queue.poll();
+            x = pos[0]; y = pos[1];
+
+            for (int i = 0; i < dx.length; i++) {
+                int x0 = x + dx[i], y0 = y + dy[i];
+                if (x0 >= 0 && x0 < rooms.length && y0 >= 0 && y0 < rooms[0].length && rooms[x0][y0] > 0 && !visited[x0][y0]) {
+                    visited[x0][y0] = true;
+                    rooms[x0][y0] = Math.min(rooms[x0][y0], distance + 1);
+                    next.add(new int[] {x0, y0});
+                }
+            }
+
+            if (queue.isEmpty()) {
+                queue.addAll(next);
+                next.clear();
+                distance++;
+            }
         }
-        int[] f = new int[numCourses];
-        for (int i = 0; i < f.length; i++) {
-            f[i] = list.get(i);
-        }
-        return f;
     }
 
      boolean knows(int a, int b) {
