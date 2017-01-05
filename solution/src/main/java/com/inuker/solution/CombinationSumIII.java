@@ -9,26 +9,30 @@ import java.util.List;
 
 public class CombinationSumIII {
 
+    /**
+     * 这题的意思是不允许重复数字
+     */
     public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> result = new LinkedList<List<Integer>>();
-        dfs(k, n, 1, result, new LinkedList<Integer>());
+        List<List<Integer>> result = new LinkedList<>();
+        dfs(n, k, 1, result, new LinkedList<Integer>());
         return result;
     }
 
-    private void dfs(int k, int n, int start, List<List<Integer>> result, List<Integer> path) {
-        if (k == 0 && n == 0) {
-            result.add(new LinkedList<Integer>(path));
+    private void dfs(int target, int k, int start, List<List<Integer>> result, List<Integer> list) {
+        if (target == 0 && k == 0) {
+            result.add(new LinkedList<>(list));
             return;
         }
-
-        if (n < 0 || k < 0 || start > 9) {
+        if (target <= 0 || k <= 0) {
             return;
         }
-
         for (int i = start; i <= 9; i++) {
-            path.add(i);
-            dfs(k - 1, n - i, i + 1, result, path);
-            path.remove(path.size() - 1);
+            list.add(i);
+            /**
+             * 如果这题允许重复数字则这取i，否则取i+1。
+             */
+            dfs(target - i, k - 1, i + 1, result, list);
+            list.remove(list.size() - 1);
         }
     }
 }

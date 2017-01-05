@@ -14,9 +14,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<Integer>> result = new CombinationSum().combinationSum(new int[] {
-                1, 1, 2, 2, 3, 3
-        }, 6);
+        List<List<Integer>> result = new Test1().combinationSum3(3, 8);
         for (List<Integer> list : result) {
             for (Integer n : list) {
                 System.out.print(n + " ");
