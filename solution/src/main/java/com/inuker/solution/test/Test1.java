@@ -4,6 +4,7 @@ import com.inuker.solution.Interval;
 import com.inuker.solution.ListNode;
 import com.inuker.solution.NestedInteger;
 import com.inuker.solution.PalindromeLinkedList;
+import com.inuker.solution.PathSum;
 import com.inuker.solution.TreeLinkNode;
 import com.inuker.solution.TreeNode;
 
@@ -32,72 +33,44 @@ import java.util.Stack;
 
 public class Test1 {
 
-    class Node {
-        String word;
-        Node prev;
-        int dis;
-
-        Node(String word, Node prev, int dis) {
-            this.word = word;
-            this.prev = prev;
-            this.dis = dis;
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        int[] indegree = new int[numCourses];
+        HashMap<Integer, Set<Integer>> map = new HashMap<>();
+        for (int[] f : prerequisites) {
+            int from = f[1], to = f[0];
+            Set<Integer> set = map.get(from);
+            if (set == null) {
+                set = new HashSet<>();
+                map.put(from, set);
+            }
+            if (set.add(to)) {
+                indegree[to]++;
+            }
         }
+        Queue<Integer> queue = new LinkedList<>();
+        List<Integer> list = new LinkedList<>();
+        for (int i = 0; i < indegree.length; i++) {
+            if (indegree[i] == 0) {
+                queue.add(i);
+            }
+        }
+        while (!queue.isEmpty()) {
+            Integer n = queue.poll();
+            Set<Integer> set = map.get(n);
+            if (set != null) {
+                for (Integer k : set) {
+                    if (--indegree[k] == 0) {
+                        list.add(k);
+                        queue.add(k);
+                    }
+                }
+            }
+        }
+        return list.size() == numCourses;
     }
 
-    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(new Node(beginWord, null, 1));
-        wordList.add(endWord);
-        wordList.remove(beginWord);
-        List<List<String>> result = new LinkedList<>();
-        HashSet<String> visited = new HashSet<String>();
-        int minDis = -1, curDis = 1;
-        while (!queue.isEmpty()) {
-            Node node = queue.poll();
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
 
-            if (node.word.equals(endWord)) {
-                if (minDis == -1) {
-                    minDis = node.dis;
-                }
-                List<String> t = new LinkedList<>();
-                for (Node p = node; p != null; p = p.prev) {
-                    t.add(0, p.word);
-                }
-                result.add(t);
-                continue;
-            }
-
-            if (node.dis != curDis) {
-                curDis = node.dis;
-                wordList.removeAll(visited);
-            }
-
-            if (minDis != -1 && node.dis > minDis) {
-                break;
-            }
-
-            if (wordList.isEmpty()) {
-                continue;
-            }
-
-            StringBuilder sb = new StringBuilder(node.word);
-            for (int i = 0; i < node.word.length(); i++) {
-                char c = sb.charAt(i);
-                for (int j = 0; j < 26; j++) {
-                    if (j + 'a' == c) {
-                        continue;
-                    }
-                    sb.setCharAt(i, (char) (j + 'a'));
-                    String t = sb.toString();
-                    if (wordList.contains(t)) {
-                        queue.add(new Node(t, node, node.dis + 1));
-                        visited.add(t);
-                    }
-                }
-                sb.setCharAt(i, c);
-            }
-        }
-        return result;
     }
 
      boolean knows(int a, int b) {
