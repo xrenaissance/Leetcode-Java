@@ -18,6 +18,10 @@ public class WordSearch {
         return false;
     }
 
+    /**
+     * 容易错的地方在于要给start == word.length放在最前面
+     * TestCase: "a", "a"
+     */
     private boolean dfs(char[][] board, int i, int j, String word, int start) {
         if (start == word.length()) {
             return true;

@@ -29,6 +29,10 @@ public class WordSearchII {
         trie.word = word;
     }
 
+    /**
+     * 这里相对第一题来说用到了set保存中间结果，而不是直接exist，原因在于假如trie中有ab和abb，则dfs的时候
+     * 遇到ab就会返回true了，那么abb永远不会走到，所以我们要dfs到trie结束为止
+     */
     public List<String> findWords(char[][] board, String[] words) {
         Trie trie = new Trie();
         for (String word : words) {
@@ -60,6 +64,9 @@ public class WordSearchII {
         }
         if (trie.word != null) {
             set.add(trie.word);
+            /**
+             * 这里还不能return，比如当前是aa，但是还有aab，所以需要继续dfs
+             */
         }
 
         board[i][j] ^= '#';

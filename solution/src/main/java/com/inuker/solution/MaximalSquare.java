@@ -4,6 +4,9 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/11/23.
  */
 
+/**
+ * https://leetcode.com/articles/maximal-square/
+ */
 public class MaximalSquare {
 
     public int maximalSquare(char[][] matrix) {

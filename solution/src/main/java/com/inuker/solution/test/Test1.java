@@ -6,6 +6,7 @@ import com.inuker.solution.NestedInteger;
 import com.inuker.solution.PalindromeLinkedList;
 import com.inuker.solution.TreeLinkNode;
 import com.inuker.solution.TreeNode;
+import com.sun.org.apache.bcel.internal.generic.SWAP;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -34,21 +35,29 @@ import sun.tools.tree.InlineMethodExpression;
 
 public abstract class Test1 {
 
-    public int largestRectangleArea(int[] heights) {
-        int max = 0;
-        Stack<Integer> stack = new Stack<Integer>();
-        for (int i = 0; i <= heights.length; ) {
-            int height = (i == heights.length ? 0 : heights[i]);
-            if (stack.isEmpty() || height > heights[stack.peek()]) {
-                stack.push(i);
-                i++;
-            } else {
-                int index = stack.pop();
-                int prev = stack.isEmpty() ? 0 : stack.peek() + 1;
-                max = Math.max(max, heights[index] * (i - 1 - prev + 1));
-            }
+    public List<List<String>> groupAnagrams(String[] strs) {
+
+    }
+
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        List<List<Integer>> result = new LinkedList<>();
+        Arrays.sort(nums);
+        helper(nums, 0, result, new LinkedList<>());
+        return result;
+    }
+
+    private void helper(int[] nums, int start, List<List<Integer>> result, List<Integer> path) {
+        if (start == nums.length) {
+            result.add(new LinkedList<>(path));
+            return;
         }
-        return max;
+
+        path.add(nums[start]);
+        helper(nums, start + 1, result, path);
+        path.remove(path.size() - 1);
+
+        for (++start; start < nums.length && nums[start] == nums[start - 1]; start++);
+        helper(nums, start, result, path);
     }
 
     abstract boolean knows(int a, int b);
