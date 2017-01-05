@@ -1,7 +1,11 @@
 package com.inuker.solution;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
+import java.util.Set;
 
 /**
  * Created by dingjikerbo on 2016/12/17.
@@ -10,44 +14,48 @@ import java.util.Queue;
 public class CourseScheduleII {
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        boolean[][] matrix = new boolean[numCourses][numCourses];
         int[] indegree = new int[numCourses];
-
-        for (int i = 0; i < prerequisites.length; i++) {
-            int cur = prerequisites[i][0];
-            int pre = prerequisites[i][1];
-            if (!matrix[pre][cur]) {
-                indegree[cur]++;
+        HashMap<Integer, Set<Integer>> map = new HashMap<>();
+        for (int[] f : prerequisites) {
+            int from = f[1], to = f[0];
+            Set<Integer> set = map.get(from);
+            if (set == null) {
+                set = new HashSet<>();
+                map.put(from, set);
             }
-            matrix[pre][cur] = true;
+            /**
+             * 这里要防止同一条边计了多次
+             */
+            if (set.add(to)) {
+                indegree[to]++;
+            }
         }
-
-        Queue<Integer> queue = new LinkedList<Integer>();
-        for (int i = 0; i < numCourses; i++) {
+        Queue<Integer> queue = new LinkedList<>();
+        List<Integer> list = new LinkedList<>();
+        for (int i = 0; i < indegree.length; i++) {
             if (indegree[i] == 0) {
                 queue.add(i);
             }
         }
-
-        int count = 0;
-
-        int[] result = new int[numCourses];
-
         while (!queue.isEmpty()) {
-            int course = queue.poll();
-
-            result[count++] = course;
-
-            for (int i = 0; i < numCourses; i++) {
-                if (matrix[course][i]) {
-                    matrix[course][i] = false;
-                    if (--indegree[i] == 0) {
-                        queue.add(i);
+            Integer n = queue.poll();
+            list.add(n);
+            Set<Integer> set = map.get(n);
+            if (set != null) {
+                for (Integer k : set) {
+                    if (--indegree[k] == 0) {
+                        queue.add(k);
                     }
                 }
             }
         }
-
-        return count == numCourses ? result : new int[0];
+        if (list.size() != numCourses) {
+            return new int[0];
+        }
+        int[] f = new int[numCourses];
+        for (int i = 0; i < f.length; i++) {
+            f[i] = list.get(i);
+        }
+        return f;
     }
 }

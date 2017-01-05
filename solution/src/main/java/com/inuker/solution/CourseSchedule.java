@@ -42,11 +42,11 @@ public class CourseSchedule {
         }
         while (!queue.isEmpty()) {
             Integer n = queue.poll();
+            list.add(n);
             Set<Integer> set = map.get(n);
             if (set != null) {
                 for (Integer k : set) {
                     if (--indegree[k] == 0) {
-                        list.add(k);
                         queue.add(k);
                     }
                 }

@@ -33,7 +33,7 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] indegree = new int[numCourses];
         HashMap<Integer, Set<Integer>> map = new HashMap<>();
         for (int[] f : prerequisites) {
@@ -43,6 +43,9 @@ public class Test1 {
                 set = new HashSet<>();
                 map.put(from, set);
             }
+            /**
+             * 这里要防止同一条边计了多次
+             */
             if (set.add(to)) {
                 indegree[to]++;
             }
@@ -66,11 +69,14 @@ public class Test1 {
                 }
             }
         }
-        return list.size() == numCourses;
-    }
-
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-
+        if (list.size() != numCourses) {
+            return new int[0];
+        }
+        int[] f = new int[numCourses];
+        for (int i = 0; i < f.length; i++) {
+            f[i] = list.get(i);
+        }
+        return f;
     }
 
      boolean knows(int a, int b) {
