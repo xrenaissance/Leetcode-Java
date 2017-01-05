@@ -4,8 +4,6 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/12/10.
  */
 
-import sun.applet.resources.MsgAppletViewer_zh_TW;
-
 /**
  * 可参考官方文档
  * https://leetcode.com/articles/guess-number-higher-or-lower-ii/

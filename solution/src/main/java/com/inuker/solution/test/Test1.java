@@ -6,7 +6,6 @@ import com.inuker.solution.NestedInteger;
 import com.inuker.solution.PalindromeLinkedList;
 import com.inuker.solution.TreeLinkNode;
 import com.inuker.solution.TreeNode;
-import com.sun.org.apache.bcel.internal.generic.SWAP;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -27,77 +26,91 @@ import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
 
-import sun.tools.tree.InlineMethodExpression;
-
 /**
  * Created by dingjikerbo on 2016/12/29.
  */
 
-public abstract class Test1 {
+public class Test1 {
 
-    public int maxProduct(int[] nums) {
-        int n = nums.length;
-        if (n == 0) {
-            return 0;
+    class Node {
+        String word;
+        Node prev;
+        int dis;
+
+        Node(String word, Node prev, int dis) {
+            this.word = word;
+            this.prev = prev;
+            this.dis = dis;
         }
-        int max0 = 1, min0 = 1;
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
-            int n1 = Math.max(min0 * nums[i], Math.max(nums[i], max0 * nums[i]));
-            int n2 = Math.min(max0 * nums[i], Math.min(nums[i], min0 * nums[i]));
-            max0 = n1;
-            min0 = n2;
-            max = Math.max(max, max0);
-        }
-        return max;
     }
 
-    public List<List<String>> groupAnagrams(String[] strs) {
-        Map<String, List<String>> map = new HashMap<>();
-        for (String word : strs) {
-            char[] s = word.toCharArray();
-            Arrays.sort(s);
-            String key = String.valueOf(s);
-            List<String> set = map.get(key);
-            if (set == null) {
-                set = new LinkedList<>();
-                map.put(key, set);
+    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(new Node(beginWord, null, 1));
+        wordList.add(endWord);
+        wordList.remove(beginWord);
+        List<List<String>> result = new LinkedList<>();
+        HashSet<String> visited = new HashSet<String>();
+        int minDis = -1, curDis = 1;
+        while (!queue.isEmpty()) {
+            Node node = queue.poll();
+
+            if (node.word.equals(endWord)) {
+                if (minDis == -1) {
+                    minDis = node.dis;
+                }
+                List<String> t = new LinkedList<>();
+                for (Node p = node; p != null; p = p.prev) {
+                    t.add(0, p.word);
+                }
+                result.add(t);
+                continue;
             }
-            set.add(word);
-        }
-        List<List<String>> list = new LinkedList<>();
-        list.addAll(map.values());
-        return list;
-    }
 
-    public List<List<Integer>> subsetsWithDup(int[] nums) {
-        List<List<Integer>> result = new LinkedList<>();
-        Arrays.sort(nums);
-        helper(nums, 0, result, new LinkedList<>());
+            if (node.dis != curDis) {
+                curDis = node.dis;
+                wordList.removeAll(visited);
+            }
+
+            if (minDis != -1 && node.dis > minDis) {
+                break;
+            }
+
+            if (wordList.isEmpty()) {
+                continue;
+            }
+
+            StringBuilder sb = new StringBuilder(node.word);
+            for (int i = 0; i < node.word.length(); i++) {
+                char c = sb.charAt(i);
+                for (int j = 0; j < 26; j++) {
+                    if (j + 'a' == c) {
+                        continue;
+                    }
+                    sb.setCharAt(i, (char) (j + 'a'));
+                    String t = sb.toString();
+                    if (wordList.contains(t)) {
+                        queue.add(new Node(t, node, node.dis + 1));
+                        visited.add(t);
+                    }
+                }
+                sb.setCharAt(i, c);
+            }
+        }
         return result;
     }
 
-    private void helper(int[] nums, int start, List<List<Integer>> result, List<Integer> path) {
-        if (start == nums.length) {
-            result.add(new LinkedList<>(path));
-            return;
-        }
-
-        path.add(nums[start]);
-        helper(nums, start + 1, result, path);
-        path.remove(path.size() - 1);
-
-        for (++start; start < nums.length && nums[start] == nums[start - 1]; start++);
-        helper(nums, start, result, path);
-    }
-
-    abstract boolean knows(int a, int b);
+     boolean knows(int a, int b) {
+        return false;
+     }
 
     private final String[] ARR = {
             "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
     };
 
-    abstract int read4(char[] buf);
+     int read4(char[] buf) {
+         return 0;
+     }
 
     private static final String[] LESS20 = {
             "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",

@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.inuker.solution.test.Test1;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,53 +30,59 @@ public class WordLadderII {
     class WordNode {
         String word;
         int numSteps;
-        WordNode pre;
+        WordNode prev;
 
         public WordNode(String word, int numSteps, WordNode pre) {
             this.word = word;
             this.numSteps = numSteps;
-            this.pre = pre;
+            this.prev = pre;
         }
     }
 
-    public List<List<String>> findLadders(String start, String end, Set<String> dict) {
+    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
         List<List<String>> result = new ArrayList<List<String>>();
 
         LinkedList<WordNode> queue = new LinkedList<WordNode>();
-        queue.add(new WordNode(start, 1, null));
+        queue.add(new WordNode(beginWord, 1, null));
 
         // 假如dict中有start则删掉
-        dict.remove(start);
-        dict.add(end);
+        wordList.remove(beginWord);
+        wordList.add(endWord);
 
         HashSet<String> visited = new HashSet<String>();
 
-        int minStep = Integer.MAX_VALUE, preNumSteps = 0;
+        /**
+         * curStep初始化为1
+         */
+        int minStep = -1, curStep = 1;
 
         while (!queue.isEmpty()) {
             WordNode top = queue.poll();
             String word = top.word;
-            int currNumSteps = top.numSteps;
 
-            if (word.equals(end)) {
-                minStep = Math.min(minStep, currNumSteps);
-
-                if (currNumSteps == minStep) {
-                    //nothing
-                    ArrayList<String> t = new ArrayList<String>();
-                    t.add(top.word);
-                    while (top.pre != null) {
-                        t.add(0, top.pre.word);
-                        top = top.pre;
-                    }
-                    result.add(t);
-                    continue;
-                } else {
-                    /**
-                     * 这里可以退出了，因为当前层已经大于最短路径了
-                     */
-                    break;
+            if (word.equals(endWord)) {
+                if (minStep == -1) {
+                    minStep = top.numSteps;
                 }
+                ArrayList<String> t = new ArrayList<String>();
+                for (WordNode p = top; p != null; p = p.prev) {
+                    /**
+                     * 注意这里是逆序添加
+                     */
+                    t.add(0, p.word);
+                }
+                result.add(t);
+                /**
+                 * 这里continue了，不往下走
+                 */
+                continue;
+            }
+
+            /**
+             * 如果当前已经超出了则直接break
+             */
+            if (minStep != -1 && top.numSteps > minStep) {
+                break;
             }
 
             /**
@@ -82,16 +90,15 @@ public class WordLadderII {
              * 比如上一层的dot和hog都能对应到本层的hot，那么hot就要重复利用，对应着两条路径
              * 只有本层过完了才能将hot从dict中删掉
              */
-            if (preNumSteps < currNumSteps) {
-                dict.removeAll(visited);
+            if (top.numSteps > curStep) {
+                curStep = top.numSteps;
+                wordList.removeAll(visited);
             }
-
-            preNumSteps = currNumSteps;
 
             /**
              * 这里为了提高效率，如果dict为空，下面的代码都没意义，所以提前返回
              */
-            if (dict.isEmpty()) {
+            if (wordList.isEmpty()) {
                 continue;
             }
 
@@ -104,7 +111,7 @@ public class WordLadderII {
                     }
                     sb.setCharAt(i, (char) ('a' + j));
                     String newWord = sb.toString();
-                    if (dict.contains(newWord)) {
+                    if (wordList.contains(newWord)) {
                         /**
                          * 这里就是要重复加到queue里面，对应着最后可能有多条路径
                          */
