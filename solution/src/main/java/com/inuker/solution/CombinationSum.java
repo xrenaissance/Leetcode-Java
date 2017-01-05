@@ -10,9 +10,10 @@ import java.util.List;
 
 public class CombinationSum {
 
-    // 这题关键在于去重
+    // 这题关键在于去重，这里没必要排序
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new LinkedList<>();
+        Arrays.sort(candidates);
         dfs(candidates, target, 0, result, new LinkedList<Integer>());
         return result;
     }
@@ -26,6 +27,9 @@ public class CombinationSum {
             return;
         }
         for (int i = start; i < candidates.length; i++) {
+            if (i != start && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
             list.add(candidates[i]);
             /**
              * 注意这里下一个start取i，表示当前数仍可以重复取

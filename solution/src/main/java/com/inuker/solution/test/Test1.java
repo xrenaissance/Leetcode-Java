@@ -34,8 +34,9 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> result = new LinkedList<>();
+        Arrays.sort(candidates);
         dfs(candidates, target, 0, result, new LinkedList<Integer>());
         return result;
     }
@@ -49,8 +50,11 @@ public class Test1 {
             return;
         }
         for (int i = start; i < candidates.length; i++) {
+            if (i != start && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
             list.add(candidates[i]);
-            dfs(candidates, target - candidates[i], start + 1, result, list);
+            dfs(candidates, target - candidates[i], i + 1, result, list);
             list.remove(list.size() - 1);
         }
     }
