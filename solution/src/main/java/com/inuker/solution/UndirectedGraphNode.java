@@ -9,10 +9,10 @@ import java.util.List;
 
 public class UndirectedGraphNode {
 
-    int label;
-    List<UndirectedGraphNode> neighbors;
+    public int label;
+    public List<UndirectedGraphNode> neighbors;
 
-    UndirectedGraphNode(int x) {
+    public UndirectedGraphNode(int x) {
         label = x;
         neighbors = new ArrayList<UndirectedGraphNode>();
     }

@@ -18,15 +18,16 @@ public class CloneGraph {
     }
 
     private UndirectedGraphNode cloneGraph(UndirectedGraphNode node, Map<UndirectedGraphNode, UndirectedGraphNode> cloneMap) {
-        if (node == null) return null;
+        if (node == null) {
+            return null;
+        }
+        if (cloneMap.containsKey(node)) {
+            return cloneMap.get(node);
+        }
         UndirectedGraphNode cloned = new UndirectedGraphNode(node.label);
         cloneMap.put(node, cloned); // visited = true;
         for(UndirectedGraphNode neighbor: node.neighbors){
-            if (cloneMap.containsKey(neighbor)) { // if we have already explored this vertex grab its clone from map
-                cloned.neighbors.add(cloneMap.get(neighbor));
-            } else { // explore unvisited vertex
-                cloned.neighbors.add(cloneGraph(neighbor, cloneMap));
-            }
+            cloned.neighbors.add(cloneGraph(neighbor, cloneMap));
         }
         return cloned;
     }

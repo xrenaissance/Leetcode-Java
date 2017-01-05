@@ -7,6 +7,7 @@ import com.inuker.solution.PalindromeLinkedList;
 import com.inuker.solution.PathSum;
 import com.inuker.solution.TreeLinkNode;
 import com.inuker.solution.TreeNode;
+import com.inuker.solution.UndirectedGraphNode;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -33,48 +34,23 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public void wallsAndGates(int[][] rooms) {
-        if (rooms.length == 0) {
-            return;
-        }
-        for (int i = 0; i < rooms.length; i++) {
-            for (int j = 0; j < rooms[0].length; j++) {
-                if (rooms[i][j] == 0) {
-                    bfs(rooms, i, j);
-                }
-            }
-        }
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        return dfs(node, new HashMap<UndirectedGraphNode, UndirectedGraphNode>());
     }
 
-    private void bfs(int[][] rooms, int x, int y) {
-        int[] dx = {-1, 1, 0, 0};
-        int[] dy = {0, 0, -1, 1};
-
-        Queue<int[]> queue = new LinkedList<int[]>();
-        Queue<int[]> next = new LinkedList<>();
-        boolean[][] visited = new boolean[rooms.length][rooms[0].length];
-        int distance = 0;
-        queue.add(new int[] {x, y});
-
-        while (!queue.isEmpty()) {
-            int[] pos = queue.poll();
-            x = pos[0]; y = pos[1];
-
-            for (int i = 0; i < dx.length; i++) {
-                int x0 = x + dx[i], y0 = y + dy[i];
-                if (x0 >= 0 && x0 < rooms.length && y0 >= 0 && y0 < rooms[0].length && rooms[x0][y0] > 0 && !visited[x0][y0]) {
-                    visited[x0][y0] = true;
-                    rooms[x0][y0] = Math.min(rooms[x0][y0], distance + 1);
-                    next.add(new int[] {x0, y0});
-                }
-            }
-
-            if (queue.isEmpty()) {
-                queue.addAll(next);
-                next.clear();
-                distance++;
-            }
+    private UndirectedGraphNode dfs(UndirectedGraphNode node, HashMap<UndirectedGraphNode, UndirectedGraphNode> map) {
+        if (node == null) {
+            return null;
         }
+        if (map.containsKey(node)) {
+            return map.get(node);
+        }
+        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
+        map.put(node, copy);
+        for (UndirectedGraphNode p : node.neighbors) {
+            copy.neighbors.add(dfs(p, map));
+        }
+        return copy;
     }
 
      boolean knows(int a, int b) {
