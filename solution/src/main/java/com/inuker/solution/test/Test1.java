@@ -34,23 +34,25 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        return dfs(node, new HashMap<UndirectedGraphNode, UndirectedGraphNode>());
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        List<List<Integer>> result = new LinkedList<>();
+        dfs(candidates, target, 0, result, new LinkedList<Integer>());
+        return result;
     }
 
-    private UndirectedGraphNode dfs(UndirectedGraphNode node, HashMap<UndirectedGraphNode, UndirectedGraphNode> map) {
-        if (node == null) {
-            return null;
+    private void dfs(int[] candidates, int target, int start, List<List<Integer>> result, List<Integer> list) {
+        if (target < 0) {
+            return;
         }
-        if (map.containsKey(node)) {
-            return map.get(node);
+        if (target == 0) {
+            result.add(new LinkedList<>(list));
+            return;
         }
-        UndirectedGraphNode copy = new UndirectedGraphNode(node.label);
-        map.put(node, copy);
-        for (UndirectedGraphNode p : node.neighbors) {
-            copy.neighbors.add(dfs(p, map));
+        for (int i = start; i < candidates.length; i++) {
+            list.add(candidates[i]);
+            dfs(candidates, target - candidates[i], start + 1, result, list);
+            list.remove(list.size() - 1);
         }
-        return copy;
     }
 
      boolean knows(int a, int b) {
