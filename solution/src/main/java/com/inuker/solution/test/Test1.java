@@ -35,37 +35,25 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public String simplifyPath(String path) {
-        String[] ss = path.split("\\/");
-        Deque<String> queue = new LinkedList<>();
-        for (String s : ss) {
-            if (s.length() == 0 || s.equals(".")) {
-                continue;
-            }
-            if (s.equals("..")) {
-                if (!queue.isEmpty()) {
-                    queue.pollLast();
-                }
-            } else {
-                queue.offerLast(s);
-            }
-        }
-        return "/" + String.join("/", queue);
-    }
+    public class Solution {
 
-    public int combinationSum4(int[] nums, int target) {
-        int[] dp = new int[nums.length];
-        Arrays.sort(nums);
-        dp[0] = 1;
-        for (int i = 1; i <= target; i++) {
-            for (int n : nums) {
-                if (n > target) {
-                    break;
-                }
-                dp[i] += dp[i - n];
-            }
+        private int[] mNums;
+        private Random mRandom;
+
+        public Solution(int[] nums) {
+            mNums = nums;
+            mRandom = new Random();
         }
-        return dp[target];
+
+        public int pick(int target) {
+            int count = 0, result = -1;
+            for (int i = 0; i < mNums.length; i++) {
+                if (mNums[i] == target && mRandom.nextInt(++count) == 0) {
+                    result = i;
+                }
+            }
+            return result;
+        }
     }
 
      boolean knows(int a, int b) {
