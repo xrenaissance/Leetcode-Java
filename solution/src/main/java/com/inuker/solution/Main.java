@@ -14,7 +14,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String path = new Test1().simplifyPath("/a/b/./c/../../../..");
+        String path = new Test1().rearrangeString("aaabc", 3);
         System.out.println(path);
     }
 }
