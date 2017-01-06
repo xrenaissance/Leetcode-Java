@@ -34,28 +34,19 @@ import java.util.Stack;
 
 public class Test1 {
 
-    public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> result = new LinkedList<>();
-        if (k <= 0 || n <= 0) {
-            return result;
+    public int combinationSum4(int[] nums, int target) {
+        int[] dp = new int[nums.length];
+        Arrays.sort(nums);
+        dp[0] = 1;
+        for (int i = 1; i <= target; i++) {
+            for (int n : nums) {
+                if (n > target) {
+                    break;
+                }
+                dp[i] += dp[i - n];
+            }
         }
-        dfs(n, k, 1, result, new LinkedList<Integer>());
-        return result;
-    }
-
-    private void dfs(int target, int k, int start, List<List<Integer>> result, List<Integer> list) {
-        if (target == 0 && k == 0) {
-            result.add(new LinkedList<>(list));
-            return;
-        }
-        if (target <= 0 || k <= 0) {
-            return;
-        }
-        for (int i = start; i <= 9; i++) {
-            list.add(i);
-            dfs(target - i, k - 1, i, result, list);
-            list.remove(list.size() - 1);
-        }
+        return dp[target];
     }
 
      boolean knows(int a, int b) {
