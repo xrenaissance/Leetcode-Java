@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -33,6 +34,24 @@ import java.util.Stack;
  */
 
 public class Test1 {
+
+    public String simplifyPath(String path) {
+        String[] ss = path.split("\\/");
+        Deque<String> queue = new LinkedList<>();
+        for (String s : ss) {
+            if (s.length() == 0 || s.equals(".")) {
+                continue;
+            }
+            if (s.equals("..")) {
+                if (!queue.isEmpty()) {
+                    queue.pollLast();
+                }
+            } else {
+                queue.offerLast(s);
+            }
+        }
+        return "/" + String.join("/", queue);
+    }
 
     public int combinationSum4(int[] nums, int target) {
         int[] dp = new int[nums.length];

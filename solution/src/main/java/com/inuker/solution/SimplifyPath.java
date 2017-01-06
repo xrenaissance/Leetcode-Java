@@ -12,22 +12,20 @@ import java.util.Stack;
 public class SimplifyPath {
 
     public String simplifyPath(String path) {
+        String[] ss = path.split("/");
         Deque<String> queue = new LinkedList<>();
-        String[] strs = path.split("/");
-        for (String str : strs) {
-            if (str.equals("..")) {
+        for (String s : ss) {
+            if (s.length() == 0 || s.equals(".")) {
+                continue;
+            }
+            if (s.equals("..")) {
                 if (!queue.isEmpty()) {
                     queue.pollLast();
                 }
-            } else if (!str.isEmpty() && !str.equals(".")) {
-                queue.offerLast(str);
+            } else {
+                queue.offerLast(s);
             }
         }
-
-        StringBuilder sb = new StringBuilder();
-        while (!queue.isEmpty()) {
-            sb.append(String.format("/%s", queue.poll()));
-        }
-        return sb.length() == 0 ? "/" : sb.toString();
+        return "/" + String.join("/", queue);
     }
 }
