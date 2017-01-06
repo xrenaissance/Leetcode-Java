@@ -24,7 +24,8 @@ import java.util.Random;
  */
 
 /**
- * 类似的题还有从文件中随机读取一行。
+ * 类似的题还有从文件中随机读取一行，如果是流数据中随机取则到当前为止就好了，如果是数组或链表这种固定数据中随机取，
+ * 则有遍历完才能返回。类似的题目可参考https://leetcode.com/problems/linked-list-random-node/
  */
 public class RandomPickIndex {
 
