@@ -41,6 +41,7 @@ Facebook题目列表(24)
 |407|[Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWaterII.java)||
 |84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LargestRectangleInHistogram.java)|70|
 |358|[Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RearrangeStringKDistanceApart.java)||
+|461|[Hamming Distance](https://leetcode.com/problems/hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HammingDistance.java)||
 
 <br/>
 

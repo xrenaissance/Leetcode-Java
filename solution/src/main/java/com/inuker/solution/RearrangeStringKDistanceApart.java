@@ -15,6 +15,9 @@ public class RearrangeStringKDistanceApart {
      * 所以我们以k个字符为1组来拼字符串。我们每次优先取队列中最高频的字符，取完一轮后剩下的字符再加到队列中取第二轮，
      * 一直到队列中没有足够的字符供我们取时截止。
      */
+    /**
+     * 时间复杂度O(nlgm)，n为字符串长度，m为字符串中不同的字符数，注意这里与k无关。
+     */
     public String rearrangeString(String str, int k) {
         if (k == 0) {
             return str;
