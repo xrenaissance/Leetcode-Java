@@ -29,11 +29,6 @@ public class GuessNumberHigherOrLowerII {
         int min = Integer.MAX_VALUE;
         for (int i = start; i <= end; i++) {
             int res = i + Math.max(getMoneyAmount(start, i - 1), getMoneyAmount(i + 1, end));
-
-            if (start == 1 && end == 10) {
-                System.out.println(String.format("pivot = %d, res = %d", i, res));
-            }
-
             min = Math.min(min, res);
         }
         return min;

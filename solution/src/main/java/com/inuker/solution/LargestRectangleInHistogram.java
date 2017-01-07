@@ -29,8 +29,25 @@ public class LargestRectangleInHistogram {
         return max;
     }
 
-    // 耗时4ms
+    /** 注意栈中的是index，不是高度 */
     public int largestRectangleArea2(int[] heights) {
+        int max = 0;
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i <= heights.length; ) {
+            int height = i == heights.length ? 0 : heights[i];
+            if (stack.isEmpty() || height > heights[stack.peek()]) {
+                stack.push(i++);
+            } else {
+                int top = stack.pop();
+                int left = stack.isEmpty() ? 0 : stack.peek() + 1;
+                max = Math.max(max, heights[top] * (i - 1 - left + 1));
+            }
+        }
+        return max;
+    }
+
+    // 耗时4ms
+    public int largestRectangleArea3(int[] heights) {
         int len = heights.length, j;
         int[] left = new int[len], right = new int[len];
 
@@ -50,41 +67,4 @@ public class LargestRectangleInHistogram {
         }
         return max;
     }
-
-    // 耗时6ms
-    public int largestRectangleArea3(int[] heights) {
-        int len = heights.length, max = 0;
-
-        int[] stack = new int[len];
-
-        for (int i = 0, top = -1; i <= len; ) {
-            int height = i == len ? 0 : heights[i];
-
-            if (top < 0 || height > heights[stack[top]]) {
-                stack[++top] = i++;
-            } else {
-                int k = stack[top--];
-                max = Math.max(max, (top < 0 ? i : i - 1 - stack[top]) * heights[k]);
-            }
-        }
-
-        return max;
-    }
-
-    /** 注意栈中的是index，不是高度
-    public int largestRectangleArea(int[] heights) {
-        int max = 0;
-        Stack<Integer> stack = new Stack<Integer>();
-        for (int i = 0; i <= heights.length; ) {
-            int height = i == heights.length ? 0 : heights[i];
-            if (stack.isEmpty() || height > heights[stack.peek()]) {
-                stack.push(i++);
-            } else {
-                int top = stack.pop();
-                int left = stack.isEmpty() ? 0 : stack.peek() + 1;
-                max = Math.max(max, heights[top] * (i - 1 - left + 1));
-            }
-        }
-        return max;
-    }*/
 }
