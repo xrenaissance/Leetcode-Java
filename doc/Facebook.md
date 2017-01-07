@@ -42,6 +42,7 @@ Facebook题目列表(24)
 |84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LargestRectangleInHistogram.java)|70|
 |358|[Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RearrangeStringKDistanceApart.java)||
 |461|[Hamming Distance](https://leetcode.com/problems/hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HammingDistance.java)||
+|477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TotalHammingDistance.java)||
 
 <br/>
 
