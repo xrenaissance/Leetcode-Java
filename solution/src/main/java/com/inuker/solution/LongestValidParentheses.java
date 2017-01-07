@@ -4,34 +4,36 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/12/17.
  */
 
+import java.util.Stack;
+
+/**
+ * https://leetcode.com/articles/longest-valid-parentheses/
+ */
 public class LongestValidParentheses {
 
     public int longestValidParentheses(String s) {
-        int len = s.length(), top = -1;
-        int[] stack = new int[len];
-
-        for (int i = 0; i < len; i++) {
-            char c = s.charAt(i);
-
-            if (c == '(' || top == -1 || s.charAt(stack[top]) != '(') {
-                stack[++top] = i;
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ')' && !stack.isEmpty() && s.charAt(stack.peek()) == '(') {
+                stack.pop();
             } else {
-                --top;
+                stack.push(i);
             }
         }
 
-        int size = 0, end = len;
-        while (top >= 0) {
-            int start = stack[top--];
-
-            // (start, end)之间是合法部分，左右都是开区间
-            size = Math.max(size, end - start - 1);
-            end = start;
+        int max = 0, cur = s.length();
+        while (!stack.isEmpty()) {
+            int prev = stack.pop();
+            /**
+             * (prev, cur)之间是合法部分，注意左右都是开区间
+             */
+            max = Math.max(cur - prev - 1, max);
+            cur = prev;
         }
 
-        // 栈空了，表示最后一个栈顶的左边都是合法部分了，即[0,end)之间是合法部分，这部分也要参与计算
-        size = Math.max(size, end);
-
-        return size;
+        /**
+         * 栈空了，表示最后一个栈顶的左边都是合法部分了，即[0,end)之间是合法部分，这部分也要参与计算
+         */
+        return Math.max(max, cur);
     }
 }
