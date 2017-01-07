@@ -12,6 +12,10 @@ import java.util.List;
 public class Subsets {
 
     /**
+     * 时间复杂度O(2^n)，空间复杂度 O(n)
+     */
+    
+    /**
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new LinkedList<List<Integer>>();
 

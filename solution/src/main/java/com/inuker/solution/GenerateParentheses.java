@@ -18,18 +18,17 @@ public class GenerateParentheses {
     }
 
     private void generateParenthesis(List<String> result, String str, int left, int right) {
+        if (left < 0 || right < 0) {
+            return;
+        }
+
         if (left == 0 && right == 0) {
             result.add(str);
             return;
         }
 
-        if (left > 0) {
-            generateParenthesis(result, str + "(", left - 1, right + 1);
-        }
-
-        if (right > 0) {
-            generateParenthesis(result, str + ")", left, right - 1);
-        }
+        generateParenthesis(result, str + "(", left - 1, right + 1);
+        generateParenthesis(result, str + ")", left, right - 1);
     }
 
     // 耗时38ms

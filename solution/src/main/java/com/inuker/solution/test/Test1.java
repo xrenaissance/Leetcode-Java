@@ -13,28 +13,6 @@ import java.util.Random;
 public class Test1 {
 
 
-
-    public class Solution {
-
-        private int[] mNums;
-        private Random mRandom;
-
-        public Solution(int[] nums) {
-            mNums = nums;
-            mRandom = new Random();
-        }
-
-        public int pick(int target) {
-            int count = 0, result = -1;
-            for (int i = 0; i < mNums.length; i++) {
-                if (mNums[i] == target && mRandom.nextInt(++count) == 0) {
-                    result = i;
-                }
-            }
-            return result;
-        }
-    }
-
     boolean knows(int a, int b) {
         return false;
     }
