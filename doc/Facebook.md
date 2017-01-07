@@ -4,7 +4,6 @@ Facebook题目列表(24)
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MoveZeroes.java)|100|
-|325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSizeSubarraySumEqualsK.java)|80|
 |311|[Sparse Matrix Multiplication](https://leetcode.com/problems/sparse-matrix-multiplication/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SparseMatrixMultiplication.java)|90|
 |67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|95|
 |273|[Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToEnglishWords.java)|80|
@@ -25,7 +24,6 @@ Facebook题目列表(24)
 |49|[Group Anagrams](https://leetcode.com/problems/anagrams/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GroupAnagrams.java)||
 |238|[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ProductOfArrayExceptSelf.java)||
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)||
-|209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)||
 |12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToRoman.java)||
 |13|[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RomanToInteger.java)||
 |71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)||
@@ -45,6 +43,10 @@ Facebook题目列表(24)
 |215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)|65|
 |48|[Rotate Image](https://leetcode.com/problems/rotate-image/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RotateImage.java)|100|
 |300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestIncreasingSubsequence.java)||
+|239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SlidingWindowMaximum.java)|75|
+|65|[Valid Number](https://leetcode.com/problems/valid-number/)|||
+|367|[Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)|||
+|29|[Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)|||
 
 <br/>
 
@@ -97,7 +99,7 @@ Facebook题目列表(24)
 |279|[Perfect Squares](https://leetcode.com/problems/perfect-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PerfectSquares.java)|95|
 |62|[Unique Paths](https://leetcode.com/problems/unique-paths/)|||
 |63|[Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)|||
-
+|115|[Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/)|||
 
 <br/>
 
@@ -119,6 +121,7 @@ Facebook题目列表(24)
 |286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)||
 |317|[Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestDistanceFromAllBuildings.java)|75|
 |394|[Decode String](https://leetcode.com/problems/decode-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeString.java)|65|
+|37|[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)|||
 
 <br/>
 
@@ -245,6 +248,15 @@ Facebook题目列表(24)
 |98|[Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidateBinarySearchTree.java)|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|100|
 |450|[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DeleteNodeInBST.java)||
+|298|[Binary Tree Longest Consecutive Sequence](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeLongestConsecutiveSequence.java)|80|
+|112|[Path Sum](https://leetcode.com/problems/path-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSum.java)|85|
+|113|[Path Sum II](https://leetcode.com/problems/path-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSumII.java)|85|
+|437|[Path Sum III](https://leetcode.com/problems/path-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSumIII.java)|60|
+|124|[Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeMaximumPathSum.java)|60|
+|114|[Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FlattenBinaryTreeToLinkedList.java)|80|
+|108|[Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ConvertSortedArrayToBinarySearchTree.java)|100|
+|310|[Minimum Height Trees](https://leetcode.com/problems/minimum-height-trees/)|||
+|111|[Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumDepthOfBinaryTree.java)|80|
 
 <br/>
 
@@ -297,69 +309,33 @@ Facebook题目列表(24)
 
 <br/>
 
+## SubArray问题
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+|325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSizeSubarraySumEqualsK.java)|80|
+|209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)||
+|53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSubarray.java)|95|
+|152|[Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumProductSubarray.java)||
+
+<br/>
+
 ## Kth问题
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)||
 |378|[Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)|||
 |230|[Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)|||
+|4|[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MedianOfTwoSortedArrays.java)||
 
 <br/>
 
 ## GlassDoor
-Give an unsorted array, find the kth smallest item
 关于用到桶排序
-Validate BST
-3sUM
-next permutation
 给定一个数字，通过交换各位，生成小于target的最大数
-merge interval, insert interval
-remove invalid parentheses
-meeting rooms ii
-merge k sorted list
-first bad version
-group anagram
-Inorder Successor in BST
 divide two integers
-insert delete getRandom
-Decode String
-Minimum window substring
-Longest Substring with At Most K Distinct Characters,好好准备largest substring系列
-Maximum Size Subarray Sum Equals k
-binary tree path/path sum/Binary Tree Longest Consecutive Sequence
-add and search word
-intersection of two arrays i,ii/list
-Flatten Binary Tree to Linked List
-Convert Sorted Array to Binary Search Tree/Convert Sorted List to Binary Search Tree
-median of two sorted arrays/find median from data stream
-Sliding window maximum
-Longest Palindromic Substring
-unique path i/ii
-Flatten Nested List Iterator
-二叉树的遍历递归非递归
-generate parentheses
-number of 1 bits
-encode and decode string
-shortest palindrome
-Maximum Subarray/Maximum Product Subarray
-Longest Valid Parentheses
 basic calculator i/ii
-Minimum Height Trees
-Minimum Depth of Binary Tree
-Valid Number
-Valid Perfect Square
 task schedule with cooldown不是leetcode
-maximum product subarray
-Sudoku Solver
-random pickx相关的
 dot product非lc
-Kth Smallest Element in a Sorted Matrix
-Distinct Subsequences
-sort color 变种，假如有k个color
-
-二叉树，dp
-领英的也刷下
-subarray相关的
 
 
 系统设计
