@@ -29,7 +29,6 @@ Facebook题目列表(24)
 |12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToRoman.java)||
 |13|[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RomanToInteger.java)||
 |71|[Simplify Path](https://leetcode.com/problems/simplify-path/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SimplifyPath.java)||
-|215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)||
 |28|[Implement strStr()](https://leetcode.com/problems/implement-strstr/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrStr.java)||
 |88|[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeSortedArray.java)||
 |334|[Increasing Triplet Subsequence](https://leetcode.com/problems/increasing-triplet-subsequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IncreasingTripletSubsequence.java)||
@@ -43,6 +42,9 @@ Facebook题目列表(24)
 |358|[Rearrange String k Distance Apart](https://leetcode.com/problems/rearrange-string-k-distance-apart/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RearrangeStringKDistanceApart.java)||
 |461|[Hamming Distance](https://leetcode.com/problems/hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HammingDistance.java)||
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TotalHammingDistance.java)||
+|215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)|65|
+|48|[Rotate Image](https://leetcode.com/problems/rotate-image/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RotateImage.java)|100|
+|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestIncreasingSubsequence.java)||
 
 <br/>
 
@@ -93,6 +95,9 @@ Facebook题目列表(24)
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)||
 |85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalRectangle.java)||
 |279|[Perfect Squares](https://leetcode.com/problems/perfect-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PerfectSquares.java)|95|
+|62|[Unique Paths](https://leetcode.com/problems/unique-paths/)|||
+|63|[Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)|||
+
 
 <br/>
 
@@ -280,16 +285,28 @@ Facebook题目列表(24)
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)|||
 |409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)||
 
+<br/>
+
+## Longest Substring
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+|340|[Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithAtMostKDistinctCharacters.java)|80|
+|395|[Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithAtLeastKRepeatingCharacters.java)|65|
+|3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithoutRepeatingCharacters.java)|75|
+|159|[Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)|||
+
+<br/>
+
+## Kth问题
+|#|Title|Solution|Score|
+|---|----| ----- | ----- |
+|215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthLargestElementInArray.java)||
+|378|[Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)|||
+|230|[Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)|||
+
+<br/>
 
 ## GlassDoor
-Rotate Image
-Longest Increasing Subsequence
-Unique Paths i/ii
-7. 所有的DP问题
-8. move zeroes
-9. 链表两两交换，分组交换
-10. combination生成
-11. Lowest common ancestor
 Give an unsorted array, find the kth smallest item
 关于用到桶排序
 Validate BST
@@ -310,7 +327,6 @@ Minimum window substring
 Longest Substring with At Most K Distinct Characters,好好准备largest substring系列
 Maximum Size Subarray Sum Equals k
 binary tree path/path sum/Binary Tree Longest Consecutive Sequence
-Kth Largest Element in an Array
 add and search word
 intersection of two arrays i,ii/list
 Flatten Binary Tree to Linked List

@@ -4,6 +4,9 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/23.
  */
 
+/**
+ * https://leetcode.com/articles/implement-trie-prefix-tree/
+ */
 public class Trie {
     private TrieNode root;
 

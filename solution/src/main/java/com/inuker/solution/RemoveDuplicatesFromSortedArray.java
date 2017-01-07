@@ -4,6 +4,9 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/24.
  */
 
+/**
+ * https://leetcode.com/articles/remove-duplicates-sorted-array/
+ */
 public class RemoveDuplicatesFromSortedArray {
 
     public int removeDuplicates(int[] nums) {

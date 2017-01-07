@@ -6,6 +6,9 @@ import java.util.HashMap;
 /**
  * Created by dingjikerbo on 16/11/23.
  */
+/**
+ * https://leetcode.com/articles/h-index/
+ */
 
 /**
  * TestCase

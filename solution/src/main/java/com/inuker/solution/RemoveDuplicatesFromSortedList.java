@@ -4,6 +4,9 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/24.
  */
 
+/**
+ * https://leetcode.com/articles/remove-duplicates-sorted-list/
+ */
 public class RemoveDuplicatesFromSortedList {
 
     public ListNode deleteDuplicates(ListNode head) {
