@@ -36,7 +36,10 @@ public class MaximumSizeSubarraySumEqualsK {
         int maxLen = 0;
         for (int i = 0; i < nums.length; i++) {
             Integer p = map.get(nums[i] - k);
-            if (p != null) {
+            if (p != null && p < i) {
+                /**
+                 * 这里一定不能掉条件p < i
+                 */
                 maxLen = Math.max(maxLen, i - p);
             }
         }

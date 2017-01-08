@@ -1,6 +1,7 @@
 package com.inuker.solution.test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,49 +11,23 @@ import java.util.List;
 
 public class Test1 {
 
-    public int minSubArrayLen(int s, int[] nums) {
-        int len = Integer.MAX_VALUE, sum = 0;
-        for (int i = 0, j = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if (sum >= s) {
-                for ( ; j <= i; j++) {
-                    if (sum - nums[j] < s) {
-                        break;
-                    }
-                    sum -= nums[j];
-                }
-                len = Math.min(len, i - j + 1);
+    public int maxSubArrayLen(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] += i > 0 ? nums[i - 1] : 0;
+            if (!map.containsKey(nums[i])) {
+                map.put(nums[i], i);
             }
         }
-        return len == Integer.MAX_VALUE ? 0 : len;
-    }
-
-    public String minWindow(String s, String t) {
-        int[] fs = new int[256], ft = new int[256];
-        for (char c : t.toCharArray()) {
-            ft[c]++;
-        }
-        int count = 0, minLen = Integer.MAX_VALUE, idx = -1;
-        for (int i = 0, j = 0; i < s.length(); i++) {
-            if (++fs[s.charAt(i)] <= ft[s.charAt(i)]) {
-                ++count;
-            }
-            if (count >= t.length()) {
-                for ( ; j < i; j++) {
-                    char c = s.charAt(j);
-                    if (fs[c] > ft[c]) {
-                        fs[c]--;
-                    } else {
-                        break;
-                    }
-                }
-                if (i - j + 1 < minLen) {
-                    minLen = i - j + 1;
-                    idx = j;
-                }
+        map.put(0, -1);
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            Integer j = map.get(nums[i] - k);
+            if (j != null && j < i) {
+                max = Math.max(max, i - j);
             }
         }
-        return minLen == Integer.MAX_VALUE ? "" : s.substring(idx, idx + minLen);
+        return max == Integer.MAX_VALUE ? 0 : max;
     }
 
     boolean knows(int a, int b) {
