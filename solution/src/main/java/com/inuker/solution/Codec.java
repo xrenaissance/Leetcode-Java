@@ -10,17 +10,9 @@ import java.util.Stack;
  * Created by dingjikerbo on 2016/11/16.
  */
 
-/** TestCases
- TreeNode root = new TreeNode(1);
- Codec code = new Codec();
- String data = code.serialize(root);
- System.out.println(data);
- TreeNode node = code.deserialize(data);
- System.out.println(String.format("%d, %s, %s", node.val, node.left, node.right));
- */
-
 /**
- * 按先序遍历
+ * 类似题
+ * https://leetcode.com/problems/serialize-and-deserialize-bst/
  */
 
 /**
