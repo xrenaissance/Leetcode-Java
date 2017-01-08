@@ -11,12 +11,15 @@ import java.util.List;
 
 public class Test1 {
 
-    public int lengthOfLongestSubstringTwoDistinct(String s) {
+    public int lengthOfLongestSubstringTwoDistinct(String s, int k) {
+        if (k == 0) {
+            return 0;
+        }
         HashMap<Character, Integer> map = new HashMap<>();
         int max = 0;
         for (int i = 0, j = 0; i < s.length(); i++) {
             map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
-            if (map.size() > 2) {
+            if (map.size() > k) {
                 for ( ; j < i; ) {
                     char c1 = s.charAt(j++);
                     map.put(c1, map.get(c1) - 1);
