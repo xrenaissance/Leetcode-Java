@@ -15,15 +15,17 @@ public class Test1 {
         if (nums.length == 0) {
             return 0;
         }
-        int[] dp = new int[nums.length];
-        int max = Integer.MIN_VALUE;
+        int result = Integer.MIN_VALUE, max = 1, min = 1;
         for (int i = 0; i < nums.length; i++) {
-            dp[i] = nums[i];
-            if (i > 0 && dp[i - 1] > 0) {
-                dp[i] += dp[i - 1];
+            if (i == 0) {
+                max = min = nums[i];
+            } else {
+                int prevMax = max, prevMin = min;
+                max = Math.max(nums[i], Math.max(nums[i] * prevMax, nums[i] * prevMin));
+                min = Math.min(nums[i], Math.min(nums[i] * prevMax, nums[i] * prevMin));
             }
-            max = Math.max(max, dp[i]);
+            result = Math.max(result, max);
         }
-        return max;
+        return result;
     }
 }

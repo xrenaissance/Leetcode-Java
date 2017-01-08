@@ -14,5 +14,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
+        int n = new Test1().maxSubArray(new int[] {
+                -4, -3, -2
+        });
+        System.out.println(n);
     }
 }
