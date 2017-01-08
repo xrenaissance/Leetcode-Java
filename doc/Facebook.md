@@ -311,7 +311,7 @@ Facebook题目列表(24)
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSubarray.java)||
 |152|[Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumProductSubarray.java)||
 |76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|100|
-|239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SlidingWindowMaximum.java)|75|
+|239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SlidingWindowMaximum.java)||
 |30|[Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)|||
 
 <br/>
