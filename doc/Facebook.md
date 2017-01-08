@@ -291,8 +291,7 @@ Facebook题目列表(24)
 |336|[Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePairs.java)||
 |214|[Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestPalindrome.java)||
 |131|[Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePartitioning.java)||
-|132|[Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePartitioningII.java)||
-|266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePermutation.java)||
+|266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePermutation.java)|100|
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)|||
 |409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)|100|
 

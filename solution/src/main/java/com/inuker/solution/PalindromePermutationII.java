@@ -8,7 +8,9 @@ import java.util.List;
  */
 
 public class PalindromePermutationII {
-
+    /**
+     * 这题就是生成一半的所有排列，然后镜像
+     */
     public List<String> generatePalindromes(String s) {
         int[] counts = new int[256];
         for (char c : s.toCharArray()) {
