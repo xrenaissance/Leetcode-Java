@@ -4,20 +4,20 @@ Facebook题目列表(24)
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MoveZeroes.java)|100|
-|311|[Sparse Matrix Multiplication](https://leetcode.com/problems/sparse-matrix-multiplication/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SparseMatrixMultiplication.java)|90|
-|67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|95|
-|273|[Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToEnglishWords.java)|80|
-|91|[Decode Ways](https://leetcode.com/problems/decode-ways/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeWays.java)|85|
-|15|[3Sum](https://leetcode.com/problems/3sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThreeSum.java)|85|
+|311|[Sparse Matrix Multiplication](https://leetcode.com/problems/sparse-matrix-multiplication/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SparseMatrixMultiplication.java)|100|
+|67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|100|
+|273|[Integer to English Words](https://leetcode.com/problems/integer-to-english-words/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToEnglishWords.java)|100|
+|91|[Decode Ways](https://leetcode.com/problems/decode-ways/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DecodeWays.java)|100|
+|15|[3Sum](https://leetcode.com/problems/3sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThreeSum.java)|95|
 |277|[Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindCelebrity.java)|100|
 |161|[One Edit Distance](https://leetcode.com/problems/one-edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/OneEditDistance.java)|100|
 |72|[Edit Distance](https://leetcode.com/problems/edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EditDistance.java)|85|
-|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|90|
-|282|[Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExpressionAddOperators.java)|
-|251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Vector2D.java)|100|
-|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|100|
-|167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumII.java)|100|
-|170|[Two Sum III - Data structure design](https://leetcode.com/problems/two-sum-iii-data-structure-design/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIII.java)|100|
+|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)||
+|282|[Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExpressionAddOperators.java)||
+|251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Vector2D.java)||
+|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)||
+|167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumII.java)||
+|170|[Two Sum III - Data structure design](https://leetcode.com/problems/two-sum-iii-data-structure-design/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIII.java)||
 |75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)||
 |218|[The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TheSkylineProblem.java)|60|
 |43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MultiplyStrings.java)||

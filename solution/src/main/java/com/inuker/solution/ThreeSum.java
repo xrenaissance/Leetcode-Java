@@ -32,6 +32,9 @@ public class ThreeSum {
                     j++;
                 } else {
                     result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    /**
+                     * 别给j < k掉了
+                     */
                     for (j++, k-- ; j < k && nums[j] == nums[j - 1] && nums[k] == nums[k + 1]; j++, k--);
                 }
             }
