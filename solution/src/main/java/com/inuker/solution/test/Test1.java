@@ -10,6 +10,23 @@ import java.util.List;
 
 public class Test1 {
 
+    public int minSubArrayLen(int s, int[] nums) {
+        int len = Integer.MAX_VALUE, sum = 0;
+        for (int i = 0, j = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (sum >= s) {
+                for ( ; j <= i; j++) {
+                    if (sum - nums[j] < s) {
+                        break;
+                    }
+                    sum -= nums[j];
+                }
+                len = Math.min(len, i - j + 1);
+            }
+        }
+        return len == Integer.MAX_VALUE ? 0 : len;
+    }
+
     public String minWindow(String s, String t) {
         int[] fs = new int[256], ft = new int[256];
         for (char c : t.toCharArray()) {
