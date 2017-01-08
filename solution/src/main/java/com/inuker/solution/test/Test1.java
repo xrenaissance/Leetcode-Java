@@ -23,53 +23,16 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
-    // l, r, m
-    public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> result = new LinkedList<>();
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        while (!stack.isEmpty() || root != null) {
-            if (root != null) {
-                result.add(0, root.val);
-                stack.push(root);
-                root = root.right;
-            } else {
-                root = stack.pop();
-                root = root.left;
-            }
-        }
-        return result;
-    }
-
-    // m, l, r
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> result = new LinkedList<>();
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        while (!stack.isEmpty() || root != null) {
-            if (root != null) {
-                result.add(root.val);
-                stack.push(root);
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        TreeNode res = root;
+        while (root != null) {
+            if (p.val < root.val) {
+                res = root;
                 root = root.left;
             } else {
-                root = stack.pop();
                 root = root.right;
             }
         }
-        return result;
-    }
-
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result = new LinkedList<>();
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        while (!stack.isEmpty() || root != null) {
-            if (root != null) {
-                stack.push(root);
-                root = root.left;
-            } else {
-                root = stack.pop();
-                result.add(root.val);
-                root = root.right;
-            }
-        }
-        return result;
+        return res;
     }
 }

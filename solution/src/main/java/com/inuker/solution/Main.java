@@ -14,7 +14,10 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String n = new Test1().shortestPalindrome("aacecaaa");
-        System.out.println(n);
+        TreeNode node3 = new TreeNode(3, null, null);
+        TreeNode node2 = new TreeNode(2, null, node3);
+        TreeNode root = new TreeNode(1, null, node2);
+        TreeNode node = new Test1().inorderSuccessor(root, node2);
+        System.out.println(node.val);
     }
 }
