@@ -12,7 +12,6 @@ Facebook题目列表(24)
 |277|[Find the Celebrity](https://leetcode.com/problems/find-the-celebrity/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindCelebrity.java)|100|
 |161|[One Edit Distance](https://leetcode.com/problems/one-edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/OneEditDistance.java)|100|
 |72|[Edit Distance](https://leetcode.com/problems/edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EditDistance.java)|90|
-|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|100|
 |282|[Expression Add Operators](https://leetcode.com/problems/expression-add-operators/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExpressionAddOperators.java)||
 |251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Vector2D.java)||
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)||
@@ -300,23 +299,18 @@ Facebook题目列表(24)
 
 <br/>
 
-## Longest Substring
+## Substring/SubArray/Window
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
 |340|[Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithAtMostKDistinctCharacters.java)||
 |395|[Longest Substring with At Least K Repeating Characters](https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithAtLeastKRepeatingCharacters.java)||
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithoutRepeatingCharacters.java)||
 |159|[Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)|||
-
-<br/>
-
-## SubArray问题
-|#|Title|Solution|Score|
-|---|----| ----- | ----- |
 |325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSizeSubarraySumEqualsK.java)||
 |209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)||
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSubarray.java)||
 |152|[Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumProductSubarray.java)||
+|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|100|
 
 <br/>
 
