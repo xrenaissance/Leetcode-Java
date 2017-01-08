@@ -92,14 +92,14 @@ public class Codec {
         TreeNode root = getNode(queue), node = root;
 
         while (!queue.isEmpty()) {
-            if (node == null) {
-                node = stack.pop();
-                node.right = getNode(queue);
-                node = node.right;
-            } else {
+            if (node != null) {
                 stack.push(node);
                 node.left = getNode(queue);
                 node = node.left;
+            } else {
+                node = stack.pop();
+                node.right = getNode(queue);
+                node = node.right;
             }
         }
 
@@ -143,23 +143,26 @@ public class Codec {
 
     public TreeNode deserialize3(String data) {
         String[] text = data.split(SEP);
-        if (text.length == 0 || text[0].equals(NULL)) {
-            return null;
-        }
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        TreeNode root = new TreeNode(Integer.parseInt(text[0]));
-        queue.add(root);
-        for (int i = 1; i < text.length; i++) {
-            TreeNode node = queue.poll();
-            if (!text[i].equals(NULL)) {
-                node.left = new TreeNode(Integer.parseInt(text[i]));
-                queue.add(node.left);
+        Queue<String> queue = new LinkedList<String>(Arrays.asList(text));
+
+        Queue<TreeNode> queue2 = new LinkedList<TreeNode>();
+        TreeNode root = getNode(queue);
+        queue2.add(root);
+
+        while (!queue2.isEmpty()) {
+            TreeNode node = queue2.poll();
+
+            if (node == null) {
+                continue;
             }
-            if (!text[++i].equals(NULL)) {
-                node.right = new TreeNode(Integer.parseInt(text[i]));
-                queue.add(node.right);
-            }
+
+            node.left = getNode(queue);
+            queue2.add(node.left);
+
+            node.right = getNode(queue);
+            queue2.add(node.right);
         }
+
         return root;
     }
 }
