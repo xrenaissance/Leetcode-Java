@@ -20,7 +20,7 @@ import java.util.Stack;
  */
 
 /**
- * 按中序遍历
+ * 按先序遍历
  */
 
 /**
@@ -34,7 +34,7 @@ public class Codec {
     // 这个尽可能短，节省空间
     private static final String NULL = "X";
 
-    /** 递归版的
+    /** 递归版的 */
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         if (root != null) {
@@ -67,30 +67,33 @@ public class Codec {
         root.right = helper(queue);
         return root;
     }
-     */
 
-    /** 下面是非递归版的DFS
-    public String serialize(TreeNode root) {
+    /** 下面是非递归版的DFS */
+    public String serialize2(TreeNode root) {
         StringBuilder sb = new StringBuilder();
+        if (root == null) {
+            sb.append(NULL);
+            return sb.toString();
+        }
+
         Stack<TreeNode> stack = new Stack<TreeNode>();
         while (!stack.isEmpty() || root != null) {
-            sb.append(root != null ? root.val : NULL).append(SEP);
-
             if (root != null) {
+                sb.append(root.val);
                 stack.push(root);
                 root = root.left;
             } else {
+                sb.append(NULL);
                 root = stack.pop().right;
             }
+
+            sb.append(SEP);
         }
         return sb.toString();
     }
 
     // Decodes your encoded data to tree.
-    public TreeNode deserialize(String data) {
-        if (data.length() == 0) {
-            return null;
-        }
+    public TreeNode deserialize2(String data) {
         String[] texts = data.split(SEP);
         Queue<String> queue = new LinkedList<String>(Arrays.asList(texts));
         Deque<TreeNode> stack = new LinkedList<>();
@@ -121,16 +124,16 @@ public class Codec {
         }
         return new TreeNode(Integer.parseInt(text));
     }
-     */
 
     /**
      * BFS版的
      */
-    public String serialize(TreeNode root) {
+    public String serialize3(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         StringBuilder sb = new StringBuilder();
         if (root == null) {
-            return "";
+            sb.append(NULL);
+            return sb.toString();
         }
         queue.add(root);
         while (!queue.isEmpty()) {
@@ -146,11 +149,11 @@ public class Codec {
         return sb.toString();
     }
 
-    public TreeNode deserialize(String data) {
-        if (data.length() == 0) {
+    public TreeNode deserialize3(String data) {
+        String[] text = data.split(SEP);
+        if (text.length == 0 || text[0].equals(NULL)) {
             return null;
         }
-        String[] text = data.split(SEP);
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         TreeNode root = new TreeNode(Integer.parseInt(text[0]));
         queue.add(root);

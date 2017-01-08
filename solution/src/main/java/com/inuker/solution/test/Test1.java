@@ -6,11 +6,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Set;
 import java.util.TreeMap;
+
+import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 /**
  * Created by dingjikerbo on 2016/12/29.
@@ -19,16 +23,47 @@ import java.util.TreeMap;
 public class Test1 {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        while (root != null) {
-            if (p.val < root.val && q.val < root.val) {
-                root = root.left;
-            } else if (p.val > root.val && q.val > root.val) {
-                root = root.right;
-            } else {
+        if (root == null || p == null || q == null) {
+            return null;
+        }
+        HashMap<TreeNode, TreeNode> parents = new HashMap<>();
+        parents.put(root, null);
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            if (parents.containsKey(p) && parents.containsKey(q)) {
                 break;
             }
+
+            TreeNode node = queue.poll();
+            if (node.left != null) {
+                queue.add(node.left);
+                parents.put(node.left, node);
+            }
+
+            if (node.right != null) {
+                queue.add(node.right);
+                parents.put(node.right, node);
+            }
         }
-        return root;
+
+        if (!parents.containsKey(p) || !parents.containsKey(q)) {
+            return null;
+        }
+
+        Set<TreeNode> set = new HashSet<TreeNode>();
+        for (TreeNode node = p; node != null; node = parents.get(node)) {
+            set.add(node);
+        }
+
+        for (TreeNode node = q; node != null; node = parents.get(node)) {
+            if (!set.add(node)) {
+                return node;
+            }
+        }
+
+        return null;
     }
 
     public String shortestPalindrome(String s) {

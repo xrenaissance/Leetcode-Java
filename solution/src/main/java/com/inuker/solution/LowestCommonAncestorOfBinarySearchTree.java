@@ -6,6 +6,10 @@ package com.inuker.solution;
 
 public class LowestCommonAncestorOfBinarySearchTree {
 
+    /**
+     * 假如不保证树中有p和q存在呢？
+     */
+
     // 耗时9ms
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (p.val < root.val && q.val < root.val) {
