@@ -330,16 +330,15 @@ Facebook题目列表(24)
 <br/>
 
 ## GlassDoor
-关于用到桶排序
-给定一个数字，通过交换各位，生成小于target的最大数
-divide two integers
-basic calculator i/ii
-task schedule with cooldown不是leetcode
-dot product非lc
+ - 关于用到桶排序
+ - 给定一个数字，通过交换各位，生成小于target的最大数
+ - divide two integers
+ - basic calculator i/ii
+ - task schedule with cooldown不是leetcode
+ - dot product非lc
 
 
 系统设计
-1. design google map (1) calcalate fastest routes between A and B
-(2) realtime update traffic info collected by users
-
-2. design facebook feed (1) how you store feed (2) machine learning (3) search functionality
+ - design google map (1) calcalate fastest routes between A and B
+ - realtime update traffic info collected by users
+ - design facebook feed (1) how you store feed (2) machine learning (3) search functionality
