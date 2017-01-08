@@ -14,7 +14,5 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int path = new Test1().lengthOfLongestSubstring("ohvhjdml");
-        System.out.println(path);
     }
 }

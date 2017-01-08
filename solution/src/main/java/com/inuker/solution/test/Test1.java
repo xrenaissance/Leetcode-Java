@@ -11,27 +11,19 @@ import java.util.List;
 
 public class Test1 {
 
-    public int lengthOfLongestSubstringTwoDistinct(String s, int k) {
-        if (k == 0) {
+    public int maxSubArray(int[] nums) {
+        if (nums.length == 0) {
             return 0;
         }
-        HashMap<Character, Integer> map = new HashMap<>();
-        int max = 0;
-        for (int i = 0, j = 0; i < s.length(); i++) {
-            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
-            if (map.size() > k) {
-                for ( ; j < i; ) {
-                    char c1 = s.charAt(j++);
-                    map.put(c1, map.get(c1) - 1);
-                    if (map.get(c1) == 0) {
-                        map.remove(c1);
-                        break;
-                    }
-                }
+        int[] dp = new int[nums.length];
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            dp[i] = nums[i];
+            if (i > 0 && dp[i - 1] > 0) {
+                dp[i] += dp[i - 1];
             }
-            max = Math.max(max, i - j + 1);
+            max = Math.max(max, dp[i]);
         }
         return max;
     }
-
 }
