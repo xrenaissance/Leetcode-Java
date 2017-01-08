@@ -11,6 +11,24 @@ import java.util.List;
 
 public class Test1 {
 
+    public int lengthOfLongestSubstring(String s) {
+        int[] counts = new int[256];
+        int max = 0;
+        for (int i = 0, j = 0; i < s.length(); i++) {
+            if (++counts[s.charAt(i)] > 1) {
+                for ( ; j < i; ) {
+                    char c = s.charAt(j++);
+                    counts[c]--;
+                    if (c == s.charAt(i)) {
+                        break;
+                    }
+                }
+            }
+            max = Math.max(max, i - j + 1);
+        }
+        return max;
+    }
+
     public int maxSubArrayLen(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

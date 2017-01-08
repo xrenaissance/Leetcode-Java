@@ -18,6 +18,9 @@ public class LongestSubstringWithoutRepeatingCharacters {
         for (int i = 0, j = 0; i < len; i++) {
             if (++counts[s.charAt(i)] > 1) {
                 for ( ; j < i; ) {
+                    /**
+                     * 这里容易出错，这里要马上j++，不能放在for里j++，因为可能下面会提前break了
+                     */
                     char c = s.charAt(j++);
                     counts[c]--;
                     if (c == s.charAt(i)) {
