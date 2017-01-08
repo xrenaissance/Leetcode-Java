@@ -10,21 +10,32 @@ import java.util.List;
 
 public class Test1 {
 
-    public boolean isOneEditDistance(String s, String t) {
-        int sl = s.length(), tl = t.length();
-        if (sl < tl) {
-            return isOneEditDistance(t, s);
+    public String minWindow(String s, String t) {
+        int[] fs = new int[256], ft = new int[256];
+        for (char c : t.toCharArray()) {
+            ft[c]++;
         }
-        if (sl - tl > 1) {
-            return false;
-        }
-        for (int i = 0; i < tl; i++) {
-            if (s.charAt(i) != t.charAt(i)) {
-                return sl == tl ? s.substring(i + 1).equals(t.substring(i + 1))
-                        : s.substring(i + 1).equals(t.substring(i));
+        int count = 0, minLen = Integer.MAX_VALUE, idx = -1;
+        for (int i = 0, j = 0; i < s.length(); i++) {
+            if (++fs[s.charAt(i)] <= ft[s.charAt(i)]) {
+                ++count;
+            }
+            if (count >= t.length()) {
+                for ( ; j < i; j++) {
+                    char c = s.charAt(j);
+                    if (fs[c] > ft[c]) {
+                        fs[c]--;
+                    } else {
+                        break;
+                    }
+                }
+                if (i - j + 1 < minLen) {
+                    minLen = i - j + 1;
+                    idx = j;
+                }
             }
         }
-        return sl != tl;
+        return minLen == Integer.MAX_VALUE ? "" : s.substring(idx, idx + minLen);
     }
 
     boolean knows(int a, int b) {
