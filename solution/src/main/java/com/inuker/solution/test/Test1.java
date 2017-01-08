@@ -16,35 +16,22 @@ import java.util.TreeMap;
 
 public class Test1 {
 
-    public int[] maxSlidingWindow(int[] nums, int k) {
-        if (nums.length == 0 || k == 0) {
-            return new int[0];
-        }
+    public String shortestPalindrome(String s) {
+        StringBuilder builder = new StringBuilder(s);
+        return builder.reverse().substring(0, s.length() - getCommonLength(s)) + s;
+    }
 
-        TreeMap<Integer, Integer> map = new TreeMap<>(Collections.reverseOrder());
+    private int getCommonLength(String str) {
+        String rev = new StringBuilder(str).reverse().toString();
+        return getCommonLength(str + rev, str.length());
+    }
 
-        int[] result = new int[nums.length - k + 1];
-
-        for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-
-            // 别忘了加限制条件
-            if (i >= k) {
-                int n = nums[i - k];
-                int nn = map.getOrDefault(n, 0);
-                if (nn == 1) {
-                    map.remove(n);
-                } else {
-                    map.put(n, nn - 1);
-                }
-            }
-
-            // 别忘了加限制条件
-            if (i >= k - 1) {
-                result[i - k + 1] = map.firstKey();
+    private int getCommonLength(String s, int max) {
+        for (int i = s.length() - max; i < s.length(); i++) {
+            if (s.startsWith(s.substring(i))) {
+                return s.length() - i;
             }
         }
-
-        return result;
+        return 0;
     }
 }
