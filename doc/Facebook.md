@@ -285,17 +285,16 @@ Facebook题目列表(24)
 ## 关于Palindrome
 |#|Title|Solution|Score|
 |---|----| ----- | ----- |
-|125|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidPalindrome.java)||
-|234|[Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromeLinkedList.java)||
+|125|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidPalindrome.java)|100|
+|234|[Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromeLinkedList.java)|100|
 |5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindromicSubstring.java)||
-|9|[Palindrome Number](https://leetcode.com/problems/palindrome-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromeNumber.java)||
 |336|[Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePairs.java)||
 |214|[Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestPalindrome.java)||
 |131|[Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePartitioning.java)||
 |132|[Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePartitioningII.java)||
 |266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePermutation.java)||
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)|||
-|409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)||
+|409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)|100|
 
 <br/>
 
@@ -309,7 +308,7 @@ Facebook题目列表(24)
 |325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSizeSubarraySumEqualsK.java)|90|
 |209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)|90|
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSubarray.java)|100|
-|152|[Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumProductSubarray.java)||
+|152|[Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumProductSubarray.java)|90|
 |76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|100|
 |239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SlidingWindowMaximum.java)||
 |30|[Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/)|||

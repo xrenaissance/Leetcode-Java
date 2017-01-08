@@ -18,6 +18,10 @@ import java.util.Queue;
  */
 public class SlidingWindowMaximum {
 
+    /**
+     * 注意PriorityQueue的remove复杂度是O(k)，所以本题复杂度是O(n*k)
+     * 可以将PriorityQueue转成TreeMap
+     */
     // 耗时62ms
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums.length == 0 || k == 0) {
