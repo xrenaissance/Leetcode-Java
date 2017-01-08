@@ -1,5 +1,7 @@
 package com.inuker.solution.test;
 
+import com.inuker.solution.TreeNode;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -15,6 +17,19 @@ import java.util.TreeMap;
  */
 
 public class Test1 {
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        while (root != null) {
+            if (p.val < root.val && q.val < root.val) {
+                root = root.left;
+            } else if (p.val > root.val && q.val > root.val) {
+                root = root.right;
+            } else {
+                break;
+            }
+        }
+        return root;
+    }
 
     public String shortestPalindrome(String s) {
         StringBuilder builder = new StringBuilder(s);
