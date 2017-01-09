@@ -10,6 +10,11 @@ import java.util.List;
 
 public class ExpressionAddOperators {
 
+    /**
+     * 容易错的地方在于当组成数的时候高位为0是非法的
+     * 另外start==0的时候要单独算
+     * 为防止溢出，结果都要保存为long
+     */
     public List<String> addOperators(String num, int target) {
         List<String> result = new LinkedList<String>();
         if (num.length() == 0) {
