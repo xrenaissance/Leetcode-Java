@@ -23,16 +23,5 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
-    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        TreeNode res = root;
-        while (root != null) {
-            if (p.val < root.val) {
-                res = root;
-                root = root.left;
-            } else {
-                root = root.right;
-            }
-        }
-        return res;
-    }
+
 }
