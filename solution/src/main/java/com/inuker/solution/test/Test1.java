@@ -23,5 +23,30 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> list = new LinkedList<>();
+        if (root == null) {
+            return list;
+        }
+        dfs(root, list, root.val + "");
+        return list;
+    }
 
+    private void dfs(TreeNode root, List<String> list, String path) {
+        if (root == null) {
+            return;
+        }
+
+        if (root.left == null && root.right == null) {
+            list.add(path);
+            return;
+        }
+
+        if (root.left != null) {
+            dfs(root.left, list, path + "->" + root.left.val);
+        }
+        if (root.right != null) {
+            dfs(root.right, list, path + "->" + root.right.val);
+        }
+    }
 }

@@ -6,6 +6,9 @@ package com.inuker.solution;
 
 public class ValidateBinarySearchTree {
 
+    /**
+     * 这要转成long
+     */
     // 耗时1ms
     public boolean isValidBST(TreeNode root) {
         return isValidBST(root, (long) Integer.MIN_VALUE - 1, (long) Integer.MAX_VALUE + 1);
