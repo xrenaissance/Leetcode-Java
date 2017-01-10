@@ -25,6 +25,9 @@ public class CloneGraph {
             return cloneMap.get(node);
         }
         UndirectedGraphNode cloned = new UndirectedGraphNode(node.label);
+        /**
+         * 要注意这里这个克隆的节点不能在for循环之后再加到map，否则会死循环
+         */
         cloneMap.put(node, cloned); // visited = true;
         for(UndirectedGraphNode neighbor: node.neighbors){
             cloned.neighbors.add(cloneGraph(neighbor, cloneMap));
