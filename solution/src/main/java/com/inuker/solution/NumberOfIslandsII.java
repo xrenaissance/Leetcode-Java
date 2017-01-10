@@ -35,6 +35,9 @@ public class NumberOfIslandsII {
                 if (x0 < 0 || x0 >= m || y0 < 0 || y0 >= n || mRoots[z0] == -1) {
                     continue;
                 }
+                /**
+                 * 这里是给z合并到z0中去
+                 */
                 union(z, z0);
             }
 
