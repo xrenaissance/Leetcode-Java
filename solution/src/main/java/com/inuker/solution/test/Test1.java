@@ -29,26 +29,28 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
-    public int minCostII(int[][] costs) {
-        if (costs.length == 0) {
-            return 0;
+    int[] root;
+
+    public List<Integer> numIslands2(int m, int n, int[][] positions) {
+        int[] root = new int[m * n];
+        for (int[] position : positions) {
+            int x = position[0] * n + position[1];
+
         }
-        int k = costs[0].length;
-        int min = 0, minIdx = -1, submin = 0;
-        for (int i = 0; i < costs.length; i++) {
-            int min0 = Integer.MAX_VALUE, minIdx0 = -1, submin0 = Integer.MAX_VALUE;
-            for (int j = 0; j < k; j++) {
-                int cost = costs[i][j] + (j != minIdx ? min : submin);
-                if (cost < min0) {
-                    submin0 = min0;
-                    min0 = cost;
-                    minIdx0 = j;
-                } else if (cost < submin0) {
-                    submin0 = cost;
-                }
-            }
-            min = min0; minIdx = minIdx0; submin = submin0;
+    }
+
+    private void union(int x, int y) {
+        int x0 = find(x);
+        int y0 = find(y);
+        if (x0 != y0) {
+            root[x0] = y0;
         }
-        return min;
+    }
+
+    private int find(int x) {
+        while (root[x] != -1) {
+            x = root[x];
+        }
+        return x;
     }
 }

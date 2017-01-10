@@ -25,25 +25,17 @@ public class NumberOfIslandsII {
         Arrays.fill(mRoots, -1);
 
         for (int[] p : positions) {
-            int i = p[0], j = p[1];
-            int root = i * n + j;
-            mRoots[root] = root;
+            int x = p[0], y = p[1], z = x * n + y;
+            mRoots[z] = z;
             mCount++;
 
-            if (i > 0 && mRoots[root - n] != -1) {
-                union(root, root - n);
-            }
-
-            if (i + 1 < m && mRoots[root + n] != -1) {
-                union(root, root + n);
-            }
-
-            if (j > 0 && mRoots[root - 1] != -1) {
-                union(root, root - 1);
-            }
-
-            if (j + 1 < n && mRoots[root + 1] != -1) {
-                union(root, root + 1);
+            int[] dx = {-1, 1, 0, 0}, dy = {0, 0, 1, -1};
+            for (int i = 0; i < dx.length; i++) {
+                int x0 = x + dx[i], y0 = y + dy[i], z0 = x0 * n + y0;
+                if (x0 < 0 || x0 >= m || y0 < 0 || y0 >= n || mRoots[z0] == -1) {
+                    continue;
+                }
+                union(z, z0);
             }
 
             list.add(mCount);
@@ -52,11 +44,11 @@ public class NumberOfIslandsII {
         return list;
     }
 
-    private void union(int p, int q) {
-        int proot = findIsLand(p);
-        int qroot = findIsLand(q);
-        if (proot != qroot) {
-            mRoots[proot] = qroot;
+    private void union(int x, int y) {
+        int x0 = findIsLand(x);
+        int y0 = findIsLand(y);
+        if (x0 != y0) {
+            mRoots[x0] = y0;
             mCount--;
         }
     }
