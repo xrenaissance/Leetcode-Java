@@ -14,24 +14,21 @@ public class PaintHouseII {
         if (costs.length == 0) {
             return 0;
         }
-        int n = costs.length, k = costs[0].length;
-        int min = 0, minIndex = -1, subMin = 0;
-
-        for (int i = 0; i < n; i++) {
-            int curMin = Integer.MAX_VALUE, curMinIdx = -1, curSub = Integer.MAX_VALUE;
+        int k = costs[0].length;
+        int min = 0, minIdx = -1, submin = 0;
+        for (int i = 0; i < costs.length; i++) {
+            int min0 = Integer.MAX_VALUE, minIdx0 = -1, submin0 = Integer.MAX_VALUE;
             for (int j = 0; j < k; j++) {
-                int value = (j != minIndex ? min : subMin) + costs[i][j];
-                if (value < curMin) {
-                    curSub = curMin;
-                    curMin = value;
-                    curMinIdx = j;
-                } else if (value < curSub) {
-                    curSub = value;
+                int cost = costs[i][j] + (j != minIdx ? min : submin);
+                if (cost < min0) {
+                    submin0 = min0;
+                    min0 = cost;
+                    minIdx0 = j;
+                } else if (cost < submin0) {
+                    submin0 = cost;
                 }
             }
-            min = curMin;
-            minIndex = curMinIdx;
-            subMin = curSub;
+            min = min0; minIdx = minIdx0; submin = submin0;
         }
         return min;
     }
