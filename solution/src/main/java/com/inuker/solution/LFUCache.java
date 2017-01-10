@@ -48,7 +48,12 @@ public class LFUCache {
     }
 
     public void set(int key, int value) {
-        if (cap == 0) return;
+        /**
+         * 这里别掉了
+         */
+        if (cap == 0) {
+            return;
+        }
         if (values.containsKey(key)) {
             values.put(key, value);
         } else {

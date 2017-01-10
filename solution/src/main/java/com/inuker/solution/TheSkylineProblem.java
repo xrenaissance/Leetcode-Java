@@ -55,6 +55,9 @@ public class TheSkylineProblem {
             }
         });
 
+        /**
+         * 这里别掉了
+         */
         queue.offer(0);
 
         List<int[]> result = new LinkedList<int[]>();
