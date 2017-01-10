@@ -2,6 +2,7 @@ package com.inuker.solution.test;
 
 import com.inuker.solution.Interval;
 import com.inuker.solution.ListNode;
+import com.inuker.solution.SumRootToLeafNumbers;
 import com.inuker.solution.TreeNode;
 
 import java.util.ArrayList;
@@ -29,28 +30,54 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
-    int[] root;
+    public static class WordDictionary {
 
-    public List<Integer> numIslands2(int m, int n, int[][] positions) {
-        int[] root = new int[m * n];
-        for (int[] position : positions) {
-            int x = position[0] * n + position[1];
-
+        class Trie {
+            Trie[] nodes = new Trie[26];
+            String word;
         }
-    }
 
-    private void union(int x, int y) {
-        int x0 = find(x);
-        int y0 = find(y);
-        if (x0 != y0) {
-            root[x0] = y0;
-        }
-    }
+        Trie root = new Trie();
 
-    private int find(int x) {
-        while (root[x] != -1) {
-            x = root[x];
+        // Adds a word into the data structure.
+        public void addWord(String word) {
+            Trie node = root;
+            for (char c : word.toCharArray()) {
+                if (node.nodes[c - 'a'] == null) {
+                    node.nodes[c - 'a'] = new Trie();
+                }
+                node = node.nodes[c - 'a'];
+            }
+            node.word = word;
         }
-        return x;
+
+        // Returns if the word is in the data structure. A word could
+        // contain the dot character '.' to represent any one letter.
+        public boolean search(String word) {
+            return search(root, word, 0);
+        }
+
+        private boolean search(Trie trie, String word, int start) {
+            if (trie == null) {
+                return false;
+            }
+            if (start == word.length()) {
+                /**
+                 * 这个返回的条件一定要注意，不是trie.word.equals(word)
+                 */
+                return trie.word != null;
+            }
+            char c = word.charAt(start);
+            if (c != '.') {
+                return search(trie.nodes[c - 'a'], word, start + 1);
+            } else {
+                for (Trie trie0 : trie.nodes) {
+                    if (trie0 != null && search(trie0, word, start + 1)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

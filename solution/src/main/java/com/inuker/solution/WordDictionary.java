@@ -38,6 +38,9 @@ public class WordDictionary {
             return false;
         }
         if (index == word.length()) {
+            /**
+             * 这个返回的条件一定要注意，不是trie.word.equals(word)
+             */
             return trie.word != null;
         }
         char c = word.charAt(index);
