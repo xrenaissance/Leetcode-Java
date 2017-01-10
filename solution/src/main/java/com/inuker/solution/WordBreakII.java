@@ -18,6 +18,9 @@ import java.util.Set;
  */
 public class WordBreakII {
 
+    /**
+     * 下面这种写法可以AC，不过当wordDict很大时则效率堪忧
+     */
     public List<String> wordBreak(String s, Set<String> wordDict) {
         return dfs(s, wordDict, new HashMap<String, List<String>>());
     }
@@ -47,72 +50,37 @@ public class WordBreakII {
         return result;
     }
 
-    /** 这种方法比较直观，但是会超时
-    public List<String> wordBreak(String s, Set<String> wordDict) {
-        List<List<String>>[] f = new LinkedList[s.length() + 1];
-        f[0] = new LinkedList<List<String>>();
-        f[0].add(Collections.EMPTY_LIST);
-        for (int i = 1; i <= s.length(); i++) {
-            f[i] = new LinkedList<List<String>>();
-            for (int j = 0; j < i; j++) {
-                String word = s.substring(j, i);
-                if (wordDict.contains(word)) {
-                    for (List<String> list : f[j]) {
-                        List<String> list2 = new LinkedList<String>(list);
-                        list2.add(word);
-                        f[i].add(list2);
-                    }
+    /**
+     * 这种写法耗时16ms，效率不错
+     */
+    public List<String> wordBreak2(String s, List<String> wordDict) {
+        if (s.length() == 0) {
+            return Collections.EMPTY_LIST;
+        }
+        return dfs2(s, wordDict, new HashMap<String,List<String>>());
+    }
+
+    public List<String> dfs2(String s, List<String> wordDict, HashMap<String,List<String>> map) {
+        List<String> result = new LinkedList<>();
+        if (s.length() == 0) {
+            /**
+             * 注意这里要加一个""，不能返回空链表
+             */
+            return new LinkedList<>(Arrays.asList(""));
+        }
+        if (map.containsKey(s)) {
+            return map.get(s);
+        }
+        for (int i = 0; i <= s.length(); i++) {
+            String t = s.substring(i);
+            if (wordDict.contains(t)) {
+                List<String> list = dfs2(s.substring(0, i), wordDict, map);
+                for (String ss : list) {
+                    result.add((ss.length() > 0 ? ss + " " : "") + t);
                 }
             }
         }
-        List<String> result = new LinkedList<String>();
-        for (List<String> list : f[s.length()]) {
-            result.add(String.join(" ", list));
-        }
+        map.put(s, result);
         return result;
-    }*/
-
-    /** 这种某些case下内存占用会超
-    public List<String> wordBreak(String s, Set<String> wordDict) {
-        List<String>[] f = new LinkedList[s.length() + 1];
-        f[0] = new LinkedList<String>(Arrays.asList(""));
-        for (int i = 1; i <= s.length(); i++) {
-            f[i] = new LinkedList<String>();
-            for (int j = 0; j < i; j++) {
-                String word = s.substring(j, i);
-                if (wordDict.contains(word)) {
-                    for (String text : f[j]) {
-                        f[i].add((text.length() > 0 ? text + " " : "") + word);
-                    }
-                }
-            }
-        }
-        return f[s.length()];
-    }*/
-
-    /** 这样某些case也会超时
-    public List<String> wordBreak(String s, Set<String> wordDict) {
-        Map<String, List<String>> map = new HashMap<String, List<String>>();
-        map.put("", new LinkedList<String>(Arrays.asList("")));
-        for (int i = 1; i <= s.length(); i++) {
-            String t = s.substring(0, i);
-
-            List<String> list = map.get(t);
-            if (list == null) {
-                list = new LinkedList<String>();
-                map.put(t, list);
-            }
-
-            for (int j = 0; j < i; j++) {
-                String suffix = s.substring(0, j);
-                String word = s.substring(j, i);
-                if (map.containsKey(suffix) && wordDict.contains(word)) {
-                    for (String text : map.get(suffix)) {
-                        list.add((text.length() > 0 ? text + " " : "") + word);
-                    }
-                }
-            }
-        }
-        return map.get(s);
-    }*/
+    }
 }

@@ -47,6 +47,11 @@ public class WordSearchII {
         return new LinkedList<String>(set);
     }
 
+    /**
+     * 这里容易错的两点
+     * 1. if (c < 'a' || c > 'z') 这个容易掉了
+     * 2. 要用Set查重，别直接List
+     */
     private void dfs(Set<String> set, char[][] board, int i, int j, Trie trie) {
         if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
             return;

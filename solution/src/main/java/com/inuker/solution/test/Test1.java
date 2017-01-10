@@ -29,33 +29,4 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
-    public List<String> addOperators(String num, int target) {
-        List<String> result = new LinkedList<>();
-        dfs(num, result, 0, "", target, 0, 0);
-        return result;
-    }
-
-    private void dfs(String num, List<String> result, int start, String s, int target, long val, long last) {
-        if (start == num.length()) {
-            if (val == target) {
-                result.add(s);
-            }
-            return;
-        }
-        for (int i = start; i < num.length(); i++) {
-            if (num.charAt(start) == '0' && i != start) {
-                break;
-            }
-
-            long n = Long.valueOf(num.substring(start, i + 1));
-
-            if (start == 0) {
-                dfs(num, result, i + 1, n + "", target, n, n);
-            } else {
-                dfs(num, result, i + 1, s + "+" + n, target, val + n, n);
-                dfs(num, result, i + 1, s + "-" + n, target, val - n, -n);
-                dfs(num, result, i + 1, s + "*" + n, target, val - last + last * n, last * n);
-            }
-        }
-    }
 }
