@@ -7,19 +7,14 @@ package com.inuker.solution;
 public class PaintHouse {
 
     public int minCost(int[][] costs) {
-        int n = costs.length;
-        if (n == 0) {
-            return 0;
-        }
-        int[] f0 = new int[n];
-        int[] f1 = new int[n];
-        int[] f2 = new int[n];
+        int[] f = new int[3];
+        int f0 = 0, f1 = 0, f2 = 0;
         for (int i = 0; i < costs.length; i++) {
-            f0[i] = (i > 0 ? Math.min(f1[i - 1], f2[i - 1]) : 0) + costs[i][0];
-            f1[i] = (i > 0 ? Math.min(f0[i - 1], f2[i - 1]) : 0) + costs[i][1];
-            f2[i] = (i > 0 ? Math.min(f0[i - 1], f1[i - 1]) : 0) + costs[i][2];
+            f[0] = costs[i][0] + Math.min(f1, f2);
+            f[1] = costs[i][1] + Math.min(f0, f2);
+            f[2] = costs[i][2] + Math.min(f0, f1);
+            f0 = f[0]; f1 = f[1]; f2 = f[2];
         }
-        int min = Math.min(f0[n - 1], f1[n - 1]);
-        return Math.min(min, f2[n - 1]);
+        return Math.min(Math.min(f0, f1), f2);
     }
 }
