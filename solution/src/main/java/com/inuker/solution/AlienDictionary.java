@@ -61,6 +61,9 @@ public class AlienDictionary {
                         set = new HashSet<Character>();
                         map.put(first.charAt(j), set);
                     }
+                    /**
+                     * 注意同一条边不能重复加入了
+                     */
                     if (set.add(second.charAt(j))) {
                         indegree[second.charAt(j) - 'a']++;
                     }

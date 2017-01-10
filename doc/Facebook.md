@@ -325,6 +325,14 @@ Facebook题目列表(24)
 
 <br/>
 
+N Queens
+Divide two numbers
+Sort color如果是k个color
+range sum query
+Design URL Shortening service
+Flatten Binary Tree to Linked List
+
+
 ## GlassDoor
  - 关于用到桶排序
  - 给定一个数字，通过交换各位，生成小于target的最大数
@@ -338,3 +346,27 @@ Facebook题目列表(24)
  - design google map (1) calcalate fastest routes between A and B
  - realtime update traffic info collected by users
  - design facebook feed (1) how you store feed (2) machine learning (3) search functionality
+ - 社交网络，如何推荐你可能认识，但是还不是你好友的人。
+ 设计post和friend的搜索 支持多个关键词
+ 多个pc之间发送和请求数据
+ 设计一个chat app，主要讨论api和本地缓存数据库怎么设计
+ 在fb上发布新状态并能即时搜索其他人发布的新状态；为已知的附近餐馆排序显示在推荐列表中
+ 
+ Design Wikipedia crawler.
+                   followup 1: No global status.
+                   followup 2: deal with machine failure
+                   followup 3: make the wiki site unaware of this crawler.
+                   
+设计一个FB的搜索系统， 自我感觉讨论不错， 然并卵 
+从requriment开始： 要搜索什么？ people,post, event ....
+constraint ， 用户多少，数据多少之类；. 涓€浜�-涓夊垎-鍦帮紝鐙鍙戝竷
+UI 怎么搞， 怎样提高用户体验， typehead, 不同label分类
+总体怎么设计， 前段， server， 数据，画一画
+workflow 怎样，写个流程， 一个请求怎么完成 
+webservice怎么设计？ API， operation是怎么定义， 把restful讲讲
+数据库， 搜索的数据结构都怎么存，SQL table啦，还有 trie啦， bloom filter 啦， inverted table都讲讲。  
+CAP那一套说一说，怎么balance， 怎么Partion， 怎么保证consistence, cache怎么存
+
+有一些账号，账号里面有一个或多个email， 如果两个账号有共同的email，则认为这两个账号是同一个人，找出哪些账号是同一个人
+我说账号之间如果有公共email就连边，然后就变成类似于第一题了，然后让我写了个连边的过程，我写了个O(n^2*e)，n是账号数，e是单账号最多email数
+然后问可不可以更优，我说可以用并查集直接合并email
