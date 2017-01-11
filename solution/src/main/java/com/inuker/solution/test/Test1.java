@@ -37,26 +37,22 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public class Solution {
+    public double myPow(double x, int n) {
+        return helper(x, n);
+    }
 
-        int[] nums;
-        Random random;
-
-        public Solution(int[] nums) {
-            this.nums = nums;
-            this.random = new Random();
+    private double helper(double x, long n) {
+        if (n == 0) {
+            return 1;
         }
-
-        public int pick(int target) {
-            int count = 0, idx = -1;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == target) {
-                    if (random.nextInt(++count) == 0) {
-                        idx = i;
-                    }
-                }
-            }
-            return idx;
+        if (n < 0) {
+            return helper(1 / x, -n);
+        }
+        double y = helper(x, n / 2);
+        if (n % 2 == 0) {
+            return y * y;
+        } else {
+            return y * y * x;
         }
     }
 }
