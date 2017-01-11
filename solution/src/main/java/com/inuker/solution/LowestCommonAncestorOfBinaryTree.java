@@ -11,7 +11,10 @@ import java.util.Set;
  */
 public class LowestCommonAncestorOfBinaryTree {
 
-    // 耗时12ms
+    /**
+     * leetcode测试用例中p和q一定是在树中的
+     */
+    // 耗时11ms
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {
             return root;
@@ -31,6 +34,11 @@ public class LowestCommonAncestorOfBinaryTree {
 
     /**
      * 这是迭代写法，另外考虑了p或者q不在树中的情况
+     * 用一个map保存每个node的前驱节点，当p和q同时找到了则回溯他们的前驱节点查看是否重合。
+     * 如果树遍历完了还没有同时找到p和q则返回null
+     */
+    /**
+     * 耗时29ms
      */
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || p == null || q == null) {
@@ -42,6 +50,7 @@ public class LowestCommonAncestorOfBinaryTree {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
+
         while (!queue.isEmpty()) {
             if (parents.containsKey(p) && parents.containsKey(q)) {
                 break;
@@ -69,7 +78,7 @@ public class LowestCommonAncestorOfBinaryTree {
         }
 
         for (TreeNode node = q; node != null; node = parents.get(node)) {
-            if (!set.add(node)) {
+            if (!set.contains(node)) {
                 return node;
             }
         }

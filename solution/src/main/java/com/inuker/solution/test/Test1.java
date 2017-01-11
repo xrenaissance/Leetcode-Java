@@ -34,22 +34,50 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public String multiply(String num1, String num2) {
-        int[] result = new int[num1.length() + num2.length()];
-        for (int i = num1.length() - 1; i >= 0; i--) {
-            for (int j = num2.length() - 1; j >= 0; j--) {
-                int k = result[i + j + 1] + (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
-                result[i + j + 1] = k % 10;
-                result[i + j] += k / 10;
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null || p == null || q == null) {
+            return null;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        HashMap<TreeNode, TreeNode> parents = new HashMap<>();
+        parents.put(root, null);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+
+            if (parents.containsKey(p) && parents.containsKey(q)) {
+                break;
+            }
+
+            if (node.left != null) {
+                queue.add(node.left);
+                parents.put(node.left, node);
+            }
+
+            if (node.right != null) {
+                queue.add(node.right);
+                parents.put(node.right, node);
             }
         }
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < result.length; i++) {
-            if (result[i] == 0 && sb.length() == 0) {
-                continue;
-            }
-            sb.append(result[i]);
+
+        if (!parents.containsKey(p) || !parents.containsKey(q)) {
+            return null;
         }
-        return sb.length() == 0 ? "0" : sb.toString();
+
+        Set<TreeNode> set = new HashSet<>();
+        for (TreeNode node = p; node != null; node = parents.get(node)) {
+            set.add(node);
+        }
+
+        for (TreeNode node = q; node != null; node = parents.get(node)) {
+            if (set.contains(node)) {
+                return node;
+            }
+        }
+
+        return null;
     }
 }
