@@ -29,6 +29,7 @@ import java.util.TreeMap;
 
 import javax.swing.plaf.basic.BasicScrollPaneUI;
 
+import sun.reflect.generics.tree.Tree;
 import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 /**
@@ -37,12 +38,23 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int titleToNumber(String s) {
-        int res = 0, t = 1;
-        for (int i = s.length() - 1; i >= 0; i--) {
-            res += (s.charAt(i) - 'A' + 1) * t;
-            t *= 26;
+    public int kthSmallest(TreeNode root, int k) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+
+                if (--k == 0) {
+                    return root.val;
+                }
+
+                root = root.right;
+            }
         }
-        return res;
+        return 0;
     }
+
 }
