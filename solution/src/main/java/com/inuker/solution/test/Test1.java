@@ -37,22 +37,28 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public double myPow(double x, int n) {
-        return helper(x, n);
-    }
+    /**
+     * 这题容易错的有两点：
+     * 1. 不能用mid * mid，可能会溢出，需要用x / mid
+     * 2. 临界点的情况，即mid < m的情况，此时结果可能等于mid，也可能更大，l = mid是没问题的，只是我们要考虑只剩两个数的
+     * 情形，因为会死循环。假设最后两个数是a和b，假设mid为a时mid<m，则l=mid+1，这样做是为了验证b，如果b的时候mid大于m了，
+     * 则r=mid-1会返回a。如果b的时候mid小于m，则l=mid+1会超出范围，最后还是返回l-1
+     */
+    public int mySqrt(int x) {
+        int l = 1, r = x;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
 
-    private double helper(double x, long n) {
-        if (n == 0) {
-            return 1;
+            int m = x / mid;
+
+            if (mid == m) {
+                return mid;
+            } else if (mid > m) {
+                r = mid - 1;
+            } else if (mid < m) {
+                l = mid + 1;
+            }
         }
-        if (n < 0) {
-            return helper(1 / x, -n);
-        }
-        double y = helper(x, n / 2);
-        if (n % 2 == 0) {
-            return y * y;
-        } else {
-            return y * y * x;
-        }
+        return l - 1;
     }
 }
