@@ -20,7 +20,7 @@ import java.util.Random;
  */
 
 /**
- * 本题是随机抽取一个数，所以是否保留当前数就看random的结果是否小于1，即为0。
+ * 本题是随机抽取一个数，所以是否保留当前数就看random的结果是否小于1，即为0。如果为0，则替换掉。
  */
 
 /**
@@ -44,6 +44,9 @@ public class RandomPickIndex {
 
         for (int i = 0; i < mNums.length; i++) {
             if (mNums[i] == target && mRandom.nextInt(++count) == 0) {
+                /**
+                 * 这里只是暂时替换掉result，不能返回。result相当于大小为1的池子
+                 */
                 result = i;
             }
         }

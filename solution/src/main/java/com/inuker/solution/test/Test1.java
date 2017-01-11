@@ -37,12 +37,26 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int hIndex(int[] citations) {
-        Arrays.sort(citations);
-        int hIndex = 0;
-        for (int i = citations.length - 1; i >= 0; i--) {
-            hIndex = Math.max(hIndex, Math.min(citations.length - i, citations[i]));
+    public class Solution {
+
+        int[] nums;
+        Random random;
+
+        public Solution(int[] nums) {
+            this.nums = nums;
+            this.random = new Random();
         }
-        return hIndex;
+
+        public int pick(int target) {
+            int count = 0, idx = -1;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == target) {
+                    if (random.nextInt(++count) == 0) {
+                        idx = i;
+                    }
+                }
+            }
+            return idx;
+        }
     }
 }
