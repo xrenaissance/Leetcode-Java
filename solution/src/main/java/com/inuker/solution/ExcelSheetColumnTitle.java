@@ -6,18 +6,16 @@ package com.inuker.solution;
 
 public class ExcelSheetColumnTitle {
 
+    /**
+     * 因为这个字母是从1开始计数的，所以n要先减1
+     */
     public String convertToTitle(int n) {
-        StringBuffer sf = new StringBuffer();
-        for ( ; n > 0; n /= 26) {
-            int k = n % 26;
-            if (k == 0) {
-                n -= 26;
-                sf.insert(0, 'Z');
-            } else {
-                n -= k;
-                sf.insert(0, (char) ('A' + k - 1));
-            }
+        StringBuilder sb = new StringBuilder();
+        for ( ; n > 0; ) {
+            n--;
+            sb.insert(0, (char) (n % 26 + 'A'));
+            n /= 26;
         }
-        return sf.toString();
+        return sb.toString();
     }
 }

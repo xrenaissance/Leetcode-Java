@@ -14,6 +14,10 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        new Test1().isPalindrome(" ");
+        int n = 226;
+        String s = new Test1().convertToTitle(n);
+        String s2 = new ExcelSheetColumnTitle().convertToTitle(n);
+        System.out.println(s);
+        System.out.println(s2);
     }
 }
