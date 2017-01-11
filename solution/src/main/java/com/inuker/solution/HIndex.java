@@ -19,39 +19,34 @@ import java.util.HashMap;
  */
 public class HIndex {
 
-    // 耗时4ms，时间复杂度O(nlgn)，因为这里有排序
+    // 耗时4ms，时间复杂度O(nlgn)
     public int hIndex(int[] citations) {
         Arrays.sort(citations);
-
-        int citation = 0;
+        int hIndex = 0;
         for (int i = citations.length - 1; i >= 0; i--) {
-            int min = Math.min(citations.length - i, citations[i]);
-            citation = Math.max(min, citation);
+            hIndex = Math.max(hIndex, Math.min(citations.length - i, citations[i]));
         }
-
-        return citation;
+        return hIndex;
     }
 
     // 耗时1ms，时间复杂度O(n)
     public int hIndex2(int[] citations) {
-        int len = citations.length;
-
-        int[] f = new int[len + 1];
-        for (int n : citations) {
-            if (n >= len) {
-                f[len]++;
-            } else {
-                f[n]++;
-            }
+        /**
+         * 大于文章数的引用可以合并到一起
+         */
+        int n = citations.length;
+        int[] f = new int[n + 1];
+        for (int k : citations) {
+            f[Math.min(k, n)]++;
         }
-
-        for (int i = len, j = 0; i >= 0; i--) {
+        int hindex = 0;
+        /**
+         * i表示引用数，j表示大于等于该引用数的总文章数
+         */
+        for (int i = n, j = 0; i >= 0; i--) {
             j += f[i];
-            if (j >= i) {
-                return i;
-            }
+            hindex = Math.max(hindex, Math.min(j, i));
         }
-
-        return 0;
+        return hindex;
     }
 }
