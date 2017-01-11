@@ -34,50 +34,14 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || p == null || q == null) {
-            return null;
+    public boolean isValidBST(TreeNode root) {
+        return isValidBST(root, (long) Integer.MIN_VALUE - 1, (long) Integer.MAX_VALUE + 1);
+    }
+
+    private boolean isValidBST(TreeNode root, long low, long upper) {
+        if (root == null) {
+            return true;
         }
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-
-        HashMap<TreeNode, TreeNode> parents = new HashMap<>();
-        parents.put(root, null);
-
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-
-            if (parents.containsKey(p) && parents.containsKey(q)) {
-                break;
-            }
-
-            if (node.left != null) {
-                queue.add(node.left);
-                parents.put(node.left, node);
-            }
-
-            if (node.right != null) {
-                queue.add(node.right);
-                parents.put(node.right, node);
-            }
-        }
-
-        if (!parents.containsKey(p) || !parents.containsKey(q)) {
-            return null;
-        }
-
-        Set<TreeNode> set = new HashSet<>();
-        for (TreeNode node = p; node != null; node = parents.get(node)) {
-            set.add(node);
-        }
-
-        for (TreeNode node = q; node != null; node = parents.get(node)) {
-            if (set.contains(node)) {
-                return node;
-            }
-        }
-
-        return null;
+        return root.val < upper && isValidBST(root.left, low, root.val) && isValidBST(root.right, root.val, upper);
     }
 }
