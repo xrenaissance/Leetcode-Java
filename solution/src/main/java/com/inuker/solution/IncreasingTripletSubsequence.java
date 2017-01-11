@@ -11,6 +11,9 @@ public class IncreasingTripletSubsequence {
         int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE;
 
         for (int i = 0; i < nums.length; i++) {
+            /**
+             * 这里的条件都要带等号
+             */
             if (nums[i] <= first) {
                 first = nums[i];
             } else if (nums[i] <= second) {

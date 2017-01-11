@@ -37,20 +37,7 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public String simplifyPath(String path) {
-        String[] texts = path.split("/");
-        Deque<String> deque = new LinkedList<>();
-        for (String s : texts) {
-            if (s.equals(".") || s.isEmpty()) {
-                continue;
-            } else if (s.equals("..")) {
-                if (!deque.isEmpty()) {
-                    deque.pollLast();
-                }
-            } else {
-                deque.offerLast(s);
-            }
-        }
-        return "/" + String.join("/", deque);
+    public int lengthOfLIS(int[] nums) {
+
     }
 }

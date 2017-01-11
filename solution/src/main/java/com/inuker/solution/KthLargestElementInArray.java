@@ -12,48 +12,17 @@ import java.util.Random;
 
 public class KthLargestElementInArray {
 
-    // 耗时16ms，时间复杂度O(nlgn)，空间复杂度O(n)
+    // 耗时16ms，时间复杂度O(nlgk)，空间复杂度O(k)
     // 按降序排的，出队列k次获取第k大的数
     public int findKthLargest(int[] nums, int k) {
-        Queue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 > o2 ? -1 : 1;
-            }
-        });
-
+        Queue<Integer> queue = new PriorityQueue<>();
         for (int n : nums) {
             queue.add(n);
-        }
-
-        int num = 0;
-
-        for (int i = 0; i < k; i++) {
-            num = queue.poll();
-        }
-
-        return num;
-    }
-
-    // 耗时17ms，时间复杂度O(nlgk)，空间复杂度O(k)
-    // 按升序排的，最后队列头是最后的k个数中最小的，也就是全局第k大的
-    public int findKthLargest2(int[] nums, int k) {
-        Queue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 > o2 ? 1 : -1;
-            }
-        });
-
-        for (int n : nums) {
-            queue.add(n);
-
             if (queue.size() > k) {
                 queue.poll();
             }
         }
-
-        return queue.peek();
+        return queue.isEmpty() ? 0 : queue.peek();
     }
 
     // 耗时3ms，时间复杂度O(nlgn)，空间复杂度O(l)
