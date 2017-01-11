@@ -14,18 +14,6 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-//        List<List<Integer>> result = new Test1().subsets(new int[] {
-//                4,4,4,1,4
-//        });
-//        for (List<Integer> list : result) {
-//            for (Integer n : list) {
-//                System.out.print(n + " ");
-//            }
-//            System.out.println();
-//        }
-       List<String> list = new Test1().letterCombinations("23");
-        for (String s : list) {
-            System.out.println(s);
-        }
+        new Test1().isPalindrome(" ");
     }
 }

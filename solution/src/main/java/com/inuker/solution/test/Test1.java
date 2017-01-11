@@ -37,7 +37,25 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public boolean validTree(int n, int[][] edges) {
-
+    public boolean isPalindrome(String s) {
+        if (s.length() == 0) {
+            return true;
+        }
+        s = s.toLowerCase();
+        for (int i = 0, j = s.length() - 1; i < j; ) {
+            if (!Character.isLetterOrDigit(s.charAt(i))) {
+                i++;
+            } else if (!Character.isLetterOrDigit(s.charAt(j))) {
+                j--;
+            } else {
+                if (s.charAt(i) != s.charAt(j)) {
+                    return false;
+                } else {
+                    i++;
+                    j--;
+                }
+            }
+        }
+        return true;
     }
 }
