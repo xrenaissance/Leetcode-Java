@@ -15,7 +15,6 @@ public class SortColors {
     /**
      * 从左往右遍历，如果遇到0，左边肯定先是一堆0，然后是1堆1，交换过后，当前肯定是1，所以要i++。
      * 如果遇到2，肯定往右交换，然后交换后的数未知，所以i不能轻举妄动
-     * @param nums
      */
     // 时间复杂度O(n)，扫一遍
     public void sortColors3(int[] nums) {
@@ -39,7 +38,9 @@ public class SortColors {
 
     /**
      * 如果要扩展到k个颜色，如果颜色为0~k
-     * 时间复杂度O(n)，空间复杂度O(l)
+     * 原理很简单，就是统计每个颜色的个数，转成负数，保存在原来的数组中
+     * 统计完后再根据个数设置数组
+     * 其实可以另外开辟一个数组保存个数，如果对空间没有要求的话
      */
     public void sortKColors(int[] colors, int k) {
         for (int i = 0; i < colors.length; i++) {
