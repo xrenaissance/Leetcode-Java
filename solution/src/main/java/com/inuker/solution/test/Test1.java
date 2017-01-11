@@ -37,4 +37,7 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
+    public boolean validTree(int n, int[][] edges) {
+
+    }
 }

@@ -13,14 +13,17 @@ public class TotalHammingDistance {
      * 复杂度为O(n)
      */
     public int totalHammingDistance(int[] nums) {
-        int cnt = 0;
-        for (int i = 0, j, k; i < 32; i++) {
-            for (j = 0, k = 0; j < nums.length; j++) {
-                k += nums[j] & 1;
+        int res = 0;
+        for (int i = 0; i < 32; i++) {
+            int a = 0;
+            for (int j = 0; j < nums.length; j++) {
+                if ((nums[j] & 1) != 0) {
+                    a++;
+                }
                 nums[j] >>>= 1;
             }
-            cnt += k * (nums.length - k);
+            res += a * (nums.length - a);
         }
-        return cnt;
+        return res;
     }
 }
