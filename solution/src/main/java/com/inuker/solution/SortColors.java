@@ -12,6 +12,11 @@ import java.util.List;
 
 public class SortColors {
 
+    /**
+     * 从左往右遍历，如果遇到0，左边肯定先是一堆0，然后是1堆1，交换过后，当前肯定是1，所以要i++。
+     * 如果遇到2，肯定往右交换，然后交换后的数未知，所以i不能轻举妄动
+     * @param nums
+     */
     // 时间复杂度O(n)，扫一遍
     public void sortColors3(int[] nums) {
         int zero = -1, two = nums.length;
