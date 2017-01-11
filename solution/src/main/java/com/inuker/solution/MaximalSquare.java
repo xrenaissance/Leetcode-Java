@@ -8,14 +8,15 @@ package com.inuker.solution;
  * https://leetcode.com/articles/maximal-square/
  */
 public class MaximalSquare {
-
+    /**
+     * 这题要返回的是面积
+     */
     public int maximalSquare(char[][] matrix) {
         if (matrix == null || matrix.length == 0) {
             return 0;
         }
 
-        int row = matrix.length;
-        int col = matrix[0].length;
+        int row = matrix.length, col = matrix[0].length;
 
         int[][] f = new int[row][col];
 

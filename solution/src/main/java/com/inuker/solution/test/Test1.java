@@ -37,47 +37,32 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
-        wordList.remove(beginWord);
-        wordList.add(endWord);
-
-        Queue<String> queue = new LinkedList<>();
-        Queue<String> next = new LinkedList<>();
-        queue.add(beginWord);
-
-        int ladder = 1;
-
-        while (!queue.isEmpty()) {
-            String word = queue.poll();
-
-            StringBuilder sb = new StringBuilder(word);
-            for (int i = 0; i < word.length(); i++) {
-                char c = word.charAt(i);
-                for (int j = 0; j < 26; j++) {
-                    if (j + 'a' == c) {
-                        continue;
-                    }
-                    sb.setCharAt(i, (char) (j + 'a'));
-                    String s = sb.toString();
-
-                    if (s.equals(endWord)) {
-                        return ladder + 1;
-                    }
-
-                    if (wordList.remove(s)) {
-                        next.add(s);
-                    }
+    public int maximalSquare(char[][] matrix) {
+        if (matrix.length == 0) {
+            return 0;
+        }
+        int row = matrix.length, col = matrix[0].length;
+        int[][] f = new int[row][col];
+        int max = 0;
+        for (int i = 0; i < col; i++) {
+            f[0][i] = matrix[0][i] == '0' ? 0 : 1;
+            max = Math.max(max, f[0][i]);
+        }
+        for (int i = 0; i < row; i++) {
+            f[i][0] = matrix[i][0] == '0' ? 0 : 1;
+            max = Math.max(max, f[i][0]);
+        }
+        for (int i = 1; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                if (matrix[i][j] == '0') {
+                    f[i][j] = 0;
+                } else {
+                    int min = Math.min(f[i - 1][j], f[i][j - 1]);
+                    f[i][j] = Math.min(min, f[i - 1][j - 1]) + 1;
                 }
-                sb.setCharAt(i, c);
-            }
-
-            if (queue.isEmpty()) {
-                queue.addAll(next);
-                next.clear();
-                ladder++;
+                max = Math.max(max, f[i][j]);
             }
         }
-
-        return 0;
+        return max * max;
     }
 }
