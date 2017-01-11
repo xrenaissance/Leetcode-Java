@@ -32,20 +32,19 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
-    public int minSubArrayLen(int s, int[] nums) {
-        int sum = 0, min = Integer.MAX_VALUE;
-        for (int i = 0, j = 0; i < nums.length; i++) {
-            sum += nums[i];
-            if (sum >= s) {
-                for ( ; j < i; j++) {
-                    if (sum - nums[j] < s) {
-                        break;
-                    }
-                    sum -= nums[j];
-                }
-                min = Math.min(min, i - j + 1);
-            }
+    public int[] productExceptSelf(int[] nums) {
+        if (nums.length == 0) {
+            return null;
         }
-        return min == Integer.MAX_VALUE ? 0 : min;
+        int[] result = new int[nums.length];
+        for (int i = 1; i < nums.length; i++) {
+            result[i] = nums[i - 1] * result[i - 1];
+        }
+        int right = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            result[i] *= right;
+            right *= nums[i];
+        }
+        return result;
     }
 }
