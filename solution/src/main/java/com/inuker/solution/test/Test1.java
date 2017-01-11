@@ -32,19 +32,20 @@ import javax.swing.plaf.basic.BasicScrollPaneUI;
 
 public class Test1 {
 
-    public void sortColors(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int n : nums) {
-            map.put(n, map.getOrDefault(n, 0) + 1);
-        }
-        List<Integer> colors = new LinkedList<>(map.keySet());
-        Collections.sort(colors);
-        int i = 0;
-        for (Integer n : colors) {
-            int k = map.get(n);
-            for (int j = 0; j < k; j++) {
-                nums[i++] = n;
+    public int minSubArrayLen(int s, int[] nums) {
+        int sum = 0, min = Integer.MAX_VALUE;
+        for (int i = 0, j = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (sum >= s) {
+                for ( ; j < i; j++) {
+                    if (sum - nums[j] < s) {
+                        break;
+                    }
+                    sum -= nums[j];
+                }
+                min = Math.min(min, i - j + 1);
             }
         }
+        return min == Integer.MAX_VALUE ? 0 : min;
     }
 }
