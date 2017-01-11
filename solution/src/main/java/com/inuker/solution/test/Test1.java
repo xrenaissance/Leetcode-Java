@@ -34,14 +34,29 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, (long) Integer.MIN_VALUE - 1, (long) Integer.MAX_VALUE + 1);
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> result = new LinkedList<>();
+        if (k == 0) {
+            return result;
+        }
+        dfs(k, n, 1, result, new LinkedList<>());
+        return result;
     }
 
-    private boolean isValidBST(TreeNode root, long low, long upper) {
-        if (root == null) {
-            return true;
+    private void dfs(int k, int n, int start, List<List<Integer>> result, List<Integer> list) {
+        if (n < 0) {
+            return;
         }
-        return root.val < upper && isValidBST(root.left, low, root.val) && isValidBST(root.right, root.val, upper);
+        if (n == 0) {
+            if (k == 0) {
+                result.add(new LinkedList<>(list));
+            }
+            return;
+        }
+        for (int i = start; i <= 9; i++) {
+            list.add(i);
+            dfs(k - 1, n - i, i + 1, result, list);
+            list.remove(list.size() - 1);
+        }
     }
 }

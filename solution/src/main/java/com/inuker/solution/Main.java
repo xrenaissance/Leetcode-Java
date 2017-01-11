@@ -14,20 +14,12 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int[] colors = {
-                0, 1, 3, 2, 3,2, 2, 2,3,1, 0, 1, 1, 1, 1, 1, 0
-        };
-        int[] color2 = colors.clone();
-        Arrays.sort(color2);
-        for (int n : color2) {
-            System.out.print(n + " ");
-        }
-        System.out.println();
-
-        SortColors sort = new SortColors();
-        sort.sortKColors(colors, 4);
-        for (int n : colors) {
-            System.out.print(n + " ");
+        List<List<Integer>> result = new Test1().combinationSum3(3, 8);
+        for (List<Integer> list : result) {
+            for (Integer n : list) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
         }
     }
 }

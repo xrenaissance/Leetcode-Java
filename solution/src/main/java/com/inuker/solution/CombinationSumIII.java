@@ -20,6 +20,9 @@ public class CombinationSumIII {
 
     private void dfs(int target, int k, int start, List<List<Integer>> result, List<Integer> list) {
         if (target == 0 && k == 0) {
+            /**
+             * 两个条件同时满足才行
+             */
             result.add(new LinkedList<>(list));
             return;
         }
