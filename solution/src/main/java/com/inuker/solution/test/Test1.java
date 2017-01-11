@@ -37,25 +37,26 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public boolean isPalindrome(String s) {
-        if (s.length() == 0) {
-            return true;
+//    public ListNode reverseList(ListNode head) {
+//        ListNode dummy = new ListNode(0), cur = dummy;
+//        for (ListNode node = head; node != null; ) {
+//            ListNode next = node.next;
+//            node.next = cur.next;
+//            cur.next = node;
+//            node = next;
+//        }
+//        return dummy.next;
+//    }
+
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
         }
-        s = s.toLowerCase();
-        for (int i = 0, j = s.length() - 1; i < j; ) {
-            if (!Character.isLetterOrDigit(s.charAt(i))) {
-                i++;
-            } else if (!Character.isLetterOrDigit(s.charAt(j))) {
-                j--;
-            } else {
-                if (s.charAt(i) != s.charAt(j)) {
-                    return false;
-                } else {
-                    i++;
-                    j--;
-                }
-            }
-        }
-        return true;
+        ListNode next = head.next;
+        ListNode newHead = reverseList(next);
+        next.next = head;
+        head.next = null;
+        return newHead;
     }
+
 }
