@@ -6,11 +6,13 @@ import com.inuker.solution.ListNode;
 import com.inuker.solution.NestedInteger;
 import com.inuker.solution.SumRootToLeafNumbers;
 import com.inuker.solution.TreeNode;
+import com.inuker.solution.TrieNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -35,28 +37,20 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result = new LinkedList<>();
-        if (nums.length == 0) {
-            return result;
+    public String simplifyPath(String path) {
+        String[] texts = path.split("/");
+        Deque<String> deque = new LinkedList<>();
+        for (String s : texts) {
+            if (s.equals(".") || s.isEmpty()) {
+                continue;
+            } else if (s.equals("..")) {
+                if (!deque.isEmpty()) {
+                    deque.pollLast();
+                }
+            } else {
+                deque.offerLast(s);
+            }
         }
-        Arrays.sort(nums);
-        dfs(nums, 0, result, new LinkedList<>());
-        return result;
-    }
-
-    private void dfs(int[] nums, int start, List<List<Integer>> result, List<Integer> list) {
-        if (start == nums.length) {
-            result.add(new LinkedList<>(list));
-            return;
-        }
-
-        list.add(nums[start]);
-        dfs(nums, start + 1, result, list);
-        list.remove(list.size() - 1);
-
-        int i = start + 1;
-        for ( ; i < nums.length && nums[i] == nums[i - 1]; i++);
-        dfs(nums, i, result, list);
+        return "/" + String.join("/", deque);
     }
 }
