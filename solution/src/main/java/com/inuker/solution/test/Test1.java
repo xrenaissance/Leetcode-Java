@@ -37,41 +37,30 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        int[] indegree = new int[numCourses];
-        HashMap<Integer, Set<Integer>> map = new HashMap<>();
-        for (int[] pre : prerequisites) {
-            int from = pre[1], to = pre[0];
-            Set<Integer> set = map.get(from);
-            if (set == null) {
-                set = new HashSet<Integer>();
-                map.put(from, set);
+    public int minMeetingRooms(Interval[] intervals) {
+        Arrays.sort(intervals, new Comparator<Interval>() {
+            @Override
+            public int compare(Interval o1, Interval o2) {
+                return o1.start - o2.start;
             }
-            if (set.add(to)) {
-                indegree[to]++;
+        });
+        Queue<Interval> queue = new PriorityQueue<>(new Comparator<Interval>() {
+            @Override
+            public int compare(Interval o1, Interval o2) {
+                return o1.end - o2.end;
             }
-        }
-        Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < numCourses; i++) {
-            if (indegree[i] == 0) {
-                queue.add(i);
-            }
-        }
+        });
         int count = 0;
-        int[] result = new int[numCourses];
-        while (!queue.isEmpty()) {
-            Integer n = queue.poll();
-            result[count++] = n;
-            Set<Integer> set = map.get(n);
-            if (set != null) {
-                for (Integer k : set) {
-                    if (--indegree[k] == 0) {
-                        queue.add(k);
-                    }
-                }
+        for (Interval interval : intervals) {
+            if (!queue.isEmpty() && interval.start >= queue.peek().end) {
+                queue.poll();
+                queue.add(interval);
+            } else {
+                queue.add(interval);
+                count++;
             }
         }
-        return count == numCourses ? result : new int[0];
+        return count;
     }
 
 }

@@ -26,7 +26,7 @@ public class MeetingRoomsII {
             }
         });
         for (Interval interval : intervals) {
-            if (!queue.isEmpty() && queue.peek().end <= interval.start) {
+            if (!queue.isEmpty() && interval.start >= queue.peek().end) {
                 queue.poll();
             }
             queue.add(interval);
