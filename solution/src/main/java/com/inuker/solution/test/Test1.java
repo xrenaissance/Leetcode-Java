@@ -37,30 +37,68 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int minMeetingRooms(Interval[] intervals) {
-        Arrays.sort(intervals, new Comparator<Interval>() {
-            @Override
-            public int compare(Interval o1, Interval o2) {
-                return o1.start - o2.start;
+    private final String[] ARR = {
+            "0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+    };
+
+    public List<String> letterCombinations(String digits) {
+        LinkedList<String> queue = new LinkedList<String>();
+        if (digits.length() == 0) {
+            return queue;
+        }
+
+        Queue<String> next = new LinkedList<>();
+        queue.add("");
+
+        int start = 0;
+        while (!queue.isEmpty() && start < digits.length()) {
+            String s = queue.poll();
+            int n = digits.charAt(start) - '0';
+            for (char c : ARR[n].toCharArray()) {
+                next.add(s + c);
             }
-        });
-        Queue<Interval> queue = new PriorityQueue<>(new Comparator<Interval>() {
-            @Override
-            public int compare(Interval o1, Interval o2) {
-                return o1.end - o2.end;
-            }
-        });
-        int count = 0;
-        for (Interval interval : intervals) {
-            if (!queue.isEmpty() && interval.start >= queue.peek().end) {
-                queue.poll();
-                queue.add(interval);
-            } else {
-                queue.add(interval);
-                count++;
+            if (queue.isEmpty()) {
+                queue.addAll(next);
+                next.clear();
+                start++;
             }
         }
-        return count;
+        return queue;
     }
+
+
+
+//    public List<String> letterCombinations2(String digits) {
+//        List<String> list = new LinkedList<>();
+//        if (digits.length() == 0) {
+//            return list;
+//        }
+//
+//        String s = "";
+//        for (int i = 0; i <= digits.length(); i++) {
+//            if (i == digits.length()) {
+//                list.add(s);
+//            }
+//
+//            int n = digits.charAt(start) - '0';
+//            for (char c : ARR[n].toCharArray()) {
+//                dfs(digits, list, start + 1, s + c);
+//            }
+//        }
+//
+//        return list;
+//    }
+//
+//    private void dfs(String digits, List<String> list, int start, String s) {
+//        if (start == digits.length()) {
+//            list.add(s);
+//            return;
+//        }
+//
+//        int n = digits.charAt(start) - '0';
+//        for (char c : ARR[n].toCharArray()) {
+//            dfs(digits, list, start + 1, s + c);
+//        }
+//    }
 
 }

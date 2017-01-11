@@ -23,9 +23,9 @@ public class Main {
 //            }
 //            System.out.println();
 //        }
-        boolean k = new Test1().canFinish(3, new int[][] {
-                {1,0},{2,1}
-        });
-        System.out.println(k);
+       List<String> list = new Test1().letterCombinations("23");
+        for (String s : list) {
+            System.out.println(s);
+        }
     }
 }
