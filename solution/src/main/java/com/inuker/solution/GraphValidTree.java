@@ -15,9 +15,22 @@ import java.util.Arrays;
  */
 public class GraphValidTree {
 
+    /**
+     * 复杂度为O(VE)
+     */
     public boolean validTree(int n, int[][] edges) {
-        // initialize n isolated islands
+        /**
+         * 每个点都有一个另一个点指向它，唯独root是没有的，所以边数比点数少了1
+         */
+        if (edges.length != n - 1) {
+            return false;
+        }
+
         int[] nums = new int[n];
+
+        /**
+         * 先初始化这n个点
+         */
         for (int i = 0; i < n; i++) {
             nums[i] = i;
         }
@@ -37,7 +50,7 @@ public class GraphValidTree {
             nums[x] = y;
         }
 
-        return edges.length == n - 1;
+        return true;
     }
 
     int find(int nums[], int i) {
