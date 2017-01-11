@@ -22,11 +22,18 @@ public class NumberOfIslandsII {
         List<Integer> list = new LinkedList<Integer>();
 
         mRoots = new int[m * n];
+        /**
+         * 首先都指向-1，稍后添加岛时再初始化
+         */
         Arrays.fill(mRoots, -1);
 
         for (int[] p : positions) {
             int x = p[0], y = p[1], z = x * n + y;
+            /**
+             * 指向自己
+             */
             mRoots[z] = z;
+
             mCount++;
 
             int[] dx = {-1, 1, 0, 0}, dy = {0, 0, 1, -1};
@@ -36,7 +43,7 @@ public class NumberOfIslandsII {
                     continue;
                 }
                 /**
-                 * 这里是给z合并到z0中去
+                 * 这里是给z合并到z0中去，即新添加的这个岛要合到老的岛上去
                  */
                 union(z, z0);
             }
