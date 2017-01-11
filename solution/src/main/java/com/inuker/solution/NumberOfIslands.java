@@ -44,28 +44,19 @@ public class NumberOfIslands {
     private void bfs(char[][] grid, int i, int j) {
         Queue<int[]> queue = new LinkedList<int[]>();
         queue.add(new int[] {i, j});
+
+        int[] dx = {-1, 1, 0, 0}, dy = {0, 0, - 1, 1};
+
         while (!queue.isEmpty()) {
             int[] pos = queue.poll();
             int x = pos[0], y = pos[1];
 
-            if (x > 0 && grid[x - 1][y] == '1') {
-                grid[x - 1][y] = 'x';
-                queue.add(new int[] {x - 1, y});
-            }
-
-            if (x + 1 < grid.length && grid[x + 1][y] == '1') {
-                grid[x + 1][y] = 'x';
-                queue.add(new int[] {x + 1, y});
-            }
-
-            if (y > 0 && grid[x][y - 1] == '1') {
-                grid[x][y - 1] = 'x';
-                queue.add(new int[] {x, y - 1});
-            }
-
-            if (y + 1 < grid[0].length && grid[x][y + 1] == '1') {
-                grid[x][y + 1] = 'x';
-                queue.add(new int[] {x, y + 1});
+            for (int k = 0; k < dx.length; k++) {
+                int x0 = x + dx[k], y0 = y + dy[k];
+                if (x0 >= 0 && x0 < grid.length && y0 >= 0 && y0 < grid[0].length && grid[x0][y0] == '1') {
+                    grid[x0][y0] = 'x';
+                    queue.add(new int[] {x0, y0});
+                }
             }
         }
     }

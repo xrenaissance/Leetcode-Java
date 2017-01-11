@@ -39,29 +39,24 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public UndirectedGraphNode cloneGraph2(UndirectedGraphNode node) {
-        if (node == null) return null;
+    private void bfs(char[][] grid, int i, int j) {
+        Queue<int[]> queue = new LinkedList<int[]>();
+        queue.add(new int[] {i, j});
 
-        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap(); //store visited nodes
+        int[] dx = {-1, 1, 0, 0}, dy = {0, 0, - 1, 1};
 
-        UndirectedGraphNode newNode = new UndirectedGraphNode(node.label); //new node for return
-        map.put(node, newNode); //add first node to HashMap
+        while (!queue.isEmpty()) {
+            int[] pos = queue.poll();
+            int x = pos[0], y = pos[1];
 
-        LinkedList<UndirectedGraphNode> queue = new LinkedList(); //to store **original** nodes need to be visited
-        queue.add(node); //add first **original** node to queue
-
-        while (!queue.isEmpty()) { //if more nodes need to be visited
-            UndirectedGraphNode n = queue.pop(); //search first node in the queue
-            for (UndirectedGraphNode neighbor : n.neighbors) {
-                if (!map.containsKey(neighbor)) { //add to map and queue if this node hasn't been searched before
-                    map.put(neighbor, new UndirectedGraphNode(neighbor.label));
-                    queue.add(neighbor);
+            for (int k = 0; k < dx.length; k++) {
+                int x0 = x + dx[k], y0 = y + dy[k];
+                if (x0 >= 0 && x0 < grid.length && y0 >= 0 && y0 < grid[0].length) {
+                    grid[x0][y0] = 'x';
+                    queue.add(new int[] {x0, y0});
                 }
-                map.get(n).neighbors.add(map.get(neighbor)); //add neighbor to new created nodes
             }
         }
-
-        return newNode;
     }
 
 }
