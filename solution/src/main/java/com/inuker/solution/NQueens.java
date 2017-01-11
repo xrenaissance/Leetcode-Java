@@ -12,6 +12,9 @@ public class NQueens {
 
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new LinkedList<>();
+        /**
+         * 这里f[i]表示第i行皇后应该放置在第几列
+         */
         int[] f = new int[n];
         dfs(f, result, 0);
         return result;
@@ -33,10 +36,22 @@ public class NQueens {
             }
             result.add(list);
         }
+        /**
+         * 对于当前第row行，一列一列地尝试放置皇后，看是否合法，j表示列，如果合法则保存到f中
+         */
         for (int j = 0; j < f.length; j++) {
             if (isValid(f, row, j)) {
+                /**
+                 * 第row行皇后应该放置在第j列
+                 */
                 f[row] = j;
+                /**
+                 * 再来看下一行
+                 */
                 dfs(f, result, row + 1);
+                /**
+                 * 这里不用break，还要尝试其它可能
+                 */
             }
         }
     }
