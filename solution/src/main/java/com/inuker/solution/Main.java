@@ -23,7 +23,9 @@ public class Main {
 //            }
 //            System.out.println();
 //        }
-        int k = new Test1().lengthOfLIS(new int[] {10,9,2,5,3,7,101,18});
+        boolean k = new Test1().canFinish(3, new int[][] {
+                {1,0},{2,1}
+        });
         System.out.println(k);
     }
 }

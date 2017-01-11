@@ -37,32 +37,41 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int maximalSquare(char[][] matrix) {
-        if (matrix.length == 0) {
-            return 0;
-        }
-        int row = matrix.length, col = matrix[0].length;
-        int[][] f = new int[row][col];
-        int max = 0;
-        for (int i = 0; i < col; i++) {
-            f[0][i] = matrix[0][i] == '0' ? 0 : 1;
-            max = Math.max(max, f[0][i]);
-        }
-        for (int i = 0; i < row; i++) {
-            f[i][0] = matrix[i][0] == '0' ? 0 : 1;
-            max = Math.max(max, f[i][0]);
-        }
-        for (int i = 1; i < row; i++) {
-            for (int j = 1; j < col; j++) {
-                if (matrix[i][j] == '0') {
-                    f[i][j] = 0;
-                } else {
-                    int min = Math.min(f[i - 1][j], f[i][j - 1]);
-                    f[i][j] = Math.min(min, f[i - 1][j - 1]) + 1;
-                }
-                max = Math.max(max, f[i][j]);
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] indegree = new int[numCourses];
+        HashMap<Integer, Set<Integer>> map = new HashMap<>();
+        for (int[] pre : prerequisites) {
+            int from = pre[1], to = pre[0];
+            Set<Integer> set = map.get(from);
+            if (set == null) {
+                set = new HashSet<Integer>();
+                map.put(from, set);
+            }
+            if (set.add(to)) {
+                indegree[to]++;
             }
         }
-        return max * max;
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {
+                queue.add(i);
+            }
+        }
+        int count = 0;
+        int[] result = new int[numCourses];
+        while (!queue.isEmpty()) {
+            Integer n = queue.poll();
+            result[count++] = n;
+            Set<Integer> set = map.get(n);
+            if (set != null) {
+                for (Integer k : set) {
+                    if (--indegree[k] == 0) {
+                        queue.add(k);
+                    }
+                }
+            }
+        }
+        return count == numCourses ? result : new int[0];
     }
+
 }

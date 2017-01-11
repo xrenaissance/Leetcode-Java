@@ -16,30 +16,31 @@ public class CourseScheduleII {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] indegree = new int[numCourses];
         HashMap<Integer, Set<Integer>> map = new HashMap<>();
-        for (int[] f : prerequisites) {
-            int from = f[1], to = f[0];
+        for (int[] pre : prerequisites) {
+            int from = pre[1], to = pre[0];
             Set<Integer> set = map.get(from);
             if (set == null) {
-                set = new HashSet<>();
+                set = new HashSet<Integer>();
                 map.put(from, set);
             }
             /**
-             * 这里要防止同一条边计了多次
+             * 这里要避免添加多次
              */
             if (set.add(to)) {
                 indegree[to]++;
             }
         }
         Queue<Integer> queue = new LinkedList<>();
-        List<Integer> list = new LinkedList<>();
-        for (int i = 0; i < indegree.length; i++) {
+        for (int i = 0; i < numCourses; i++) {
             if (indegree[i] == 0) {
                 queue.add(i);
             }
         }
+        int count = 0;
+        int[] result = new int[numCourses];
         while (!queue.isEmpty()) {
             Integer n = queue.poll();
-            list.add(n);
+            result[count++] = n;
             Set<Integer> set = map.get(n);
             if (set != null) {
                 for (Integer k : set) {
@@ -49,13 +50,6 @@ public class CourseScheduleII {
                 }
             }
         }
-        if (list.size() != numCourses) {
-            return new int[0];
-        }
-        int[] f = new int[numCourses];
-        for (int i = 0; i < f.length; i++) {
-            f[i] = list.get(i);
-        }
-        return f;
+        return count == numCourses ? result : new int[0];
     }
 }
