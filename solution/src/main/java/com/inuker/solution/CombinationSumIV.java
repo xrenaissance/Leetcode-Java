@@ -8,6 +8,9 @@ import java.util.Arrays;
 
 public class CombinationSumIV {
 
+    /**
+     * 此题前提条件是全部为正且没有重复
+     */
     public int combinationSum4(int[] nums, int target) {
         int[] dp = new int[target + 1];
         // 这里排序便于之后break

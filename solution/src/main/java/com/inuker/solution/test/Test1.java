@@ -1,5 +1,6 @@
 package com.inuker.solution.test;
 
+import com.inuker.solution.IntegerToEnglishWords;
 import com.inuker.solution.Interval;
 import com.inuker.solution.ListNode;
 import com.inuker.solution.NestedInteger;
@@ -34,29 +35,28 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public List<List<Integer>> combinationSum3(int k, int n) {
+    public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new LinkedList<>();
-        if (k == 0) {
+        if (nums.length == 0) {
             return result;
         }
-        dfs(k, n, 1, result, new LinkedList<>());
+        Arrays.sort(nums);
+        dfs(nums, 0, result, new LinkedList<>());
         return result;
     }
 
-    private void dfs(int k, int n, int start, List<List<Integer>> result, List<Integer> list) {
-        if (n < 0) {
+    private void dfs(int[] nums, int start, List<List<Integer>> result, List<Integer> list) {
+        if (start == nums.length) {
+            result.add(new LinkedList<>(list));
             return;
         }
-        if (n == 0) {
-            if (k == 0) {
-                result.add(new LinkedList<>(list));
-            }
-            return;
-        }
-        for (int i = start; i <= 9; i++) {
-            list.add(i);
-            dfs(k - 1, n - i, i + 1, result, list);
-            list.remove(list.size() - 1);
-        }
+
+        list.add(nums[start]);
+        dfs(nums, start + 1, result, list);
+        list.remove(list.size() - 1);
+
+        int i = start + 1;
+        for ( ; i < nums.length && nums[i] == nums[i - 1]; i++);
+        dfs(nums, i, result, list);
     }
 }

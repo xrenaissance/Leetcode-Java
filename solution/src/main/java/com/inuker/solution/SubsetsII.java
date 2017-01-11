@@ -17,7 +17,10 @@ public class SubsetsII {
         if (nums.length == 0) {
             return result;
         }
-
+        /**
+         * 千万别掉了排序
+         */
+        Arrays.sort(nums);
         subsetsWithDup(nums, 0, result, new LinkedList<Integer>());
 
         return result;

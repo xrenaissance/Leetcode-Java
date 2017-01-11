@@ -14,7 +14,9 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<Integer>> result = new Test1().combinationSum3(3, 8);
+        List<List<Integer>> result = new Test1().subsets(new int[] {
+                4,4,4,1,4
+        });
         for (List<Integer> list : result) {
             for (Integer n : list) {
                 System.out.print(n + " ");
