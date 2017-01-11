@@ -34,24 +34,22 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int maxSubArrayLen(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] += i > 0 ? nums[i - 1] : 0;
-            if (!map.containsKey(nums[i])) {
-                map.put(nums[i], i);
+    public String multiply(String num1, String num2) {
+        int[] result = new int[num1.length() + num2.length()];
+        for (int i = num1.length() - 1; i >= 0; i--) {
+            for (int j = num2.length() - 1; j >= 0; j--) {
+                int k = result[i + j + 1] + (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                result[i + j + 1] = k % 10;
+                result[i + j] += k / 10;
             }
         }
-        map.put(0, -1);
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(nums[i] - k)) {
-                int idx = map.get(nums[i] -k);
-                if (idx < i) {
-                    max = Math.max(max, i - idx);
-                }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] == 0 && sb.length() == 0) {
+                continue;
             }
+            sb.append(result[i]);
         }
-        return max == Integer.MIN_VALUE ? 0 : max;
+        return sb.length() == 0 ? "0" : sb.toString();
     }
 }

@@ -20,12 +20,15 @@ public class MultiplyStrings {
         StringBuilder sb = new StringBuilder();
         for (int n : result) {
             // 这里要去掉头部的"0"
-            if (n != 0 || sb.length() != 0) {
-                sb.append(n);
+            if (n == 0 && sb.length() == 0) {
+                continue;
             }
+            sb.append(n);
         }
 
-        // 这里要注意如果是空要返回0
+        /**
+         * 这里要注意如果是空要返回0
+         */
         return sb.length() == 0 ? "0" : sb.toString();
     }
 }
