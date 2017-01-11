@@ -7,6 +7,7 @@ import com.inuker.solution.NestedInteger;
 import com.inuker.solution.SumRootToLeafNumbers;
 import com.inuker.solution.TreeNode;
 import com.inuker.solution.TrieNode;
+import com.inuker.solution.UndirectedGraphNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,23 +39,29 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-    public int kthSmallest(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        while (!stack.isEmpty() || root != null) {
-            if (root != null) {
-                stack.push(root);
-                root = root.left;
-            } else {
-                root = stack.pop();
+    public UndirectedGraphNode cloneGraph2(UndirectedGraphNode node) {
+        if (node == null) return null;
 
-                if (--k == 0) {
-                    return root.val;
+        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap(); //store visited nodes
+
+        UndirectedGraphNode newNode = new UndirectedGraphNode(node.label); //new node for return
+        map.put(node, newNode); //add first node to HashMap
+
+        LinkedList<UndirectedGraphNode> queue = new LinkedList(); //to store **original** nodes need to be visited
+        queue.add(node); //add first **original** node to queue
+
+        while (!queue.isEmpty()) { //if more nodes need to be visited
+            UndirectedGraphNode n = queue.pop(); //search first node in the queue
+            for (UndirectedGraphNode neighbor : n.neighbors) {
+                if (!map.containsKey(neighbor)) { //add to map and queue if this node hasn't been searched before
+                    map.put(neighbor, new UndirectedGraphNode(neighbor.label));
+                    queue.add(neighbor);
                 }
-
-                root = root.right;
+                map.get(n).neighbors.add(map.get(neighbor)); //add neighbor to new created nodes
             }
         }
-        return 0;
+
+        return newNode;
     }
 
 }
