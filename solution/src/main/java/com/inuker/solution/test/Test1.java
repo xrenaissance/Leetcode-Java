@@ -37,36 +37,47 @@ import sun.util.resources.cldr.zh.CalendarData_zh_Hans_HK;
 
 public class Test1 {
 
-//    public int lengthOfLIS(int[] nums) {
-//        if (nums.length == 0) {
-//            return 0;
-//        }
-//        int[] f = new int[nums.length];
-//        Arrays.fill(f, 1);
-//        int max = 1;
-//        for (int i = 0; i < nums.length; i++) {
-//            for (int j = 0; j < i; j++) {
-//                if (nums[i] > nums[j]) {
-//                    f[i] = Math.max(f[i], f[j] + 1);
-//                }
-//            }
-//            max = Math.max(f[i], max);
-//        }
-//        return max;
-//    }
+    public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
+        wordList.remove(beginWord);
+        wordList.add(endWord);
 
-    public int lengthOfLIS(int[] nums) {
-        int len = 1;
-        for (int i = 0; i < nums.length; i++) {
-            int k = Arrays.binarySearch(nums, 0, len, nums[i]);
-            if (k < 0) {
-                k = -(k + 1);
-                if (k == len) {
-                    len++;
+        Queue<String> queue = new LinkedList<>();
+        Queue<String> next = new LinkedList<>();
+        queue.add(beginWord);
+
+        int ladder = 1;
+
+        while (!queue.isEmpty()) {
+            String word = queue.poll();
+
+            StringBuilder sb = new StringBuilder(word);
+            for (int i = 0; i < word.length(); i++) {
+                char c = word.charAt(i);
+                for (int j = 0; j < 26; j++) {
+                    if (j + 'a' == c) {
+                        continue;
+                    }
+                    sb.setCharAt(i, (char) (j + 'a'));
+                    String s = sb.toString();
+
+                    if (s.equals(endWord)) {
+                        return ladder + 1;
+                    }
+
+                    if (wordList.remove(s)) {
+                        next.add(s);
+                    }
                 }
-                nums[k] = nums[i];
+                sb.setCharAt(i, c);
+            }
+
+            if (queue.isEmpty()) {
+                queue.addAll(next);
+                next.clear();
+                ladder++;
             }
         }
-        return len;
+
+        return 0;
     }
 }

@@ -23,27 +23,34 @@ public class WordLadder {
      */
     // 常规的BFS，耗时141ms
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
-        Queue<String> queue = new LinkedList<String>();
-        Queue<String> next = new LinkedList<String>();
+        wordList.remove(beginWord);
+        wordList.add(endWord);
+
+        Queue<String> queue = new LinkedList<>();
+        Queue<String> next = new LinkedList<>();
         queue.add(beginWord);
-        int length = 0;
+
+        int ladder = 1;
+
         while (!queue.isEmpty()) {
-            String s = queue.poll();
-            StringBuilder sb = new StringBuilder(s);
-            for (int i = 0; i < s.length(); i++) {
-                char c = s.charAt(i);
+            String word = queue.poll();
+
+            StringBuilder sb = new StringBuilder(word);
+            for (int i = 0; i < word.length(); i++) {
+                char c = word.charAt(i);
                 for (int j = 0; j < 26; j++) {
                     if (j + 'a' == c) {
                         continue;
                     }
                     sb.setCharAt(i, (char) (j + 'a'));
-                    String ss = sb.toString();
-                    if (ss.equals(endWord)) {
-                        return length + 2;
+                    String s = sb.toString();
+
+                    if (s.equals(endWord)) {
+                        return ladder + 1;
                     }
-                    if (wordList.contains(ss)) {
-                        wordList.remove(ss);
-                        next.add(ss);
+
+                    if (wordList.remove(s)) {
+                        next.add(s);
                     }
                 }
                 sb.setCharAt(i, c);
@@ -52,9 +59,10 @@ public class WordLadder {
             if (queue.isEmpty()) {
                 queue.addAll(next);
                 next.clear();
-                length++;
+                ladder++;
             }
         }
+
         return 0;
     }
 
