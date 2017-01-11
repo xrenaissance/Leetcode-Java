@@ -23,7 +23,7 @@ public class Main {
 //            }
 //            System.out.println();
 //        }
-        int k = new Test1().findKthLargest(new int[] {1}, 1);
+        int k = new Test1().lengthOfLIS(new int[] {10,9,2,5,3,7,101,18});
         System.out.println(k);
     }
 }

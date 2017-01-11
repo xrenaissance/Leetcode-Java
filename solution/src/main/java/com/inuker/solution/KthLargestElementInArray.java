@@ -32,7 +32,7 @@ public class KthLargestElementInArray {
     }
 
     // 快速选择，平均时间复杂度为O(n)
-    // T(n) = T(n / 2) + n = O(n)
+    // T(n) = T(n / 2) + n = O(2n)
     // 对比快速排序T(n) = 2T(n / 2) + n = O(nlgn)
     // 区别在于这个被pivot分隔后，只用处理其中的一半，而快排两边都要处理
     // 耗时18ms

@@ -17,6 +17,9 @@ public class LongestIncreasingSubsequence {
             return 0;
         }
         int[] f = new int[n];
+        /**
+         * 注意这里fill是有必要的
+         */
         Arrays.fill(f, 1);
         int max = 1;
         for (int i = 1; i < n; i++) {
@@ -31,18 +34,21 @@ public class LongestIncreasingSubsequence {
     }
 
     public int lengthOfLIS2(int[] nums) {
-        int n = nums.length;
-        int[] dp = new int[n];
-
-        int len = 0;
-        for (int i = 0; i < n; i++) {
-            int k = Arrays.binarySearch(dp, 0, len, nums[i]);
+        int len = 1;
+        for (int i = 0; i < nums.length; i++) {
+            /**
+             * 注意这里要指定区间，且end是开区间
+             */
+            int k = Arrays.binarySearch(nums, 0, len, nums[i]);
+            /**
+             * 只处理k<0的情况
+             */
             if (k < 0) {
                 k = -(k + 1);
-            }
-            dp[k] = nums[i];
-            if (k == len) {
-                len++;
+                if (k == len) {
+                    len++;
+                }
+                nums[k] = nums[i];
             }
         }
         return len;
