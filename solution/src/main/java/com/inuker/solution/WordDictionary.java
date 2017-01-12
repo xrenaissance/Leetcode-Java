@@ -39,7 +39,7 @@ public class WordDictionary {
         }
         if (index == word.length()) {
             /**
-             * 这个返回的条件一定要注意，不是trie.word.equals(word)
+             * 这个返回的条件一定要注意，不是trie.word.equals(word)，因为word中可能带'.'
              */
             return trie.word != null;
         }

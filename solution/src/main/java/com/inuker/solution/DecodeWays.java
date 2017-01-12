@@ -28,7 +28,9 @@ public class DecodeWays {
     }
 
     public int helper(String s) {
-        // 如果能一直正确匹配到结尾了是合法的
+        /**
+         * 如果能一直正确匹配到结尾了是合法的
+         */
         if (s.length() == 0) {
             return 1;
         }
