@@ -14,6 +14,12 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        new Test1().findLadders("a", "c", new HashSet<String>(Arrays.asList("a", "b", "c")));
+        int[] nums = new int[] {
+                1, 0, 0, 0, 0, 3, 4, 1, 0, 0, 1
+        };
+        int n = new MoveZeroes().moveZeroes2(nums);
+        for (int i = 0; i < n; i++) {
+            System.out.print(nums[i] + " ");
+        }
     }
 }
