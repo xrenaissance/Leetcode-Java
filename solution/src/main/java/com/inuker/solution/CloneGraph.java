@@ -51,12 +51,14 @@ public class CloneGraph {
 
         while (!queue.isEmpty()) { //if more nodes need to be visited
             UndirectedGraphNode n = queue.pop(); //search first node in the queue
+            UndirectedGraphNode cloned = map.get(n);
+
             for (UndirectedGraphNode neighbor : n.neighbors) {
                 if (!map.containsKey(neighbor)) { //add to map and queue if this node hasn't been searched before
                     map.put(neighbor, new UndirectedGraphNode(neighbor.label));
                     queue.add(neighbor);
                 }
-                map.get(n).neighbors.add(map.get(neighbor)); //add neighbor to new created nodes
+                cloned.neighbors.add(map.get(neighbor)); //add neighbor to new created nodes
             }
         }
 

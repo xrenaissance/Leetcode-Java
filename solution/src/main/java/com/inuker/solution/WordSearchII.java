@@ -60,6 +60,9 @@ public class WordSearchII {
             return;
         }
         char c = board[i][j];
+        /**
+         * 这里千万不能掉了
+         */
         if (c < 'a' || c > 'z') {
             return;
         }
