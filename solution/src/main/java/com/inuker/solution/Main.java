@@ -14,6 +14,6 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        new DivideTwoIntegers().divide(180, 4);
+        new Test1().findLadders("a", "c", new HashSet<String>(Arrays.asList("a", "b", "c")));
     }
 }
