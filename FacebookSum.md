@@ -9,16 +9,20 @@
 
 ### 电话面试 ###
 第一轮 - 十月上旬
+
 这是HR面，不过基本是技术面，出了十来道关于Android的选择题
 
 第二轮 - 十一月中旬
+
 用Skype交流，问了下Android数据持久化有哪些手段，各自的应用场景。
 然后废话不多说，在线写代码。
 
 1、Integer to English words
+
 比如给定123，要返回"One Hundred Twenty Three"，开始限定数的范围是1000以内，做出来之后会进一步提升难度，将范围扩充到INT_MAX。
 
 2、First bad version
+
 给出一系列版本号和一个判断版本是否正确的函数，让你找出第一个错误的版本号，由于版本号之间的依赖关系，后面的版本都是错的。
 
 
@@ -27,23 +31,33 @@
 ### Onsite面试 ###
 一月中旬
 第一轮，华人小哥
+
 从小在加拿大成长的，在Facebook工作四年多，主要做UI Widget。
+
 1、Construct Binary Tree from Inorder and Postorder Traversal
+
 这个比较常规
 
 2、Serialize and Deserialize Binary Tree
+
 二叉树的序列化和反序列化，这个有递归和非递归的方法。
 
 3、Set Matrix Zeroes
+
 将矩阵中所有为0的元素的横向纵向全部清零，这道题看起来简单其实有点坑，通常会让你给出空间最优解。
 
 第二轮：印度阿三
+
 阿三全程绷着脸，让人心里瘆得慌
+
 1、最喜欢的Android API，为什么
+
 2、Move Zeroes
+
 将一个数组的所有0元素移到数组后面，要操作次数最少，返回非零数的个数，不要求保持order。这里要注意的是确保操作次数是最少的。
 
 3、Validate Binary Search Tree
+
 判断一个BST是否合法
 
 4、将二叉树按中序遍历转化成双链表
