@@ -11,16 +11,16 @@
 
 这是HR面，不过基本是技术面，出了十来道关于Android的选择题
 
-第二轮 - 十一月中旬
+**第二轮 - 十一月中旬**
 
 用Skype交流，问了下Android数据持久化有哪些手段，各自的应用场景。
 然后废话不多说，在线写代码。
 
-1、Integer to English words
+**1、Integer to English words**
 
 比如给定123，要返回"One Hundred Twenty Three"，开始限定数的范围是1000以内，做出来之后会进一步提升难度，将范围扩充到INT_MAX。
 
-2、First bad version
+**2、First bad version**
 
 给出一系列版本号和一个判断版本是否正确的函数，让你找出第一个错误的版本号，由于版本号之间的依赖关系，后面的版本都是错的。
 
