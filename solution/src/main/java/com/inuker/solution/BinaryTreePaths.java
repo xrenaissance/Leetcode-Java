@@ -11,30 +11,24 @@ public class BinaryTreePaths {
 
     // 耗时2ms
     public List<String> binaryTreePaths(TreeNode root) {
-        List<String> list = new LinkedList<String>();
+        List<String> list = new LinkedList<>();
         if (root == null) {
             return list;
         }
-        traverse(root, list, String.valueOf(root.val));
+        helper(root, list, "");
         return list;
     }
 
-    private void traverse(TreeNode node, List<String> list, String path) {
-        if (node == null) {
+    private void helper(TreeNode root, List<String> list, String path) {
+        if (root == null) {
             return;
         }
-
-        if (node.left == null && node.right == null) {
+        path += (path.isEmpty() ? "" : "->") + root.val;
+        if (root.left == null && root.right == null) {
             list.add(path);
             return;
         }
-
-        if (node.left != null) {
-            traverse(node.left, list, path + "->" + node.left.val);
-        }
-
-        if (node.right != null) {
-            traverse(node.right, list, path + "->" + node.right.val);
-        }
+        helper(root.left, list, path);
+        helper(root.right, list, path);
     }
 }
