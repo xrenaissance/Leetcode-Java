@@ -10,6 +10,7 @@
 |5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindromicSubstring.java)|85|
 |6|[ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ZigZagConversion.java)||
 |7|[Reverse Integer](https://leetcode.com/problems/reverse-integer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseInteger.java)|95|
+|8|[String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/String2Integer.java)||
 |9|[Palindrome Number](https://leetcode.com/problems/palindrome-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromeNumber.java)||
 |10|[Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RegularExpressionMatching.java)|60|
 |12|[Integer to Roman](https://leetcode.com/problems/integer-to-roman/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntegerToRoman.java)||
