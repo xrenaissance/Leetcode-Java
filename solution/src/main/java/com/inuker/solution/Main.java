@@ -14,12 +14,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = new int[] {
-                1, 0, 0, 0, 0, 3, 4, 1, 0, 0, 1
-        };
-        int n = new MoveZeroes().moveZeroes2(nums);
-        for (int i = 0; i < n; i++) {
-            System.out.print(nums[i] + " ");
-        }
+        String s = new ZigZagConversion().convert("ABC", 1);
+        System.out.println(s);
     }
 }
