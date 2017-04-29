@@ -1,8 +1,6 @@
 package com.inuker.solution;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by dingjikerbo on 17/4/29.
@@ -13,39 +11,39 @@ import java.util.List;
  */
 public class ZigZagConversion {
 
-	public String convert(String s, int numRows) {
-		if (numRows == 1) {
-			return s;
-		}
+    public String convert(String s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
 
-		String[] strs = new String[numRows];
-		Arrays.fill(strs, "");
+        String[] strs = new String[numRows];
+        Arrays.fill(strs, "");
 
-		boolean down = true;
-		for (int i = 0, k = 0; k < s.length(); k++) {
-			strs[i] += s.substring(k, k + 1);
+        boolean down = true;
+        for (int i = 0, k = 0; k < s.length(); k++) {
+            strs[i] += s.substring(k, k + 1);
 
-			if (down) {
-				if (i < numRows - 1) {
-					i++;
-				} else {
-					i--;
-					down = false;
-				}
-			} else {
-				if (i > 0) {
-					i--;
-				} else {
-					i++;
-					down = true;
-				}
-			}
-		}
+            if (down) {
+                if (i < numRows - 1) {
+                    i++;
+                } else {
+                    i--;
+                    down = false;
+                }
+            } else {
+                if (i > 0) {
+                    i--;
+                } else {
+                    i++;
+                    down = true;
+                }
+            }
+        }
 
-		StringBuilder sb = new StringBuilder();
-		for (String str : strs) {
-			sb.append(str);
-		}
-		return sb.toString();
-	}
+        StringBuilder sb = new StringBuilder();
+        for (String str : strs) {
+            sb.append(str);
+        }
+        return sb.toString();
+    }
 }
