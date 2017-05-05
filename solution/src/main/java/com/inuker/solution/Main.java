@@ -14,7 +14,11 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String s = new ZigZagConversion().convert("ABC", 1);
-        System.out.println(s);
+        List<Integer> list = new SubstringWithConcatenationOfAllWords().findSubstring("barfoothefoobarman", new String[] {
+                "foo", "bar",
+        });
+        for (Integer n : list) {
+            System.out.println(n);
+        }
     }
 }
