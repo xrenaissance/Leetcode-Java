@@ -14,11 +14,5 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        List<Integer> list = new SubstringWithConcatenationOfAllWords().findSubstring("barfoothefoobarman", new String[] {
-                "foo", "bar",
-        });
-        for (Integer n : list) {
-            System.out.println(n);
-        }
     }
 }
