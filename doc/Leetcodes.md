@@ -43,6 +43,7 @@
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|80|
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSum.java)|70|
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumII.java)|70|
+|41|[First Missing Positive](https://leetcode.com/problems/first-missing-positive/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FirstMissingPositive.java)||
 |42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWater.java)|95|
 |43|[Multiply Strings](https://leetcode.com/problems/multiply-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MultiplyStrings.java)|80|
 |44|[Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WildcardMatching.java)|60|
