@@ -1,6 +1,6 @@
 ## 1，自我介绍，你的履历，工作过的公司，主要做什么，各有什么收获，各有什么好的地方和不好的地方，选择的原因和离开的原因
 I have four working experiences，
-<br/>
+
 the first one is the internship in Microsoft China during my master's degree，in summer holiday in 2012. I have a deep impression about that, it's my first job, and that year is London Olympic Games, my work is mainly about optimizing the search result of the Olympic events, and developed some data automation tools for bing search engine. I have learned a lot during that period, met a lot of talented engineers, work with them, solve problem together, I just feel very fresh and interesting. 
 I didn't stay because I'm not very interested in search engine.
 
@@ -16,7 +16,9 @@ In general, I hope to do some exciting and challenging things, which can bring g
 
 ## 3, 你喜欢的和不喜欢的公司，上司，同事都是什么样的，说细一点，比如介绍一下
 I like the company which has great vision, advocating technology, encourage innovation, working with many talented people, open culture, relaxed atmosphere.
+
 I like the leader who are experienced, smart and wise, strong problem solver, trust me, can make the whole team steadily forward to achieve the goal.
+
 I like the colleague who are smart, friendly, open, responsible, easily communication and coorperation. 
 
 ## 4，你为什么选择facebook，为什么考虑英国，我们为什么选择你？
