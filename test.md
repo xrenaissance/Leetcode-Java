@@ -11,29 +11,23 @@ My third job is in Xiaomi, it was originally a start-up company making mobile ph
 At present I am working in a start-up company which mainly engaged in artificial intelligence, It has two parts, one part is smart home and 
 another part is smart driving。I am a software engineer responsible for smart home related products. Currenty we are exploring the next generation of interaction technology between people and machine, we can use voice, gestures and even facial expression to control the TV, air conditioner and so on, completely out of mobile phone, to fully use artificial intelligence To bring more convenience to our lives.Because we are exploring, we will put forward a variety of ideas, and quickly develop a demo, let everyone use it, and then look at which one is better.
 
-<br/>
 ## 2, 你的职业规划，你感兴趣的产品/技术方向
 In general, I hope to do some exciting and challenging things, which can bring great convenience for our lives, like artificial intelligent, VR and so on. I love coding, in the future I will further improve my technology stack, and more consideration of product level issues, create greater value for my group. At the same time, I will be more active participating some excellent open source projects, do some technical sharing, make the world more open.
 
-<br/>
 ## 3, 你喜欢的和不喜欢的公司，上司，同事都是什么样的，说细一点，比如介绍一下
 I like the company which has great vision, advocating technology, encourage innovation, working with many talented people, open culture, relaxed atmosphere.
 I like the leader who are experienced, smart and wise, strong problem solver, trust me, can make the whole team steadily forward to achieve the goal.
 I like the colleague who are smart, friendly, open, responsible, easily communication and coorperation. 
 
-<br/>
 ## 4，你为什么选择facebook，为什么考虑英国，我们为什么选择你？
 very successful company, top engineers, interesting and challenging projects.
 
-<br/>
 ## 5，介绍你的项目中最有成就感的，最能体现你技术能力的部分
 一个是万物互连，一个是进一步升级到语音视觉来控制。
 
-<br/>
 ## 6，你和同事有分歧，如何处理的
 First we have to confirm that we have the same target, the difference is perspective and method, if it doesn't matter, I can compromise so that we can reach an agreement as soon as possible to promote the project. If it matters, then we need more senior experts and superiors participate for evaluation. If other people don't agree with me, I'll prove it, do experiment and provide the data.
 
-<br/>
 ## 7，你做过的失败的项目, 有什么收获
 Once briefly participated in a project-Xiaomi Messenger, eventually failed. But I think I still benefit a lot from it. I had learned mobile messenger related technology, improved problem solving skills, cooperate with team member. we can summarize to avoid the same problems in the future.
 
