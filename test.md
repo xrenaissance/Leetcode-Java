@@ -25,7 +25,7 @@ I like the colleague who are smart, friendly, open, responsible, easily communic
 very successful company, top engineers, interesting and challenging projects.
 
 ## 5，介绍你的项目中最有成就感的，最能体现你技术能力的部分
-一个是万物互连，一个是进一步升级到语音视觉来控制。
+目前的语音控制，要适应各种变化，要保持高性能，有很大的挑战。
 
 ## 6，你和同事有分歧，如何处理的
 First we have to confirm that we have the same target, the difference is perspective and method, if it doesn't matter, I can compromise so that we can reach an agreement as soon as possible to promote the project. If it matters, then we need more senior experts and superiors participate for evaluation. If other people don't agree with me, I'll prove it, do experiment and provide the data.
