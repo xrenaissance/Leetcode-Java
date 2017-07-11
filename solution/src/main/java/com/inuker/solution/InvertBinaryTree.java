@@ -7,6 +7,9 @@ import java.util.Queue;
  * Created by dingjikerbo on 16/11/28.
  */
 
+/**
+ * 给非递归法也要会写
+ */
 public class InvertBinaryTree {
 
     /** 错误的写法，写顺手了

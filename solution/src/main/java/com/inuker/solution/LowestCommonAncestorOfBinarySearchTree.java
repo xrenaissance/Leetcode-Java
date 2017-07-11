@@ -22,6 +22,10 @@ public class LowestCommonAncestorOfBinarySearchTree {
     }
 
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if (!checkExist(root, p) || !checkExist(root, q)) {
+            throw new IllegalArgumentException("Not exist!!");
+        }
+
         while (root != null) {
             if (p.val < root.val && q.val < root.val) {
                 root = root.left;
@@ -32,5 +36,22 @@ public class LowestCommonAncestorOfBinarySearchTree {
             }
         }
         return root;
+    }
+
+    /**
+     * 如何判断p或q一定存在，如果是BST就很简单
+     */
+    private boolean checkExist(TreeNode root, TreeNode node) {
+        TreeNode cur = root;
+        while (cur != null) {
+            if (node.val > cur.val) {
+                cur = cur.right;
+            } else if (node.val < cur.val) {
+                cur = cur.left;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
 }
