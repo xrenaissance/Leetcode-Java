@@ -1,13 +1,11 @@
-package com.inuker.solution;
+package com.inuker.solution.prac2017.tree;
+
+import com.inuker.solution.TreeNode;
 
 /**
- * Created by dingjikerbo on 2016/11/28.
+ * Created by liwentian on 17/7/12.
  */
 
-/**
- * 平衡二叉树条件是左边是平衡，右边是平衡，且两边高度差相差不超过1
- * 树的高度是所有子树的最大高度
- */
 public class BalancedBinaryTree {
 
     public boolean isBalanced(TreeNode root) {
@@ -20,7 +18,6 @@ public class BalancedBinaryTree {
         }
 
         int[] left = new int[1], right = new int[1];
-
         boolean result = isBalanced(root.left, left) && isBalanced(root.right, right);
 
         if (height != null) {
