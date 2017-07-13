@@ -13,6 +13,7 @@ public class LowestCommonAncestorOfBinaryTree {
 
     /**
      * leetcode测试用例中p和q一定是在树中的
+     * 奇怪的是如果判断用root.val == p.val这种就不能AC，必须用root == p
      */
     // 耗时11ms
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -24,9 +25,9 @@ public class LowestCommonAncestorOfBinaryTree {
         TreeNode right = lowestCommonAncestor(root.right, p, q);
 
         if (left == null) {
-            return right;
+            return right; // 注意这里不是返回root.right
         } else if (right == null) {
-            return left;
+            return left; // 这里不是返回root.left
         } else {
             return root;
         }
