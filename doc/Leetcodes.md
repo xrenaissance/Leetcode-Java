@@ -1,8 +1,8 @@
 所有题目列表
 ------
 
-|#|Title|Solution|Score|
-|---|----| ----- |----|
+|#|Title|Solution|Score|Backup|
+|---|----| ----- |----|---------|
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|100|
 |2|[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddTwoNumber.java)|80|
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithoutRepeatingCharacters.java)|75|
@@ -163,7 +163,7 @@
 |219|[Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ContainsDuplicateII.java)|95|
 |220|[Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ContainsDuplicateIII.java)|65|
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)|80|
-|222|[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountCompleteTreeNodes.java)|70|
+|222|[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountCompleteTreeNodes.java)|70|一般的做法超时|
 |223|[Rectangle Area](https://leetcode.com/problems/rectangle-area/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RectangleArea.java)|95|
 |225|[Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MyStack.java)|90|
 |226|[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InvertBinaryTree.java)|80|
