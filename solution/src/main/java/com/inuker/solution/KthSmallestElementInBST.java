@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import java.util.Stack;
+
 /**
  * Created by dingjikerbo on 16/11/30.
  */
@@ -25,5 +27,27 @@ public class KthSmallestElementInBST {
         }
 
         return inorderTraversal(root.right, k, kth);
+    }
+
+    /**
+     * 非递归法
+     */
+    public int kthSmallest2(TreeNode root, int k) {
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.isEmpty()) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+
+                if (--k == 0) {
+                    return root.val;
+                }
+
+                root = root.right;
+            }
+        }
+        throw new IllegalStateException();
     }
 }
