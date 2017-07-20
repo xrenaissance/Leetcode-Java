@@ -23,6 +23,10 @@ public class PathSumII {
         return result;
     }
 
+    /**
+     * 这里一定要拷贝一份链表再加到result
+     * 此时path中已经包含了root，sum中还不包含root
+     */
     private void pathSum(TreeNode root, int sum, List<List<Integer>> result, List<Integer> path) {
         if (root == null) {
             return;
