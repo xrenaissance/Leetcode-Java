@@ -1,7 +1,5 @@
 package com.inuker.solution;
 
-import com.inuker.solution.test.Test1;
-
 /**
  * Created by dingjikerbo on 2016/11/22.
  */

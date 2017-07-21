@@ -2,8 +2,6 @@ package com.inuker.solution;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
 
 /**
  * Created by dingjikerbo on 16/11/22.

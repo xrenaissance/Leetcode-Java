@@ -1,9 +1,5 @@
 package com.inuker.solution;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * Created by dingjikerbo on 17/1/12.
  */

@@ -3,7 +3,6 @@ package com.inuker.solution.prac2017.tree;
 import com.inuker.solution.TreeNode;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 

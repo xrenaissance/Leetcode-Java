@@ -2,7 +2,6 @@ package com.inuker.solution;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 /**
  * Created by dingjikerbo on 17/1/2.

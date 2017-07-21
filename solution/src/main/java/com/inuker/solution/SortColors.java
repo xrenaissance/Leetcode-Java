@@ -1,11 +1,5 @@
 package com.inuker.solution;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * Created by dingjikerbo on 2016/11/22.
  */

@@ -1,7 +1,5 @@
 package com.inuker.solution;
 
-import java.util.Arrays;
-
 /**
  * Created by dingjikerbo on 2016/11/16.
  */

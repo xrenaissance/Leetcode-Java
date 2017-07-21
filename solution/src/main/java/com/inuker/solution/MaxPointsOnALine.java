@@ -1,7 +1,6 @@
 package com.inuker.solution;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by dingjikerbo on 16/12/7.

@@ -1,8 +1,5 @@
 package com.inuker.solution;
 
-import com.inuker.solution.test.Test1;
-
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;

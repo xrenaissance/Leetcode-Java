@@ -1,8 +1,5 @@
 package com.inuker.solution;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by dingjikerbo on 2016/12/17.
  */

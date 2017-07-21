@@ -2,9 +2,6 @@ package com.inuker.solution.prac2017.tree;
 
 import com.inuker.solution.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Created by liwentian on 17/7/17.
  */

@@ -2,10 +2,8 @@ package com.inuker.solution;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 /**
  * Created by dingjikerbo on 2016/11/16.

@@ -1,8 +1,5 @@
 package com.inuker.solution;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Created by dingjikerbo on 2016/11/29.
  */

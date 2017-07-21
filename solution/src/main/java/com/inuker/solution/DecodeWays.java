@@ -4,8 +4,6 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/20.
  */
 
-import java.util.Arrays;
-
 /**
  * TestCases
  * ""

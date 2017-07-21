@@ -1,10 +1,7 @@
 package com.inuker.solution;
 
-import java.util.ArrayList;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by dingjikerbo on 16/12/3.
@@ -18,96 +15,78 @@ public class PathSumIII {
      * 可参考https://discuss.leetcode.com/category/562/path-sum-iii
      */
 
-    private int count;
-
     /**
      * 有两种可能，算上当前root和不算当前root
      */
     public int pathSum(TreeNode root, int sum) {
-        helperSum(root, sum);
-        return count;
+        int[] count = new int[1];
+        helperSum(root, sum, count);
+        return count[0];
     }
 
     /**
      *  既可以算上，也可以不算上root
      */
-    private void helperSum(TreeNode root, int sum) {
+    private void helperSum(TreeNode root, int sum, int[] count) {
         if (root == null) {
             return;
         }
 
         // 算上root
-        helper(root, sum);
+        helper(root, sum, count);
 
         // 不算上root
-        helperSum(root.left, sum);
-        helperSum(root.right, sum);
+        helperSum(root.left, sum, count);
+        helperSum(root.right, sum, count);
     }
 
     /**
      * 一定要算上root
      */
-    private void helper(TreeNode root, int sum) {
+    private void helper(TreeNode root, int sum, int[] count) {
         if (root == null) {
             return;
         }
         if (root.val == sum) {
-            count++;
+            count[0]++;
            // return;
         }
 
         if (root.left != null) {
-            helper(root.left, sum - root.val);
+            helper(root.left, sum - root.val, count);
         }
 
         if (root.right != null) {
-            helper(root.right, sum - root.val);
+            helper(root.right, sum - root.val, count);
         }
     }
 
-    /**
-     * 这里给路径也打出来了
-    private int count;
-
+    /* 如果要给路径打出来
     public int pathSum(TreeNode root, int sum) {
-        helperSum(root, sum, new ArrayList<TreeNode>());
-        return count;
+        List<String> result = new LinkedList<>();
+        pathSum(root, sum, result, "");
+        return result.size();
     }
 
-    private void helperSum(TreeNode root, int sum, ArrayList<TreeNode> path) {
+    private void pathSum(TreeNode root, int sum, List<String> list, String path) {
         if (root == null) {
             return;
         }
-        helper(root, sum, path);
-        helperSum(root.left, sum, new ArrayList<TreeNode>());
-        helperSum(root.right, sum, new ArrayList<TreeNode>());
+
+        pathSumWithRoot(root, sum, list, path);
+
+        pathSum(root.left, sum, list, "");
+        pathSum(root.right, sum, list, "");
     }
 
-    private void helper(TreeNode root, int sum, ArrayList<TreeNode> path) {
+    private void pathSumWithRoot(TreeNode root, int sum, List<String> list, String path) {
         if (root == null) {
             return;
         }
         if (root.val == sum) {
-//            for (int i = 0; i < path.size(); i++) {
-//                System.out.print(path.get(i).val + " ");
-//            }
-//            System.out.print(root.val);
-//            System.out.println();
-
-            count++;
-//            return;
+            list.add(path + "->" + root.val);
         }
-
-        if (root.left != null) {
-            path.add(root);
-            helper(root.left, sum - root.val, path);
-            path.remove(path.size() - 1);
-        }
-
-        if (root.right != null) {
-            path.add(root);
-            helper(root.right, sum - root.val, path);
-            path.remove(path.size() - 1);
-        }
+        pathSumWithRoot(root.left, sum - root.val, list, path + "->" + root.val);
+        pathSumWithRoot(root.right, sum - root.val, list, path + "->" + root.val);
     }*/
 }

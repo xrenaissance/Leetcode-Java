@@ -1,6 +1,5 @@
 package com.inuker.solution;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -8,7 +7,6 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 /**
  * Created by dingjikerbo on 16/12/17.
