@@ -53,5 +53,7 @@ https://leetcode.com/problems/contains-duplicate-ii/
 二十五，PriorityQueue的add和poll复杂度是O(lgn)，peek复杂度是O(l)，但是remove(Object)复杂度是O(n)，这个一定要注意，要避免remove(Object)。如果确实要remove，则可用TreeMap或TreeSet代替，TreeMap内部实现为红黑树，添加删除查找的复杂度都为O(lgn)，这点不要和HashMap搞混了，HashMap的添加删除查找都是O(l)。PriorityQueue如果允许元素重复，则要改成TreeMap保存元素次数
 
 二十六，关于for (char c : str.toCharArray()) {}，注意这里toCharArray只会调一次
+
 二十七，value为Integer的map.get(key)，可能返回null，如果直接转换成int会报NPR
+
 二十七，对整数取负时要注意可能溢出，对于-2147483648取负会溢出，见pow()
