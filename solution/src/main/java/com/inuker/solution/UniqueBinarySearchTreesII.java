@@ -27,10 +27,6 @@ public class UniqueBinarySearchTreesII {
             list.add(null);
             return list;
         }
-        if (start == end) {
-            list.add(new TreeNode(start));
-            return list;
-        }
         for (int i = start; i <= end; i++) {
             List<TreeNode> lefts = generateTrees(start, i - 1);
             List<TreeNode> rights = generateTrees(i + 1, end);
