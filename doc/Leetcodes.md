@@ -271,6 +271,6 @@
 |425|[Word Squares](https://leetcode.com/problems/word-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSquare.java)|70|
 |437|[Path Sum III](https://leetcode.com/problems/path-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSumIII.java)|60|这道题错了很多遍，要重点关注|
 |438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindAllAnagramsInString.java)|95|
-|450|[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DeleteNodeInBST.java)||
+|450|[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DeleteNodeInBST.java)|60|这题非常经典，值得多做十遍|
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TotalHammingDistance.java)||
 |637|[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AverageOfLevelsInBinaryTree.java)|100||
