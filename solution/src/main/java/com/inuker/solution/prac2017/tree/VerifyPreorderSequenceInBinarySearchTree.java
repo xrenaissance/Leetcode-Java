@@ -1,7 +1,7 @@
-package com.inuker.solution;
+package com.inuker.solution.prac2017.tree;
 
 /**
- * Created by dingjikerbo on 2016/12/2.
+ * Created by liwentian on 17/7/25.
  */
 
 public class VerifyPreorderSequenceInBinarySearchTree {
