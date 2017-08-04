@@ -1,4 +1,4 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
 
 import java.util.HashMap;
 import java.util.Map;
