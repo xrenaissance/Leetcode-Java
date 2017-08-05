@@ -1,13 +1,15 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- * Created by dingjikerbo on 2016/12/15.
+ * Created by liwentian on 17/8/5.
  */
 
 /**
- * 支持相同数存在
+ * 本题支持相同数存在
  */
 public class TwoSumIII {
 
