@@ -33,13 +33,12 @@ public class NumberOfIslands {
             int[] cur = queue.poll();
             int i = cur[0], j = cur[1];
 
-            grid[i][j] = '0';
-
             for (int k = 0; k < dx.length; k++) {
                 int x = i + dx[k], y = j + dy[k];
                 if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || grid[x][y] != '1') {
                     continue;
                 }
+                grid[x][y] = '0';
                 queue.add(new int[] {x, y});
             }
         }

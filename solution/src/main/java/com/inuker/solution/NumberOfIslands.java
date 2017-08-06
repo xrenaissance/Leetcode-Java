@@ -40,7 +40,7 @@ public class NumberOfIslands {
         if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] != '1') {
             return;
         }
-        grid[i][j] = 'x';
+        grid[i][j] = '0';
         dfs(grid, i - 1, j);
         dfs(grid, i + 1, j);
         dfs(grid, i, j - 1);
@@ -48,6 +48,11 @@ public class NumberOfIslands {
     }
 
     // 耗时6ms
+
+    /**
+     * 要注意grid[][] = '0'这句放在哪，在丢到队列时就清零，免得重复
+     * 加入队列，这一点和DFS不一样
+     */
     private void bfs(char[][] grid, int i, int j) {
         Queue<int[]> queue = new LinkedList<int[]>();
         queue.add(new int[] {i, j});
@@ -61,7 +66,7 @@ public class NumberOfIslands {
             for (int k = 0; k < dx.length; k++) {
                 int x0 = x + dx[k], y0 = y + dy[k];
                 if (x0 >= 0 && x0 < grid.length && y0 >= 0 && y0 < grid[0].length && grid[x0][y0] == '1') {
-                    grid[x0][y0] = 'x';
+                    grid[x0][y0] = '0';
                     queue.add(new int[] {x0, y0});
                 }
             }
