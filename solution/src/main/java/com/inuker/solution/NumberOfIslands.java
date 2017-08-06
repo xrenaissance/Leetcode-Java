@@ -14,6 +14,9 @@ import java.util.Queue;
  */
 public class NumberOfIslands {
 
+    /**
+     * 遍历数组，给每个1周围都清空，不论是bfs还是dfs目的都是一样
+     */
     public int numIslands(char[][] grid) {
         int num = 0;
         for (int i = 0; i < grid.length; i++) {

@@ -1,5 +1,8 @@
 package com.inuker.solution.amazon;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by dingjikerbo on 2017/8/6.
  */
@@ -17,6 +20,29 @@ public class NumberOfIslands {
             }
         }
         return num;
+    }
+
+
+    private void bfs(char[][] grid, int i0, int j0) {
+        int[] dx = {-1, 1, 0, 0}, dy = {0, 0, -1, 1};
+
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[] {i0, j0});
+
+        while (!queue.isEmpty()) {
+            int[] cur = queue.poll();
+            int i = cur[0], j = cur[1];
+
+            grid[i][j] = '0';
+
+            for (int k = 0; k < dx.length; k++) {
+                int x = i + dx[k], y = j + dy[k];
+                if (x < 0 || x >= grid.length || y < 0 || y >= grid[0].length || grid[x][y] != '1') {
+                    continue;
+                }
+                queue.add(new int[] {x, y});
+            }
+        }
     }
 
     private void dfs(char[][] grid, int i, int j) {
