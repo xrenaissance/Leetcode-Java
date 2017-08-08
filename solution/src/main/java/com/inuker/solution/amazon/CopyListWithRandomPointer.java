@@ -1,14 +1,14 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
+
+import com.inuker.solution.RandomListNode;
+
+import java.util.Random;
 
 /**
- * Created by dingjikerbo on 2016/11/16.
+ * Created by liwentian on 17/8/9.
  */
 
-/**
- * 易错的地方在于random要判空
- */
 public class CopyListWithRandomPointer {
-
 
     public RandomListNode copyRandomList(RandomListNode head) {
         for (RandomListNode node = head; node != null; ) {
@@ -37,5 +37,3 @@ public class CopyListWithRandomPointer {
         return dummy.next;
     }
 }
-
-
