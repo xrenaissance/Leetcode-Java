@@ -1,11 +1,11 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
 
 /**
- * Created by dingjikerbo on 2016/11/16.
+ * Created by liwentian on 17/8/9.
  */
+
 public class RotateImage {
 
-    // 耗时2ms
     public void rotate(int[][] matrix) {
         int n = matrix.length;
 
