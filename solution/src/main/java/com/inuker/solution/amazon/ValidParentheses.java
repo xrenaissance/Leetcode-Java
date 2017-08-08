@@ -1,15 +1,11 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
 
 /**
- * Created by dingjikerbo on 2016/11/16.
+ * Created by liwentian on 17/8/9.
  */
 
-/**
- * 要注意栈判空
- */
 public class ValidParentheses {
 
-    // 耗时5ms
     public boolean isValid(String s) {
         char[] stack = new char[s.length()];
         int top = -1;
