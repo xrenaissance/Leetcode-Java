@@ -9,6 +9,10 @@ import java.util.Random;
  * Created by dingjikerbo on 2016/11/16.
  */
 
+/**
+ * 有几点要注意：
+ * remove时要判断删除的是不是最后一个，另外交换了结尾后要更新结尾数的idx
+ */
 // 耗时111ms
 public class RandomizedSet {
 
