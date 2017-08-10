@@ -20,60 +20,61 @@ public class SlidingWindowMaximum {
 
     /**
      * 注意PriorityQueue的remove复杂度是O(k)，所以本题复杂度是O(n*k)
-     * 可以将PriorityQueue转成TreeMap
+     * 可以将PriorityQueue转成TreeMap，复杂度为O(n*lgk)
      */
-    // 耗时62ms
+    // 耗时58ms
     public int[] maxSlidingWindow(int[] nums, int k) {
-        if (nums.length == 0 || k == 0) {
+        if (nums.length == 0) {
             return new int[0];
         }
 
         Queue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>() {
             @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 > o2 ? -1 : 1;
+            public int compare(Integer i1, Integer i2) {
+                return i2 - i1;
             }
         });
 
+        for (int i = 0; i < k; i++) {
+            queue.offer(nums[i]);
+        }
+
         int[] result = new int[nums.length - k + 1];
+        result[0] = queue.peek();
 
-        for (int i = 0; i < nums.length; i++) {
-            queue.add(nums[i]);
-
-            // 别忘了加限制条件
-            if (i >= k) {
-                queue.remove(nums[i - k]);
-            }
-
-            // 别忘了加限制条件
-            if (i >= k - 1) {
-                result[i - k + 1] = queue.peek();
-            }
+        for (int i = 1; i < result.length; i++) {
+            queue.remove(nums[i - 1]);
+            queue.offer(nums[i + k - 1]);
+            result[i] = queue.peek();
         }
 
         return result;
     }
 
-    // 耗时26ms
+    // 耗时23ms
     // queue中存的是索引
     public int[] maxSlidingWindow2(int[] nums, int k) {
+        if (nums.length == 0) {
+            return new int[0];
+        }
+
         Deque<Integer> queue = new LinkedList<Integer>();
 
         int[] result = new int[nums.length - k + 1];
 
         for (int i = 0; i < nums.length; i++) {
-            if (!queue.isEmpty() && queue.getFirst() <= i - k) {
+            if (!queue.isEmpty() && queue.peek() <= i - k) {
                 queue.removeFirst();
             }
 
-            while (!queue.isEmpty() && nums[queue.getLast()] < nums[i]) {
-                queue.removeLast();
+            while (!queue.isEmpty() && nums[queue.peekLast()] < nums[i]) {
+                queue.pollLast();
             }
 
             queue.offerLast(i);
 
             if (i >= k - 1) {
-                result[i - k + 1] = nums[queue.getFirst()];
+                result[i - k + 1] = nums[queue.peek()];
             }
         }
 
