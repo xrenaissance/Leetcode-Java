@@ -106,7 +106,7 @@
 |124|[Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeMaximumPathSum.java)|60|
 |125|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidPalindrome.java)|100|
 |126|[Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadderII.java)||
-|127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadder.java)|70|
+|127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordLadder.java)|70|此题非常经典，务必连同ii多做几遍，将双端BFS吃透|
 |128|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestConsecutiveSequence.java)|60|
 |129|[Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SumRootToLeafNumbers.java)|60|这题错了几次，多做几遍|
 |130|[Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SurroundedRegions.java)|65|
