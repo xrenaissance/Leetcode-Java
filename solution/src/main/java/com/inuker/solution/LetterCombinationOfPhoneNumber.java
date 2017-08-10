@@ -20,22 +20,21 @@ public class LetterCombinationOfPhoneNumber {
 
     // 耗时3ms
     public List<String> letterCombinations(String digits) {
-        List<String> result = new LinkedList<>();
-        if (digits.length() == 0) {
-            return result;
+        List<String> list = new LinkedList<>();
+        if (!digits.isEmpty()) {
+            helper(digits, 0, list, "");
         }
-        helper(digits, 0, "", result);
-        return result;
+        return list;
     }
 
-    private void helper(String s, int start, String t, List<String> result) {
-        if (start == s.length()) {
-            result.add(t);
+    private void helper(String digits, int start, List<String> list, String s) {
+        if (start >= digits.length()) {
+            list.add(s);
             return;
         }
-        int n = s.charAt(start) - '0';
+        int n = digits.charAt(start) - '0';
         for (char c : ARR[n].toCharArray()) {
-            helper(s, start + 1, t + c, result);
+            helper(digits, start + 1, list, s + c);
         }
     }
 
