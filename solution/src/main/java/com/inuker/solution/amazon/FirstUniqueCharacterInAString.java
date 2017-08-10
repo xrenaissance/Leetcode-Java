@@ -1,14 +1,11 @@
-package com.inuker.solution;
-
-import java.util.Arrays;
+package com.inuker.solution.amazon;
 
 /**
- * Created by dingjikerbo on 2016/11/16.
+ * Created by liwentian on 17/8/10.
  */
 
 public class FirstUniqueCharacterInAString {
 
-    // 耗时21ms，O(2n)
     public int firstUniqChar(String s) {
         int[] cnt = new int[26];
         for (char c : s.toCharArray()) {
