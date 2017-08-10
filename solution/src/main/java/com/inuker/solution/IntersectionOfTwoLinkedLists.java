@@ -2,6 +2,7 @@ package com.inuker.solution;
 
 /**
  * Created by dingjiekrbo on 2016/11/17.
+ * https://leetcode.com/articles/intersection-two-linked-lists/
  */
 
 public class IntersectionOfTwoLinkedLists {
