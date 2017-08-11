@@ -9,54 +9,33 @@ package com.inuker.solution;
  */
 public class TrappingRainWater {
 
-    // 耗时166ms
-    public int trap(int[] height) {
-        int water = 0;
-
-        for (int i = 0; i < height.length; i++) {
-            int left = height[i];
-
-            for (int j = i - 1; j >= 0; j--) {
-                left = Math.max(left, height[j]);
-            }
-
-            int right = height[i];
-
-            for (int j = i + 1; j < height.length; j++) {
-                right = Math.max(right, height[j]);
-            }
-
-            int level = Math.min(left, right);
-            water += (level > height[i] ? level - height[i] : 0);
-        }
-
-        return water;
-    }
-
     // 耗时24ms
-    public int trap2(int[] height) {
+    public int trap(int[] height) {
         int len = height.length;
+
+        if (len == 0) {
+            return 0;
+        }
 
         int[] left = new int[len];
         int[] right = new int[len];
 
+        left[0] = 0;
+        right[len - 1] = 0;
+
         for (int i = 1; i < len; i++) {
-            left[i] = Math.max(height[i - 1], left[i - 1]);
+            left[i] = Math.max(left[i - 1], height[i - 1]);
         }
-
-        for (int i = len - 2; i >= 0; i--) {
-            right[i] = Math.max(height[i + 1], right[i + 1]);
+        for (int i = len - 2; i>= 0; i--) {
+            right[i] = Math.max(right[i + 1], height[i + 1]);
         }
-
-        int water = 0;
-
-        for (int i = 1; i < len - 1; i++) {
-            int level = Math.min(left[i], right[i]);
-            if (level > height[i]) {
-                water += level - height[i];
+        int sum = 0;
+        for (int i = 0; i < len; i++) {
+            int high = Math.min(left[i], right[i]);
+            if (high > height[i]) {
+                sum += high - height[i];
             }
         }
-
-        return water;
+        return sum;
     }
 }
