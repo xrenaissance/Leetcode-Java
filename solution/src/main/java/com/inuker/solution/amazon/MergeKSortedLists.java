@@ -1,20 +1,16 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
+
+import com.inuker.solution.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 /**
- * Created by dingjikerbo on 16/11/20.
+ * Created by liwentian on 17/8/11.
  */
 
-public class MergeKSortedList {
+public class MergeKSortedLists {
 
-    // 耗时19ms
-    // 时间复杂度为O(knlgn)
-    /**
-     * 这里要注意lists中可能有node为null
-     */
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode dummy = new ListNode(0), cur = dummy;
 
