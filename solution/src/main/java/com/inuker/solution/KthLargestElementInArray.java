@@ -10,17 +10,17 @@ import java.util.Queue;
 
 public class KthLargestElementInArray {
 
-    // 耗时16ms，时间复杂度O(nlgk)，空间复杂度O(k)
-    // 按降序排的，出队列k次获取第k大的数
+    // 耗时15ms，时间复杂度O(nlgk)，空间复杂度O(k)
+    // 按升序排的，出队列k次获取第k大的数
     public int findKthLargest(int[] nums, int k) {
-        Queue<Integer> queue = new PriorityQueue<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
         for (int n : nums) {
-            queue.add(n);
+            queue.offer(n);
             if (queue.size() > k) {
                 queue.poll();
             }
         }
-        return queue.isEmpty() ? 0 : queue.peek();
+        return queue.peek();
     }
 
     // 耗时3ms，时间复杂度O(nlgn)，空间复杂度O(l)
