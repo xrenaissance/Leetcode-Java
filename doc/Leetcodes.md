@@ -10,7 +10,7 @@
 |5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindromicSubstring.java)|85|这题对比动态规划和最优算法|
 |6|[ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ZigZagConversion.java)||
 |7|[Reverse Integer](https://leetcode.com/problems/reverse-integer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseInteger.java)|95|
-|8|[String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/String2Integer.java)||
+|8|[String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/String2Integer.java)|90|很考代码能力，容易错|
 |9|[Palindrome Number](https://leetcode.com/problems/palindrome-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromeNumber.java)||
 |10|[Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RegularExpressionMatching.java)|60|
 |11|[Container With Most Water](https://leetcode.com/problems/container-with-most-water/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ContainerWithMostWater.java)||
