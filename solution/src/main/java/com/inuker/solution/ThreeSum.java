@@ -15,30 +15,34 @@ import java.util.List;
  */
 public class ThreeSum {
 
+    /**
+     * 最底下那个for循环别给j < k掉了
+     */
+
     // 耗时30ms
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> result = new LinkedList<List<Integer>>();
         Arrays.sort(nums);
+
+        List<List<Integer>> result = new LinkedList<>();
+
         for (int i = 0; i < nums.length; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
-            int target = -nums[i];
             for (int j = i + 1, k = nums.length - 1; j < k; ) {
-                int sum = nums[j] + nums[k];
-                if (sum > target) {
+                int sum = nums[i] + nums[j] + nums[k];
+
+                if (sum > 0) {
                     k--;
-                } else if (sum < target) {
+                } else if (sum < 0) {
                     j++;
                 } else {
                     result.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                    /**
-                     * 别给j < k掉了
-                     */
-                    for (j++, k-- ; j < k && nums[j] == nums[j - 1] && nums[k] == nums[k + 1]; j++, k--);
+                    for (j++, k--; j < k && nums[j] == nums[j - 1]; j++);
                 }
             }
         }
+
         return result;
     }
 }
