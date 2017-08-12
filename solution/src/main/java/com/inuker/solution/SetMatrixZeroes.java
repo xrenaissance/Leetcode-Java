@@ -1,4 +1,4 @@
-package com.inuker.solution.amazon;
+package com.inuker.solution;
 
 /**
  * Created by liwentian on 17/8/12.
@@ -38,6 +38,7 @@ public class SetMatrixZeroes {
             }
         }
 
+        // 注意这里是从1开始
         for (int i = 1; i < col; i++) {
             if (matrix[0][i] == 0) {
                 for (int j = 0; j < row; j++) {
@@ -46,6 +47,7 @@ public class SetMatrixZeroes {
             }
         }
 
+        // 注意这里是从1开始
         for (int i = 1; i < row; i++) {
             if (matrix[i][0] == 0) {
                 for (int j = 0; j < col; j++) {
