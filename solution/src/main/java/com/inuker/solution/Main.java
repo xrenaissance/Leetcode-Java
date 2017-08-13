@@ -7,14 +7,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 4; i++) {
-            List<Integer> list = new com.inuker.solution.amazon.PascalTriangleII()
-                    .getRow(i);
-            for (Integer n : list) {
-                System.out.print(n + " ");
-            }
-            System.out.println();
-        }
-
+        int n = new com.inuker.solution.amazon.ThirdMaximumNumber()
+                .thirdMax(new int[]{
+                        2, 2, 3, 1
+                });
+        System.out.print(n);
     }
 }

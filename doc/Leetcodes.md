@@ -270,6 +270,7 @@
 |409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)||
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SplitArrayLargestSum.java)||
 |412|[Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FizzBuzz.java)|100|
+|413|[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThirdMaximumNumber.java)|80||
 |418|[Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SentenceScreenFitting.java)|65|
 |422|[Valid Word Square](https://leetcode.com/problems/valid-word-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidWordSquare.java)|90|
 |425|[Word Squares](https://leetcode.com/problems/word-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSquare.java)|70|
