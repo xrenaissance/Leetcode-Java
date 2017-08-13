@@ -1,12 +1,13 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 16/11/22.
+ * Created by liwentian on 17/8/13.
  */
 
 public class GroupAnagrams {
@@ -31,5 +32,4 @@ public class GroupAnagrams {
 
         return new LinkedList<>(map.values());
     }
-
 }
