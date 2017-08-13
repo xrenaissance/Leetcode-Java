@@ -7,10 +7,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        int n = new com.inuker.solution.amazon.ThirdMaximumNumber()
-                .thirdMax(new int[]{
-                        2, 2, 3, 1
-                });
+        int n = new com.inuker.solution.amazon.LongestSubstringWithoutRepeatingCharacters()
+                .lengthOfLongestSubstring("kgquqbcycmqtfkbem");
         System.out.print(n);
     }
 }

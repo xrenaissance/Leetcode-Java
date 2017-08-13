@@ -1,15 +1,11 @@
-package com.inuker.solution;
+package com.inuker.solution.amazon;
 
 /**
- * Created by dingjikerbo on 2016/11/17.
+ * Created by liwentian on 17/8/13.
  */
 
-/**
- * https://leetcode.com/articles/longest-substring-without-repeating-characters/
- */
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    // 耗时39ms，性能挺好
     public int lengthOfLongestSubstring(String s) {
         int[] count = new int[256];
 
