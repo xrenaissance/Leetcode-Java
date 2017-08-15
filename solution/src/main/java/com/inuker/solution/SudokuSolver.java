@@ -37,16 +37,17 @@ public class SudokuSolver {
 
     private boolean check(char[][] board, int row, int col, char c) {
         for (int i = 0; i < 9; i++) {
-            if (board[i][col] == c) {
-                return false;
-            }
             if (board[row][i] == c) {
                 return false;
             }
+            if (board[i][col] == c) {
+                return false;
+            }
 
-            int row0 = 3 * (row / 3) + i / 3;
-            int col0 = 3 * (col / 3) + i % 3;
-            if (board[row0][col0] == c) {
+            int m = (row / 3) * 3 + i / 3;
+            int n = (col / 3) * 3 + i % 3;
+
+            if (board[m][n] == c) {
                 return false;
             }
         }

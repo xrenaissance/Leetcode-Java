@@ -39,7 +39,7 @@
 |34|[Search for a Range](https://leetcode.com/problems/search-for-a-range/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchForARange.java)||
 |35|[Search Insert Position](https://leetcode.com/problems/search-insert-position/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SearchInsertPosition.java)||
 |36|[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidSudoku.java)|80|
-|37|[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SudokuSolver.java)||
+|37|[Sudoku Solver](https://leetcode.com/problems/sudoku-solver/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SudokuSolver.java)|70|这道题是典型的back tracking，多做几遍|
 |38|[Count and Say](https://leetcode.com/problems/count-and-say/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountAndSay.java)|80|
 |39|[Combination Sum](https://leetcode.com/problems/combination-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSum.java)|70|排列组合系列的题要多做几遍|
 |40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CombinationSumII.java)|70|
@@ -67,7 +67,7 @@
 |73|[Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/description/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SetMatrixZeroes.java)|90|
 |74|[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Search2DMatrix.java)||
 |75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)|65|
-|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|50|这题以及类似的题一定要多做几遍，很经典|
+|76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|50|这题以及类似的题一定要多做几遍，很经典，参见window|
 |77|[Combinations](https://leetcode.com/problems/combinations)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Combinations.java)||
 |78|[Subsets](https://leetcode.com/problems/subsets/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Subsets.java)|85|
 |79|[Word Search](https://leetcode.com/problems/word-search/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearch.java)|85|
