@@ -7,10 +7,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<List<Integer>> result = new com.inuker.solution.snapchat.CombinationSum()
-                .combinationSum(new int[] {
-                        2, 3, 6, 7
-                }, 7);
+        List<List<Integer>> result = new com.inuker.solution.combination.CombinationSumIII()
+                .combinationSum3(3, 9);
         for (List<Integer> list : result) {
             for (Integer n : list) {
                 System.out.print(n + " ");
