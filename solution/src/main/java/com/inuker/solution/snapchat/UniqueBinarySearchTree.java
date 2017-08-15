@@ -1,13 +1,10 @@
-package com.inuker.solution;
+package com.inuker.solution.snapchat;
 
 /**
- * Created by dingjikerbo on 16/11/28.
+ * Created by liwentian on 17/8/15.
  */
 
-/**
- * 动态规划，依次建立1,2,3,...颗节点能有多少种树构造的dp
- */
-public class UniqueBinarySearchTrees {
+public class UniqueBinarySearchTree {
 
     public int numTrees(int n) {
         int[] dp = new int[n + 1];
