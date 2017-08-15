@@ -1,13 +1,11 @@
-package com.inuker.solution;
+package com.inuker.solution.snapchat;
 
 /**
- * Created by dingjikerbo on 16/11/20.
+ * Created by liwentian on 17/8/15.
  */
 
 public class OneEditDistance {
-    /**
-     * 最容易错的是结尾的条件sL != tL
-     */
+
     public boolean isOneEditDistance(String s, String t) {
         int sL = s.length(), tL = t.length();
         if (sL > tL) {
