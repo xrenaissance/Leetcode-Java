@@ -48,7 +48,7 @@ public class AlienDictionary {
         }
 
         /**
-         * 计算所有字符的indegree
+         * 计算所有字符的indegree，注意这里是相邻两个单词比对
          */
         HashMap<Character, Set<Character>> map = new HashMap<>();
         for (int i = 0; i < words.length - 1; i++) {

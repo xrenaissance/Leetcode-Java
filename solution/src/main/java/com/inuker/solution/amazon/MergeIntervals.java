@@ -1,7 +1,6 @@
 package com.inuker.solution.amazon;
 
 import com.inuker.solution.Interval;
-import com.sun.jdi.IntegerValue;
 
 import java.util.Arrays;
 import java.util.Collections;
