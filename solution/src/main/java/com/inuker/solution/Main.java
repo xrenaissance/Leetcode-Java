@@ -7,8 +7,15 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        String n = new com.inuker.solution.ReverseWordsInAString()
-                .reverseWords(" abc  de  f");
-        System.out.print("(" + n + ")");
+        List<List<Integer>> result = new com.inuker.solution.snapchat.CombinationSum()
+                .combinationSum(new int[] {
+                        2, 3, 6, 7
+                }, 7);
+        for (List<Integer> list : result) {
+            for (Integer n : list) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
+        }
     }
 }

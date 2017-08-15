@@ -10,13 +10,33 @@ import java.util.List;
 
 public class CombinationSum {
 
-    // 这题关键在于去重，这里没必要排序
+    // 耗时23ms
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new LinkedList<>();
-        /**
-         * 排序是必要的
-         */
-        Arrays.sort(candidates);
+        helper(candidates, result, new LinkedList<>(), target, 0);
+        return result;
+    }
+
+    private void helper(int[] candidates, List<List<Integer>> result, List<Integer> list, int target, int index) {
+        if (target < 0) {
+            return;
+        } else if (target == 0) {
+            result.add(new LinkedList<>(list));
+            return;
+        } else if (index >= candidates.length) {
+            return;
+        }
+
+        list.add(candidates[index]);
+        helper(candidates, result, list, target - candidates[index], index);
+        list.remove(list.size() - 1);
+
+        helper(candidates, result, list, target, index + 1);
+    }
+
+    // 耗时22ms
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> result = new LinkedList<>();
         dfs(candidates, target, 0, result, new LinkedList<Integer>());
         return result;
     }
@@ -33,12 +53,6 @@ public class CombinationSum {
             return;
         }
         for (int i = start; i < candidates.length; i++) {
-            /**
-             * 这一条千万别掉了，因为如果当前数和上一个数相等，则是上一个数下的子集，不能再重复计算了
-             */
-            if (i != start && candidates[i] == candidates[i - 1]) {
-                continue;
-            }
             list.add(candidates[i]);
             /**
              * 注意这里下一个start取i，表示当前数仍可以重复取
