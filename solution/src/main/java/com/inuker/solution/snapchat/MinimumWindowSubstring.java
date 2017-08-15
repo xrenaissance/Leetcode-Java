@@ -1,12 +1,11 @@
-package com.inuker.solution;
+package com.inuker.solution.snapchat;
 
 /**
- * Created by dingjikerbo on 16/11/21.
+ * Created by liwentian on 17/8/15.
  */
 
 public class MinimumWindowSubstring {
 
-    // 耗时8ms，时间复杂度O(n)
     public String minWindow(String s, String t) {
         int[] sc = new int[256], tc = new int[256];
 
@@ -46,5 +45,5 @@ public class MinimumWindowSubstring {
         }
 
         return minLen != Integer.MAX_VALUE ? s.substring(minStart, minStart + minLen) : "";
-    }
+    }//ADOBECODEBANC
 }
