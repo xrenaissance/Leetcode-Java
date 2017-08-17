@@ -1,5 +1,6 @@
 package com.inuker.solution.company.snapchat;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,6 +10,6 @@ import java.util.List;
 public class WordBreakII {
 
     public List<String> wordBreak(String s, List<String> wordDict) {
-
+        return Collections.emptyList();
     }
 }

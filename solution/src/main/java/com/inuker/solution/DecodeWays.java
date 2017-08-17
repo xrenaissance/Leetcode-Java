@@ -12,7 +12,6 @@ package com.inuker.solution;
  * "7893749912342187894921836847319981199844151766195952528631828655978178193192959793156142441128167383"
  */
 public class DecodeWays {
-    /** 这里推荐第一种和最后一种思路DP */
 
     /**
      * 超时了，有大量的字符串复制，不过思路挺直观的
@@ -49,37 +48,7 @@ public class DecodeWays {
         return ways;
     }
 
-    /** 思路二
-    // 这里进行了优化，去掉了字符串复制，但有些cases仍然超时，因为仍然有大量重复运算
-    public int numDecodings(String s) {
-        if (s.length() == 0) {
-            return 0;
-        }
-        return helper(s.toCharArray(), 0);
-    }
-
-    public int helper(char[] s, int i) {
-        if (i >= s.length) {
-            return 1;
-        }
-
-        if (s[i] == '0') {
-            return 0;
-        }
-
-        int ways = 0;
-
-        if (i < s.length - 1 && (s[i] == '1' || (s[i] == '2' && (s[i + 1] >= '0' && s[i + 1] <= '6')))) {
-            ways += helper(s, i + 2);
-        }
-
-        ways += helper(s, i + 1);
-        return ways;
-    }
-*/
-
     /**
-     * 思路三
     // 这里继续优化，为避免重复运算，对结果进行了缓存，性能非常好，耗时2ms
     public int numDecodings(String s) {
         if (s.length() == 0) {
