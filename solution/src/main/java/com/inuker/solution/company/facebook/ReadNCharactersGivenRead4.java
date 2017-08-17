@@ -1,10 +1,10 @@
-package com.inuker.solution;
+package com.inuker.solution.company.facebook;
 
 /**
- * Created by dingjikerbo on 16/11/20.
+ * Created by liwentian on 17/8/17.
  */
 
-public abstract class ReadNCharactersGivenRead4 {
+public class ReadNCharactersGivenRead4 {
 
     public int read(char[] buf, int n) {
         char[] tmp = new char[4];
@@ -23,5 +23,7 @@ public abstract class ReadNCharactersGivenRead4 {
         return i;
     }
 
-    abstract int read4(char[] buf);
+    int read4(char[] buf) {
+        return 0;
+    }
 }
