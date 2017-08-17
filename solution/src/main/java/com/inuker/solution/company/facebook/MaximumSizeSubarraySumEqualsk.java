@@ -1,15 +1,14 @@
-package com.inuker.solution;
+package com.inuker.solution.company.facebook;
 
 import java.util.HashMap;
 
 /**
- * Created by dingjikerbo on 2016/11/19.
+ * Created by liwentian on 17/8/17.
  */
 
-public class MaximumSizeSubarraySumEqualsK {
+public class MaximumSizeSubarraySumEqualsk {
 
-    // 耗时29ms，时间复杂度O(n)
-    public int maxSubArrayLen2(int[] nums, int k) {
+    public int maxSubArrayLen(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int maxLen = 0;
 
