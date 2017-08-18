@@ -1,15 +1,10 @@
-package com.inuker.solution;
+package com.inuker.solution.company.facebook;
 
 /**
- * Created by dingjikerbo on 16/11/23.
+ * Created by liwentian on 17/8/18.
  */
 
-import com.inuker.solution.company.facebook.ImplementTrie;
-
-/**
- * https://leetcode.com/articles/implement-trie-prefix-tree/
- */
-public class Trie {
+public class ImplementTrie {
 
     class TriNode {
         TriNode[] nodes = new TriNode[26];
@@ -19,7 +14,7 @@ public class Trie {
     TriNode root;
 
     /** Initialize your data structure here. */
-    public Trie() {
+    public ImplementTrie() {
         root = new TriNode();
     }
 
