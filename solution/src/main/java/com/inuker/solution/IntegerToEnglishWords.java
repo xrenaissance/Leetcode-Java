@@ -26,34 +26,34 @@ public class IntegerToEnglishWords {
     };
 
     // 这种写法耗时4ms，简洁效率还高
+
+    /**
+     * 1, 别漏了zero的情况
+     * 2， 当num % 1000 != 0的判断别掉了
+     * 3， helper的返回结果要trim一下，去掉前后多余的空格
+     * 4， 最后返回的sb要trim一下
+     */
     public String numberToWords(int num) {
         if (num == 0) {
             return "Zero";
         }
 
-        String words = "";
-        for (int i = 0; num > 0; i++, num /= 1000) {
-            /**
-             * 这里要加上num%1000!=0的判断
-             */
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < THOUSANDS.length && num > 0; i++) {
             if (num % 1000 != 0) {
-                words = helper(num % 1000) + THOUSANDS[i] + " " + words;
+                sb.insert(0, helper(num % 1000).trim() + " " + THOUSANDS[i] + " ");
             }
+
+            num /= 1000;
         }
-        return words.trim();
+
+        return sb.toString().trim();
     }
 
-    /**
-     * 求1000以内的
-     */
     private String helper(int num) {
-        /**
-         * 这里num == 0的时候要返回""，否则50123会出错，中间多了个空格
-         */
-        if (num == 0) {
-            return "";
-        } else if (num < 20) {
-            return LESS_20[num] + " ";
+        if (num < 20) {
+            return LESS_20[num];
         } else if (num < 100) {
             return LESS_100[num / 10] + " " + helper(num % 10);
         } else {
