@@ -66,7 +66,7 @@
 |72|[Edit Distance](https://leetcode.com/problems/edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EditDistance.java)|75|
 |73|[Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/description/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SetMatrixZeroes.java)|90|
 |74|[Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Search2DMatrix.java)||
-|75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)|65|
+|75|[Sort Colors](https://leetcode.com/problems/sort-colors/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortColors.java)|65|这题多做几遍，很有意思|
 |76|[Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumWindowSubstring.java)|50|这题以及类似的题一定要多做几遍，很经典，参见window|
 |77|[Combinations](https://leetcode.com/problems/combinations)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Combinations.java)||
 |78|[Subsets](https://leetcode.com/problems/subsets/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Subsets.java)|85|
