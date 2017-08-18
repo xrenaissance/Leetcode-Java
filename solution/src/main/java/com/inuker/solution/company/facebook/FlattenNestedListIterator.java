@@ -1,18 +1,20 @@
-package com.inuker.solution;
+package com.inuker.solution.company.facebook;
+
+import com.inuker.solution.NestedInteger;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
 /**
- * Created by dingjikerbo on 2016/11/22.
+ * Created by liwentian on 17/8/18.
  */
 
-public abstract class NestedIterator implements Iterator<Integer> {
+public class FlattenNestedListIterator implements Iterator<Integer> {
 
     private Stack<NestedInteger> stack;
 
-    public NestedIterator(List<NestedInteger> nestedList) {
+    public FlattenNestedListIterator(List<NestedInteger> nestedList) {
         stack = new Stack<NestedInteger>();
         push(nestedList);
     }
