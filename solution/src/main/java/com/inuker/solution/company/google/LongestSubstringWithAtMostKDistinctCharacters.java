@@ -1,15 +1,16 @@
-package com.inuker.solution;
-
-import java.util.HashMap;
+package com.inuker.solution.company.google;
 
 /**
- * Created by dingjikerbo on 16/11/27.
+ * Created by liwentian on 17/8/22.
  */
 
-public class LongestSubstringWithAtMostTwoDistinctCharacters {
+public class LongestSubstringWithAtMostKDistinctCharacters {
 
-    // 7ms
-    public int lengthOfLongestSubstringTwoDistinct2(String s) {
+    public int lengthOfLongestSubstringTwoDistinct(String s, int k) {
+        if (k == 0) {
+            return 0;
+        }
+
         int[] count = new int[256];
         int distinct = 0, longest = 0;
 
@@ -18,7 +19,7 @@ public class LongestSubstringWithAtMostTwoDistinctCharacters {
                 distinct++;
             }
 
-            for ( ; i < j && distinct > 2; ) {
+            for ( ; i < j && distinct > k; ) {
                 if (--count[s.charAt(i++)] == 0) {
                     --distinct;
                 }
