@@ -4,6 +4,9 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/26.
  */
 
+/**
+ * https://leetcode.com/articles/range-sum-query-2d-immutable/
+ */
 public class NumMatrix {
 
     private int[][] dp;
