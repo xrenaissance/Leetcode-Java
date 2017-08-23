@@ -7,6 +7,8 @@ package com.inuker.solution;
 /**
  * 关于BIT，可以参考http://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
  * 关于Segment Tree，可以参考 https://discuss.leetcode.com/topic/29918/17-ms-java-solution-with-segment-tree
+ * https://leetcode.com/articles/range-sum-query-mutable/
+ * https://leetcode.com/articles/recursive-approach-segment-trees-range-sum-queries-lazy-propagation/
  * 这题最直观的解法就是Segment Tree递归算法，可以重点关注
  */
 public class NumArrayII {
@@ -75,53 +77,6 @@ public class NumArrayII {
         }
     }
 }
-
-//public class NumArrayII {
-//
-//    private int[] mNums;
-//    private int[] mBITTree;
-//
-//    public NumArrayII(int[] nums) {
-//        mNums = nums;
-//        mBITTree = constructBITree(nums);
-//    }
-//
-//    public void update(int i, int val) {
-//        updateBIT(mBITTree, i, val - mNums[i]);
-//        mNums[i] = val;
-//    }
-//
-//    public int sumRange(int i, int j) {
-//        return getSum(mBITTree, j) - getSum(mBITTree, i - 1);
-//    }
-//
-//    private int[] constructBITree(int[] arr) {
-//        int[] tree = new int[arr.length + 1];
-//        for (int i = 0; i < arr.length; i++) {
-//            updateBIT(tree, i, arr[i]);
-//        }
-//        return tree;
-//    }
-//
-//    private void updateBIT(int tree[], int index, int val) {
-//        for (index++; index < tree.length; index += getLowbit(index)) {
-//            tree[index] += val;
-//        }
-//    }
-//
-//    private int getSum(int tree[], int index) {
-//        int sum = 0;
-//        for (index++; index > 0; index -= getLowbit(index)) {
-//            sum += tree[index];
-//        }
-//        return sum;
-//    }
-//
-//    // 只剩下最低的1，其余高位1都清零
-//    private int getLowbit(int n) {
-//        return n & -n;
-//    }
-//}
 
 // Your NumArray object will be instantiated and called as such:
 // NumArray numArray = new NumArray(nums);
