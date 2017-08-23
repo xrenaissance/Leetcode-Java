@@ -26,11 +26,7 @@ public class NumMatrix {
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
-        int x0 = Math.min(row1, row2);
-        int y0 = Math.min(col1, col2);
-        int x1 = Math.max(row1, row2);
-        int y1 = Math.max(col1, col2);
-        return dp[x1 + 1][y1 + 1] + dp[x0][y0] - dp[x0][y1 + 1] - dp[x1 + 1][y0];
+        return dp[row2 + 1][col2 + 1] - dp[row2 + 1][col1] - dp[row1][col2 + 1] + dp[row1][col1];
     }
 }
 
