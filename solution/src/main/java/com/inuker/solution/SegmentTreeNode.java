@@ -12,7 +12,7 @@ public class SegmentTreeNode {
 
     public int start, end;
 
-    SegmentTreeNode(int start, int end) {
+    public SegmentTreeNode(int start, int end) {
         this.start = start;
         this.end = end;
     }
