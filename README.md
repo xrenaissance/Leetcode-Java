@@ -2,15 +2,12 @@
 
 ## **一、文档列表**
  - [刷题要点](https://github.com/dingjikerbo/leetcode/blob/master/doc/Attention.md)
-
  - [Facebook面试总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/FacebookSummary.md)
-
  - [BitSet技巧](https://github.com/dingjikerbo/leetcode/blob/master/doc/BitSet.md)
 
-
-所有题目列表
 ------
 
+## **二、所有题目列表**
 |#|Title|Solution|Score|Backup|
 |---|----| ----- |----|---------|
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|100|
