@@ -26,11 +26,23 @@
     ```
     y = x ^ (1 << n)
     ```
- -  Turn off the rightmost 1-bit
+ -  Turn off the rightmost 1-bit，将最右边的1清零
     ```
     y = x & (x - 1)
     ```
- -  Isolate the rightmost 1-bit
+ -  Isolate the rightmost 1-bit，留下最右边的1，其余位都置为0
     ```
     y = x & (-x)
+    ```
+ - Right propagate the rightmost 1-bit，将最右边的1的右边全部置为1
+    ```
+    y = x | (x - 1)
+    ```
+ - Isolate the rightmost 0-bit，将最右边的0置为1，其余位都置为0
+    ```
+    y = ~x & (x + 1)
+    ```
+ - Turn on the rightmost 0-bit，将最右边的0置为1
+    ```
+    y = x | (x + 1)
     ```
