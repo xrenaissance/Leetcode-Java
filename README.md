@@ -5,7 +5,7 @@
  - [Facebook面试总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/FacebookSummary.md)
  - [BitSet技巧](https://github.com/dingjikerbo/leetcode/blob/master/doc/BitSet.md)
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/>
 
 ## **二、所有题目列表**
 |#|Title|Solution|Score|Backup|
