@@ -1,9 +1,9 @@
 # **Leetcode - Java**
 
 ## **一、文档列表**
- - [刷题要点](https://github.com/dingjikerbo/leetcode/blob/master/doc/Attention.md)
- - [Facebook面试总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/FacebookSummary.md)
- - [BitSet技巧](https://github.com/dingjikerbo/leetcode/blob/master/doc/BitSet.md)
+ - [刷题要点总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/Attention.md)
+ - [Facebook面试总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/Facebook.md)
+ - [Bitset技巧](https://github.com/dingjikerbo/leetcode/blob/master/doc/BitSet.md)
 
 <br/><br/><br/><br/>
 
