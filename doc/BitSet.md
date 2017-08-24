@@ -1,4 +1,4 @@
-Check if the integer is even or odd
+#### **Check if the integer is even or odd**
 ```
 if ((x & 1) == 0) {
     x is even
@@ -8,7 +8,7 @@ if ((x & 1) == 0) {
 ```
 <br/>
 
-Test if the n-th bit is set
+#### **Test if the n-th bit is set**
 ```
 if (x & (1 << n)) {
     n-th bit is set
@@ -18,19 +18,19 @@ if (x & (1 << n)) {
 ```
 <br/>
 
-Set the n-th bit
+#### **Set the n-th bit**
 ```
 y = x | (1 << n)
 ```
 <br/>
 
-Unset the n-th bit
+#### **Unset the n-th bit**
 ```
 y = x & ~(1 << n)
 ```
 <br/>
 
-Toggle the n-th bit
+#### **Toggle the n-th bit**
 ```
 y = x ^ (1 << n)
 ```
