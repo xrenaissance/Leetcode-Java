@@ -32,4 +32,23 @@ public class SentenceScreenFitting {
         }
         return start / len;
     }
+
+    /** 常规做法，超时了，O(mn)
+    public int wordsTyping(String[] sentence, int rows, int cols) {
+        int count = 0, idx = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; ) {
+                j += sentence[idx].length();
+
+                if (j <= cols) {
+                    j++;
+                    if (++idx >= sentence.length) {
+                        idx = 0;
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }*/
 }
