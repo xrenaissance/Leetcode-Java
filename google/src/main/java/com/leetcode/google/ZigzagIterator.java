@@ -43,7 +43,13 @@ public class ZigzagIterator {
             return true;
         }
 
-        for (int i = mCurIdx + 1; i != mCurIdx; i = (i + 1) % mLists.size()) {
+        for (int i = mCurIdx + 1; ; i++) {
+            i %= mLists.size();
+
+            if (i == mCurIdx) {
+                break;
+            }
+
             if (mIterators.get(i).hasNext()) {
                 mCurIdx = i;
                 return true;
