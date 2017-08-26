@@ -11,15 +11,20 @@ package com.inuker.solution;
 public class LicenseKeyFormatting {
 
     public String licenseKeyFormatting(String S, int K) {
-        String T = S.replaceAll("-", "").toUpperCase();
         StringBuilder sb = new StringBuilder();
-        for (int i = T.length() - 1, j = 0; i >= 0; i--) {
-            sb.insert(0, T.charAt(i));
-            if (++j == K && i != 0) {
-                sb.insert(0, "-");
-                j = 0;
+
+        for (int i = S.length() - 1, j = 0; i >= 0; i--) {
+            if (S.charAt(i) != '-') {
+                if (j % K == 0 && sb.length() > 0) {
+                    sb.append("-");
+                    j = 0;
+                }
+
+                sb.append(Character.toUpperCase(S.charAt(i)));
+                j++;
             }
         }
-        return sb.toString();
+
+        return sb.reverse().toString();
     }
 }
