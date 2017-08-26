@@ -8,39 +8,42 @@ import java.util.List;
  * Created by dingjikerbo on 16/12/10.
  */
 
+/**
+ * 可以轻易拓展到k的情况
+ */
 public class ZigzagIterator {
 
-    private List<Iterator> mIterators;
-    private int mCurIndex;
+    private List<Iterator<Integer>> mIterators = new ArrayList<>();
+
+    private int mCurIdx;
 
     public ZigzagIterator(List<Integer> v1, List<Integer> v2) {
-        mIterators = new ArrayList<Iterator>();
-        if (v1.iterator().hasNext()) {
-            mIterators.add(v1.iterator());
-        }
-        if (v2.iterator().hasNext()) {
-            mIterators.add(v2.iterator());
+        init(v1, v2);
+    }
+
+    private void init(List<Integer>... lists) {
+        for (List<Integer> list : lists) {
+            if (!list.isEmpty()) {
+                mIterators.add(list.iterator());
+            }
         }
     }
 
-    /**
-     * 这里非常容易错
-     */
     public int next() {
-        Iterator itor = mIterators.get(mCurIndex);
-        int value = (int) itor.next();
-        if (!itor.hasNext()) {
-            mIterators.remove(mCurIndex);
-        } else {
-            mCurIndex++;
-        }
-        if (!mIterators.isEmpty()) {
-            mCurIndex %= mIterators.size();
-        }
-        return value;
+        return mIterators.get(mCurIdx++).next();
     }
 
     public boolean hasNext() {
-        return !mIterators.isEmpty();
+        while (!mIterators.isEmpty()) {
+            mCurIdx %= mIterators.size();
+
+            Iterator<Integer> cur = mIterators.get(mCurIdx);
+
+            if (cur.hasNext()) {
+                return true;
+            }
+            mIterators.remove(mCurIdx);
+        }
+        return false;
     }
 }

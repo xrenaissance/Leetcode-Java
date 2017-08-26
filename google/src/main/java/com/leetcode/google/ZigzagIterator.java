@@ -10,8 +10,7 @@ import java.util.List;
 
 public class ZigzagIterator {
 
-    private List<List<Integer>> mLists = new ArrayList<>();
-    private List<Iterator> mIterators = new ArrayList<>();
+    private List<Iterator<Integer>> mIterators = new ArrayList<>();
 
     private int mCurIdx;
 
@@ -21,41 +20,27 @@ public class ZigzagIterator {
 
     private void init(List<Integer>... lists) {
         for (List<Integer> list : lists) {
-            mLists.add(list);
-            mIterators.add(list.iterator());
+            if (!list.isEmpty()) {
+                mIterators.add(list.iterator());
+            }
         }
     }
 
     public int next() {
-        int value = (int) mIterators.get(mCurIdx).next();
-        mCurIdx = (mCurIdx + 1) % mLists.size();
-        return value;
+        return mIterators.get(mCurIdx++).next();
     }
 
     public boolean hasNext() {
-        if (mLists.isEmpty()) {
-            return false;
-        }
+        while (!mIterators.isEmpty()) {
+            mCurIdx %= mIterators.size();
 
-        Iterator iterator = mIterators.get(mCurIdx);
+            Iterator<Integer> cur = mIterators.get(mCurIdx);
 
-        if (iterator.hasNext()) {
-            return true;
-        }
-
-        for (int i = mCurIdx + 1; ; i++) {
-            i %= mLists.size();
-
-            if (i == mCurIdx) {
-                break;
-            }
-
-            if (mIterators.get(i).hasNext()) {
-                mCurIdx = i;
+            if (cur.hasNext()) {
                 return true;
             }
+            mIterators.remove(mCurIdx);
         }
-
         return false;
     }
 }
