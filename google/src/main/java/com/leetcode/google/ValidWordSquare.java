@@ -1,22 +1,16 @@
-package com.inuker.solution;
+package com.leetcode.google;
 
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 17/1/2.
+ * Created by liwentian on 17/8/26.
  */
 
-/**
- * 这题还挺容易错
- */
 public class ValidWordSquare {
 
     public boolean validWordSquare(List<String> words) {
         for (int i = 0; i < words.size(); i++) {
             String word = words.get(i);
-            /**
-             * 如果单词长度比单词个数还多肯定是非法，因为横向和纵向长度不同
-             */
             if (word.length() > words.size()) {
                 return false;
             }
@@ -29,5 +23,4 @@ public class ValidWordSquare {
         }
         return true;
     }
-
 }
