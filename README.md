@@ -281,7 +281,7 @@
 |413|[Third Maximum Number](https://leetcode.com/problems/third-maximum-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThirdMaximumNumber.java)|80||
 |418|[Sentence Screen Fitting](https://leetcode.com/problems/sentence-screen-fitting/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SentenceScreenFitting.java)|65|这题思路巧妙，多做几遍，常规思路超时|
 |422|[Valid Word Square](https://leetcode.com/problems/valid-word-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidWordSquare.java)|90|
-|425|[Word Squares](https://leetcode.com/problems/word-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSquare.java)|70|
+|425|[Word Squares](https://leetcode.com/problems/word-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSquare.java)|70|这题很典型，多做几遍|
 |437|[Path Sum III](https://leetcode.com/problems/path-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSumIII.java)|60|这道题错了很多遍，要重点关注|
 |438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindAllAnagramsInString.java)|75|这道题非常经典，最优解法需要多做几遍，保证once bug free|
 |449|[Serialize and Deserialize BST](https://leetcode.com/problems/serialize-and-deserialize-bst)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SerializeAndDeserializeBST.java)|90|和#297一样|
