@@ -1,25 +1,12 @@
-package com.inuker.solution;
-
-import java.util.Arrays;
+package com.leetcode.google;
 
 /**
- * Created by dingjikerbo on 16/12/10.
+ * Created by liwentian on 2017/8/30.
  */
 
-/**
- * https://leetcode.com/articles/wiggle-sort/
- */
 public class WiggleSort {
 
     public void wiggleSort(int[] nums) {
-        Arrays.sort(nums);
-        for (int i = 1; i + 1 < nums.length; i += 2) {
-            swap(nums, i, i + 1);
-        }
-    }
-
-    // 复杂度O(n)
-    public void wiggleSort2(int[] nums) {
         for (int i = 0; i + 1 < nums.length; i++) {
             if ((i & 1) == 0) {
                 if (nums[i] > nums[i + 1]) {
