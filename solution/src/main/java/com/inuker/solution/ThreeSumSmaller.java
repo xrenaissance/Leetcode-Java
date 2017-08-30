@@ -11,10 +11,14 @@ import java.util.Arrays;
  */
 public class ThreeSumSmaller {
 
+    /**
+     * 注意这里别画蛇添足的加上
+     * if (nums[i] > target) {
+     *     break;
+     * }
+     * 虽然后面的数大于等于nums[i]，但是有可能是负数，三个数之和还是可能小于target的
+     */
     public int threeSumSmaller(int[] nums, int target) {
-        if (nums.length < 3) {
-            return 0;
-        }
         Arrays.sort(nums);
 
         int count = 0;
