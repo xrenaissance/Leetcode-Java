@@ -66,6 +66,7 @@
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeIntervals.java)|70|
 |57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|75|这题要多做几遍|
 |60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PermutationSequence.java)||
+|66|[Plus One](https://leetcode.com/problems/plus-one/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PlusOne.java)|100|这题多看一遍|
 |67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|100|
 |68|[Text Justification](https://leetcode.com/problems/text-justification/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TextJustification.java)||
 |69|[Sqrt(x)](https://leetcode.com/problems/sqrtx/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Sqrt.java)|85|
