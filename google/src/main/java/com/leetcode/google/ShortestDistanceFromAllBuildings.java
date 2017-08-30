@@ -1,25 +1,14 @@
-package com.inuker.solution;
+package com.leetcode.google;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Created by dingjikerbo on 2016/12/11.
+ * Created by liwentian on 2017/8/30.
  */
 
 public class ShortestDistanceFromAllBuildings {
 
-    /**
-     * 这道题思路是以所有建筑为根开始BFS，对所有覆盖到的点计算距离，
-     * 每个空白点可能会同时被好几个建筑覆盖，所以其距离是叠加的，表示该点到那几个联通建筑的距离之和
-     * 最后遍历所有空白点，求距离和最小的，同时能联通所有建筑的
-     */
-
-    /**
-     * 1, 注意当没有结果时返回-1，而不是INT_MAX
-     * 2, 要保证参考点能通往所有建筑，所以要统计建筑数
-     * 3， bfs时要注意边界且别重复访问了
-     */
     public int shortestDistance(int[][] grid) {
         if (grid.length == 0) {
             return -1;
