@@ -1,15 +1,17 @@
-package com.inuker.solution;
+package com.leetcode.google;
 
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
- * Created by dingjikerbo on 2016/12/11.
+ * Created by liwentian on 2017/8/30.
  */
 
 public class DecodeString {
 
-    // 耗时3ms，思路很直观，且不容易错，面试推荐写法
-    public String decodeString2(String s) {
+    public String decodeString(String s) {
         StringBuilder sb = new StringBuilder();
 
         for (char c : s.toCharArray()) {
