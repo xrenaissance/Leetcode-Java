@@ -6,6 +6,11 @@ import java.util.HashMap;
  * Created by liwentian on 2017/8/31.
  */
 
+/**
+ * 如果要考虑到空间消耗，则要另外定义一个List<String>，每次新来一条日志，都要遍历
+ * list中10s外的poll了，同时从map中remove
+ *
+ */
 public class LoggerRateLimiter {
 
     private HashMap<String, Integer> mMap;
