@@ -2,6 +2,7 @@ package com.example;
 
 import com.leetcode.google.DecodeString;
 import com.leetcode.google.MissingRanges;
+import com.leetcode.google.QueueReconstructionByHeight;
 import com.leetcode.google.SentenceScreenFitting;
 import com.leetcode.google.ShortestDistanceFromAllBuildings;
 import com.leetcode.google.StrobogrammaticNumberII;
@@ -16,9 +17,11 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> list = new StrobogrammaticNumberII().findStrobogrammatic(4);
-        for (String s : list) {
-            System.out.print(s + " ");
+        int[][] result = new QueueReconstructionByHeight().reconstructQueue(new int[][] {
+                {7, 0}, {4, 4}, {7, 1}, {5, 0}, {6, 1}, {5, 2}
+        });
+        for (int[] res : result) {
+            System.out.println(res[0] + " " + res[1]);
         }
     }
 }

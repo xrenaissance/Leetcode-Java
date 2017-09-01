@@ -222,7 +222,7 @@
 |283|[Move Zeroes](https://leetcode.com/problems/move-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MoveZeroes.java)|100|
 |284|[Peeking Iterator](https://leetcode.com/problems/peeking-iterator/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PeekingIterator.java)|100|
 |285|[Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InorderSuccessorInBST.java)|70|这道题有意思，要多做几遍|
-|286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)|70|
+|286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)|70|多看两遍|
 |287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindTheDuplicateNumber.java)||
 |288|[Unique Word Abbreviation](https://leetcode.com/problems/unique-word-abbreviation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidWordAbbr.java)|70|这题不难，多做两遍，题目意思容易理解错|
 |295|[Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindMedianFromDataStream.java)||
@@ -280,6 +280,7 @@
 |398|[Random Pick Index](https://leetcode.com/problems/random-pick-index/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RandomPickIndex.java)|80|
 |401|[Binary Watch](https://leetcode.com/problems/binary-watch/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryWatch.java)||
 |404|[Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SumOfLeftLeaves.java)|80|
+|406|[Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/QueueReconstructionByHeight.java)|60|这题开始没思路，多做几遍|
 |407|[Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWaterII.java)||
 |409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)||
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SplitArrayLargestSum.java)||
