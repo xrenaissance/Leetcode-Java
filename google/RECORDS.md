@@ -7,6 +7,7 @@
 10. Regular Expression Matching
 17. Letter Combinations of a Phone Number
 22. Generate Parentheses
+139. Word Break
 
 2017-9-2
 329. Longest Increasing Path in a Matrix

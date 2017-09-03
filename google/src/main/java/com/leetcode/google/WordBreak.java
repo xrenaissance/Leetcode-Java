@@ -1,18 +1,14 @@
-package com.inuker.solution;
+package com.leetcode.google;
 
+import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
- * Created by dingjikerbo on 2016/11/17.
+ * Created by liwentian on 2017/9/3.
  */
 
-/**
- * https://leetcode.com/articles/word-break/
- */
 public class WordBreak {
 
-    // 耗时8ms
     public boolean wordBreak(String s, List<String> wordDict) {
         int n = s.length();
 
