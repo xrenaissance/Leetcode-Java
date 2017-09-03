@@ -11,6 +11,9 @@ package com.inuker.solution;
  * 题目中已声明不会有重复的边，类似[0,1]和[1,0]认为是重复的，也不会同时存在
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 这题就是给了一堆边，看这些边构成的无向图会不会有环，另外这些边是不是都连在一起的
  */
@@ -58,5 +61,62 @@ public class GraphValidTree {
     int find(int nums[], int i) {
         for (; nums[i] != i; i = nums[i]);
         return i;
+    }
+
+
+    /**
+     * 采用DFS方法
+     */
+    // 耗时6ms
+    public boolean validTree2(int n, int[][] edges) {
+        List<Integer>[] graph = new ArrayList[n];
+        for (int i = 0; i < n; i++) {
+            graph[i] = new ArrayList<>();
+        }
+        for (int i = 0; i < edges.length; i++) {
+            graph[edges[i][0]].add(edges[i][1]);
+            graph[edges[i][1]].add(edges[i][0]);
+        }
+        boolean[] visited = new boolean[n];
+
+        /**
+         * 这里从任意一点开始DFS都可以
+         */
+        if (!dfs(graph, visited, 0, -1)) {
+            return false;
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * 采用DFS从某个点开始遍历整个图，
+     * @start 当前节点
+     * @parent 为了避免逆向遍历，因为parent肯定是访问过的，所以为了避免看作重复访问，这里排除了一下
+     * @return 是否无环
+     */
+    private boolean dfs(List<Integer>[] graph, boolean[] visited, int start, int parent) {
+        visited[start] = true;
+
+        for (int i = 0; i < graph[start].size(); i++) {
+            int to = graph[start].get(i);
+            if (to == parent) {
+                continue;
+            }
+            if (visited[to]) {
+                return false;
+            }
+            if (!dfs(graph, visited, to, start)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
