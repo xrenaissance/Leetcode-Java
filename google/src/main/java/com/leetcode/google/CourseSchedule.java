@@ -16,7 +16,6 @@ public class CourseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         HashMap<Integer, Set<Integer>> map = new HashMap<>();
         int[] indegrees = new int[numCourses];
-        HashSet<Integer> courses = new HashSet<>();
 
         for (int[] prerequisite : prerequisites) {
             int from = prerequisite[0], to = prerequisite[1];
