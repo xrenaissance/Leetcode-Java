@@ -202,6 +202,7 @@
 |256|[Paint House](https://leetcode.com/problems/paint-house/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouse.java)|95|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|80|
 |259|[3Sum Smaller](https://leetcode.com/problems/3sum-smaller/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ThreeSumSmaller.java)|95|这题虽然简单，但是因为思维定式还是错了几次|
+|261|[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GraphValidTree.java)|70|这题多做几遍|
 |263|[Ugly Number](https://leetcode.com/problems/ugly-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumber.java)|85|
 |264|[Ugly Number II](https://leetcode.com/problems/ugly-number-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/UglyNumberII.java)|70|
 |265|[Paint House II](https://leetcode.com/problems/paint-house-ii)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouseII.java)|60|

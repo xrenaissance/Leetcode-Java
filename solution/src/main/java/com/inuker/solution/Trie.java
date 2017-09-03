@@ -4,8 +4,6 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/23.
  */
 
-import com.inuker.solution.company.facebook.ImplementTrie;
-
 /**
  * https://leetcode.com/articles/implement-trie-prefix-tree/
  */
