@@ -1,4 +1,4 @@
-package com.inuker.solution;
+package com.leetcode.library;
 
 import java.util.ArrayList;
 import java.util.List;

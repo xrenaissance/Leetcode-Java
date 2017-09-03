@@ -4,6 +4,7 @@
  - [刷题要点总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/Attention.md)
  - [Facebook面试总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/Facebook.md)
  - [Bitset技巧](https://github.com/dingjikerbo/leetcode/blob/master/doc/BitSet.md)
+ - [Map新接口](https://github.com/dingjikerbo/leetcode/blob/master/doc/Map.md)
 
 <br/><br/><br/><br/>
 
@@ -122,7 +123,7 @@
 |130|[Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SurroundedRegions.java)|65|
 |131|[Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePartitioning.java)||
 |132|[Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePartitioningII.java)||
-|133|[Clone Graph](https://leetcode.com/problems/clone-graph/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CloneGraph.java)|70|
+|133|[Clone Graph](https://leetcode.com/problems/clone-graph/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CloneGraph.java)|70|这题不难，多看两遍，BFS方法再做两遍|
 |138|[Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CopyListWithRandomPointer.java)|95|有一个易错点|
 |139|[Word Break](https://leetcode.com/problems/word-break/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreak.java)|80|这个系列题多做几遍|
 |140|[Word Break II](https://leetcode.com/problems/word-break-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordBreakII.java)|75|
@@ -160,10 +161,10 @@
 |203|[Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RemoveLinkedListElements.java)||
 |204|[Count Primes](https://leetcode.com/problems/count-primes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountPrimes.java)|85|
 |206|[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseLinkedList.java)|90|
-|207|[Course Schedule](https://leetcode.com/problems/course-schedule/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseSchedule.java)||
+|207|[Course Schedule](https://leetcode.com/problems/course-schedule/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseSchedule.java)|100|典型的拓扑排序|
 |208|[Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Trie.java)|80|和#211多留意，trie很典型|
 |209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MinimumSizeSubarraySum.java)|85|
-|210|[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseScheduleII.java)|
+|210|[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CourseScheduleII.java)|95||
 |211|[Add and Search Word - Data structure design](https://leetcode.com/problems/add-and-search-word-data-structure-design/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordDictionary.java)|85|
 |212|[Word Search II](https://leetcode.com/problems/word-search-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSearchII.java)||
 |213|[House Robber II](https://leetcode.com/problems/house-robber-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HouseRobberII.java)|80|

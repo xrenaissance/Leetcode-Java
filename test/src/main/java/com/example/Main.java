@@ -11,18 +11,42 @@ import com.leetcode.google.WordSquares;
 import com.leetcode.google.ZigzagIterator;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[][] result = new QueueReconstructionByHeight().reconstructQueue(new int[][] {
-                {7, 0}, {4, 4}, {7, 1}, {5, 0}, {6, 1}, {5, 2}
+        HashMap<String, String> map = new HashMap<>();
+        map.put("one", null);
+        map.put("two", "japan");
+        map.put("three", "france");
+
+        map.replaceAll(new BiFunction<String, String, String>() {
+            @Override
+            public String apply(String s, String s2) {
+                return null;
+            }
         });
-        for (int[] res : result) {
-            System.out.println(res[0] + " " + res[1]);
-        }
+
+
+        map.forEach(new BiConsumer<String, String>() {
+            @Override
+            public void accept(String s, String s2) {
+                System.out.println(s + ", " + s2);
+            }
+        });
+
+
+
     }
+
+
 }
 

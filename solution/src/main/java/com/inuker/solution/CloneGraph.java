@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.leetcode.library.UndirectedGraphNode;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
