@@ -6,4 +6,7 @@
  - **323. Number of Connected Components in an Undirected Graph**
  - **200. Number of Islands**
  - **305. Number of Islands II**
+ - **207. Course Schedule**
+ - **210. Course Schedule II**
+ - **269. Alien Dictionary**
 
