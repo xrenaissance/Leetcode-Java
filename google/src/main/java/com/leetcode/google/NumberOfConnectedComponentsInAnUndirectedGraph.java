@@ -1,10 +1,10 @@
-package com.inuker.solution;
+package com.leetcode.google;
 
 /**
- * Created by dingjikerbo on 17/1/2.
+ * Created by liwentian on 2017/9/3.
  */
 
-public class NumberOfConnectedComponents {
+public class NumberOfConnectedComponentsInAnUndirectedGraph {
 
     public int countComponents(int n, int[][] edges) {
         int[] nums = new int[n];
