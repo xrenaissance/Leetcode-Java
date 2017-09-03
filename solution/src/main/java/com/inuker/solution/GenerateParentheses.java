@@ -13,22 +13,20 @@ public class GenerateParentheses {
     // 耗时4ms
     public List<String> generateParenthesis(int n) {
         List<String> result = new LinkedList<String>();
-        generateParenthesis(result, "", n, 0);
+        dfs(result, n, "", 0, 0);
         return result;
     }
 
-    private void generateParenthesis(List<String> result, String str, int left, int right) {
-        if (left < 0 || right < 0) {
-            return;
-        }
-
-        if (left == 0 && right == 0) {
+    private void dfs(List<String> result, int n, String str, int left, int right) {
+        if (left == n && right == n) {
             result.add(str);
             return;
         }
-
-        generateParenthesis(result, str + "(", left - 1, right + 1);
-        generateParenthesis(result, str + ")", left, right - 1);
+        if (left > n || right > n || left < right) {
+            return;
+        }
+        dfs(result, n, str + "(", left + 1, right);
+        dfs(result, n, str + ")", left, right + 1);
     }
 
     // 耗时38ms
