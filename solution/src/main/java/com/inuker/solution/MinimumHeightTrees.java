@@ -12,6 +12,7 @@ import java.util.Set;
 
 /**
  * 从叶子节点开始，一层层剥掉，直到最后剩下的节点就是所求深度最大的
+ * https://discuss.leetcode.com/topic/30572/share-some-thoughts
  */
 public class MinimumHeightTrees {
 
