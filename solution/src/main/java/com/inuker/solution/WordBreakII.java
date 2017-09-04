@@ -3,6 +3,7 @@ package com.inuker.solution;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Set;
 
 /**
  * 这题是个典型的DFS，不过为了加速用了缓存避免重复计算
+ * https://leetcode.com/articles/word-break-ii/
  */
 public class WordBreakII {
 
@@ -52,34 +54,29 @@ public class WordBreakII {
     /**
      * 这种写法耗时16ms，效率不错
      */
-    public List<String> wordBreak2(String s, List<String> wordDict) {
-        if (s.length() == 0) {
-            return Collections.EMPTY_LIST;
-        }
-        return dfs2(s, wordDict, new HashMap<String,List<String>>());
+    public List<String> wordBreak(String s, List<String> wordDict) {
+        HashMap<String, List<String>> cache = new HashMap<>();
+        cache.put("", Arrays.asList(""));
+        return dfs(s, new HashSet<String>(wordDict), cache);
     }
 
-    public List<String> dfs2(String s, List<String> wordDict, HashMap<String,List<String>> map) {
+    private List<String> dfs(String s, HashSet<String> wordDict, HashMap<String, List<String>> cache) {
+        if (cache.containsKey(s)) {
+            return cache.get(s);
+        }
         List<String> result = new LinkedList<>();
-        if (s.length() == 0) {
-            /**
-             * 注意这里要加一个""，不能返回空链表
-             */
-            return new LinkedList<>(Arrays.asList(""));
-        }
-        if (map.containsKey(s)) {
-            return map.get(s);
-        }
-        for (int i = 0; i <= s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             String t = s.substring(i);
             if (wordDict.contains(t)) {
-                List<String> list = dfs2(s.substring(0, i), wordDict, map);
-                for (String ss : list) {
-                    result.add((ss.length() > 0 ? ss + " " : "") + t);
+                List<String> list = dfs(s.substring(0, i), wordDict, cache);
+                if (list != null) {
+                    for (String ss : list) {
+                        result.add((ss.length() > 0 ? ss + " " : "") + t);
+                    }
                 }
             }
         }
-        map.put(s, result);
+        cache.put(s, result);
         return result;
     }
 }

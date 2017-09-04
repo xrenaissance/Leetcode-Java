@@ -8,6 +8,7 @@ import com.leetcode.google.SentenceScreenFitting;
 import com.leetcode.google.ShortestDistanceFromAllBuildings;
 import com.leetcode.google.StrobogrammaticNumberII;
 import com.leetcode.google.UTFValidation;
+import com.leetcode.google.WordBreakII;
 import com.leetcode.google.WordSquares;
 import com.leetcode.google.ZigzagIterator;
 
@@ -24,7 +25,7 @@ import java.util.function.Function;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> lists = new GenerateParentheses().generateParenthesis(3);
+        List<String> lists = new WordBreakII().wordBreak("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog"));
         for (String s : lists) {
             System.out.println(s);
         }
