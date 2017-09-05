@@ -47,7 +47,7 @@ private boolean isEqual(String s, String p) {
 
 \newpage
 
-\section{Wildcard Matching}
+\section{Wildcard Matching} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Implement wildcard pattern matching with support for \fn{'?'} and \fn{'*'}.
@@ -94,7 +94,7 @@ public boolean isMatch2(String s, String p) {
 
 \newpage
 
-\section{Letter Combinations of a Phone Number}
+\section{Letter Combinations of a Phone Number} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given a digit string, return all possible letter combinations that the number could represent.
@@ -168,7 +168,7 @@ public List<String> letterCombinations(String digits) {
 
 \newpage
 
-\section{Generate Parentheses}
+\section{Generate Parentheses} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
@@ -208,7 +208,7 @@ private void dfs(List<String> result, int n, String str, int left, int right) {
 
 \newpage
 
-\section{Permutations}
+\section{Permutations} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given a collection of distinct numbers, return all possible permutations.
@@ -258,7 +258,7 @@ public static void swap(int[] nums, int left, int right) {
 
 \newpage
 
-\section{Word Search}
+\section{Word Search} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given a 2D board and a word, find if the word exists in the grid.
@@ -318,7 +318,7 @@ private boolean dfs(char[][] board, int i, int j, String word, int start) {
 
 \newpage
 
-\section{Word Search II}
+\section{Word Search II} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given a 2D board and a list of words from the dictionary, find all words in the board.
@@ -411,7 +411,7 @@ private void dfs(Set<String> set, char[][] board, int i, int j, Trie trie) {
 
 \newpage
 
-\section{Word Break}
+\section{Word Break} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.
@@ -447,7 +447,7 @@ public boolean wordBreak(String s, List<String> wordDict) {
 
 \newpage
 
-\section{Word Break II}
+\section{Word Break II} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. You may assume the dictionary does not contain duplicate words.
@@ -492,8 +492,10 @@ private List<String> dfs(String s, HashSet<String> wordDict, HashMap<String, Lis
 
 \newpage
 
-\section{Combination Sum}
+\section{Combination Sum} %%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection{Description}
+
 Given a set of candidate numbers (C) (without duplicates) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
 
 The same repeated number may be chosen from C unlimited number of times.
@@ -572,7 +574,7 @@ private void dfs(int[] candidates, int target, int start, List<List<Integer>> re
 
 \newpage
 
-\section{Combination Sum II}
+\section{Combination Sum II} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
@@ -665,7 +667,7 @@ private void dfs(int[] candidates, int start, int target, List<List<Integer>> re
 
 \newpage
 
-\section{Combination Sum III}
+\section{Combination Sum III} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
 Find all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
@@ -733,5 +735,338 @@ private void dfs(int target, int k, int start, List<List<Integer>> result, List<
         dfs(target - i, k - 1, i + 1, result, list);
         list.remove(list.size() - 1);
     }
+}
+\end{Code}
+
+\newpage
+
+\section{Combination Sum IV} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.
+
+\textbf{Example:}
+
+nums = \code{[1, 2, 3]}
+target = 4
+
+The possible combination ways are:
+\begin{Code}
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+\end{Code}
+
+Note that different sequences are counted as different combinations.
+
+Therefore the output is 7.
+
+\textbf{Follow up:}
+
+What if negative numbers are allowed in the given array?
+
+How does it change the problem?
+
+What limitation we need to add to the question to allow negative numbers?
+
+\subsubsection{Solution}
+
+\begin{Code}
+public int combinationSum4(int[] nums, int target) {
+    int[] dp = new int[target + 1];
+    // 这里排序便于之后break
+    Arrays.sort(nums);
+    // 这里0为什么是1呢，我开始也不解，
+    // 其实就是说如果组合中带的刚好是当前数，那么组合数只有1种。
+    // 比如target为3的时候，遍历到了nums中的3，那么只有1种可能。
+    dp[0] = 1;
+    for (int i = 1; i <= target; i++) {
+        for (int num : nums) {
+            if (num > i) {
+                break;
+            } else {
+                dp[i] += dp[i - num];
+            }
+        }
+    }
+    return dp[target];
+}
+\end{Code}
+
+\newpage
+
+\section{N-Queens} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
+
+\begin{center}
+\includegraphics[width=100pt]{8-queens.png}\\
+\end{center}
+
+Given an integer n, return all distinct solutions to the n-queens puzzle.
+
+Each solution contains a distinct board configuration of the n-queens' placement, where \code{'Q'} and \fn{'.'} both indicate a queen and an empty space respectively.
+
+For example,
+
+There exist two distinct solutions to the 4-queens puzzle:
+
+\begin{Code}
+[
+ [".Q..",  // Solution 1
+  "...Q",
+  "Q...",
+  "..Q."],
+
+ ["..Q.",  // Solution 2
+  "Q...",
+  "...Q",
+  ".Q.."]
+]
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<List<String>> solveNQueens(int n) {
+    List<List<String>> result = new LinkedList<>();
+    /**
+     * 这里f[i]表示第i行皇后应该放置在第几列
+     */
+    int[] f = new int[n];
+    dfs(f, result, 0);
+    return result;
+}
+
+private void dfs(int[] f, List<List<String>> result, int row) {
+    if (row == f.length) {
+        List<String> list = new LinkedList<>();
+        char[] c = new char[f.length];
+        for (int i = 0; i < f.length; i++) {
+            Arrays.fill(c, '.');
+            for (int j = 0; j < f.length; j++) {
+                if (j == f[i]) {
+                    c[j] = 'Q';
+                    break;
+                }
+            }
+            list.add(String.valueOf(c));
+        }
+        result.add(list);
+    }
+    /**
+     * 对于当前第row行，一列一列地尝试放置皇后，看是否合法，j表示列，如果合法则保存到f中
+     */
+    for (int j = 0; j < f.length; j++) {
+        if (isValid(f, row, j)) {
+            f[row] = j;
+            dfs(f, result, row + 1);
+        }
+    }
+}
+
+private boolean isValid(int[] f, int row, int col) {
+    for (int i = 0; i < row; i++) {
+        if (f[i] == col) {
+            return false;
+        }
+        if (Math.abs(i - row) == Math.abs(f[i] - col)) {
+            return false;
+        }
+    }
+    return true;
+}
+\end{Code}
+
+\newpage
+
+\section{N-Queens II} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Follow up for N-Queens problem.
+
+Now, instead outputting board configurations, return the total number of distinct solutions.
+
+\subsubsection{Solution}
+
+\begin{Code}
+private int total;
+
+public int totalNQueens(int n) {
+    int[] f = new int[n];
+    dfs(f, 0);
+    return total;
+}
+
+private void dfs(int[] f, int row) {
+    if (row == f.length) {
+        total++;
+        return;
+    }
+    for (int j = 0; j < f.length; j++) {
+        if (isValid(f, row, j)) {
+            f[row] = j;
+            dfs(f, row + 1);
+        }
+    }
+}
+
+private boolean isValid(int[] f, int row, int col) {
+    for (int i = 0; i < row; i++) {
+        if (f[i] == col) {
+            return false;
+        }
+        if (Math.abs(i - row) == Math.abs(f[i] - col)) {
+            return false;
+        }
+    }
+    return true;
+}
+\end{Code}
+
+\newpage
+
+\section{Subsets} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given a set of distinct integers, nums, return all possible subsets.
+
+Note: The solution set must not contain duplicate subsets.
+
+For example,
+If nums = \code{[1,2,3]}, a solution is:
+
+\begin{Code}
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]
+\end{Code}
+
+\subsubsection{Solution I}
+
+\begin{Code}
+public List<List<Integer>> subsets(int[] nums) {
+    List<List<Integer>> result = new LinkedList<List<Integer>>();
+
+    if (nums.length == 0) {
+        return result;
+    }
+
+    subsets(nums, 0, result, new LinkedList<Integer>());
+
+    return result;
+}
+
+private void subsets(int[] nums, int start, List<List<Integer>> list, List<Integer> path) {
+    if (start == nums.length) {
+        list.add(new LinkedList<Integer>(path));
+        return;
+    }
+
+    path.add(nums[start]);
+    subsets(nums, start + 1, list, path);
+    path.remove(path.size() - 1);
+
+    subsets(nums, start + 1, list, path);
+}
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+
+\begin{Code}
+public List<List<Integer>> subsets(int[] nums) {
+    List<List<Integer>> result = new LinkedList<List<Integer>>();
+
+    if (nums.length == 0) {
+        return result;
+    }
+
+    Arrays.sort(nums);
+    subsets(nums, 0, result, new LinkedList<Integer>());
+    return result;
+}
+
+private void subsets(int[] nums, int start, List<List<Integer>> result, List<Integer> path) {
+    result.add(new LinkedList<Integer>(path));
+    for (int i = start; i < nums.length; i++) {
+        path.add(nums[i]);
+        subsets(nums, i + 1, result, path);
+        path.remove(path.size() - 1);
+    }
+}
+\end{Code}
+
+\newpage
+
+\section{Subsets II} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+Given a collection of integers that might contain duplicates, nums, return all possible subsets.
+
+Note: The solution set must not contain duplicate subsets.
+
+For example,
+If nums = \code{[1,2,2]}, a solution is:
+
+\begin{Code}
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]
+\end{Code}
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<List<Integer>> subsetsWithDup(int[] nums) {
+    List<List<Integer>> result = new LinkedList<List<Integer>>();
+
+    if (nums.length == 0) {
+        return result;
+    }
+    /**
+     * 千万别掉了排序
+     */
+    Arrays.sort(nums);
+    subsetsWithDup(nums, 0, result, new LinkedList<Integer>());
+
+    return result;
+}
+
+private void subsetsWithDup(int[] nums, int start, List<List<Integer>> list, List<Integer> path) {
+    if (start == nums.length) {
+        list.add(new LinkedList<Integer>(path));
+        return;
+    }
+
+    path.add(nums[start]);
+    subsetsWithDup(nums, start + 1, list, path);
+    path.remove(path.size() - 1);
+
+    // 既然不带当前字符，那后面如果重复的都别带，否则就是带了当前字符的子集
+    for ( ; start + 1 < nums.length && nums[start + 1] == nums[start]; start++);
+    subsetsWithDup(nums, start + 1, list, path);
 }
 \end{Code}
