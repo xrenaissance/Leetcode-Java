@@ -1,0 +1,94 @@
+\chapter{Backtracking}
+
+\section{Regular Expression Matching} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+Implement regular expression matching with support for \fn{'.'} and \fn{'*'}.
+
+\fn{'.'} Matches any single character.
+\fn{'*'} Matches zero or more of the preceding element.
+
+The matching should cover the entire input string (not partial).
+
+Some examples:
+\begin{Code}
+isMatch("aa","a") → false
+isMatch("aa","aa") → true
+isMatch("aaa","aa") → false
+isMatch("aa", "a*") → true
+isMatch("aa", ".*") → true
+isMatch("ab", ".*") → true
+isMatch("aab", "c*a*b") → true
+\end{Code}
+
+\subsubsection{Solution}
+
+\begin{Code}
+public boolean isMatch(String s, String p) {
+    if (p.isEmpty()) {
+        return s.isEmpty();
+    } else if (p.length() == 1) {
+        return s.length() == 1 && isEqual(s, p);
+    } else if (p.charAt(1) != '*') {
+        return s.length() > 0 && isEqual(s, p) && isMatch(s.substring(1), p.substring(1));
+    } else {
+        if (s.length() > 0 && isEqual(s, p)) {
+            return isMatch(s, p.substring(2)) || isMatch(s.substring(1), p);
+        } else {
+            return isMatch(s, p.substring(2));
+        }
+    }
+}
+
+private boolean isEqual(String s, String p) {
+    return s.charAt(0) == p.charAt(0) || p.charAt(0) == '.';
+}
+\end{Code}
+
+\newpage
+
+\section{Wildcard Matching}
+
+\subsubsection{Description}
+Implement wildcard pattern matching with support for \fn{'?'} and \fn{'*'}.
+
+\fn{'?'} Matches any single character.
+\fn{'*'} Matches any sequence of characters (including the empty sequence).
+
+\begin{Code}
+Some examples:
+isMatch("aa","a") → false
+isMatch("aa","aa") → true
+isMatch("aaa","aa") → false
+isMatch("aa", "*") → true
+isMatch("aa", "a*") → true
+isMatch("ab", "?*") → true
+isMatch("aab", "c*a*b") → false
+\end{Code}
+
+\subsubsection{Solution}
+\begin{Code}
+public boolean isMatch2(String s, String p) {
+    int is = 0, ip = 0, ks = -1, kp = -1;
+
+    while (is < s.length()) {
+        if (ip < p.length() && (s.charAt(is) == p.charAt(ip) || p.charAt(ip) == '?')) {
+            is++;
+            ip++;
+        } else if (ip < p.length() && p.charAt(ip) == '*') {
+            ks = is;
+            kp = ip;
+            ip++;
+        } else if (kp != -1) {
+            is = ++ks;
+            ip = kp + 1;
+        } else {
+            return false;
+        }
+    }
+
+    for ( ; ip < p.length() && p.charAt(ip) == '*'; ip++);
+    return ip == p.length();
+}
+\end{Code}
+
