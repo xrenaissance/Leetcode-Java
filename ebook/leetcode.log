@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  5 SEP 2017 11:06
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  5 SEP 2017 11:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1906,7 +1906,7 @@ File: images/phone.png Graphic file (type QTm)
 . with NFSS spec.: <->"Latin Modern Mono/BI/OT:script=latn;language=DFLT;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
- [3]) [4]
+ [3] [4]) [5]
 No file leetcode.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 42.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 42.
@@ -1924,4 +1924,4 @@ Here is how much of TeX's memory you used:
  1347 hyphenation exceptions out of 8191
  65i,11n,77p,10414b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on leetcode.pdf (4 pages).
+Output written on leetcode.pdf (5 pages).

@@ -160,3 +160,43 @@ public List<String> letterCombinations2(String digits) {
     return queue;
 }
 \end{Code}
+
+\newpage
+
+\section{Generate Parentheses}
+
+\subsubsection{Description}
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+For example, given \code{n = 3}, a solution set is:
+\begin{Code}
+[
+  "((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"
+]
+\end{Code}
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<String> generateParenthesis(int n) {
+    List<String> result = new LinkedList<String>();
+    dfs(result, n, "", 0, 0);
+    return result;
+}
+
+private void dfs(List<String> result, int n, String str, int left, int right) {
+    if (left == n && right == n) {
+        result.add(str);
+        return;
+    }
+    if (left > n || right > n || left < right) {
+        return;
+    }
+    dfs(result, n, str + "(", left + 1, right);
+    dfs(result, n, str + ")", left, right + 1);
+}
+\end{Code}
