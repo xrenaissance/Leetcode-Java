@@ -1,6 +1,9 @@
 # **Leetcode - Java**
 
-## **一、文档列表**
+## **一、电子书(pdf)**
+ Latex排版整理的[Leetcode电子书](https://github.com/dingjikerbo/leetcode/ebook/leetcode.pdf)
+
+## **二、文档列表**
  - [刷题要点总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/Attention.md)
  - [Facebook面试总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/Facebook.md)
  - [Bitset技巧](https://github.com/dingjikerbo/leetcode/blob/master/doc/BitSet.md)
@@ -9,7 +12,7 @@
 
 <br/><br/><br/><br/>
 
-## **二、所有题目列表**
+## **三、所有题目列表**
 |#|Title|Solution|Score|Backup|
 |---|----| ----- |----|---------|
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|100|
