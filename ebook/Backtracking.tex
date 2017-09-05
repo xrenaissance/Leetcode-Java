@@ -703,7 +703,7 @@ private void helper(int[] candidates, List<List<Integer>> result, List<Integer> 
 }
 \end{Code}
 
-\newpge
+\newpage
 
 \subsubsection{Solution II}
 
@@ -879,7 +879,7 @@ public int combinationSum4(int[] nums, int target) {
 The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
 
 \begin{center}
-\includegraphics[width=100pt]{8-queens.png}\\
+\includegraphics[width=150pt]{8-queens.png}\\
 \end{center}
 
 Given an integer n, return all distinct solutions to the n-queens puzzle.
@@ -1609,7 +1609,7 @@ public List<List<String>> partition(String s) {
 
 \section{Palindrome Partitioning II} %%%%%%%%%%%%%%%%%%%%%%
 
-\subsunsection{Description}
+\subsubsection{Description}
 
 Given a string s, partition s such that every substring of the partition is a palindrome.
 
@@ -1721,7 +1721,7 @@ private void helper(String s, String t, List<String> list) {
 
 Given a non-negative integer n, count all numbers with unique digits, \code{x}, where 0 <= x < 10n.
 
-Example:
+\textbf{Example:}
 
 Given n = 2, return 91. (The answer should be the total numbers in the range of 0 <= x < 100, excluding \code{[11,22,33,44,55,66,77,88,99]})
 
@@ -1746,7 +1746,7 @@ public int countNumbersWithUniqueDigits(int n) {
 \subsubsection{Description}
 Write a function to generate the generalized abbreviations of a word.
 
-Example:
+\textbf{Example:}
 
 Given word = "word", return the following list (order does not matter):
 
@@ -1793,13 +1793,13 @@ For example, the above binary watch reads \code{"3:25"}.
 
 Given a non-negative integer n which represents the number of LEDs that are currently on, return all possible times the watch could represent.
 
-Example:
+\textbf{Example:}
 
-Input: n = 1
+\textbf{Input:} n = 1
 
-Return: \code{["1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"]}
+\textbf{Return:} \code{["1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"]}
 
-Note:
+\textbf{Note:}
 
 The order of output does not matter.
 
@@ -1819,7 +1819,11 @@ public List<String> readBinaryWatch(int num) {
 
     return list;
 }
+\end{Code}
 
+\newpage
+
+\begin{Code}
 public void readBinaryWatch(int num, int[] f, int index, int hour, int minute, List<String> list) {
     if (num == 0 && hour < 12 && minute < 60) {
         list.add(String.format("%d:%02d", hour, minute));
@@ -1944,17 +1948,17 @@ Factors should be greater than 1 and less than n.
 
 \textbf{Examples:}
 
-input: 1
+\textbf{input:} 1
 
-output: \code{[]}
+\textbf{output:} \code{[]}
 
-input: 37
+\textbf{input:} 37
 
-output: \code{[]}
+\textbf{output:} \code{[]}
 
-input: 12
+\textbf{input:} 12
 
-output:
+\textbf{output:}
 
 \begin{Code}
 [
@@ -1964,9 +1968,9 @@ output:
 ]
 \end{Code}
 
-input: 32
+\textbf{input:} 32
 
-output:
+\textbf{output:}
 
 \begin{Code}
 [
@@ -1994,6 +1998,7 @@ output:
 Given a sequence of words, check whether it forms a valid word square.
 
 A sequence of words forms a valid word square if the kth row and column read the exact same string, where 0 <= k < max(numRows, numColumns).
+
 \textbf{Note:}
 
 1. The number of words given is at least 1 and does not exceed 500.
@@ -2329,7 +2334,7 @@ Given an Android 3x3 key lock screen and two integers m and n, where 1 ≤ m ≤
 4. The order of keys used matters.
 
 \begin{center}
-\includegraphics[width=150pt]{unlock.png}\\
+\includegraphics[width=200pt]{unlock.png}\\
 \end{center}
 
 \textbf{Explanation:}
