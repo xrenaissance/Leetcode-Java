@@ -110,7 +110,7 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
 
 \textbf{Output:} \code{["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]}.
 
-\subsubsection{Solution}
+\subsubsection{Solution I}
 
 \begin{Code}
 private final String[] ARR = {
@@ -135,8 +135,13 @@ private void helper(String digits, int start, List<String> list, String s) {
         helper(digits, start + 1, list, s + c);
     }
 }
+\end{Code}
 
-public List<String> letterCombinations2(String digits) {
+\subsubsection{Solution II}
+
+\begin{Code}
+
+public List<String> letterCombinations(String digits) {
     LinkedList<String> queue = new LinkedList<String>();
     if (digits.length() == 0) {
         return queue;
@@ -482,5 +487,85 @@ private List<String> dfs(String s, HashSet<String> wordDict, HashMap<String, Lis
     }
     cache.put(s, result);
     return result;
+}
+\end{Code}
+
+\newpage
+
+\section{Combination Sum}
+\subsubsection{Description}
+Given a set of candidate numbers (C) (without duplicates) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+
+The same repeated number may be chosen from C unlimited number of times.
+
+Note:
+
+All numbers (including target) will be positive integers.
+
+The solution set must not contain duplicate combinations.
+
+For example, given candidate set \code{[2, 3, 6, 7]} and target 7,
+
+A solution set is:
+\begin{code}
+[
+  [7],
+  [2, 2, 3]
+]
+\end{code}
+
+\subsubsection{Solution I}
+
+\begin{Code}
+public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    List<List<Integer>> result = new LinkedList<>();
+    helper(candidates, result, new LinkedList<>(), target, 0);
+    return result;
+}
+
+private void helper(int[] candidates, List<List<Integer>> result, List<Integer> list, int target, int index) {
+    if (target < 0) {
+        return;
+    } else if (target == 0) {
+        result.add(new LinkedList<>(list));
+        return;
+    } else if (index >= candidates.length) {
+        return;
+    }
+
+    list.add(candidates[index]);
+    helper(candidates, result, list, target - candidates[index], index);
+    list.remove(list.size() - 1);
+
+    helper(candidates, result, list, target, index + 1);
+}
+
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+
+\begin{Code}
+
+public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    List<List<Integer>> result = new LinkedList<>();
+    dfs(candidates, target, 0, result, new LinkedList<Integer>());
+    return result;
+}
+
+private void dfs(int[] candidates, int target, int start, List<List<Integer>> result, List<Integer> list) {
+    if (target < 0) {
+        return;
+    }
+    if (target == 0) {
+        result.add(new LinkedList<>(list));
+        return;
+    }
+    for (int i = start; i < candidates.length; i++) {
+        list.add(candidates[i]);
+        dfs(candidates, target - candidates[i], i, result, list);
+        list.remove(list.size() - 1);
+    }
 }
 \end{Code}
