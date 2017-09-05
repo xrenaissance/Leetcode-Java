@@ -403,3 +403,84 @@ private void dfs(Set<String> set, char[][] board, int i, int j, Trie trie) {
     board[i][j] ^= '#';
 }
 \end{Code}
+
+\newpage
+
+\section{Word Break}
+
+\subsubsection{Description}
+Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.
+
+For example, given
+s = \code{"leetcode"},
+dict = \code{["leet", "code"]}.
+
+Return true because \code{"leetcode"} can be segmented as \code{"leet code"}.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public boolean wordBreak(String s, List<String> wordDict) {
+    int n = s.length();
+
+    boolean[] dp = new boolean[n + 1];
+    dp[0] = true;
+
+    for (int i = 1; i <= s.length(); i++) {
+        for (String word : wordDict) {
+            int j = i - word.length();
+            if (j >= 0 && dp[j] && s.substring(j, i).equals(word)) {
+                dp[i] = true;
+                break;
+            }
+        }
+    }
+
+    return dp[n];
+}
+\end{Code}
+
+\newpage
+
+\section{Word Break II}
+
+\subsubsection{Description}
+Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. You may assume the dictionary does not contain duplicate words.
+
+Return all such possible sentences.
+
+For example, given
+s = \code{"catsanddog"},
+dict = \code{["cat", "cats", "and", "sand", "dog"]}.
+
+A solution is \code{["cats and dog", "cat sand dog"]}.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<String> wordBreak(String s, List<String> wordDict) {
+    HashMap<String, List<String>> cache = new HashMap<>();
+    cache.put("", Arrays.asList(""));
+    return dfs(s, new HashSet<String>(wordDict), cache);
+}
+
+private List<String> dfs(String s, HashSet<String> wordDict, HashMap<String, List<String>> cache) {
+    if (cache.containsKey(s)) {
+        return cache.get(s);
+    }
+    List<String> result = new LinkedList<>();
+    for (int i = 0; i < s.length(); i++) {
+        String t = s.substring(i);
+        if (wordDict.contains(t)) {
+            List<String> list = dfs(s.substring(0, i), wordDict, cache);
+            if (list != null) {
+                for (String ss : list) {
+                    result.add((ss.length() > 0 ? ss + " " : "") + t);
+                }
+            }
+        }
+    }
+    cache.put(s, result);
+    return result;
+}
+\end{Code}
