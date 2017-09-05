@@ -92,3 +92,71 @@ public boolean isMatch2(String s, String p) {
 }
 \end{Code}
 
+\newpage
+
+\section{Letter Combinations of a Phone Number}
+
+\subsubsection{Description}
+Given a digit string, return all possible letter combinations that the number could represent.
+
+A mapping of digit to letters (just like on the telephone buttons) is given below.
+
+\begin{center}
+\includegraphics[width=150pt]{phone.png}\\
+\figcaption{Phone Keyboard}\label{fig:phone-keyboard}
+\end{center}
+
+\textbf{Input:} Digit string \code{"23"}
+
+\textbf{Output:} \code{["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]}.
+
+\subsubsection{Solution}
+
+\begin{Code}
+private final String[] ARR = {
+        "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+};
+
+public List<String> letterCombinations(String digits) {
+    List<String> list = new LinkedList<>();
+    if (!digits.isEmpty()) {
+        helper(digits, 0, list, "");
+    }
+    return list;
+}
+
+private void helper(String digits, int start, List<String> list, String s) {
+    if (start >= digits.length()) {
+        list.add(s);
+        return;
+    }
+    int n = digits.charAt(start) - '0';
+    for (char c : ARR[n].toCharArray()) {
+        helper(digits, start + 1, list, s + c);
+    }
+}
+
+public List<String> letterCombinations2(String digits) {
+    LinkedList<String> queue = new LinkedList<String>();
+    if (digits.length() == 0) {
+        return queue;
+    }
+
+    Queue<String> next = new LinkedList<>();
+    queue.add("");
+
+    for (int i = 0; i < digits.length() && !queue.isEmpty(); ) {
+        String s = queue.poll();
+        int n = digits.charAt(i) - '0';
+        for (char c : ARR[n].toCharArray()) {
+            next.add(s + c);
+        }
+        if (queue.isEmpty()) {
+            queue.addAll(next);
+            next.clear();
+            i++;
+        }
+    }
+    return queue;
+}
+\end{Code}

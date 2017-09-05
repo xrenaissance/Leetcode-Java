@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  5 SEP 2017 10:52
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  5 SEP 2017 11:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1881,7 +1881,32 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 
 
-]) [2]
+] [2]
+File: images/phone.png Graphic file (type QTm)
+
+<use  "images/phone.png" >
+\g__fontspec_family_LatinModernMono_int=\count195
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Latin Modern Mono/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LatinModernMono(0)' created for font 'Latin Modern Mono' with
+. options [].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"Latin Modern
+. Mono/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'italic' (m/it) with NFSS spec.:
+. <->"Latin Modern Mono/I/OT:script=latn;language=DFLT;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: - 'bold italic' (bx/it)
+. with NFSS spec.: <->"Latin Modern Mono/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+ [3]) [4]
 No file leetcode.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 42.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 42.
@@ -1891,12 +1916,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 42.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 42.
  ) 
 Here is how much of TeX's memory you used:
- 29119 strings out of 493591
- 550521 string characters out of 6143547
- 566578 words of memory out of 5000000
- 32171 multiletter control sequences out of 15000+600000
- 5028 words of font info for 47 fonts, out of 8000000 for 9000
+ 29160 strings out of 493591
+ 551638 string characters out of 6143547
+ 566615 words of memory out of 5000000
+ 32193 multiletter control sequences out of 15000+600000
+ 5076 words of font info for 53 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,11n,77p,10414b,396s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,77p,10414b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on leetcode.pdf (2 pages).
+Output written on leetcode.pdf (4 pages).
