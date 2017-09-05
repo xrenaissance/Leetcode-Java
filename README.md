@@ -12,7 +12,7 @@
  - [Map新接口](https://github.com/dingjikerbo/leetcode/blob/master/doc/Map.md)
  - [题目分类](https://github.com/dingjikerbo/leetcode/blob/master/doc/Summary.md)
 
-<br/><br/><br/><br/>
+<br/><br/>
 
 ## **三、所有题目列表**
 |#|Title|Solution|Score|Backup|
