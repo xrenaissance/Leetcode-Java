@@ -258,6 +258,80 @@ public static void swap(int[] nums, int left, int right) {
 
 \newpage
 
+\section{Permutations II} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+
+For example,
+
+\code{[1,1,2]} have the following unique permutations:
+\begin{Code}
+[
+  [1,1,2],
+  [1,2,1],
+  [2,1,1]
+]
+\end{Code}
+
+\subsubsection{Solution}
+
+\begin{Code}
+
+\end{Code}
+
+\newpage
+
+\section{Permutation Sequence} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+The set \code{[1,2,3,…,n]} contains a total of \code{n!} unique permutations.
+
+By listing and labeling all of the permutations in order,
+We get the following sequence (ie, for n = 3):
+\begin{Code}
+"123"
+"132"
+"213"
+"231"
+"312"
+"321"
+\end{Code}
+
+Given n and k, return the kth permutation sequence.
+
+Note: Given n will be between 1 and 9 inclusive.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public String getPermutation(int n, int k) {
+    int[] nums = new int[n];
+
+    for (int i = 0; i < n; i++) {
+        nums[i] = i + 1;
+    }
+
+    for (int i = 1; i < k; i++) {
+        nextPermutation(nums);
+    }
+
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < n; i++) {
+        sb.append(nums[i]);
+    }
+    return sb.toString();
+}
+
+private void nextPermutation(int[] nums) {
+
+}
+\end{Code}
+
+\newpage
+
+
 \section{Word Search} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
@@ -1404,3 +1478,888 @@ All words contain only lowercase alphabetic characters.
 You may assume no duplicates in the word list.
 
 You may assume beginWord and endWord are non-empty and are not the same.
+
+\subsubsection{Analysis}
+这题核心就是保存前驱节点
+
+\subsubsection{Solution}
+
+\begin{Code}
+/**
+ * 保存前驱节点
+ */
+class WordNode {
+    String word;
+    WordNode prev;
+
+    public WordNode(String word, WordNode pre) {
+        this.word = word;
+        this.prev = pre;
+    }
+}
+\end{Code}
+
+\newpage
+
+\begin{Code}
+public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
+    List<List<String>> result = new ArrayList<List<String>>();
+    LinkedList<WordNode> next = new LinkedList<>();
+    HashSet<String> visited = new HashSet<String>();
+    LinkedList<WordNode> queue = new LinkedList<WordNode>();
+    queue.add(new WordNode(beginWord, null));
+
+    wordList.remove(beginWord);
+    wordList.add(endWord);
+
+    while (!queue.isEmpty()) {
+        WordNode top = queue.poll();
+        String word = top.word;
+
+        if (word.equals(endWord)) {
+            ArrayList<String> t = new ArrayList<String>();
+            for (WordNode p = top; p != null; p = p.prev) {
+                t.add(0, p.word);
+            }
+            result.add(t);
+            continue;
+        }
+
+        if (!result.isEmpty() && queue.isEmpty()) {
+            break;
+        }
+
+        StringBuilder sb = new StringBuilder(word);
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            for (int j = 0; j < 26; j++) {
+                if ('a' + j == c) {
+                    continue;
+                }
+                sb.setCharAt(i, (char) ('a' + j));
+                String newWord = sb.toString();
+                if (wordList.contains(newWord)) {
+                    next.add(new WordNode(newWord, top));
+                    visited.add(newWord);
+                }
+            }
+            sb.setCharAt(i, c);
+        }
+
+        if (queue.isEmpty()) {
+            queue.addAll(next);
+            next.clear();
+            wordList.removeAll(visited);
+        }
+    }
+
+    return result;
+}
+\end{Code}
+
+\newpage
+
+\section{Palindrome Partitioning} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given a string s, partition s such that every substring of the partition is a palindrome.
+
+Return all possible palindrome partitioning of s.
+
+For example, given s = \code{"aab"},
+
+Return
+\begin{Code}
+[
+  ["aa","b"],
+  ["a","a","b"]
+]
+\end{Code}
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<List<String>> partition(String s) {
+    int n = s.length();
+    List<List<String>>[] f = new LinkedList[n + 1];
+    f[0] = new LinkedList<List<String>>();
+    f[0].add(Collections.EMPTY_LIST);
+
+    boolean[][] flag = new boolean[n][n];
+    for (int i = 0; i < n; i++) {
+        f[i + 1] = new LinkedList<List<String>>();
+        for (int j = 0; j <= i; j++) {
+            if (s.charAt(j) == s.charAt(i) && (j > i - 2 || flag[j + 1][i - 1])) {
+                flag[j][i] = true;
+                for (List<String> list : f[j]) {
+                    List<String> list2 = new LinkedList<String>(list);
+                    list2.add(s.substring(j, i + 1));
+                    f[i + 1].add(list2);
+                }
+            }
+        }
+    }
+
+    return f[n];
+}
+\end{Code}
+
+\newpage
+
+\section{Palindrome Partitioning II} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsunsection{Description}
+
+Given a string s, partition s such that every substring of the partition is a palindrome.
+
+Return the minimum cuts needed for a palindrome partitioning of s.
+
+For example, given s = \code{"aab"},
+
+Return 1 since the palindrome partitioning \code{["aa","b"]} could be produced using 1 cut.
+
+\subsubsection{Solution}
+
+\begin{Code}
+/**
+ * 这里cuts[0]=-1是为了兼容j=i=0的情况
+ */
+public int minCut(String s) {
+    int n = s.length();
+    int[] cuts = new int[n + 1];
+    cuts[0] = -1;
+    boolean[][] f = new boolean[n][n];
+    for (int i = 0; i < n; i++) {
+        int cut = Integer.MAX_VALUE;
+        for (int j = 0; j <= i; j++) {
+            if (s.charAt(j) == s.charAt(i) && (j > i - 2 || f[j + 1][i - 1])) {
+                f[j][i] = true;
+                cut = Math.min(cut, cuts[j] + 1);
+            }
+        }
+        cuts[i + 1] = cut;
+    }
+    return cuts[n];
+}
+\end{Code}
+
+\newpage
+
+\section{Palindrome Permutation} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given a string, determine if a permutation of the string could form a palindrome.
+
+For example, \code{"code" -> False, "aab" -> True, "carerac" -> True}.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public boolean canPermutePalindrome(String s) {
+    int len = s.length();
+    int[] count = new int[256];
+    for (char c : s.toCharArray()) {
+        count[c]++;
+    }
+    int num = 0;
+    for (int i = 0; i < count.length; i++) {
+        num += (count[i] >> 1) << 1;
+    }
+    if (num < len) {
+        num++;
+    }
+    return num == len;
+}
+\end{Code}
+
+\newpage
+
+\section{Palindrome Permutation II} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+Given a string s, return all the palindromic permutations (without duplicates) of it. Return an empty list if no palindromic permutation could be form.
+
+For example:
+
+Given s = \code{"aabb"}, return \code{["abba", "baab"]}.
+
+Given s = \code{"abc"}, return [].
+
+\subsubsection{Solution}
+\begin{Code}
+public List<String> generatePalindromes(String s) {
+    int[] counts = new int[256];
+    for (char c : s.toCharArray()) {
+        counts[c]++;
+    }
+    StringBuilder sb = new StringBuilder();
+    StringBuilder single = new StringBuilder();
+    for (int i = 0; i < counts.length; i++) {
+        int count = counts[i];
+        for ( ; count > 1; sb.append((char) i), count -= 2);
+        if (count == 1) {
+            single.append((char) i);
+        }
+    }
+    List<String> result = new LinkedList<String>();
+    helper(sb.toString(), single.toString(), result);
+    return result;
+}
+
+private void helper(String s, String t, List<String> list) {
+
+}
+\end{Code}
+
+\newpage
+
+\section{Count Numbers with Unique Digits} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given a non-negative integer n, count all numbers with unique digits, \code{x}, where 0 <= x < 10n.
+
+Example:
+
+Given n = 2, return 91. (The answer should be the total numbers in the range of 0 <= x < 100, excluding \code{[11,22,33,44,55,66,77,88,99]})
+
+\subsubsection{Solution}
+
+\begin{Code}
+public int countNumbersWithUniqueDigits(int n) {
+    int[] result = new int[n + 1];
+    result[0] = 1;
+    for (int i = 1, t = 9; i <= n; i++) {
+        result[i] = result[i - 1] + t;
+        t *= 10 - i;
+    }
+    return result[n];
+}
+\end{Code}
+
+\newpage
+
+\section{Generalized Abbreviation} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+Write a function to generate the generalized abbreviations of a word.
+
+Example:
+
+Given word = "word", return the following list (order does not matter):
+
+\code{["word", "1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"]}
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<String> generateAbbreviations(String word) {
+    List<String> list = new LinkedList<>();
+    helper(word, 0, list, "", 0);
+    return list;
+}
+
+private void helper(String word, int idx, List<String> list, String cur, int count) {
+    if (idx == word.length()) {
+        if (count > 0) {
+            cur += count;
+        }
+        list.add(cur);
+        return;
+    }
+
+    helper(word, idx + 1, list, cur, count + 1);
+    helper(word, idx + 1, list, cur + (count > 0 ? count : "") + word.charAt(idx), 0);
+}
+\end{Code}
+
+\newpage
+
+\section{Binary Watch} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+A binary watch has 4 LEDs on the top which represent the hours (0-11), and the 6 LEDs on the bottom represent the minutes (0-59).
+
+Each LED represents a zero or one, with the least significant bit on the right.
+
+\begin{center}
+\includegraphics[width=150pt]{watch.jpg}\\
+\end{center}
+
+For example, the above binary watch reads \code{"3:25"}.
+
+Given a non-negative integer n which represents the number of LEDs that are currently on, return all possible times the watch could represent.
+
+Example:
+
+Input: n = 1
+
+Return: \code{["1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"]}
+
+Note:
+
+The order of output does not matter.
+
+The hour must not contain a leading zero, for example \code{"01:00"} is not valid, it should be \code{"1:00"}.
+
+The minute must be consist of two digits and may contain a leading zero, for example \code{"10:2"} is not valid, it should be \code{"10:02"}.
+
+\subsubsection{Solution}
+\begin{Code}
+public List<String> readBinaryWatch(int num) {
+    int[] f = new int[] {
+            1, 2, 4, 8, 1, 2, 4, 8, 16, 32
+    };
+
+    List<String> list = new ArrayList<String>();
+    readBinaryWatch(num, f, 0, 0, 0, list);
+
+    return list;
+}
+
+public void readBinaryWatch(int num, int[] f, int index, int hour, int minute, List<String> list) {
+    if (num == 0 && hour < 12 && minute < 60) {
+        list.add(String.format("%d:%02d", hour, minute));
+        return;
+    }
+
+    if (index >= f.length) {
+        return;
+    }
+
+    int nextHour = index <= 3 ? hour + f[index] : hour;
+    int nextMinute = index > 3 ? minute + f[index] : minute;
+    readBinaryWatch(num - 1, f, index + 1, nextHour, nextMinute, list);
+    readBinaryWatch(num, f, index + 1, hour, minute, list);
+}
+\end{Code}
+
+\newpage
+
+\section{Add and Search Word} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Design a data structure that supports the following two operations:
+\begin{Code}
+void addWord(word)
+bool search(word)
+\end{Code}
+search(word) can search a literal word or a regular expression string containing only letters a-z or .. A . means it can represent any one letter.
+
+For example:
+\begin{Code}
+addWord("bad")
+addWord("dad")
+addWord("mad")
+search("pad") -> false
+search("bad") -> true
+search(".ad") -> true
+search("b..") -> true
+\end{Code}
+\textbf{Note:}
+
+You may assume that all words are consist of lowercase letters a-z.
+
+\subsubsection{Solution}
+
+\begin{Code}
+TriNode root;
+
+class TriNode {
+    TriNode[] nodes = new TriNode[26];
+    String word;
+}
+
+public AddAndSearchWord() {
+    root = new TriNode();
+}
+
+public void addWord(String word) {
+    TriNode node = root;
+    for (char c : word.toCharArray()) {
+        if (node.nodes[c - 'a'] == null) {
+            node.nodes[c - 'a'] = new TriNode();
+        }
+        node = node.nodes[c - 'a'];
+    }
+    node.word = word;
+}
+
+public boolean search(String word) {
+    return search(root, word);
+}
+
+\end{Code}
+
+\newpage
+\begin{Code}
+private boolean search(TriNode node, String word) {
+    if (node == null) {
+        return false;
+    }
+
+    for (int i = 0; i < word.length(); i++) {
+        char c = word.charAt(i);
+
+        if (c != '.') {
+            if (node.nodes[c - 'a'] == null) {
+                return false;
+            }
+            node = node.nodes[c - 'a'];
+        } else {
+            String s = word.substring(i + 1);
+            for (char cc = 'a'; cc <= 'z'; cc++) {
+                if (search(node.nodes[cc - 'a'], s)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    return node.word != null;
+}
+\end{Code}
+
+\newpage
+
+\section{Factor Combinations} %%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Descriptor}
+Numbers can be regarded as product of its factors. For example,
+\begin{Code}
+8 = 2 x 2 x 2;
+  = 2 x 4.
+\end{Code}
+Write a function that takes an integer n and return all possible combinations of its factors.
+
+\textbf{Note:}
+
+You may assume that n is always positive.
+
+Factors should be greater than 1 and less than n.
+
+\textbf{Examples:}
+
+input: 1
+
+output: \code{[]}
+
+input: 37
+
+output: \code{[]}
+
+input: 12
+
+output:
+
+\begin{Code}
+[
+  [2, 6],
+  [2, 2, 3],
+  [3, 4]
+]
+\end{Code}
+
+input: 32
+
+output:
+
+\begin{Code}
+[
+  [2, 16],
+  [2, 2, 8],
+  [2, 2, 2, 4],
+  [2, 2, 2, 2, 2],
+  [2, 4, 4],
+  [4, 8]
+]
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution}
+\begin{Code}
+
+\end{Code}
+
+\newpage
+
+\section{Valid Word Square} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+Given a sequence of words, check whether it forms a valid word square.
+
+A sequence of words forms a valid word square if the kth row and column read the exact same string, where 0 <= k < max(numRows, numColumns).
+\textbf{Note:}
+
+1. The number of words given is at least 1 and does not exceed 500.
+
+2. Word length will be at least 1 and does not exceed 500.
+
+3. Each word contains only lowercase English alphabet a-z.
+
+\textbf{Example:}
+
+\textbf{Input:}
+
+\begin{Code}
+[
+  "abcd",
+  "bnrt",
+  "crmy",
+  "dtye"
+]
+\end{Code}
+
+\textbf{Output:}
+
+true
+
+\textbf{Explanation:}
+
+The first row and first column both read "abcd".
+
+The second row and second column both read "bnrt".
+
+The third row and third column both read "crmy".
+
+The fourth row and fourth column both read "dtye".
+
+Therefore, it is a valid word square.
+
+\subsubsection{Solution}
+\begin{Code}
+public boolean validWordSquare(List<String> words) {
+    for (int i = 0; i < words.size(); i++) {
+        String word = words.get(i);
+        if (word.length() > words.size()) {
+            return false;
+        }
+        for (int j = 0; j < word.length(); j++) {
+            String s = words.get(j);
+            if (i >= s.length() || word.charAt(j) != s.charAt(i)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+\end{Code}
+
+\newpage
+
+\section{Word Squares} %%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Description}
+Given a set of words (without duplicates), find all word squares you can build from them.
+
+A sequence of words forms a valid word square if the kth row and column read the exact same string, where 0 <= k < max(numRows, numColumns).
+
+For example, the word sequence \code{["ball","area","lead","lady"]} forms a word square because each word reads the same both horizontally and vertically.
+
+\begin{Code}
+b a l l
+a r e a
+l e a d
+l a d y
+\end{Code}
+
+\textbf{Note:}
+
+1. There are at least 1 and at most 1000 words.
+
+2. All words will have the exact same length.
+
+3. Word length is at least 1 and at most 5.
+
+4. Each word contains only lowercase English alphabet a-z.
+
+
+\textbf{Example:}
+
+\textbf{Input:}
+
+\code{["area","lead","wall","lady","ball"]}
+
+\textbf{Output:}
+\begin{Code}
+[
+  [ "wall",
+    "area",
+    "lead",
+    "lady"
+  ],
+  [ "ball",
+    "area",
+    "lead",
+    "lady"
+  ]
+]
+\end{Code}
+\textbf{Explanation:}
+
+The output consists of two word squares. The order of output does not matter (just the order of words in each word square matters).
+\newpage
+
+\subsubsection{Solution}
+\begin{Code}
+public List<List<String>> wordSquares(String[] words) {
+    List<List<String>> ret = new ArrayList<List<String>>();
+    if (words.length == 0 || words[0].length() == 0) {
+        return ret;
+    }
+    Map<String, Set<String>> map = new HashMap<>();
+    int squareLen = words[0].length();
+    for (int i = 0; i < words.length; i++) {
+        /**
+         * 注意这里空字符也算前缀，所以j从-1开始
+         */
+        for (int j = -1; j < words[0].length(); j++) {
+            String prefix = words[i].substring(0, j + 1);
+            Set<String> set = map.get(prefix);
+            if (set == null) {
+                set = new HashSet<String>();
+                map.put(prefix, set);
+            }
+            set.add(words[i]);
+        }
+    }
+    helper(ret, new ArrayList<String>(), squareLen, map);
+    return ret;
+}
+
+public void helper(List<List<String>> ret, List<String> cur, int total, Map<String, Set<String>> map) {
+    if (cur.size() == total) {
+        ret.add(new ArrayList<String>(cur));
+        return;
+    }
+    // build search string
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < cur.size(); i++) {
+        /**
+         * 下一个单词的prefix必然是当前这些单词的第cur.size列
+         */
+        sb.append(cur.get(i).charAt(cur.size()));
+    }
+    // bachtracking
+    Set<String> cand = map.get(sb.toString());
+    if (cand == null) {
+        return;
+    }
+    for (String str : cand) {
+        cur.add(str);
+        helper(ret, cur, total, map);
+        cur.remove(cur.size() - 1);
+    }
+}
+\end{Code}
+
+\newpage
+
+\section{Minimum Unique Word Abbreviation} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+A string such as \code{"word"} contains the following abbreviations:
+
+\code{["word", "1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"]}
+
+Given a target string and a set of strings in a dictionary, find an abbreviation of this target string with the smallest possible length such that it does not conflict with abbreviations of the strings in the dictionary.
+
+Each number or letter in the abbreviation is considered length = 1. For example, the abbreviation \code{"a32bc"} has length = 4.
+
+\textbf{Note:}
+
+In the case of multiple answers as shown in the second example below, you may return any one of them.
+
+Assume length of target string = m, and dictionary size = n. You may assume that m ≤ 21, n ≤ 1000, and log2(n) + m ≤ 20.
+
+\textbf{Examples:}
+
+\code{"apple"}, \code{["blade"] -> "a4"} (because \code{"5"} or \code{"4e"} conflicts with \code{"blade"})
+
+\code{"apple"}, \code{["plain", "amber", "blade"] -> "1p3"} (other valid answers include \code{"ap3", "a3e", "2p2", "3le", "3l1"}).
+
+\subsubsection{Solution}
+
+\begin{Code}
+
+\end{Code}
+
+\newpage
+
+\section{Beautiful Arrangement} %%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Description}
+
+Suppose you have N integers from 1 to N. We define a beautiful arrangement as an array that is constructed by these N numbers successfully if one of the following is true for the ith position (1 <= i <= N) in this array:
+
+1. The number at the ith position is divisible by i.
+
+2. i is divisible by the number at the ith position.
+
+Now given N, how many beautiful arrangements can you construct?
+
+\textbf{Example:}
+
+\textbf{Input: 2}
+
+\textbf{Output: 2}
+
+\textbf{Explanation:}
+
+The first beautiful arrangement is [1, 2]:
+
+Number at the 1st position (i=1) is 1, and 1 is divisible by i (i=1).
+
+Number at the 2nd position (i=2) is 2, and 2 is divisible by i (i=2).
+
+The second beautiful arrangement is [2, 1]:
+
+Number at the 1st position (i=1) is 2, and 2 is divisible by i (i=1).
+
+Number at the 2nd position (i=2) is 1, and i (i=2) is divisible by 1.
+
+\textbf{Note:}
+
+N is a positive integer and will not exceed 15.
+
+\subsubsection{Solution}
+\begin{Code}
+\end{Code}
+
+\newpage
+
+\section{Beautiful Arrangement II} %%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Description}
+Given two integers n and k, you need to construct a list which contains n different positive integers ranging from 1 to n and obeys the following requirement:
+
+Suppose this list is \code{[a1, a2, a3, ... , an]}, then the list \code{[|a1 - a2|, |a2 - a3|, |a3 - a4|, ... , |an-1 - an|]} has exactly k distinct integers.
+
+If there are multiple answers, print any of them.
+
+\textbf{Example 1:}
+
+\textbf{Input:} n = 3, k = 1
+
+\textbf{Output:} \code{[1, 2, 3]}
+
+\textbf{Explanation:}The \code{[1, 2, 3]} has three different positive integers ranging from 1 to 3, and the \code{[1, 1]} has exactly 1 distinct integer: 1.
+
+\textbf{Example 2:}
+
+\textbf{Input:} n = 3, k = 2
+
+\textbf{Output:} \code{[1, 3, 2]}
+
+\textbf{Explanation:} The \code{[1, 3, 2]} has three different positive integers ranging from 1 to 3, and the \code{[2, 1]} has exactly 2 distinct integers: 1 and 2.
+
+\textbf{Note:}
+
+The n and k are in the range 1 <= k < n <= 104.
+
+\subsubsection{Solution}
+\begin{Code}
+\end{Code}
+
+\newpage
+
+\section{Flip Game} %%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Description}
+
+You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive \code{"++"} into \code{"--"}. The game ends when a person can no longer make a move and therefore the other person will be the winner.
+
+Write a function to compute all possible states of the string after one valid move.
+
+For example, given s = \code{"++++"}, after one move, it may become one of the following states:
+
+\begin{Code}
+[
+  "--++",
+  "+--+",
+  "++--"
+]
+\end{Code}
+
+If there is no valid move, return an empty list [].
+
+\subsubsection{Solution}
+
+\begin{Code}
+
+\end{Code}
+
+\newpage
+
+\section{Flip Game II} %%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Description}
+
+You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive \code{"++"} into \code{"--"}. The game ends when a person can no longer make a move and therefore the other person will be the winner.
+
+Write a function to determine if the starting player can guarantee a win.
+
+For example, given s = \code{"++++"}, return true. The starting player can guarantee a win by flipping the middle \code{"++"} to become \code{"+--+"}.
+
+\textbf{Follow up:}
+
+Derive your algorithm's runtime complexity.
+
+\subsubsection{Solution}
+
+\begin{Code}
+
+\end{Code}
+
+\newpage
+
+\section{Android Unlock Patterns} %%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Description}
+
+Given an Android 3x3 key lock screen and two integers m and n, where 1 ≤ m ≤ n ≤ 9, count the total number of unlock patterns of the Android lock screen, which consist of minimum of m keys and maximum n keys.
+
+\textbf{Rules for a valid pattern:}
+
+1. Each pattern must connect at least m keys and at most n keys.
+
+2. All the keys must be distinct.
+
+3. If the line connecting two consecutive keys in the pattern passes through any other keys, the other keys must have previously selected in the pattern. No jumps through non selected key is allowed.
+
+4. The order of keys used matters.
+
+\begin{center}
+\includegraphics[width=150pt]{unlock.png}\\
+\end{center}
+
+\textbf{Explanation:}
+\begin{Code}
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+| 7 | 8 | 9 |
+\end{Code}
+
+\textbf{Invalid move:} \code{4 - 1 - 3 - 6}
+
+Line \code{1 - 3} passes through key 2 which had not been selected in the pattern.
+
+\textbf{Invalid move:} \code{4 - 1 - 9 - 2}
+
+Line \code{1 - 9} passes through key 5 which had not been selected in the pattern.
+
+\textbf{Valid move:} \code{2 - 4 - 1 - 3 - 6}
+
+Line \code{1 - 3} is valid because it passes through key 2, which had been selected in the pattern
+
+\textbf{Valid move:} \code{6 - 5 - 4 - 1 - 9 - 2}
+
+Line \code{1 - 9} is valid because it passes through key 5, which had been selected in the pattern.
+
+\textbf{Example:}
+
+Given m = 1, n = 1, return 9.
+
+\subsubsection{Solution}
+\begin{Code}
+\end{Code}
+\newpage
