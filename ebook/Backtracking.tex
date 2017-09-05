@@ -569,3 +569,169 @@ private void dfs(int[] candidates, int target, int start, List<List<Integer>> re
     }
 }
 \end{Code}
+
+\newpage
+
+\section{Combination Sum II}
+
+\subsubsection{Description}
+Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+
+Each number in C may only be used once in the combination.
+
+Note:
+
+All numbers (including target) will be positive integers.
+
+The solution set must not contain duplicate combinations.
+
+For example, given candidate set \code{[10, 1, 2, 7, 6, 1, 5]} and target 8,
+
+A solution set is:
+\begin{Code}
+[
+  [1, 7],
+  [1, 2, 5],
+  [2, 6],
+  [1, 1, 6]
+]
+\end{Code}
+
+\subsubsection{Solution I}
+
+\begin{Code}
+public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    List<List<Integer>> result = new LinkedList<>();
+    Arrays.sort(candidates);
+    helper(candidates, result, new LinkedList<>(), target, 0);
+    return result;
+}
+
+private void helper(int[] candidates, List<List<Integer>> result, List<Integer> list, int target, int index) {
+    if (target < 0) {
+        return;
+    } else if (target == 0) {
+        result.add(new LinkedList<>(list));
+        return;
+    } else if (index >= candidates.length) {
+        return;
+    }
+
+    list.add(candidates[index]);
+    helper(candidates, result, list, target - candidates[index], index + 1);
+    list.remove(list.size() - 1);
+
+    for ( ; index < candidates.length - 1 && candidates[index + 1] == candidates[index]; index++);
+
+    helper(candidates, result, list, target, index + 1);
+}
+\end{Code}
+
+\newpge
+
+\subsubsection{Solution II}
+
+\begin{Code}
+public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    List<List<Integer>> result = new LinkedList<List<Integer>>();
+    Arrays.sort(candidates);
+    dfs(candidates, 0, target, result, new LinkedList<Integer>());
+    return result;
+}
+
+private void dfs(int[] candidates, int start, int target, List<List<Integer>> result, List<Integer> path) {
+    if (target < 0) {
+        return;
+    }
+
+    if (target == 0) {
+        result.add(new LinkedList<Integer>(path));
+        return;
+    }
+
+    for (int i = start; i < candidates.length; i++) {
+        if (i > start && candidates[i] == candidates[i - 1]) {
+            continue;
+        }
+
+        path.add(candidates[i]);
+
+        // 关键是这里变成i + 1
+        dfs(candidates, i + 1, target - candidates[i], result, path);
+        path.remove(path.size() - 1);
+    }
+}
+\end{Code}
+
+\newpage
+
+\section{Combination Sum III}
+
+\subsubsection{Description}
+Find all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
+
+\textbf{Example 1:}
+
+Input: \code{k = 3, n = 7}
+
+Output: \code{[[1,2,4]]}
+
+\textbf{Example 2:}
+
+Input: \code{k = 3, n = 9}
+
+Output: \code{[[1,2,6], [1,3,5], [2,3,4]]}
+
+\subsubsection{Solution I}
+
+\begin{Code}
+public List<List<Integer>> combinationSum(int k, int n) {
+    List<List<Integer>> result = new LinkedList<>();
+    helper(k, n, result, new LinkedList<>(), 1);
+    return result;
+}
+
+private void helper(int k, int n, List<List<Integer>> result, List<Integer> list, int cur) {
+    if (n == 0 && k == 0) {
+        result.add(new LinkedList<>(list));
+        return;
+    }
+
+    if (cur > 9) {
+        return;
+    }
+
+    list.add(cur);
+    helper(k - 1, n - cur, result, list, cur + 1);
+    list.remove(list.size() - 1);
+
+    helper(k, n, result, list, cur + 1);
+}
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+
+\begin{Code}
+public List<List<Integer>> combinationSum(int k, int n) {
+    List<List<Integer>> result = new LinkedList<>();
+    dfs(n, k, 1, result, new LinkedList<Integer>());
+    return result;
+}
+
+private void dfs(int target, int k, int start, List<List<Integer>> result, List<Integer> list) {
+    if (target == 0 && k == 0) {
+        result.add(new LinkedList<>(list));
+        return;
+    }
+    if (target <= 0 || k <= 0) {
+        return;
+    }
+    for (int i = start; i <= 9; i++) {
+        list.add(i);
+        dfs(target - i, k - 1, i + 1, result, list);
+        list.remove(list.size() - 1);
+    }
+}
+\end{Code}
