@@ -1,7 +1,7 @@
 # **Leetcode - Java**
 
 ## **一、电子书(pdf)**
- Latex排版整理的[Leetcode电子书](https://github.com/dingjikerbo/leetcode/ebook/leetcode.pdf)
+ Latex排版整理的[Leetcode电子书](https://github.com/dingjikerbo/leetcode/blob/master/ebook/leetcode.pdf)
  
  <br/><br/>
 
