@@ -111,21 +111,18 @@
 \contentsline {section}{\numberline {1.35}Word Squares}{49}{section.1.35}
 \contentsline {subsubsection}{Description}{49}{section*.77}
 \contentsline {subsubsection}{Solution}{50}{section*.78}
-\contentsline {section}{\numberline {1.36}Minimum Unique Word Abbreviation}{51}{section.1.36}
+\contentsline {section}{\numberline {1.36}Beautiful Arrangement}{51}{section.1.36}
 \contentsline {subsubsection}{Description}{51}{section*.79}
 \contentsline {subsubsection}{Solution}{51}{section*.80}
-\contentsline {section}{\numberline {1.37}Beautiful Arrangement}{52}{section.1.37}
+\contentsline {section}{\numberline {1.37}Beautiful Arrangement II}{52}{section.1.37}
 \contentsline {subsubsection}{Description}{52}{section*.81}
 \contentsline {subsubsection}{Solution}{52}{section*.82}
-\contentsline {section}{\numberline {1.38}Beautiful Arrangement II}{53}{section.1.38}
+\contentsline {section}{\numberline {1.38}Flip Game}{53}{section.1.38}
 \contentsline {subsubsection}{Description}{53}{section*.83}
 \contentsline {subsubsection}{Solution}{53}{section*.84}
-\contentsline {section}{\numberline {1.39}Flip Game}{54}{section.1.39}
+\contentsline {section}{\numberline {1.39}Flip Game II}{54}{section.1.39}
 \contentsline {subsubsection}{Description}{54}{section*.85}
 \contentsline {subsubsection}{Solution}{54}{section*.86}
-\contentsline {section}{\numberline {1.40}Flip Game II}{55}{section.1.40}
+\contentsline {section}{\numberline {1.40}Android Unlock Patterns}{55}{section.1.40}
 \contentsline {subsubsection}{Description}{55}{section*.87}
 \contentsline {subsubsection}{Solution}{55}{section*.88}
-\contentsline {section}{\numberline {1.41}Android Unlock Patterns}{56}{section.1.41}
-\contentsline {subsubsection}{Description}{56}{section*.89}
-\contentsline {subsubsection}{Solution}{56}{section*.90}

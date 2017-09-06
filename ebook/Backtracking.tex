@@ -2235,37 +2235,6 @@ public void helper(List<List<String>> ret, List<String> cur, int total, Map<Stri
 
 \newpage
 
-\section{Minimum Unique Word Abbreviation} %%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{Description}
-A string such as \code{"word"} contains the following abbreviations:
-
-\code{["word", "1ord", "w1rd", "wo1d", "wor1", "2rd", "w2d", "wo2", "1o1d", "1or1", "w1r1", "1o2", "2r1", "3d", "w3", "4"]}
-
-Given a target string and a set of strings in a dictionary, find an abbreviation of this target string with the smallest possible length such that it does not conflict with abbreviations of the strings in the dictionary.
-
-Each number or letter in the abbreviation is considered length = 1. For example, the abbreviation \code{"a32bc"} has length = 4.
-
-\textbf{Note:}
-
-In the case of multiple answers as shown in the second example below, you may return any one of them.
-
-Assume length of target string = m, and dictionary size = n. You may assume that m ≤ 21, n ≤ 1000, and log2(n) + m ≤ 20.
-
-\textbf{Examples:}
-
-\code{"apple"}, \code{["blade"] -> "a4"} (because \code{"5"} or \code{"4e"} conflicts with \code{"blade"})
-
-\code{"apple"}, \code{["plain", "amber", "blade"] -> "1p3"} (other valid answers include \code{"ap3", "a3e", "2p2", "3le", "3l1"}).
-
-\subsubsection{Solution}
-
-\begin{Code}
-
-\end{Code}
-
-\newpage
-
 \section{Beautiful Arrangement} %%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Description}
 
@@ -2303,6 +2272,26 @@ N is a positive integer and will not exceed 15.
 
 \subsubsection{Solution}
 \begin{Code}
+public int countArrangement(int N) {
+    int[] count = new int[1];
+    helper(N, 1, new boolean[N + 1], count);
+    return count[0];
+}
+
+private void helper(int N, int k, boolean[] visited, int[] count) {
+    if (k > N) {
+        count[0]++;
+        return;
+    }
+
+    for (int i = 1; i <= N; i++) {
+        if (!visited[i] && (i % k == 0 || k % i == 0)) {
+            visited[i] = true;
+            helper(N, k + 1, visited, count);
+            visited[i] = false;
+        }
+    }
+}
 \end{Code}
 
 \newpage
