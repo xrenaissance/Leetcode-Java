@@ -1,6 +1,7 @@
 package com.example;
 
 import com.inuker.solution.FactorCombinations;
+import com.inuker.solution.FlipGame;
 import com.inuker.solution.RestoreIPAddresses;
 import com.inuker.solution.ValidWordAbbreviation;
 import com.leetcode.google.DecodeString;
@@ -29,8 +30,10 @@ import java.util.function.Function;
 public class Main {
 
     public static void main(String[] args) {
-        boolean b = new ValidWordAbbreviation().validWordAbbreviation2("a", "01");
-        System.out.println(b);
+        List<String> list = new FlipGame().generatePossibleNextMoves("++++");
+        for (String s : list) {
+            System.out.println(s);
+        }
     }
 }
 
