@@ -205,6 +205,7 @@
 |251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Vector2D.java)|100|
 |252|[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRooms.java)|100|
 |253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRoomsII.java)|90|
+|254|[Factor Combinations](https://leetcode.com/problems/factor-combinations/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FactorCombinations.java)|80||
 |255|[Verify Preorder Sequence in Binary Search Tree](https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/VerifyPreorderSequenceInBinarySearchTree.java)|85|很简单，粗心错了|
 |256|[Paint House](https://leetcode.com/problems/paint-house/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouse.java)|95|
 |257|[Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreePaths.java)|80|

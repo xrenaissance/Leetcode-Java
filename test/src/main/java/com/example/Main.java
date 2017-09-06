@@ -1,5 +1,6 @@
 package com.example;
 
+import com.inuker.solution.FactorCombinations;
 import com.inuker.solution.RestoreIPAddresses;
 import com.leetcode.google.DecodeString;
 import com.leetcode.google.GenerateParentheses;
@@ -27,6 +28,14 @@ import java.util.function.Function;
 public class Main {
 
     public static void main(String[] args) {
+        List<List<Integer>> lists = new FactorCombinations().getFactors(128);
+//        List<List<Integer>> lists = new FactorCombinations().getFactors(23848713);
+        for (List<Integer> list : lists) {
+            for (Integer n : list) {
+                System.out.print(n + " ");
+            }
+            System.out.println();
+        }
     }
 }
 
