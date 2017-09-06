@@ -296,6 +296,7 @@
 |404|[Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SumOfLeftLeaves.java)|80|
 |406|[Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/QueueReconstructionByHeight.java)|60|这题开始没思路，多做几遍|
 |407|[Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TrappingRainWaterII.java)||
+|408|[Valid Word Abbreviation](https://leetcode.com/problems/valid-word-abbreviation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/validWordAbbreviation.java)|80|多做两遍|
 |409|[Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestPalindrome.java)||
 |410|[Split Array Largest Sum](https://leetcode.com/problems/split-array-largest-sum)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SplitArrayLargestSum.java)||
 |412|[Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FizzBuzz.java)|100|
