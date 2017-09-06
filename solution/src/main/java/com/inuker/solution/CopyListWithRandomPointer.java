@@ -4,6 +4,8 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/11/16.
  */
 
+import com.leetcode.library.RandomListNode;
+
 /**
  * 易错的地方在于random要判空
  */

@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.leetcode.library.Interval;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;

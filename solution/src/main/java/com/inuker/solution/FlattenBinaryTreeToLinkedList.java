@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.leetcode.library.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;

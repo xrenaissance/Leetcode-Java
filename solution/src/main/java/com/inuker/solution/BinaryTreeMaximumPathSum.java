@@ -4,6 +4,8 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/28.
  */
 
+import com.leetcode.library.TreeNode;
+
 /**
  * 单边的或者双边的，或只包含根节点的
  */

@@ -1,5 +1,6 @@
 package com.inuker.solution;
 
+import java.awt.Point;
 import java.util.HashMap;
 
 /**

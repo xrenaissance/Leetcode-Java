@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.leetcode.library.TreeNode;
+
 /**
  * Created by dingjikerbo on 2016/12/2.
  */

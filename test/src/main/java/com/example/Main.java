@@ -1,5 +1,6 @@
 package com.example;
 
+import com.inuker.solution.RestoreIPAddresses;
 import com.leetcode.google.DecodeString;
 import com.leetcode.google.GenerateParentheses;
 import com.leetcode.google.MissingRanges;
@@ -25,13 +26,10 @@ import java.util.function.Function;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> lists = new WordBreakII().wordBreak("catsanddog", Arrays.asList("cat", "cats", "and", "sand", "dog"));
-        for (String s : lists) {
+        List<String> list = new RestoreIPAddresses().restoreIpAddresses("010010");
+        for (String s : list) {
             System.out.println(s);
         }
-
     }
-
-
 }
 
