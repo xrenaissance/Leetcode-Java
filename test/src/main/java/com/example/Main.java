@@ -2,6 +2,7 @@ package com.example;
 
 import com.inuker.solution.FactorCombinations;
 import com.inuker.solution.FlipGame;
+import com.inuker.solution.PermutationSequence;
 import com.inuker.solution.RestoreIPAddresses;
 import com.inuker.solution.ValidWordAbbreviation;
 import com.leetcode.google.DecodeString;
@@ -30,10 +31,8 @@ import java.util.function.Function;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> list = new FlipGame().generatePossibleNextMoves("++++");
-        for (String s : list) {
-            System.out.println(s);
-        }
+        String s = new PermutationSequence().getPermutation(4, 5);
+        System.out.println(s);
     }
 }
 

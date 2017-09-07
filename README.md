@@ -63,6 +63,7 @@
 |44|[Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WildcardMatching.java)|60|和#10多做几遍|
 |45|[Jump Game II](https://leetcode.com/problems/jump-game-ii/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/JumpGameII.java)||
 |46|[Permutations](https://leetcode.com/problems/permutations/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Permutations.java)||
+|47|[Permutations II](https://leetcode.com/problems/permutations-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PermutationsII.java)|70|多做几遍|
 |48|[Rotate Image](https://leetcode.com/problems/rotate-image/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RotateImage.java)|100|
 |49|[Group Anagrams](https://leetcode.com/problems/anagrams/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GroupAnagrams.java)|95|
 |50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Pow.java)|80|
@@ -72,7 +73,7 @@
 |55|[Jump Game](https://leetcode.com/problems/jump-game/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/JumpGame.java)||
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeIntervals.java)|70|
 |57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|75|这题要多做几遍|
-|60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PermutationSequence.java)||
+|60|[Permutation Sequence](https://leetcode.com/problems/permutation-sequence/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PermutationSequence.java)|70|这题思路巧妙，多做两遍|
 |66|[Plus One](https://leetcode.com/problems/plus-one/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PlusOne.java)|100|这题多看一遍|
 |67|[Add Binary](https://leetcode.com/problems/add-binary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddBinary.java)|100|
 |68|[Text Justification](https://leetcode.com/problems/text-justification/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TextJustification.java)||

@@ -278,7 +278,36 @@ For example,
 \subsubsection{Solution}
 
 \begin{Code}
+public List<List<Integer>> permuteUnique(int[] nums) {
+    List<List<Integer>> result = new ArrayList<List<Integer>>();
+    permute(nums, result, 0);
+    return result;
+}
 
+public void permute(int[] nums, List<List<Integer>> result, int start) {
+    if (start >= nums.length) {
+        List<Integer> list = new ArrayList<Integer>();
+        for (Integer n : nums) {
+            list.add(n);
+        }
+        result.add(list);
+    }
+
+    HashSet<Integer> set = new HashSet<Integer>();
+    for (int i = start; i < nums.length; i++) {
+        if (set.add(nums[i])) {
+            swap(nums, start, i);
+            permute(nums, result, start + 1);
+            swap(nums, start, i);
+        }
+    }
+}
+
+public static void swap(int[] nums, int left, int right) {
+    int temp = nums[left];
+    nums[left] = nums[right];
+    nums[right] = temp;
+}
 \end{Code}
 
 \newpage
@@ -307,25 +336,26 @@ Note: Given n will be between 1 and 9 inclusive.
 
 \begin{Code}
 public String getPermutation(int n, int k) {
-    int[] nums = new int[n];
+    int[] fac = new int[n + 1];
+    fac[0] = 1;
 
-    for (int i = 0; i < n; i++) {
-        nums[i] = i + 1;
+    List<Integer> list = new LinkedList<>();
+
+    for (int i = 1; i <= n; i++) {
+        fac[i] = fac[i - 1] * i;
+        list.add(i);
     }
 
-    for (int i = 1; i < k; i++) {
-        nextPermutation(nums);
-    }
+    k--;
 
     StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < n; i++) {
-        sb.append(nums[i]);
+    for (int i = 1; i <= n; i++) {
+        int ind = k / fac[n - i];
+        k %= fac[n - i];
+        sb.append(list.remove(ind));
     }
+
     return sb.toString();
-}
-
-private void nextPermutation(int[] nums) {
-
 }
 \end{Code}
 
@@ -435,11 +465,6 @@ private void buildTrie(Trie trie, String word) {
     }
     trie.word = word;
 }
-\end{Code}
-
-\newpage
-
-\begin{Code}
 
 public List<String> findWords(char[][] board, String[] words) {
     Trie trie = new Trie();
@@ -454,7 +479,11 @@ public List<String> findWords(char[][] board, String[] words) {
     }
     return new LinkedList<String>(set);
 }
+\end{Code}
 
+\newpage
+
+\begin{Code}
 private void dfs(Set<String> set, char[][] board, int i, int j, Trie trie) {
     if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
         return;
