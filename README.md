@@ -1,7 +1,9 @@
 # **Leetcode - Java**
 
 ## **一、电子书(pdf)**
- Latex排版整理的[Leetcode电子书](https://github.com/dingjikerbo/leetcode/blob/master/ebook/leetcode.pdf)
+ Latex排版整理的电子书
+  - [Backtracking](https://github.com/dingjikerbo/leetcode/blob/master/ebook/backtracking/leetcode-backtracking.pdf)
+  - [Graph] (https://github.com/dingjikerbo/leetcode/blob/master/ebook/graph/leetcode-graph.pdf)
  
  <br/><br/>
 
