@@ -137,6 +137,8 @@ private void helper(String digits, int start, List<String> list, String s) {
 }
 \end{Code}
 
+\newpage
+
 \subsubsection{Solution II}
 
 \begin{Code}
@@ -466,6 +468,11 @@ private void buildTrie(Trie trie, String word) {
     trie.word = word;
 }
 
+\end{Code}
+
+\newpage
+
+\begin{Code}
 public List<String> findWords(char[][] board, String[] words) {
     Trie trie = new Trie();
     for (String word : words) {
@@ -479,11 +486,7 @@ public List<String> findWords(char[][] board, String[] words) {
     }
     return new LinkedList<String>(set);
 }
-\end{Code}
 
-\newpage
-
-\begin{Code}
 private void dfs(Set<String> set, char[][] board, int i, int j, Trie trie) {
     if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
         return;
@@ -572,7 +575,7 @@ public List<String> wordBreak(String s, List<String> wordDict) {
     return dfs(s, new HashSet<String>(wordDict), cache);
 }
 
-private List<String> dfs(String s, HashSet<String> wordDict, HashMap<String, List<String>> cache) {
+List<String> dfs(String s, HashSet<String> wordDict, HashMap<String, List<String>> cache) {
     if (cache.containsKey(s)) {
         return cache.get(s);
     }
@@ -628,7 +631,7 @@ public List<List<Integer>> combinationSum(int[] candidates, int target) {
     return result;
 }
 
-private void helper(int[] candidates, List<List<Integer>> result, List<Integer> list, int target, int index) {
+void helper(int[] candidates, List<List<Integer>> result, List<Integer> list, int target, int index) {
     if (target < 0) {
         return;
     } else if (target == 0) {
@@ -644,7 +647,6 @@ private void helper(int[] candidates, List<List<Integer>> result, List<Integer> 
 
     helper(candidates, result, list, target, index + 1);
 }
-
 \end{Code}
 
 \newpage
@@ -659,7 +661,7 @@ public List<List<Integer>> combinationSum(int[] candidates, int target) {
     return result;
 }
 
-private void dfs(int[] candidates, int target, int start, List<List<Integer>> result, List<Integer> list) {
+void dfs(int[] candidates, int target, int start, List<List<Integer>> result, List<Integer> list) {
     if (target < 0) {
         return;
     }
@@ -712,7 +714,7 @@ public List<List<Integer>> combinationSum(int[] candidates, int target) {
     return result;
 }
 
-private void helper(int[] candidates, List<List<Integer>> result, List<Integer> list, int target, int index) {
+void helper(int[] candidates, List<List<Integer>> result, List<Integer> list, int target, int index) {
     if (target < 0) {
         return;
     } else if (target == 0) {
@@ -744,7 +746,7 @@ public List<List<Integer>> combinationSum(int[] candidates, int target) {
     return result;
 }
 
-private void dfs(int[] candidates, int start, int target, List<List<Integer>> result, List<Integer> path) {
+void dfs(int[] candidates, int start, int target, List<List<Integer>> result, List<Integer> path) {
     if (target < 0) {
         return;
     }
@@ -1754,8 +1756,10 @@ public static List<String> generatePalindromes(String s) {
     for (char c : s.toCharArray()) {
         counts[c]++;
     }
+
     List<String> list = new LinkedList<>();
     StringBuilder sb = new StringBuilder();
+
     char single = 0;
     for (int i = 0; i < counts.length; i++) {
         if (counts[i] % 2 != 0) {
@@ -1779,7 +1783,6 @@ private static void helper(StringBuilder sb, String cur, List<String> list) {
         list.add(cur);
         return;
     }
-
     for (int i = 0; i < sb.length(); i++) {
         if (i > 0 && sb.charAt(i) == sb.charAt(i - 1)) {
             continue;
