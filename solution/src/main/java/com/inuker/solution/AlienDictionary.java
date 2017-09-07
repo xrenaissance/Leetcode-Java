@@ -105,9 +105,6 @@ public class AlienDictionary {
                 }
             }
         }
-        if (sb.length() != count) {
-            return "";
-        }
-        return sb.toString();
+        return sb.length() != count ? "" : sb.toString();
     }
 }

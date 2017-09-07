@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  7 SEP 2017 19:31
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  7 SEP 2017 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**leetcode.tex
-(./leetcode.tex
+**leetcode-backtracking.tex
+(./leetcode-backtracking.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ctex/ctexbook.cls
@@ -1701,12 +1701,12 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 19.
 \mytopsep=\skip78
 )
 \@indexfile=\write4
-\openout4 = `leetcode.idx'.
+\openout4 = `leetcode-backtracking.idx'.
 
 
-Writing index file leetcode.idx
-) (./leetcode.aux (./title.aux) (./Backtracking.aux) (./Graph.aux))
-\openout1 = `leetcode.aux'.
+Writing index file leetcode-backtracking.idx
+) (./leetcode-backtracking.aux (./title.aux) (./Backtracking.aux))
+\openout1 = `leetcode-backtracking.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -1851,9 +1851,9 @@ LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
 
-(./leetcode.out) (./leetcode.out)
+(./leetcode-backtracking.out) (./leetcode-backtracking.out)
 \@outlinefile=\write5
-\openout5 = `leetcode.out'.
+\openout5 = `leetcode-backtracking.out'.
 
 .................................................
 . LaTeX info: "xparse/redefine-command"
@@ -1869,9 +1869,9 @@ LaTeX Info: Redefining \nameref on input line 15.
 
 
 No file title.tex.
-(./leetcode.toc)
+(./leetcode-backtracking.toc)
 \tf@toc=\write6
-\openout6 = `leetcode.toc'.
+\openout6 = `leetcode-backtracking.toc'.
 
  [1
 
@@ -1966,30 +1966,21 @@ File: images/watch.jpg Graphic file (type QTm)
 [51] [52] [53]
 File: images/unlock.png Graphic file (type QTm)
  <use  "images/unlock.png" > [54] [55])
-\openout2 = `Graph.aux'.
-
- (./Graph.tex
-第2章
-[56
-
-
-
-]) [57]
-No file leetcode.ind.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 46.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 46.
-(./leetcode.aux (./title.aux) (./Backtracking.aux) (./Graph.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 46.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 46.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 46.
+No file leetcode-backtracking.ind.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
+(./leetcode-backtracking.aux (./title.aux) (./Backtracking.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 44.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 44.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 29231 strings out of 493591
- 554905 string characters out of 6143547
- 594232 words of memory out of 5000000
- 32243 multiletter control sequences out of 15000+600000
+ 29222 strings out of 493591
+ 555016 string characters out of 6143547
+ 592525 words of memory out of 5000000
+ 32241 multiletter control sequences out of 15000+600000
  5562 words of font info for 59 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,11n,77p,10414b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,77p,10427b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on leetcode.pdf (61 pages).
+Output written on leetcode-backtracking.pdf (59 pages).

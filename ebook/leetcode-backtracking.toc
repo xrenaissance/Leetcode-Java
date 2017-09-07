@@ -123,7 +123,3 @@
 \contentsline {section}{\numberline {1.39}Android Unlock Patterns}{54}{section.1.39}
 \contentsline {subsubsection}{Description}{54}{section*.85}
 \contentsline {subsubsection}{Solution}{55}{section*.86}
-\contentsline {chapter}{\numberline {第2章\hspace {0.3em}}Graph, UF, DFS, BFS, TopSort}{56}{chapter.2}
-\contentsline {section}{\numberline {2.1}Alien Dictionary}{56}{section.2.1}
-\contentsline {subsubsection}{Description}{56}{section*.87}
-\contentsline {subsubsection}{Solution}{57}{section*.88}
