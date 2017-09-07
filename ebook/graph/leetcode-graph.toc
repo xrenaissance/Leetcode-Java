@@ -65,3 +65,24 @@
 \contentsline {subsubsection}{Description}{37}{section*.46}
 \contentsline {subsubsection}{Analysis}{37}{section*.47}
 \contentsline {subsubsection}{Solution}{38}{section*.48}
+\contentsline {section}{\numberline {1.20}Pacific Atlantic Water Flow}{40}{section.1.20}
+\contentsline {subsubsection}{Description}{40}{section*.49}
+\contentsline {subsubsection}{Solution}{40}{section*.50}
+\contentsline {section}{\numberline {1.21}The Maze}{41}{section.1.21}
+\contentsline {subsubsection}{Description}{41}{section*.51}
+\contentsline {subsubsection}{Solution}{42}{section*.52}
+\contentsline {section}{\numberline {1.22}The Maze II}{43}{section.1.22}
+\contentsline {subsubsection}{Description}{43}{section*.53}
+\contentsline {subsubsection}{Solution}{44}{section*.54}
+\contentsline {section}{\numberline {1.23}The Maze III}{45}{section.1.23}
+\contentsline {subsubsection}{Description}{45}{section*.55}
+\contentsline {subsubsection}{Solution}{46}{section*.56}
+\contentsline {section}{\numberline {1.24}01 Matrix}{47}{section.1.24}
+\contentsline {subsubsection}{Description}{47}{section*.57}
+\contentsline {subsubsection}{Solution}{47}{section*.58}
+\contentsline {section}{\numberline {1.25}Lonely Pixel I}{48}{section.1.25}
+\contentsline {subsubsection}{Description}{48}{section*.59}
+\contentsline {subsubsection}{Solution}{48}{section*.60}
+\contentsline {section}{\numberline {1.26}Lonely Pixel II}{49}{section.1.26}
+\contentsline {subsubsection}{Description}{49}{section*.61}
+\contentsline {subsubsection}{Solution}{49}{section*.62}
