@@ -282,3 +282,186 @@ private boolean isBalanced(TreeNode root, int[] height) {
 \end{Code}
 
 \newpage
+
+\section{Binary Tree Maximum Path Sum} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given a binary tree, find the maximum path sum.
+
+For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain at least one node and does not need to go through the root.
+
+For example:
+
+Given the below binary tree,
+\begin{Code}
+       1
+      / \
+     2   3
+\end{Code}
+
+Return 6.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public int maxPathSum(TreeNode root) {
+    return maxPathSum(root, null);
+}
+
+/**
+ * max表示包含root的单边路径最大和
+ */
+private int maxPathSum(TreeNode root, int[] max) {
+    if (root == null) {
+        return Integer.MIN_VALUE;  // 此处容易错
+    }
+    int[] left = new int[1], right = new int[1];
+    int leftMax = maxPathSum(root.left, left);
+    int rightMax = maxPathSum(root.right, right);
+    if (max != null) {
+        max[0] = max(left[0], right[0], 0) + root.val; // 此处容易错
+    }
+
+    // 容易错，要考虑到所有可能的情况
+    return max(leftMax, rightMax, root.val, left[0] + right[0] + root.val,
+            left[0] + root.val, right[0] + root.val);
+}
+
+private int max(int... vals) {
+    int max = Integer.MIN_VALUE;
+    for (int val : vals) {
+        max = Math.max(max, val);
+    }
+    return max;
+}
+\end{Code}
+
+\newpage
+
+\section{Populating Next Right Pointers in Each Node} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given a binary tree
+\begin{Code}
+    struct TreeLinkNode {
+      TreeLinkNode *left;
+      TreeLinkNode *right;
+      TreeLinkNode *next;
+    }
+\end{Code}
+
+Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
+
+Initially, all next pointers are set to NULL.
+
+\textbf{Note:}
+
+You may only use constant extra space.
+
+You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).
+
+For example,
+
+Given the following perfect binary tree,
+\begin{Code}
+         1
+       /  \
+      2    3
+     / \  / \
+    4  5  6  7
+\end{Code}
+
+After calling your function, the tree should look like:
+\begin{Code}
+         1 -> NULL
+       /  \
+      2 -> 3 -> NULL
+     / \  / \
+    4->5->6->7 -> NULL
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution I}
+
+\begin{Code}
+/** 递归法，巧妙地运用dummy使代码很简洁
+ *  假定当前root所在层已连好，要连下一层
+ */
+public void connect(TreeLinkNode root) {
+    if (root == null) {
+        return;
+    }
+    TreeLinkNode dummy = new TreeLinkNode(0), cur = dummy;
+    for (TreeLinkNode p = root; p != null; p = p.next) {
+        if (p.left != null) {
+            cur.next = p.left;
+            cur = cur.next;
+        }
+        if (p.right != null) {
+            cur.next = p.right;
+            cur = cur.next;
+        }
+    }
+    connect(dummy.next);
+}
+
+\end{Code}
+
+\subsubsection{Solution II}
+
+\begin{Code}
+/**
+ * 将递归转成非递归很简单，就加一层循环，且结尾处加root = dummy.next即可
+ */
+public void connect2(TreeLinkNode root) {
+    while (root != null) {
+        TreeLinkNode dummy = new TreeLinkNode(0), cur = dummy;
+
+        for (TreeLinkNode p = root; p != null; p = p.next) {
+            if (p.left != null) {
+                cur.next = p.left;
+                cur = cur.next;
+            }
+            if (p.right != null) {
+                cur.next = p.right;
+                cur = cur.next;
+            }
+        }
+
+        root = dummy.next;
+    }
+}
+\end{Code}
+
+\newpage
+
+\section{Convert Sorted Array to Binary Search Tree} %%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Description}
+
+Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public TreeNode sortedArrayToBST(int[] nums) {
+    return sortedArrayToBST(nums, 0, nums.length);
+}
+
+private TreeNode sortedArrayToBST(int[] nums, int start, int end) {
+    if (start >= end) {
+        return null;
+    }
+    int mid = start + (end - start) / 2;
+    TreeNode root = new TreeNode(nums[mid]);
+    root.left = sortedArrayToBST(nums, start, mid);
+    root.right = sortedArrayToBST(nums, mid + 1, end);
+    return root;
+}
+\end{Code}
+
+\newpage
+

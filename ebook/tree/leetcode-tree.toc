@@ -21,3 +21,13 @@
 \contentsline {section}{\numberline {1.7}Balanced Binary Tree}{7}{section.1.7}
 \contentsline {subsubsection}{Description}{7}{section*.15}
 \contentsline {subsubsection}{Solution}{7}{section*.16}
+\contentsline {section}{\numberline {1.8}Binary Tree Maximum Path Sum}{8}{section.1.8}
+\contentsline {subsubsection}{Description}{8}{section*.17}
+\contentsline {subsubsection}{Solution}{8}{section*.18}
+\contentsline {section}{\numberline {1.9}Populating Next Right Pointers in Each Node}{9}{section.1.9}
+\contentsline {subsubsection}{Description}{9}{section*.19}
+\contentsline {subsubsection}{Solution I}{10}{section*.20}
+\contentsline {subsubsection}{Solution II}{10}{section*.21}
+\contentsline {section}{\numberline {1.10}Convert Sorted Array to Binary Search Tree}{11}{section.1.10}
+\contentsline {subsubsection}{Description}{11}{section*.22}
+\contentsline {subsubsection}{Solution}{11}{section*.23}
