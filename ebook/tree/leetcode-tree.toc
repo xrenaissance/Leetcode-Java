@@ -6,3 +6,18 @@
 \contentsline {subsubsection}{Description}{2}{section*.4}
 \contentsline {subsubsection}{Solution I}{2}{section*.5}
 \contentsline {subsubsection}{Solution II}{2}{section*.6}
+\contentsline {section}{\numberline {1.3}Same Tree}{3}{section.1.3}
+\contentsline {subsubsection}{Description}{3}{section*.7}
+\contentsline {subsubsection}{Solution}{3}{section*.8}
+\contentsline {section}{\numberline {1.4}Binary Search Tree Iterator}{4}{section.1.4}
+\contentsline {subsubsection}{Description}{4}{section*.9}
+\contentsline {subsubsection}{Solution}{4}{section*.10}
+\contentsline {section}{\numberline {1.5}Unique Binary Search Trees}{5}{section.1.5}
+\contentsline {subsubsection}{Description}{5}{section*.11}
+\contentsline {subsubsection}{Solution}{5}{section*.12}
+\contentsline {section}{\numberline {1.6}Lowest Common Ancestor of a Binary Search Tree}{6}{section.1.6}
+\contentsline {subsubsection}{Description}{6}{section*.13}
+\contentsline {subsubsection}{Solution}{6}{section*.14}
+\contentsline {section}{\numberline {1.7}Balanced Binary Tree}{7}{section.1.7}
+\contentsline {subsubsection}{Description}{7}{section*.15}
+\contentsline {subsubsection}{Solution}{7}{section*.16}
