@@ -4,6 +4,7 @@
  Latex排版整理的电子书
   - [Backtracking](https://github.com/dingjikerbo/leetcode/blob/master/ebook/backtracking/leetcode-backtracking.pdf)
   - [Graph](https://github.com/dingjikerbo/leetcode/blob/master/ebook/graph/leetcode-graph.pdf)
+  - [Tree](https://github.com/dingjikerbo/leetcode/blob/master/ebook/tree/leetcode-tree.pdf)
   
  <br/><br/>
 
