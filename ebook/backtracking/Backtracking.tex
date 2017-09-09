@@ -517,42 +517,6 @@ private void dfs(Set<String> set, char[][] board, int i, int j, Trie trie) {
 
 \newpage
 
-\section{Word Break} %%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{Description}
-Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words. You may assume the dictionary does not contain duplicate words.
-
-For example, given
-s = \code{"leetcode"},
-dict = \code{["leet", "code"]}.
-
-Return true because \code{"leetcode"} can be segmented as \code{"leet code"}.
-
-\subsubsection{Solution}
-
-\begin{Code}
-public boolean wordBreak(String s, List<String> wordDict) {
-    int n = s.length();
-
-    boolean[] dp = new boolean[n + 1];
-    dp[0] = true;
-
-    for (int i = 1; i <= s.length(); i++) {
-        for (String word : wordDict) {
-            int j = i - word.length();
-            if (j >= 0 && dp[j] && s.substring(j, i).equals(word)) {
-                dp[i] = true;
-                break;
-            }
-        }
-    }
-
-    return dp[n];
-}
-\end{Code}
-
-\newpage
-
 \section{Word Break II} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
