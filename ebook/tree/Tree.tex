@@ -1,5 +1,7 @@
 \chapter{Tree}
 
+\subsubsection{500以上的题目暂时未录入}
+
 \section{Maximum Depth of Binary Tree} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
@@ -114,7 +116,9 @@ Implement an iterator over a binary search tree (BST). Your iterator will be ini
 
 Calling next() will return the next smallest number in the BST.
 
-\textbf{Note:} next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+\textbf{Note:}
+
+next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
 
 \subsubsection{Solution}
 
@@ -569,7 +573,8 @@ private boolean isSymmetric(TreeNode left, TreeNode right) {
     if (left == null || right == null) {
         return false;
     }
-    return left.val == right.val && isSymmetric(left.left, right.right) && isSymmetric(left.right, right.left);
+    return left.val == right.val && isSymmetric(left.left, right.right)
+            && isSymmetric(left.right, right.left);
 }
 \end{Code}
 
@@ -751,7 +756,7 @@ Given a binary tree, return the bottom-up level order traversal of its nodes' va
 
 For example:
 
-Given binary tree \code{[3,9,20,null,null,15,7]},
+Given binary tree [3,9,20,null,null,15,7],
 \begin{Code}
     3
    / \
@@ -760,14 +765,7 @@ Given binary tree \code{[3,9,20,null,null,15,7]},
    15   7
 \end{Code}
 
-return its bottom-up level order traversal as:
-\begin{Code}
-[
-  [15,7],
-  [9,20],
-  [3]
-]
-\end{Code}
+return its bottom-up level order traversal as: [[15,7],[9,20],[3]]
 
 \subsubsection{Solution}
 
@@ -775,9 +773,7 @@ return its bottom-up level order traversal as:
 public List<List<Integer>> levelOrder(TreeNode root) {
     List<List<Integer>> result = new LinkedList<List<Integer>>();
 
-    if (root == null) {
-        return result;
-    }
+    if (root == null) { return result;}
 
     Queue<TreeNode> queue = new LinkedList<TreeNode>();
     Queue<TreeNode> next = new LinkedList<TreeNode>();
@@ -810,7 +806,6 @@ public List<List<Integer>> levelOrder(TreeNode root) {
             cur = null; // 注意这里要置空
         }
     }
-
     return result;
 }
 \end{Code}
@@ -833,23 +828,14 @@ Given binary tree \code{[3,9,20,null,null,15,7]},
    15   7
 \end{Code}
 
-return its zigzag level order traversal as:
-\begin{Code}
-[
-  [3],
-  [20,9],
-  [15,7]
-]
-\end{Code}
+return its zigzag level order traversal as: \code{[[3],[20,9],[15,7]]}
 \subsubsection{Solution}
 
 \begin{Code}
 public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
     List<List<Integer>> result = new LinkedList<List<Integer>>();
 
-    if (root == null) {
-        return result;
-    }
+    if (root == null) {return result;}
 
     List<TreeNode> seq = new LinkedList<TreeNode>();
     List<TreeNode> tmp = new LinkedList<TreeNode>();
@@ -866,11 +852,9 @@ public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         } else {
             cur.add(0, node.val);
         }
-
         if (node.left != null) {
             tmp.add(node.left);
         }
-
         if (node.right != null) {
             tmp.add(node.right);
         }
@@ -884,7 +868,6 @@ public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
             level++;
         }
     }
-
     return result;
 }
 \end{Code}
@@ -1218,7 +1201,9 @@ public TreeNode buildTree(int[] inorder, int[] postorder) {
     return buildTree(inorder, 0, inorder.length, postorder, 0, postorder.length);
 }
 
-private TreeNode buildTree(int[] inorder, int inStart, int inEnd, int[] postorder, int postStart, int postEnd) {
+private TreeNode buildTree(int[] inorder, int inStart, int inEnd, int[] postorder,
+    int postStart, int postEnd) {
+
     if (inStart >= inEnd || postStart >= postEnd) {
         return null;
     }
@@ -1237,8 +1222,13 @@ private TreeNode buildTree(int[] inorder, int inStart, int inEnd, int[] postorde
     }
 
     TreeNode root = new TreeNode(postorder[postEnd - 1]);
-    root.left = buildTree(inorder, inStart, index, postorder, postStart, postStart + index - inStart);
-    root.right = buildTree(inorder, index + 1, inEnd, postorder, postStart + index - inStart, postEnd - 1);
+
+    root.left = buildTree(inorder, inStart, index, postorder,
+        postStart, postStart + index - inStart);
+
+    root.right = buildTree(inorder, index + 1, inEnd, postorder,
+        postStart + index - inStart, postEnd - 1);
+
     return root;
 }
 \end{Code}
@@ -1263,13 +1253,7 @@ Given the below binary tree and sum = 22,
         7    2  5   1
 \end{Code}
 
-return
-\begin{Code}
-[
-   [5,4,11,2],
-   [5,8,4,5]
-]
-\end{Code}
+return \code{[[5,4,11,2],[5,8,4,5]]}
 \subsubsection{Solution}
 
 \begin{Code}
@@ -1287,10 +1271,6 @@ public List<List<Integer>> pathSum(TreeNode root, int sum) {
     return result;
 }
 
-/**
- * 这里一定要拷贝一份链表再加到result
- * 此时path中已经包含了root，sum中还不包含root
- */
 private void pathSum(TreeNode root, int sum, List<List<Integer>> result, List<Integer> path) {
     if (root == null) {
         return;
@@ -1648,14 +1628,9 @@ private int inorderTraversal(TreeNode root, int k, int[] kth) {
 }
 \end{Code}
 
-\newpage
-
 \subsubsection{Solution II}
 
 \begin{Code}
-/**
- * 非递归法
- */
 public int kthSmallest2(TreeNode root, int k) {
     Stack<TreeNode> stack = new Stack<>();
     while (root != null || !stack.isEmpty()) {
@@ -2071,7 +2046,8 @@ public boolean isValidBST(TreeNode root) {
 
 private boolean isValidBST(TreeNode root, long lower, long upper) {
     /**
-     * root为null可以认为是合法的，如果是null为非法，则当某个节点没有子节点时，下面就返回false了，显然不对
+     * root为null可以认为是合法的，如果是null为非法，则当某个节点没有子节点时，下面就返回false了，
+     * 显然不对
      */
     if (root == null) {
         return true;
@@ -2345,6 +2321,9 @@ Another valid answer is \code{[5,2,6,null,4,null,7]}.
    \   \
     4   7
 \end{Code}
+
+\newpage
+
 \subsubsection{Solution}
 
 \begin{Code}
@@ -2594,3 +2573,637 @@ private void inorderTraverse(Stack<TreeNode> stack0, TreeNode root, double targe
 \end{Code}
 
 \newpage
+
+\section{Sum of Left Leaves} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Find the sum of all left leaves in a given binary tree.
+
+Example:
+\begin{Code}
+    3
+   / \
+  9  20
+    /  \
+   15   7
+\end{Code}
+
+There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
+
+\subsubsection{Solution I}
+
+\begin{Code}
+public int sumOfLeftLeaves(TreeNode root) {
+    if (root == null) {
+        return 0;
+    }
+
+    int left = 0;
+
+    if (root.left != null && root.left.left == null && root.left.right == null) {
+        left = root.left.val;
+    } else {
+        left = sumOfLeftLeaves(root.left);
+    }
+
+    return left + sumOfLeftLeaves(root.right);
+}
+\end{Code}
+
+\subsubsection{Solution II}
+\begin{Code}
+/**
+ * 迭代法，遍历所有结点，判断是左叶子时加上
+ */
+public int sumOfLeftLeaves2(TreeNode root) {
+    Stack<TreeNode> stack = new Stack<TreeNode>();
+    int sum = 0;
+    while (!stack.isEmpty() || root != null) {
+        if (root != null) {
+            stack.push(root);
+            root = root.left;
+        } else {
+            root = stack.pop();
+
+            if (root.left != null && root.left.left == null && root.left.right == null) {
+                sum += root.left.val;
+            }
+
+            root = root.right;
+        }
+    }
+    return sum;
+}
+\end{Code}
+
+\newpage
+
+\section{Find Leaves of Binary Tree} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves, repeat until the tree is empty.
+
+\textbf{Example:}
+
+Given binary tree
+\begin{Code}
+          1
+         / \
+        2   3
+       / \
+      4   5
+\end{Code}
+
+Returns \code{[4, 5, 3], [2], [1]}.
+
+\textbf{Explanation:}
+
+1. Removing the leaves [4, 5, 3] would result in this tree:
+\begin{Code}
+          1
+         /
+        2
+\end{Code}
+
+2. Now removing the leaf [2] would result in this tree:
+
+          1
+
+3. Now removing the leaf [1] would result in the empty tree:
+
+          []
+
+Returns \code{[4, 5, 3], [2], [1]}.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<List<Integer>> findLeaves(TreeNode root) {
+    List<List<Integer>> result = new LinkedList<List<Integer>>();
+    helper(root, result);
+    return result;
+}
+
+private int helper(TreeNode root, List<List<Integer>> result) {
+    if (root == null) {
+        return -1;
+    }
+    int level = Math.max(helper(root.left, result), helper(root.right, result)) + 1;
+    if (result.size() <= level) {
+        result.add(new LinkedList<Integer>());
+    }
+    result.get(level).add(root.val);
+    return level;
+}
+\end{Code}
+
+\newpage
+
+\section{Path Sum III} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+You are given a binary tree in which each node contains an integer value.
+
+Find the number of paths that sum to a given value.
+
+The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).
+
+The tree has no more than 1,000 nodes and the values are in the range -1,000,000 to 1,000,000.
+
+\textbf{Example:}
+
+root = \code{[10,5,-3,3,2,null,11,3,-2,null,1]}, sum = 8
+\begin{Code}
+      10
+     /  \
+    5   -3
+   / \    \
+  3   2   11
+ / \   \
+3  -2   1
+\end{Code}
+
+Return 3. The paths that sum to 8 are:
+\begin{Code}
+1.  5 -> 3
+2.  5 -> 2 -> 1
+3. -3 -> 11
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution I}
+
+\begin{Code}
+/**
+ * 当root.val == Sum时，不要return，因为继续往下走可能有路径刚好加起来为0，典型的为[1,-2,1,-1]，目标和为-1
+ * 这里隐藏了四条路径，[1,-2], [-2,1], [-1], [1,-2,1,-1]，如果在[1,-2]就return了，那就会掉了[1,-2,1,-1]
+ * 可参考https://discuss.leetcode.com/category/562/path-sum-iii
+ */
+
+/**
+ * 有两种可能，算上当前root和不算当前root
+ */
+public int pathSum(TreeNode root, int sum) {
+    int[] count = new int[1];
+    helperSum(root, sum, count);
+    return count[0];
+}
+
+/**
+ *  既可以算上，也可以不算上root
+ */
+private void helperSum(TreeNode root, int sum, int[] count) {
+    if (root == null) {
+        return;
+    }
+
+    // 算上root
+    helper(root, sum, count);
+
+    // 不算上root
+    helperSum(root.left, sum, count);
+    helperSum(root.right, sum, count);
+}
+
+/**
+ * 一定要算上root
+ */
+private void helper(TreeNode root, int sum, int[] count) {
+    if (root == null) {
+        return;
+    }
+    if (root.val == sum) {
+        count[0]++;
+       // return;
+    }
+
+    if (root.left != null) {
+        helper(root.left, sum - root.val, count);
+    }
+
+    if (root.right != null) {
+        helper(root.right, sum - root.val, count);
+    }
+}
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+\begin{Code}
+/* 如果要给路径打出来
+public int pathSum(TreeNode root, int sum) {
+    List<String> result = new LinkedList<>();
+    pathSum(root, sum, result, "");
+    return result.size();
+}
+
+private void pathSum(TreeNode root, int sum, List<String> list, String path) {
+    if (root == null) {
+        return;
+    }
+
+    pathSumWithRoot(root, sum, list, path);
+
+    pathSum(root.left, sum, list, "");
+    pathSum(root.right, sum, list, "");
+}
+
+private void pathSumWithRoot(TreeNode root, int sum, List<String> list, String path) {
+    if (root == null) {
+        return;
+    }
+    if (root.val == sum) {
+        list.add(path + "->" + root.val);
+    }
+    pathSumWithRoot(root.left, sum - root.val, list, path + "->" + root.val);
+    pathSumWithRoot(root.right, sum - root.val, list, path + "->" + root.val);
+}*/
+\end{Code}
+
+\newpage
+
+\section{Largest BST Subtree} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with largest number of nodes in it.
+
+\textbf{Note:}
+
+A subtree must include all of its descendants.
+
+Here's an example:
+\begin{Code}
+    10
+    / \
+   5  15
+  / \   \
+ 1   8   7
+\end{Code}
+
+The Largest BST Subtree in this case is the highlighted one.
+
+The return value is the subtree's size, which is 3.
+
+\textbf{Follow up:}
+
+Can you figure out ways to solve it with O(n) time complexity?
+
+\subsubsection{Solution}
+
+\begin{Code}
+class Result {
+    int count;
+    int lower;
+    int upper;
+
+    Result(int count, int lower, int upper) {
+        this.count = count;
+        this.lower = lower;
+        this.upper = upper;
+    }
+}
+
+public int largestBSTSubtree(TreeNode root) {
+    Result res = helper(root);
+    return Math.abs(res.count);
+}
+
+private Result helper(TreeNode root) {
+    if (root == null) {
+        return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+    }
+
+    Result left = helper(root.left);
+    Result right = helper(root.right);
+
+    // 注意这里的等号千万别掉了，因为可能树中有节点相同
+    if (left.count < 0 || right.count < 0 || left.upper >= root.val || right.lower <= root.val) {
+        return new Result(-1 * Math.max(Math.abs(left.count), Math.abs(right.count)), 0, 0);
+    }
+
+    return new Result(left.count + right.count + 1, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
+}
+\end{Code}
+
+\newpage
+
+\section{Find Mode in Binary Search Tree} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the given BST.
+
+Assume a BST is defined as follows:
+
+1. The left subtree of a node contains only nodes with keys less than or equal to the node's key.
+
+2. The right subtree of a node contains only nodes with keys greater than or equal to the node's key.
+
+3. Both the left and right subtrees must also be binary search trees.
+
+For example:
+
+Given BST [1,null,2,2],
+\begin{Code}
+   1
+    \
+     2
+    /
+   2
+\end{Code}
+
+return [2].
+
+\textbf{Note:} If a tree has more than one mode, you can return them in any order.
+
+\textbf{Follow up:} Could you do that without using any extra space? (Assume that the implicit stack space incurred due to recursion does not count).
+
+\subsubsection{Analysis}
+这题是要找BST中出现次数最多的节点集合，这里允许有重复节点。思路很简单，中序遍历，会按升序排列，再统计重复的值
+
+
+\newpage
+
+\subsubsection{Solution}
+
+\begin{Code}
+private List<Integer> mList;
+
+private int mCurCount;
+
+private int mMaxCount;
+
+private Integer mCurValue;
+
+public int[] findMode(TreeNode root) {
+    mList = new LinkedList<>();
+
+    inorderTraverse(root);
+
+    int[] res = new int[mList.size()];
+    for (int i = 0; i < res.length; i++) {
+        res[i] = mList.get(i);
+    }
+    return res;
+}
+
+private void inorderTraverse(TreeNode root) {
+    if (root == null) {
+        return;
+    }
+    inorderTraverse(root.left);
+
+
+    if (mCurValue != null && root.val != mCurValue) {
+        mCurCount = 1;
+    } else {
+        mCurCount++;
+    }
+
+    mCurValue = root.val;
+
+    if (mCurCount > mMaxCount) {
+        mList.clear();
+        mList.add(mCurValue);
+        mMaxCount = mCurCount;
+    } else if (mCurCount == mMaxCount) {
+        mList.add(mCurValue);
+    }
+
+    inorderTraverse(root.right);
+}
+\end{Code}
+
+\newpage
+
+\section{Most Frequent Subtree Sum} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given the root of a tree, you are asked to find the most frequent subtree sum. The subtree sum of a node is defined as the sum of all the node values formed by the subtree rooted at that node (including the node itself). So what is the most frequent subtree sum value? If there is a tie, return all the values with the highest frequency in any order.
+
+\textbf{Examples 1}
+
+\textbf{Input:}
+\begin{Code}
+  5
+ /  \
+2   -3
+\end{Code}
+
+return [2, -3, 4], since all the values happen only once, return all of them in any order.
+
+\textbf{Examples 2}
+
+\textbf{Input:}
+\begin{Code}
+  5
+ /  \
+2   -5
+\end{Code}
+
+return [2], since 2 happens twice, however -5 only occur once.
+
+\textbf{Note:} You may assume the sum of values in any subtree is in the range of 32-bit signed integer.
+
+\newpage
+
+\subsubsection{Solution}
+
+\begin{Code}
+/**
+ * key为sum，value为出现的次数
+ */
+private HashMap<Integer, Integer> mCounts;
+/**
+ * key为次数，value为出现该次数的所有sum
+ */
+private HashMap<Integer, List<Integer>> mMap;
+private int mMaxCount;
+
+public int[] findFrequentTreeSum(TreeNode root) {
+    if (root == null) {
+        return new int[0];
+    }
+
+    mCounts = new HashMap<>();
+    mMap = new HashMap<>();
+
+    helper(root);
+
+    List<Integer> list = mMap.get(mMaxCount);
+
+    int[] res = new int[list.size()];
+    for (int i = 0; i < list.size(); i++) {
+        res[i] = list.get(i);
+    }
+    return res;
+}
+
+private int helper(TreeNode root) {
+    if (root == null) {return 0;}
+
+    int left = helper(root.left);
+    int right = helper(root.right);
+
+    Integer sum = left + right + root.val;
+
+
+    int count = mCounts.getOrDefault(sum, 0);
+    mCounts.put(sum, count + 1);
+
+    mMaxCount = Math.max(mMaxCount, count + 1);
+
+    if (mMap.containsKey(count)) {
+        mMap.get(count).remove(sum);
+    }
+
+    List<Integer> list = mMap.get(count + 1);
+    if (list == null) {
+        list = new LinkedList<>();
+        mMap.put(count + 1, list);
+    }
+    list.add(sum);
+
+    return sum;
+}
+\end{Code}
+
+\newpage
+
+\section{Find Largest Value in Each Tree Row} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+You need to find the largest value in each row of a binary tree.
+
+\textbf{Example:}
+
+\textbf{Input:}
+\begin{Code}
+          1
+         / \
+        3   2
+       / \   \
+      5   3   9
+\end{Code}
+
+\textbf{Output:} [1, 3, 9]
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<Integer> largestValues(TreeNode root) {
+    Queue<TreeNode> queue = new LinkedList<>();
+    Queue<TreeNode> next = new LinkedList<>();
+
+    List<Integer> list = new LinkedList<>();
+    if (root == null) {
+        return list;
+    }
+
+    queue.offer(root);
+
+    int max = Integer.MIN_VALUE;
+
+    while (!queue.isEmpty()) {
+        TreeNode node = queue.poll();
+
+        max = Math.max(max, node.val);
+
+        if (node.left != null) {
+            next.offer(node.left);
+        }
+
+        if (node.right != null) {
+            next.offer(node.right);
+        }
+
+        if (queue.isEmpty()) {
+            list.add(max);
+            queue.addAll(next);
+            next.clear();
+            max = Integer.MIN_VALUE;
+        }
+    }
+
+    return list;
+}
+\end{Code}
+
+\newpage
+
+\section{Find Bottom Left Tree Value} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a binary tree, find the leftmost value in the last row of the tree.
+
+\textbf{Example 1:}
+
+\textbf{Input:}
+\begin{Code}
+    2
+   / \
+  1   3
+\end{Code}
+
+\textbf{Output:} 1
+
+\textbf{Example 2:}
+
+\textbf{Input:}
+
+\begin{Code}
+        1
+       / \
+      2   3
+     /   / \
+    4   5   6
+       /
+      7
+\end{Code}
+
+\textbf{Output:} 7
+
+\textbf{Note:} You may assume the tree (i.e., the given root node) is not NULL.
+
+\newpage
+
+\subsubsection{Solution}
+
+\begin{Code}
+public int findBottomLeftValue(TreeNode root) {
+    Queue<TreeNode> queue = new LinkedList<>();
+    Queue<TreeNode> next = new LinkedList<>();
+
+    TreeNode target = null;
+
+    queue.offer(root);
+
+    boolean firstPoll = true;
+
+    while (!queue.isEmpty()) {
+        TreeNode node = queue.poll();
+
+        if (firstPoll) {
+            firstPoll = false;
+            target = node;
+        }
+
+        if (node.left != null) {
+            next.offer(node.left);
+        }
+
+        if (node.right != null) {
+            next.offer(node.right);
+        }
+
+        if (queue.isEmpty()) {
+            queue.addAll(next);
+            next.clear();
+            firstPoll = true;
+        }
+    }
+
+    return target.val;
+}
+\end{Code}
