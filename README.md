@@ -74,6 +74,7 @@
 |51|[N-Queens](https://leetcode.com/problems/n-queens/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NQueens.java)||
 |52|[N-Queens II](https://leetcode.com/problems/n-queens-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NQueensII.java)||
 |53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumSubarray.java)|95|
+|54|[Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SpiralMatrix.java)|85||
 |55|[Jump Game](https://leetcode.com/problems/jump-game/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/JumpGame.java)||
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MergeIntervals.java)|70|
 |57|[Insert Interval](https://leetcode.com/problems/insert-interval/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertInterval.java)|75|这题要多做几遍|
@@ -122,6 +123,7 @@
 |114|[Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FlattenBinaryTreeToLinkedList.java)|80|
 |116|[Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PopulatingNextRightPointersInEachNode.java)|80|
 |117|[Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PopulatingNextRightPointersInEachNodeII.java)|80|
+|118|[Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PascalsTriangle.java)|80||
 |119|[Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/description/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PascalTriangleII.java)|80||
 |121|[Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BestTimeBuySellStock.java)|100|
 |122|[Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BestTimeBuySellStockII.java)|100|
@@ -155,10 +157,12 @@
 |159|[Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithAtMostTwoDistinctCharacters.java)|100|多看两遍|
 |160|[Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/IntersectionOfTwoLinkedLists.java)|100|
 |161|[One Edit Distance](https://leetcode.com/problems/one-edit-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/OneEditDistance.java)|85|和#72做两遍|
+|162|[Find Peak Element](https://leetcode.com/problems/find-peak-element/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindPeakElement.java)|90||
 |163|[Missing Ranges](https://leetcode.com/problems/missing-ranges/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MissingRanges.java)|65|多做几遍，太容易错了|
 |164|[Maximum Gap](https://leetcode.com/problems/maximum-gap/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumGap.java)|65|
 |167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumII.java)|100|
 |168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnTitle.java)||
+|169|[Majority Element](https://leetcode.com/problems/majority-element/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MajorityElement.java)|100||
 |170|[Two Sum III - Data structure design](https://leetcode.com/problems/two-sum-iii-data-structure-design/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIII.java)|100|这道题再多做一遍|
 |171|[Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ExcelSheetColumnNumber.java)||
 |172|[Factorial Trailing Zeroes](https://leetcode.com/problems/factorial-trailing-zeroes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FactorialTrailingZeroes.java)|100|
@@ -166,6 +170,7 @@
 |179|[Largest Number](https://leetcode.com/problems/largest-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LargestNumber.java)|90|
 |186|[Reverse Words in a String II](https://leetcode.com/problems/reverse-words-in-a-string-ii/description/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseWordsInAStringII.java)|90||
 |188|[Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BestTimeBuySellStockIV.java)||
+|189|[Rotate Array](https://leetcode.com/problems/rotate-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RotateArray.java)|100||
 |190|[Reverse Bits](https://leetcode.com/problems/reverse-bits/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseBits.java)|85|
 |198|[House Robber](https://leetcode.com/problems/house-robber/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/HouseRobber.java)|80|
 |199|[Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BinaryTreeRightSideView.java)|80|
@@ -192,6 +197,8 @@
 |223|[Rectangle Area](https://leetcode.com/problems/rectangle-area/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RectangleArea.java)|95|
 |225|[Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MyStack.java)|90|
 |226|[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InvertBinaryTree.java)|80|
+|228|[Summary Ranges](https://leetcode.com/problems/summary-ranges/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SummaryRanges.java)|70||
+|229|[Majority Element II](https://leetcode.com/problems/majority-element-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MajorityElementII.java)|70||
 |230|[Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/KthSmallestElementInBST.java)|85|注意Follow Up|
 |232|[Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MyQueue.java)|95|
 |233|[Number of Digit One](https://leetcode.com/problems/number-of-digit-one/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NumberOfDigitOne.java)||
@@ -221,6 +228,7 @@
 |265|[Paint House II](https://leetcode.com/problems/paint-house-ii)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PaintHouseII.java)|60|
 |266|[Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePermutation.java)|100|
 |267|[Palindrome Permutation II](https://leetcode.com/problems/palindrome-permutation-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PalindromePermutationII.java)|80|典型，多看两遍|
+|268|[Missing Number](https://leetcode.com/problems/missing-number)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MissingNumber.java)|100||
 |269|[Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AlienDictionary.java)|70|这题要多做几遍|
 |270|[Closest Binary Search Tree Value](https://leetcode.com/problems/closest-binary-search-tree-value/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ClosestBinarySearchTreeValue.java)|90|
 |271|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EncodeAndDecodeStrings.java)|65|思路巧妙，多看几遍|
@@ -240,6 +248,7 @@
 |286|[Walls and Gates](https://leetcode.com/problems/walls-and-gates/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WallsAndGates.java)|70|多看两遍|
 |287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindTheDuplicateNumber.java)||
 |288|[Unique Word Abbreviation](https://leetcode.com/problems/unique-word-abbreviation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidWordAbbr.java)|70|这题不难，多做两遍，题目意思容易理解错|
+|289|[Game of Life](https://leetcode.com/problems/game-of-life/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GameOfLife.java)|70||
 |293|[Flip Game](https://leetcode.com/problems/flip-game/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FlipGame.java)|90||
 |294|[Flip Game II](https://leetcode.com/problems/flip-game-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FlipGameII.java)|90||
 |295|[Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindMedianFromDataStream.java)||
@@ -286,6 +295,7 @@
 |361|[Bomb Enemy](https://leetcode.com/problems/bomb-enemy/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BombEnemy.java)|65|这题多做几遍，开始没思路|
 |364|[Nested List Weight Sum II](https://leetcode.com/problems/nested-list-weight-sum-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/NestedListWeightSumII.java)||
 |366|[Find Leaves of Binary Tree](https://leetcode.com/problems/find-leaves-of-binary-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindLeavesOfBinaryTree.java)|60|这道题刚开始还没思路|
+|369|[Plus One Linked List](https://leetcode.com/problems/plus-one-linked-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PlusOneLinkedList.java)|100||
 |374|[Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GuessNumberHigherOrLower.java)|100|
 |375|[Guess Number Higher or Lower II](https://leetcode.com/problems/guess-number-higher-or-lower-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GuessNumberHigherOrLowerII.java)|60|
 |377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/combinationSum4.java)|65|
@@ -329,3 +339,4 @@
 |557|[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseWordsInAStringIII.java)|100||
 |637|[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AverageOfLevelsInBinaryTree.java)|100||
 |652|[Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindDuplicateSubtrees.java)|70|开始还没思路|
+|653|[Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIV.java)|90||
