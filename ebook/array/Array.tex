@@ -2588,14 +2588,575 @@ public int shortestWordDistance(String[] words, String word1, String word2) {
 
 \newpage
 
-\section{Title} %%%%%%%%%%%%%%%%%%%%%%  
+\section{Find All Duplicates in an Array} %%%%%%%%%%%%%%%%%%%%%%  
 
 \subsubsection{Description}
+Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+
+Find all the elements that appear twice in this array.
+
+Could you do it without extra space and in O(n) runtime?
+\subsubsection{Solution}
+
+\begin{Code}
+public List<Integer> findDuplicates(int[] nums) {
+    List<Integer> res = new ArrayList<>();
+    for (int i = 0; i < nums.length; ++i) {
+        int index = Math.abs(nums[i]) - 1;
+        if (nums[index] < 0)
+            res.add(Math.abs(index + 1));
+        nums[index] = -nums[index];
+    }
+    return res;
+}
+\end{Code}
+
+\newpage
+
+\section{Insert Delete GetRandom O(1)} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Design a data structure that supports all following operations in average O(1) time.
+
+1. insert(val): Inserts an item val to the set if not already present.
+
+2. remove(val): Removes an item val from the set if present.
+
+3. getRandom: Returns a random element from current set of elements. Each element must have the same probability of being returned.
+
+\textbf{Example:}
+
+\begin{Code}
+// Init an empty set.
+RandomizedSet randomSet = new RandomizedSet();
+
+// Inserts 1 to the set. Returns true as 1 was inserted successfully.
+randomSet.insert(1);
+
+// Returns false as 2 does not exist in the set.
+randomSet.remove(2);
+
+// Inserts 2 to the set, returns true. Set now contains [1,2].
+randomSet.insert(2);
+
+// getRandom should return either 1 or 2 randomly.
+randomSet.getRandom();
+
+// Removes 1 from the set, returns true. Set now contains [2].
+randomSet.remove(1);
+
+// 2 was already in the set, so return false.
+randomSet.insert(2);
+
+// Since 2 is the only number in the set, getRandom always return 2.
+randomSet.getRandom();
+\end{Code}
+
+\newpage
 
 \subsubsection{Solution}
 
 \begin{Code}
+public class RandomizedSet {
 
+    private HashMap<Integer, Integer> mMap;
+    private List<Integer> mList;
+    private Random mRandom;
+
+    public RandomizedSet() {
+        mList = new ArrayList<Integer>();
+        mMap = new HashMap<Integer, Integer>();
+        mRandom = new Random();
+    }
+
+    public boolean insert(int val) {
+        if (mMap.containsKey(val)) {
+            return false;
+        }
+        mList.add(val);
+        mMap.put(val, mList.size() - 1);
+        return true;
+    }
+
+    public boolean remove(int val) {
+        if (!mMap.containsKey(val)) {
+            return false;
+        }
+        int index = mMap.remove(val);
+        int lastIndex = mList.size() - 1;
+        if (index != lastIndex) {
+            int lastVal = mList.get(lastIndex);
+            mList.set(index, lastVal);
+            // 这里要注意重新设置lastVal的index
+            mMap.put(lastVal, index);
+        }
+        mList.remove(lastIndex);
+        return true;
+    }
+
+    public int getRandom() {
+        int index = mRandom.nextInt(mList.size());
+        return mList.get(index);
+    }
+}
+
+\end{Code}
+
+\newpage
+
+\section{Insert Delete GetRandom O(1) - Duplicates allowed} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Design a data structure that supports all following operations in average O(1) time.
+
+\textbf{Note:} Duplicate elements are allowed.
+
+1. insert(val): Inserts an item val to the collection.
+
+2. remove(val): Removes an item val from the collection if present.
+
+3. getRandom: Returns a random element from current collection of elements. The probability of each element being returned is linearly related to the number of same value the collection contains.
+
+\textbf{Example:}
+\begin{Code}
+// Init an empty collection.
+RandomizedCollection collection = new RandomizedCollection();
+
+// Inserts 1 to the collection. Returns true as the collection did not contain 1.
+collection.insert(1);
+
+// Inserts another 1 to the collection. Returns false as the collection contained 1. Collection now contains [1,1].
+collection.insert(1);
+
+// Inserts 2 to the collection, returns true. Collection now contains [1,1,2].
+collection.insert(2);
+
+// getRandom should return 1 with the probability 2/3, and returns 2 with the probability 1/3.
+collection.getRandom();
+
+// Removes 1 from the collection, returns true. Collection now contains [1,2].
+collection.remove(1);
+
+// getRandom should return 1 and 2 both equally likely.
+collection.getRandom();
+\end{Code}
+\newpage
+
+\subsubsection{Solution}
+
+\begin{Code}
+public class RandomizedCollection {
+
+    private HashMap<Integer, HashSet<Integer>> map;
+    private List<Integer> list = new ArrayList<Integer>();
+    private Random random;
+
+    /** Initialize your data structure here. */
+    public RandomizedCollection () {
+        map = new HashMap<Integer, HashSet<Integer>>();
+        list = new Vector<Integer>();
+        random = new Random();
+    }
+
+    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
+    public boolean insert(int val) {
+        boolean contains = map.containsKey(val);
+
+        if (!contains) {
+            map.put(val, new HashSet<Integer>());
+        }
+
+        list.add(val);
+        HashSet<Integer> index = map.get(val);
+        index.add(list.size() - 1);
+
+        return !contains;
+    }
+
+    /** Removes a value from the set. Returns true if the set contained the specified element. */
+    public boolean remove(int val) {
+        if (!map.containsKey(val)) {
+            return false;
+        }
+
+        HashSet<Integer> indexes = map.get(val);
+
+        if (indexes.isEmpty()) {
+            return false;
+        }
+
+        int index = indexes.iterator().next();
+
+        /**
+         * 这里有个地方非常容易错，那就是indexes.remove(index)不能放到下面的if块之后
+         * 为什么呢？假设要remove的数有多个，其中一个恰好在链表末尾，而此处
+         * 选中的index在链表中间，如果下面这句放到if后的话，会将末尾和中间的都删了
+         */
+        indexes.remove(index);
+
+        if (index < list.size() - 1) {
+            int last = list.get(list.size() - 1);
+            list.set(index, last);
+
+            map.get(last).remove(list.size() - 1);
+            map.get(last).add(index);
+        }
+
+        list.remove(list.size() - 1);
+        return true;
+    }
+
+    /** Get a random element from the set. */
+    public int getRandom() {
+        return list.get(random.nextInt(list.size()));
+    }
+}
+\end{Code}
+
+\newpage
+
+\section{Missing Ranges} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a sorted integer array where the range of elements are in the inclusive range [lower, upper], return its missing ranges.
+
+For example, given [0, 1, 3, 50, 75], lower = 0 and upper = 99, return ["2", "4->49", "51->74", "76->99"].
+\subsubsection{Solution}
+
+\begin{Code}
+public List<String> findMissingRanges(int[] nums, int lower, int upper) {
+    List<String> list = new LinkedList<String>();
+    long next = lower;
+    for (int n : nums) {
+        if (n < next) {
+            continue;
+        }
+        if (n > next) {
+            list.add(getRange(next, n - 1));
+        }
+        next = (long) n + 1;
+    }
+    if (upper >= next) {
+        list.add(getRange(next, upper));
+    }
+    return list;
+}
+
+private String getRange(long start, int end) {
+    return start == end ? String.valueOf(start) : start + "->" + end;
+}
+\end{Code}
+
+\newpage
+
+\section{Third Maximum Number} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a non-empty array of integers, return the third maximum number in this array. If it does not exist, return the maximum number. The time complexity must be in O(n).
+
+\textbf{Example 1:}
+
+\textbf{Input:} [3, 2, 1]
+
+\textbf{Output:} 1
+
+\textbf{Explanation:} The third maximum is 1.
+
+\textbf{Example 2:}
+
+\textbf{Input:} [1, 2]
+
+\textbf{Output:} 2
+
+\textbf{Explanation:} The third maximum does not exist, so the maximum (2) is returned instead.
+
+\textbf{Example 3:}
+
+\textbf{Input:} [2, 2, 3, 1]
+
+\textbf{Output:} 1
+
+\textbf{Explanation:} Note that the third maximum here means the third maximum distinct number.
+
+Both numbers with value 2 are both considered as second maximum.
+\subsubsection{Solution}
+
+\begin{Code}
+public int thirdMax(int[] nums) {
+    int count = 0;
+
+    long first = (long) Integer.MIN_VALUE - 1;
+    long second = (long) Integer.MIN_VALUE - 1;
+    long third = (long) Integer.MIN_VALUE - 1;
+
+    for (int n : nums) {
+        if (n == first || n == second || n == third) {
+            continue;
+        }
+
+        if (n > first) {
+            count++;
+            third = second;
+            second = first;
+            first = n;
+        } else if (n > second) {
+            count++;
+            third = second;
+            second = n;
+        } else if (n >= third) {
+            count++;
+            third = n;
+        }
+    }
+
+    return (int) (count >= 3 ? third : first);
+}
+\end{Code}
+
+\newpage
+
+\section{Kth Largest Element in an Array} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+For example,
+
+Given [3,2,1,5,6,4] and k = 2, return 5.
+
+\textbf{Note:}
+You may assume k is always valid, 1 ≤ k ≤ array's length.
+\subsubsection{Solution I}
+
+\begin{Code}
+// 耗时15ms，时间复杂度O(nlgk)，空间复杂度O(k)
+// 按升序排的，出队列k次获取第k大的数
+public int findKthLargest(int[] nums, int k) {
+    PriorityQueue<Integer> queue = new PriorityQueue<>();
+    for (int n : nums) {
+        queue.offer(n);
+        if (queue.size() > k) {
+            queue.poll();
+        }
+    }
+    return queue.peek();
+}
+\end{Code}
+
+\subsubsection{Solution II}
+\begin{Code}
+// 耗时3ms，时间复杂度O(nlgn)，空间复杂度O(l)
+public int findKthLargest3(int[] nums, int k) {
+    Arrays.sort(nums);
+    return nums[nums.length - k];
+}
+\end{Code}
+
+\subsubsection{Solution III}
+\begin{Code}
+// 快速选择，平均时间复杂度为O(n)
+// T(n) = T(n / 2) + n = O(2n)
+// 对比快速排序T(n) = 2T(n / 2) + n = O(nlgn)
+// 区别在于这个被pivot分隔后，只用处理其中的一半，而快排两边都要处理
+// 耗时18ms
+public int findKthLargest4(int[] nums, int k) {
+    return nums[findKthLargest4(nums, 0, nums.length - 1, k)];
+}
+
+public int findKthLargest4(int[] nums, int start, int end, int k) {
+    int pivot = partition(nums, start, end);
+
+    int rank = end - pivot + 1;
+
+    if (rank == k) {
+        return pivot;
+    } else if (rank > k) {
+        return findKthLargest4(nums, pivot + 1, end, k);
+    } else {
+        return findKthLargest4(nums, start, pivot - 1, k - rank);
+    }
+}
+
+public int partition(int[] nums, int start, int end) {
+    int pivot = nums[end], left = start;
+
+    for (int i = start; i < end; i++) {
+        if (nums[i] <= pivot) {
+            swap(nums, left++, i);
+        }
+    }
+
+    swap(nums, left, end);
+
+    return left;
+}
+
+private void swap(int[] nums, int left, int right) {
+    int t = nums[left];
+    nums[left] = nums[right];
+    nums[right] = t;
+}
+\end{Code}
+
+\newpage
+
+\section{Range Addition} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Assume you have an array of length n initialized with all 0's and are given k update operations.
+
+Each operation is represented as a triplet: [startIndex, endIndex, inc] which increments each element of subarray A[startIndex ... endIndex] (startIndex and endIndex inclusive) with inc.
+
+Return the modified array after all k operations were executed.
+
+\textbf{Example:}
+
+Given:
+\begin{Code}
+    length = 5,
+    updates = [
+        [1,  3,  2],
+        [2,  4,  3],
+        [0,  2, -2]
+    ]
+\end{Code}
+
+\textbf{Output:}
+
+\begin{Code}
+    [-2, 0, 3, 5, 3]
+\end{Code}
+
+\textbf{Explanation:}
+
+Initial state:
+
+[ 0, 0, 0, 0, 0 ]
+
+After applying operation [1, 3, 2]:
+
+[ 0, 2, 2, 2, 0 ]
+
+After applying operation [2, 4, 3]:
+
+[ 0, 2, 5, 5, 3 ]
+
+After applying operation [0, 2, -2]:
+
+[-2, 0, 3, 5, 3 ]
+\subsubsection{Solution}
+
+\begin{Code}
+public int[] getModifiedArray(int length, int[][] updates) {
+    int[] res = new int[length];
+    for(int[] update : updates) {
+        int value = update[2];
+        int start = update[0];
+        int end = update[1];
+
+        res[start] += value;
+
+        if(end < length - 1)
+            res[end + 1] -= value;
+
+    }
+
+    int sum = 0;
+    for(int i = 0; i < length; i++) {
+        sum += res[i];
+        res[i] = sum;
+    }
+
+    return res;
+}
+\end{Code}
+
+\newpage
+
+\section{Max Consecutive Ones} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a binary array, find the maximum number of consecutive 1s in this array.
+
+\textbf{Example 1:}
+
+\textbf{Input:} [1,1,0,1,1,1]
+
+\textbf{Output:} 3
+
+\textbf{Explanation:} The first two digits or the last three digits are consecutive 1s.
+    The maximum number of consecutive 1s is 3.
+
+\textbf{Note:}
+
+1. The input array will only contain 0 and 1.
+
+2. The length of input array is a positive integer and will not exceed 10,000
+\subsubsection{Solution}
+
+\begin{Code}
+public int findMaxConsecutiveOnes(int[] nums) {
+    int maxHere = 0, max = 0;
+    for (int n : nums)
+        max = Math.max(max, maxHere = n == 0 ? 0 : maxHere + 1);
+    return max;
+}
+\end{Code}
+
+\newpage
+
+\section{Max Consecutive Ones II} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a binary array, find the maximum number of consecutive 1s in this array if you can flip at most one 0.
+
+\textbf{Example 1:}
+
+\textbf{Input:} [1,0,1,1,0]
+
+\textbf{Output:} 4
+
+\textbf{Explanation:} Flip the first zero will get the the maximum number of consecutive 1s.
+    After flipping, the maximum number of consecutive 1s is 4.
+
+\textbf{Note:}
+
+The input array will only contain 0 and 1.
+
+The length of input array is a positive integer and will not exceed 10,000
+
+\textbf{Follow up:}
+
+What if the input numbers come in one by one as an infinite stream? In other words, you can't store all numbers coming from the stream as it's too large to hold in memory. Could you solve it efficiently?
+\subsubsection{Solution}
+
+\begin{Code}
+public int findMaxConsecutiveOnes(int[] nums) {
+    int max = 0, zero = 0, k = 1; // flip at most k zero
+    for (int l = 0, h = 0; h < nums.length; h++) {
+        if (nums[h] == 0)
+            zero++;
+        while (zero > k)
+            if (nums[l++] == 0)
+                zero--;
+        max = Math.max(max, h - l + 1);
+    }
+    return max;
+}
+
+// for follow up
+public int findMaxConsecutiveOnes2(int[] nums) {
+    int max = 0, k = 1; // flip at most k zero
+    Queue<Integer> zeroIndex = new LinkedList<>();
+    for (int l = 0, h = 0; h < nums.length; h++) {
+        if (nums[h] == 0)
+            zeroIndex.offer(h);
+        if (zeroIndex.size() > k)
+            l = zeroIndex.poll() + 1;
+        max = Math.max(max, h - l + 1);
+    }
+    return max;
+}
 \end{Code}
 
 \newpage

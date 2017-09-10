@@ -161,6 +161,21 @@
 \contentsline {section}{\numberline {1.52}Maximum Size Subarray Sum Equals k}{57}{section.1.52}
 \contentsline {subsubsection}{Description}{57}{section*.110}
 \contentsline {subsubsection}{Solution}{57}{section*.111}
-\contentsline {section}{\numberline {1.53}Minimum Window Substring}{58}{section.1.53}
+\contentsline {section}{\numberline {1.53}Find the Celebrity}{58}{section.1.53}
 \contentsline {subsubsection}{Description}{58}{section*.112}
 \contentsline {subsubsection}{Solution}{58}{section*.113}
+\contentsline {section}{\numberline {1.54}Find All Numbers Disappeared in an Array}{59}{section.1.54}
+\contentsline {subsubsection}{Description}{59}{section*.114}
+\contentsline {subsubsection}{Solution}{59}{section*.115}
+\contentsline {section}{\numberline {1.55}Shortest Word Distance}{60}{section.1.55}
+\contentsline {subsubsection}{Description}{60}{section*.116}
+\contentsline {subsubsection}{Solution}{60}{section*.117}
+\contentsline {section}{\numberline {1.56}Shortest Word Distance II}{61}{section.1.56}
+\contentsline {subsubsection}{Description}{61}{section*.118}
+\contentsline {subsubsection}{Solution}{61}{section*.119}
+\contentsline {section}{\numberline {1.57} Shortest Word Distance III}{62}{section.1.57}
+\contentsline {subsubsection}{Description}{62}{section*.120}
+\contentsline {subsubsection}{Solution}{62}{section*.121}
+\contentsline {section}{\numberline {1.58}Title}{63}{section.1.58}
+\contentsline {subsubsection}{Description}{63}{section*.122}
+\contentsline {subsubsection}{Solution}{63}{section*.123}
