@@ -6,6 +6,7 @@
   - [Graph](https://github.com/dingjikerbo/leetcode/blob/master/ebook/graph/leetcode-graph.pdf)
   - [Tree](https://github.com/dingjikerbo/leetcode/blob/master/ebook/tree/leetcode-tree.pdf)
   - [DP](https://github.com/dingjikerbo/leetcode/blob/master/ebook/dp/leetcode-dp.pdf)
+  - [Array](https://github.com/dingjikerbo/leetcode/blob/master/ebook/array/leetcode-array.pdf)
    
  <br/><br/>
 
@@ -211,6 +212,8 @@
 |241|[Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DifferenceWaysToAddParentheses.java)||
 |242|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ValidAnagram.java)|100|
 |243|[Shortest Word Distance](https://leetcode.com/problems/shortest-word-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestWordDistance.java)|80|
+|244|[Shortest Word Distance II](https://leetcode.com/problems/shortest-word-distance-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestWordDistanceII.java)|80||
+|245|[Shortest Word Distance III](https://leetcode.com/problems/shortest-word-distance-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestWordDistanceIII.java)|80||
 |246|[Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrobogrammaticNumber.java)|70|#247一个系列，多看两遍|
 |247|[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrobogrammaticNumberII.java)|70|多看两遍|
 |250|[Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountUnivalueSubtrees.java)|70|这题要多做几遍|
@@ -325,6 +328,7 @@
 |425|[Word Squares](https://leetcode.com/problems/word-squares/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/WordSquare.java)|70|这题很典型，多做几遍|
 |437|[Path Sum III](https://leetcode.com/problems/path-sum-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/PathSumIII.java)|60|这道题错了很多遍，要重点关注|
 |438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindAllAnagramsInString.java)|75|这道题非常经典，最优解法需要多做几遍，保证once bug free|
+|448|[Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindAllNumbersDisappearedInAnArray.java)|80||
 |449|[Serialize and Deserialize BST](https://leetcode.com/problems/serialize-and-deserialize-bst)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SerializeAndDeserializeBST.java)|90|和#297一样|
 |450|[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DeleteNodeInBST.java)|60|这题非常经典，值得多做十遍|
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TotalHammingDistance.java)||

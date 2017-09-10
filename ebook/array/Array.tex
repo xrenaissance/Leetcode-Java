@@ -2051,3 +2051,551 @@ private void revert(int[] nums, int start, int end) {
 \end{Code}
 
 \newpage
+
+\section{Search for a Range} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given an array of integers sorted in ascending order, find the starting and ending position of a given target value.
+
+Your algorithm's runtime complexity must be in the order of O(log n).
+
+If the target is not found in the array, return [-1, -1].
+
+For example,
+
+Given [5, 7, 7, 8, 8, 10] and target value 8,
+
+return [3, 4].
+
+\subsubsection{Solution}
+
+\begin{Code}
+public int[] searchRange(int[] nums, int target) {
+    int len = nums.length;
+
+    int left, right;
+
+    int[] result = new int[] { -1, -1 };
+
+    for (left = 0, right = len - 1; left < right; ) {
+        int mid = (left + right) / 2;
+
+        if (target > nums[mid]) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+
+    if (nums[left] != target) {
+        return result;
+    } else {
+        result[0] = left;
+    }
+
+    for (right = len - 1; left < right; ) {
+        int mid = (left + right) / 2 + 1;
+
+        if (target < nums[mid]) {
+            right = mid - 1;
+        } else {
+            left = mid;
+        }
+    }
+
+    result[1] = right;
+
+    return result;
+}
+\end{Code}
+
+\newpage
+
+\section{Search a 2D Matrix} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.
+For example,
+
+Consider the following matrix:
+\begin{Code}
+[
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+\end{Code}
+
+Given target = 3, return true.
+\subsubsection{Solution}
+
+\begin{Code}
+// 耗时14ms
+public boolean searchMatrix(int[][] matrix, int target) {
+    int row = matrix.length;
+    int col = matrix[0].length;
+
+    int left = 0, right = row - 1;
+
+    while (left < right) {
+        int mid = (left + right) / 2 + 1;
+
+        int n = matrix[mid][0];
+
+        if (target == n) {
+            return true;
+        } else if (target < n) {
+            right = mid - 1;
+        } else {
+            left = mid;
+        }
+    }
+
+    if (target < matrix[right][0]) {
+        return false;
+    } else if (target == matrix[right][0]) {
+        return true;
+    }
+
+    return Arrays.binarySearch(matrix[right], 0, col, target) >= 0;
+}
+\end{Code}
+
+\newpage
+
+\section{Search a 2D Matrix II} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+
+Integers in each row are sorted in ascending from left to right.
+Integers in each column are sorted in ascending from top to bottom.
+For example,
+
+Consider the following matrix:
+\begin{Code}
+[
+  [1,   4,  7, 11, 15],
+  [2,   5,  8, 12, 19],
+  [3,   6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]
+\end{Code}
+
+Given target = 5, return true.
+
+Given target = 20, return false.
+
+\subsubsection{Solution}
+
+\begin{Code}
+// 耗时14ms
+public boolean searchMatrix(int[][] matrix, int target) {
+    if (matrix.length == 0) {
+        return false;
+    }
+
+    int row = matrix.length, col = matrix[0].length;
+
+    for (int i = 0, j = col - 1; i < row && j >= 0; ) {
+        if (target > matrix[i][j]) {
+            i++;
+        } else if (target < matrix[i][j]) {
+            j--;
+        } else {
+            return true;
+        }
+    }
+
+    return false;
+}
+\end{Code}
+
+\newpage
+
+\section{Search Insert Position} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You may assume no duplicates in the array.
+
+Here are few examples.
+\begin{Code}
+[1,3,5,6], 5 → 2
+[1,3,5,6], 2 → 1
+[1,3,5,6], 7 → 4
+[1,3,5,6], 0 → 0
+\end{Code}
+
+\subsubsection{Solution I}
+
+\begin{Code}
+public int searchInsert(int[] nums, int target) {
+    int left = 0, right = nums.length - 1;
+
+    while (left <= right) {
+        int mid = (left + right) / 2;
+
+        if (target == nums[mid]) {
+            return mid;
+        } else if (target > nums[mid]) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    return left;
+}
+\end{Code}
+
+\subsubsection{Solution II}
+\begin{Code}
+public int searchInsert2(int[] nums, int target) {
+    int index = Arrays.binarySearch(nums, 0, nums.length, target);
+    return index >= 0 ? index : -(index + 1);
+}
+\end{Code}
+
+\newpage
+
+\section{Minimum Size Subarray Sum} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
+
+For example, given the array [2,3,1,2,4,3] and s = 7,
+
+the subarray [4,3] has the minimal length under the problem constraint.
+
+More practice:
+
+If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n).
+\subsubsection{Solution}
+
+\begin{Code}
+public int minSubArrayLen(int s, int[] nums) {
+    int sum = 0, min = Integer.MAX_VALUE;
+    for (int i = 0, j = 0; i < nums.length; i++) {
+        sum += nums[i];
+        /**
+         * 这里别掉了等号
+         */
+        if (sum >= s) {
+            for ( ; j < i; j++) {
+                if (sum - nums[j] < s) {
+                    break;
+                }
+                sum -= nums[j];
+            }
+            min = Math.min(min, i - j + 1);
+        }
+    }
+    return min == Integer.MAX_VALUE ? 0 : min;
+}
+\end{Code}
+
+\newpage
+
+\section{Maximum Size Subarray Sum Equals k} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn't one, return 0 instead.
+
+\textbf{Note:}
+The sum of the entire nums array is guaranteed to fit within the 32-bit signed integer range.
+
+\textbf{Example 1:}
+
+Given nums = [1, -1, 5, -2, 3], k = 3,
+
+return 4. (because the subarray [1, -1, 5, -2] sums to 3 and is the longest)
+
+\textbf{Example 2:}
+
+Given nums = [-2, -1, 2, 1], k = 1,
+
+return 2. (because the subarray [-1, 2] sums to 1 and is the longest)
+
+\textbf{Follow Up:}
+
+Can you do it in O(n) time?
+
+\subsubsection{Solution}
+
+\begin{Code}
+// 耗时29ms，时间复杂度O(n)
+public int maxSubArrayLen2(int[] nums, int k) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    int maxLen = 0;
+
+    map.put(0, -1);
+
+    for (int i = 0, sum = 0; i < nums.length; i++) {
+        sum += nums[i];
+        if (!map.containsKey(sum)) {
+            map.put(sum, i);
+        }
+
+        int idx = map.getOrDefault(sum - k, -2);
+        if (idx >= -1 && i - idx > maxLen) {
+            maxLen = i - idx;
+        }
+    }
+
+    return maxLen;
+}
+\end{Code}
+
+\newpage
+
+\section{Find the Celebrity} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may exist one celebrity. The definition of a celebrity is that all the other n - 1 people know him/her but he/she does not know any of them.
+
+Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: "Hi, A. Do you know B?" to get information of whether A knows B. You need to find out the celebrity (or verify there is not one) by asking as few questions as possible (in the asymptotic sense).
+
+You are given a helper function bool knows(a, b) which tells you whether A knows B. Implement a function int findCelebrity(n), your function should minimize the number of calls to knows.
+
+\textbf{Note:} There will be exactly one celebrity if he/she is in the party. Return the celebrity's label if there is a celebrity in the party. If there is no celebrity, return -1.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public int findCelebrity(int n) {
+    int id = 0;
+    for (int i = 1; i < n; i++) {
+        if (knows(id, i)) {
+            id = i;
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        if (i == id) {
+            continue;
+        }
+        if (knows(id, i) || !knows(i, id)) {
+            return -1;
+        }
+    }
+    return id;
+}
+\end{Code}
+
+\newpage
+
+\section{Find All Numbers Disappeared in an Array} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+
+Find all the elements of [1, n] inclusive that do not appear in this array.
+
+Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
+
+\textbf{Example:}
+
+\textbf{Input:}
+
+[4,3,2,7,8,2,3,1]
+
+\textbf{Output:}
+
+[5,6]
+
+\subsubsection{Solution}
+
+\begin{Code}
+public List<Integer> findDisappearedNumbers(int[] nums) {
+    List<Integer> ret = new ArrayList<Integer>();
+
+    for(int i = 0; i < nums.length; i++) {
+        int val = Math.abs(nums[i]) - 1;
+        if(nums[val] > 0) {
+            nums[val] = -nums[val];
+        }
+    }
+
+    for(int i = 0; i < nums.length; i++) {
+        if(nums[i] > 0) {
+            ret.add(i+1);
+        }
+    }
+    return ret;
+}
+\end{Code}
+
+\newpage
+
+\section{Shortest Word Distance} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.
+
+For example,
+
+Assume that words = \code{["practice", "makes", "perfect", "coding", "makes"]}.
+
+Given word1 = \code{“coding”}, word2 = \code{“practice”}, return 3.
+
+Given word1 = \code{"makes"}, word2 = \code{"coding"}, return 1.
+
+\textbf{Note:}
+
+You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
+
+\subsubsection{Solution}
+
+\begin{Code}
+// 耗时3ms
+public int shortestDistance(String[] words, String word1, String word2) {
+    List<Integer> indexs1 = new LinkedList<Integer>();
+    List<Integer> indexs2 = new LinkedList<Integer>();
+    for (int i = 0; i < words.length; i++) {
+        if (words[i].equals(word1)) {
+            indexs1.add(i);
+        } else if (words[i].equals(word2)) {
+            indexs2.add(i);
+        }
+    }
+
+    int size1 = indexs1.size(), size2 = indexs2.size();
+    int min = Math.abs(indexs1.get(size1 - 1) - indexs2.get(size2 - 1));
+    for (int i = 0, j = 0; i < size1 && j < size2; ) {
+        int index1 = indexs1.get(i);
+        int index2 = indexs2.get(j);
+
+        min = Math.min(min, Math.abs(index1 - index2));
+
+        if (index1 < index2) {
+            i++;
+        } else if (index1 > index2) {
+            j++;
+        } else {
+            return 0;
+        }
+    }
+
+    return min;
+}
+\end{Code}
+
+\newpage
+
+\section{Shortest Word Distance II} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+This is a follow up of Shortest Word Distance. The only difference is now you are given the list of words and your method will be called repeatedly many times with different parameters. How would you optimize it?
+
+Design a class which receives a list of words in the constructor, and implements a method that takes two words word1 and word2 and return the shortest distance between these two words in the list.
+
+For example,
+Assume that words = \code{["practice", "makes", "perfect", "coding", "makes"]}.
+
+Given word1 = \code{“coding”}, word2 = \code{“practice”}, return 3.
+
+Given word1 = \code{"makes"}, word2 = \code{"coding"}, return 1.
+
+\textbf{Note:}
+
+You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
+
+\subsubsection{Solution}
+
+\begin{Code}
+public class ShortestWordDistanceII {
+
+    private Map<String, List<Integer>> map;
+
+    public ShortestWordDistanceII(String[] words) {
+        map = new HashMap<String, List<Integer>>();
+        for (int i = 0; i < words.length; i++) {
+            String w = words[i];
+            if (map.containsKey(w)) {
+                map.get(w).add(i);
+            } else {
+                List<Integer> list = new ArrayList<Integer>();
+                list.add(i);
+                map.put(w, list);
+            }
+        }
+    }
+
+    public int shortest(String word1, String word2) {
+        List<Integer> list1 = map.get(word1);
+        List<Integer> list2 = map.get(word2);
+        int ret = Integer.MAX_VALUE;
+        for (int i = 0, j = 0; i < list1.size() && j < list2.size(); ) {
+            int index1 = list1.get(i), index2 = list2.get(j);
+            if (index1 < index2) {
+                ret = Math.min(ret, index2 - index1);
+                i++;
+            } else {
+                ret = Math.min(ret, index1 - index2);
+                j++;
+            }
+        }
+        return ret;
+    }
+}
+\end{Code}
+
+\newpage
+
+\section{ Shortest Word Distance III} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+This is a follow up of Shortest Word Distance. The only difference is now word1 could be the same as word2.
+
+Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.
+
+word1 and word2 may be the same and they represent two individual words in the list.
+
+For example,
+
+Assume that words = \code{["practice", "makes", "perfect", "coding", "makes"]}.
+
+Given word1 = \code{“makes”}, word2 = \code{“coding”}, return 1.
+
+Given word1 = \code{"makes"}, word2 = \code{"makes"}, return 3.
+
+\code{Note:}
+
+You may assume word1 and word2 are both in the list.
+\subsubsection{Solution}
+
+\begin{Code}
+public int shortestWordDistance(String[] words, String word1, String word2) {
+    long dist = Integer.MAX_VALUE, i1 = dist, i2 = -dist;
+    for (int i = 0; i < words.length; i++) {
+        if (words[i].equals(word1))
+            i1 = i;
+        if (words[i].equals(word2)) {
+            if (word1.equals(word2))
+                i1 = i2;
+            i2 = i;
+        }
+        dist = Math.min(dist, Math.abs(i1 - i2));
+    }
+    return (int) dist;
+}
+\end{Code}
+
+\newpage
+
+\section{Title} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+
+\subsubsection{Solution}
+
+\begin{Code}
+
+\end{Code}
+
+\newpage

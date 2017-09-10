@@ -139,6 +139,28 @@
 \contentsline {section}{\numberline {1.45}Set Matrix Zeroes}{48}{section.1.45}
 \contentsline {subsubsection}{Description}{48}{section*.95}
 \contentsline {subsubsection}{Solution}{49}{section*.96}
-\contentsline {section}{\numberline {1.46}Title}{50}{section.1.46}
+\contentsline {section}{\numberline {1.46}Next Permutation}{50}{section.1.46}
 \contentsline {subsubsection}{Description}{50}{section*.97}
 \contentsline {subsubsection}{Solution}{50}{section*.98}
+\contentsline {section}{\numberline {1.47}Search for a Range}{52}{section.1.47}
+\contentsline {subsubsection}{Description}{52}{section*.99}
+\contentsline {subsubsection}{Solution}{52}{section*.100}
+\contentsline {section}{\numberline {1.48}Search a 2D Matrix}{53}{section.1.48}
+\contentsline {subsubsection}{Description}{53}{section*.101}
+\contentsline {subsubsection}{Solution}{53}{section*.102}
+\contentsline {section}{\numberline {1.49}Search a 2D Matrix II}{54}{section.1.49}
+\contentsline {subsubsection}{Description}{54}{section*.103}
+\contentsline {subsubsection}{Solution}{54}{section*.104}
+\contentsline {section}{\numberline {1.50}Search Insert Position}{55}{section.1.50}
+\contentsline {subsubsection}{Description}{55}{section*.105}
+\contentsline {subsubsection}{Solution I}{55}{section*.106}
+\contentsline {subsubsection}{Solution II}{55}{section*.107}
+\contentsline {section}{\numberline {1.51}Minimum Size Subarray Sum}{56}{section.1.51}
+\contentsline {subsubsection}{Description}{56}{section*.108}
+\contentsline {subsubsection}{Solution}{56}{section*.109}
+\contentsline {section}{\numberline {1.52}Maximum Size Subarray Sum Equals k}{57}{section.1.52}
+\contentsline {subsubsection}{Description}{57}{section*.110}
+\contentsline {subsubsection}{Solution}{57}{section*.111}
+\contentsline {section}{\numberline {1.53}Minimum Window Substring}{58}{section.1.53}
+\contentsline {subsubsection}{Description}{58}{section*.112}
+\contentsline {subsubsection}{Solution}{58}{section*.113}
