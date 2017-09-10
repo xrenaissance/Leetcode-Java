@@ -1389,31 +1389,23 @@ You should return [1,2,3,6,9,8,7,4,5].
 \begin{Code}
 public List<Integer> spiralOrder(int[][] matrix) {
     List<Integer> res = new ArrayList<Integer>();
+    if (matrix.length == 0) { return res; }
 
-    if (matrix.length == 0) {
-        return res;
-    }
-
-    int rowBegin = 0;
-    int rowEnd = matrix.length - 1;
-    int colBegin = 0;
-    int colEnd = matrix[0].length - 1;
+    int rowBegin = 0, rowEnd = matrix.length - 1;
+    int colBegin = 0, colEnd = matrix[0].length - 1;
 
     while (rowBegin <= rowEnd && colBegin <= colEnd) {
-        // Traverse Right
         for (int j = colBegin; j <= colEnd; j++) {
             res.add(matrix[rowBegin][j]);
         }
         rowBegin++;
 
-        // Traverse Down
         for (int j = rowBegin; j <= rowEnd; j++) {
             res.add(matrix[j][colEnd]);
         }
         colEnd--;
 
         if (rowBegin <= rowEnd) {
-            // Traverse Left
             for (int j = colEnd; j >= colBegin; j--) {
                 res.add(matrix[rowEnd][j]);
             }
@@ -1421,7 +1413,6 @@ public List<Integer> spiralOrder(int[][] matrix) {
         rowEnd--;
 
         if (colBegin <= colEnd) {
-            // Traver Up
             for (int j = rowEnd; j >= rowBegin; j--) {
                 res.add(matrix[j][colBegin]);
             }
@@ -1851,6 +1842,8 @@ Write a function to compute the next state (after one update) of the board given
 
 2. In this question, we represent the board using a 2D array. In principle, the board is infinite, which would cause problems when the active area encroaches the border of the array. How would you address these problems?
 
+\newpage
+
 \subsubsection{Solution}
 
 \begin{Code}
@@ -2012,7 +2005,11 @@ public void nextPermutation(int[] nums) {
     swap(nums, i - 1, index);
     revert(nums, i, nums.length - 1);
 }
+\end{Code}
 
+\newpage
+
+\begin{Code}
 private int searchSwapPoint(int[] nums, int left, int right, int target) {
     while (left <= right) {
         int mid = left + ((right - left) >> 1);
@@ -2751,34 +2748,28 @@ public class RandomizedCollection {
     private List<Integer> list = new ArrayList<Integer>();
     private Random random;
 
-    /** Initialize your data structure here. */
     public RandomizedCollection () {
         map = new HashMap<Integer, HashSet<Integer>>();
         list = new Vector<Integer>();
         random = new Random();
     }
 
-    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     public boolean insert(int val) {
         boolean contains = map.containsKey(val);
 
         if (!contains) {
             map.put(val, new HashSet<Integer>());
         }
-
         list.add(val);
         HashSet<Integer> index = map.get(val);
         index.add(list.size() - 1);
-
         return !contains;
     }
 
-    /** Removes a value from the set. Returns true if the set contained the specified element. */
     public boolean remove(int val) {
         if (!map.containsKey(val)) {
             return false;
         }
-
         HashSet<Integer> indexes = map.get(val);
 
         if (indexes.isEmpty()) {
@@ -2787,26 +2778,21 @@ public class RandomizedCollection {
 
         int index = indexes.iterator().next();
 
-        /**
-         * 这里有个地方非常容易错，那就是indexes.remove(index)不能放到下面的if块之后
-         * 为什么呢？假设要remove的数有多个，其中一个恰好在链表末尾，而此处
-         * 选中的index在链表中间，如果下面这句放到if后的话，会将末尾和中间的都删了
-         */
+         // 这里有个地方非常容易错，那就是indexes.remove(index)不能放到下面的if块之后
+         // 为什么呢？假设要remove的数有多个，其中一个恰好在链表末尾，而此处
+         // 选中的index在链表中间，如果下面这句放到if后的话，会将末尾和中间的都删了
         indexes.remove(index);
 
         if (index < list.size() - 1) {
             int last = list.get(list.size() - 1);
             list.set(index, last);
-
             map.get(last).remove(list.size() - 1);
             map.get(last).add(index);
         }
-
         list.remove(list.size() - 1);
         return true;
     }
 
-    /** Get a random element from the set. */
     public int getRandom() {
         return list.get(random.nextInt(list.size()));
     }
@@ -2952,6 +2938,8 @@ public int findKthLargest3(int[] nums, int k) {
 }
 \end{Code}
 
+\newpage
+
 \subsubsection{Solution III}
 \begin{Code}
 // 快速选择，平均时间复杂度为O(n)
@@ -3044,6 +3032,9 @@ After applying operation [2, 4, 3]:
 After applying operation [0, 2, -2]:
 
 [-2, 0, 3, 5, 3 ]
+
+\newpage
+
 \subsubsection{Solution}
 
 \begin{Code}
