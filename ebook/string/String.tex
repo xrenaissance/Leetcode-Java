@@ -12,7 +12,122 @@ Given s = \code{"hello"}, return \code{"olleh"}.
 \subsubsection{Solution}
 
 \begin{Code}
-
+public String reverseString(String s) {
+    return new StringBuilder(s).reverse().toString();
+}
 \end{Code}
 
 \newpage
+
+\section{Reverse String II} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a string and an integer k, you need to reverse the first k characters for every 2k characters counting from the start of the string. If there are less than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and left the other as original.
+
+\textbf{Example:}
+
+\textbf{Input:} s = \code{"abcdefg"}, k = 2
+
+\textbf{Output:} \code{"bacdfeg"}
+
+\textbf{Restrictions:}
+
+The string consists of lower English letters only.
+
+Length of the given string and k will in the range \code{[1, 10000]}
+
+\subsubsection{Solution}
+
+\begin{Code}
+public String reverseStr(String s, int k) {
+    if (s.length() <= k) {
+        return new StringBuilder(s).reverse().toString();
+    }
+    if (s.length() <= 2 * k) {
+        return reverseStr(s.substring(0, k), k) + s.substring(k);
+    }
+    return reverseStr(s.substring(0, 2 * k), k) + reverseStr(s.substring(2 * k), k);
+}
+\end{Code}
+
+\newpage
+
+\section{Reverse Words in a String} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given an input string, reverse the string word by word.
+
+For example,
+Given s = "the sky is blue",
+return "blue is sky the".
+
+Clarification:
+
+1. What constitutes a word?
+
+A sequence of non-space characters constitutes a word.
+
+2. Could the input string contain leading or trailing spaces?
+
+Yes. However, your reversed string should not contain leading or trailing spaces.
+
+3. How about multiple spaces between two words?
+
+Reduce them to a single space in the reversed string.
+\subsubsection{Solution I}
+
+\begin{Code}
+// 耗时10ms
+public String reverseWords(String s) {
+    StringBuilder sb = new StringBuilder();
+
+    boolean inWord = false;
+    char[] cc = s.toCharArray();
+    for (int i = cc.length - 1, idx = 0; i >= 0; i--) {
+        if (cc[i] != ' ') {
+            if (!inWord && sb.length() > 0) {
+                sb.append(' ');
+            }
+            inWord = true;
+            sb.insert(idx, cc[i]);
+        } else if (inWord) {
+            idx = sb.length() + 1;
+            inWord = false;
+        }
+    }
+
+    return sb.toString();
+}
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+
+\begin{Code}
+// 耗时18ms
+public String reverseWords2(String s) {
+    StringBuilder sb = new StringBuilder();
+
+    for (int i = 0, j = 0; i < s.length(); ) {
+        if (s.charAt(i) == ' ') {
+            i++;
+            j = i;
+        } else if (j >= s.length() || s.charAt(j) == ' ') {
+            sb.insert(0, s.substring(i, j) + " ");
+            i = j;
+        } else {
+            j++;
+        }
+    }
+
+    if (sb.length() > 0) {
+        sb.setLength(sb.length() - 1);
+    }
+
+    return sb.toString();
+}
+\end{Code}
+
+\newpage
+

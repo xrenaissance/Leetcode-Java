@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  9 SEP 2017 12:14
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2017.9.4)  10 SEP 2017 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1853,7 +1853,28 @@ No file title.tex.
 
  (./String.tex
 第1章
-\g__fontspec_family_AdobeFangsongStd-Regular_int=\count194
+\g__fontspec_family_LatinModernMono_int=\count194
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Latin Modern Mono/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LatinModernMono(0)' created for font 'Latin Modern Mono' with
+. options [].
+. 
+. This font family consists of the following NFSS series/shapes:
+. - 'normal' (m/n) with NFSS spec.: <->"Latin Modern
+. Mono/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: - 'italic' (m/it) with NFSS spec.:
+. <->"Latin Modern Mono/I/OT:script=latn;language=DFLT;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: - 'bold italic' (bx/it)
+. with NFSS spec.: <->"Latin Modern Mono/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+\g__fontspec_family_AdobeFangsongStd-Regular_int=\count195
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1872,7 +1893,8 @@ No file title.tex.
 . Could not resolve font AdobeFangsongStd-Regular/I (it probably doesn't
 . exist).
 .................................................
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 9.
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 14.
+
 (/usr/local/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmtt.fd
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1892,7 +1914,8 @@ File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
  [1
 
 
-])
+] [2]
+[3] [4])
 No file leetcode-string.ind.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
@@ -1902,12 +1925,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 44.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 29132 strings out of 493591
- 550932 string characters out of 6143547
- 562608 words of memory out of 5000000
- 32177 multiletter control sequences out of 15000+600000
- 5506 words of font info for 52 fonts, out of 8000000 for 9000
+ 29164 strings out of 493591
+ 551971 string characters out of 6143547
+ 568609 words of memory out of 5000000
+ 32195 multiletter control sequences out of 15000+600000
+ 5554 words of font info for 58 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,11n,77p,10421b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,77p,10421b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on leetcode-string.pdf (3 pages).
+Output written on leetcode-string.pdf (6 pages).
