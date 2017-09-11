@@ -1,4 +1,4 @@
-\contentsline {chapter}{\numberline {第1章\hspace {0.3em}}Array, List, Hashtable, Stack, Sort}{1}{chapter.1}
+\contentsline {chapter}{\numberline {第1章\hspace {0.3em}}Array}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Two Sum}{1}{section.1.1}
 \contentsline {subsubsection}{Description}{1}{section*.2}
 \contentsline {subsubsection}{Solution}{1}{section*.3}
