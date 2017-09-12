@@ -155,6 +155,7 @@
 |147|[Insertion Sort List](https://leetcode.com/problems/insertion-sort-list/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InsertionSortList.java)|90||
 |148|[Sort List](https://leetcode.com/problems/sort-list)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SortList.java)|90||
 |149|[Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaxPointsOnALine.java)|60|
+|150|[Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/EvaluateReversePolishNotation.java)|70||
 |151|[Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/description/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseWordsInAString.java)|70|这题虽然不难，但是也错了几次|
 |152|[Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximumProductSubarray.java)||
 |153|[Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindMinimumInRotatedSortedArray.java)||
@@ -204,6 +205,7 @@
 |221|[Maximal Square](https://leetcode.com/problems/maximal-square/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaximalSquare.java)|80|
 |222|[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountCompleteTreeNodes.java)|70|一般的做法会超时|
 |223|[Rectangle Area](https://leetcode.com/problems/rectangle-area/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RectangleArea.java)|95|
+|224|[Basic Calculator](https://leetcode.com/problems/basic-calculator/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/BasicCalculator.java)|80||
 |225|[Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MyStack.java)|90|
 |226|[Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/InvertBinaryTree.java)|80|
 |228|[Summary Ranges](https://leetcode.com/problems/summary-ranges/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SummaryRanges.java)|70||
