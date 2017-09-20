@@ -27,13 +27,13 @@
 \contentsline {section}{\numberline {1.9}Merge Two Sorted Lists}{9}{section.1.9}
 \contentsline {subsubsection}{Description}{9}{section*.19}
 \contentsline {subsubsection}{Solution}{9}{section*.20}
-\contentsline {section}{\numberline {1.10}Intersection of Two Linked Lists}{10}{section.1.10}
+\contentsline {section}{\numberline {1.10}Merge k Sorted Lists}{10}{section.1.10}
 \contentsline {subsubsection}{Description}{10}{section*.21}
 \contentsline {subsubsection}{Solution}{10}{section*.22}
-\contentsline {section}{\numberline {1.11}Copy List with Random Pointer}{11}{section.1.11}
+\contentsline {section}{\numberline {1.11}Intersection of Two Linked Lists}{11}{section.1.11}
 \contentsline {subsubsection}{Description}{11}{section*.23}
 \contentsline {subsubsection}{Solution}{11}{section*.24}
-\contentsline {section}{\numberline {1.12}Merge k Sorted Lists}{12}{section.1.12}
+\contentsline {section}{\numberline {1.12}Copy List with Random Pointer}{12}{section.1.12}
 \contentsline {subsubsection}{Description}{12}{section*.25}
 \contentsline {subsubsection}{Solution}{12}{section*.26}
 \contentsline {section}{\numberline {1.13}Palindrome Linked List}{13}{section.1.13}
@@ -75,3 +75,39 @@
 \contentsline {section}{\numberline {1.25}Plus One Linked List}{25}{section.1.25}
 \contentsline {subsubsection}{Description}{25}{section*.51}
 \contentsline {subsubsection}{Solution}{25}{section*.52}
+\contentsline {section}{\numberline {1.26}Min Stack}{26}{section.1.26}
+\contentsline {subsubsection}{Description}{26}{section*.53}
+\contentsline {subsubsection}{Solution}{26}{section*.54}
+\contentsline {section}{\numberline {1.27}Evaluate Reverse Polish Notation}{27}{section.1.27}
+\contentsline {subsubsection}{Description}{27}{section*.55}
+\contentsline {subsubsection}{Solution}{27}{section*.56}
+\contentsline {section}{\numberline {1.28}Basic Calculator}{28}{section.1.28}
+\contentsline {subsubsection}{Description}{28}{section*.57}
+\contentsline {subsubsection}{Solution}{28}{section*.58}
+\contentsline {section}{\numberline {1.29}Remove Duplicate Letters}{29}{section.1.29}
+\contentsline {subsubsection}{Description}{29}{section*.59}
+\contentsline {subsubsection}{Solution}{29}{section*.60}
+\contentsline {section}{\numberline {1.30}Implement Queue using Stacks}{30}{section.1.30}
+\contentsline {subsubsection}{Description}{30}{section*.61}
+\contentsline {subsubsection}{Solution}{30}{section*.62}
+\contentsline {section}{\numberline {1.31}Flatten Nested List Iterator}{32}{section.1.31}
+\contentsline {subsubsection}{Description}{32}{section*.63}
+\contentsline {subsubsection}{Solution}{32}{section*.64}
+\contentsline {section}{\numberline {1.32}Implement Stack using Queues}{33}{section.1.32}
+\contentsline {subsubsection}{Description}{33}{section*.65}
+\contentsline {subsubsection}{Solution}{33}{section*.66}
+\contentsline {section}{\numberline {1.33}The Skyline Problem}{34}{section.1.33}
+\contentsline {subsubsection}{Description}{34}{section*.67}
+\contentsline {subsubsection}{Analysis}{34}{section*.68}
+\contentsline {subsubsection}{Solution I}{35}{section*.69}
+\contentsline {subsubsection}{Solution II}{36}{section*.70}
+\contentsline {section}{\numberline {1.34}Top K Frequent Elements}{37}{section.1.34}
+\contentsline {subsubsection}{Description}{37}{section*.71}
+\contentsline {subsubsection}{Solution I}{37}{section*.72}
+\contentsline {subsubsection}{Solution II}{38}{section*.73}
+\contentsline {section}{\numberline {1.35}Find Median from Data Stream}{39}{section.1.35}
+\contentsline {subsubsection}{Description}{39}{section*.74}
+\contentsline {subsubsection}{Solution}{39}{section*.75}
+\contentsline {section}{\numberline {1.36}Title}{40}{section.1.36}
+\contentsline {subsubsection}{Description}{40}{section*.76}
+\contentsline {subsubsection}{Solution}{40}{section*.77}

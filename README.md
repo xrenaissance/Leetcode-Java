@@ -346,6 +346,7 @@
 |449|[Serialize and Deserialize BST](https://leetcode.com/problems/serialize-and-deserialize-bst)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SerializeAndDeserializeBST.java)|90|和#297一样|
 |450|[Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/DeleteNodeInBST.java)|60|这题非常经典，值得多做十遍|
 |477|[Total Hamming Distance](https://leetcode.com/problems/total-hamming-distance/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TotalHammingDistance.java)||
+|480|[Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SlidingWindowMedian.java)|70||
 |482|[License Key Formatting](https://leetcode.com/problems/license-key-formatting/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LicenseKeyFormatting.java)|90||
 |485|[Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaxConsecutiveOnes.java)|100||
 |487|[Max Consecutive Ones II](https://leetcode.com/problems/max-consecutive-ones-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MaxConsecutiveOnesII.java)|80||

@@ -1,38 +1,45 @@
 package com.example;
 
-import com.inuker.solution.FactorCombinations;
-import com.inuker.solution.FlipGame;
-import com.inuker.solution.PermutationSequence;
-import com.inuker.solution.RestoreIPAddresses;
-import com.inuker.solution.ValidWordAbbreviation;
-import com.leetcode.google.DecodeString;
-import com.leetcode.google.GenerateParentheses;
-import com.leetcode.google.MissingRanges;
-import com.leetcode.google.QueueReconstructionByHeight;
-import com.leetcode.google.SentenceScreenFitting;
-import com.leetcode.google.ShortestDistanceFromAllBuildings;
-import com.leetcode.google.StrobogrammaticNumberII;
-import com.leetcode.google.UTFValidation;
-import com.leetcode.google.WordBreakII;
-import com.leetcode.google.WordSquares;
-import com.leetcode.google.ZigzagIterator;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
+import java.sql.Timestamp;
+import java.util.Calendar;
 
 public class Main {
 
+    private static String fd(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (Character.isDigit(c) || c == '-' || c == ':' || c == '.') {
+                sb.append(c);
+            } else {
+                sb.append(' ');
+            }
+        }
+        return sb.toString().trim();
+    }
+
     public static void main(String[] args) {
-        String s = new PermutationSequence().getPermutation(4, 5);
+        String s = "2000-09-14T03:40:07.445Z";
+
+        s = fd(s);
+
         System.out.println(s);
+
+        Timestamp stamp = Timestamp.valueOf(s);
+        Calendar c = Calendar.getInstance();
+        c.setTimeInMillis(stamp.getTime());
+
+        int max = c.getActualMaximum(Calendar.DAY_OF_YEAR);
+        System.out.println(max);
+
+        System.out.println(c.get(Calendar.YEAR));
+        System.out.println(c.get(Calendar.MONTH) + 1);
+        System.out.println(c.get(Calendar.DATE));
+        System.out.println(c.get(Calendar.DAY_OF_YEAR));
+        System.out.println(c.get(Calendar.HOUR_OF_DAY));
+        System.out.println(c.get(Calendar.MINUTE));
+        System.out.println(c.get(Calendar.SECOND));
+        System.out.println(c.get(Calendar.MILLISECOND));
     }
 }
 

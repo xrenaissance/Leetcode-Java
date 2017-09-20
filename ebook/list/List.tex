@@ -376,6 +376,54 @@ public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
 \newpage
 
+\section{Merge k Sorted Lists} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+
+\subsubsection{Solution}
+
+\begin{Code}
+/**
+ * 这里要注意lists中可能有node为null
+ */
+public ListNode mergeKLists(ListNode[] lists) {
+    ListNode dummy = new ListNode(0), cur = dummy;
+
+    PriorityQueue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
+        @Override
+        public int compare(ListNode node1, ListNode node2) {
+            if (node1.val == node2.val) {
+                return 0;
+            } else if (node1.val < node2.val) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
+    });
+
+    for (ListNode node : lists) {
+        if (node != null) {
+            queue.offer(node);
+        }
+    }
+
+    while (!queue.isEmpty()) {
+        ListNode node = queue.poll();
+        cur.next = node;
+        cur = cur.next;
+        if (node.next != null) {
+            queue.offer(node.next);
+        }
+    }
+
+    return dummy.next;
+}
+\end{Code}
+
+\newpage
+
 \section{Intersection of Two Linked Lists} %%%%%%%%%%%%%%%%%%%%%%  
 
 \subsubsection{Description}
@@ -454,54 +502,6 @@ public RandomListNode copyRandomList(RandomListNode head) {
 
         node.next = node.next.next;
         node = node.next;
-    }
-
-    return dummy.next;
-}
-\end{Code}
-
-\newpage
-
-\section{Merge k Sorted Lists} %%%%%%%%%%%%%%%%%%%%%%  
-
-\subsubsection{Description}
-Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
-
-\subsubsection{Solution}
-
-\begin{Code}
-/**
- * 这里要注意lists中可能有node为null
- */
-public ListNode mergeKLists(ListNode[] lists) {
-    ListNode dummy = new ListNode(0), cur = dummy;
-
-    PriorityQueue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
-        @Override
-        public int compare(ListNode node1, ListNode node2) {
-            if (node1.val == node2.val) {
-                return 0;
-            } else if (node1.val < node2.val) {
-                return -1;
-            } else {
-                return 1;
-            }
-        }
-    });
-
-    for (ListNode node : lists) {
-        if (node != null) {
-            queue.offer(node);
-        }
-    }
-
-    while (!queue.isEmpty()) {
-        ListNode node = queue.poll();
-        cur.next = node;
-        cur = cur.next;
-        if (node.next != null) {
-            queue.offer(node.next);
-        }
     }
 
     return dummy.next;
@@ -1380,6 +1380,288 @@ You may assume that all operations are valid (for example, no pop or top operati
 
 \newpage
 
+\section{The Skyline Problem} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo (Figure A), write a program to output the skyline formed by these buildings collectively (Figure B).
+
+\begin{center}
+\includegraphics[width=150pt]{skyline1.png}
+\includegraphics[width=150pt]{skyline2.png}
+\end{center}
+
+The geometric information of each building is represented by a triplet of integers [Li, Ri, Hi], where Li and Ri are the x coordinates of the left and right edge of the ith building, respectively, and Hi is its height. It is guaranteed that 0 ≤ Li, Ri ≤ INT_MAX, 0 < Hi ≤ INT_MAX, and Ri - Li > 0. You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height 0.
+
+For instance, the dimensions of all buildings in Figure A are recorded as: [ [2 9 10], [3 7 15], [5 12 12], [15 20 10], [19 24 8] ] .
+
+The output is a list of "key points" (red dots in Figure B) in the format of [ [x1,y1], [x2, y2], [x3, y3], ... ] that uniquely defines a skyline. A key point is the left endpoint of a horizontal line segment. Note that the last key point, where the rightmost building ends, is merely used to mark the termination of the skyline, and always has zero height. Also, the ground in between any two adjacent buildings should be considered part of the skyline contour.
+
+For instance, the skyline in Figure B should be represented as:[ [2 10], [3 15], [7 12], [12 0], [15 10], [20 8], [24, 0] ].
+
+\textbf{Notes:}
+
+The number of buildings in any input list is guaranteed to be in the range [0, 10000].
+
+The input list is already sorted in ascending order by the left x position Li.
+
+The output list must be sorted by the x position.
+
+There must be no consecutive horizontal lines of equal height in the output skyline. For instance, [...[2 3], [4 5], [7 5], [11 5], [12 7]...] is not acceptable; the three lines of height 5 should be merged into one in the final output as such: [...[2 3], [4 5], [12 7], ...]
+
+\subsubsection{Analysis}
+
+这题的核心就是求外轮廓，就是所有building覆盖到的区域的最高处构成的轮廓，所以我们关注的核心是当前有效区域的最高处，所以我们要维护一个大端队列，当在当前轮廓上碰到更高的矩形时，会生成一个新转折点，当当前轮廓所在的矩形结束时，轮廓高度会坠落到第二级台阶上。
+每个building有两条竖线，左边为升，右边为降。我们遍历所有building，生成所有竖线的集合并排序，注意升线的高度设为负数。特殊情况：多条竖线重合，有升有降。我们优先看升，且优先看高度最高的升，因为会影响整个外轮廓
+当矩形起始时，需要将其高度加入队列，如果其高度高于当前高度，则生成一个转折点，矩形结束时，需要将其高度从队列中去掉，如果结束点不在外轮廓上则不会生成转折点，就是说
+即使去掉了该矩形的高度也不会影响队列中的最高高度，那外轮廓就不会变，不会有转折点。
+
+\newpage
+
+\subsubsection{Solution I}
+
+\begin{Code}
+// 耗时290ms，复杂度O(nlgn+nlgn+n^2)
+public List<int[]> getSkyline(int[][] buildings) {
+    List<int[]> heights = new LinkedList<int[]>();
+
+    for (int[] building : buildings) {
+        heights.add(new int[] {building[0], -building[2]});
+        heights.add(new int[] {building[1], building[2]});
+    }
+
+    /**
+     * 这里排序先按x，x相同则按高度，由于升线高度为负，所以升线越高越靠前，降线越矮越靠前。
+     * x一定时升线高的靠前，因为决定最终结果的是升线最高的那个，如果不是这样，后面处理queue的时候会
+     * 添加一堆中间结果x一定时降线矮的靠前，因为不这样的话，后面处理queue的时候会添加一堆中间结果
+     */
+    Collections.sort(heights, new Comparator<int[]>() {
+        @Override
+        public int compare(int[] o1, int[] o2) {
+            return o1[0] == o2[0] ? o1[1] - o2[1] : o1[0] - o2[0];
+        }
+    });
+
+    Queue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+        @Override
+        public int compare(Integer o1, Integer o2) {
+            return o2 - o1;
+        }
+    });
+
+    /**
+     * 这里别掉了
+     */
+    queue.offer(0);
+
+    List<int[]> result = new LinkedList<int[]>();
+
+    int prev = 0;
+    for (int[] height : heights) {
+        if (height[1] < 0) {
+            queue.add(-height[1]);
+        } else {
+            queue.remove(height[1]);
+        }
+        int cur = queue.peek();
+        if (prev != cur) {
+            result.add(new int[] {height[0], cur});
+            prev = cur;
+        }
+    }
+
+    return result;
+}
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+
+\begin{Code}
+/**
+ * 上面PriorityQueue的remove复杂度为O(n)，所以这里换成了TreeMap，删除的复杂度为O(lgn)
+ */
+// 耗时50ms，复杂度O(nlgn+nlgn+nlgn)
+public List<int[]> getSkyline2(int[][] buildings) {
+    List<int[]> heights = new LinkedList<int[]>();
+
+    for (int[] building : buildings) {
+        heights.add(new int[] {building[0], -building[2]});
+        heights.add(new int[] {building[1], building[2]});
+    }
+
+    Collections.sort(heights, new Comparator<int[]>() {
+        @Override
+        public int compare(int[] o1, int[] o2) {
+            return o1[0] == o2[0] ? o1[1] - o2[1] : o1[0] - o2[0];
+        }
+    });
+
+    TreeMap<Integer, Integer> map = new TreeMap<>(Collections.<Integer>reverseOrder());
+
+    // 这里一定别掉了
+    map.put(0, 1);
+
+    List<int[]> result = new LinkedList<int[]>();
+
+    int prev = 0;
+    for (int[] height : heights) {
+        if (height[1] < 0) {
+            map.put(-height[1], map.getOrDefault(-height[1], 0) + 1);
+        } else {
+            int cnt = map.getOrDefault(height[1], 0);
+            if (cnt == 1) {
+                map.remove(height[1]);
+            } else {
+                map.put(height[1], cnt - 1);
+            }
+        }
+        int cur = map.firstKey();
+        if (prev != cur) {
+            result.add(new int[] {height[0], cur});
+            prev = cur;
+        }
+    }
+
+    return result;
+}
+\end{Code}
+
+\newpage
+
+
+\section{Top K Frequent Elements} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Given a non-empty array of integers, return the k most frequent elements.
+
+For example,
+
+Given [1,1,1,2,2,3] and k = 2, return [1,2].
+
+\textbf{Note:}
+
+You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
+
+Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
+
+\subsubsection{Solution I}
+
+\begin{Code}
+// 耗时46ms，最差复杂度O(nlgn)
+public List<Integer> topKFrequent(int[] nums, int k) {
+    Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+    for (int n : nums) {
+        map.put(n, map.getOrDefault(n, 0) + 1);
+    }
+    Queue<int[]> queue = new PriorityQueue<>(new Comparator<int[]>() {
+        @Override
+        public int compare(int[] o1, int[] o2) {
+            return o2[1] - o1[1];
+        }
+    });
+    for (int key : map.keySet()) {
+        queue.add(new int[] { key, map.get(key) });
+    }
+    List<Integer> list = new LinkedList<Integer>();
+    for (int i = 1; i <= k && !queue.isEmpty(); i++) {
+        list.add(queue.poll()[0]);
+    }
+    return list;
+}
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+
+\begin{Code}
+// 耗时23ms，复杂度O(n)
+public List<Integer> topKFrequent2(int[] nums, int k) {
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    for (int n : nums) {
+        map.put(n, map.getOrDefault(n, 0) + 1);
+    }
+    List<Integer>[] lists = new LinkedList[nums.length + 1];
+    for (int key : map.keySet()) {
+        int count = map.get(key);
+        if (lists[count] == null) {
+            lists[count] = new LinkedList<Integer>();
+        }
+        lists[count].add(key);
+    }
+    List<Integer> result = new LinkedList<Integer>();
+    for (int i = lists.length - 1; i >= 0 && result.size() < k; i--) {
+        if (lists[i] != null) {
+            result.addAll(lists[i]);
+        }
+    }
+    return result;
+}
+\end{Code}
+
+\newpage
+
+\section{Find Median from Data Stream} %%%%%%%%%%%%%%%%%%%%%%  
+
+\subsubsection{Description}
+Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value. So the median is the mean of the two middle value.
+
+\textbf{Examples:}
+
+[2,3,4] , the median is 3
+
+[2,3], the median is (2 + 3) / 2 = 2.5
+
+Design a data structure that supports the following two operations:
+
+void addNum(int num) - Add a integer number from the data stream to the data structure.
+double findMedian() - Return the median of all elements so far.
+
+For example:
+\begin{Code}
+addNum(1)
+addNum(2)
+findMedian() -> 1.5
+addNum(3)
+findMedian() -> 2
+\end{Code}
+
+\subsubsection{Solution}
+
+\begin{Code}
+/**
+ * 比较大的一半
+ */
+PriorityQueue<Integer> maxheap = new PriorityQueue<Integer>();
+
+/**
+ * 比较小的一半
+ */
+PriorityQueue<Integer> minheap = new PriorityQueue<Integer>(Collections.reverseOrder());
+
+// Adds a number into the data structure.
+public void addNum(int num) {
+    maxheap.offer(num);
+    minheap.offer(maxheap.poll());
+
+    /**
+     * 要保证比较大的一半的size大于等于小的一半
+     */
+    if(maxheap.size() < minheap.size()){
+        maxheap.offer(minheap.poll());
+    }
+}
+
+// Returns the median of current data stream
+public double findMedian() {
+    return maxheap.size() == minheap.size() ?
+        (double)(maxheap.peek() + minheap.peek()) / 2.0 : maxheap.peek();
+}
+\end{Code}
+
+\newpage
+
 \section{Title} %%%%%%%%%%%%%%%%%%%%%%  
 
 \subsubsection{Description}
@@ -1391,4 +1673,3 @@ You may assume that all operations are valid (for example, no pop or top operati
 \end{Code}
 
 \newpage
-

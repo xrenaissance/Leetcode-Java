@@ -34,78 +34,81 @@
 \contentsline {subsubsection}{Description}{12}{section*.23}
 \contentsline {subsubsection}{Solution I}{12}{section*.24}
 \contentsline {subsubsection}{Solution II}{13}{section*.25}
-\contentsline {section}{\numberline {1.12}Longest Palindromic Substring}{14}{section.1.12}
+\contentsline {section}{\numberline {1.12}Sliding Window Median}{14}{section.1.12}
 \contentsline {subsubsection}{Description}{14}{section*.26}
-\contentsline {subsubsection}{Solution I}{14}{section*.27}
-\contentsline {subsubsection}{Solution II}{15}{section*.28}
-\contentsline {section}{\numberline {1.13}Shortest Palindrome}{16}{section.1.13}
-\contentsline {subsubsection}{Description}{16}{section*.29}
-\contentsline {subsubsection}{Solution}{16}{section*.30}
-\contentsline {section}{\numberline {1.14}Count and Say}{17}{section.1.14}
-\contentsline {subsubsection}{Description}{17}{section*.31}
-\contentsline {subsubsection}{Solution}{17}{section*.32}
-\contentsline {section}{\numberline {1.15}Valid Parentheses}{18}{section.1.15}
-\contentsline {subsubsection}{Description}{18}{section*.33}
-\contentsline {subsubsection}{Solution}{18}{section*.34}
-\contentsline {section}{\numberline {1.16}Group Anagrams}{19}{section.1.16}
-\contentsline {subsubsection}{Description}{19}{section*.35}
-\contentsline {subsubsection}{Solution}{19}{section*.36}
-\contentsline {section}{\numberline {1.17}Add Binary}{20}{section.1.17}
-\contentsline {subsubsection}{Description}{20}{section*.37}
-\contentsline {subsubsection}{Solution}{20}{section*.38}
-\contentsline {section}{\numberline {1.18}String to Integer (atoi)}{21}{section.1.18}
-\contentsline {subsubsection}{Description}{21}{section*.39}
-\contentsline {subsubsection}{Analysis}{21}{section*.40}
-\contentsline {subsubsection}{Solution}{21}{section*.41}
-\contentsline {section}{\numberline {1.19}Implement strStr()}{22}{section.1.19}
-\contentsline {subsubsection}{Description}{22}{section*.42}
-\contentsline {subsubsection}{Solution}{22}{section*.43}
-\contentsline {section}{\numberline {1.20}Integer to English Words}{23}{section.1.20}
-\contentsline {subsubsection}{Description}{23}{section*.44}
-\contentsline {subsubsection}{Solution}{23}{section*.45}
-\contentsline {section}{\numberline {1.21}Multiply Strings}{24}{section.1.21}
-\contentsline {subsubsection}{Description}{24}{section*.46}
-\contentsline {subsubsection}{Solution}{24}{section*.47}
-\contentsline {section}{\numberline {1.22}Compare Version Numbers}{25}{section.1.22}
-\contentsline {subsubsection}{Description}{25}{section*.48}
-\contentsline {subsubsection}{Solution}{25}{section*.49}
-\contentsline {section}{\numberline {1.23}Palindrome Pairs}{26}{section.1.23}
-\contentsline {subsubsection}{Description}{26}{section*.50}
-\contentsline {subsubsection}{Solution}{26}{section*.51}
-\contentsline {section}{\numberline {1.24}Valid Palindrome}{27}{section.1.24}
-\contentsline {subsubsection}{Description}{27}{section*.52}
-\contentsline {subsubsection}{Solution}{27}{section*.53}
-\contentsline {section}{\numberline {1.25}Valid Number}{28}{section.1.25}
-\contentsline {subsubsection}{Description}{28}{section*.54}
-\contentsline {subsubsection}{Solution}{28}{section*.55}
-\contentsline {section}{\numberline {1.26}Substring with Concatenation of All Words}{29}{section.1.26}
-\contentsline {subsubsection}{Description}{29}{section*.56}
-\contentsline {subsubsection}{Solution}{29}{section*.57}
-\contentsline {section}{\numberline {1.27}Simplify Path}{31}{section.1.27}
+\contentsline {subsubsection}{Solution}{14}{section*.27}
+\contentsline {section}{\numberline {1.13}Longest Palindromic Substring}{16}{section.1.13}
+\contentsline {subsubsection}{Description}{16}{section*.28}
+\contentsline {subsubsection}{Solution I}{16}{section*.29}
+\contentsline {subsubsection}{Solution II}{17}{section*.30}
+\contentsline {section}{\numberline {1.14}Shortest Palindrome}{18}{section.1.14}
+\contentsline {subsubsection}{Description}{18}{section*.31}
+\contentsline {subsubsection}{Solution}{18}{section*.32}
+\contentsline {section}{\numberline {1.15}Count and Say}{19}{section.1.15}
+\contentsline {subsubsection}{Description}{19}{section*.33}
+\contentsline {subsubsection}{Solution}{19}{section*.34}
+\contentsline {section}{\numberline {1.16}Valid Parentheses}{20}{section.1.16}
+\contentsline {subsubsection}{Description}{20}{section*.35}
+\contentsline {subsubsection}{Solution}{20}{section*.36}
+\contentsline {section}{\numberline {1.17}Group Anagrams}{21}{section.1.17}
+\contentsline {subsubsection}{Description}{21}{section*.37}
+\contentsline {subsubsection}{Solution}{21}{section*.38}
+\contentsline {section}{\numberline {1.18}Add Binary}{22}{section.1.18}
+\contentsline {subsubsection}{Description}{22}{section*.39}
+\contentsline {subsubsection}{Solution}{22}{section*.40}
+\contentsline {section}{\numberline {1.19}String to Integer (atoi)}{23}{section.1.19}
+\contentsline {subsubsection}{Description}{23}{section*.41}
+\contentsline {subsubsection}{Analysis}{23}{section*.42}
+\contentsline {subsubsection}{Solution}{23}{section*.43}
+\contentsline {section}{\numberline {1.20}Implement strStr()}{24}{section.1.20}
+\contentsline {subsubsection}{Description}{24}{section*.44}
+\contentsline {subsubsection}{Solution}{24}{section*.45}
+\contentsline {section}{\numberline {1.21}Integer to English Words}{25}{section.1.21}
+\contentsline {subsubsection}{Description}{25}{section*.46}
+\contentsline {subsubsection}{Solution}{25}{section*.47}
+\contentsline {section}{\numberline {1.22}Multiply Strings}{26}{section.1.22}
+\contentsline {subsubsection}{Description}{26}{section*.48}
+\contentsline {subsubsection}{Solution}{26}{section*.49}
+\contentsline {section}{\numberline {1.23}Compare Version Numbers}{27}{section.1.23}
+\contentsline {subsubsection}{Description}{27}{section*.50}
+\contentsline {subsubsection}{Solution}{27}{section*.51}
+\contentsline {section}{\numberline {1.24}Palindrome Pairs}{28}{section.1.24}
+\contentsline {subsubsection}{Description}{28}{section*.52}
+\contentsline {subsubsection}{Solution}{28}{section*.53}
+\contentsline {section}{\numberline {1.25}Valid Palindrome}{29}{section.1.25}
+\contentsline {subsubsection}{Description}{29}{section*.54}
+\contentsline {subsubsection}{Solution}{29}{section*.55}
+\contentsline {section}{\numberline {1.26}Valid Number}{30}{section.1.26}
+\contentsline {subsubsection}{Description}{30}{section*.56}
+\contentsline {subsubsection}{Solution}{30}{section*.57}
+\contentsline {section}{\numberline {1.27}Substring with Concatenation of All Words}{31}{section.1.27}
 \contentsline {subsubsection}{Description}{31}{section*.58}
 \contentsline {subsubsection}{Solution}{31}{section*.59}
-\contentsline {section}{\numberline {1.28}Text Justification}{32}{section.1.28}
-\contentsline {subsubsection}{Description}{32}{section*.60}
-\contentsline {subsubsection}{Analysis}{32}{section*.61}
-\contentsline {subsubsection}{Solution}{33}{section*.62}
-\contentsline {section}{\numberline {1.29}Read N Characters Given Read4}{34}{section.1.29}
-\contentsline {subsubsection}{Description}{34}{section*.63}
-\contentsline {subsubsection}{Solution}{34}{section*.64}
-\contentsline {section}{\numberline {1.30}Read N Characters Given Read4 II - Call multiple times}{35}{section.1.30}
-\contentsline {subsubsection}{Description}{35}{section*.65}
-\contentsline {subsubsection}{Solution}{35}{section*.66}
-\contentsline {section}{\numberline {1.31}Group Shifted Strings}{36}{section.1.31}
-\contentsline {subsubsection}{Description}{36}{section*.67}
-\contentsline {subsubsection}{Solution}{36}{section*.68}
-\contentsline {section}{\numberline {1.32}Encode and Decode Strings}{37}{section.1.32}
-\contentsline {subsubsection}{Description}{37}{section*.69}
-\contentsline {subsubsection}{Solution}{37}{section*.70}
-\contentsline {section}{\numberline {1.33}Repeated Substring Pattern}{38}{section.1.33}
-\contentsline {subsubsection}{Description}{38}{section*.71}
-\contentsline {subsubsection}{Solution}{38}{section*.72}
-\contentsline {section}{\numberline {1.34}Validate IP Address}{39}{section.1.34}
-\contentsline {subsubsection}{Description}{39}{section*.73}
-\contentsline {subsubsection}{Solution}{39}{section*.74}
-\contentsline {section}{\numberline {1.35}Valid Word Abbreviation}{40}{section.1.35}
-\contentsline {subsubsection}{Description}{40}{section*.75}
-\contentsline {subsubsection}{Solution}{40}{section*.76}
+\contentsline {section}{\numberline {1.28}Simplify Path}{33}{section.1.28}
+\contentsline {subsubsection}{Description}{33}{section*.60}
+\contentsline {subsubsection}{Solution}{33}{section*.61}
+\contentsline {section}{\numberline {1.29}Text Justification}{34}{section.1.29}
+\contentsline {subsubsection}{Description}{34}{section*.62}
+\contentsline {subsubsection}{Analysis}{34}{section*.63}
+\contentsline {subsubsection}{Solution}{35}{section*.64}
+\contentsline {section}{\numberline {1.30}Read N Characters Given Read4}{36}{section.1.30}
+\contentsline {subsubsection}{Description}{36}{section*.65}
+\contentsline {subsubsection}{Solution}{36}{section*.66}
+\contentsline {section}{\numberline {1.31}Read N Characters Given Read4 II - Call multiple times}{37}{section.1.31}
+\contentsline {subsubsection}{Description}{37}{section*.67}
+\contentsline {subsubsection}{Solution}{37}{section*.68}
+\contentsline {section}{\numberline {1.32}Group Shifted Strings}{38}{section.1.32}
+\contentsline {subsubsection}{Description}{38}{section*.69}
+\contentsline {subsubsection}{Solution}{38}{section*.70}
+\contentsline {section}{\numberline {1.33}Encode and Decode Strings}{39}{section.1.33}
+\contentsline {subsubsection}{Description}{39}{section*.71}
+\contentsline {subsubsection}{Solution}{39}{section*.72}
+\contentsline {section}{\numberline {1.34}Repeated Substring Pattern}{40}{section.1.34}
+\contentsline {subsubsection}{Description}{40}{section*.73}
+\contentsline {subsubsection}{Solution}{40}{section*.74}
+\contentsline {section}{\numberline {1.35}Validate IP Address}{41}{section.1.35}
+\contentsline {subsubsection}{Description}{41}{section*.75}
+\contentsline {subsubsection}{Solution}{41}{section*.76}
+\contentsline {section}{\numberline {1.36}Valid Word Abbreviation}{42}{section.1.36}
+\contentsline {subsubsection}{Description}{42}{section*.77}
+\contentsline {subsubsection}{Solution}{42}{section*.78}

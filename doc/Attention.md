@@ -97,3 +97,5 @@ return -1;
 因为可能存在重复的数，在TreeMap中查找key时通过comparator等于0，上述写法导致永远找不到key。
 
 三十，StringBuilder的insert(0, c)不要频繁调用，不如append，最后reverse。
+
+三十一，List在allAll一个PriorityQueue时，是不会带顺序的，正确的做法是while(!queue.isEmpty()) {list.add(queue.poll());}
