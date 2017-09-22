@@ -461,54 +461,6 @@ public int[] plusOne(int[] digits) {
 
 \newpage
 
-\section{Plus One Linked List} %%%%%%%%%%%%%%%%%%%%%%  
-
-\subsubsection{Description}
-Given a non-negative integer represented as non-empty a singly linked list of digits, plus one to the integer.
-
-You may assume the integer do not contain any leading zero, except the number 0 itself.
-
-The digits are stored such that the most significant digit is at the head of the list.
-
-\textbf{Example:}
-
-\textbf{Input:}
-
-1->2->3
-
-\textbf{Output:}
-
-1->2->4
-
-\subsubsection{Solution}
-
-\begin{Code}
-public ListNode plusOne(ListNode head) {
-    if (head == null) {
-        return head;
-    }
-    Stack<ListNode> stack = new Stack<ListNode>();
-    for (ListNode node = head; node != null; node = node.next) {
-        stack.push(node);
-    }
-    int k = 1;
-    while (!stack.isEmpty()) {
-        ListNode node = stack.pop();
-        int val = node.val + k;
-        node.val = val % 10;
-        k = val / 10;
-        if (k == 0) {
-            return head;
-        }
-    }
-    ListNode node = new ListNode(k);
-    node.next = head;
-    return node;
-}
-\end{Code}
-
-\newpage
-
 \section{Container With Most Water} %%%%%%%%%%%%%%%%%%%%%%  
 
 \subsubsection{Description}
@@ -1179,35 +1131,6 @@ public void merge(int[] nums1, int m, int[] nums2, int n) {
             }
         }
     }
-}
-\end{Code}
-
-\newpage
-
-\section{Merge Two Sorted Lists} %%%%%%%%%%%%%%%%%%%%%%  
-
-\subsubsection{Description}
-Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
-
-\subsubsection{Solution}
-
-\begin{Code}
-// 耗时15ms
-public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-    ListNode dummy = new ListNode(0);
-    ListNode p = l1, q = l2, cur = dummy;
-    for ( ; p != null && q != null; ) {
-        if (p.val < q.val) {
-            cur.next = p;
-            p = p.next;
-        } else {
-            cur.next = q;
-            q = q.next;
-        }
-        cur = cur.next;
-    }
-    cur.next = p != null ? p : q;
-    return dummy.next;
 }
 \end{Code}
 

@@ -1,1 +1,1 @@
-include ':app', ':solution', ':google', ':library', ':facebook', ':amazon', ':topics', ':test'
+include ':app', ':solution', ':google', ':library', ':facebook', ':amazon', ':topics', ':test', ':tools'

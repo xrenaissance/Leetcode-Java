@@ -1761,32 +1761,6 @@ private static void helper(StringBuilder sb, String cur, List<String> list) {
 
 \newpage
 
-\section{Count Numbers with Unique Digits} %%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{Description}
-
-Given a non-negative integer n, count all numbers with unique digits, \code{x}, where 0 <= x < 10n.
-
-\textbf{Example:}
-
-Given n = 2, return 91. (The answer should be the total numbers in the range of 0 <= x < 100, excluding \code{[11,22,33,44,55,66,77,88,99]})
-
-\subsubsection{Solution}
-
-\begin{Code}
-public int countNumbersWithUniqueDigits(int n) {
-    int[] result = new int[n + 1];
-    result[0] = 1;
-    for (int i = 1, t = 9; i <= n; i++) {
-        result[i] = result[i - 1] + t;
-        t *= 10 - i;
-    }
-    return result[n];
-}
-\end{Code}
-
-\newpage
-
 \section{Generalized Abbreviation} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
