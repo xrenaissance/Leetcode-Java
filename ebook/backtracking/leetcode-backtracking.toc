@@ -87,36 +87,33 @@
 \contentsline {section}{\numberline {1.27}Palindrome Permutation II}{38}{section.1.27}
 \contentsline {subsubsection}{Description}{38}{section*.61}
 \contentsline {subsubsection}{Solution}{38}{section*.62}
-\contentsline {section}{\numberline {1.28}Count Numbers with Unique Digits}{39}{section.1.28}
+\contentsline {section}{\numberline {1.28}Generalized Abbreviation}{39}{section.1.28}
 \contentsline {subsubsection}{Description}{39}{section*.63}
 \contentsline {subsubsection}{Solution}{39}{section*.64}
-\contentsline {section}{\numberline {1.29}Generalized Abbreviation}{40}{section.1.29}
+\contentsline {section}{\numberline {1.29}Binary Watch}{40}{section.1.29}
 \contentsline {subsubsection}{Description}{40}{section*.65}
 \contentsline {subsubsection}{Solution}{40}{section*.66}
-\contentsline {section}{\numberline {1.30}Binary Watch}{41}{section.1.30}
-\contentsline {subsubsection}{Description}{41}{section*.67}
-\contentsline {subsubsection}{Solution}{41}{section*.68}
-\contentsline {section}{\numberline {1.31}Add and Search Word}{43}{section.1.31}
-\contentsline {subsubsection}{Description}{43}{section*.69}
-\contentsline {subsubsection}{Solution}{43}{section*.70}
-\contentsline {section}{\numberline {1.32}Factor Combinations}{45}{section.1.32}
-\contentsline {subsubsection}{Descriptor}{45}{section*.71}
+\contentsline {section}{\numberline {1.30}Add and Search Word}{42}{section.1.30}
+\contentsline {subsubsection}{Description}{42}{section*.67}
+\contentsline {subsubsection}{Solution}{42}{section*.68}
+\contentsline {section}{\numberline {1.31}Factor Combinations}{44}{section.1.31}
+\contentsline {subsubsection}{Descriptor}{44}{section*.69}
+\contentsline {subsubsection}{Solution}{45}{section*.70}
+\contentsline {section}{\numberline {1.32}Valid Word Square}{46}{section.1.32}
+\contentsline {subsubsection}{Description}{46}{section*.71}
 \contentsline {subsubsection}{Solution}{46}{section*.72}
-\contentsline {section}{\numberline {1.33}Valid Word Square}{47}{section.1.33}
+\contentsline {section}{\numberline {1.33}Word Squares}{47}{section.1.33}
 \contentsline {subsubsection}{Description}{47}{section*.73}
-\contentsline {subsubsection}{Solution}{47}{section*.74}
-\contentsline {section}{\numberline {1.34}Word Squares}{48}{section.1.34}
-\contentsline {subsubsection}{Description}{48}{section*.75}
+\contentsline {subsubsection}{Solution}{48}{section*.74}
+\contentsline {section}{\numberline {1.34}Beautiful Arrangement}{49}{section.1.34}
+\contentsline {subsubsection}{Description}{49}{section*.75}
 \contentsline {subsubsection}{Solution}{49}{section*.76}
-\contentsline {section}{\numberline {1.35}Beautiful Arrangement}{50}{section.1.35}
+\contentsline {section}{\numberline {1.35}Flip Game}{50}{section.1.35}
 \contentsline {subsubsection}{Description}{50}{section*.77}
 \contentsline {subsubsection}{Solution}{50}{section*.78}
-\contentsline {section}{\numberline {1.36}Flip Game}{51}{section.1.36}
+\contentsline {section}{\numberline {1.36}Flip Game II}{51}{section.1.36}
 \contentsline {subsubsection}{Description}{51}{section*.79}
 \contentsline {subsubsection}{Solution}{51}{section*.80}
-\contentsline {section}{\numberline {1.37}Flip Game II}{52}{section.1.37}
+\contentsline {section}{\numberline {1.37}Android Unlock Patterns}{52}{section.1.37}
 \contentsline {subsubsection}{Description}{52}{section*.81}
-\contentsline {subsubsection}{Solution}{52}{section*.82}
-\contentsline {section}{\numberline {1.38}Android Unlock Patterns}{53}{section.1.38}
-\contentsline {subsubsection}{Description}{53}{section*.83}
-\contentsline {subsubsection}{Solution}{54}{section*.84}
+\contentsline {subsubsection}{Solution}{53}{section*.82}

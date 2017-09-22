@@ -1257,7 +1257,6 @@ You may assume that all operations are valid (for example, no pop or peek operat
 
 \begin{Code}
 public class MyQueue {
-
     private Stack<Integer> mStack = new Stack<Integer>();
     private Stack<Integer> mStackTmp = new Stack<Integer>();
 
@@ -1372,10 +1371,92 @@ Depending on your language, queue may not be supported natively. You may simulat
 
 You may assume that all operations are valid (for example, no pop or top operations will be called on an empty stack).
 
-\subsubsection{Solution}
+\subsubsection{Solution I}
 
 \begin{Code}
+public class MyStack {
+    private LinkedList<Integer> q1 = new LinkedList<>();
 
+    // Push element x onto stack.
+    public void push(int x) {
+        q1.add(x);
+        int sz = q1.size();
+        while (sz > 1) {
+            q1.add(q1.remove());
+            sz--;
+        }
+    }
+
+    // Removes the element on top of the stack.
+    public void pop() {
+        q1.remove();
+    }
+
+
+    // Get the top element.
+    public int top() {
+        return q1.peek();
+    }
+
+    // Return whether the stack is empty.
+    public boolean empty() {
+        return q1.isEmpty();
+    }
+}
+\end{Code}
+
+\newpage
+
+\subsubsection{Solution II}
+
+\begin{Code}
+public class MyStack {
+
+    private Queue<Integer> mQueue, mQueueTmp;
+
+    public MyStack() {
+        mQueue = new LinkedList<Integer>();
+        mQueueTmp = new LinkedList<Integer>();
+    }
+
+    // Push element x onto stack.
+    public void push(int x) {
+        mQueue.add(x);
+    }
+
+    // Removes the element on top of the stack.
+    public void pop() {
+        while (!mQueue.isEmpty()) {
+            int n = mQueue.poll();
+            if (!mQueue.isEmpty()) {
+                mQueueTmp.add(n);
+            }
+        }
+        swap();
+    }
+
+    private void swap() {
+        Queue<Integer> queue = mQueue;
+        mQueue = mQueueTmp;
+        mQueueTmp = queue;
+    }
+
+    // Get the top element.
+    public int top() {
+        int top = 0;
+        while (!mQueue.isEmpty()) {
+            top = mQueue.poll();
+            mQueueTmp.add(top);
+        }
+        swap();
+        return top;
+    }
+
+    // Return whether the stack is empty.
+    public boolean empty() {
+        return mQueue.isEmpty();
+    }
+}
 \end{Code}
 
 \newpage
@@ -1770,6 +1851,8 @@ Note that "cacaca" is incorrect, as the same characters must be together.
 
 Note that 'A' and 'a' are treated as two different characters.
 
+\newpage
+
 \subsubsection{Solution I}
 
 \begin{Code}
@@ -1805,6 +1888,7 @@ public String frequencySort(String s) {
 
 \end{Code}
 
+\newpage
 \subsubsection{Solution II}
 
 \begin{Code}
@@ -1880,6 +1964,7 @@ public int nthSuperUglyNumber(int n, int[] primes) {
 
 \end{Code}
 
+\newpage
 \subsubsection{Solution II}
 \begin{Code}
 public int nthSuperUglyNumber2(int n, int[] primes) {
@@ -1905,6 +1990,7 @@ public int nthSuperUglyNumber2(int n, int[] primes) {
 }
 \end{Code}
 
+\newpage
 \subsubsection{Solution III}
 
 \begin{Code}
@@ -2107,6 +2193,7 @@ Return 0 if the array contains less than 2 elements.
 
 You may assume all elements in the array are non-negative integers and fit in the 32-bit signed integer range.
 
+\newpage
 \subsubsection{Solution}
 
 \begin{Code}
@@ -2206,6 +2293,8 @@ public int[] intersection(int[] nums1, int[] nums2) {
 }
 \end{Code}
 
+\newpage
+
 \subsubsection{Solution II}
 \begin{Code}
 public int[] intersection2(int[] nums1, int[] nums2) {
@@ -2234,6 +2323,7 @@ public int[] intersection2(int[] nums1, int[] nums2) {
 }
 \end{Code}
 
+\newpage
 \subsubsection{Solution III}
 \begin{Code}
 public int[] intersection3(int[] nums1, int[] nums2) {
@@ -2374,6 +2464,7 @@ private void swap(int[] nums, int i, int j) {
 }
 \end{Code}
 
+\newpage
 \subsubsection{Solution II}
 \begin{Code}
 /**
@@ -2809,7 +2900,8 @@ public List<List<Integer>> fourSum(int[] nums, int target) {
                 } else {
                     result.add(Arrays.asList(nums[i], nums[j], nums[k], nums[m]));
 
-                    for (k++, m--; k < m && nums[k] == nums[k - 1] && nums[m] == nums[m + 1]; k++, m--);
+                    k++, m--;
+                    for ( ; k < m && nums[k] == nums[k - 1] && nums[m] == nums[m + 1]; k++, m--);
                 }
             }
         }
@@ -2974,8 +3066,6 @@ Now given a string representing n, you should return the smallest good base of n
 
 \textbf{Note:}
 
-The range of n is [3, 10^18].
-
 The string representing n is always valid and will not have leading zeros.
 \subsubsection{Solution}
 
@@ -2987,10 +3077,10 @@ public String smallestGoodBase(String nn) {
         long s = 2, e = n;
         while (s < e) {
             long m = s + (e - s) / 2;
-
             BigInteger left = BigInteger.valueOf(m);
             left = left.pow(k).subtract(BigInteger.ONE);
-            BigInteger right = BigInteger.valueOf(n).multiply(BigInteger.valueOf(m).subtract(BigInteger.ONE));
+            BitInteger temp = BigInteger.valueOf(m).subtract(BigInteger.ONE);
+            BigInteger right = BigInteger.valueOf(n).multiply(temp);
             int cmr = left.compareTo(right);
             if (cmr == 0) {
                 res = m;
@@ -3001,10 +3091,8 @@ public String smallestGoodBase(String nn) {
                 e = m;
             }
         }
-
         if (res != 0) break;
     }
-
     return "" + res;
 }
 \end{Code}
