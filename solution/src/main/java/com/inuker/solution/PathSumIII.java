@@ -27,7 +27,7 @@ public class PathSumIII {
     }
 
     /**
-     *  既可以算上，也可以不算上root
+     * 既可以算上，也可以不算上root
      */
     private void helperSum(TreeNode root, int sum, int[] count) {
         if (root == null) {
@@ -51,16 +51,11 @@ public class PathSumIII {
         }
         if (root.val == sum) {
             count[0]++;
-           // return;
+            // 这里不用返回，因为下面的路径和可能为0;
         }
 
-        if (root.left != null) {
-            helper(root.left, sum - root.val, count);
-        }
-
-        if (root.right != null) {
-            helper(root.right, sum - root.val, count);
-        }
+        helper(root.left, sum - root.val, count);
+        helper(root.right, sum - root.val, count);
     }
 
     /* 如果要给路径打出来

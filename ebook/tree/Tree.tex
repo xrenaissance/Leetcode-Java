@@ -1331,16 +1331,11 @@ private void helper(TreeNode root, int sum, int[] count) {
     }
     if (root.val == sum) {
         count[0]++;
-       // return;
+       // 这里不用返回，因为下面的路径和可能为0;
     }
 
-    if (root.left != null) {
-        helper(root.left, sum - root.val, count);
-    }
-
-    if (root.right != null) {
-        helper(root.right, sum - root.val, count);
-    }
+    helper(root.left, sum - root.val, count);
+    helper(root.right, sum - root.val, count);
 }
 \end{Code}
 
