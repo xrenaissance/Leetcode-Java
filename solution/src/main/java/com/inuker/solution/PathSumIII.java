@@ -43,7 +43,7 @@ public class PathSumIII {
     }
 
     /**
-     * 一定要算上root
+     * 算上root
      */
     private void helper(TreeNode root, int sum, int[] count) {
         if (root == null) {
@@ -59,10 +59,10 @@ public class PathSumIII {
     }
 
     /* 如果要给路径打出来
-    public int pathSum(TreeNode root, int sum) {
+    public List<String> pathSum(TreeNode root, int sum) {
         List<String> result = new LinkedList<>();
         pathSum(root, sum, result, "");
-        return result.size();
+        return result;
     }
 
     private void pathSum(TreeNode root, int sum, List<String> list, String path) {
@@ -80,10 +80,13 @@ public class PathSumIII {
         if (root == null) {
             return;
         }
+
+        String prefix = path.isEmpty() ? "" : path + "->";
+
         if (root.val == sum) {
-            list.add(path + "->" + root.val);
+            list.add(prefix + root.val);
         }
-        pathSumWithRoot(root.left, sum - root.val, list, path + "->" + root.val);
-        pathSumWithRoot(root.right, sum - root.val, list, path + "->" + root.val);
+        pathSumWithRoot(root.left, sum - root.val, list, prefix + root.val);
+        pathSumWithRoot(root.right, sum - root.val, list, prefix + root.val);
     }*/
 }

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class BinaryTreePreorderTraversal {
 
-    public List<Integer> preorderTraversal2(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
         while(!stack.isEmpty() || root != null) {

@@ -1,45 +1,72 @@
 package com.example;
 
 
+import com.inuker.solution.BinaryTreePreorderTraversal;
+import com.inuker.solution.PathSumIII;
+import com.leetcode.library.TreeNode;
+
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
 
-    private static String fd(String s) {
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray()) {
-            if (Character.isDigit(c) || c == '-' || c == ':' || c == '.') {
-                sb.append(c);
-            } else {
-                sb.append(' ');
-            }
+    public static void main(String[] args) {
+        TreeNode nodef32 = new TreeNode(-3);
+        TreeNode node32 = new TreeNode(3, nodef32, null);
+        TreeNode nodef2 = new TreeNode(-2);
+        TreeNode node1 = new TreeNode(1);
+        TreeNode node11 = new TreeNode(11);
+
+        TreeNode node3 = new TreeNode(3, node32, nodef2);
+        TreeNode node2 = new TreeNode(2, null, node1);
+
+        TreeNode node5 = new TreeNode(5, node3, node2);
+        TreeNode nodef3 = new TreeNode(-3, null, node11);
+
+        TreeNode root = new TreeNode(10, node5, nodef3);
+
+//        List<Integer> list = new BinaryTreePreorderTraversal().preorderTraversal(root);
+//        for (Integer n : list) {
+//            System.out.print(n + " ");
+//        }
+
+        List<String> paths = pathSum(root, 8);
+        for (String s : paths) {
+            System.out.println(s);
         }
-        return sb.toString().trim();
     }
 
-    public static void main(String[] args) {
-        String s = "2000-09-14T03:40:07.445Z";
+    public static List<String> pathSum(TreeNode root, int sum) {
+        List<String> result = new LinkedList<>();
+        pathSum(root, sum, result, "");
+        return result;
+    }
 
-        s = fd(s);
+    private static void pathSum(TreeNode root, int sum, List<String> list, String path) {
+        if (root == null) {
+            return;
+        }
 
-        System.out.println(s);
+        pathSumWithRoot(root, sum, list, path);
 
-        Timestamp stamp = Timestamp.valueOf(s);
-        Calendar c = Calendar.getInstance();
-        c.setTimeInMillis(stamp.getTime());
+        pathSum(root.left, sum, list, "");
+        pathSum(root.right, sum, list, "");
+    }
 
-        int max = c.getActualMaximum(Calendar.DAY_OF_YEAR);
-        System.out.println(max);
+    private static void pathSumWithRoot(TreeNode root, int sum, List<String> list, String path) {
+        if (root == null) {
+            return;
+        }
 
-        System.out.println(c.get(Calendar.YEAR));
-        System.out.println(c.get(Calendar.MONTH) + 1);
-        System.out.println(c.get(Calendar.DATE));
-        System.out.println(c.get(Calendar.DAY_OF_YEAR));
-        System.out.println(c.get(Calendar.HOUR_OF_DAY));
-        System.out.println(c.get(Calendar.MINUTE));
-        System.out.println(c.get(Calendar.SECOND));
-        System.out.println(c.get(Calendar.MILLISECOND));
+        String prefix = path.isEmpty() ? "" : path + "->";
+
+        if (root.val == sum) {
+            list.add(prefix + root.val);
+        }
+        pathSumWithRoot(root.left, sum - root.val, list, prefix + root.val);
+        pathSumWithRoot(root.right, sum - root.val, list, prefix + root.val);
     }
 }
 
