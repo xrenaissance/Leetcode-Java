@@ -13,13 +13,7 @@ public class PathSumII {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> result = new LinkedList<>();
-        if (root == null) {
-            return result;
-        }
-        List<Integer> list = new LinkedList<>();
-        list.add(root.val);
-
-        pathSum(root, sum, result, list);
+        pathSum(root, sum, result, new LinkedList<Integer>());
         return result;
     }
 
@@ -28,19 +22,19 @@ public class PathSumII {
             return;
         }
 
+        list.add(root.val);
+
         if (root.left == null && root.right == null && sum == root.val) {
             result.add(new LinkedList<>(list));
             return;
         }
 
         if (root.left != null) {
-            list.add(root.left.val);
             pathSum(root.left, sum - root.val, result, list);
             list.remove(list.size() - 1);
         }
 
         if (root.right != null) {
-            list.add(root.right.val);
             pathSum(root.right, sum - root.val, result, list);
             list.remove(list.size() - 1);
         }
