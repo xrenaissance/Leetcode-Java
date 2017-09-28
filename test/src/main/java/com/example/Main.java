@@ -1,72 +1,56 @@
 package com.example;
 
-
-import com.inuker.solution.BinaryTreePreorderTraversal;
-import com.inuker.solution.PathSumIII;
-import com.leetcode.library.TreeNode;
-
-import java.sql.Timestamp;
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        TreeNode nodef32 = new TreeNode(-3);
-        TreeNode node32 = new TreeNode(3, nodef32, null);
-        TreeNode nodef2 = new TreeNode(-2);
-        TreeNode node1 = new TreeNode(1);
-        TreeNode node11 = new TreeNode(11);
-
-        TreeNode node3 = new TreeNode(3, node32, nodef2);
-        TreeNode node2 = new TreeNode(2, null, node1);
-
-        TreeNode node5 = new TreeNode(5, node3, node2);
-        TreeNode nodef3 = new TreeNode(-3, null, node11);
-
-        TreeNode root = new TreeNode(10, node5, nodef3);
-
-//        List<Integer> list = new BinaryTreePreorderTraversal().preorderTraversal(root);
-//        for (Integer n : list) {
-//            System.out.print(n + " ");
-//        }
-
-        List<String> paths = pathSum(root, 8);
-        for (String s : paths) {
-            System.out.println(s);
-        }
+        boolean result = canArrangeWords(new String[] {
+                "abc", "ce", "ef", "fu", "cd", "dx", "xc"
+        });
+        System.out.print(result);
     }
 
-    public static List<String> pathSum(TreeNode root, int sum) {
-        List<String> result = new LinkedList<>();
-        pathSum(root, sum, result, "");
-        return result;
+    public static int perfectNumberCheck(int n) {
+        int k = n;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                k -= i;
+            }
+        }
+        return k == 0 ? 1 : 0;
     }
 
-    private static void pathSum(TreeNode root, int sum, List<String> list, String path) {
-        if (root == null) {
-            return;
+    public static boolean canArrangeWords(String[] words) {
+        List<String> set = new ArrayList<String>();
+        if (helper(null, words, set)) {
+            for (String s : set) {
+                System.out.print(s + "->");
+            }
+            return true;
         }
-
-        pathSumWithRoot(root, sum, list, path);
-
-        pathSum(root.left, sum, list, "");
-        pathSum(root.right, sum, list, "");
+        return false;
     }
 
-    private static void pathSumWithRoot(TreeNode root, int sum, List<String> list, String path) {
-        if (root == null) {
-            return;
+    public static boolean helper(String word, String[] words, List<String> set) {
+        if (set.size() == words.length) {
+            return true;
         }
 
-        String prefix = path.isEmpty() ? "" : path + "->";
-
-        if (root.val == sum) {
-            list.add(prefix + root.val);
+        for (String s : words) {
+            if (!set.contains(s) && (word == null || s.charAt(0) == word.charAt(word.length() - 1))) {
+                set.add(s);
+                if (helper(s, words, set)) {
+                    return true;
+                }
+                set.remove(s);
+            }
         }
-        pathSumWithRoot(root.left, sum - root.val, list, prefix + root.val);
-        pathSumWithRoot(root.right, sum - root.val, list, prefix + root.val);
+        return false;
     }
 }
 
