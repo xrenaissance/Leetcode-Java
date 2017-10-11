@@ -1292,9 +1292,9 @@ Return 3. The paths that sum to 8 are:
 
 \begin{Code}
 /**
- * 当root.val == Sum时，不要return，因为继续往下走可能有路径刚好加起来为0，典型的为[1,-2,1,-1]，目标和为-1
- * 这里隐藏了四条路径，[1,-2], [-2,1], [-1], [1,-2,1,-1]，如果在[1,-2]就return了，那就会掉了[1,-2,1,-1]
- * 可参考https://discuss.leetcode.com/category/562/path-sum-iii
+ * 当root.val == Sum时，不要return，因为继续往下走可能有路径刚好加起来为0，典型的为[1,-2,1,-1]，
+ * 目标和为-1, 这里隐藏了四条路径，[1,-2], [-2,1], [-1], [1,-2,1,-1]，如果在[1,-2]就return了，
+ * 那就会掉了[1,-2,1,-1]
  */
 
 /**
@@ -1857,6 +1857,7 @@ public int rob(TreeNode root) {
     return rob(root, true);
 }
 
+// rob true表示不定，false表示不选root
 private int rob(TreeNode root, boolean rob) {
     if (root == null) {
         return 0;
@@ -2004,18 +2005,6 @@ The minimum depth is the number of nodes along the shortest path from the root n
 \subsubsection{Solution}
 
 \begin{Code}
-/**
- * 错误的写法，和第104题非常类似
-public int minDepth(TreeNode root) {
-    if (root == null) {
-        return 0;
-    }
-    if (root.left == null && root.right == null) {
-        return 1;
-    }
-    return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
-}*/
-
 public int minDepth(TreeNode root) {
     if (root == null) {
         return 0;
@@ -2029,24 +2018,6 @@ public int minDepth(TreeNode root) {
         return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
     }
 }
-
-/**
-public int minDepth(TreeNode root) {
-    if (root == null) {
-        return 0;
-    }
-    return helper(root);
-}
-
-private int helper(TreeNode root) {
-    if (root == null) {
-        return Integer.MAX_VALUE;
-    }
-    if (root.left == null && root.right == null) {
-        return 1;
-    }
-    return Math.min(helper(root.left), helper(root.right)) + 1;
-}*/
 \end{Code}
 
 \newpage

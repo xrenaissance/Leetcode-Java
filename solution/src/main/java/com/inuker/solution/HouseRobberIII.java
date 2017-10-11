@@ -12,6 +12,9 @@ public class HouseRobberIII {
         return rob(root, true);
     }
 
+    /**
+     * @param rob true表示不定，false表示不选root
+     */
     private int rob(TreeNode root, boolean rob) {
         if (root == null) {
             return 0;
