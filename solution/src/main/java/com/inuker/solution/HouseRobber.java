@@ -6,6 +6,9 @@ package com.inuker.solution;
 
 public class HouseRobber {
 
+    /**
+     * 这里的dp表示统计到当前房子的最大收益，但是不确定要不要包含当前房子
+     */
     public int rob(int[] nums) {
         int n = nums.length;
         if (n == 0) {

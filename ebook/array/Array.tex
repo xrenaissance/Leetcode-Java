@@ -20,8 +20,9 @@ return \code{[0, 1]}.
 \begin{Code}
 /**
  * 如果符合条件的不止一组呢？则找到一组就从map删除一组
- * @return
+ * 另外要考虑的case如[3,3], 6，即存在相同数的情况
  */
+
 public int[] twoSum(int[] nums, int target) {
     HashMap<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < nums.length; i++) {
