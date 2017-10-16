@@ -11,7 +11,7 @@ public class Subsets {
 
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new LinkedList<>();
-        helper(nums, result, new LinkedList<>(), 0);
+        helper(nums, result, new LinkedList<Integer>(), 0);
         return result;
     }
 

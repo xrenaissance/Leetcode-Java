@@ -1,6 +1,7 @@
 package com.leetcode.amazon;
 
-import com.inuker.solution.ListNode;
+
+import com.leetcode.library.ListNode;
 
 /**
  * Created by liwentian on 17/8/11.

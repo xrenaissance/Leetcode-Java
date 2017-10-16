@@ -1,6 +1,7 @@
 package com.leetcode.amazon;
 
-import com.inuker.solution.ListNode;
+
+import com.leetcode.library.ListNode;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

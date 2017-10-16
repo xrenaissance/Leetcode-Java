@@ -1,23 +1,13 @@
-package com.inuker.solution;
+package com.leetcode.amazon;
 
 import java.util.HashMap;
 import java.util.Random;
 
 /**
- * Created by dingjikerbo on 2017/8/20.
+ * Created by liwentian on 2017/10/16.
  */
 
-/**
- * https://leetcode.com/articles/encode-and-decode-tinyurl/
- */
-
-/**
- * 这题有几点注意：
- * 1， 防攻击，所以要完全随机
- * 2， 对同一个url多次encode，是否要新生成还是返回旧的
- * 3，
- */
-public class EncodeAndDecodeTinyURL {
+public class EncodeAndDecodeTinyUrl {
 
     private static final String SRC = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
