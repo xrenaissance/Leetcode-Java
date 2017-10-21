@@ -409,66 +409,6 @@ public void connect2(TreeLinkNode root) {
 
 \newpage
 
-\section{Populating Next Right Pointers in Each Node II} %%%%%%%%%%%%%%%%%%%%%%  
-
-\subsubsection{Description}
-Follow up for problem "Populating Next Right Pointers in Each Node".
-
-What if the given tree could be any binary tree? Would your previous solution still work?
-
-\textbf{Note:}
-
-You may only use constant extra space.
-
-\subsubsection{Solution I}
-
-\begin{Code}
-/**
- * 和上题的区别在于这里root下一个循环要指向dummy.next，即下一层链表表头
- */
-public void connect(TreeLinkNode root) {
-    while (root != null) {
-        TreeLinkNode dummy = new TreeLinkNode(0), cur = dummy;
-        for (TreeLinkNode node = root; node != null; node = node.next) {
-            if (node.left != null) {
-                cur.next = node.left;
-                cur = cur.next;
-            }
-
-            if (node.right != null) {
-                cur.next = node.right;
-                cur = cur.next;
-            }
-        }
-        root = dummy.next;
-    }
-}
-\end{Code}
-
-\subsubsection{Solution II}
-\begin{Code}
-/** 递归，和上题相比改都不用改
-public void connect(TreeLinkNode root) {
-    if (root == null) {
-        return;
-    }
-    TreeLinkNode dummy = new TreeLinkNode(0), cur = dummy;
-    for (TreeLinkNode p = root; p != null; p = p.next) {
-        if (p.left != null) {
-            cur.next = p.left;
-            cur = cur.next;
-        }
-        if (p.right != null) {
-            cur.next = p.right;
-            cur = cur.next;
-        }
-    }
-    connect(dummy.next);
-}*/
-\end{Code}
-
-\newpage
-
 \section{Convert Sorted Array to Binary Search Tree} %%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Description}
@@ -642,7 +582,7 @@ public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
     }
 
     for (TreeNode node = q; node != null; node = parents.get(node)) {
-        if (!set.contains(node)) {
+        if (set.contains(node)) {
             return node;
         }
     }

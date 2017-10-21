@@ -80,7 +80,7 @@ public class LowestCommonAncestorOfBinaryTree {
         }
 
         for (TreeNode node = q; node != null; node = parents.get(node)) {
-            if (!set.contains(node)) {
+            if (set.contains(node)) {
                 return node;
             }
         }
