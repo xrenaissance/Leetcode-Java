@@ -8,6 +8,17 @@ import java.util.Stack;
  * Created by dingjikerbo on 16/11/30.
  */
 
+/**
+ * 这题关键是follow up
+ * 如果更新频繁，则通常的做法每次都是O(n)，更优的做法是O(lgn)
+ * 即给node中记录左子树的节点个数，这样在找kth smallest时流程如下：
+ * 假设root的左子树节点有N个，则
+ * 1， 当K=N+1时，kth就是root
+ * 2,  当K<N+1时，kth就到左子树中找
+ * 3， 当K>N+1时，就到右子树中找第K-N-1个
+ * 所以当给定一棵树时，我们要先重建一下这棵树，统计一下各节点的左子树节点数，虽然首次是O(n）
+ * 但是之后就是O(h)了。
+ */
 public class KthSmallestElementInBST {
 
     public int kthSmallest(TreeNode root, int k) {
