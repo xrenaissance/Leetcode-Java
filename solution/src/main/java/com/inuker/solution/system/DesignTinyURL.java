@@ -18,17 +18,20 @@ public class DesignTinyURL {
      * 3. Mapping an identifier to an URL and its reversal - Does this problem ring a bell to you?
      *
      * 4. How do you store the URLs? Does a simple flat file database work?
-     * 采用分布式，负载均衡随机分发到一台机器，KV数据库，以短网址为key，长网址为value
+     * key为short, value为url, 则总共空间(6 + 30) * 30G = 1080G，单机恐怕不够，而且容易形成
+     * 单点故障。最好分散到多个机器上，一致性hash负载均衡，KV数据库，以短网址为key，长网址为value
+     * 每个机器上有固定前缀，后面的序号依次递增即可
      *
      * 5. What is the bottleneck of the system? Is it read-heavy or write-heavy?
      * 读显然比写多，比如用户在微博分享了一个资源，以短链接的形式。很多用户访问这个链接，则读远大于写。
-     *
+     * 所以要用cache，读写分离
      *
      * 6. Estimate the maximum number of URLs a single machine can store.
      *
      * 7. Estimate the maximum number of queries per second (QPS) for decoding a shortened URL in a single machine.
      *
      * 8. How would you scale the service? For example, a viral link which is shared in social media could result in a peak QPS at a moment's notice.
+     * 
      *
      * 9. How could you handle redundancy? i,e, if a server is down, how could you ensure the service is still operational?
      * 一致性哈希，虚拟节点

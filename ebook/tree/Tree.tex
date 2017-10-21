@@ -289,10 +289,12 @@ private int maxPathSum(TreeNode root, int[] max) {
     int leftMax = maxPathSum(root.left, left);
     int rightMax = maxPathSum(root.right, right);
     if (max != null) {
-        max[0] = max(left[0], right[0], 0) + root.val; // 此处容易错
+        // 三种情况：root, root+left, root+right
+        max[0] = max(left[0], right[0], 0) + root.val;
     }
 
     // 容易错，要考虑到所有可能的情况
+    // 左边里面的，右边里面的，光root的，左中右，左中，中右
     return max(leftMax, rightMax, root.val, left[0] + right[0] + root.val,
             left[0] + root.val, right[0] + root.val);
 }

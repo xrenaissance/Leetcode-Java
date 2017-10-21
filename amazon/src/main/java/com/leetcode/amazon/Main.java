@@ -1,5 +1,8 @@
 package com.leetcode.amazon;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
 /**
  * Created by liwentian on 2017/10/16.
  */
@@ -7,10 +10,12 @@ package com.leetcode.amazon;
 public class Main {
 
     public static void main(String[] args) {
-        EncodeAndDecodeTinyUrl s = new EncodeAndDecodeTinyUrl();
-        String shortUrl = s.encode("http://baidu.com");
-        System.out.println(shortUrl);
+        HashMap<String, String> map = new HashMap<>();
+        map.put("one", "ones");
+        map.put("two", "twos");
 
-        System.out.println(s.decode(shortUrl));
+        for (Integer key : map.keySet()) {
+            System.out.println(key);
+        }
     }
 }
