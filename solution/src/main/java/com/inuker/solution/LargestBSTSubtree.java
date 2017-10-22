@@ -20,9 +20,11 @@ public class LargestBSTSubtree {
         }
     }
 
+    int max = 0;
+
     public int largestBSTSubtree(TreeNode root) {
-        Result res = helper(root);
-        return Math.abs(res.count);
+        helper(root);
+        return max;
     }
 
     private Result helper(TreeNode root) {
@@ -35,9 +37,11 @@ public class LargestBSTSubtree {
 
         // 注意这里的等号千万别掉了，因为可能树中有节点相同
         if (left.count < 0 || right.count < 0 || left.upper >= root.val || right.lower <= root.val) {
-            return new Result(-1 * Math.max(Math.abs(left.count), Math.abs(right.count)), 0, 0);
+            return new Result(-1, 0, 0);
         }
 
-        return new Result(left.count + right.count + 1, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
+        int size = left.count + 1 + right.count;
+        max = Math.max(size, max);
+        return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
     }
 }

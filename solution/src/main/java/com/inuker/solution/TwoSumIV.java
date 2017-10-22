@@ -2,7 +2,9 @@ package com.inuker.solution;
 
 import com.leetcode.library.TreeNode;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Created by liwentian on 2017/9/10.
@@ -14,18 +16,20 @@ import java.util.HashSet;
 public class TwoSumIV {
 
     public boolean findTarget(TreeNode root, int k) {
-        HashSet<Integer> set = new HashSet<>();
-        return dfs(root, set, k);
+        List<Integer> nums = new ArrayList<>();
+        inorder(root, nums);
+        for (int i = 0, j = nums.size() - 1; i < j; ) {
+            if (nums.get(i) + nums.get(j) == k) return true;
+            if (nums.get(i) + nums.get(j) < k) i++;
+            else j--;
+        }
+        return false;
     }
 
-    private boolean dfs(TreeNode node, HashSet<Integer> set, int k) {
-        if (node == null) {
-            return false;
-        }
-        if (set.contains(k - node.val)) {
-            return true;
-        }
-        set.add(node.val);
-        return dfs(node.left, set, k) || dfs(node.right, set, k);
+    public void inorder(TreeNode root, List<Integer> nums) {
+        if (root == null) return;
+        inorder(root.left, nums);
+        nums.add(root.val);
+        inorder(root.right, nums);
     }
 }
