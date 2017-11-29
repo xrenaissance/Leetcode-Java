@@ -93,7 +93,7 @@ public class Codec {
         Deque<TreeNode> stack = new LinkedList<>();
         TreeNode root = getNode(queue), node = root;
 
-        while (!queue.isEmpty()) {
+        while (!stack.isEmpty() || node != null) {
             if (node != null) {
                 stack.push(node);
                 node.left = getNode(queue);
