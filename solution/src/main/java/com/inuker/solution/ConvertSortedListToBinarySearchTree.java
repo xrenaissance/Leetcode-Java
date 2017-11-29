@@ -1,5 +1,6 @@
 package com.inuker.solution;
 
+import com.leetcode.library.ListNode;
 import com.leetcode.library.TreeNode;
 
 /**

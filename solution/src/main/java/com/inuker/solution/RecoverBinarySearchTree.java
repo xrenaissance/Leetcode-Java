@@ -84,4 +84,40 @@ public class RecoverBinarySearchTree {
             }
         }
     }
+
+    private void inorderTraverse2(TreeNode root) {
+        TreeNode temp;
+
+        while (root != null) {
+            if (root.left == null) {
+                helper(root);
+                root = root.right;
+            } else {
+                temp = root.left;
+                while (temp.right != null && temp.right != root) {
+                    temp = temp.right;
+                }
+                if (temp.right == null) {
+                    temp.right = root;
+                    root = root.left;
+                } else {
+                    temp.right = null;
+                    helper(root);
+                    root = root.right;
+                }
+            }
+        }
+    }
+
+    private void helper(TreeNode node) {
+        if (prev != null) {
+            if (first == null && prev.val > node.val) {
+                first = prev;
+            }
+            if (first != null && prev.val > node.val) {
+                second = node;
+            }
+        }
+        prev = node;
+    }
 }

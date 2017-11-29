@@ -4,6 +4,8 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/11/16.
  */
 
+import com.leetcode.library.ListNode;
+
 /**
  * https://leetcode.com/articles/reverse-linked-list/
  */

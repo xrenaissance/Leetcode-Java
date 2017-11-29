@@ -4,6 +4,8 @@ package com.inuker.solution;
  * Created by dingjikerbo on 2016/12/20.
  */
 
+import com.leetcode.library.ListNode;
+
 /**
  * https://leetcode.com/articles/remove-nth-node-end-list/
  */

@@ -4,6 +4,8 @@ package com.inuker.solution;
  * Created by dingjikerbo on 16/11/24.
  */
 
+import com.leetcode.library.ListNode;
+
 /**
  * https://leetcode.com/articles/remove-duplicates-sorted-list/
  */

@@ -2,6 +2,7 @@ package com.inuker.solution;
 
 import com.leetcode.library.TreeNode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -26,5 +27,36 @@ public class BinaryTreeInorderTraversal {
             }
         }
         return list;
+    }
+
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+
+        List<Integer> res = new ArrayList<>();
+        TreeNode pre = null;
+
+        while (root != null) {
+            if (root.left == null) {
+                res.add(root.val);
+                root = root.right;
+            } else {
+                pre = root.left;
+                while (pre.right != null && pre.right != root) {
+                    pre = pre.right;
+                }
+                if (pre.right == null) {
+                    pre.right = root;
+                    root = root.left;
+                } else {
+                    pre.right = null;
+                    res.add(root.val);
+                    root = root.right;
+                }
+            }
+        }
+
+        return res;
     }
 }

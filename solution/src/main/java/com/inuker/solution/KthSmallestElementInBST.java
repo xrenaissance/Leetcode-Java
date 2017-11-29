@@ -63,4 +63,36 @@ public class KthSmallestElementInBST {
         }
         throw new IllegalStateException();
     }
+
+    /**
+     * Morris
+     */
+    private int kthSmallest3(TreeNode root, int k) {
+        TreeNode temp;
+
+        while (root != null) {
+            if (root.left == null) {
+                if (--k == 0) {
+                    return root.val;
+                }
+                root = root.right;
+            } else {
+                temp = root.left;
+                while (temp.right != null && temp.right != root) {
+                    temp = temp.right;
+                }
+                if (temp.right == null) {
+                    temp.right = root;
+                    root = root.left;
+                } else {
+                    temp.right = null;
+                    if (--k == 0) {
+                        return root.val;
+                    }
+                    root = root.right;
+                }
+            }
+        }
+        throw new IllegalStateException();
+    }
 }

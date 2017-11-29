@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.leetcode.library.ListNode;
+
 /**
  * Created by dingjikerbo on 2016/11/17.
  * https://leetcode.com/articles/linked-list-cycle/

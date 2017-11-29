@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.leetcode.library.ListNode;
+
 /**
  * Created by liwentian on 2017/9/11.
  */
