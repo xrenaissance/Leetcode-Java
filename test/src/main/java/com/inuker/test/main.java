@@ -18,6 +18,18 @@ public class main {
         for (Integer n : list) {
             System.out.print(n + " ");
         }
+    }
 
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        TreeNode node = null;
+        while (root != null) {
+            if (p.val < root.val) {
+                node = root;
+                root = root.left;
+            } else {
+                root = root.right;
+            }
+        }
+        return node;
     }
 }
