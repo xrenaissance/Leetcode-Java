@@ -56,4 +56,29 @@ public class InorderSuccessorInBST {
         }
         return res;
     }
+
+    /**
+     * http://www.geeksforgeeks.org/?p=9999
+     * 给定Node，求其successor，步骤如下：
+     * 1， 如果Node.right != null，则在Node.right中找最小的那个节点，即从Node.right开始，最左下角的节点
+     * 2， 如果Node.right == null，则不断往parent走，直到当前节点是其parent的左节点为止，其parent即为给定Node的successor
+    private TreeNode inOrderSuccessor(TreeNode root, TreeNode node) {
+        if (node.right != null) {
+            return minValue(node.right);
+        }
+
+        TreeNode parent = node.parent;
+        while (parent != null && node == parent.right) {
+            node = parent;
+            parent = parent.parent;
+        }
+        return parent;
+    }
+
+     private TreeNode minValue(TreeNode node) {
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node;
+    }*/
 }

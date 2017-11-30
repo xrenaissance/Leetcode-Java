@@ -3,7 +3,9 @@ package com.inuker.test;
 import com.inuker.solution.BinaryTreeInorderTraversal;
 import com.leetcode.library.TreeNode;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class main {
 
@@ -20,16 +22,42 @@ public class main {
         }
     }
 
-    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        TreeNode node = null;
-        while (root != null) {
-            if (p.val < root.val) {
-                node = root;
-                root = root.left;
+    public List<Integer> closestKValues(TreeNode root, double target, int k) {
+        Stack<Integer> smaller = new Stack<>();
+        Stack<Integer> larger = new Stack<>();
+        helper(root, smaller, target, true);
+        helper(root, larger, target, false);
+        List<Integer> result = new LinkedList<>();
+        for (int i = 0; i < k; i++) {
+            if (smaller.isEmpty()) {
+                result.add(larger.pop());
+            } else if (larger.isEmpty()) {
+                result.add(smaller.pop());
+            } else if (Math.abs(smaller.peek() - target) < Math.abs(larger.peek() - target)) {
+                result.add(smaller.pop());
             } else {
-                root = root.right;
+                result.add(larger.pop());
             }
         }
-        return node;
+        return result;
+    }
+
+    private void helper(TreeNode root, Stack<Integer> stack0, double target, boolean smaller) {
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                stack.push(root);
+                root = smaller ? root.left : root.right;
+            } else {
+                root = stack.pop();
+
+                if ((smaller && root.val >= target) || (!smaller && root.val < target)) {
+                    return;
+                }
+
+                stack0.push(root.val);
+                root = smaller ? root.right : root.left;
+            }
+        }
     }
 }
