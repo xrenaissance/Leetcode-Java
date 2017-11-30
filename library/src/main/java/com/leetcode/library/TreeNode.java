@@ -20,6 +20,14 @@ public class TreeNode {
         this.right = right;
     }
 
+//    public static TreeNode buildTree(Integer... array) {
+//        Integer[] s = new Integer[array.length];
+//        for (int i = 0; i < array.length; i++) {
+//            s[i] = array[i];
+//        }
+//        return buildTree(s);
+//    }
+
     /**
      * 建立完全二叉树
      */

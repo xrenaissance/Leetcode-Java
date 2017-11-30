@@ -2,6 +2,8 @@ package com.inuker.solution;
 
 import com.leetcode.library.TreeNode;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -81,4 +83,78 @@ public class InorderSuccessorInBST {
         }
         return node;
     }*/
+
+    /**
+     * 这题如果改成给定一个节点，求出其之后的所有successor或predesessor
+     * 以下可用于 #272. Closest Binary Search Tree Value II
+     */
+    public List<TreeNode> getAllSuccessor(TreeNode root, int target) {
+        Stack<TreeNode> stack = new Stack<>();
+        buildSuccessorStack(root, stack, target);
+        List<TreeNode> list = new LinkedList<>();
+        TreeNode next;
+        while ((next = getNextSuccessor(stack)) != null) {
+            if (next.val != target) {
+                list.add(next);
+            }
+        }
+        return list;
+    }
+
+    private void buildSuccessorStack(TreeNode root, Stack<TreeNode> stack, int target) {
+        for (TreeNode node = root; node != null; ) {
+            if (target <= node.val) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                node = node.right;
+            }
+        }
+    }
+
+    private TreeNode getNextSuccessor(Stack<TreeNode> stack) {
+        if (stack.isEmpty()) {
+            return null;
+        }
+        TreeNode ret = stack.pop();
+        for (TreeNode node = ret.right; node != null; node = node.left) {
+            stack.push(node);
+        }
+        return ret;
+    }
+
+    public List<TreeNode> getAllPredesessor(TreeNode root, int target) {
+        Stack<TreeNode> stack = new Stack<>();
+        buildPredesessorStack(root, stack, target);
+        List<TreeNode> list = new LinkedList<>();
+        TreeNode next;
+        while ((next = getNextPredesessor(stack)) != null) {
+            if (next.val != target) {
+                list.add(next);
+            }
+        }
+        return list;
+    }
+
+    private void buildPredesessorStack(TreeNode root, Stack<TreeNode> stack, int target) {
+        for (TreeNode node = root; node != null; ) {
+            if (target >= node.val) {
+                stack.push(node);
+                node = node.right;
+            } else {
+                node = node.left;
+            }
+        }
+    }
+
+    private TreeNode getNextPredesessor(Stack<TreeNode> stack) {
+        if (stack.isEmpty()) {
+            return null;
+        }
+        TreeNode ret = stack.pop();
+        for (TreeNode node = ret.left; node != null; node = node.right) {
+            stack.push(node);
+        }
+        return ret;
+    }
 }
