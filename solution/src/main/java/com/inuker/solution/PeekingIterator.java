@@ -10,7 +10,7 @@ public class PeekingIterator implements Iterator<Integer> {
 
     private Iterator<Integer> mIterator;
 
-    private Integer mPeek;
+    private Integer mNext;
 
     public PeekingIterator(Iterator<Integer> iterator) {
         // initialize any member here.
@@ -19,30 +19,27 @@ public class PeekingIterator implements Iterator<Integer> {
 
     // Returns the next element in the iteration without advancing the iterator.
     public Integer peek() {
-        if (mPeek == null) {
-            if (mIterator.hasNext()) {
-                mPeek = mIterator.next();
-            }
+        if (mNext != null) {
+            return mNext;
         }
-        return mPeek;
+        mNext = mIterator.next();
+        return mNext;
     }
 
     // hasNext() and next() should behave the same as in the Iterator interface.
     // Override them if needed.
     @Override
     public Integer next() {
-        if (mPeek == null) {
-            if (mIterator.hasNext()) {
-                mPeek = mIterator.next();
-            }
+        if (mNext != null) {
+            Integer ret = mNext;
+            mNext = null;
+            return ret;
         }
-        Integer res = mPeek;
-        mPeek = null;
-        return res;
+        return mIterator.next();
     }
 
     @Override
     public boolean hasNext() {
-        return mPeek != null || mIterator.hasNext();
+        return mNext != null || mIterator.hasNext();
     }
 }

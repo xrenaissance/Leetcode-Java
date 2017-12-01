@@ -3,9 +3,13 @@ package com.inuker.test;
 import com.inuker.solution.BinaryTreeInorderTraversal;
 import com.inuker.solution.ClosestBinarySearchTreeValueII;
 import com.inuker.solution.InorderSuccessorInBST;
+import com.leetcode.library.Interval;
 import com.leetcode.library.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -13,72 +17,43 @@ import java.util.Stack;
 public class main {
 
     public static void main(String[] args) {
-        TreeNode root = TreeNode.buildTree(new Integer[]{
-                2, 1
-        });
-
-        List<Integer> list = closestKValues(root, 4.14, 2);
-        for (Integer n : list) {
-            System.out.print(n + " ");
-        }
     }
 
-    int mMaxCount;
-    int mCurVal;
-    int mCurCount;
-    int mMaxElemSize;
+    class PeekingIterator implements Iterator<Integer> {
 
-    int idx;
+        private Integer mNext;
 
-    public int[] findMode(TreeNode root) {
-        helper(root);
-        int[] result = new int[mMaxElemSize];
-        mCurCount = 0;
-        unite(root, result);
-        return result;
-    }
+        private Iterator<Integer> mIterator;
 
-    private void unite(TreeNode node, int[] result) {
-        if (node == null) {
-            return;
-        }
-        unite(node.left, result);
-
-        if (node.val == mCurVal) {
-            mCurCount++;
-        } else {
-            mCurCount = 1;
-            mCurVal = node.val;
+        public PeekingIterator(Iterator<Integer> iterator) {
+            // initialize any member here.
+            mIterator = iterator;
         }
 
-        if (mCurCount == mMaxCount) {
-            result[idx++] = mCurVal;
+        // Returns the next element in the iteration without advancing the iterator.
+        public Integer peek() {
+            if (mNext != null) {
+                return mNext;
+            }
+            mNext = mIterator.next();
+            return mNext;
         }
 
-        unite(node.right, result);
-    }
-
-    private void helper(TreeNode node) {
-        if (node == null) {
-            return;
+        // hasNext() and next() should behave the same as in the Iterator interface.
+        // Override them if needed.
+        @Override
+        public Integer next() {
+            if (mNext != null) {
+                Integer ret = mNext;
+                mNext = null;
+                return ret;
+            }
+            return mIterator.next();
         }
 
-        helper(node.left);
-
-        if (node.val == mCurVal) {
-            mCurCount++;
-        } else {
-            mCurCount = 1;
-            mCurVal = node.val;
+        @Override
+        public boolean hasNext() {
+            return mNext != null || mIterator.hasNext();
         }
-
-        if (mCurCount == mMaxCount) {
-            mMaxElemSize++;
-        } else if (mCurCount > mMaxCount) {
-            mMaxElemSize = 1;
-            mMaxCount = mCurCount;
-        }
-
-        helper(node.right);
     }
 }

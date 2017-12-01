@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by dingjikerbo on 16/11/21.
+ * https://leetcode.com/articles/merge-intervals/
  */
 
 public class MergeIntervals {
