@@ -5,6 +5,7 @@ import com.inuker.solution.ClosestBinarySearchTreeValueII;
 import com.inuker.solution.InorderSuccessorInBST;
 import com.leetcode.library.TreeNode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -22,56 +23,62 @@ public class main {
         }
     }
 
-    public static List<Integer> closestKValues(TreeNode root, double target, int k) {
-        Stack<TreeNode> preStack = new Stack<>();
-        Stack<TreeNode> postStack = new Stack<>();
+    int mMaxCount;
+    int mCurVal;
+    int mCurCount;
+    int mMaxElemSize;
 
-        for (TreeNode node = root; node != null; ) {
-            if (target <= node.val) {
-                postStack.push(node);
-                node = node.left;
-            } else {
-                preStack.push(node);
-                node = node.right;
-            }
-        }
+    int idx;
 
-        List<Integer> list = new LinkedList<>();
-
-        for (int i = 0; i < k; i++) {
-            if (preStack.isEmpty()) {
-                list.add(getNextSuccessor(postStack).val);
-            } else if (postStack.isEmpty()) {
-                list.add(getNextPredesessor(preStack).val);
-            } else if (Math.abs(target - preStack.peek().val) < Math.abs(target - postStack.peek().val)) {
-                list.add(getNextPredesessor(preStack).val);
-            } else {
-                list.add(getNextSuccessor(postStack).val);
-            }
-        }
-
-        return list;
+    public int[] findMode(TreeNode root) {
+        helper(root);
+        int[] result = new int[mMaxElemSize];
+        mCurCount = 0;
+        unite(root, result);
+        return result;
     }
 
-    private static TreeNode getNextPredesessor(Stack<TreeNode> stack) {
-        if (stack.isEmpty()) {
-            return null;
+    private void unite(TreeNode node, int[] result) {
+        if (node == null) {
+            return;
         }
-        TreeNode ret = stack.pop();
-        for (TreeNode node = ret.left; node != null; node = node.right) {
-            stack.push(node);
+        unite(node.left, result);
+
+        if (node.val == mCurVal) {
+            mCurCount++;
+        } else {
+            mCurCount = 1;
+            mCurVal = node.val;
         }
-        return ret;
+
+        if (mCurCount == mMaxCount) {
+            result[idx++] = mCurVal;
+        }
+
+        unite(node.right, result);
     }
 
-    private static TreeNode getNextSuccessor(Stack<TreeNode> stack) {
-        if (stack.isEmpty()) {
-            return null;
+    private void helper(TreeNode node) {
+        if (node == null) {
+            return;
         }
-        TreeNode ret = stack.pop();
-        for (TreeNode node = ret.right; node != null; node = node.left) {
-            stack.push(node);
+
+        helper(node.left);
+
+        if (node.val == mCurVal) {
+            mCurCount++;
+        } else {
+            mCurCount = 1;
+            mCurVal = node.val;
         }
-        return ret;
+
+        if (mCurCount == mMaxCount) {
+            mMaxElemSize++;
+        } else if (mCurCount > mMaxCount) {
+            mMaxElemSize = 1;
+            mMaxCount = mCurCount;
+        }
+
+        helper(node.right);
     }
 }
