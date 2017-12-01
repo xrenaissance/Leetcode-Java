@@ -15,7 +15,7 @@ public class ZigzagIterator {
 
     private List<Iterator<Integer>> mIterators = new ArrayList<>();
 
-    private int mCurIdx;
+    private int mIndex;
 
     public ZigzagIterator(List<Integer> v1, List<Integer> v2) {
         init(v1, v2);
@@ -30,20 +30,18 @@ public class ZigzagIterator {
     }
 
     public int next() {
-        return mIterators.get(mCurIdx++).next();
+        mIndex %= mIterators.size();
+        Iterator<Integer> iterator = mIterators.get(mIndex);
+        int n = iterator.next();
+        if (!iterator.hasNext()) {
+            mIterators.remove(iterator);
+        } else {
+            mIndex++;
+        }
+        return n;
     }
 
     public boolean hasNext() {
-        while (!mIterators.isEmpty()) {
-            mCurIdx %= mIterators.size();
-
-            Iterator<Integer> cur = mIterators.get(mCurIdx);
-
-            if (cur.hasNext()) {
-                return true;
-            }
-            mIterators.remove(mCurIdx);
-        }
-        return false;
+        return !mIterators.isEmpty();
     }
 }
