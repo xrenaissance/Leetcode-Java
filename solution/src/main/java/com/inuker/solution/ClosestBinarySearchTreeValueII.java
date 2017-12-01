@@ -168,9 +168,9 @@ public class ClosestBinarySearchTreeValueII {
 
         for (int i = 0; i < k; i++) {
             if (preStack.isEmpty()) {
-                list.add(postStack.pop().val);
+                list.add(getNextSuccessor(postStack).val);
             } else if (postStack.isEmpty()) {
-                list.add(preStack.pop().val);
+                list.add(getNextPredesessor(preStack).val);
             } else if (Math.abs(target - preStack.peek().val) < Math.abs(target - postStack.peek().val)) {
                 list.add(getNextPredesessor(preStack).val);
             } else {
