@@ -1,5 +1,6 @@
 package com.inuker.solution;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,24 +13,19 @@ public class MovingAverage {
     private int mSize;
 
     private double mSum;
-    private List<Integer> mList;
+    private Deque<Integer> mQueue = new LinkedList<>();
 
     /** Initialize your data structure here. */
     public MovingAverage(int size) {
         mSize = size;
-        mList = new LinkedList<Integer>();
     }
 
     public double next(int val) {
+        mQueue.offerLast(val);
         mSum += val;
-
-        mList.add(val);
-
-        if (mList.size() > mSize) {
-            int n = mList.remove(0);
-            mSum -= n;
+        if (mQueue.size() > mSize) {
+            mSum -= mQueue.pollFirst();
         }
-
-        return mSum / mList.size();
+        return mSum / mQueue.size();
     }
 }
