@@ -19,26 +19,35 @@ import java.util.Stack;
 public class main {
 
     public static void main(String[] args) {
+        String s = decodeString("2[abc]3[cd]ef");
+        System.out.println(s);
     }
 
-    class MovingAverage {
-
-        private Deque<Integer> mQueue = new LinkedList<>();
-        private int mSize;
-        private int mSum;
-
-        /** Initialize your data structure here. */
-        public MovingAverage(int size) {
-            mSize = size;
-        }
-
-        public double next(int val) {
-            mQueue.offerLast(val);
-            mSum += val;
-            if (mQueue.size() > mSize) {
-                mSum -= mQueue.pollFirst();
+    public static String decodeString(String s) {
+        StringBuilder stack = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (c != ']') {
+                stack.append(c);
+            } else {
+                StringBuilder sb = new StringBuilder();
+                while (stack.charAt(stack.length() - 1) != '[') {
+                    sb.insert(0, stack.charAt(stack.length() - 1));
+                    stack.setLength(stack.length() - 1);
+                }
+                stack.setLength(stack.length() - 1);
+                int n = 0, t = 1;
+                while (stack.length() > 0 && Character.isDigit(stack.charAt(stack.length() - 1))) {
+                    n += t * (stack.charAt(stack.length() - 1) - '0');
+                    t *= 10;
+                    stack.setLength(stack.length() - 1);
+                }
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < sb.length(); j++) {
+                        stack.append(sb.charAt(j));
+                    }
+                }
             }
-            return (double) mSum / mQueue.size();
         }
+        return stack.toString();
     }
 }
