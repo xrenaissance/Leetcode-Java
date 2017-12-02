@@ -22,38 +22,42 @@ import java.util.Stack;
 public class main {
 
     public static void main(String[] args) {
-        Codec c = new Codec();
-        String s = c.encode(Arrays.asList("hello", "how", "are", "you"));
-        System.out.println(s);
-        for (String ss : c.decode(s)) {
-            System.out.println(ss);
-        }
     }
 
-    class ValidWordAbbr {
-
-        HashMap<String, Set<String>> map = new HashMap<>();
-
-        public ValidWordAbbr(String[] dictionary) {
-            for (String s : dictionary) {
-                String abbr = getAbbr(s);
-                Set<String> set = map.getOrDefault(abbr, new HashSet<String>());
-                set.add(s);
-                map.put(abbr, set);
+    public int maxKilledEnemies(char[][] grid) {
+        int max = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == '0') {
+                    max = Math.max(max, killedEnemies(grid, i, j));
+                }
             }
         }
+        return max;
+    }
 
-        private String getAbbr(String s) {
-            return s.length() > 2 ? s.substring(0, 1) + (s.length() - 2) + s.substring(s.length() - 1) : s;
-        }
-
-        public boolean isUnique(String word) {
-            String abbr = getAbbr(word);
-            if (!map.containsKey(abbr)) {
-                return true;
+    private int killedEnemies(char[][] grid, int i, int j) {
+        int count = 0;
+        for (int k = j - 1; k >= 0 && grid[i][k] != 'W'; k--) {
+            if (grid[i][k] == 'E') {
+                count++;
             }
-            Set<String> set = map.get(abbr);
-            return set.size() == 1 && set.contains(word);
         }
+        for (int k = j + 1; k < grid[0].length && grid[i][k] != 'W'; k++) {
+            if (grid[i][k] == 'E') {
+                count++;
+            }
+        }
+        for (int k = i - 1; k >= 0 && grid[k][j] != 'W'; k--) {
+            if (grid[k][j] == 'E') {
+                count++;
+            }
+        }
+        for (int k = i + 1; k < grid.length && grid[k][j] != 'W'; k++) {
+            if (grid[k][j] == 'E') {
+                count++;
+            }
+        }
+        return count;
     }
 }
