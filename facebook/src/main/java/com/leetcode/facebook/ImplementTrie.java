@@ -2,6 +2,7 @@ package com.leetcode.facebook;
 
 /**
  * Created by liwentian on 17/8/18.
+ * https://leetcode.com/articles/implement-trie-prefix-tree/
  */
 
 public class ImplementTrie {

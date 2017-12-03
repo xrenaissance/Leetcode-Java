@@ -1,10 +1,5 @@
 package com.inuker.test;
 
-import com.inuker.solution.BinaryTreeInorderTraversal;
-import com.inuker.solution.ClosestBinarySearchTreeValueII;
-import com.inuker.solution.InorderSuccessorInBST;
-import com.inuker.solution.WiggleSortII;
-import com.leetcode.library.Interval;
 import com.leetcode.library.TreeNode;
 
 import java.util.ArrayList;
@@ -24,13 +19,33 @@ import java.util.Stack;
 public class main {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{
-                6, 13, 5, 4, 5, 2
-        };
-        int ff = new fd().findKthLargest(arr, 6);
-        System.out.println(ff);
-        for (int n : arr) {
-            System.out.print(n + " ");
+        List<String> list = summaryRanges(new int[] {
+                0, 1, 2, 4, 5, 7
+        });
+        for (String s : list) {
+            System.out.print(s + " ");
         }
+    }
+
+    public static List<String> summaryRanges(int[] nums) {
+        List<String> list = new LinkedList<>();
+        if (nums == null || nums.length == 0) {
+            return list;
+        }
+        int start = nums[0], to = start;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == to + 1) {
+                to++;
+            } else {
+                list.add(getRange(start, to));
+                start = to = nums[i];
+            }
+        }
+        list.add(getRange(start, to));
+        return list;
+    }
+
+    private static String getRange(int start, int to) {
+        return to > start ? start + "->" + to : String.valueOf(to);
     }
 }
