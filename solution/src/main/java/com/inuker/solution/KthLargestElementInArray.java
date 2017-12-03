@@ -12,7 +12,7 @@ public class KthLargestElementInArray {
 
     // 耗时15ms，时间复杂度O(nlgk)，空间复杂度O(k)
     // 按升序排的，出队列k次获取第k大的数
-    public int findKthLargest(int[] nums, int k) {
+    public int findKthLargest2(int[] nums, int k) {
         PriorityQueue<Integer> queue = new PriorityQueue<>();
         for (int n : nums) {
             queue.offer(n);
@@ -34,30 +34,34 @@ public class KthLargestElementInArray {
     // 对比快速排序T(n) = 2T(n / 2) + n = O(nlgn)
     // 区别在于这个被pivot分隔后，只用处理其中的一半，而快排两边都要处理
     // 耗时18ms
-    public int findKthLargest4(int[] nums, int k) {
-        return nums[findKthLargest4(nums, 0, nums.length - 1, k)];
+    public int findKthLargest(int[] nums, int k) {
+        return findKthLargest(nums, 0, nums.length - 1, k);
     }
 
-    public int findKthLargest4(int[] nums, int start, int end, int k) {
+    public int findKthLargest(int[] nums, int start, int end, int k) {
         int pivot = partition(nums, start, end);
 
         int rank = end - pivot + 1;
 
         if (rank == k) {
-            return pivot;
+            return nums[pivot];
         } else if (rank > k) {
-            return findKthLargest4(nums, pivot + 1, end, k);
+            return findKthLargest(nums, pivot + 1, end, k);
         } else {
-            return findKthLargest4(nums, start, pivot - 1, k - rank);
+            return findKthLargest(nums, start, pivot - 1, k - rank);
         }
     }
 
     public int partition(int[] nums, int start, int end) {
-        int pivot = nums[end], left = start;
+        int pivot = nums[end], left = start, right = end - 1;
 
-        for (int i = start; i < end; i++) {
-            if (nums[i] <= pivot) {
-                swap(nums, left++, i);
+        for (int i = start; i <= right; ) {
+            if (nums[i] < pivot) {
+                swap(nums, left++, i++);
+            } else if (nums[i] > pivot) {
+                swap(nums, right--, i);
+            } else {
+                i++;
             }
         }
 

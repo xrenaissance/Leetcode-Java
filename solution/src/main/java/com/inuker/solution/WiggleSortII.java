@@ -34,6 +34,7 @@ public class WiggleSortII {
      * 只要这样交叉放着就能符合wiggle
      * 直观的做法是另外开辟一个空间来放wiggle结果
      * 如果要求不开辟空间，则只能用坐标映射了
+     * 类似的可以参考sort colors和find kth largest element
      */
     // 时间复杂度O(n)，空间复杂度O(l)
     public void wiggleSort(int[] nums) {

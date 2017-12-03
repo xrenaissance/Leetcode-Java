@@ -8,6 +8,7 @@ import java.util.Queue;
 
 /**
  * Created by dingjikerbo on 16/11/20.
+ * https://leetcode.com/articles/merge-k-sorted-list/
  */
 
 public class MergeKSortedList {
@@ -23,13 +24,7 @@ public class MergeKSortedList {
         PriorityQueue<ListNode> queue = new PriorityQueue<>(new Comparator<ListNode>() {
             @Override
             public int compare(ListNode node1, ListNode node2) {
-                if (node1.val == node2.val) {
-                    return 0;
-                } else if (node1.val < node2.val) {
-                    return -1;
-                } else {
-                    return 1;
-                }
+                return node1.val - node2.val;
             }
         });
 

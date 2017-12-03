@@ -26,18 +26,10 @@ public class main {
         int[] arr = new int[] {
                 6, 13, 5, 4, 5, 2
         };
-        new WiggleSortII().wiggleSort(arr);
+        int ff = new fd().findKthLargest(arr, 6);
+        System.out.println(ff);
         for (int n : arr) {
             System.out.print(n + " ");
-        }
-    }
-
-    public void wiggleSort2(int[] nums) {
-        int[] arr = nums.clone();
-        Arrays.sort(arr);
-        int n = nums.length, j = (n - 1) / 2, k = n - 1;
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = i % 2 == 0 ? arr[j--] : arr[k--];
         }
     }
 }

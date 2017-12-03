@@ -2,6 +2,7 @@ package com.inuker.solution;
 
 /**
  * Created by dingjikerbo on 16/12/20.
+ * https://leetcode.com/articles/median-of-two-sorted-arrays/
  */
 
 public class MedianOfTwoSortedArrays {
