@@ -13,17 +13,27 @@ import java.util.Arrays;
 public class WiggleSortII {
 
     // 时间复杂度O(nlgn)，空间复杂度O(n)
+    // 先排序，然后从中间分成两半，先取前面一半的末尾，再取后半的末尾，再取前半的倒数第二个，再取后半倒数第二个，依次类似
+    // 注意当个数为奇数时，中间那个要分到前面一半中
     public void wiggleSort2(int[] nums) {
         int[] arr = nums.clone();
         Arrays.sort(arr);
-        int n = nums.length, k = (n - 1) / 2, j = n - 1;
-        for (int i = 0; i < n; i++) {
-            nums[i] = (i & 1) != 0 ? arr[j--] : arr[k--];
+        int n = nums.length, j = (n - 1) / 2, k = n - 1;
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = i % 2 == 0 ? arr[j--] : arr[k--];
         }
     }
 
     /**
-     * 这个更优解法没看明白
+     * 这个解法的核心思想如下：
+     * 用partition法将数组分为三波，左边一波为大于median的记为L，中间一波为median记为M，右边一波为小于median的记为S，每一波内顺序都无所谓
+     * 将L从左到右依次放在奇数位上，将S从右到左依次放在偶数位上，多余的空填M。
+     * 最终结果类似如下：
+     * M L S L S M
+     * M L S L S
+     * 只要这样交叉放着就能符合wiggle
+     * 直观的做法是另外开辟一个空间来放wiggle结果
+     * 如果要求不开辟空间，则只能用坐标映射了
      */
     // 时间复杂度O(n)，空间复杂度O(l)
     public void wiggleSort(int[] nums) {
@@ -40,8 +50,16 @@ public class WiggleSortII {
         }
     }
 
+    /**
+     * 将数组分为两半，后面一半的个数大于等于前面的一半
+     * 先取后面一半的第一个，再取前面一半的第一个
+     * 再取后面一半的第二个，再取前面一半的第二个
+     * 依次类推，得到一个映射关系
+     */
     private int newIndex(int index, int n) {
-        return (1 + 2 * index) % (n | 1);
+        int ret = (1 + 2 * index) % (n | 1);
+//        System.out.println(String.format("newIndex for %d, %d = %d", index, n, ret));
+        return ret;
     }
 
     private void swap(int[] nums, int i, int j) {
