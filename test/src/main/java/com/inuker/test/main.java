@@ -32,4 +32,26 @@ public class main {
             System.out.print(n + " ");
         }
     }
+
+    public void flatten(TreeNode root) {
+        helper(root);
+    }
+
+    private TreeNode helper(TreeNode node) {
+        if (node == null) {
+            return node;
+        }
+        if (node.left == null && node.right == null) {
+            return node;
+        }
+        TreeNode right = node.right;
+        TreeNode leftTail = helper(node.left);
+        TreeNode rightTail = helper(node.right);
+        if (leftTail != null) {
+            node.right = node.left;
+            leftTail.right = right;
+            node.left = null;
+        }
+        return rightTail != null ? rightTail : leftTail;
+    }
 }

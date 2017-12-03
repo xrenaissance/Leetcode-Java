@@ -16,30 +16,27 @@ public class MergeIntervals {
 
     // 耗时26ms，时间复杂度O(nlgn)
     public List<Interval> merge(List<Interval> intervals) {
-        List<Interval> result = new LinkedList<Interval>();
-        if (intervals.size() == 0) {
-            return result;
-        }
+        Interval cur = null;
+        List<Interval> result = new LinkedList<>();
         Collections.sort(intervals, new Comparator<Interval>() {
             @Override
             public int compare(Interval o1, Interval o2) {
                 return o1.start - o2.start;
             }
         });
-        Interval prev = null;
         for (Interval interval : intervals) {
-            if (prev == null) {
-                prev = interval;
+            if (cur == null) {
+                cur = interval;
+            } else if (interval.start > cur.end) {
+                result.add(cur);
+                cur = interval;
             } else {
-                if (interval.start > prev.end) {
-                    result.add(prev);
-                    prev = interval;
-                } else {
-                    prev.end = Math.max(prev.end, interval.end);
-                }
+                cur.end = Math.max(cur.end, interval.end);
             }
         }
-        result.add(prev);
+        if (cur != null) {
+            result.add(cur);
+        }
         return result;
     }
 }
