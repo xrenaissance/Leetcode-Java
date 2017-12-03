@@ -11,7 +11,7 @@ public class SentenceScreenFitting {
 
     /**
      * https://discuss.leetcode.com/topic/62455/21ms-18-lines-java-solution/2
-     * 这道题思路是将这个句子按空格拼接起来，然后铺开，这里核心是start，表示每行的开头对应的铺开序列的索引，
+     * 这道题思路是将这个句子按空格拼接起来，然后铺开，这里核心是start，表示对应的循环铺开序列的索引，
      * 注意每行的开头一定要对应某个单词的第一个字符，所以如果不是的话需要调整start
      * 假如单词拼接为"abc de f "，注意结尾加了空格，铺开后为"abc de f abc de f abc de f abc de f ..."
      * start起始为0，下一行需要start+col，如果对到了空格则需要start++，因为每行起始不能是空格，
