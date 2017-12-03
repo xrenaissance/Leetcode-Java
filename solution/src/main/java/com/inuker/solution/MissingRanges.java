@@ -11,6 +11,7 @@ import java.util.List;
  * TestCases
  * [], lower=1, upper=1
  * [2147483647], lower=0,upper=2147483647
+ * 注意溢出的问题
  */
 public class MissingRanges {
 
