@@ -11,24 +11,11 @@ import java.util.Arrays;
  */
 public class WiggleSort {
 
-    public void wiggleSort(int[] nums) {
-        Arrays.sort(nums);
-        for (int i = 1; i + 1 < nums.length; i += 2) {
-            swap(nums, i, i + 1);
-        }
-    }
-
     // 复杂度O(n)
-    public void wiggleSort2(int[] nums) {
-        for (int i = 0; i + 1 < nums.length; i++) {
-            if ((i & 1) == 0) {
-                if (nums[i] > nums[i + 1]) {
-                    swap(nums, i, i + 1);
-                }
-            } else {
-                if (nums[i] < nums[i + 1]) {
-                    swap(nums, i, i + 1);
-                }
+    public void wiggleSort(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if ((i % 2 == 0 && nums[i] > nums[i + 1]) || (i % 2 != 0 && nums[i] < nums[i + 1])) {
+                swap(nums, i, i + 1);
             }
         }
     }
