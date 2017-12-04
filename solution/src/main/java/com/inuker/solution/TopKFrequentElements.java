@@ -44,6 +44,7 @@ public class TopKFrequentElements {
     }
 
     // 耗时23ms，时间复杂度O(n)，空间复杂度O(n)
+    // 这里有个问题，result的size可能大于k了
     public List<Integer> topKFrequent2(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int max = 0;
@@ -66,6 +67,6 @@ public class TopKFrequentElements {
                 result.addAll(lists[i]);
             }
         }
-        return result;
+        return result.subList(0, k);
     }
 }
