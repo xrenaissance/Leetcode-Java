@@ -17,6 +17,7 @@ import java.util.Stack;
 public class InorderSuccessorInBST {
 
     // 耗时10ms
+    // 时间复杂度O(n)
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode node = null, prev = null;
