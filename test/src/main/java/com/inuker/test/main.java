@@ -1,5 +1,6 @@
 package com.inuker.test;
 
+import com.inuker.solution.NestedInteger;
 import com.leetcode.library.Interval;
 import com.leetcode.library.TreeNode;
 
@@ -16,34 +17,40 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeMap;
 
 public class main {
 
     public static void main(String[] args) {
-
+        Test test = new Test();
+        test.call("hello");
+        test.call("how");
     }
 
-    class Logger {
-
-        HashMap<String, Integer> map = new HashMap<>();
-
-        /** Initialize your data structure here. */
-        public Logger() {
-
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
         }
-
-        /** Returns true if the message should be printed in the given timestamp, otherwise returns false.
-         If this method returns false, the message will not be printed.
-         The timestamp is in seconds granularity. */
-        public boolean shouldPrintMessage(int timestamp, String message) {
-            int time = map.getOrDefault(message, -100);
-            if (time <= timestamp - 10) {
-                map.put(message, timestamp);
-                return true;
+        Queue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return map.get(o1) - map.get(o2);
             }
-            return false;
+        });
+        for (Integer n : map.keySet()) {
+            queue.add(n);
+            if (queue.size() > k) {
+                queue.poll();
+            }
         }
+        List<Integer> list = new LinkedList<>();
+        while (!queue.isEmpty()) {
+            list.add(queue.poll());
+        }
+        return list;
     }
 }

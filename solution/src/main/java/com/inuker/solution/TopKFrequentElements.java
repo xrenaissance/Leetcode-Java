@@ -15,35 +15,44 @@ import java.util.TreeMap;
 
 public class TopKFrequentElements {
 
-    // 耗时46ms，最差复杂度O(nlgn)
+    /**
+     * 先统计每个元素次数，再用Priority排序
+     */
+    // 耗时46ms，最差复杂度O(nlgn)，当k<<n时为O(n)
     public List<Integer> topKFrequent(int[] nums, int k) {
-        Map<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int n : nums) {
             map.put(n, map.getOrDefault(n, 0) + 1);
         }
-        Queue<int[]> queue = new PriorityQueue<>(new Comparator<int[]>() {
+        Queue<Integer> queue = new PriorityQueue<Integer>(8, new Comparator<Integer>() {
             @Override
-            public int compare(int[] o1, int[] o2) {
-                return o2[1] - o1[1];
+            public int compare(Integer o1, Integer o2) {
+                return map.get(o1) - map.get(o2);
             }
         });
-        for (int key : map.keySet()) {
-            queue.add(new int[] { key, map.get(key) });
+        for (Integer n : map.keySet()) {
+            queue.offer(n);
+            if (queue.size() > k) {
+                queue.poll();
+            }
         }
-        List<Integer> list = new LinkedList<Integer>();
-        for (int i = 1; i <= k && !queue.isEmpty(); i++) {
-            list.add(queue.poll()[0]);
+        List<Integer> list = new LinkedList<>();
+        while (!queue.isEmpty()) {
+            list.add(queue.poll());
         }
         return list;
     }
 
-    // 耗时23ms，复杂度O(n)
+    // 耗时23ms，时间复杂度O(n)，空间复杂度O(n)
     public List<Integer> topKFrequent2(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        int max = 0;
         for (int n : nums) {
-            map.put(n, map.getOrDefault(n, 0) + 1);
+            int count = map.getOrDefault(n, 0) + 1;
+            map.put(n, count);
+            max = Math.max(max, count);
         }
-        List<Integer>[] lists = new LinkedList[nums.length + 1];
+        List<Integer>[] lists = new LinkedList[max + 1];
         for (int key : map.keySet()) {
             int count = map.get(key);
             if (lists[count] == null) {
