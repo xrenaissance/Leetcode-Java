@@ -1,6 +1,9 @@
 package com.inuker.solution;
 
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 /**
  * Created by liwentian on 2017/8/31.
@@ -15,9 +18,29 @@ public class LoggerRateLimiter {
 
     private HashMap<String, Integer> mMap;
 
+    private Queue<String> mQueue;
+
     /** Initialize your data structure here. */
     public LoggerRateLimiter() {
         mMap = new HashMap<>();
+        mQueue = new PriorityQueue<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                int time1 = mMap.getOrDefault(o1, -100);
+                int time2 = mMap.getOrDefault(o2, -100);
+                return time1 - time2;
+            }
+        });
+    }
+
+    private void clearExpired(int timestamp) {
+        while (!mQueue.isEmpty()) {
+            String msg = mQueue.peek();
+            if (timestamp - mMap.get(msg) >= 10) {
+                mQueue.poll();
+                mMap.remove(msg);
+            }
+        }
     }
 
     /** Returns true if the message should be printed in the given timestamp, otherwise returns false.
@@ -25,11 +48,12 @@ public class LoggerRateLimiter {
      The timestamp is in seconds granularity. */
     public boolean shouldPrintMessage(int timestamp, String message) {
         int time = mMap.getOrDefault(message, -100);
+        boolean ret = false;
         if (timestamp - time >= 10) {
             mMap.put(message, timestamp);
-            return true;
-        } else {
-            return false;
+            ret = true;
         }
+        clearExpired(timestamp);
+        return ret;
     }
 }
