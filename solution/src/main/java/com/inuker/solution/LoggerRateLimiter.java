@@ -39,6 +39,8 @@ public class LoggerRateLimiter {
             if (timestamp - mMap.get(msg) >= 10) {
                 mQueue.poll();
                 mMap.remove(msg);
+            } else {
+                break;
             }
         }
     }
