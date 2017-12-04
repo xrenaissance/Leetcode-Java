@@ -1,5 +1,6 @@
 package com.inuker.solution;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -43,9 +44,32 @@ public class TopKFrequentElements {
         return list;
     }
 
+    public List<Integer> topKFrequent2(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int n: nums){
+            map.put(n, map.getOrDefault(n,0)+1);
+        }
+
+        TreeMap<Integer, List<Integer>> freqMap = new TreeMap<>();
+        for(int num : map.keySet()){
+            int freq = map.get(num);
+            if(!freqMap.containsKey(freq)){
+                freqMap.put(freq, new LinkedList<>());
+            }
+            freqMap.get(freq).add(num);
+        }
+
+        List<Integer> res = new ArrayList<>();
+        while(res.size()<k){
+            Map.Entry<Integer, List<Integer>> entry = freqMap.pollLastEntry();
+            res.addAll(entry.getValue());
+        }
+        return res;
+    }
+
     // 耗时23ms，时间复杂度O(n)，空间复杂度O(n)
     // 这里有个问题，result的size可能大于k了
-    public List<Integer> topKFrequent2(int[] nums, int k) {
+    public List<Integer> topKFrequent3(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int max = 0;
         for (int n : nums) {
