@@ -6,118 +6,110 @@ import java.util.LinkedHashSet;
 /**
  * Created by dingjikerbo on 17/1/2.
  */
-
+/**
+ * 和LRU的区别是
+ * LRU，即便历史频率再高，如果最近用的少了一样踢掉
+ * LFU，即便最近用的少了，如果曾经频率高一样不会踢
+ */
 /**
  * http://bookshadow.com/weblog/2016/11/22/leetcode-lfu-cache/
  */
 public class LFUCache {
 
-    private int cap = 0;
-
-    /**
-     * key为查询的键，得到对应的value，因为每个node下只保留keys，所以values存在这
-     */
-    private HashMap<Integer, Integer> values = null;
-
-    /**
-     * key为查询的键，通过key得到对应的node
-     */
-    private HashMap<Integer, Node> nodes = null;
-
-    /**
-     * head是双向链表，每个Node对应一个次数，其下挂载了keys
-     */
-    private Node head;
+    HashMap<Integer, Integer> valueMap;
+    HashMap<Integer, Node> nodeMap;
+    Node head;
+    int capacity;
 
     public LFUCache(int capacity) {
-        this.cap = capacity;
-        head = new Node(0);
-        values = new HashMap<Integer, Integer>();
-        nodes = new HashMap<Integer, Node>();
+        valueMap = new HashMap<>();
+        nodeMap = new HashMap<>();
+        head = new Node();
+        this.capacity = capacity;
     }
 
     public int get(int key) {
-        if (values.containsKey(key)) {
-            increaseCount(key);
-            return values.get(key);
+        if (!valueMap.containsKey(key)) {
+            return -1;
         }
-        return -1;
+        updateFreq(key);
+        return valueMap.get(key);
     }
 
-    public void set(int key, int value) {
-        /**
-         * 这里别掉了
-         */
-        if (cap == 0) {
+    // 注意capacity为0的情况
+    public void put(int key, int value) {
+        if (capacity == 0) {
             return;
         }
-        if (values.containsKey(key)) {
-            values.put(key, value);
-        } else {
-            if (values.size() >= cap) {
-                removeOld();
-            }
-            values.put(key, value);
-            /**
-             * head对应的是0次，这里先暂加到head中，下面再increaseCount
-             */
-            head.keys.add(key);
-            nodes.put(key, head);
+        // 注意只有要新增节点时才先删旧的
+        if (!valueMap.containsKey(key)) {
+            removeOld();
         }
-        increaseCount(key);
+        valueMap.put(key, value);
+        Node node = nodeMap.get(key);
+        if (node == null) {
+            head.set.add(key);
+            nodeMap.put(key, head);
+        }
+        updateFreq(key);
     }
 
-    private void increaseCount(int key) {
-        Node node = nodes.get(key);
-        node.keys.remove(key);
-
+    /**
+     * 访问某个key后更新频率
+     * 特殊的新增的某个key先丢到head中再更新
+     */
+    void updateFreq(int key) {
+        Node node = nodeMap.get(key);
+        node.set.remove(key);
         Node next = node.next;
-        if (next.count == node.count + 1) {
-            next.keys.add(key);
-        } else {
-            next = new Node(node.count + 1);
-            node.addAfter(next);
-            next.keys.add(key);
+        if (next.freq != node.freq + 1) {
+            next = new Node(node.freq + 1);
+            node.add(next);
         }
-        nodes.put(key, node.next);
-        if (node.keys.isEmpty() && node != head) {
+        if (node.set.isEmpty() && node != head) {
             node.remove();
         }
+        nodeMap.put(key, next);
+        next.set.add(key);
     }
 
+    /**
+     * 删除频率最小的
+     */
     private void removeOld() {
-        Node node = head.next;
-        if (node == head) {
-            return;
+        if (valueMap.size() >= capacity) {
+            Node node = head.next;
+            int key = node.set.iterator().next();
+            node.set.remove(key);
+            valueMap.remove(key);
+            nodeMap.remove(key);
+            if (node.set.isEmpty()) {
+                node.remove();
+            }
         }
-        Integer key = node.keys.iterator().next();
-        node.keys.remove(key);
-        if (node.keys.isEmpty())  {
-            node.remove();
-        }
-        nodes.remove(key);
-        values.remove(key);
     }
 
     class Node {
-        public int count;
-        public LinkedHashSet<Integer> keys;
-        Node next, prev;
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+        int freq;
+        Node prev, next;
 
-        public Node(int count) {
-            this.count = count;
-            this.keys = new LinkedHashSet<>();
-            next = prev = this;
+        Node() {
+            prev = next = this;
         }
 
-        public void addAfter(Node node) {
+        Node(int freq) {
+            this.freq = freq;
+        }
+
+        void add(Node node) {
             node.next = next;
             next.prev = node;
+            this.next = node;
             node.prev = this;
-            next = node;
         }
 
-        public void remove() {
+        void remove() {
             prev.next = next;
             next.prev = prev;
         }
