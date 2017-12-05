@@ -1,16 +1,17 @@
-package com.inuker.test;
+package com.inuker.solution;
 
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Created by liwentian on 2017/12/5.
+ * https://leetcode.com/articles/subarray-sum-equals-k/
  */
 
-public class Test2 {
+public class SubarraySumEqualsK {
 
+    /**
+     * 注意map.put(0,1)，即当前数自己也算是一种
+     */
     public int subarraySum(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);

@@ -27,11 +27,5 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        double[] f = new Test2().medianSlidingWindow(new int[] {
-                Integer.MAX_VALUE, 1, 2, 3, 4, 5, 6, 7, Integer.MAX_VALUE
-        }, 2);
-        for (double d : f) {
-            System.out.print(d + " ");
-        }
     }
 }
