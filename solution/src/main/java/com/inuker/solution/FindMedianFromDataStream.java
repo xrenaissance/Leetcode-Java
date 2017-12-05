@@ -1,6 +1,7 @@
 package com.inuker.solution;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -17,7 +18,7 @@ public class FindMedianFromDataStream {
     /**
      * 比较小的一半
      */
-    PriorityQueue<Integer> minheap = new PriorityQueue<Integer>(Collections.reverseOrder());
+    PriorityQueue<Integer> minheap = new PriorityQueue<Integer>(Comparator.reverseOrder());
 
     // Adds a number into the data structure.
     public void addNum(int num) {
