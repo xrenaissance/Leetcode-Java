@@ -16,7 +16,7 @@ import java.util.Set;
  * 第一步建立所有前缀对应的字符串集合
  * 第二步依次填充
  */
-public class WordSquare {
+public class WordSquares {
 
     public List<List<String>> wordSquares(String[] words) {
         List<List<String>> ret = new ArrayList<List<String>>();
