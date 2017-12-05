@@ -1,22 +1,15 @@
-package com.inuker.solution;
+package com.inuker.test;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Created by liwentian on 2017/9/12.
- * https://leetcode.com/articles/sliding-window-median/
- * 和 #295 Find Median from Data Stream 比较类似
+ * Created by liwentian on 2017/12/5.
  */
 
-public class SlidingWindowMedian {
+public class Test2 {
 
-    /**
-     * 这题如果用PriorityQueue则复杂度为O(nk)，因为其删除复杂度为O(n)
-     * 改为TreeMap会降为O(nlgk)
-     */
     public double[] medianSlidingWindow(int[] nums, int k) {
         MyMap up = new MyMap();
         MyMap down = new MyMap(Comparator.reverseOrder());
