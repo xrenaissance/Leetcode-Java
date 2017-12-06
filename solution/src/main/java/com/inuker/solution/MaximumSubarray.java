@@ -6,6 +6,7 @@ package com.inuker.solution;
 
 public class MaximumSubarray {
 
+    // dp[i]表示包含第i个元素时的最大和
     public int maxSubArray(int[] nums) {
         if (nums.length == 0) {
             return 0;

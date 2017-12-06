@@ -1,5 +1,6 @@
 package com.inuker.test;
 
+import com.leetcode.library.ListNode;
 import com.leetcode.library.TreeNode;
 
 import java.util.HashMap;
@@ -21,8 +22,23 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-
     }
 
+
+    public ListNode insertionSortList(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        for (ListNode next; head != null; head = next) {
+            next = head.next;
+            for (ListNode cur = dummy; cur != null; cur = cur.next) {
+                if (cur.next != null && head.val > cur.next.val) {
+                    continue;
+                }
+                head.next = cur.next;
+                cur.next = head;
+                break;
+            }
+        }
+        return dummy.next;
+    }
 
 }

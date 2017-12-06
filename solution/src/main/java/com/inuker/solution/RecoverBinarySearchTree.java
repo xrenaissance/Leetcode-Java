@@ -19,6 +19,7 @@ public class RecoverBinarySearchTree {
         second.val = val;
     }
 
+    // Morris遍历
     private void inorder(TreeNode root) {
         while (root != null) {
             if (root.left == null) {

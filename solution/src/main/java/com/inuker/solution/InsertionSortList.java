@@ -8,29 +8,22 @@ import com.leetcode.library.ListNode;
 
 public class InsertionSortList {
 
+    /**
+     * 其实很简单，就是从head中每次取一个节点，插到dummy中适当的位置
+     */
     public ListNode insertionSortList(ListNode head) {
-        if (head == null) {
-            return head;
-        }
-
-        ListNode helper = new ListNode(0); //new starter of the sorted list
-        ListNode cur = head; //the node will be inserted
-        ListNode pre = helper; //insert node between pre and pre.next
-        ListNode next = null; //the next node will be inserted
-        //not the end of input list
-        while (cur != null) {
-            next = cur.next;
-            //find the right place to insert
-            while (pre.next != null && pre.next.val < cur.val) {
-                pre = pre.next;
+        ListNode dummy = new ListNode(0);
+        for (ListNode next; head != null; head = next) {
+            next = head.next;
+            for (ListNode cur = dummy; cur != null; cur = cur.next) {
+                if (cur.next != null && head.val > cur.next.val) {
+                    continue;
+                }
+                head.next = cur.next;
+                cur.next = head;
+                break;
             }
-            //insert between pre and pre.next
-            cur.next = pre.next;
-            pre.next = cur;
-            pre = helper;
-            cur = next;
         }
-
-        return helper.next;
+        return dummy.next;
     }
 }
