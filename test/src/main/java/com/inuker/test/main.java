@@ -24,21 +24,14 @@ public class main {
     public static void main(String[] args) {
     }
 
-
-    public ListNode insertionSortList(ListNode head) {
-        ListNode dummy = new ListNode(0);
-        for (ListNode next; head != null; head = next) {
-            next = head.next;
-            for (ListNode cur = dummy; cur != null; cur = cur.next) {
-                if (cur.next != null && head.val > cur.next.val) {
-                    continue;
-                }
-                head.next = cur.next;
-                cur.next = head;
-                break;
+    public boolean hasCycle(ListNode head) {
+        for (ListNode fast = head, slow = head; fast != null && fast.next != null; ) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                return true;
             }
         }
-        return dummy.next;
+        return false;
     }
-
 }
