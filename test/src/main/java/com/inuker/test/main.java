@@ -1,6 +1,7 @@
 package com.inuker.test;
 
 import com.leetcode.library.ListNode;
+import com.leetcode.library.RandomListNode;
 import com.leetcode.library.TreeNode;
 
 import java.util.HashMap;
@@ -24,14 +25,21 @@ public class main {
     public static void main(String[] args) {
     }
 
-    public boolean hasCycle(ListNode head) {
-        for (ListNode fast = head, slow = head; fast != null && fast.next != null; ) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if (fast == slow) {
-                return true;
+    public ListNode reverseKGroup(ListNode head, int k) {
+        int n = 0;
+        for (ListNode node = head; node != null; node = node.next, n++);
+        ListNode dummy = new ListNode(0), cur = dummy, node = head;
+        for ( ; n >= k; n -= k) {
+            ListNode tail = node, next;
+            for (int i = 0; i < k; i++) {
+                next = node.next;
+                node.next = cur.next;
+                cur.next = node;
+                node = next;
             }
+            cur = tail;
         }
-        return false;
+        cur.next = node;
+        return dummy.next;
     }
 }
