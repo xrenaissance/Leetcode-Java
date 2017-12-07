@@ -17,41 +17,29 @@ public class CourseSchedule {
      * 这题就是典型的拓扑排序
      */
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        int[] indegree = new int[numCourses];
+        int[] indegrees = new int[numCourses];
         HashMap<Integer, Set<Integer>> map = new HashMap<>();
-        for (int[] f : prerequisites) {
-            int from = f[1], to = f[0];
-            Set<Integer> set = map.get(from);
-            if (set == null) {
-                set = new HashSet<>();
-                map.put(from, set);
-            }
-            /**
-             * 这里要防止同一条边计了多次
-             */
-            if (set.add(to)) {
-                indegree[to]++;
+        for (int[] pos : prerequisites) {
+            Set<Integer> set = map.getOrDefault(pos[1], new HashSet<>());
+            map.put(pos[1], set);
+            if (set.add(pos[0])) {
+                indegrees[pos[0]]++;
             }
         }
         Queue<Integer> queue = new LinkedList<>();
-        List<Integer> list = new LinkedList<>();
-        for (int i = 0; i < indegree.length; i++) {
-            if (indegree[i] == 0) {
-                queue.add(i);
+        for (int i = 0; i < indegrees.length; i++) {
+            if (indegrees[i] == 0) {
+                queue.offer(i);
             }
         }
-        while (!queue.isEmpty()) {
-            Integer n = queue.poll();
-            list.add(n);
-            Set<Integer> set = map.get(n);
-            if (set != null) {
-                for (Integer k : set) {
-                    if (--indegree[k] == 0) {
-                        queue.add(k);
-                    }
+        for ( ; !queue.isEmpty(); numCourses--) {
+            int n = queue.poll();
+            for (Integer k : map.getOrDefault(n, new HashSet<>())) {
+                if (--indegrees[k] == 0) {
+                    queue.offer(k);
                 }
             }
         }
-        return list.size() == numCourses;
+        return numCourses == 0;
     }
 }
