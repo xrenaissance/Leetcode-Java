@@ -14,19 +14,13 @@ public class CourseScheduleII {
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] indegree = new int[numCourses];
-        HashMap<Integer, Set<Integer>> map = new HashMap<>();
+        Set<Integer>[] sets = new HashSet[numCourses];
+        for (int i = 0; i < sets.length; i++) {
+            sets[i] = new HashSet<>();
+        }
         for (int[] pre : prerequisites) {
-            int from = pre[1], to = pre[0];
-            Set<Integer> set = map.get(from);
-            if (set == null) {
-                set = new HashSet<Integer>();
-                map.put(from, set);
-            }
-            /**
-             * 这里要避免添加多次
-             */
-            if (set.add(to)) {
-                indegree[to]++;
+            if (sets[pre[1]].add(pre[0])) {
+                indegree[pre[0]]++;
             }
         }
         Queue<Integer> queue = new LinkedList<>();
@@ -40,12 +34,9 @@ public class CourseScheduleII {
         while (!queue.isEmpty()) {
             Integer n = queue.poll();
             result[count++] = n;
-            Set<Integer> set = map.get(n);
-            if (set != null) {
-                for (Integer k : set) {
-                    if (--indegree[k] == 0) {
-                        queue.add(k);
-                    }
+            for (Integer k : sets[n]) {
+                if (--indegree[k] == 0) {
+                    queue.add(k);
                 }
             }
         }

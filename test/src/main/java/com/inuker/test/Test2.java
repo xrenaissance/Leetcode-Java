@@ -20,32 +20,34 @@ import java.util.TreeMap;
 
 public class Test2 {
 
-    public int countComponents2(int n, int[][] edges) {
-        List<Integer>[] graph = new ArrayList[n];
-        for (int i = 0; i < n; i++) {
-            graph[i] = new ArrayList<>();
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        int[] indegree = new int[numCourses];
+        Set<Integer>[] sets = new HashSet[numCourses];
+        for (int i = 0; i < sets.length; i++) {
+            sets[i] = new HashSet<>();
         }
-        for (int[] edge : edges) {
-            graph[edge[0]].add(edge[1]);
-            graph[edge[1]].add(edge[0]);
-        }
-        Set<Integer> visited = new HashSet<>();
-        int count = 0;
-        for (int i = 0; i < n; i++) {
-            if (!visited.contains(i)) {
-                count++;
-                dfs(graph, i, visited);
+        for (int[] pre : prerequisites) {
+            if (sets[pre[1]].add(pre[0])) {
+                indegree[pre[0]]++;
             }
         }
-        return count;
-    }
-
-    private void dfs(List<Integer>[] graph, int i, Set<Integer> visited) {
-        if (!visited.add(i)) {
-            return;
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {
+                queue.add(i);
+            }
         }
-        for (Integer k : graph[i]) {
-            dfs(graph, k, visited);
+        int count = 0;
+        int[] result = new int[numCourses];
+        while (!queue.isEmpty()) {
+            Integer n = queue.poll();
+            result[count++] = n;
+            for (Integer k : sets[n]) {
+                if (--indegree[k] == 0) {
+                    queue.add(k);
+                }
+            }
         }
+        return count == numCourses ? result : new int[0];
     }
 }
