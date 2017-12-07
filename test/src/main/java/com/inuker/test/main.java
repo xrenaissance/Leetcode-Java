@@ -26,25 +26,17 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        String[][] strs = new String[][]{
-//                {"MUC", "LHR"},
-//                {"JFK", "MUC"},
-//                {"SFO", "SJC"},
-//                {"LHR", "SFO"}
-                {"JFK", "SFO"},
-                {"JFK", "ATL"},
-                {"SFO", "ATL"},
-                {"ATL", "JFK"},
-                {"ATL", "SFO"},
-        };
-        List<String> lists = new Test2().findItinerary(strs);
-//        List<String> lists = new Solution().findItinerary(strs);
-//        for (String s : lists) {
-//            System.out.print(s + " ");
-//        }
-
-        for (String s : lists) {
-            System.out.print(s + " ");
+        double[] result = new Test2().calcEquation(new String[][] {
+                {"a", "b"},
+                {"b", "c"}
+        }, new double[] {
+                2.0f, 3.0f
+        }, new String[][] {
+                {"a", "c"},
+                {"b", "c"}
+        });
+        for (double f : result) {
+            System.out.print(f + " ");
         }
     }
 }

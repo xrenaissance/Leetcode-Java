@@ -19,54 +19,39 @@ public class EvaluateDivision {
 
         for (int i = 0; i < equations.length; i++) {
             String[] equation = equations[i];
-            HashMap<String, Double> map = valueMap.get(equation[0]);
-            if (map == null) {
-                map = new HashMap<>();
-                valueMap.put(equation[0], map);
-            }
+            HashMap<String, Double> map = valueMap.computeIfAbsent(equation[0], k -> new HashMap<>());
             map.put(equation[1], values[i]);
-
-            map = valueMap.get(equation[1]);
-            if (map == null) {
-                map = new HashMap<>();
-                valueMap.put(equation[1], map);
-            }
+            map = valueMap.computeIfAbsent(equation[1], k -> new HashMap<>());
             map.put(equation[0], 1 / values[i]);
         }
 
         double[] result = new double[queries.length];
         for (int i = 0; i < queries.length; i++) {
-            double res = dfs(valueMap, queries[i][0], queries[i][1], new HashSet<String>(), 1.0);
-            if (res == 0.0) {
-                result[i] = -1.0;
-            } else {
-                result[i] = res;
-            }
+            double[] value = new double[] {1.0};
+            result[i] = dfs(valueMap, queries[i][0], queries[i][1], new HashSet<>(), value) ? value[0] : -1.0;
         }
         return result;
     }
 
-    private double dfs(HashMap<String, HashMap<String, Double>> map, String start, String end, HashSet<String> set, double value) {
-        if (set.contains(start)) {
-            return 0.0;
-        }
-        if (!map.containsKey(start) || !map.containsKey(end)) {
-            return 0.0;
+    private boolean dfs(HashMap<String, HashMap<String, Double>> map, String start, String end, HashSet<String> set, double[] value) {
+        if (!map.containsKey(start) || !map.containsKey(end) || set.contains(start)) {
+            return false;
         }
         if (start.equals(end)) {
-            return value;
+            return true;
         }
         set.add(start);
-
-        double res = 0.0;
         HashMap<String, Double> valueMap = map.get(start);
+        boolean flag = false;
         for (Map.Entry<String, Double> entry : valueMap.entrySet()) {
-            res = dfs(map, entry.getKey(), end, set, value * entry.getValue());
-            if (res > 0) {
+            value[0] *= entry.getValue();
+            if (dfs(map, entry.getKey(), end, set, value)) {
+                flag = true;
                 break;
             }
+            value[0] /= entry.getValue();
         }
         set.remove(start);
-        return res;
+        return flag;
     }
 }
