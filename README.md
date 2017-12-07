@@ -373,3 +373,4 @@
 |637|[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AverageOfLevelsInBinaryTree.java)|100||
 |652|[Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindDuplicateSubtrees.java)|70|开始还没思路|
 |653|[Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIV.java)|90||
+|684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RedundantConnection.java)|||
