@@ -1,7 +1,9 @@
 package com.inuker.solution;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by dingjikerbo on 17/1/2.
@@ -35,7 +37,6 @@ public class NumberOfConnectedComponents {
     /**
      * DFS法
      */
-    // 8ms
     public int countComponents2(int n, int[][] edges) {
         List<Integer>[] graph = new ArrayList[n];
         for (int i = 0; i < n; i++) {
@@ -45,22 +46,21 @@ public class NumberOfConnectedComponents {
             graph[edge[0]].add(edge[1]);
             graph[edge[1]].add(edge[0]);
         }
-        boolean[] visited = new boolean[n];
+        Set<Integer> visited = new HashSet<>();
         int count = 0;
         for (int i = 0; i < n; i++) {
-            if (!visited[i]) {
-                dfs(graph, i, visited);
+            if (!visited.contains(i)) {
                 count++;
+                dfs(graph, i, visited);
             }
         }
         return count;
     }
 
-    private void dfs(List<Integer>[] graph, int i, boolean[] visited) {
-        if (visited[i]) {
+    private void dfs(List<Integer>[] graph, int i, Set<Integer> visited) {
+        if (!visited.add(i)) {
             return;
         }
-        visited[i] = true;
         for (Integer k : graph[i]) {
             dfs(graph, k, visited);
         }

@@ -10,6 +10,7 @@ package com.inuker.solution;
 public class RedundantConnection {
     /**
      * 思路很简单，发现第一个联通的边时就是多余的
+     * 时间复杂度O(n)，空间O(n)
      */
     public int[] findRedundantConnection(int[][] edges) {
         int[] arr = new int[2001];
