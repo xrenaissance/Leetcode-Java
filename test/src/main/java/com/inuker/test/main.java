@@ -28,34 +28,27 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        System.out.println(minWindow("ADOBECODEBANC", "ABC"));
+        System.out.println(multiply("99", "100"));
     }
 
-    public static String minWindow(String s, String t) {
-        int[] tc = new int[256], sc = new int[256];
-        for (char c : t.toCharArray()) {
-            tc[c]++;
-        }
-        int count = 0, min = Integer.MAX_VALUE, start = 0;
-        for (int i = 0, j = 0; j < s.length(); j++) {
-            char c = s.charAt(j);
-            if (++sc[c] <= tc[c]) {
-                ++count;
-            }
-            if (count == t.length()) {
-                for ( ; i < j; i++) {
-                    char cc = s.charAt(i);
-                    if (sc[cc] <= tc[cc]) {
-                        break;
-                    }
-                    sc[cc]--;
-                }
-                if (j - i + 1 < min) {
-                    min = j - i + 1;
-                    start = i;
-                }
+    public static String multiply(String num1, String num2) {
+        int l1 = num1.length(), l2 = num2.length();
+        int[] result = new int[l1 + l2];
+        for (int i = l1 - 1; i >= 0; i--) {
+            for (int j = l2 - 1; j >= 0; j--) {
+                int n1 = num1.charAt(i) - '0';
+                int n2 = num2.charAt(j) - '0';
+                int n = result[i + j + 1] + n1 * n2;
+                result[i + j + 1] = n % 10;
+                result[i + j] += n / 10;
             }
         }
-        return min == Integer.MAX_VALUE ? "" : s.substring(start, start + min);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < result.length; i++) {
+            if (result[i] != 0 || sb.length() > 0) {
+                sb.append(result[i]);
+            }
+        }
+        return sb.length() == 0 ? "0" : sb.toString();
     }
 }
