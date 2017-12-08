@@ -8,6 +8,11 @@ import java.util.Arrays;
 
 public class MaximumGap {
 
+    /**
+     * 这题核心是最大gap存在于跨桶的，而不是某个桶内部
+     * 首先刨去min和max，剩余n-2个数分散在n-1个桶中，必然导致有的桶里是空的
+     * 那么max gap必然是跨桶的
+     */
     // 耗时5ms，木桶原理
     public int maximumGap(int[] nums) {
         if (nums.length < 2) {
@@ -15,9 +20,7 @@ public class MaximumGap {
         }
 
         int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
-        /**
-         * 首先找出数组中最大值和最小值
-         */
+
         for (int n : nums) {
             min = Math.min(min, n);
             max = Math.max(max, n);
@@ -27,32 +30,29 @@ public class MaximumGap {
             return 0;
         }
 
-        /**
-         * 有len个数，则有len-1个间隙，这里算出平均每个桶的宽度，桶的个数是len-1
-         */
-        int gap = (int) Math.ceil((double) (max - min) / (nums.length - 1));
-        int[] mins = new int[nums.length - 1], maxs = new int[nums.length - 1];
+        int bucketCount = nums.length - 1;
+        int gap = (int) Math.ceil((double) (max - min) / bucketCount);
+        int[] mins = new int[bucketCount], maxs = new int[bucketCount];
 
         Arrays.fill(mins, Integer.MAX_VALUE);
         Arrays.fill(maxs, Integer.MIN_VALUE);
 
         /**
-         * 这里要统计落在每个桶内的最大值和最小值
+         * 注意区间是左闭右开的，所以max没有包含进来，这里先去掉，最后再算
+         * 如果这里不略过max的话，算出来的index会越界
          */
         for (int n : nums) {
-            if (n == min || n == max) {
+            if (n == max) {
                 continue;
             }
-            /**
-             * 先算出n所在的桶
-             */
             int index = (n - min) / gap;
             mins[index] = Math.min(mins[index], n);
             maxs[index] = Math.max(maxs[index], n);
         }
 
-        int last = min, maxGap = Integer.MIN_VALUE;
-        for (int i = 0; i < nums.length - 1; i++) {
+        int last = min, maxGap = 0;
+        for (int i = 0; i < bucketCount; i++) {
+            // 略过空的桶
             if (mins[i] == Integer.MAX_VALUE) {
                 continue;
             }

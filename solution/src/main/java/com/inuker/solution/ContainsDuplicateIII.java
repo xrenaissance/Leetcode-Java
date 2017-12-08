@@ -61,14 +61,7 @@ public class ContainsDuplicateIII {
         Map<Long, Long> map = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
-            long index;
-
-            if (i >= k + 1) {
-                index = getBucketId(nums[i - k - 1], (long) t + 1);
-                map.remove(index);
-            }
-
-            index = getBucketId(nums[i], (long) t + 1);
+            long index = getBucketId(nums[i], (long) t + 1);
 
             if (map.containsKey(index)) {
                 return true;
@@ -83,6 +76,11 @@ public class ContainsDuplicateIII {
             }
 
             map.put(index, (long) nums[i]);
+
+            if (i >= k) {
+                index = getBucketId(nums[i - k], (long) t + 1);
+                map.remove(index);
+            }
         }
 
         return false;
