@@ -28,24 +28,21 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        int[] range = new SearchForARange().searchRange(new int[] {
-                1, 2, 3, 3, 4
-        }, 3);
-        for (int n : range) {
-            System.out.print(n + " ");
-        }
+        System.out.println(isPalindrome(10));
     }
 
-    public int reverse(int x) {
-        int sign = x > 0 ? 1 : -1;
-        long y = Math.abs(x), z = 0;
-        for ( ; y > 0; y /= 10) {
-            z = z * 10 + y % 10;
+    public static boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
         }
-        z *= sign;
-        if (z > Integer.MAX_VALUE || z < Integer.MIN_VALUE) {
-            throw new IllegalStateException();
+        int t = 1;
+        for (; t <= x / 10; t *= 10);
+
+        for (int k = 1; t > k; t /= 10, k *= 10) {
+            if ((x / t) % 10 != (x / k) % 10) {
+                return false;
+            }
         }
-        return (int) z;
+        return true;
     }
 }
