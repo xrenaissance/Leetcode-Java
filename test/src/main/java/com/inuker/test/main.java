@@ -1,5 +1,6 @@
 package com.inuker.test;
 
+import com.inuker.solution.SearchForARange;
 import com.leetcode.library.ListNode;
 import com.leetcode.library.RandomListNode;
 import com.leetcode.library.TreeNode;
@@ -27,5 +28,11 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
+        int[] range = new SearchForARange().searchRange(new int[] {
+                1, 2, 3, 3, 4
+        }, 3);
+        for (int n : range) {
+            System.out.print(n + " ");
+        }
     }
 }
