@@ -28,21 +28,34 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome(10));
+        System.out.println(minWindow("ADOBECODEBANC", "ABC"));
     }
 
-    public static boolean isPalindrome(int x) {
-        if (x < 0) {
-            return false;
+    public static String minWindow(String s, String t) {
+        int[] tc = new int[256], sc = new int[256];
+        for (char c : t.toCharArray()) {
+            tc[c]++;
         }
-        int t = 1;
-        for (; t <= x / 10; t *= 10);
-
-        for (int k = 1; t > k; t /= 10, k *= 10) {
-            if ((x / t) % 10 != (x / k) % 10) {
-                return false;
+        int count = 0, min = Integer.MAX_VALUE, start = 0;
+        for (int i = 0, j = 0; j < s.length(); j++) {
+            char c = s.charAt(j);
+            if (++sc[c] <= tc[c]) {
+                ++count;
+            }
+            if (count == t.length()) {
+                for ( ; i < j; i++) {
+                    char cc = s.charAt(i);
+                    if (sc[cc] <= tc[cc]) {
+                        break;
+                    }
+                    sc[cc]--;
+                }
+                if (j - i + 1 < min) {
+                    min = j - i + 1;
+                    start = i;
+                }
             }
         }
-        return true;
+        return min == Integer.MAX_VALUE ? "" : s.substring(start, start + min);
     }
 }
