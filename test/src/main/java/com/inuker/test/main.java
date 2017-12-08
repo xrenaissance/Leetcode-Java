@@ -27,17 +27,6 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        double[] result = new Test2().calcEquation(new String[][] {
-                {"a", "b"},
-                {"b", "c"}
-        }, new double[] {
-                2.0f, 3.0f
-        }, new String[][] {
-                {"a", "c"},
-                {"b", "c"}
-        });
-        for (double f : result) {
-            System.out.print(f + " ");
-        }
+
     }
 }
