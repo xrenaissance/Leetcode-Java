@@ -2,6 +2,7 @@ package com.inuker.solution;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -16,14 +17,8 @@ public class ShortestWordDistanceII {
     public ShortestWordDistanceII(String[] words) {
         map = new HashMap<String, List<Integer>>();
         for (int i = 0; i < words.length; i++) {
-            String w = words[i];
-            if (map.containsKey(w)) {
-                map.get(w).add(i);
-            } else {
-                List<Integer> list = new ArrayList<Integer>();
-                list.add(i);
-                map.put(w, list);
-            }
+            List<Integer> list = map.computeIfAbsent(words[i], k -> new LinkedList<>());
+            list.add(i);
         }
     }
 
