@@ -35,4 +35,17 @@ public class main {
             System.out.print(n + " ");
         }
     }
+
+    public int reverse(int x) {
+        int sign = x > 0 ? 1 : -1;
+        long y = Math.abs(x), z = 0;
+        for ( ; y > 0; y /= 10) {
+            z = z * 10 + y % 10;
+        }
+        z *= sign;
+        if (z > Integer.MAX_VALUE || z < Integer.MIN_VALUE) {
+            throw new IllegalStateException();
+        }
+        return (int) z;
+    }
 }

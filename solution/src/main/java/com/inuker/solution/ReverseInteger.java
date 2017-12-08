@@ -6,20 +6,6 @@ package com.inuker.solution;
 
 public class ReverseInteger {
 
-    // 耗时43ms
-    public int reverse(int x) {
-        long y = x;
-        int sign = y > 0 ? 1 : -1;
-        y = y > 0 ? y : -y;
-        String s = String.valueOf(y);
-        s = new StringBuilder(s).reverse().toString();
-        y = Long.valueOf(s) * sign;
-        if (y > Integer.MAX_VALUE || y < Integer.MIN_VALUE) {
-            return 0;
-        }
-        return (int) y;
-    }
-
     // 耗时40ms
     public int reverse2(int x) {
         long y = x, r = 0;
