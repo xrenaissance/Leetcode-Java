@@ -9,7 +9,9 @@ package com.inuker.solution;
  */
 public class ShortestPalindrome {
     /**
-     * 其实只要将s与s的逆序串拼接在一起，求最长公共子串，逆序串中刨除这个最长公共子串，就是要加到s前面的
+     * 其实只要将s与s的逆序串拼接在一起，求最长公共子串
+     * 逆序串中从末尾刨除这个最长公共子串，就是要加到s前面的部分
+     * 比如对abcd，其逆序为dcba，拼接为abcddcba，最长公共子串为a，因此dcba刨除a后为dcb，即为要加到abcd前面的部分
      */
     public String shortestPalindrome(String s) {
         StringBuilder builder = new StringBuilder(s);
@@ -17,22 +19,6 @@ public class ShortestPalindrome {
     }
 
     private int getCommonLength(String str) {
-        StringBuilder builder = new StringBuilder(str);
-        String rev = new StringBuilder(str).reverse().toString();
-        builder.append("#").append(rev);
-        int[] p = new int[builder.length()];
-        for (int i = 1; i < p.length; i++) {
-            int j = p[i - 1];
-            while (j > 0 && builder.charAt(i) != builder.charAt(j)) j = p[j - 1];
-            p[i] = j == 0 ? (builder.charAt(i) == builder.charAt(0) ? 1 : 0) : j + 1;
-        }
-        return p[p.length - 1];
-    }
-
-    /**
-     * 更直观的写法
-     */
-    private int getCommonLength2(String str) {
         String rev = new StringBuilder(str).reverse().toString();
         return getCommonLength(str + rev, str.length());
     }
