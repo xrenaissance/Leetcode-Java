@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SubstringWithConcatenationOfAllWords {
 
-    // 131ms，性能还有继续优化的空间
+    // 118ms，最直接的做法
 
     // 这些words可能有重复
     public List<Integer> findSubstring(String s, String[] words) {
