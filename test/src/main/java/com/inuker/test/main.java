@@ -28,18 +28,13 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        System.out.println(getTag("abc"));
-        System.out.println(getTag("bcd"));
-        System.out.println(getTag("cde"));
+        int[] arr = new int[] {
+                0, 0, 3, 4, 5, 0, 0
+        };
+        new Test2().moveZeroes(arr);
+        for (int n : arr) {
+            System.out.print(n + " ");
+        }
     }
 
-    static String getTag(String s) {
-        int diff = (int) s.charAt(0) - (int) 'a';
-
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray())
-            sb.append((c + 26 - diff) % 26);
-
-        return sb.toString();
-    }
 }

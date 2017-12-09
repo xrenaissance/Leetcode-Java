@@ -1,5 +1,7 @@
 package com.inuker.test;
 
+import com.leetcode.library.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,45 +22,22 @@ import java.util.TreeMap;
 
 public class Test2 {
 
-    public int[] searchRange(int[] nums, int target) {
-        if (nums.length == 0) {
-            return new int[]{-1, -1};
-        }
-        return new int[] {
-                lowerBound(nums, target),
-                upperBound(nums, target)
-        };
-    }
-
-    public static int lowerBound(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-
-        while (left < right) {
-            int mid = left + ((right - left) >> 1);
-
-            if (target > nums[mid]) {
-                left = mid + 1;
+    public void moveZeroes(int[] nums) {
+        for (int i = 0, j = nums.length - 1; j > i; ) {
+            if (nums[i] != 0) {
+                i++;
+            } else if (nums[j] != 0) {
+                swap(nums, i, j--);
             } else {
-                right = mid;
+                j--;
             }
         }
-
-        return nums[left] == target ? left : -1;
     }
 
-    public static int upperBound(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
-
-        while (left < right) {
-            int mid = left + ((right - left) >> 1) + 1;
-
-            if (target < nums[mid]) {
-                right = mid - 1;
-            } else {
-                left = mid;
-            }
-        }
-
-        return nums[right] == target ? right : -1;
+    private void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
     }
+
 }
