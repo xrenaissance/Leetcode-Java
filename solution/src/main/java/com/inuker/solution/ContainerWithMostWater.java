@@ -5,10 +5,10 @@ package com.inuker.solution;
  */
 
 /**
- * 本体可用暴力法，但显然会超时
+ * 题目的意思是选定两块板子组成一个桶，使得装水量最大。注意其余的板子都忽略。
  * 一种O(n)的方法是对于区间[left, right]，假如height[left] < height[right]，则我们可以认定[left, right - 1]，[left, right - 2] ...
- * 都不会比[left, right]装的水更多。原因是假如height[right - 1]比height[left]高，则水平面高度不变，但
- * 宽度减小了。假如height[right - 1]比height[left]矮，则一样装的水会更少。所以对于一个区间，我们总是从矮的一方往前递进。
+ * 都不会比[left, right]装的水更多。原因是木桶的短板没变，所以水平面不会变，但是宽度减小了。
+ * 所以我们要继续尝试的方向是从较短的一方推进，寄希望于其之后的板子能高一点
  */
 public class ContainerWithMostWater {
 
