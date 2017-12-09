@@ -21,23 +21,38 @@ import java.util.TreeMap;
  */
 
 public class Test2 {
+    /**
+     * TestCase
+     * [3,1,1], 3
+     */
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
 
-    public void moveZeroes(int[] nums) {
-        for (int i = 0, j = nums.length - 1; j > i; ) {
-            if (nums[i] != 0) {
-                i++;
-            } else if (nums[j] != 0) {
-                swap(nums, i, j--);
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            if (target == nums[mid]) {
+                return mid;
+            }
+
+            if (nums[mid] > nums[left]) {
+                if (target >= nums[left] && target < nums[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else if (nums[mid] == nums[left]) {
+                left++;
             } else {
-                j--;
+                if (target > nums[mid] && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
             }
         }
-    }
 
-    private void swap(int[] nums, int i, int j) {
-        int t = nums[i];
-        nums[i] = nums[j];
-        nums[j] = t;
+        return -1;
     }
 
 }

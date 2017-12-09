@@ -5,7 +5,10 @@ package com.inuker.solution;
  */
 
 public class SearchInRotatedSortedArrayII {
-
+    /**
+     * TestCase
+     * [3,1,1], 3
+     */
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
 
