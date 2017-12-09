@@ -228,6 +228,7 @@
 |245|[Shortest Word Distance III](https://leetcode.com/problems/shortest-word-distance-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ShortestWordDistanceIII.java)|80||
 |246|[Strobogrammatic Number](https://leetcode.com/problems/strobogrammatic-number/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrobogrammaticNumber.java)|70|#247一个系列，多看两遍|
 |247|[Strobogrammatic Number II](https://leetcode.com/problems/strobogrammatic-number-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/StrobogrammaticNumberII.java)|70|多看两遍|
+|249|[Group Shifted Strings](https://leetcode.com/problems/group-shifted-strings/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/GroupShiftedStrings.java)||
 |250|[Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/CountUnivalueSubtrees.java)|70|这题要多做几遍|
 |251|[Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/Vector2D.java)|100|
 |252|[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MeetingRooms.java)|100|
