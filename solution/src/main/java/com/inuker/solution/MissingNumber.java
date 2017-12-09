@@ -7,11 +7,10 @@ package com.inuker.solution;
 public class MissingNumber {
 
     public int missingNumber(int[] nums) {
-        int xor = 0, i = 0;
-        for (i = 0; i < nums.length; i++) {
-            xor = xor ^ i ^ nums[i];
+        int xor = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            xor ^= i ^ nums[i];
         }
-
-        return xor ^ i;
+        return xor;
     }
 }

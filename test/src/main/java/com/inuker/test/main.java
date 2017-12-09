@@ -31,10 +31,6 @@ public class main {
         int[] arr = new int[] {
                 0, 0, 3, 4, 5, 0, 0
         };
-        new Test2().moveZeroes(arr);
-        for (int n : arr) {
-            System.out.print(n + " ");
-        }
     }
 
 }
