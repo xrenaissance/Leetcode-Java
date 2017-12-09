@@ -7,20 +7,19 @@ package com.inuker.solution;
 public class FindMinimumInRotatedSortedArray {
 
     public int findMin(int[] nums) {
-        for (int left = 0, right = nums.length - 1; left >= 0 && left <= right; ) {
-            if (nums[right] > nums[left]) {
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            if (nums[left] < nums[right]) {
                 return nums[left];
             }
-            int mid = left + ((right - left) >> 1);
+            int mid = (left + right) / 2;
 
-            if (nums[mid] > nums[left]) {
+            if (nums[mid] >= nums[left]) {
                 left = mid + 1;
-            } else if (nums[mid] < nums[right]) {
-                right = mid;
             } else {
-                return Math.min(nums[left], nums[right]);
+                right = mid;
             }
         }
-        return 0;
+        return nums[left];
     }
 }
