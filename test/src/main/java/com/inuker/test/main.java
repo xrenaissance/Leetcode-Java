@@ -1,5 +1,6 @@
 package com.inuker.test;
 
+import com.inuker.solution.FindAllNumbersDisappearedInAnArray;
 import com.inuker.solution.MinimumSizeSubarraySum;
 import com.inuker.solution.NextPermutation;
 import com.inuker.solution.SearchForARange;
@@ -31,9 +32,10 @@ public class main {
 
     public static void main(String[] args) {
         int[] arr = new int[]{
-                1, 2, 3, 4, 5
+                4,3,2,7,8,2,3,1
         };
-        int len = new MinimumSizeSubarraySum().minSubArrayLen2(15, arr);
-        System.out.println(len);
+        for (int n : new FindAllNumbersDisappearedInAnArray().findDisappearedNumbers(arr)) {
+            System.out.print(n + " ");
+        }
     }
 }
