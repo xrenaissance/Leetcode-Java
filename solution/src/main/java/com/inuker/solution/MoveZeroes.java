@@ -29,7 +29,7 @@ public class MoveZeroes {
     /**
      * 如果不要求保持顺序，且写的次数最少
      */
-    public int moveZeroes2(int[] nums) {
+    public void moveZeroes2(int[] nums) {
         for (int i = 0, j = nums.length - 1; j > i; ) {
             if (nums[i] != 0) {
                 i++;

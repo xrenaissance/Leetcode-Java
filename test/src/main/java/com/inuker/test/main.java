@@ -1,5 +1,6 @@
 package com.inuker.test;
 
+import com.inuker.solution.NextPermutation;
 import com.inuker.solution.SearchForARange;
 import com.leetcode.library.ListNode;
 import com.leetcode.library.RandomListNode;
@@ -28,9 +29,13 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        int[] arr = new int[] {
-                0, 0, 3, 4, 5, 0, 0
+        int[] arr = new int[]{
+                2, 2, 0, 4, 3, 1
         };
+        new NextPermutation().nextPermutation(arr);
+        for (int n : arr) {
+            System.out.print(n + " ");
+        }
     }
 
 }

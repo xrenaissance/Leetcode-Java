@@ -9,6 +9,10 @@ package com.inuker.solution;
  */
 public class NextPermutation {
 
+    /**
+     * 思路是从右往左找到升序转降序的转折点nums[i]
+     * 然后从升序中找到一个大于nums[i-1]的最小数与i-1交换，然后对升序整体revert为降序即可
+     */
     public void nextPermutation(int[] nums) {
         int i = nums.length - 1;
 
@@ -23,34 +27,13 @@ public class NextPermutation {
             return;
         }
 
-        int index = searchSwapPoint(nums, i, nums.length - 1, nums[i - 1]);
-
-        swap(nums, i - 1, index);
-        revert(nums, i, nums.length - 1);
-    }
-
-    private int searchSwapPoint(int[] nums, int left, int right, int target) {
-        while (left <= right) {
-            int mid = left + ((right - left) >> 1);
-
-            if (left == mid) {
-                if (target >= nums[right]) {
-                    return right - 1;
-                } else {
-                    return right;
-                }
-            }
-
-            if (target > nums[mid]) {
-                right = mid - 1;
-            } else if (target < nums[mid]) {
-                left = mid;
-            } else {
-                right = mid - 1;
+        for (int j = nums.length - 1; j >= i; j--) {
+            if (nums[j] > nums[i - 1]) {
+                swap(nums, j, i - 1);
+                revert(nums, i, nums.length - 1);
+                break;
             }
         }
-
-        throw new IllegalStateException("");
     }
 
     private void swap(int[] nums, int left, int right) {
