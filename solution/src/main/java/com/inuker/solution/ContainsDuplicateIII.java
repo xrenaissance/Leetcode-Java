@@ -16,6 +16,8 @@ public class ContainsDuplicateIII {
     /**
      * 这题要注意溢出问题，干脆都用long
      * 时间复杂度O(nlg(min(n,k))
+     * for循环走到当前的nums[i]说明之前的都不行，因此只要判断当前
+     * nums[i]的加入是否可以即可，因此只要判断nums[i]相邻的上下两个数是否在t范围内
      */
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         TreeSet<Long> set = new TreeSet<>();
