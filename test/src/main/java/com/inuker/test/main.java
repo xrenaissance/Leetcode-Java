@@ -31,30 +31,61 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{
-                4,3,2,7,8,2,3,1
-        };
-        for (int n : new FindAllNumbersDisappearedInAnArray().findDisappearedNumbers(arr)) {
+        List<Integer> list = new test().countSmaller(new int[] {
+                5, 2, 6, 1
+        });
+        for (Integer n : list) {
             System.out.print(n + " ");
         }
     }
 
-    public boolean wordBreak(String s, List<String> wordDict) {
-        int n = s.length();
 
-        boolean[] dp = new boolean[n + 1];
-        dp[0] = true;
+    static class test {
+        class Node {
+            Node left, right;
+            int val;
 
-        for (int i = 1; i < s.length(); i++) {
-            for (String word: wordDict) {
-                int j = i - word.length();
-                if (j >= 0 && dp[j] && s.substring(j, i).equals(word)) {
-                    dp[i] = true;
-                    break;
-                }
+            /**
+             * 左子树的节点个数
+             */
+            int sum;
+
+            /**
+             * 节点重复数
+             */
+            int dup = 1;
+
+            public Node(int v, int s) {
+                val = v;
+                sum = s;
             }
         }
 
-        return dp[n];
+        public List<Integer> countSmaller(int[] nums) {
+            Node root = null;
+            Integer[] res = new Integer[nums.length];
+            for (int i = nums.length - 1; i >= 0; i--) {
+                root = insert(root, nums[i], 0, res, i);
+            }
+            return Arrays.asList(res);
+        }
+
+        private Node insert(Node root, int n, int pre, Integer[] res, int i) {
+            if (root == null) {
+                root = new Node(n, 0);
+                res[i] = pre;
+            } else if (root.val == n) {
+                root.dup++;
+                res[i] = pre + root.sum;
+            } else if (n < root.val) {
+                root.sum++;
+                root.left = insert(root.left, n, pre, res, i);
+            } else {
+                root.right = insert(root.right, n, pre + root.sum + root.dup, res, i);
+            }
+            return root;
+        }
     }
+
+
 }
