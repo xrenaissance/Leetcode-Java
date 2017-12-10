@@ -1,5 +1,6 @@
 package com.inuker.test;
 
+import com.inuker.solution.MinimumSizeSubarraySum;
 import com.inuker.solution.NextPermutation;
 import com.inuker.solution.SearchForARange;
 import com.leetcode.library.ListNode;
@@ -30,31 +31,9 @@ public class main {
 
     public static void main(String[] args) {
         int[] arr = new int[]{
-                2, 2, 0, 4, 3, 1
+                1, 2, 3, 4, 5
         };
-        new NextPermutation().nextPermutation(arr);
-        for (int n : arr) {
-            System.out.print(n + " ");
-        }
-    }
-
-    public boolean searchMatrix(int[][] matrix, int target) {
-        if (matrix.length == 0) {
-            return false;
-        }
-        int row = matrix.length, col = matrix[0].length;
-        int left = 0, right = row * col - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            int x = mid / col, y = mid % col;
-            if (target == matrix[x][y]) {
-                return true;
-            } else if (target > matrix[x][y]) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return false;
+        int len = new MinimumSizeSubarraySum().minSubArrayLen2(15, arr);
+        System.out.println(len);
     }
 }
