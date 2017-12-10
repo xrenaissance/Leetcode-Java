@@ -31,60 +31,26 @@ import java.util.TreeSet;
 public class main {
 
     public static void main(String[] args) {
-        List<Integer> list = new test().countSmaller(new int[] {
-                5, 2, 6, 1
-        });
-        for (Integer n : list) {
-            System.out.print(n + " ");
-        }
+        String s = findLongestWord("abpcplea", Arrays.asList("ale","apple","monkey","plea"));
+        System.out.println(s);
     }
 
 
-    static class test {
-        class Node {
-            Node left, right;
-            int val;
+    public static String findLongestWord(String s, List<String> d) {
+        String longest = "";
+        for (String dictWord : d) {
+            int i = 0;
+            for (char c : s.toCharArray()) {
+                if (i < dictWord.length() && c == dictWord.charAt(i)) i++;
+            }
 
-            /**
-             * 左子树的节点个数
-             */
-            int sum;
-
-            /**
-             * 节点重复数
-             */
-            int dup = 1;
-
-            public Node(int v, int s) {
-                val = v;
-                sum = s;
+            if (i == dictWord.length() && dictWord.length() >= longest.length()) {
+                if (dictWord.length() > longest.length() || dictWord.compareTo(longest) < 0) {
+                    longest = dictWord;
+                }
             }
         }
-
-        public List<Integer> countSmaller(int[] nums) {
-            Node root = null;
-            Integer[] res = new Integer[nums.length];
-            for (int i = nums.length - 1; i >= 0; i--) {
-                root = insert(root, nums[i], 0, res, i);
-            }
-            return Arrays.asList(res);
-        }
-
-        private Node insert(Node root, int n, int pre, Integer[] res, int i) {
-            if (root == null) {
-                root = new Node(n, 0);
-                res[i] = pre;
-            } else if (root.val == n) {
-                root.dup++;
-                res[i] = pre + root.sum;
-            } else if (n < root.val) {
-                root.sum++;
-                root.left = insert(root.left, n, pre, res, i);
-            } else {
-                root.right = insert(root.right, n, pre + root.sum + root.dup, res, i);
-            }
-            return root;
-        }
+        return longest;
     }
 
 
