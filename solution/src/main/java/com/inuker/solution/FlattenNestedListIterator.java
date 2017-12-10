@@ -1,5 +1,7 @@
 package com.inuker.solution;
 
+import com.leetcode.library.NestedInteger;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
@@ -8,11 +10,11 @@ import java.util.Stack;
  * Created by dingjikerbo on 2016/11/22.
  */
 
-public abstract class NestedIterator implements Iterator<Integer> {
+public abstract class FlattenNestedListIterator implements Iterator<Integer> {
 
     private Stack<NestedInteger> stack;
 
-    public NestedIterator(List<NestedInteger> nestedList) {
+    public FlattenNestedListIterator(List<NestedInteger> nestedList) {
         stack = new Stack<NestedInteger>();
         push(nestedList);
     }

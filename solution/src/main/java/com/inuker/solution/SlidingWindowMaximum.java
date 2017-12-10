@@ -51,7 +51,7 @@ public class SlidingWindowMaximum {
                 queue.pollLast();
             }
             queue.offerLast(i);
-            if (queue.peekFirst() + k <= i) {
+            if (queue.peekFirst() <= i - k) {
                 queue.pollFirst();
             }
             if (i - k + 1 >= 0) {

@@ -1,6 +1,6 @@
 package com.leetcode.facebook;
 
-import com.inuker.solution.NestedInteger;
+import com.leetcode.library.NestedInteger;
 
 import java.util.Iterator;
 import java.util.List;
