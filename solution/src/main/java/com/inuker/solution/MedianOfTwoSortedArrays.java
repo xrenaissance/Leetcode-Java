@@ -5,6 +5,10 @@ package com.inuker.solution;
  * https://leetcode.com/articles/median-of-two-sorted-arrays/
  */
 
+/**
+ * 这题复杂度为O(log(min(m,n)))
+ * 因为当len1=0时就直接返回结果了，而每次迭代长度都缩短一半
+ */
 public class MedianOfTwoSortedArrays {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
