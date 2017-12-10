@@ -44,18 +44,14 @@ public class FlattenBinaryTreeToLinkedList {
         if (root == null) {
             return null;
         }
-        if (root.left == null && root.right == null) {
-            return root;
-        }
-
         TreeNode right = root.right;
         TreeNode leftTail = null, rightTail = null;
 
         if (root.left != null) {
             leftTail = helper(root.left);
             root.right = root.left;
-            leftTail.right = right;
             root.left = null;
+            leftTail.right = right;
         }
 
         rightTail = helper(right);
