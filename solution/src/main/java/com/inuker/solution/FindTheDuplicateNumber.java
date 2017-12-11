@@ -28,7 +28,7 @@ public class FindTheDuplicateNumber {
             }
 
             /**
-             * 如果count>mid，说明元素个数count比桶数mid还打，则可以肯定重复的数在[1,mid]中
+             * 如果count>mid，说明元素个数count比桶数mid还大，则可以肯定重复的数在[1,mid]中
              * 但是count<=mid就能确定重复的数肯定不在[1,mid]中么？不一定吧，接下来推理一下：
              * 我们看右边的一半，[mid+1,n]区间的数有n+1-count个，可见元素有n+1-count个，桶有n-mid个，而count<=mid等价于count-1<mid，
              * 因此元素个数大于桶数，右区间一定有重复的数，由于题目已经限定只有一个重复数，因此只能在右区间

@@ -14,7 +14,6 @@ import java.util.Stack;
 /**
  * 有三种解法：
  * 2，中序遍历两遍二叉树，不过每次都会中途退出，构成双栈，一个是大于target，一个是小于target，然后依次出栈满k为止，复杂度O(n + k)
- * 3，中序完整遍历一遍二叉树，依次将节点加入优先级队列，按与target的差排序，选前k个，复杂度O(nlgk)
  */
 public class ClosestBinarySearchTreeValueII {
 

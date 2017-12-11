@@ -29,7 +29,10 @@ public class LargestRectangleInHistogram {
         return max;
     }
 
-    /** 注意栈中的是index，不是高度 */
+    /** 注意栈中的是index，不是高度
+     *  栈保持递增，当出现小于栈顶的元素时，意味着可以计算栈顶可以延伸的矩形面积了
+     *  其左边界是次栈顶，右边界是当前元素
+     */
     public int largestRectangleArea2(int[] heights) {
         int max = 0;
         Stack<Integer> stack = new Stack<Integer>();
@@ -40,6 +43,10 @@ public class LargestRectangleInHistogram {
             } else {
                 int top = stack.pop();
                 int left = stack.isEmpty() ? 0 : stack.peek() + 1;
+                /**
+                 * top两边都是比top高的
+                 * [left,i-1]
+                 */
                 max = Math.max(max, heights[top] * (i - 1 - left + 1));
             }
         }
