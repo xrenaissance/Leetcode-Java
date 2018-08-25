@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by liwentian on 2017/9/1.
  * <p>
  * 这题核心思路是：
  * 1，先取出高度最高的那一组，如果有若干个高度相同的，则按k升序排列，这就是他们之后的相对顺序了。

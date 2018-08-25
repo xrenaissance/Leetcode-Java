@@ -1,10 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-/**
- * Created by dingjikerbo on 16/12/8.
- */
-
 public class LargestNumber {
 
     public String largestNumber(int[] nums) {

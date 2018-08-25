@@ -2,10 +2,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * Created by dingjikerbo on 16/11/20.
- */
-
-/**
  * https://leetcode.com/articles/meeting-rooms/
  */
 public class MeetingRooms {

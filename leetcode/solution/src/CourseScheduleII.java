@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 public class CourseScheduleII {
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {

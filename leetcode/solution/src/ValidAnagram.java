@@ -1,10 +1,6 @@
 import java.util.Arrays;
 
 /**
- * Created by dingjikerbo on 2016/11/17.
- */
-
-/**
  * https://leetcode.com/articles/valid-anagram/
  */
 public class ValidAnagram {

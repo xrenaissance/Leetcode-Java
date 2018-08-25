@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/1.
- */
-
 public class HouseRobberIII {
 
     public int rob(TreeNode root) {

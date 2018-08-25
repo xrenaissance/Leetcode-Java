@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/2.
- */
-
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
     public TreeNode buildTree(int[] inorder, int[] postorder) {

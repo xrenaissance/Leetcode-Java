@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 17/8/14.
- */
-
 public class ReverseWordsInAString {
 
 

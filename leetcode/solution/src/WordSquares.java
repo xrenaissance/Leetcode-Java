@@ -1,10 +1,6 @@
 import java.util.*;
 
 /**
- * Created by dingjikerbo on 17/1/2.
- */
-
-/**
  * https://discuss.leetcode.com/topic/63516/explained-my-java-solution-using-trie-126ms-16-16
  * 第一步建立所有前缀对应的字符串集合
  * 第二步依次填充

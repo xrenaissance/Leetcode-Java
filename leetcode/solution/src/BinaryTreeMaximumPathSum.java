@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/11/28.
- */
-
-/**
  * 单边的或者双边的，或只包含根节点的
  */
 public class BinaryTreeMaximumPathSum {

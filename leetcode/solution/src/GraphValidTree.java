@@ -1,5 +1,4 @@
 /**
- * Created by dingjikerbo on 17/1/2.
  * <p>
  * 判断无向图是否带环，可采用UF, DFS, BFS。
  * UF实现简单，性能很好

@@ -1,7 +1,6 @@
 import java.util.*;
 
 /**
- * Created by dingjikerbo on 16/12/17.
  * <p>
  * TestCases
  * "z", "z" => "z"

@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 2017/9/11.
- */
-
 public class RotateList {
 
     public ListNode rotateRight(ListNode head, int n) {

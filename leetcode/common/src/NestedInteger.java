@@ -1,9 +1,5 @@
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/11/22.
- */
-
 public interface NestedInteger {
 
     // @return true if this NestedInteger holds a single integer, rather than a nested list.

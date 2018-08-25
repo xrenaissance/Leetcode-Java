@@ -1,10 +1,6 @@
 import java.util.Stack;
 
 /**
- * Created by dingjikerbo on 16/11/30.
- */
-
-/**
  * 这题关键是follow up
  * 如果更新频繁，则通常的做法每次都是O(n)，更优的做法是O(lgn)
  * 即给node中记录左子树的节点个数，这样在找kth smallest时流程如下：

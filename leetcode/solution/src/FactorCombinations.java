@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by liwentian on 2017/9/6.
- */
-
 public class FactorCombinations {
 
     public List<List<Integer>> getFactors(int n) {

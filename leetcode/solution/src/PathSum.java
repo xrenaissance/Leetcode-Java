@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/29.
- */
-
 public class PathSum {
 
     public boolean hasPathSum(TreeNode root, int sum) {

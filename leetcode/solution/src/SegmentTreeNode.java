@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/26.
- */
-
 public class SegmentTreeNode {
 
     public SegmentTreeNode left, right;

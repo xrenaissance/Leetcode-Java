@@ -3,10 +3,6 @@ import java.util.HashSet;
 import java.util.Map;
 
 /**
- * Created by liwentian on 2017/9/3.
- */
-
-/**
  * 1, 首先给除的结果都存起来，建立有向图
  * 2，用DFS遍历路径
  */

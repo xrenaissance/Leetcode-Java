@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/12/3.
- */
-
 public class FindLeavesOfBinaryTree {
 
     public List<List<Integer>> findLeaves(TreeNode root) {

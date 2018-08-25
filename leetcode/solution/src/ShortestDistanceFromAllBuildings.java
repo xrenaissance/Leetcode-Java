@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Created by dingjikerbo on 2016/12/11.
- */
-
 public class ShortestDistanceFromAllBuildings {
 
     /**

@@ -1,8 +1,4 @@
 /**
- * Created by liwentian on 2017/9/6.
- */
-
-/**
  * https://leetcode.com/articles/beautiful-arrangement/
  */
 public class BeautifulArrangement {

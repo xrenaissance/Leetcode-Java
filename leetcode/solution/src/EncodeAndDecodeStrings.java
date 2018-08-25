@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/12/11.
- */
-
 public class EncodeAndDecodeStrings {
 
     /**

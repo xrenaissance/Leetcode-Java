@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/11/20.
- */
-
-/**
  * Definition for an interval.
  */
 public class Interval {

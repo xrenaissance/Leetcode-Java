@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Created by liwentian on 2017/9/10.
- */
-
 public class MaxConsecutiveOnesII {
 
     /**

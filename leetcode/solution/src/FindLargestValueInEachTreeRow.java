@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Created by liwentian on 17/7/25.
- */
-
 public class FindLargestValueInEachTreeRow {
 
     public List<Integer> largestValues(TreeNode root) {

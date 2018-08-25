@@ -1,9 +1,5 @@
 import java.util.*;
 
-/**
- * Created by dingjikerbo on 16/12/10.
- */
-
 public class TopKFrequentElements {
 
     /**

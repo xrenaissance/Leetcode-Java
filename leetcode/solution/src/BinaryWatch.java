@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by liwentian on 2016/12/29.
- */
-
 public class BinaryWatch {
 
     public List<String> readBinaryWatch(int num) {

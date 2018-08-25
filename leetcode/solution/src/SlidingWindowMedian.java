@@ -3,7 +3,6 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Created by liwentian on 2017/9/12.
  * https://leetcode.com/articles/sliding-window-median/
  * 和 #295 Find Median from Data Stream 比较类似
  */

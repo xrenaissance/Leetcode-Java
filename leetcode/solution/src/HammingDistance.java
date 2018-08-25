@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 17/1/7.
- */
-
 public class HammingDistance {
 
     public int hammingDistance(int x, int y) {

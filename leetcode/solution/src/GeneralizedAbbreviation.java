@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by liwentian on 2016/12/29.
- */
-
-/**
  * https://leetcode.com/articles/generalized-abbreviation/
  * 思路就是back tracking，对于每个字母，到底是选择留下还是缩写
  */

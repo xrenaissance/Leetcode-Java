@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/23.
- */
-
 public class PopulatingNextRightPointersInEachNode {
 
     /** 递归法，巧妙地运用dummy使代码很简洁

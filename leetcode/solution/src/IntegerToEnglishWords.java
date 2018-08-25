@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/19.
- */
-
-/**
  * TestCase
  * 0
  * 1001

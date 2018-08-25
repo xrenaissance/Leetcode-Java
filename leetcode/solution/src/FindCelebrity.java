@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/11/20.
- */
-
-/**
  * 先用排除法扫一轮，剩下的是唯一的候选人，然后再严格判断
  */
 public abstract class FindCelebrity {

@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/20.
- */
-
 public abstract class ReadNCharactersGivenRead4 {
 
     public int read(char[] buf, int n) {

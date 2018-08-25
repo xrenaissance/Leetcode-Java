@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/22.
- */
-
 public class CountAndSay {
 
     public String countAndSay(int n) {

@@ -1,10 +1,6 @@
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-/**
- * Created by dingjikerbo on 2016/11/17.
- */
-
 public class KthLargestElementInArray {
 
     // 耗时15ms，时间复杂度O(nlgk)，空间复杂度O(k)

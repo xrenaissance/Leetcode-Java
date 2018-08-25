@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/24.
- */
-
 public class RemoveDuplicatesFromSortedListII {
 
     public ListNode deleteDuplicates(ListNode head) {

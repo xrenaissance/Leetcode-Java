@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/15.
- */
-
 public class MaximumSubarray {
 
     // dp[i]表示包含第i个元素时的最大和

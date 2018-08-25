@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/20.
- */
-
 public class WildcardMatching {
 
     // 这道题关键是遇到"*"的处理以及后面匹配失败时的回溯

@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/11/20.
- */
-
 public class BinaryTreePaths {
 
     // 耗时2ms

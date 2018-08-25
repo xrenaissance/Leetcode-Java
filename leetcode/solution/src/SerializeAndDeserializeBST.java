@@ -1,8 +1,4 @@
 /**
- * Created by liwentian on 17/8/3.
- */
-
-/**
  * 本题和#297一样
  */
 public class SerializeAndDeserializeBST {

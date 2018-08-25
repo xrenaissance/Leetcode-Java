@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 16/11/20.
- */
-
-/**
  * TestCase
  * [-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0]
  * 这题重要的是查重

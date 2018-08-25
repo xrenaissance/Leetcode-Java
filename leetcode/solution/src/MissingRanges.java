@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/12/11.
- */
-
-/**
  * TestCases
  * [], lower=1, upper=1
  * [2147483647], lower=0,upper=2147483647

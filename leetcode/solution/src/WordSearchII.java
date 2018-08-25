@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by dingjikerbo on 16/11/22.
- */
-
 public class WordSearchII {
 
     private class Trie {

@@ -1,9 +1,5 @@
 import java.util.*;
 
-/**
- * Created by liwentian on 2017/12/9.
- */
-
 public class GroupShiftedStrings {
     /**
      * 这里核心是getTag，不论怎么shift，都回滚到a开头

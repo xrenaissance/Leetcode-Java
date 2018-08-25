@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/7.
- */
-
 class Point {
     int x;
     int y;

@@ -1,10 +1,6 @@
 import java.util.Stack;
 
 /**
- * Created by dingjikerbo on 16/12/10.
- */
-
-/**
  * https://leetcode.com/articles/implement-queue-using-stacks/
  */
 public class MyQueue {

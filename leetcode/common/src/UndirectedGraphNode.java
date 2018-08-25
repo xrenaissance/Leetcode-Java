@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/12/19.
- */
-
 public class UndirectedGraphNode {
 
     public int label;

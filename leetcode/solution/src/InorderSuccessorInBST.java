@@ -3,10 +3,6 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Created by dingjikerbo on 16/11/20.
- */
-
-/**
  * 有两种方法，用栈做普通的中序遍历，这种没有充分利用BST的特点
  * 第二种方法比较巧妙，首先遍历到p，然后继续遍历找到p的右子树的最小值
  */

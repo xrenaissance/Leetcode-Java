@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by dingjikerbo on 16/11/30.
- */
-
 public class RecoverBinarySearchTree {
 
     TreeNode first, second, prev;

@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/24.
- */
-
 public class ReverseNodesInKGroup {
 
     public ListNode reverseKGroup(ListNode head, int k) {

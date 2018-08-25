@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/23.
- */
-
 public abstract class MaximalRectangle {
 
     // 耗时10ms，时间复杂度是O(mn)，空间复杂度O(n)

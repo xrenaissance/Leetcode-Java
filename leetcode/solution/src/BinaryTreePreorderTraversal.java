@@ -3,10 +3,6 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/12/1.
- */
-
 public class BinaryTreePreorderTraversal {
 
     public List<Integer> preorderTraversal(TreeNode root) {

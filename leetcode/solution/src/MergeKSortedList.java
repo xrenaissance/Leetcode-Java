@@ -2,7 +2,6 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * Created by dingjikerbo on 16/11/20.
  * https://leetcode.com/articles/merge-k-sorted-list/
  */
 

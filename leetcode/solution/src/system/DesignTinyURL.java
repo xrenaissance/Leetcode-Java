@@ -1,9 +1,5 @@
 package system;
 
-/**
- * Created by liwentian on 2017/10/17.
- */
-
 public class DesignTinyURL {
 
     /**

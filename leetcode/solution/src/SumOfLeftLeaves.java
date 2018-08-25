@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by dingjikerbo on 2016/12/2.
- */
-
 public class SumOfLeftLeaves {
 
     public int sumOfLeftLeaves(TreeNode root) {

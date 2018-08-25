@@ -3,10 +3,6 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 16/12/10.
- */
-
-/**
  * 可以轻易拓展到k的情况
  */
 public class ZigzagIterator {

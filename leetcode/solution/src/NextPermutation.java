@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/12/17.
- */
-
-/**
  * https://leetcode.com/articles/next-permutation/
  */
 public class NextPermutation {

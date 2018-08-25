@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/12/11.
- */
-
-/**
  * https://discuss.leetcode.com/category/546/sentence-screen-fitting
  */
 public class SentenceScreenFitting {

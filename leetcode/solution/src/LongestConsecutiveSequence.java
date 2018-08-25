@@ -1,7 +1,6 @@
 import java.util.HashMap;
 
 /**
- * Created by dingjikerbo on 16/11/22.
  * https://leetcode.com/articles/longest-consecutive-sequence/
  */
 public class LongestConsecutiveSequence {

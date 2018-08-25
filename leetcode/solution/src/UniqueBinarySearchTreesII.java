@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 16/12/1.
- */
-
-/**
  * Dp的解法可以参考https://discuss.leetcode.com/topic/2940/java-solution-with-dp
  */
 public class UniqueBinarySearchTreesII {

@@ -3,10 +3,6 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/12/1.
- */
-
 public class BinaryTreePostorderTraversal {
 
     /**

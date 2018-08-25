@@ -4,10 +4,6 @@ import java.util.Queue;
 import java.util.Set;
 
 /**
- * Created by dingjikerbo on 2016/11/17.
- */
-
-/**
  * TestCases
  "a", "c", ["a", "b", "c"]
  "hit", "cog", ["hot","cog","dot","dog","hit","lot","log"]

@@ -4,10 +4,6 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * Created by dingjikerbo on 2016/11/19.
- */
-
-/**
  * TestCase
  * ""
  * "x("

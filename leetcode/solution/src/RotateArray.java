@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 2017/9/10.
- */
-
 public class RotateArray {
 
     public void rotate(int[] nums, int k) {

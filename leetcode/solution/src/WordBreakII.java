@@ -1,10 +1,6 @@
 import java.util.*;
 
 /**
- * Created by dingjikerbo on 2016/11/17.
- */
-
-/**
  * 这题是个典型的DFS，不过为了加速用了缓存避免重复计算
  * https://leetcode.com/articles/word-break-ii/
  */

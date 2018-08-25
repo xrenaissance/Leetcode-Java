@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by liwentian on 2017/9/10.
- */
-
 public class ShortestWordDistanceII {
 
     private Map<String, List<Integer>> map;

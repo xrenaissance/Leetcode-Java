@@ -1,8 +1,4 @@
 /**
- * Created by liwentian on 17/8/12.
- */
-
-/**
  * 这题注意边界情况
  */
 public class ThirdMaximumNumber {

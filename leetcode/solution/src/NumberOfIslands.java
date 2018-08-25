@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/16.
- */
-
 import java.util.LinkedList;
 import java.util.Queue;
 

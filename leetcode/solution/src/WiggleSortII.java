@@ -1,10 +1,6 @@
 import java.util.Arrays;
 
 /**
- * Created by dingjikerbo on 16/12/10.
- */
-
-/**
  * TestCase
  * [1,2,2,1,2,1,1,1,1,2,2,2]
  */

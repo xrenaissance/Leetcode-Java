@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by liwentian on 2017/9/10.
- */
-
-/**
  * https://leetcode.com/articles/summary-ranges/
  * 和 163. Missing Ranges 比较类似
  */

@@ -1,10 +1,6 @@
 import java.util.Deque;
 import java.util.LinkedList;
 
-/**
- * Created by dingjikerbo on 16/11/22.
- */
-
 public class SimplifyPath {
 
     public String simplifyPath(String path) {

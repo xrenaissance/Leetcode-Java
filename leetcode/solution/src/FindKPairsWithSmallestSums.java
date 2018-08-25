@@ -2,10 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
-/**
- * Created by liwentian on 2017/9/22.
- */
-
 public class FindKPairsWithSmallestSums {
 
     public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {

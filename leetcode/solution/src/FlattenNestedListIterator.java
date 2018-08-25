@@ -2,10 +2,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * Created by dingjikerbo on 2016/11/22.
- */
-
 public abstract class FlattenNestedListIterator implements Iterator<Integer> {
 
     private Stack<NestedInteger> stack;

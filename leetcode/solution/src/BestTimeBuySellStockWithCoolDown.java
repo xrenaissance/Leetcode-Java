@@ -1,9 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/17.
- */
-
-/**
- */
 public class BestTimeBuySellStockWithCoolDown {
 
     public int maxProfit(int[] prices) {

@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/2.
- */
-
 public class ClosestBinarySearchTreeValue {
 
     public int closestValue(TreeNode root, double target) {

@@ -3,10 +3,6 @@ import java.util.Map;
 import java.util.TreeSet;
 
 /**
- * Created by dingjikerbo on 16/12/8.
- */
-
-/**
  * https://leetcode.com/articles/contains-duplicate-iii/
  */
 public class ContainsDuplicateIII {

@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/12/7.
- */
-
 public class FizzBuzz {
 
     public List<String> fizzBuzz(int n) {

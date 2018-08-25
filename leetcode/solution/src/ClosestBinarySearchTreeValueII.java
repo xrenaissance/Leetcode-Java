@@ -3,10 +3,6 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Created by dingjikerbo on 2016/12/2.
- */
-
-/**
  * 有三种解法：
  * 2，中序遍历两遍二叉树，不过每次都会中途退出，构成双栈，一个是大于target，一个是小于target，然后依次出栈满k为止，复杂度O(n + k)
  */

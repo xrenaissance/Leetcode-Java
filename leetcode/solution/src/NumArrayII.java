@@ -1,7 +1,4 @@
 /**
- * Created by dingjikerbo on 16/11/26.
- */
-/**
  * 这题可以用segment tree或binary index tree(bit)，两者时间复杂度都是lgn，不过segment tree因为用到树，
  * 而bit用的是数组，所以bit更省空间。
  *

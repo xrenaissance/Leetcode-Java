@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by liwentian on 2017/9/12.
- */
-
 public class EvaluateReversePolishNotation {
 
     public int evalRPN(String[] tokens) {

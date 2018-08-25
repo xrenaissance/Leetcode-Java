@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Created by liwentian on 17/8/3.
- */
-
 public class FindBottomLeftTreeValue {
 
     public int findBottomLeftValue(TreeNode root) {

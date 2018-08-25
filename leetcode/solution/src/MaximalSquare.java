@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/23.
- */
-
-/**
  * https://leetcode.com/articles/maximal-square/
  */
 public class MaximalSquare {

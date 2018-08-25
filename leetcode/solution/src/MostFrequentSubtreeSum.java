@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by liwentian on 17/8/3.
- */
-
-/**
  * 这题算法比较直观
  */
 public class MostFrequentSubtreeSum {

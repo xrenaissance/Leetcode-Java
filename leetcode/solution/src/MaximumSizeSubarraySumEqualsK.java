@@ -1,9 +1,5 @@
 import java.util.HashMap;
 
-/**
- * Created by dingjikerbo on 2016/11/19.
- */
-
 public class MaximumSizeSubarraySumEqualsK {
 
     // 耗时29ms，时间复杂度O(n)

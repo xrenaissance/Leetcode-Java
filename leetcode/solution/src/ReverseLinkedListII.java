@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 2017/9/11.
- */
-
 public class ReverseLinkedListII {
 
     public ListNode reverseBetween(ListNode head, int m, int n) {

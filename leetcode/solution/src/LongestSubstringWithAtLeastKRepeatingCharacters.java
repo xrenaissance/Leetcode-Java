@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/11/27.
- */
-
-/**
  * 要注意，这道题不能用window法来做，window法是先尽可能扩张window到不符合条件，然后
  * 缩小window直到将不符合因素排除，所以通常适用于AtMost类型的问题，因为首先要超出most，
  * 然后不断削减直到满足most。

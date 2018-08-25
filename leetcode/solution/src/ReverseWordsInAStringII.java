@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 17/8/12.
- */
-
 public class ReverseWordsInAStringII {
 
     public void reverseWords(char[] s) {

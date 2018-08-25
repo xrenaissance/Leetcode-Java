@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/12/21.
- */
-
-/**
  * 这题用的闭区间DP，dp[start][end]表示区间start,end内所有气球爆掉的最大coin
  * 假设最后爆第i个气球，start <= i <= end，则对应的coin为
  * coin = nums[start - 1] * nums[i] * nums[end + 1] + dp[start, i - 1] + dp[i + 1][end]

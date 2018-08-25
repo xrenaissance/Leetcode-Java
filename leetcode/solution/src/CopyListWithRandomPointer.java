@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/16.
- */
-
-/**
  * 易错的地方在于random要判空
  */
 public class CopyListWithRandomPointer {

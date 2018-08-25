@@ -2,10 +2,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/11/22.
- */
-
 public class SubsetsII {
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {

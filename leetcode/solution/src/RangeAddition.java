@@ -1,8 +1,4 @@
 /**
- * Created by liwentian on 2017/9/10.
- */
-
-/**
  * https://leetcode.com/articles/range-addition/
  */
 public class RangeAddition {

@@ -3,10 +3,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by dingjikerbo on 16/12/4.
- */
-
-/**
  * 参考https://leetcode.com/articles/unique-word-abbreviation/
  */
 public class ValidWordAbbr {

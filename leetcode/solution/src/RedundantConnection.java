@@ -1,8 +1,4 @@
 /**
- * Created by liwentian on 2017/12/7.
- */
-
-/**
  * https://leetcode.com/articles/redundant-connection/
  */
 public class RedundantConnection {

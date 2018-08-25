@@ -1,10 +1,6 @@
 import java.util.*;
 
 /**
- * Created by dingjikerbo on 2016/12/17.
- */
-
-/**
  * 这题的区别在于允许数字重复，那么保存index需要用set，删除的时候从set中随便删一个就行了
  */
 public class InsertDeleteGetRandomII {

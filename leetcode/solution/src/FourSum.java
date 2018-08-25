@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 17/5/5.
- */
-
-/**
  * 本题要注意的一个是溢出，一个是查重
  */
 public class FourSum {

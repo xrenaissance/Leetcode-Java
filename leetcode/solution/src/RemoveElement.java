@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/20.
- */
-
 public class RemoveElement {
 
     public int removeElement(int[] nums, int val) {

@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/11/26.
- */
-
-/**
  * https://leetcode.com/articles/range-sum-query-immutable/
  */
 public class NumArray {

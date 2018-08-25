@@ -1,9 +1,5 @@
 import java.util.*;
 
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 public class CourseSchedule {
 
     /**

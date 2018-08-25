@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/11/22.
- */
-
-/**
  * 思路是对每个index，有两种情况，要还是不要
  * 要注意的是添加结果到result时，要复制一个列表，别直接加list
  */

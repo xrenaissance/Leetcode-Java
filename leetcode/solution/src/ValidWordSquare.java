@@ -1,10 +1,6 @@
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 17/1/2.
- */
-
-/**
  * 这题还挺容易错
  */
 public class ValidWordSquare {

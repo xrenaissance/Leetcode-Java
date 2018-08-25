@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/10.
- */
-
 public class HouseRobberII {
 
     public int rob(int[] nums) {

@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by liwentian on 17/8/12.
- */
-
 public class PascalTriangleII {
 
     public List<Integer> getRow(int rowIndex) {

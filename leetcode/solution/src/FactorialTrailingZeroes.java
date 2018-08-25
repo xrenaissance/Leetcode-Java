@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/7.
- */
-
 public class FactorialTrailingZeroes {
 
     public int trailingZeroes(int n) {

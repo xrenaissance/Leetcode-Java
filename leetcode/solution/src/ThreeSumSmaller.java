@@ -1,10 +1,6 @@
 import java.util.Arrays;
 
 /**
- * Created by dingjikerbo on 16/12/13.
- */
-
-/**
  * https://leetcode.com/articles/3sum-smaller/
  */
 public class ThreeSumSmaller {

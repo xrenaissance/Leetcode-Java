@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 public class Combinations {
 
     public List<List<Integer>> combine(int n, int k) {

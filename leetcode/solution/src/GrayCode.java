@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/12/29.
- */
-
-/**
  * 关键公式整数n的格雷码为n ^ (n / 2)
  */
 public class GrayCode {

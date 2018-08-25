@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by liwentian on 17/8/3.
- */
-
-/**
  * 这题是要找BST中出现次数最多的节点集合，这里允许有重复节点
  * 思路很简单，中序遍历，会按升序排列，再统计重复的值
  * 但是这样会消耗额外空间，对于类似于1，2，3，4...n-1, n-1，这种，所有的元素都只出现1次，

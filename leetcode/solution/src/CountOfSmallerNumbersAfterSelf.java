@@ -2,10 +2,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/12/21.
- */
-
-/**
  * 这题理解了好久才搞明白
  * 建立一棵二叉树，从数组末尾开始遍历，这里每个树的节点要记录sum和dup
  * dup表示到当前为止，该节点重复的次数

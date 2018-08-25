@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/29.
- */
-
 public class SymmetricTree {
 
     public boolean isSymmetric(TreeNode root) {

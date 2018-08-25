@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/23.
- */
-
 public class StrStr {
 
     // 这里非常重要的是i<=len1-len2，如果没有这个会超时

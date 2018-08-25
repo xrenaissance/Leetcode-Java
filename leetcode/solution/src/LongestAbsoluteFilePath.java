@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by dingjikerbo on 16/11/26.
- */
-
 public class LongestAbsoluteFilePath {
 
     // 耗时4ms

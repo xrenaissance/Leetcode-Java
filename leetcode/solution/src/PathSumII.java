@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/11/29.
- */
-
 public class PathSumII {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {

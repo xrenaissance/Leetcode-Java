@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/16.
- */
-
-/**
  * 要注意栈判空
  */
 public class ValidParentheses {

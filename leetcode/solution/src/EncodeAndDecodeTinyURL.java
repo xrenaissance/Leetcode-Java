@@ -2,10 +2,6 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * Created by dingjikerbo on 2017/8/20.
- */
-
-/**
  * https://leetcode.com/articles/encode-and-decode-tinyurl/
  */
 

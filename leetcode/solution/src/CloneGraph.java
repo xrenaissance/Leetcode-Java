@@ -2,10 +2,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-/**
- * Created by dingjikerbo on 2016/12/21.
- */
-
 public class CloneGraph {
 
     /**

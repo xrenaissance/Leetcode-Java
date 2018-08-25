@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Created by dingjikerbo on 16/11/28.
- */
-
-/**
  * 给非递归法也要会写
  * 核心思路就是访问所有的节点，将其左右节点交换，可以采用递归，也可以BFS
  */

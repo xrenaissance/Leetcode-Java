@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/21.
- */
-
 public class MinimumWindowSubstring {
 
     // 耗时8ms，时间复杂度O(n)

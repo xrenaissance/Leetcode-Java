@@ -2,10 +2,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by liwentian on 17/8/3.
- */
-
 public class FindDuplicateSubtrees {
 
     /**

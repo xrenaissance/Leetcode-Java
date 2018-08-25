@@ -1,10 +1,6 @@
 import java.util.HashSet;
 
 /**
- * Created by dingjikerbo on 2017/9/29.
- */
-
-/**
  * 单词接龙，前一个单词的尾巴和后一个单词的头相同就算接上了
  * 如果要返回接龙的结果，可以给HashSet改成List
  * 如果要返回所有可能的结果呢？

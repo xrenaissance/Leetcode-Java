@@ -1,10 +1,6 @@
 import java.util.*;
 
 /**
- * Created by dingjikerbo on 2016/11/16.
- */
-
-/**
  * TestCases
  [1,-1] 1
  [7,2,4] 2

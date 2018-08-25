@@ -2,10 +2,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 17/5/6.
- */
-
 public class SubstringWithConcatenationOfAllWords {
 
     // 118ms，最直接的做法

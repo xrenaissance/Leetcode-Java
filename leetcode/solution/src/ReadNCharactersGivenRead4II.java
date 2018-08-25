@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/20.
- */
-
 public abstract class ReadNCharactersGivenRead4II {
 
     private char[] mTmp = new char[4];

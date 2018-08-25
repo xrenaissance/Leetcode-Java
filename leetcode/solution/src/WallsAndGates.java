@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Created by dingjikerbo on 16/11/25.
- */
-
-/**
  * https://leetcode.com/articles/walls-and-gates/
  */
 

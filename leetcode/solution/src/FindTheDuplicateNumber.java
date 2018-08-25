@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/12/17.
- */
-
-/**
  * 题目的意思是有n+1个数，这些数的范围限定在[1,n]，其中只有一个重复数，重复的次数不限
  */
 public class FindTheDuplicateNumber {

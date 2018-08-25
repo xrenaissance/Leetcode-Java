@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/11.
- */
-
 public class BombEnemy {
 
     public int maxKilledEnemies(char[][] grid) {

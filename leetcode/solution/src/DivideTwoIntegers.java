@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 17/1/12.
- */
-
 public class DivideTwoIntegers {
 
     /**

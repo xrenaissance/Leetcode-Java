@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/16.
- */
-
-/**
  * 核心思路就是对于每根柱子，找到其左边最高的柱子和右边最高的柱子，构成一个桶，形成一个水平面，然后对该柱子形成的高度差就是能装的水
  */
 public class TrappingRainWater {

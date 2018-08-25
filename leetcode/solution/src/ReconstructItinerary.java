@@ -1,9 +1,6 @@
 import java.util.*;
 
 /**
- * Created by liwentian on 2017/9/2.
- */
-/**
  * 这题有两个前提
  * 1， 必须从JFK开始
  * 2， 解一定存在

@@ -1,9 +1,5 @@
 import java.util.Arrays;
 
-/**
- * Created by dingjikerbo on 16/12/8.
- */
-
 public class MaximumGap {
 
     /**

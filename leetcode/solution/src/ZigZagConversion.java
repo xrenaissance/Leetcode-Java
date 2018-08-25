@@ -1,10 +1,6 @@
 import java.util.Arrays;
 
 /**
- * Created by dingjikerbo on 17/4/29.
- */
-
-/**
  * 这道题一定要注意numRows为1的情况
  */
 public class ZigZagConversion {

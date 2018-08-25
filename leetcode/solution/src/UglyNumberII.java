@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/10.
- */
-
 public class UglyNumberII {
 
     public int nthUglyNumber(int n) {

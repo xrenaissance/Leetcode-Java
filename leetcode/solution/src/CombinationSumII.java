@@ -2,10 +2,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/11/22.
- */
-
 public class CombinationSumII {
 
     // 耗时29ms

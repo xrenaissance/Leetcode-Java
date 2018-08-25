@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 17/8/9.
- */
-
 public class RandomListNode {
     public int label;
     public RandomListNode next, random;

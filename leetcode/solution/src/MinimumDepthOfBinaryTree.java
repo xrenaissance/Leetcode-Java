@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/28.
- */
-
 public class MinimumDepthOfBinaryTree {
 
     /**

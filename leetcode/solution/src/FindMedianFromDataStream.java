@@ -1,10 +1,6 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/**
- * Created by dingjikerbo on 17/1/2.
- */
-
 public class FindMedianFromDataStream {
 
     /**

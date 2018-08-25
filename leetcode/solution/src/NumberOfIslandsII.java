@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/12/11.
- */
-
-/**
  * 经典的UF(Union Find)问题，可翻阅《算法》1.5章
  * UF时间复杂度和节点个数有关
  */

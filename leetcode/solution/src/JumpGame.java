@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 17/5/11.
- */
-
 public class JumpGame {
 
     public boolean canJump(int[] nums) {

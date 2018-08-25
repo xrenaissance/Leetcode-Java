@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/12/17.
- */
-
-/**
  * https://segmentfault.com/a/1190000003059361
  */
 public class ShortestPalindrome {

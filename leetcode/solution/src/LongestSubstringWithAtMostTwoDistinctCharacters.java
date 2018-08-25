@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/27.
- */
-
 public class LongestSubstringWithAtMostTwoDistinctCharacters {
 
     // 7ms

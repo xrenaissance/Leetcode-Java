@@ -1,6 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/10.
- */
 
 public class ReverseInteger {
 

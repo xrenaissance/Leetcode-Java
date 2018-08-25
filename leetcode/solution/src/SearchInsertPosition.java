@@ -1,9 +1,5 @@
 import java.util.Arrays;
 
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 public class SearchInsertPosition {
 
     public int searchInsert(int[] nums, int target) {

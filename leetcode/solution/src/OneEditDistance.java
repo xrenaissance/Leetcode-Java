@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/20.
- */
-
 public class OneEditDistance {
     /**
      * 最容易错的是结尾的条件sL != tL

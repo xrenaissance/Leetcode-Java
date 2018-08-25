@@ -2,10 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 public class PalindromePairs {
 
     public List<List<Integer>> palindromePairs(String[] words) {

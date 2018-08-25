@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 2017/9/6.
- */
-
 public class ValidWordAbbreviation {
 
     public boolean validWordAbbreviation(String word, String abbr) {

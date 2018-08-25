@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by liwentian on 2017/9/10.
- */
-
 public class PlusOneLinkedList {
 
     public ListNode plusOne(ListNode head) {

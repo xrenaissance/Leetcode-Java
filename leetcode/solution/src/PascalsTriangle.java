@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by liwentian on 2017/9/10.
- */
-
 public class PascalsTriangle {
 
     public List<List<Integer>> generate(int numRows) {

@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/18.
- */
-
 public class PaintHouseII {
 
     /**

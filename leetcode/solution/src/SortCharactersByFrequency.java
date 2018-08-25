@@ -1,9 +1,5 @@
 import java.util.*;
 
-/**
- * Created by liwentian on 2017/9/22.
- */
-
 public class SortCharactersByFrequency {
 
     public String frequencySort(String s) {

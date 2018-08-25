@@ -1,9 +1,5 @@
 import java.util.Random;
 
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 public class LinkedListRandomNode {
 
     private Random mRandom;

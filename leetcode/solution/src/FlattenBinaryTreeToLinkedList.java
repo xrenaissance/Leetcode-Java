@@ -2,10 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * Created by dingjikerbo on 16/11/30.
- */
-
 public class FlattenBinaryTreeToLinkedList {
 
     /**

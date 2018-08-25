@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 17/5/6.
- */
-
 public class SwapNodesInPairs {
 
     public ListNode swapPairs(ListNode head) {

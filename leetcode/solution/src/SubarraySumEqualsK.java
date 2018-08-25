@@ -1,7 +1,6 @@
 import java.util.HashMap;
 
 /**
- * Created by liwentian on 2017/12/5.
  * https://leetcode.com/articles/subarray-sum-equals-k/
  */
 

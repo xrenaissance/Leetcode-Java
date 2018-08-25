@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by liwentian on 2017/9/12.
- */
-
 public class BasicCalculator {
 
     public int calculate(String s) {

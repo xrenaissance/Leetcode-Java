@@ -1,10 +1,6 @@
 import java.util.Arrays;
 import java.util.Random;
 
-/**
- * Created by dingjikerbo on 16/12/8.
- */
-
 public class ShuffleAnArray {
 
     private int[] mNums;

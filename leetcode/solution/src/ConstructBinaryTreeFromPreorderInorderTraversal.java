@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/30.
- */
-
 public class ConstructBinaryTreeFromPreorderInorderTraversal {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {

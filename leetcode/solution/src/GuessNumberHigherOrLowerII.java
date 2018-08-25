@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/12/10.
- */
-
-/**
  * 可参考官方文档
  * https://leetcode.com/articles/guess-number-higher-or-lower-ii/
  * 这题不能用二分法做了，是从最差情况中挑最好的值

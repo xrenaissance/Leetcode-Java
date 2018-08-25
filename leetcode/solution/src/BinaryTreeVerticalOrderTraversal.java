@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Created by dingjikerbo on 2016/11/19.
- */
-
 public class BinaryTreeVerticalOrderTraversal {
 
     private int minKey = 0, maxKey = 0;

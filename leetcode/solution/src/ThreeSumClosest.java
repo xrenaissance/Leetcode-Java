@@ -1,9 +1,5 @@
 import java.util.Arrays;
 
-/**
- * Created by dingjikerbo on 17/5/5.
- */
-
 public class ThreeSumClosest {
 
     public int threeSumClosest(int[] nums, int target) {

@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by liwentian on 2017/9/11.
- */
-
 public class AddTwoNumbersII {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

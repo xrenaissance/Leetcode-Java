@@ -1,10 +1,6 @@
 import java.util.Random;
 
 /**
- * Created by dingjikerbo on 16/11/22.
- */
-
-/**
  * 注意这里一定要给整个数组遍历完，这样才能保证所有数字的概率是一样的，否则只能保证
  * 当前遍历过的数都是等概率的。
  */

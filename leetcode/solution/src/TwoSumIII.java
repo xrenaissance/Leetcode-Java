@@ -1,10 +1,6 @@
 import java.util.HashMap;
 
 /**
- * Created by dingjikerbo on 2016/12/15.
- */
-
-/**
  * 支持相同数存在
  */
 public class TwoSumIII {

@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/11/22.
- */
-
 public class InsertInterval {
 
     public List<Interval> insert(List<Interval> intervals, Interval newInterval) {

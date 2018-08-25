@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/20.
- */
-
 public class RemoveLinkedListElements {
 
     public ListNode removeElements(ListNode head, int val) {

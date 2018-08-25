@@ -1,10 +1,6 @@
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-/**
- * Created by liwentian on 2017/9/22.
- */
-
 public class SuperUglyNumber {
 
     public int nthSuperUglyNumber(int n, int[] primes) {

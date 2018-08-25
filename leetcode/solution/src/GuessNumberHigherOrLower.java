@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/12/10.
- */
-
-/**
  * 可参考官方文档
  * https://leetcode.com/articles/guess-number-higher-or-lower/
  */

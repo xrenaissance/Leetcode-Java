@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/16.
- */
-
-/**
  * https://leetcode.com/articles/reverse-linked-list/
  */
 public class ReverseLinkedList {

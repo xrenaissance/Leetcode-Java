@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/19.
- */
-
 public class AddBinary {
 
     public String addBinary(String a, String b) {

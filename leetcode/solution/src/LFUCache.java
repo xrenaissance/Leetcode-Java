@@ -2,9 +2,6 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 
 /**
- * Created by dingjikerbo on 17/1/2.
- */
-/**
  * 和LRU的区别是
  * LRU，即便历史频率再高，如果最近用的少了一样踢掉
  * LFU，即便最近用的少了，如果曾经频率高一样不会踢

@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/16.
- */
-
 public class Search2DMatrix {
 
     // 耗时11ms

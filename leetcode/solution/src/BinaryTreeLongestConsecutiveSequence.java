@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/12/2.
- */
-
-/**
  * https://leetcode.com/articles/binary-tree-longest-consecutive-sequence/
  */
 public class BinaryTreeLongestConsecutiveSequence {

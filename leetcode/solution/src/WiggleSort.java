@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/12/10.
- */
-
-/**
  * https://leetcode.com/articles/wiggle-sort/
  */
 public class WiggleSort {

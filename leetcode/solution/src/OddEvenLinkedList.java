@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/12/7.
- */
-
 public class OddEvenLinkedList {
 
     public ListNode oddEvenList(ListNode head) {

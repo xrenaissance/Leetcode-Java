@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 16/11/24.
- */
-
 public class RemoveDuplicatesFromSortedArrayII {
 
     public int removeDuplicates(int[] nums) {

@@ -1,9 +1,5 @@
 import java.util.Iterator;
 
-/**
- * Created by dingjikerbo on 16/12/10.
- */
-
 public class PeekingIterator implements Iterator<Integer> {
 
     private Iterator<Integer> mIterator;

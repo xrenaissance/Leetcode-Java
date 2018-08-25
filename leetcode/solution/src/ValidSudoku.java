@@ -1,9 +1,5 @@
 import java.util.Arrays;
 
-/**
- * Created by dingjikerbo on 17/5/9.
- */
-
 public class ValidSudoku {
 
     public boolean isValidSudoku(char[][] board) {

@@ -1,10 +1,6 @@
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/11/17.
- */
-
-/**
  * https://leetcode.com/articles/word-break/
  */
 public class WordBreak {

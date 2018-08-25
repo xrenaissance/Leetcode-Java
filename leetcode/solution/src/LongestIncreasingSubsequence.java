@@ -1,9 +1,5 @@
 import java.util.Arrays;
 
-/**
- * Created by dingjikerbo on 17/1/5.
- */
-
 public class LongestIncreasingSubsequence {
 
     /**

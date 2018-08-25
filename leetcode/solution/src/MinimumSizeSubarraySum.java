@@ -1,9 +1,5 @@
 import java.util.Arrays;
 
-/**
- * Created by dingjikerbo on 16/11/22.
- */
-
 public class MinimumSizeSubarraySum {
     /**
      * 仍然采用滑动窗口的办法

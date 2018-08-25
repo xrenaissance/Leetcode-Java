@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Created by dingjikerbo on 2016/11/17.
- */
-
 public class BinaryTreeLevelOrderTraversal {
 
     // 耗时2ms

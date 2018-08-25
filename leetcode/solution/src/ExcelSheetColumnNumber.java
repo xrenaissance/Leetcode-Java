@@ -1,10 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 public class ExcelSheetColumnNumber {
 
     public List<String> binaryTreePaths(TreeNode root) {

@@ -1,9 +1,5 @@
 import java.util.List;
 
-/**
- * Created by liwentian on 2017/12/10.
- */
-
 public class LongestWordInDictionaryThroughDeleting {
 
     public String findLongestWord(String s, List<String> d) {

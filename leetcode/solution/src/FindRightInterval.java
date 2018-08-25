@@ -1,10 +1,6 @@
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Created by liwentian on 2017/9/22.
- */
-
 public class FindRightInterval {
 
     public int[] findRightInterval(Interval[] intervals) {

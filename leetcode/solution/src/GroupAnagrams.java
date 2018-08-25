@@ -3,10 +3,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 16/11/22.
- */
-
 public class GroupAnagrams {
 
     public List<List<String>> groupAnagrams(String[] strs) {

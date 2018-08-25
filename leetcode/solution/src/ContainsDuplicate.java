@@ -2,10 +2,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by dingjikerbo on 16/12/8.
- */
-
-/**
  * https://leetcode.com/articles/contains-duplicate/
  */
 public class ContainsDuplicate {

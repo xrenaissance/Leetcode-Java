@@ -1,10 +1,6 @@
 import java.util.*;
 
 /**
- * Created by dingjikerbo on 2016/11/16.
- */
-
-/**
  * 类似题
  * https://leetcode.com/problems/serialize-and-deserialize-bst/
  */

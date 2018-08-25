@@ -1,10 +1,6 @@
 import java.util.Deque;
 import java.util.LinkedList;
 
-/**
- * Created by dingjikerbo on 16/12/4.
- */
-
 public class MovingAverage {
 
     private int mSize;

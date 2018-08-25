@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/25.
- */
-
 public class ShortestWordDistance {
 
     // 耗时3ms

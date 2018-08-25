@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 2017/9/11.
- */
-
 public class ConvertSortedListToBinarySearchTree {
 
     public TreeNode sortedListToBST(ListNode head) {

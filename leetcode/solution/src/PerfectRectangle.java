@@ -1,10 +1,6 @@
 import java.util.HashSet;
 
 /**
- * Created by dingjikerbo on 17/1/2.
- */
-
-/**
  * https://discuss.leetcode.com/topic/56052/really-easy-understanding-solution-o-n-java
  * http://www.cnblogs.com/grandyang/p/5825619.html
  */

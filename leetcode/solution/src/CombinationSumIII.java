@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 16/11/22.
- */
-
-/**
  * 这题不允许重复数字
  */
 public class CombinationSumIII {

@@ -3,10 +3,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by dingjikerbo on 17/1/2.
- */
-
 public class NumberOfConnectedComponents {
 
     // 8ms

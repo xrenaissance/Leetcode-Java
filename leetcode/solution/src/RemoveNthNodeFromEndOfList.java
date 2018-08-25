@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/12/20.
- */
-
-/**
  * https://leetcode.com/articles/remove-nth-node-end-list/
  */
 public class RemoveNthNodeFromEndOfList {

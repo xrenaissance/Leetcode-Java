@@ -2,10 +2,6 @@ import java.awt.Point;
 import java.util.HashMap;
 
 /**
- * Created by dingjikerbo on 16/12/7.
- */
-
-/**
  * TestCase
  * 边界条件很多，比如有重复的点，有斜率无穷大的线
  * [[3,10],[0,2],[0,2],[3,10]] result = 4

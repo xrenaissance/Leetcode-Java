@@ -3,10 +3,6 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-/**
- * Created by dingjikerbo on 17/1/6.
- */
-
 public class RearrangeStringKDistanceApart {
     /**
      * 这题思路是先统计有哪些字符，并将这些字符按频率从高到底放在优先队列中，由于相同字符之间距离至少是k，

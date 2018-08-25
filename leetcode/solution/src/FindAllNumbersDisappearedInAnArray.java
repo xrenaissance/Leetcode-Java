@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by liwentian on 2017/9/10.
- */
-
 public class FindAllNumbersDisappearedInAnArray {
     //4,3,2,7,8,2,3,1
 

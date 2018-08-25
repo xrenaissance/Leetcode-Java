@@ -1,8 +1,3 @@
-
-/**
- * Created by dingjikerbo on 16/11/28.
- */
-
 public class MaximumDepthOfBinaryTree {
 
     public int maxDepth(TreeNode node) {

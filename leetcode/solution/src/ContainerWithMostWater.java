@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 17/5/2.
- */
-
-/**
  * 题目的意思是选定两块板子组成一个桶，使得装水量最大。注意其余的板子都忽略。
  * 一种O(n)的方法是对于区间[left, right]，假如height[left] < height[right]，则我们可以认定[left, right - 1]，[left, right - 2] ...
  * 都不会比[left, right]装的水更多。原因是木桶的短板没变，所以水平面不会变，但是宽度减小了。

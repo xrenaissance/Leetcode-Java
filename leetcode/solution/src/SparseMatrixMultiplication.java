@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/19.
- */
-
-/**
  * 这题有点意思，只要给里层两个for循环交换一下顺序即可
  */
 public class SparseMatrixMultiplication {

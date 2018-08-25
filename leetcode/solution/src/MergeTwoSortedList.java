@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/17.
- */
-
 public class MergeTwoSortedList {
 
     // 耗时15ms

@@ -2,10 +2,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by dingjikerbo on 2016/11/17.
- */
-
 public class FindAllAnagramsInString {
 
     // 耗时16ms，复杂度O(n)

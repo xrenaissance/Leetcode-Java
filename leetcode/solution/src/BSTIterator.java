@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by dingjikerbo on 16/11/21.
- */
-
 public class BSTIterator {
 
     private Stack<TreeNode> mStack;

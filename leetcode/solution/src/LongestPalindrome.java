@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/19.
- */
-
 public class LongestPalindrome {
 
     public int longestPalindrome(String s) {

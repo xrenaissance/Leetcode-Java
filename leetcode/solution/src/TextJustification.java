@@ -2,10 +2,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 16/12/17.
- */
-
-/**
  * 这题应该多做几遍，没什么技巧，就是考码代码能力
  * 类似题目为https://leetcode.com/problems/sentence-screen-fitting/
  */

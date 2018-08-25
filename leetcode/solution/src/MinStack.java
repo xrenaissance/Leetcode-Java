@@ -1,9 +1,5 @@
 import java.util.Stack;
 
-/**
- * Created by dingjikerbo on 2016/11/17.
- */
-
 public class MinStack {
 
     Stack<Integer> mMinStack;

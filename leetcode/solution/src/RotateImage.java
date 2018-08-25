@@ -1,6 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/11/16.
- */
 public class RotateImage {
 
     // 耗时2ms

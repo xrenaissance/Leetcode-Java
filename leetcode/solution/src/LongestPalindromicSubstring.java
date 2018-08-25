@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 2016/11/16.
- */
-
-/**
  * 这题采用动态规划也可，但是不论时间还是空间性能都不好
  */
 public class LongestPalindromicSubstring {

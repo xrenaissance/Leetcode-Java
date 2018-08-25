@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by liwentian on 2017/9/22.
- */
-
 public class IntersectionOfTwoArraysII {
 
     public int[] intersect(int[] nums1, int[] nums2) {

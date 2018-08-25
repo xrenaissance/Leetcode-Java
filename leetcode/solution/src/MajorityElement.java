@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 2017/9/10.
- */
-
 public class MajorityElement {
 
     public int majorityElement(int[] nums) {

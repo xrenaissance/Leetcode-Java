@@ -1,8 +1,4 @@
 /**
- * Created by liwentian on 2017/8/31.
- */
-
-/**
  * 旋转180度，而不是上下镜像
  */
 public class StrobogrammaticNumber {

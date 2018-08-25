@@ -1,9 +1,5 @@
 import java.math.BigInteger;
 
-/**
- * Created by liwentian on 2017/9/22.
- */
-
 public class SmallestGoodBase {
 
     public String smallestGoodBase(String nn) {

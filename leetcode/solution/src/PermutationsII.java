@@ -1,7 +1,3 @@
-/**
- * Created by dingjikerbo on 2016/12/17.
- */
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

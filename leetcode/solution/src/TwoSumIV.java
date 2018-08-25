@@ -2,10 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by liwentian on 2017/9/10.
- */
-
-/**
  * https://leetcode.com/articles/two-sum-iv/
  */
 public class TwoSumIV {

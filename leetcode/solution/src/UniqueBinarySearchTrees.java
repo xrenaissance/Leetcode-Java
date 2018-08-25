@@ -1,8 +1,4 @@
 /**
- * Created by dingjikerbo on 16/11/28.
- */
-
-/**
  * 动态规划，依次建立1,2,3,...颗节点能有多少种树构造的dp
  */
 public class UniqueBinarySearchTrees {

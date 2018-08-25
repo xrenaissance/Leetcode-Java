@@ -1,10 +1,6 @@
 import java.util.List;
 
 /**
- * Created by dingjikerbo on 2016/12/17.
- */
-
-/**
  * https://leetcode.com/articles/nested-list-weight-sum/
  */
 public class NestedListWeightSum {

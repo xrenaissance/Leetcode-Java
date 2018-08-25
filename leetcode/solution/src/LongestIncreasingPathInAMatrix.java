@@ -1,8 +1,4 @@
 /**
- * Created by liwentian on 2017/9/1.
- */
-
-/**
  * https://leetcode.com/articles/longest-increasing-path-matrix/
  */
 

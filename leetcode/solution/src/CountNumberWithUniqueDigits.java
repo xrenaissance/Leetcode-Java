@@ -1,7 +1,3 @@
-/**
- * Created by liwentian on 2016/12/29.
- */
-
 public class CountNumberWithUniqueDigits {
 
     public int countNumbersWithUniqueDigits(int n) {
