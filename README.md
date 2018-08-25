@@ -373,9 +373,9 @@
 |541|[Reverse String II](https://leetcode.com/problems/reverse-string-ii/)| [Java](leetcode/solution/src/ReverseStringII.java)|100||
 |557|[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| [Java](leetcode/solution/src/ReverseWordsInAStringIII.java)|100||
 |560|[Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)| [Java](leetcode/solution/src/SubarraySumEqualsK.java)|70||
-|617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)|Java|100|很简单|
+|617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)|[Java](leetcode/solution/src/MergeTwoBinaryTrees.java)]|100|很简单|
 |637|[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/#/description)| [Java](leetcode/solution/src/AverageOfLevelsInBinaryTree.java)|100||
 |652|[Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)| [Java](leetcode/solution/src/FindDuplicateSubtrees.java)|70|开始还没思路|
 |653|[Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)| [Java](leetcode/solution/src/TwoSumIV.java)|90||
-|669|[Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree/)|Java|100||
+|669|[Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree/)|[Java](leetcode/solution/src/TrimABinarySearchTree.java)|100||
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
