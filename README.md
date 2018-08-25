@@ -22,7 +22,7 @@
 ## **三、所有题目列表**
 |#|Title|Solution|Score|Backup|
 |---|----| ----- |----|---------|
-|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSum.java)|100|
+|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](leetcode/solution/src/TwoSum.java)|100|
 |2|[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AddTwoNumber.java)|80|
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/LongestSubstringWithoutRepeatingCharacters.java)||这个系列的所有题都要多做几遍|
 |4|[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/MedianOfTwoSortedArrays.java)|70|这题很经典，多做几遍|
