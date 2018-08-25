@@ -373,7 +373,9 @@
 |541|[Reverse String II](https://leetcode.com/problems/reverse-string-ii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseStringII.java)|100||
 |557|[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/ReverseWordsInAStringIII.java)|100||
 |560|[Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/SubarraySumEqualsK.java)|70||
+|617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)|Java|100|很简单|
 |637|[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/#/description)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/AverageOfLevelsInBinaryTree.java)|100||
 |652|[Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/FindDuplicateSubtrees.java)|70|开始还没思路|
 |653|[Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/TwoSumIV.java)|90||
+|669|[Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree/)|Java|100||
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](https://github.com/dingjikerbo/leetcode/blob/master/solution/src/main/java/com/inuker/solution/RedundantConnection.java)|||
