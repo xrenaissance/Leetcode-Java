@@ -49,6 +49,9 @@ public class SymmetricTree {
         return queue1.isEmpty() && queue2.isEmpty();
     }
 
+    /**
+     * 基于isSymmetric2，不过只要一个queue就够了
+     */
     public boolean isSymmetri3(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
