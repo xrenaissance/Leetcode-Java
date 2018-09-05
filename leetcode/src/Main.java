@@ -4,48 +4,17 @@ import java.util.Stack;
 
 public class Main {
 
-    public boolean isSymmetric(TreeNode left, TreeNode right) {
-        if (left == null && right == null) {
-            return true;
-        }
-        if (left == null || right == null) {
-            return false;
-        }
-
-        Stack<TreeNode> stack1 = new Stack<TreeNode>();
-        Stack<TreeNode> stack2 = new Stack<TreeNode>();
-
-        while (!stack1.isEmpty() || left != null) {
-            if (left != null) {
-                if (right == null) {
-                    return false;
-                }
-                if (left.val != right.val) {
-                    return false;
-                }
-                stack1.push(left);
-                stack2.push(right);
-                left = left.left;
-                right = right.right;
-            } else {
-                if (right != null) {
-                    return false;
-                }
-                if (stack2.isEmpty()) {
-                    return false;
-                }
-                left = stack1.pop().right;
-                right = stack2.pop().left;
-            }
-        }
-        return stack2.isEmpty() && right == null;
-    }
-
-    public boolean isSymmetric(TreeNode root) {
+    public int countNodes(TreeNode root) {
         if (root == null) {
-            return true;
+            return 0;
         }
-        return isSymmetric(root.left, root.right);
+        int left = 0, right = 0;
+        for (TreeNode node = root; node != null; node = node.left, left++);
+        for (TreeNode node = root; node != null; node = node.right, right++);
+        if (left == right) {
+            return (1 << left) - 1;
+        }
+        return countNodes(root.left) + countNodes(root.right) + 1;
     }
 
     public static void main(String[] args) {
