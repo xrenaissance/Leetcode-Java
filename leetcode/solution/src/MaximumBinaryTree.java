@@ -1,8 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-
-public class Main {
+public class MaximumBinaryTree {
 
     public TreeNode constructMaximumBinaryTree(int[] nums, int start, int end) {
         if (start > end) {
@@ -22,8 +18,5 @@ public class Main {
 
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         return constructMaximumBinaryTree(nums, 0, nums.length - 1);
-    }
-
-    public static void main(String[] args) {
     }
 }
