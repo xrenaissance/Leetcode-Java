@@ -4,24 +4,17 @@ import java.util.Stack;
 
 public class Main {
 
-    public TreeNode constructMaximumBinaryTree(int[] nums, int start, int end) {
-        if (start > end) {
-            return null;
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null || root == p || root == q) {
+            return root;
         }
-        int max = start;
-        for (int i = start + 1; i <= end; i++) {
-            if (nums[i] > nums[max]) {
-                max = i;
-            }
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if (left != null) {
+            return right != null ? root : root.left;
+        } else {
+            return root.right;
         }
-        TreeNode root = new TreeNode(nums[max]);
-        root.left = constructMaximumBinaryTree(nums, start, max - 1);
-        root.right = constructMaximumBinaryTree(nums, max + 1, end);
-        return root;
-    }
-
-    public TreeNode constructMaximumBinaryTree(int[] nums) {
-        return constructMaximumBinaryTree(nums, 0, nums.length - 1);
     }
 
     public static void main(String[] args) {

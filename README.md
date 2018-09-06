@@ -20,8 +20,8 @@
 <br/><br/>
 
 ## **三、所有题目列表**
-|#|Title|Solution|Score|Backup|
-|---|----| ----- |----|---------|
+|#|    Title   |Solution|Score|Backup|
+|---|-------------| ----- |----|---------|
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Java](leetcode/solution/src/TwoSum.java)|100|
 |2|[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)| [Java](leetcode/solution/src/AddTwoNumber.java)|80|
 |3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)| [Java](leetcode/solution/src/LongestSubstringWithoutRepeatingCharacters.java)||这个系列的所有题都要多做几遍|

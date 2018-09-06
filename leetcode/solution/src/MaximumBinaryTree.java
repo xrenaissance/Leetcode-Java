@@ -1,5 +1,8 @@
 public class MaximumBinaryTree {
 
+    /**
+     * 复杂度平均O(nlgn)，最差O(n^2)
+     */
     public TreeNode constructMaximumBinaryTree(int[] nums, int start, int end) {
         if (start > end) {
             return null;
