@@ -32,22 +32,25 @@ public class FlattenBinaryTreeToLinkedList {
         helper(root);
     }
 
+    /**
+     * 这题要注意ltail和rtail都为null的情况
+     */
     public TreeNode helper(TreeNode root) {
         if (root == null) {
-            return null;
+            return root;
         }
-        TreeNode right = root.right;
-        TreeNode leftTail = null, rightTail = null;
 
-        if (root.left != null) {
-            leftTail = helper(root.left);
+        TreeNode ltail = helper(root.left);
+        TreeNode rtail = helper(root.right);
+
+        TreeNode right = root.right;
+
+        if (ltail != null) {
             root.right = root.left;
             root.left = null;
-            leftTail.right = right;
+            ltail.right = right;
         }
 
-        rightTail = helper(right);
-
-        return rightTail != null ? rightTail : leftTail;
+        return rtail != null ? rtail : ltail != null ? ltail : root;
     }
 }
