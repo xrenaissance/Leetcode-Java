@@ -4,36 +4,43 @@ import java.util.*;
 
 public class Main {
 
-    public static void flatten(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        List<TreeNode> list = new ArrayList<>();
-        while (!stack.isEmpty() || root != null) {
-            if (root != null) {
-                list.add(root);
-                stack.push(root);
-                root = root.left;
-            } else {
-                root = stack.pop().right;
+    public List<TreeNode> generateTrees(int n) {
+        if (n == 0) {
+            return Collections.EMPTY_LIST;
+        }
+
+        List<TreeNode>[] map = new LinkedList[n + 1];
+        map[0] = new LinkedList<>();
+        map[0].add(null);
+
+        for (int i = 1; i <= n; i++) {
+            map[i] = new LinkedList<>();
+            for (int j = 1; j <= i; j++) {
+                for (TreeNode left : map[j - 1]) {
+                    for (TreeNode right : map[i - j]) {
+                        TreeNode root = new TreeNode(j);
+                        root.left = left;
+                        root.right = clone(right, j);
+                        map[i].add(root);
+                    }
+                }
             }
         }
-        for (int i = 0; i < list.size() - 1; i++) {
-            list.get(i).left = null;
-            list.get(i).right = list.get(i + 1);
+
+        return map[n];
+    }
+
+    public TreeNode clone(TreeNode node, int offset) {
+        if (node == null) {
+            return null;
         }
+        TreeNode root = new TreeNode(node.val + offset);
+        root.left = clone(node.left, offset);
+        root.right = clone(node.right, offset);
+        return root;
     }
 
     public static void main(String[] args) {
-        TreeNode node3 = new TreeNode(3);
-        TreeNode node4 = new TreeNode(4);
-        TreeNode node2 = new TreeNode(2, node3, node4);
-        TreeNode node6 = new TreeNode(6);
-        TreeNode node5 = new TreeNode(5, null, node6);
-        TreeNode node1 = new TreeNode(1, node2, node5);
-        flatten(node1);
 
-        while (node1 != null) {
-            System.out.print(node1.val + " ");
-            node1 = node1.right;
-        }
     }
 }
