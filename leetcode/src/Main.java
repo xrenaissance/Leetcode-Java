@@ -4,40 +4,33 @@ import java.util.*;
 
 public class Main {
 
-    public List<TreeNode> generateTrees(int n) {
-        if (n == 0) {
-            return Collections.EMPTY_LIST;
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
-
-        List<TreeNode>[] map = new LinkedList[n + 1];
-        map[0] = new LinkedList<>();
-        map[0].add(null);
-
-        for (int i = 1; i <= n; i++) {
-            map[i] = new LinkedList<>();
-            for (int j = 1; j <= i; j++) {
-                for (TreeNode left : map[j - 1]) {
-                    for (TreeNode right : map[i - j]) {
-                        TreeNode root = new TreeNode(j);
-                        root.left = left;
-                        root.right = clone(right, j);
-                        map[i].add(root);
-                    }
-                }
-            }
+        if (root.left == null && root.right == null) {
+            return 1;
         }
-
-        return map[n];
+        if (root.left == null) {
+            return minDepth(root.right) + 1;
+        }
+        if (root.right == null) {
+            return minDepth(root.left) + 1;
+        }
+        return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
     }
 
-    public TreeNode clone(TreeNode node, int offset) {
-        if (node == null) {
-            return null;
+    public int minDepth(TreeNode root, int depth) {
+        if (root.left == null && root.right == null) {
+            return depth;
         }
-        TreeNode root = new TreeNode(node.val + offset);
-        root.left = clone(node.left, offset);
-        root.right = clone(node.right, offset);
-        return root;
+        if (root.left == null) {
+            return minDepth(root.right, depth + 1);
+        }
+        if (root.right == null) {
+            return minDepth(root.left, depth + 1);
+        }
+        return Math.min(minDepth(root.left, depth + 1), minDepth(root.right, depth + 1));
     }
 
     public static void main(String[] args) {
