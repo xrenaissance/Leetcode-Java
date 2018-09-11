@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -5,45 +6,43 @@ import java.util.Queue;
 public class BinaryTreeLevelOrderTraversalII {
 
     // 耗时2ms，和I一样，只不过加到result时添加到头
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new LinkedList<List<Integer>>();
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> result = new LinkedList<>();
 
         if (root == null) {
             return result;
         }
 
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        Queue<TreeNode> next = new LinkedList<TreeNode>();
-        queue.add(root);
+        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> next = new LinkedList<>();
 
-        List<Integer> cur = null;
+        List<Integer> list = null;
+
+        queue.offer(root);
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
 
-            if (cur == null) {
-                cur = new LinkedList<Integer>();
-                result.add(0, cur);
+            if (list == null) {
+                list = new ArrayList<>();
             }
 
-            cur.add(node.val);
+            list.add(node.val);
 
             if (node.left != null) {
-                next.add(node.left);
+                next.offer(node.left);
             }
-
             if (node.right != null) {
-                next.add(node.right);
+                next.offer(node.right);
             }
 
             if (queue.isEmpty()) {
-                Queue<TreeNode> temp = queue;
-                queue = next;
-                next = temp;
-                cur = null; // 注意这里要置空
+                queue.addAll(next);
+                next.clear();
+                result.add(0, list);
+                list = null;
             }
         }
-
         return result;
     }
 }

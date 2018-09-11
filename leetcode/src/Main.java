@@ -4,33 +4,44 @@ import java.util.*;
 
 public class Main {
 
-    public int minDepth(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        if (root.left == null && root.right == null) {
-            return 1;
-        }
-        if (root.left == null) {
-            return minDepth(root.right) + 1;
-        }
-        if (root.right == null) {
-            return minDepth(root.left) + 1;
-        }
-        return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
-    }
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> result = new LinkedList<>();
 
-    public int minDepth(TreeNode root, int depth) {
-        if (root.left == null && root.right == null) {
-            return depth;
+        if (root == null) {
+            return result;
         }
-        if (root.left == null) {
-            return minDepth(root.right, depth + 1);
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> next = new LinkedList<>();
+
+        List<Integer> list = null;
+
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+
+            if (list == null) {
+                list = new ArrayList<>();
+            }
+
+            list.add(node.val);
+
+            if (node.left != null) {
+                next.offer(node.left);
+            }
+            if (node.right != null) {
+                next.offer(node.right);
+            }
+
+            if (queue.isEmpty()) {
+                queue.addAll(next);
+                next.clear();
+                result.add(0, list);
+                list = null;
+            }
         }
-        if (root.right == null) {
-            return minDepth(root.left, depth + 1);
-        }
-        return Math.min(minDepth(root.left, depth + 1), minDepth(root.right, depth + 1));
+        return result;
     }
 
     public static void main(String[] args) {
