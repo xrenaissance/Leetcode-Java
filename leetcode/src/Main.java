@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Main {
 
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<Integer>> result = new LinkedList<>();
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new LinkedList<>();
 
         if (root == null) {
             return result;
@@ -14,22 +14,19 @@ public class Main {
         Queue<TreeNode> queue = new LinkedList<>();
         Queue<TreeNode> next = new LinkedList<>();
 
-        List<Integer> list = null;
+        TreeNode last = null;
 
         queue.offer(root);
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
 
-            if (list == null) {
-                list = new ArrayList<>();
-            }
-
-            list.add(node.val);
+            last = node;
 
             if (node.left != null) {
                 next.offer(node.left);
             }
+
             if (node.right != null) {
                 next.offer(node.right);
             }
@@ -37,10 +34,10 @@ public class Main {
             if (queue.isEmpty()) {
                 queue.addAll(next);
                 next.clear();
-                result.add(0, list);
-                list = null;
+                result.add(last.val);
             }
         }
+
         return result;
     }
 

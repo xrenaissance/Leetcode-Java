@@ -5,33 +5,36 @@ import java.util.Queue;
 public class BinaryTreeRightSideView {
 
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result = new LinkedList<Integer>();
+        List<Integer> result = new LinkedList<>();
 
         if (root == null) {
             return result;
         }
 
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        Queue<TreeNode> next = new LinkedList<TreeNode>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> next = new LinkedList<>();
 
-        queue.add(root);
+        TreeNode last = null;
+
+        queue.offer(root);
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
 
+            last = node;
+
             if (node.left != null) {
-                next.add(node.left);
+                next.offer(node.left);
             }
 
             if (node.right != null) {
-                next.add(node.right);
+                next.offer(node.right);
             }
 
             if (queue.isEmpty()) {
-                result.add(node.val);
-                Queue<TreeNode> temp = queue;
-                queue = next;
-                next = temp;
+                queue.addAll(next);
+                next.clear();
+                result.add(last.val);
             }
         }
 
