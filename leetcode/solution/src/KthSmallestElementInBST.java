@@ -14,30 +14,6 @@ import java.util.Stack;
 public class KthSmallestElementInBST {
 
     public int kthSmallest(TreeNode root, int k) {
-        int[] kth = new int[1];
-        inorderTraversal(root, k, kth);
-        return kth[0];
-    }
-
-    private int inorderTraversal(TreeNode root, int k, int[] kth) {
-        if (root == null) {
-            return k;
-        }
-
-        k = inorderTraversal(root.left, k, kth);
-
-        if (--k == 0) {
-            kth[0] = root.val;
-            return 0;
-        }
-
-        return inorderTraversal(root.right, k, kth);
-    }
-
-    /**
-     * 非递归法
-     */
-    public int kthSmallest2(TreeNode root, int k) {
         Stack<TreeNode> stack = new Stack<>();
         while (root != null || !stack.isEmpty()) {
             if (root != null) {
@@ -59,7 +35,7 @@ public class KthSmallestElementInBST {
     /**
      * Morris
      */
-    private int kthSmallest3(TreeNode root, int k) {
+    private int kthSmallest2(TreeNode root, int k) {
         TreeNode temp;
 
         while (root != null) {
