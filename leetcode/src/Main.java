@@ -4,21 +4,21 @@ import java.util.*;
 
 public class Main {
 
-    public int kthSmallest(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<>();
-        while (!stack.isEmpty() || root != null) {
-            if (root != null) {
-                stack.push(root);
-                root = root.left;
-            } else {
-                root = stack.pop();
-                if (--k == 0) {
-                    return root.val;
-                }
-                root = root.right;
-            }
+    public int rob(TreeNode root) {
+        int[] val = helper(root);
+        return Math.max(val[0], val[1]);
+    }
+
+    private int[] helper(TreeNode node) {
+        if (node == null) {
+            return new int[]{0,0};
         }
-        return 0;
+        int[] left = helper(node.left);
+        int[] right = helper(node.right);
+        int[] value = new int[2];
+        value[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        value[1] = node.val + left[0] + right[0];
+        return value;
     }
 
     public static void main(String[] args) {
