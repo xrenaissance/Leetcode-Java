@@ -4,21 +4,31 @@ import java.util.*;
 
 public class Main {
 
-    public int rob(TreeNode root) {
-        int[] val = helper(root);
-        return Math.max(val[0], val[1]);
+    public int pathSum(TreeNode root, int sum) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+
+        int[] count = new int[1];
+        helper(root, sum, 0, map, count);
+        return count[0];
     }
 
-    private int[] helper(TreeNode node) {
+    private void helper(TreeNode node, int target, int sum, HashMap<Integer, Integer> map, int[] count) {
         if (node == null) {
-            return new int[]{0,0};
+            return;
         }
-        int[] left = helper(node.left);
-        int[] right = helper(node.right);
-        int[] value = new int[2];
-        value[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
-        value[1] = node.val + left[0] + right[0];
-        return value;
+
+        sum += node.val;
+        if (map.containsKey(sum - target)) {
+            count[0] += map.get(sum - target);
+        }
+
+        map.put(sum, map.getOrDefault(sum, 0) + 1);
+
+        helper(node.left, target, sum, map, count);
+        helper(node.right, target, sum, map, count);
+
+        map.put(sum, map.getOrDefault(sum, 0) - 1);
     }
 
     public static void main(String[] args) {

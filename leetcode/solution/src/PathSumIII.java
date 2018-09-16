@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class PathSumIII {
 
     /**
@@ -47,35 +49,34 @@ public class PathSumIII {
         helper(root.right, sum - root.val, count);
     }
 
-    /* 如果要给路径打出来
-    public List<String> pathSum(TreeNode root, int sum) {
-        List<String> result = new LinkedList<>();
-        pathSum(root, sum, result, "");
-        return result;
+    /**
+     * 更优化的写法，时间复杂度O(n)
+     * 和Two Sum较类似，都是算出从root到当前节点的和，target为两段和的差值
+     */
+    public int pathSum2(TreeNode root, int sum) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+
+        int[] count = new int[1];
+        helper(root, sum, 0, map, count);
+        return count[0];
     }
 
-    private void pathSum(TreeNode root, int sum, List<String> list, String path) {
-        if (root == null) {
+    private void helper(TreeNode node, int target, int sum, HashMap<Integer, Integer> map, int[] count) {
+        if (node == null) {
             return;
         }
 
-        pathSumWithRoot(root, sum, list, path);
+        sum += node.val;
+        if (map.containsKey(sum - target)) {
+            count[0] += map.get(sum - target);
+        }
 
-        pathSum(root.left, sum, list, "");
-        pathSum(root.right, sum, list, "");
+        map.put(sum, map.getOrDefault(sum, 0) + 1);
+
+        helper(node.left, target, sum, map, count);
+        helper(node.right, target, sum, map, count);
+
+        map.put(sum, map.getOrDefault(sum, 0) - 1);
     }
-
-    private void pathSumWithRoot(TreeNode root, int sum, List<String> list, String path) {
-        if (root == null) {
-            return;
-        }
-
-        String prefix = path.isEmpty() ? "" : path + "->";
-
-        if (root.val == sum) {
-            list.add(prefix + root.val);
-        }
-        pathSumWithRoot(root.left, sum - root.val, list, prefix + root.val);
-        pathSumWithRoot(root.right, sum - root.val, list, prefix + root.val);
-    }*/
 }
