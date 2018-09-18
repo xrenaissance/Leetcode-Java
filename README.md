@@ -375,6 +375,7 @@
 |543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)|[Java](leetcode/solution/src/DiameterOfBinaryTree.java)|80|这题易错|
 |557|[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| [Java](leetcode/solution/src/ReverseWordsInAStringIII.java)|100||
 |560|[Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)| [Java](leetcode/solution/src/SubarraySumEqualsK.java)|70||
+|606|[Construct String from Binary Tree](https://leetcode.com/problems/construct-string-from-binary-tree/)|[Java](leetcode/solution/src/ConstructStringFromBinaryTree.java)|90||
 |617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)|[Java](leetcode/solution/src/MergeTwoBinaryTrees.java)|100|很简单|
 |637|[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/#/description)| [Java](leetcode/solution/src/AverageOfLevelsInBinaryTree.java)|100||
 |652|[Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)| [Java](leetcode/solution/src/FindDuplicateSubtrees.java)|70|开始还没思路|

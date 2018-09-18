@@ -1,9 +1,12 @@
-import sun.plugin2.os.windows.FLASHWINFO;
+/**
+ * https://leetcode.com/articles/construct-string-from-binary-tree/
+ */
+public class ConstructStringFromBinaryTree {
 
-import java.util.*;
-
-public class Main {
-
+    /**
+     * 左子树如果为空'()'是不能省略的
+     * 右子树如果为空可以省略
+     */
     public String tree2str(TreeNode t) {
         if (t == null) {
             return "";
@@ -14,8 +17,5 @@ public class Main {
         String left = "(" + tree2str(t.left) + ")";
         String right = t.right != null ? "(" + tree2str(t.right) + ")" : "";
         return t.val + left + right;
-    }
-
-    public static void main(String[] args) {
     }
 }
