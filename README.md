@@ -370,6 +370,7 @@
 |524|[Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/)| [Java](leetcode/solution/src/LongestWordInDictionaryThroughDeleting.java)|||
 |526|[Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement/)| [Java](leetcode/solution/src/BeautifulArrangement.java)|80||
 |535|[Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)| [Java](leetcode/solution/src/EncodeAndDecodeTinyURL.java)|100||
+|538|[Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/)|[Java](leetcode/solution/src/ConvertBSTToGreaterTree.java)|100||
 |541|[Reverse String II](https://leetcode.com/problems/reverse-string-ii/)| [Java](leetcode/solution/src/ReverseStringII.java)|100||
 |543|[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)|[Java](leetcode/solution/src/DiameterOfBinaryTree.java)|80|这题易错|
 |557|[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| [Java](leetcode/solution/src/ReverseWordsInAStringIII.java)|100||

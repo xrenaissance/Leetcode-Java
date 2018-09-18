@@ -1,8 +1,9 @@
-import sun.plugin2.os.windows.FLASHWINFO;
+import java.util.Stack;
 
-import java.util.*;
-
-public class Main {
+/**
+ * https://leetcode.com/articles/convert-bst-to-greater-tree/
+ */
+public class ConvertBSTToGreaterTree {
 
     public TreeNode convertBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
@@ -21,8 +22,5 @@ public class Main {
             }
         }
         return root;
-    }
-
-    public static void main(String[] args) {
     }
 }
