@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -5,34 +6,25 @@ public class PathSumII {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> result = new LinkedList<>();
-        pathSum(root, sum, result, new LinkedList<Integer>());
+        helper(root, sum, result, new LinkedList<>());
         return result;
     }
 
-    /**
-     * 这里一定要拷贝一份链表再加到result
-     * 此时path中已经包含了root，sum中还不包含root
-     */
-    private void pathSum(TreeNode root, int sum, List<List<Integer>> result, List<Integer> list) {
-        if (root == null) {
+    private void helper(TreeNode node, int sum, List<List<Integer>> result, List<Integer> list) {
+        if (node == null) {
             return;
         }
 
-        list.add(root.val);
+        list.add(node.val);
+        sum -= node.val;
 
-        if (root.left == null && root.right == null && sum == root.val) {
-            result.add(new LinkedList<>(list));
-            return;
+        if (node.left == null && node.right == null && sum == 0) {
+            result.add(new ArrayList<>(list));
+        } else {
+            helper(node.left, sum, result, list);
+            helper(node.right, sum, result, list);
         }
 
-        if (root.left != null) {
-            pathSum(root.left, sum - root.val, result, list);
-            list.remove(list.size() - 1);
-        }
-
-        if (root.right != null) {
-            pathSum(root.right, sum - root.val, result, list);
-            list.remove(list.size() - 1);
-        }
+        list.remove(list.size() - 1);
     }
 }

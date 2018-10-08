@@ -138,7 +138,7 @@
 |126|[Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)| [Java](leetcode/solution/src/WordLadderII.java)||
 |127|[Word Ladder](https://leetcode.com/problems/word-ladder/)| [Java](leetcode/solution/src/WordLadder.java)|70|此题非常经典，务必连同ii多做几遍，将双端BFS吃透|
 |128|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)| [Java](leetcode/solution/src/LongestConsecutiveSequence.java)|60|
-|129|[Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)| [Java](leetcode/solution/src/SumRootToLeafNumbers.java)|60|这题错了几次，多做几遍|
+|129|[Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/)| [Java](leetcode/solution/src/SumRootToLeafNumbers.java)|100||
 |130|[Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)| [Java](leetcode/solution/src/SurroundedRegions.java)|65|
 |131|[Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)| [Java](leetcode/solution/src/PalindromePartitioning.java)||
 |132|[Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)| [Java](leetcode/solution/src/PalindromePartitioningII.java)||

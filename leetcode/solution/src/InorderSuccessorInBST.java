@@ -30,9 +30,10 @@ public class InorderSuccessorInBST {
     }
 
     /**
-     * p的下一个节点一定是比p大的，所以这里遍历时当p的值小于当前节点，则当前节点
-     * 可作为备选，同时往左走。如果在遍历过程中遇到仍然比p大的，说明更接近p，则更新备选。
-     *
+     * p的下一个节点一定是比p大的，所以如果p没有右子树，则结果是p的父节点，如果有右子树则是右子树中最小的节点。
+     * 所以这里遍历时当p的值小于当前节点，则当前节点可作为备选，同时往左走。如果在遍历过程中遇到仍然比p大的，说明更接近p，则更新备选。
+     * 如果遇到比p小的，就往右走
+     * <p>
      * 有两点要注意，
      * 1， 首先res初始要为null，一个节点时，或root为null时，或p为最大节点时，res都没机会赋值
      * 2， 当root迭代到等于p时，走哪个分支呢，为什么选root = root.right，假如root.right为空，则之前的res即可，否则
@@ -52,11 +53,39 @@ public class InorderSuccessorInBST {
         return res;
     }
 
+    // 耗时2ms，简单的递归写法
+    /*
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val > p.val) {
+            TreeNode node = inorderSuccessor(root.left, p);
+            return node != null ? node : root;
+        } else {
+            return inorderSuccessor(root.right, p);
+        }
+    }
+
+    public TreeNode predecessor(TreeNode root, TreeNode p) {
+        if (root == null)
+            return null;
+
+        if (root.val >= p.val) {
+            return predecessor(root.left, p);
+        } else {
+            TreeNode right = predecessor(root.right, p);
+            return (right != null) ? right : root;
+        }
+    }*/
+
     /**
      * http://www.geeksforgeeks.org/?p=9999
      * 给定Node，求其successor，步骤如下：
      * 1， 如果Node.right != null，则在Node.right中找最小的那个节点，即从Node.right开始，最左下角的节点
      * 2， 如果Node.right == null，则不断往parent走，直到当前节点是其parent的左节点为止，其parent即为给定Node的successor
+     */
+    /*
     private TreeNode inOrderSuccessor(TreeNode root, TreeNode node) {
         if (node.right != null) {
             return minValue(node.right);

@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 /**
  * 支持相同数存在
+ * 如果需要find快，则每次add时都要遍历map中所有key，更新sum的map
  */
 public class TwoSumIII {
 

@@ -1,25 +1,24 @@
 public class SumRootToLeafNumbers {
 
-    private int result;
-
     public int sumNumbers(TreeNode root) {
-        sumNumbers(root, 0);
-        return result;
+        int[] res = new int[1];
+        helper(root, 0, res);
+        return res[0];
     }
 
-    private void sumNumbers(TreeNode root, int sum) {
-        if (root == null) {
+    private void helper(TreeNode node, int sum, int[] res) {
+        if (node == null) {
             return;
         }
 
-        sum = sum * 10 + root.val;
+        int n = sum * 10 + node.val;
 
-        if (root.left == null && root.right == null) {
-            result += sum;
-            return;
+        if (node.left == null && node.right == null) {
+            res[0] += n;
+        } else {
+            helper(node.left, n, res);
+            helper(node.right, n, res);
         }
-
-        sumNumbers(root.left, sum);
-        sumNumbers(root.right, sum);
     }
+
 }
