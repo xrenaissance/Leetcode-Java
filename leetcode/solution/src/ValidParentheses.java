@@ -3,40 +3,34 @@
  */
 public class ValidParentheses {
 
-    // 耗时5ms
+    // 耗时4ms
     public boolean isValid(String s) {
-        char[] stack = new char[s.length()];
-        int top = -1;
-
-        for (char c : s.toCharArray()) {
-            switch (c) {
-                case ')':
-                    if (top >= 0 && stack[top] == '(') {
-                        top--;
-                    } else {
-                        return false;
-                    }
+        int[] stack = new int[s.length()];
+        int index = 0;
+        for (int i = 0; i < s.length(); i++) {
+            switch (s.charAt(i)) {
+                case '(':
+                case '[':
+                case '{':
+                    stack[index++] = i;
                     break;
-                case '}':
-                    if (top >= 0 && stack[top] == '{') {
-                        top--;
-                    } else {
+                case ')':
+                    if (index == 0 || s.charAt(stack[--index]) != '(') {
                         return false;
                     }
                     break;
                 case ']':
-                    if (top >= 0 && stack[top] == '[') {
-                        top--;
-                    } else {
+                    if (index == 0 || s.charAt(stack[--index]) != '[') {
                         return false;
                     }
                     break;
-                default:
-                    stack[++top] = c;
+                case '}':
+                    if (index == 0 || s.charAt(stack[--index]) != '{') {
+                        return false;
+                    }
                     break;
             }
         }
-
-        return top < 0;
+        return index == 0;
     }
 }
