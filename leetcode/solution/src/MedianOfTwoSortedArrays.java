@@ -24,7 +24,7 @@ public class MedianOfTwoSortedArrays {
         if (len1 > len2) {
             return findKth(nums2, start2, end2, nums1, start1, end1, k);
         } else if (len1 == 0) {
-            return nums2[k - 1];
+            return nums2[start2 + k - 1];
         } else if (k == 1) {
             return Math.min(nums1[start1], nums2[start2]);
         }
