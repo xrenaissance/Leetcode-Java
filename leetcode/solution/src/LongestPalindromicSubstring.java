@@ -5,21 +5,26 @@ public class LongestPalindromicSubstring {
 
     private int begin, maxLen;
 
-    // 耗时14ms，平均复杂度O(n)
-    public String longestPalindrome(String s) {
+    // 耗时11ms，平均复杂度O(n)
+    public  String longestPalindrome(String s) {
+        int[] res = new int[2];
         for (int i = 0; i < s.length(); i++) {
-            helper(s, i, i);
-            helper(s, i, i + 1);
+            helper(s, i - 1, i + 1, res);
+            helper(s, i, i + 1, res);
         }
-        return s.substring(begin, begin + maxLen);
+        return s.substring(res[1], res[1] + res[0]);
     }
 
-    private void helper(String s, int i, int j) {
-        for (; i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j); i--, j++) ;
-        int len = j - i - 1;
-        if (len > maxLen) {
-            maxLen = len;
-            begin = i + 1;
+    private void helper(String s, int left, int right, int[] res) {
+        for ( ; left >= 0 && right < s.length(); left--, right++) {
+            if (s.charAt(left) != s.charAt(right)) {
+                break;
+            }
+        }
+        int len = --right - ++left + 1;
+        if (len > res[0]) {
+            res[0] = len;
+            res[1] = left;
         }
     }
 

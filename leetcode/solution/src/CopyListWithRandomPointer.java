@@ -5,29 +5,26 @@ public class CopyListWithRandomPointer {
 
 
     public RandomListNode copyRandomList(RandomListNode head) {
-        for (RandomListNode node = head; node != null; ) {
-            RandomListNode next = node.next;
-
-            RandomListNode copy = new RandomListNode(node.label);
-            copy.next = next;
-            node.next = copy;
-            node = next;
+        for (RandomListNode p = head; p != null; ) {
+            RandomListNode next = p.next;
+            RandomListNode temp = new RandomListNode(p.label);
+            temp.next = p.next;
+            p.next = temp;
+            p = next;
         }
-
-        for (RandomListNode node = head; node != null; ) {
-            node.next.random = node.random != null ? node.random.next : null;
-            node = node.next.next;
+        for (RandomListNode p = head; p != null; ) {
+            if (p.random != null) {
+                p.next.random = p.random.next;
+            }
+            p = p.next.next;
         }
-
         RandomListNode dummy = new RandomListNode(0), cur = dummy;
-        for (RandomListNode node = head; node != null; ) {
-            cur.next = node.next;
+        for (RandomListNode p = head; p != null; ) {
+            cur.next = p.next;
             cur = cur.next;
-
-            node.next = node.next.next;
-            node = node.next;
+            p.next = p.next.next;
+            p = p.next;
         }
-
         return dummy.next;
     }
 }
