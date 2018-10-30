@@ -2,21 +2,17 @@ import java.util.*;
 
 public class Main {
 
-    public int trap(int[] height) {
-        int[] left = new int[height.length];
-        int[] right = new int[height.length];
-
-        for (int i = 1; i < height.length; i++) {
-            left[i] = Math.max(left[i - 1], height[i - 1]);
+    public int maxArea(int[] height) {
+        int max = 0;
+        for (int i = 0, j = height.length - 1; i < j; ) {
+            max = Math.max(max, Math.min(height[i], height[j]) * (j - i));
+            if (height[i] < height[j]) {
+                i++;
+            } else {
+                j--;
+            }
         }
-        for (int i = height.length - 2; i >= 0; i--) {
-            right[i] = Math.max(right[i + 1], height[i + 1]);
-        }
-        int rain = 0;
-        for (int i = 1; i < height.length - 1; i++) {
-            rain += Math.max(0, Math.min(left[i], right[i]) - height[i]);
-        }
-        return rain;
+        return max;
     }
 
     public static void main(String[] args) {

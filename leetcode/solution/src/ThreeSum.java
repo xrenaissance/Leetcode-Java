@@ -3,15 +3,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * TestCase
- * [-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0]
  * 这题重要的是查重
+ * 两重循环都要查重
  */
 public class ThreeSum {
-
-    /**
-     * 最底下那个for循环别给j < k掉了
-     */
 
     // 耗时30ms
     public List<List<Integer>> threeSum(int[] nums) {
