@@ -2,18 +2,15 @@ import java.util.*;
 
 public class Main {
 
-    public int[] productExceptSelf(int[] nums) {
-        int[] res = new int[nums.length];
-        int left = 1, right = 1;
-        for (int i = 0; i < nums.length; i++) {
-            res[i] = left;
-            left *= nums[i];
+    public boolean isPalindrome(int x) {
+        if (x < 0) {
+            return false;
         }
-        for (int i = nums.length - 1; i >= 0; i--) {
-            res[i] *= right;
-            right *= nums[i];
+        int n = 0, m = x;
+        for ( ; x > 0; x /= 10) {
+            n = n * 10 + x % 10;
         }
-        return res;
+        return n == m;
     }
 
     public static void main(String[] args) {
