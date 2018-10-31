@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -8,54 +9,31 @@ public class LetterCombinationOfPhoneNumber {
      * leetcode的测试用例中不包括包含"0"或"1"的情况
      */
 
-    private final String[] ARR = {
+    private static final String[] ARR = {
             "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
     };
 
-    // 耗时3ms
+    // 耗时2ms
     public List<String> letterCombinations(String digits) {
-        List<String> list = new LinkedList<>();
-        if (!digits.isEmpty()) {
-            helper(digits, 0, list, "");
+        List<String> res = new ArrayList<>();
+        if (digits.length() == 0) {
+            return res;
         }
-        return list;
+        dfs(digits, new StringBuilder(), res, 0);
+        return res;
     }
 
-    private void helper(String digits, int start, List<String> list, String s) {
+    private void dfs(String digits, StringBuilder sb, List<String> res, int start) {
         if (start >= digits.length()) {
-            list.add(s);
+            res.add(sb.toString());
             return;
         }
+
         int n = digits.charAt(start) - '0';
         for (char c : ARR[n].toCharArray()) {
-            helper(digits, start + 1, list, s + c);
+            sb.append(c);
+            dfs(digits, sb, res, start + 1);
+            sb.setLength(sb.length() - 1);
         }
-    }
-
-    /**
-     * 非递归法，BFS,耗时5ms
-     */
-    public List<String> letterCombinations2(String digits) {
-        LinkedList<String> queue = new LinkedList<String>();
-        if (digits.length() == 0) {
-            return queue;
-        }
-
-        Queue<String> next = new LinkedList<>();
-        queue.add("");
-
-        for (int i = 0; i < digits.length() && !queue.isEmpty(); ) {
-            String s = queue.poll();
-            int n = digits.charAt(i) - '0';
-            for (char c : ARR[n].toCharArray()) {
-                next.add(s + c);
-            }
-            if (queue.isEmpty()) {
-                queue.addAll(next);
-                next.clear();
-                i++;
-            }
-        }
-        return queue;
     }
 }
