@@ -2,38 +2,18 @@ import java.util.*;
 
 public class Main {
 
-    public ListNode mergeKLists(ListNode[] lists) {
-        return helper(lists, 0, lists.length - 1);
-    }
-
-    private ListNode helper(ListNode[] lists, int start, int end) {
-        if (start > end) {
-            return null;
+    public int[] productExceptSelf(int[] nums) {
+        int[] res = new int[nums.length];
+        int left = 1, right = 1;
+        for (int i = 0; i < nums.length; i++) {
+            res[i] = left;
+            left *= nums[i];
         }
-        if (start == end) {
-            return lists[start];
+        for (int i = nums.length - 1; i >= 0; i--) {
+            res[i] *= right;
+            right *= nums[i];
         }
-        int mid = start + (end - start) / 2;
-        ListNode l1 = helper(lists, start, mid);
-        ListNode l2 = helper(lists, mid + 1, end);
-        return mergeTwoLists(l1, l2);
-    }
-
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode dummy = new ListNode(0);
-        ListNode p = l1, q = l2, cur = dummy;
-        for ( ; p != null && q != null; ) {
-            if (p.val < q.val) {
-                cur.next = p;
-                p = p.next;
-            } else {
-                cur.next = q;
-                q = q.next;
-            }
-            cur = cur.next;
-        }
-        cur.next = p != null ? p : q;
-        return dummy.next;
+        return res;
     }
 
     public static void main(String[] args) {
