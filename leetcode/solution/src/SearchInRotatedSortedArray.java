@@ -1,9 +1,9 @@
 public class SearchInRotatedSortedArray {
+
     /**
-     * TestCase
-     * [1, 2], 1/2/3
-     * [2, 1], 2/1/3
-     * [1], 1/2
+     * 给各种情况考虑到位
+     * 关键是判断范围时要先固定单调区间
+     * 注意Case[3,1],1
      */
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;

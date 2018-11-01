@@ -2,31 +2,68 @@ import java.util.*;
 
 public class Main {
 
-    private static final String[] ARR = {
-            "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
-    };
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
 
-    public List<String> letterCombinations(String digits) {
-        List<String> res = new ArrayList<>();
-        if (digits.length() == 0) {
-            return res;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[left] < nums[mid]) {
+                if (target >= nums[left] && target < nums[mid]) {
+                    right = mid - 1;
+                } else if (target == nums[mid]) {
+                    return mid;
+                } else {
+                    left = mid + 1;
+                }
+            } else if (nums[left] == nums[mid]) {
+                if (target == nums[mid]) {
+                    return mid;
+                } else {
+                    left++;
+                }
+            }
+            else {
+                if (target > nums[mid] && target <= nums[right]) {
+                    left = mid + 1;
+                } else if (target == nums[mid]) {
+                    return mid;
+                } else {
+                    right = mid - 1;
+                }
+            }
         }
-        dfs(digits, new StringBuilder(), res, 0);
-        return res;
+
+        return -1;
     }
 
-    private void dfs(String digits, StringBuilder sb, List<String> res, int start) {
-        if (start >= digits.length()) {
-            res.add(sb.toString());
-            return;
+    // [3,1], 1
+    public int search2(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (target == nums[mid]) {
+                return mid;
+            }
+
+            if (nums[left] <= nums[mid]) {
+                if (target >= nums[left] && target < nums[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                if (target > nums[mid] && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
         }
 
-        int n = digits.charAt(start) - '0';
-        for (char c : ARR[n].toCharArray()) {
-            sb.append(c);
-            dfs(digits, sb, res, start + 1);
-            sb.setLength(sb.length() - 1);
-        }
+        return -1;
     }
 
     public static void main(String[] args) {
