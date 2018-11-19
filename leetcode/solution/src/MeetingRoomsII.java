@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class MeetingRoomsII {
 
-    // 耗时17ms，时间复杂度O(nlgn)
+    // 耗时7ms，时间复杂度O(nlgn)
     public int minMeetingRooms(Interval[] intervals) {
         Arrays.sort(intervals, new Comparator<Interval>() {
             @Override
