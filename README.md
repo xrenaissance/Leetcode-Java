@@ -382,5 +382,6 @@
 |653|[Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)| [Java](leetcode/solution/src/TwoSumIV.java)|90||
 |654|[Maximum Binary Tree](https://leetcode.com/problems/maximum-binary-tree/description/)|[Java](leetcode/solution/src/MaximumBinaryTree.java)|100||
 |669|[Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree/)|[Java](leetcode/solution/src/TrimABinarySearchTree.java)|100||
+|681|[Next Closest Time](https://leetcode.com/problems/next-closest-time/)|[Java](leetcode/solution/src/NextClosestTime.java)|80|这题多做几遍|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|[Java](leetcode/solution/src/JewelsAndStones.java)|100||
