@@ -8,26 +8,24 @@ public class NextPermutation {
      * 然后从升序中找到一个大于nums[i-1]的最小数与i-1交换，然后对升序整体revert为降序即可
      */
     public void nextPermutation(int[] nums) {
-        int i = nums.length - 1;
+        int i, j;
 
-        for ( ; i >= 0; i--) {
-            if (i > 0 && nums[i - 1] < nums[i]) {
+        for (i = nums.length - 1; i > 0; i--) {
+            if (nums[i - 1] < nums[i]) {
                 break;
             }
         }
 
-        if (i < 0) {
-            revert(nums, 0, nums.length - 1);
-            return;
+        if (i > 0) {
+            for (j = i; j < nums.length; j++) {
+                if (nums[j] <= nums[i - 1]) {
+                    break;
+                }
+            }
+            swap(nums, i - 1, j - 1);
         }
 
-        for (int j = nums.length - 1; j >= i; j--) {
-            if (nums[j] > nums[i - 1]) {
-                swap(nums, j, i - 1);
-                revert(nums, i, nums.length - 1);
-                break;
-            }
-        }
+        revert(nums, i, nums.length - 1);
     }
 
     private void swap(int[] nums, int left, int right) {
