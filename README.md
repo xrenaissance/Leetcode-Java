@@ -383,3 +383,4 @@
 |654|[Maximum Binary Tree](https://leetcode.com/problems/maximum-binary-tree/description/)|[Java](leetcode/solution/src/MaximumBinaryTree.java)|100||
 |669|[Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree/)|[Java](leetcode/solution/src/TrimABinarySearchTree.java)|100||
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
+|771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|[Java](leetcode/solution/src/JewelsAndStones.java)|100||
