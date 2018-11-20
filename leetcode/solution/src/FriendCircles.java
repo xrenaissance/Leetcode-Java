@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Main {
+public class FriendCircles {
 
     public int findCircleNum(int[][] M) {
         int num = 0;
@@ -13,6 +11,10 @@ public class Main {
         return num;
     }
 
+    /**
+     * M[i][i] = 0表示第i个人我们已经访问过了
+     * 访问过的人无需重复访问
+     */
     private void dfs(int[][] M, int i) {
         M[i][i] = 0;
         for (int j = 0; j < M.length; j++) {
@@ -20,8 +22,5 @@ public class Main {
                 dfs(M, j);
             }
         }
-    }
-
-    public static void main(String[] args) {
     }
 }
