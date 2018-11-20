@@ -1,6 +1,11 @@
-import java.util.*;
+import java.util.HashMap;
 
-public class Main {
+/**
+ * 这题和sliding window较类似
+ * 意思是给定一个数组，找出其中的一个最长的连续子数组，只能有两个不同的数
+ */
+public class FruitIntoBaskets {
+
 
     public static int totalFruit(int[] tree) {
         int max = 0;
@@ -22,12 +27,5 @@ public class Main {
         }
 
         return max;
-    }
-
-    public static void main(String[] args) {
-        int n = totalFruit(new int[]{
-                1, 2, 1
-        });
-        System.out.println(n);
     }
 }

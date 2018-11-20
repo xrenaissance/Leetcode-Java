@@ -5,7 +5,8 @@ import java.util.List;
  */
 public class WordBreak {
 
-    // 耗时8ms
+    // 耗时3ms
+    // 典型的DP问题
     public boolean wordBreak(String s, List<String> wordDict) {
         int n = s.length();
 

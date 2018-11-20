@@ -385,3 +385,4 @@
 |681|[Next Closest Time](https://leetcode.com/problems/next-closest-time/)|[Java](leetcode/solution/src/NextClosestTime.java)|80|这题多做几遍|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|[Java](leetcode/solution/src/JewelsAndStones.java)|100||
+|904|[Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)|[Java](leetcode/solution/src/FruitIntoBaskets.java)|90||

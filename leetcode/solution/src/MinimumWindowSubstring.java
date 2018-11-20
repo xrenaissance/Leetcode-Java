@@ -1,6 +1,6 @@
 public class MinimumWindowSubstring {
 
-    // 耗时8ms，时间复杂度O(n)
+    // 耗时6ms，时间复杂度O(n)
     public String minWindow(String s, String t) {
         int[] tc = new int[256], sc = new int[256];
         for (char c : t.toCharArray()) {
