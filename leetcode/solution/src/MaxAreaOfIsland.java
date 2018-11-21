@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class Main {
+public class MaxAreaOfIsland {
 
     public int maxAreaOfIsland(int[][] grid) {
         int[] area = new int[1];
@@ -26,9 +24,5 @@ public class Main {
         dfs(grid, i - 1, j, count);
         dfs(grid, i, j + 1, count);
         dfs(grid, i, j - 1, count);
-    }
-
-    public static void main(String[] args) {
-
     }
 }

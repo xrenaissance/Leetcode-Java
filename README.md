@@ -385,5 +385,7 @@
 |669|[Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree/)|[Java](leetcode/solution/src/TrimABinarySearchTree.java)|100||
 |681|[Next Closest Time](https://leetcode.com/problems/next-closest-time/)|[Java](leetcode/solution/src/NextClosestTime.java)|80|这题多做几遍|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
+|695|[Max Area of Island](https://leetcode.com/problems/max-area-of-island/)|[Java](leetcode/solution/src/MaxAreaOfIsland.java)|100||
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|[Java](leetcode/solution/src/JewelsAndStones.java)|100||
 |904|[Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)|[Java](leetcode/solution/src/FruitIntoBaskets.java)|90||
+|929|[Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)|[Java](leetcode/solution/src/UniqueEmailAddresses.java)|90||
