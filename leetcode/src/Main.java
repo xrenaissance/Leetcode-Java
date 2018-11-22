@@ -2,25 +2,40 @@ import java.util.*;
 
 public class Main {
 
-    public static int coinChange(int[] coins, int amount) {
-        Arrays.sort(coins);
-        int[] dp = new int[amount + 1];
-        Arrays.fill(dp, -1);
-        dp[0] = 0;
-        for (int i = 1; i <= amount; i++) {
-            for (int coin: coins) {
-                if (i - coin >= 0 && dp[i - coin] >= 0) {
-                    int k = dp[i - coin] + 1;
-                    dp[i] = dp[i] > 0 ? Math.min(dp[i], k) : k;
-                }
+    public static int myAtoi(String str) {
+        int i = 0, sign = 1;
+        for ( ; i < str.length() && str.charAt(i) == ' '; i++);
+        if (i < str.length()) {
+            char csign = str.charAt(i);
+            if (csign == '-') {
+                sign = -1;
+                i++;
+            } else if (csign == '+') {
+                sign = 1;
+                i++;
+            } else if (csign < '0' || csign > '9') {
+                return 0;
+            } else {}
+        }
+        long number = 0;
+        for ( ; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c < '0' || c > '9') {
+                break;
+            }
+            number = number * 10 + (c - '0');
+
+            if (number * sign > Integer.MAX_VALUE) {
+                return Integer.MAX_VALUE;
+            }
+            if (number * sign < Integer.MIN_VALUE) {
+                return Integer.MIN_VALUE;
             }
         }
-        return dp[amount];
+        return (int) (number * sign);
     }
 
     public static void main(String[] args) {
-        System.out.println(coinChange(new int[] {
-                1, 2, 5
-        }, 11));
+        System.out.println(myAtoi("-42"));
     }
 }

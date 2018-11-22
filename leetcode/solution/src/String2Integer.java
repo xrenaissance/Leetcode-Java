@@ -13,40 +13,35 @@
 public class String2Integer {
 
     public int myAtoi(String str) {
-        long n = 0;
-
-        str = str.trim();
-
-        // 这里要防御空串
-        if (str.length() == 0) {
-            return 0;
-        }
-
-        int sign = 1;
-
-        switch (str.charAt(0)) {
-            case '-':
+        int i = 0, sign = 1;
+        for ( ; i < str.length() && str.charAt(i) == ' '; i++);
+        if (i < str.length()) {
+            char csign = str.charAt(i);
+            if (csign == '-') {
                 sign = -1;
-            case '+':
-                str = str.substring(1);
-                break;
+                i++;
+            } else if (csign == '+') {
+                sign = 1;
+                i++;
+            } else if (csign < '0' || csign > '9') {
+                return 0;
+            } else {}
         }
-
-        for (char c : str.toCharArray()) {
-            if (c >= '0' && c <= '9') {
-                n = n * 10 + (c - '0');
-
-                if (n * sign > Integer.MAX_VALUE) {
-                    return Integer.MAX_VALUE;
-                } else if (n * sign < Integer.MIN_VALUE) {
-                    return Integer.MIN_VALUE;
-                }
-
-            } else {
+        long number = 0;
+        for ( ; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c < '0' || c > '9') {
                 break;
             }
-        }
+            number = number * 10 + (c - '0');
 
-        return (int) (n * sign);
+            if (number * sign > Integer.MAX_VALUE) {
+                return Integer.MAX_VALUE;
+            }
+            if (number * sign < Integer.MIN_VALUE) {
+                return Integer.MIN_VALUE;
+            }
+        }
+        return (int) (number * sign);
     }
 }
