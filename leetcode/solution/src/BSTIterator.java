@@ -6,12 +6,8 @@ public class BSTIterator {
     private TreeNode mCurNode;
 
     public BSTIterator(TreeNode root) {
-        mStack = new Stack<TreeNode>();
+        mStack = new Stack<>();
         mCurNode = root;
-
-//        for (mCurNode = root; mCurNode != null; mCurNode = mCurNode.left) {
-//            mStack.push(mCurNode);
-//        }
     }
 
     /**
@@ -41,19 +37,4 @@ public class BSTIterator {
 
         return result;
     }
-
-    /** 这样写也好，不过要注意在构造函数中初始化如上注释部分
-    public int next() {
-        if (mCurNode == null) {
-            mCurNode = mStack.pop();
-        }
-
-        int val = mCurNode.val;
-
-        for (mCurNode = mCurNode.right; mCurNode != null; mCurNode = mCurNode.left) {
-            mStack.push(mCurNode);
-        }
-
-        return val;
-    }*/
 }
