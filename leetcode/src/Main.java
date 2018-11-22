@@ -2,40 +2,38 @@ import java.util.*;
 
 public class Main {
 
-    public static int myAtoi(String str) {
-        int i = 0, sign = 1;
-        for ( ; i < str.length() && str.charAt(i) == ' '; i++);
-        if (i < str.length()) {
-            char csign = str.charAt(i);
-            if (csign == '-') {
-                sign = -1;
-                i++;
-            } else if (csign == '+') {
-                sign = 1;
-                i++;
-            } else if (csign < '0' || csign > '9') {
-                return 0;
-            } else {}
-        }
-        long number = 0;
-        for ( ; i < str.length(); i++) {
-            char c = str.charAt(i);
-            if (c < '0' || c > '9') {
-                break;
-            }
-            number = number * 10 + (c - '0');
+    public static String reverseWords(String s) {
+        int i, j = 0;
+        boolean flag = false;
 
-            if (number * sign > Integer.MAX_VALUE) {
-                return Integer.MAX_VALUE;
-            }
-            if (number * sign < Integer.MIN_VALUE) {
-                return Integer.MIN_VALUE;
+        StringBuilder sb = new StringBuilder();
+
+        for (i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == ' ') {
+                if (!flag) {
+                    continue;
+                } else {
+                    flag = false;
+                    sb.append(s.substring(i + 1, j + 1)).append(" ");
+                }
+            } else {
+                if (!flag) {
+                    flag = true;
+                    j = i;
+                }
             }
         }
-        return (int) (number * sign);
+
+        if (flag) {
+            sb.append(s.substring(i + 1, j + 1));
+        }
+        if (sb.length() > 0 && sb.charAt(sb.length() - 1) == ' ') {
+            sb.setLength(sb.length() - 1);
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println(myAtoi("-42"));
+        System.out.println(reverseWords("the sky is blue"));
     }
 }

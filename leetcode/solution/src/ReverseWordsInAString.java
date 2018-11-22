@@ -1,48 +1,34 @@
 public class ReverseWordsInAString {
 
-
-    // 耗时10ms
-    public String reverseWords(String s) {
-        StringBuilder sb = new StringBuilder();
-
-        boolean inWord = false;
-        char[] cc = s.toCharArray();
-        for (int i = cc.length - 1, idx = 0; i >= 0; i--) {
-            if (cc[i] != ' ') {
-                if (!inWord && sb.length() > 0) {
-                    sb.append(' ');
-                }
-                inWord = true;
-                sb.insert(idx, cc[i]);
-            } else if (inWord) {
-                idx = sb.length() + 1;
-                inWord = false;
-            }
+    public static String reverseWords(String s) {
+        s = s.trim();
+        if (s.length() == 0) {
+            return "";
         }
-
-        return sb.toString();
-    }
-
-    // 耗时18ms
-    public String reverseWords2(String s) {
         StringBuilder sb = new StringBuilder();
-
-        for (int i = 0, j = 0; i < s.length(); ) {
+        boolean flag = false;
+        int i = s.length() - 1, j = i;
+        for (i = s.length() - 1, j = i; i >= 0; i--) {
             if (s.charAt(i) == ' ') {
-                i++;
-                j = i;
-            } else if (j >= s.length() || s.charAt(j) == ' ') {
-                sb.insert(0, s.substring(i, j) + " ");
-                i = j;
+                if (!flag) {
+                    continue;
+                } else {
+                    sb.append(s.substring(i + 1, j + 1)).append(" ");
+                    flag = false;
+                }
             } else {
-                j++;
+                if (!flag) {
+                    j = i;
+                    flag = true;
+                }
             }
         }
-
-        if (sb.length() > 0) {
+        if (j > i) {
+            sb.append(s.substring(i + 1, j + 1));
+        }
+        if (sb.charAt(sb.length() - 1) == ' ') {
             sb.setLength(sb.length() - 1);
         }
-
         return sb.toString();
     }
 }
