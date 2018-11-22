@@ -1,32 +1,31 @@
 public class ReverseWordsInAString {
 
     public static String reverseWords(String s) {
-        s = s.trim();
-        if (s.length() == 0) {
-            return "";
-        }
-        StringBuilder sb = new StringBuilder();
+        int i, j = 0;
         boolean flag = false;
-        int i = s.length() - 1, j = i;
-        for (i = s.length() - 1, j = i; i >= 0; i--) {
+
+        StringBuilder sb = new StringBuilder();
+
+        for (i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) == ' ') {
                 if (!flag) {
                     continue;
                 } else {
-                    sb.append(s.substring(i + 1, j + 1)).append(" ");
                     flag = false;
+                    sb.append(s.substring(i + 1, j + 1)).append(" ");
                 }
             } else {
                 if (!flag) {
-                    j = i;
                     flag = true;
+                    j = i;
                 }
             }
         }
-        if (j > i) {
+
+        if (flag) {
             sb.append(s.substring(i + 1, j + 1));
         }
-        if (sb.charAt(sb.length() - 1) == ' ') {
+        if (sb.length() > 0 && sb.charAt(sb.length() - 1) == ' ') {
             sb.setLength(sb.length() - 1);
         }
         return sb.toString();
