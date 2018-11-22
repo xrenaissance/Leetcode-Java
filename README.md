@@ -288,6 +288,7 @@
 |317|[Shortest Distance from All Buildings](https://leetcode.com/problems/shortest-distance-from-all-buildings/)| [Java](leetcode/solution/src/ShortestDistanceFromAllBuildings.java)|75|典型的bfs，多做两遍|
 |319|[Bulb Switcher](https://leetcode.com/problems/bulb-switcher/)| [Java](leetcode/solution/src/BulbSwitcher.java)|90|
 |320|[Generalized Abbreviation](https://leetcode.com/problems/generalized-abbreviation/)| [Java](leetcode/solution/src/GeneralizedAbbreviation.java)|70|这题是典型的back tracking，多做几遍|
+|322|[Coin Change](https://leetcode.com/problems/coin-change/)|[Java](leetcode/solution/src/CoinChange.java)|80||
 |323|[Number of Connected Components in an Undirected Graph](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)| [Java](leetcode/solution/src/NumberOfConnectedComponents.java)|90|典型的图，多看两遍|
 |324|[Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/)| [Java](leetcode/solution/src/WiggleSortII.java)|60|
 |325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)| [Java](leetcode/solution/src/MaximumSizeSubarraySumEqualsK.java)|75|这题思路有意思，多做几遍|

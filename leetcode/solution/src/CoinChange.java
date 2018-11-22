@@ -1,8 +1,8 @@
-import java.util.*;
+import java.util.Arrays;
 
-public class Main {
+public class CoinChange {
 
-    public static int coinChange(int[] coins, int amount) {
+    public int coinChange(int[] coins, int amount) {
         Arrays.sort(coins);
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, -1);
@@ -16,11 +16,5 @@ public class Main {
             }
         }
         return dp[amount];
-    }
-
-    public static void main(String[] args) {
-        System.out.println(coinChange(new int[] {
-                1, 2, 5
-        }, 11));
     }
 }
