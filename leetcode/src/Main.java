@@ -4,58 +4,34 @@ public class Main {
 
     public static class Solution {
 
-        public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-            HashSet<String> words = new HashSet<>(wordList);
-            Queue<String> queue = new LinkedList<>();
-            queue.offer(beginWord);
-
-            Queue<String> next = new LinkedList<>();
-            int length = 1;
-
-            while (!queue.isEmpty()) {
-                String s = queue.poll();
-
-                if (s.equals(endWord)) {
-                    return length;
+        public List<Integer> topKFrequent(int[] nums, int k) {
+            HashMap<Integer, Integer> map = new HashMap<>();
+            int max = 0;
+            for (int n : nums) {
+                int cnt = map.getOrDefault(n, 0) + 1;
+                map.put(n, cnt);
+                max = Math.max(max, cnt);
+            }
+            List<Integer>[] lists = new ArrayList[max + 1];
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                int freq = entry.getValue();
+                if (lists[freq] == null) {
+                    lists[freq] = new ArrayList<>();
                 }
-
-                if (!words.isEmpty()) {
-                    StringBuilder sb = new StringBuilder(s);
-                    for (int i = 0; i < s.length(); i++) {
-                        for (char c = 'a'; c <= 'z'; c++) {
-                            if (c == s.charAt(i)) {
-                                continue;
-                            }
-
-                            sb.setCharAt(i, c);
-                            String st = sb.toString();
-
-                            if (words.contains(st)) {
-                                next.offer(st);
-                                words.remove(st);
-                            }
-                        }
-                        sb.setCharAt(i, s.charAt(i));
-                    }
-                }
-
-                if (queue.isEmpty()) {
-                    queue.addAll(next);
-                    next.clear();
-                    length++;
+                lists[freq].add(entry.getKey());
+            }
+            List<Integer> result = new ArrayList<>();
+            for (int i = max; i >= 0 && result.size() <= k; i--) {
+                if (lists[i] != null) {
+                    result.addAll(lists[i]);
                 }
             }
-
-            return 0;
+            return result.subList(0, k);
         }
     }
 
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int len = solution.ladderLength("hit", "cog", Arrays.asList(new String[]{
-                "hot", "dot", "dog", "lot", "log"
-        }));
-        System.out.println(len);
     }
 }
