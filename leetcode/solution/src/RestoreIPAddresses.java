@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,31 +9,33 @@ public class RestoreIPAddresses {
      * 注意，0可以，但是00，01， 010这种是不允许的
      */
     public List<String> restoreIpAddresses(String s) {
-        List<String> list = new LinkedList<>();
-        dfs(s, list, 0, 0, "");
-        return list;
+        List<String> result = new ArrayList<>();
+        dfs(s, 0, new LinkedList<>(), result);
+        return new ArrayList<>(result);
     }
 
-    private void dfs(String s, List<String> list, int index, int count, String cur) {
+    private void dfs(String s, int index, Deque<String> ips, List<String> result) {
+        if (ips.size() > 4) {
+            return;
+        }
         if (index >= s.length()) {
-            if (count == 4) {
-                list.add(cur);
+            if (ips.size() == 4) {
+                result.add(String.join(".", ips));
             }
             return;
         }
-
-        if (count == 4) {
-            return;
-        }
-
-        int[][] RANGES = {
-                {0, 0}, {0, 9}, {10, 99}, {100, 255}
-        };
         for (int i = 1; i <= 3 && index + i <= s.length(); i++) {
             String t = s.substring(index, index + i);
-            int n = Integer.parseInt(t);
-            if (n >= RANGES[i][0] && n <= RANGES[i][1]) {
-                dfs(s, list, index + i, count + 1, (cur.isEmpty() ? "" : cur + ".") + t);
+            int k = Integer.parseInt(t);
+            if (i == 3 && k > 255) {
+                break;
+            }
+            ips.offer(t);
+            dfs(s, index + i, ips, result);
+            ips.pollLast();
+
+            if (k == 0) {
+                break;
             }
         }
     }
