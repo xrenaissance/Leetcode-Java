@@ -15,45 +15,46 @@ public class WordLadder {
     /**
      * 要注意添加节点时要给单词从dict中删掉
      */
-    // 常规的BFS，耗时141ms
+    // 常规的BFS，耗时64ms
     public int ladderLength(String beginWord, String endWord, Set<String> wordList) {
-        wordList.remove(beginWord);
-        wordList.add(endWord);
-
+        HashSet<String> words = new HashSet<>(wordList);
         Queue<String> queue = new LinkedList<>();
-        Queue<String> next = new LinkedList<>();
-        queue.add(beginWord);
+        queue.offer(beginWord);
 
-        int ladder = 1;
+        Queue<String> next = new LinkedList<>();
+        int length = 1;
 
         while (!queue.isEmpty()) {
-            String word = queue.poll();
+            String s = queue.poll();
 
-            StringBuilder sb = new StringBuilder(word);
-            for (int i = 0; i < word.length(); i++) {
-                char c = word.charAt(i);
-                for (int j = 0; j < 26; j++) {
-                    if (j + 'a' == c) {
-                        continue;
-                    }
-                    sb.setCharAt(i, (char) (j + 'a'));
-                    String s = sb.toString();
+            if (s.equals(endWord)) {
+                return length;
+            }
 
-                    if (s.equals(endWord)) {
-                        return ladder + 1;
-                    }
+            if (!words.isEmpty()) {
+                StringBuilder sb = new StringBuilder(s);
+                for (int i = 0; i < s.length(); i++) {
+                    for (char c = 'a'; c <= 'z'; c++) {
+                        if (c == s.charAt(i)) {
+                            continue;
+                        }
 
-                    if (wordList.remove(s)) {
-                        next.add(s);
+                        sb.setCharAt(i, c);
+                        String st = sb.toString();
+
+                        if (words.contains(st)) {
+                            next.offer(st);
+                            words.remove(st);
+                        }
                     }
+                    sb.setCharAt(i, s.charAt(i));
                 }
-                sb.setCharAt(i, c);
             }
 
             if (queue.isEmpty()) {
                 queue.addAll(next);
                 next.clear();
-                ladder++;
+                length++;
             }
         }
 

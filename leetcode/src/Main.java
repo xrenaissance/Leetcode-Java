@@ -4,45 +4,58 @@ public class Main {
 
     public static class Solution {
 
-        public List<String> restoreIpAddresses(String s) {
-            List<String> result = new ArrayList<>();
-            dfs(s, 0, new LinkedList<>(), result);
-            return new ArrayList<>(result);
-        }
+        public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+            HashSet<String> words = new HashSet<>(wordList);
+            Queue<String> queue = new LinkedList<>();
+            queue.offer(beginWord);
 
-        private void dfs(String s, int index, Deque<String> ips, List<String> result) {
-            if (ips.size() > 4) {
-                return;
-            }
-            if (index >= s.length()) {
-                if (ips.size() == 4) {
-                    result.add(String.join(".", ips));
-                }
-                return;
-            }
-            for (int i = 1; i <= 3 && index + i <= s.length(); i++) {
-                String t = s.substring(index, index + i);
-                int k = Integer.parseInt(t);
-                if (i == 3 && k > 255) {
-                    break;
-                }
-                ips.offer(t);
-                dfs(s, index + i, ips, result);
-                ips.pollLast();
+            Queue<String> next = new LinkedList<>();
+            int length = 1;
 
-                if (k == 0) {
-                    break;
+            while (!queue.isEmpty()) {
+                String s = queue.poll();
+
+                if (s.equals(endWord)) {
+                    return length;
+                }
+
+                if (!words.isEmpty()) {
+                    StringBuilder sb = new StringBuilder(s);
+                    for (int i = 0; i < s.length(); i++) {
+                        for (char c = 'a'; c <= 'z'; c++) {
+                            if (c == s.charAt(i)) {
+                                continue;
+                            }
+
+                            sb.setCharAt(i, c);
+                            String st = sb.toString();
+
+                            if (words.contains(st)) {
+                                next.offer(st);
+                                words.remove(st);
+                            }
+                        }
+                        sb.setCharAt(i, s.charAt(i));
+                    }
+                }
+
+                if (queue.isEmpty()) {
+                    queue.addAll(next);
+                    next.clear();
+                    length++;
                 }
             }
+
+            return 0;
         }
     }
 
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        List<String> result = solution.restoreIpAddresses("111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");
-        for (String s : result) {
-            System.out.println(s);
-        }
+        int len = solution.ladderLength("hit", "cog", Arrays.asList(new String[]{
+                "hot", "dot", "dog", "lot", "log"
+        }));
+        System.out.println(len);
     }
 }
