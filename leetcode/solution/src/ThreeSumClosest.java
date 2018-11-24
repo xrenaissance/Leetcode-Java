@@ -5,30 +5,25 @@ public class ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
 
-        long dis = Integer.MAX_VALUE, result = 0;
+        int min = Integer.MAX_VALUE, res = 0;
+        for (int k = 0; k < nums.length - 2; k++) {
 
-        for (int i = 0; i < nums.length - 2; i++) {
-            int newTarget = target - nums[i];
-
-            for (int j = i + 1, k = nums.length - 1; j < k; ) {
-                int sum = nums[j] + nums[k];
-
-                if (sum > newTarget) {
-                    k--;
-                } else if (sum < newTarget) {
-                    j++;
+            for (int i = k + 1, j = nums.length - 1; i < j; ) {
+                int sum = nums[k] + nums[i] + nums[j];
+                if (sum > target) {
+                    j--;
+                } else if (sum < target) {
+                    i++;
                 } else {
-                    return target;
+                    return sum;
                 }
-
-                long delta = Math.abs(newTarget - sum);
-                if (delta < dis) {
-                    dis = delta;
-                    result = sum + nums[i];
+                int delta = Math.abs(sum - target);
+                if (delta < min) {
+                    min = delta;
+                    res = sum;
                 }
             }
         }
-
-        return (int) result;
+        return res;
     }
 }

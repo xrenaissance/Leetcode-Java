@@ -10,43 +10,47 @@ import java.util.Random;
 // 耗时111ms
 public class InsertDeleteGetRandom {
 
-    private HashMap<Integer, Integer> mMap;
-    private List<Integer> mList;
-    private Random mRandom;
+    ArrayList<Integer> list;
+    HashMap<Integer, Integer> map;
+    Random random;
 
+    /** Initialize your data structure here. */
     public InsertDeleteGetRandom() {
-        mList = new ArrayList<Integer>();
-        mMap = new HashMap<Integer, Integer>();
-        mRandom = new Random();
+        map = new HashMap<>();
+        list = new ArrayList<>();
+        random = new Random();
     }
 
+    /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     public boolean insert(int val) {
-        if (mMap.containsKey(val)) {
+        if (map.containsKey(val)) {
             return false;
         }
-        mList.add(val);
-        mMap.put(val, mList.size() - 1);
+        list.add(val);
+        map.put(val, list.size() - 1);
         return true;
     }
 
+    /** Removes a value from the set. Returns true if the set contained the specified element. */
     public boolean remove(int val) {
-        if (!mMap.containsKey(val)) {
+        int index = map.getOrDefault(val, -1);
+        if (index < 0) {
             return false;
         }
-        int index = mMap.remove(val);
-        int lastIndex = mList.size() - 1;
-        if (index != lastIndex) {
-            int lastVal = mList.get(lastIndex);
-            mList.set(index, lastVal);
-            // 这里要注意重新设置lastVal的index
-            mMap.put(lastVal, index);
+        if (index != list.size() - 1) {
+            int tail = list.get(list.size() - 1);
+            list.set(index, tail);
+            map.put(tail, index);
         }
-        mList.remove(lastIndex);
+        map.remove(val);
+        list.remove(list.size() - 1);
         return true;
     }
 
+    /** Get a random element from the set. */
     public int getRandom() {
-        int index = mRandom.nextInt(mList.size());
-        return mList.get(index);
+        int index = random.nextInt(list.size());
+        index = (index >= 0 ? index : -index);
+        return list.get(index);
     }
 }
