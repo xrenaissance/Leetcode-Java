@@ -379,6 +379,7 @@
 |560|[Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)| [Java](leetcode/solution/src/SubarraySumEqualsK.java)|70||
 |606|[Construct String from Binary Tree](https://leetcode.com/problems/construct-string-from-binary-tree/)|[Java](leetcode/solution/src/ConstructStringFromBinaryTree.java)|90||
 |617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)|[Java](leetcode/solution/src/MergeTwoBinaryTrees.java)|100|很简单|
+|621|[Task Scheduler](https://leetcode.com/problems/task-scheduler/)|[Java](leetcode/solution/src/TaskScheduler.java)|70||
 |637|[Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/#/description)| [Java](leetcode/solution/src/AverageOfLevelsInBinaryTree.java)|100||
 |652|[Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)| [Java](leetcode/solution/src/FindDuplicateSubtrees.java)|70|开始还没思路|
 |653|[Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/)| [Java](leetcode/solution/src/TwoSumIV.java)|90||

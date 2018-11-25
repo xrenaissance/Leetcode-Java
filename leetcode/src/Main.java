@@ -4,16 +4,15 @@ public class Main {
 
     public static class Solution {
 
-        public int subarraySum(int[] nums, int k) {
-            HashMap<Integer, Integer> map = new HashMap<>();
-            map.put(0, 1);
-            int count = 0;
-            for (int i = 0, sum = 0; i < nums.length; i++) {
-                sum += nums[i];
-                map.put(sum, map.getOrDefault(sum, 0) + 1);
-                count += map.getOrDefault(sum - k, 0);
+        public int leastInterval(char[] tasks, int n) {
+            int[] count = new int[26];
+            for (char c : tasks) {
+                count[c - 'A']++;
             }
-            return count;
+            Arrays.sort(count);
+            int i = 25;
+            for ( ; i >= 0 && count[i] == count[25]; i--);
+            return Math.max(tasks.length, (count[25] - 1) * (n + 1) + 25 - i);
         }
     }
 
