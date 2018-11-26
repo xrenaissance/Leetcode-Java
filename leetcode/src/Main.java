@@ -4,17 +4,27 @@ public class Main {
 
     public static class Solution {
 
-        public int leastInterval(char[] tasks, int n) {
-            int[] count = new int[26];
-            for (char c : tasks) {
-                count[c - 'A']++;
+        public int largestRectangleArea(int[] heights) {
+            int[] indexes = new int[heights.length + 1];
+            int top = -1, max = 0;
+
+            for (int i = 0; i <= heights.length; ) {
+                int height = i == heights.length ? 0 : heights[i];
+                if (top < 0 || height > heights[indexes[top]]) {
+                    indexes[++top] = i++;
+                } else {
+                    int k = heights[indexes[top--]];
+                    int left = top < 0 ? 0 : (indexes[top] + 1);
+                    max = Math.max(max, (i - 1 - left + 1) * k);
+                }
             }
-            Arrays.sort(count);
-            int i = 25;
-            for ( ; i >= 0 && count[i] == count[25]; i--);
-            return Math.max(tasks.length, (count[25] - 1) * (n + 1) + 25 - i);
+
+            return max;
         }
+
     }
+
+
 
     public static void main(String[] args) {
         Solution solution = new Solution();
