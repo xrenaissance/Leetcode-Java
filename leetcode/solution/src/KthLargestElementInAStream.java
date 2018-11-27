@@ -1,12 +1,7 @@
-import java.util.*;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
-public class Main {
-
-    public static class Solution {
-
-
-
-    }
+public class KthLargestElementInAStream {
 
     class KthLargest {
 
@@ -27,9 +22,5 @@ public class Main {
             }
             return queue.peek();
         }
-    }
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
     }
 }

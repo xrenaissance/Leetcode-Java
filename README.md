@@ -388,6 +388,7 @@
 |681|[Next Closest Time](https://leetcode.com/problems/next-closest-time/)|[Java](leetcode/solution/src/NextClosestTime.java)|80|这题多做几遍|
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
 |695|[Max Area of Island](https://leetcode.com/problems/max-area-of-island/)|[Java](leetcode/solution/src/MaxAreaOfIsland.java)|100||
+|703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)|[Java](leetcode/solution/src/KthLargestElementInAStream.java)|100||
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|[Java](leetcode/solution/src/JewelsAndStones.java)|100||
 |819|[Most Common Word](https://leetcode.com/problems/most-common-word/)|[Java](leetcode/solution/src/MostCommonWord.java)|85||
 |904|[Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)|[Java](leetcode/solution/src/FruitIntoBaskets.java)|90||

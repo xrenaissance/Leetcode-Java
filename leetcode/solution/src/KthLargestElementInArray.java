@@ -2,6 +2,9 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Random;
 
+/**
+ * 注意本题不是返回第k大的distinct number
+ */
 public class KthLargestElementInArray {
 
     // 耗时15ms，时间复杂度O(nlgk)，空间复杂度O(k)
