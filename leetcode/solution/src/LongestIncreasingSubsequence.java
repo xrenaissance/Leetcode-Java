@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class LongestIncreasingSubsequence {
 
     /**
-     * 这题是典型的DP，f[i]包含i的最长子序列长度
+     * 这题是典型的DP，f[i]包含i的最长递增子序列长度
      */
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
@@ -27,24 +27,22 @@ public class LongestIncreasingSubsequence {
         return max;
     }
 
+    /**
+     * 核心思路是dp维护了一个递增的序列，dp[i]表示nums中长度为i+1的递增子序列中tail最小的值
+     * tail越小意味着之后延长这个序列更容易
+     * 为了保证dp[i]是tail最小的，我们遍历nums时，当发现有更小的值时，会替换dp[i]
+     */
     public int lengthOfLIS2(int[] nums) {
-        int len = 1;
-        for (int i = 0; i < nums.length; i++) {
-            /**
-             * 注意这里要指定区间，且end是开区间
-             */
-            int k = Arrays.binarySearch(nums, 0, len, nums[i]);
-            /**
-             * 只处理k<0的情况
-             */
-            if (k < 0) {
-                k = -(k + 1);
-                if (k == len) {
-                    len++;
-                }
-                nums[k] = nums[i];
-            }
+        int[] dp = new int[nums.length];
+        int len = 0;
+
+        for(int x : nums) {
+            int i = Arrays.binarySearch(dp, 0, len, x);
+            if(i < 0) i = -(i + 1);
+            dp[i] = x;
+            if(i == len) len++;
         }
+
         return len;
     }
 }
