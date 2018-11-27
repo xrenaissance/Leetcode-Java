@@ -377,6 +377,7 @@
 |547|[Friend Circles](https://leetcode.com/problems/friend-circles/)|[Java](leetcode/solution/src/FriendCircles.java)|70||
 |557|[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)| [Java](leetcode/solution/src/ReverseWordsInAStringIII.java)|100||
 |560|[Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)| [Java](leetcode/solution/src/SubarraySumEqualsK.java)|70||
+|564|[Find the Closest Palindrome](https://leetcode.com/problems/find-the-closest-palindrome/)|[Java](leetcode/solution/src/FindTheClosestPalindrome.java)|80|此题暴力法即可|
 |606|[Construct String from Binary Tree](https://leetcode.com/problems/construct-string-from-binary-tree/)|[Java](leetcode/solution/src/ConstructStringFromBinaryTree.java)|90||
 |617|[Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)|[Java](leetcode/solution/src/MergeTwoBinaryTrees.java)|100|很简单|
 |621|[Task Scheduler](https://leetcode.com/problems/task-scheduler/)|[Java](leetcode/solution/src/TaskScheduler.java)|70||
