@@ -1,36 +1,46 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.util.*;
 
 public class Main {
 
     public static class Solution {
 
-        public String nearestPalindromic(String n) {
-            long val = Long.parseLong(n);
-            for (int i = 0; ; i++) {
-                long k1 = val - i, k2 = val + i;
-                if (isPalindrome(k1)) {
-                    return String.valueOf(k1);
+        public int kEmptySlots(int[] flowers, int k) {
+            int[] days = new int[flowers.length];
+            for (int i = 0; i < flowers.length; i++) days[flowers[i] - 1] = i + 1;
+            int left = 0, right = k + 1, res = Integer.MAX_VALUE;
+            for (int i = left + 1; i <= right && right < days.length; i++) {
+                if (i == right) {
+                    res = Math.min(res, Math.max(days[left], days[right]));
                 }
-                if (isPalindrome(k2)) {
-                    return String.valueOf(k2);
-                }
-            }
-        }
 
-        private boolean isPalindrome(long k) {
-            long x = k, rev = 0;
-            for ( ; k > 0; ) {
-                rev = rev * 10 + k % 10;
-                k /= 10;
+                if (days[i] < days[left] || days[i] < days[right]) {
+                    left = i;
+                    right = k + 1 + i;
+                }
             }
-            return rev == x;
+            return (res == Integer.MAX_VALUE) ? -1 : res;
         }
 
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String s = solution.nearestPalindromic("807045053224792883");
-        System.out.println(s);
+
+        TreeMap<Integer, Boolean> map = new TreeMap<>();
+        int[] nums = {4, 1, 7, 5, 2, 8, 10, 0};
+        for (int n : nums) {
+            map.put(n, true);
+        }
+        for (int k : map.keySet()) {
+            System.out.print(k + " ");
+        }
+
+        int n = solution.kEmptySlots(new int[]{
+                1, 2, 3
+        }, 1);
+        System.out.println(n);
+
     }
 }

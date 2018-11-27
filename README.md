@@ -387,6 +387,7 @@
 |654|[Maximum Binary Tree](https://leetcode.com/problems/maximum-binary-tree/description/)|[Java](leetcode/solution/src/MaximumBinaryTree.java)|100||
 |669|[Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree/)|[Java](leetcode/solution/src/TrimABinarySearchTree.java)|100||
 |681|[Next Closest Time](https://leetcode.com/problems/next-closest-time/)|[Java](leetcode/solution/src/NextClosestTime.java)|80|这题多做几遍|
+|683|[K Empty Slots](https://leetcode.com/problems/k-empty-slots/)|[Java](leetcode/solution/src/KEmptySlots.java)|80||
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
 |695|[Max Area of Island](https://leetcode.com/problems/max-area-of-island/)|[Java](leetcode/solution/src/MaxAreaOfIsland.java)|100||
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)|[Java](leetcode/solution/src/KthLargestElementInAStream.java)|100||
