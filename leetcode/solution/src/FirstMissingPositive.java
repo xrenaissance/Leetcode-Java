@@ -6,7 +6,7 @@ public class FirstMissingPositive {
 
     public int firstMissingPositive(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
-            while (nums[i] >= 1 && nums[i] <= nums.length && nums[nums[i] - 1] != nums[i]) {
+            while (nums[i] - 1 >= 0 && nums[i] - 1 < nums.length && nums[nums[i] - 1] != nums[i]) {
                 swap(nums, i, nums[i] - 1);
             }
         }

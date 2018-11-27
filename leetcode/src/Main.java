@@ -4,24 +4,25 @@ public class Main {
 
     public static class Solution {
 
-        public int largestRectangleArea(int[] heights) {
-            int[] indexes = new int[heights.length + 1];
-            int top = -1, max = 0;
-
-            for (int i = 0; i <= heights.length; ) {
-                int height = i == heights.length ? 0 : heights[i];
-                if (top < 0 || height > heights[indexes[top]]) {
-                    indexes[++top] = i++;
-                } else {
-                    int k = heights[indexes[top--]];
-                    int left = top < 0 ? 0 : (indexes[top] + 1);
-                    max = Math.max(max, (i - 1 - left + 1) * k);
+        public int firstMissingPositive(int[] nums) {
+            for (int i = 0; i < nums.length; i++) {
+                while (nums[i] - 1 < nums.length && nums[i] - 1 >= 0 && nums[i] != nums[nums[i] - 1]) {
+                    swap(nums, i, nums[i] - 1);
                 }
             }
-
-            return max;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != i + 1) {
+                    return i + 1;
+                }
+            }
+            return nums.length + 1;
         }
 
+        private void swap(int[] nums, int i, int j) {
+            int t = nums[i];
+            nums[i] = nums[j];
+            nums[j] = t;
+        }
     }
 
 
