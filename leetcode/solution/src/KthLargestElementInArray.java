@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.PriorityQueue;
+import java.util.Random;
 
 public class KthLargestElementInArray {
 
@@ -26,9 +27,21 @@ public class KthLargestElementInArray {
     // T(n) = T(n / 2) + n = O(2n)
     // 对比快速排序T(n) = 2T(n / 2) + n = O(nlgn)
     // 区别在于这个被pivot分隔后，只用处理其中的一半，而快排两边都要处理
-    // 耗时18ms
+
+    /**
+     * shuffle非常有必要，性能提升很大
+     */
     public int findKthLargest(int[] nums, int k) {
+        shuffle(nums);
         return findKthLargest(nums, 0, nums.length - 1, k);
+    }
+
+    private void shuffle(int[] nums) {
+        Random rnd = new Random(System.currentTimeMillis());
+        for (int i = nums.length - 1; i > 1; i--) {
+            int index = rnd.nextInt(i + 1);
+            swap(nums, index, i);
+        }
     }
 
     public int findKthLargest(int[] nums, int start, int end, int k) {
@@ -45,6 +58,10 @@ public class KthLargestElementInArray {
         }
     }
 
+    /**
+     * 这里两端都是闭区间
+     * 这里将数组分为两部分，左边小于pivot，右边大于pivot，中间可能等于pivot
+     */
     public int partition(int[] nums, int start, int end) {
         int pivot = nums[end], left = start, right = end - 1;
 
