@@ -4,43 +4,57 @@ import java.util.*;
 
 public class Main {
 
-    public static class Solution {
+    static class Man {
+        int quality;
+        int wage;
 
-        public int kEmptySlots(int[] flowers, int k) {
-            int[] days = new int[flowers.length];
-            for (int i = 0; i < flowers.length; i++) days[flowers[i] - 1] = i + 1;
-            int left = 0, right = k + 1, res = Integer.MAX_VALUE;
-            for (int i = left + 1; i <= right && right < days.length; i++) {
-                if (i == right) {
-                    res = Math.min(res, Math.max(days[left], days[right]));
-                }
-
-                if (days[i] < days[left] || days[i] < days[right]) {
-                    left = i;
-                    right = k + 1 + i;
-                }
-            }
-            return (res == Integer.MAX_VALUE) ? -1 : res;
+        Man(int a, int b) {
+            quality = a;
+            wage = b;
         }
 
+        double ratio() {
+            return (double) wage / quality;
+        }
+    }
+
+    public static class Solution {
+        public double mincostToHireWorkers(int[] quality, int[] wage, int K) {
+            Queue<Man> queue = new PriorityQueue<>(new Comparator<Man>() {
+                @Override
+                public int compare(Man o1, Man o2) {
+                    return o1.ratio() > o2.ratio() ? 1 : -1;
+                }
+            });
+            for (int i = 0; i < quality.length; i++) {
+                queue.offer(new Man(quality[i], wage[i]));
+            }
+            double money = Integer.MAX_VALUE, qsum = 0;
+            Queue<Integer> queue2 = new PriorityQueue<>(Comparator.reverseOrder());
+            while (!queue.isEmpty()) {
+                Man man = queue.poll();
+                qsum += man.quality;
+                queue2.offer(man.quality);
+                if (queue2.size() > K) {
+                    qsum -= queue2.poll();
+                }
+                if (queue2.size() == K) {
+                    money = Math.min(money, qsum * man.ratio());
+                }
+            }
+            return money;
+        }
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        TreeMap<Integer, Boolean> map = new TreeMap<>();
-        int[] nums = {4, 1, 7, 5, 2, 8, 10, 0};
-        for (int n : nums) {
-            map.put(n, true);
-        }
-        for (int k : map.keySet()) {
-            System.out.print(k + " ");
-        }
+        double s = solution.mincostToHireWorkers(new int[] {
+                3,1,10,10,1
+        }, new int[] {
+                4,8,2,2,7
+        },3);
 
-        int n = solution.kEmptySlots(new int[]{
-                1, 2, 3
-        }, 1);
-        System.out.println(n);
-
+        System.out.println(s);
     }
 }
