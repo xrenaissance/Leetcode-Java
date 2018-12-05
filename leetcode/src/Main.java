@@ -5,36 +5,35 @@ import java.util.*;
 public class Main {
 
     public static class Solution {
-        public boolean backspaceCompare(String S, String T) {
-            if (S.length() < T.length()) {
-                return backspaceCompare(T, S);
-            }
-            Stack<Character> stack1 = new Stack<>();
-            Stack<Character> stack2 = new Stack<>();
-            for (int i = 0; i < S.length(); i++) {
-                helper(stack1, S, i);
-                helper(stack2, T, i);
-            }
-            while (!stack1.isEmpty() && !stack2.isEmpty()) {
-                if (!stack1.pop().equals(stack2.pop())) {
-                    return false;
-                }
-            }
-            return stack1.isEmpty() && stack2.isEmpty();
+
+        public interface Master {
+            int guess(String word);
         }
 
-        private void helper(Stack<Character> stack, String s, int i) {
-            if (i >= s.length()) {
-                return;
-            }
-            char c = s.charAt(i);
-            if (c == '#') {
-                if (!stack.isEmpty()) {
-                    stack.pop();
+
+        public void findSecretWord(String[] wordlist, Master master) {
+            Random random = new Random();
+            for (int i = 0; i < 10; i++) {
+                String word = wordlist[random.nextInt(wordlist.length)];
+                int match = master.guess(word);
+                List<String> list = new ArrayList<>();
+                for (String s : wordlist) {
+                    if (match(s, word) == match) {
+                        list.add(s);
+                    }
                 }
-            } else {
-                stack.push(c);
+                wordlist = list.toArray(new String[0]);
             }
+        }
+
+        private int match(String s, String t) {
+            int match = 0;
+            for (int i = 0; i < s.length(); i++) {
+                if (s.charAt(i) == t.charAt(i)) {
+                    match++;
+                }
+            }
+            return match;
         }
     }
 
