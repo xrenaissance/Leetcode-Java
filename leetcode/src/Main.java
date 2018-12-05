@@ -6,31 +6,46 @@ public class Main {
 
     public static class Solution {
 
+        public int maxDistToClosest(int[] seats) {
+            int max = 0;
 
-        public int candy(int[] ratings) {
-            int[] candys = new int[ratings.length];
-
-            Arrays.fill(candys, 1);
-
-            for (int i = 1; i < ratings.length; i++) {
-                if (ratings[i] > ratings[i - 1]) {
-                    candys[i] = candys[i - 1] + 1;
+            int[] zone = new int[2];
+            for (int index = 0; index < seats.length; ) {
+                Arrays.fill(zone, -1);
+                index = nextFree(seats, index, zone);
+                if (zone[0] == 0 || zone[1] == seats.length - 1) {
+                    max = Math.max(max, zone[1] - zone[0] + 1);
+                } else {
+                    max = Math.max(max, (zone[1] - zone[0] + 2) / 2);
                 }
             }
-            int sum = candys[ratings.length - 1];
-            for (int i = ratings.length - 2; i >= 0; i--) {
-                if (ratings[i] > ratings[i + 1]) {
-                    candys[i] = Math.max(candys[i], candys[i + 1] + 1);
+
+            return max;
+        }
+
+        private int nextFree(int[] seats, int start, int[] zone) {
+            boolean enter = false;
+            for (int i = start, j = 0; i <= seats.length; i++) {
+                if (i < seats.length && seats[i] == 0) {
+                    if (!enter) {
+                        enter = true;
+                        j = i;
+                    }
+                } else {
+                    if (enter) {
+                        zone[0] = j;
+                        zone[1] = i - 1;
+                        return i + 1;
+                    }
                 }
-                sum += candys[i];
             }
-            return sum;
+            return seats.length;
         }
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.candy(new int[] {1, 3, 2, 2, 1}));
-//        System.out.println(solution.candy(new int[] {1, 2, 2}));
+        int s = solution.maxDistToClosest(new int[]{1,0,0,0,1,0,1});
+        System.out.println(s);
     }
 }
