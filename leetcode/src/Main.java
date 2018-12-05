@@ -4,45 +4,37 @@ import java.util.*;
 
 public class Main {
 
-    static class Man {
-        int quality;
-        int wage;
-
-        Man(int a, int b) {
-            quality = a;
-            wage = b;
-        }
-
-        double ratio() {
-            return (double) wage / quality;
-        }
-    }
-
     public static class Solution {
-        public double mincostToHireWorkers(int[] quality, int[] wage, int K) {
-            Queue<Man> queue = new PriorityQueue<>(new Comparator<Man>() {
-                @Override
-                public int compare(Man o1, Man o2) {
-                    return o1.ratio() > o2.ratio() ? 1 : -1;
-                }
-            });
-            for (int i = 0; i < quality.length; i++) {
-                queue.offer(new Man(quality[i], wage[i]));
+        public boolean backspaceCompare(String S, String T) {
+            if (S.length() < T.length()) {
+                return backspaceCompare(T, S);
             }
-            double money = Integer.MAX_VALUE, qsum = 0;
-            Queue<Integer> queue2 = new PriorityQueue<>(Comparator.reverseOrder());
-            while (!queue.isEmpty()) {
-                Man man = queue.poll();
-                qsum += man.quality;
-                queue2.offer(man.quality);
-                if (queue2.size() > K) {
-                    qsum -= queue2.poll();
-                }
-                if (queue2.size() == K) {
-                    money = Math.min(money, qsum * man.ratio());
+            Stack<Character> stack1 = new Stack<>();
+            Stack<Character> stack2 = new Stack<>();
+            for (int i = 0; i < S.length(); i++) {
+                helper(stack1, S, i);
+                helper(stack2, T, i);
+            }
+            while (!stack1.isEmpty() && !stack2.isEmpty()) {
+                if (!stack1.pop().equals(stack2.pop())) {
+                    return false;
                 }
             }
-            return money;
+            return stack1.isEmpty() && stack2.isEmpty();
+        }
+
+        private void helper(Stack<Character> stack, String s, int i) {
+            if (i >= s.length()) {
+                return;
+            }
+            char c = s.charAt(i);
+            if (c == '#') {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
+            } else {
+                stack.push(c);
+            }
         }
     }
 
