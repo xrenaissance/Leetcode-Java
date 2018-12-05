@@ -6,46 +6,48 @@ public class Main {
 
     public static class Solution {
 
-        public interface Master {
-            int guess(String word);
-        }
+        public String getHint(String secret, String guess) {
+            HashMap<Character, Set<Integer>> map1 = new HashMap<>();
+            HashMap<Character, Set<Integer>> map2 = new HashMap<>();
+            for (int i = 0; i < secret.length(); i++) {
+                Set<Integer> set = map1.getOrDefault(secret.charAt(i), new HashSet<>());
+                set.add(i);
+                map1.put(secret.charAt(i), set);
+            }
+            for (int i = 0; i < guess.length(); i++) {
+                Set<Integer> set = map2.getOrDefault(guess.charAt(i), new HashSet<>());
+                set.add(i);
+                map2.put(guess.charAt(i), set);
+            }
+            int bulls = 0, cows = 0;
+            for (Character c : map2.keySet()) {
+                Set<Integer> set1 = map1.get(c);
 
+                if (set1 == null) {
+                    continue;
+                }
 
-        public void findSecretWord(String[] wordlist, Master master) {
-            Random random = new Random();
-            for (int i = 0; i < 10; i++) {
-                String word = wordlist[random.nextInt(wordlist.length)];
-                int match = master.guess(word);
-                List<String> list = new ArrayList<>();
-                for (String s : wordlist) {
-                    if (match(s, word) == match) {
-                        list.add(s);
+                Set<Integer> set2 = map2.get(c);
+
+                int count = 0;
+
+                for (Integer index : set2) {
+                    if (set1.contains(index)) {
+                        count++;
                     }
                 }
-                wordlist = list.toArray(new String[0]);
-            }
-        }
 
-        private int match(String s, String t) {
-            int match = 0;
-            for (int i = 0; i < s.length(); i++) {
-                if (s.charAt(i) == t.charAt(i)) {
-                    match++;
-                }
+                bulls += count;
+                cows += Math.min(set1.size(), set2.size()) - count;
             }
-            return match;
+
+            return String.format("%dA%dB", bulls, cows);
         }
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-
-        double s = solution.mincostToHireWorkers(new int[] {
-                3,1,10,10,1
-        }, new int[] {
-                4,8,2,2,7
-        },3);
-
+        String s = solution.getHint("1123", "0111");
         System.out.println(s);
     }
 }

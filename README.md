@@ -269,6 +269,7 @@
 |295|[Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)| [Java](leetcode/solution/src/FindMedianFromDataStream.java)||
 |297|[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[Java](leetcode/solution/src/Codec.java)|80|好题目，多做做，递归的非递归的|
 |298|[Binary Tree Longest Consecutive Sequence](https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/)| [Java](leetcode/solution/src/BinaryTreeLongestConsecutiveSequence.java)|70|多做三遍，尽可能简洁|
+|299|[Bulls and Cows](https://leetcode.com/problems/bulls-and-cows/)|[Java](leetcode/solution/src/BullsAndCows.java)||
 |300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)| [Java](leetcode/solution/src/LongestIncreasingSubsequence.java)||
 |301|[Remove Invalid Parentheses](https://leetcode.com/problems/remove-invalid-parentheses/)| [Java](leetcode/solution/src/RemoveInvalidParentheses.java)|70|比较难，多做几遍|
 |302|[Smallest Rectangle Enclosing Black Pixels](https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels/)| [Java](leetcode/solution/src/SmallestRectangleEnclosingBlackPixels.java)|||
