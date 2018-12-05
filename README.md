@@ -143,6 +143,7 @@
 |131|[Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/)| [Java](leetcode/solution/src/PalindromePartitioning.java)||
 |132|[Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)| [Java](leetcode/solution/src/PalindromePartitioningII.java)||
 |133|[Clone Graph](https://leetcode.com/problems/clone-graph/)| [Java](leetcode/solution/src/CloneGraph.java)|70|这题不难，多看两遍，BFS方法再做两遍|
+|135|[Candy](https://leetcode.com/problems/candy/)|[Java](leetcode/solution/src/Candy.java)|80||
 |138|[Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)| [Java](leetcode/solution/src/CopyListWithRandomPointer.java)|95|有一个易错点|
 |139|[Word Break](https://leetcode.com/problems/word-break/)| [Java](leetcode/solution/src/WordBreak.java)|80|多看两遍|
 |140|[Word Break II](https://leetcode.com/problems/word-break-ii/)| [Java](leetcode/solution/src/WordBreakII.java)|75|这题多做两遍，很典型|

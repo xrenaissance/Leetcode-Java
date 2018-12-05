@@ -6,48 +6,31 @@ public class Main {
 
     public static class Solution {
 
-        public String getHint(String secret, String guess) {
-            HashMap<Character, Set<Integer>> map1 = new HashMap<>();
-            HashMap<Character, Set<Integer>> map2 = new HashMap<>();
-            for (int i = 0; i < secret.length(); i++) {
-                Set<Integer> set = map1.getOrDefault(secret.charAt(i), new HashSet<>());
-                set.add(i);
-                map1.put(secret.charAt(i), set);
-            }
-            for (int i = 0; i < guess.length(); i++) {
-                Set<Integer> set = map2.getOrDefault(guess.charAt(i), new HashSet<>());
-                set.add(i);
-                map2.put(guess.charAt(i), set);
-            }
-            int bulls = 0, cows = 0;
-            for (Character c : map2.keySet()) {
-                Set<Integer> set1 = map1.get(c);
 
-                if (set1 == null) {
-                    continue;
+        public int candy(int[] ratings) {
+            int[] candys = new int[ratings.length];
+
+            Arrays.fill(candys, 1);
+
+            for (int i = 1; i < ratings.length; i++) {
+                if (ratings[i] > ratings[i - 1]) {
+                    candys[i] = candys[i - 1] + 1;
                 }
-
-                Set<Integer> set2 = map2.get(c);
-
-                int count = 0;
-
-                for (Integer index : set2) {
-                    if (set1.contains(index)) {
-                        count++;
-                    }
-                }
-
-                bulls += count;
-                cows += Math.min(set1.size(), set2.size()) - count;
             }
-
-            return String.format("%dA%dB", bulls, cows);
+            int sum = candys[ratings.length - 1];
+            for (int i = ratings.length - 2; i >= 0; i--) {
+                if (ratings[i] > ratings[i + 1]) {
+                    candys[i] = Math.max(candys[i], candys[i + 1] + 1);
+                }
+                sum += candys[i];
+            }
+            return sum;
         }
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String s = solution.getHint("1123", "0111");
-        System.out.println(s);
+        System.out.println(solution.candy(new int[] {1, 3, 2, 2, 1}));
+//        System.out.println(solution.candy(new int[] {1, 2, 2}));
     }
 }
