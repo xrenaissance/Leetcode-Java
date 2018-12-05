@@ -398,6 +398,6 @@
 |843|[Guess the Word](https://leetcode.com/problems/guess-the-word/)|[Java](leetcode/solution/src/GuessTheWord.java)|90||
 |844|[Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)|[Java](leetcode/solution/src/BackspaceStringCompare.java)|100||
 |849|[Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/)|[Java](leetcode/solution/src/MaximizeDistanceToClosestPerson.java)|80||
-|857|[Minimum Cost to Hire K Workers](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/)|[Java](leetcode/solution/src/MinimumCostToHireKWorkers.java|70||
+|857|[Minimum Cost to Hire K Workers](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/)|[Java](leetcode/solution/src/MinimumCostToHireKWorkers.java)|70||
 |904|[Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)|[Java](leetcode/solution/src/FruitIntoBaskets.java)|90||
 |929|[Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)|[Java](leetcode/solution/src/UniqueEmailAddresses.java)|90||
