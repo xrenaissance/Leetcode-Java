@@ -6,46 +6,28 @@ public class Main {
 
     public static class Solution {
 
-        public int maxDistToClosest(int[] seats) {
-            int max = 0;
-
-            int[] zone = new int[2];
-            for (int index = 0; index < seats.length; ) {
-                Arrays.fill(zone, -1);
-                index = nextFree(seats, index, zone);
-                if (zone[0] == 0 || zone[1] == seats.length - 1) {
-                    max = Math.max(max, zone[1] - zone[0] + 1);
-                } else {
-                    max = Math.max(max, (zone[1] - zone[0] + 2) / 2);
-                }
-            }
-
-            return max;
+        public TreeNode constructMaximumBinaryTree(int[] nums) {
+            return helper(nums, 0, nums.length - 1);
         }
 
-        private int nextFree(int[] seats, int start, int[] zone) {
-            boolean enter = false;
-            for (int i = start, j = 0; i <= seats.length; i++) {
-                if (i < seats.length && seats[i] == 0) {
-                    if (!enter) {
-                        enter = true;
-                        j = i;
-                    }
-                } else {
-                    if (enter) {
-                        zone[0] = j;
-                        zone[1] = i - 1;
-                        return i + 1;
-                    }
+        private TreeNode helper(int[] nums, int start, int end) {
+            if (start > end) {
+                return null;
+            }
+            int index, max = start;
+            for (index = start + 1; index <= end; index++) {
+                if (nums[index] > nums[max]) {
+                    max = index;
                 }
             }
-            return seats.length;
+            TreeNode root = new TreeNode(nums[max]);
+            root.left = helper(nums, start, max - 1);
+            root.right = helper(nums, max + 1, end);
+            return root;
         }
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        int s = solution.maxDistToClosest(new int[]{1,0,0,0,1,0,1});
-        System.out.println(s);
+
     }
 }
