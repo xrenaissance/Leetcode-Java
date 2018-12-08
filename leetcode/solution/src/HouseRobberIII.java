@@ -25,6 +25,8 @@ public class HouseRobberIII {
 
     /**
      * 优化写法如下，耗时1ms
+     * 这里将两种情况都保存下来并返回给上层，避免了多次重复计算
+     * val[0]表示不rob当前节点，val[1]表示rob当前节点
      */
     public int rob2(TreeNode root) {
         int[] val = helper(root);
