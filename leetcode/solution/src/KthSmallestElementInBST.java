@@ -32,35 +32,58 @@ public class KthSmallestElementInBST {
         throw new IllegalStateException();
     }
 
-    /**
-     * Morris
-     */
-    private int kthSmallest2(TreeNode root, int k) {
-        TreeNode temp;
+    public int kthSmallest2(TreeNode root, int k) {
+        TreeNodeWithCount rootWithCount = buildTreeWithCount(root);
+        return kthSmallest(rootWithCount, k);
+    }
 
-        while (root != null) {
-            if (root.left == null) {
-                if (--k == 0) {
-                    return root.val;
-                }
-                root = root.right;
+    public int kthSmallest(TreeNodeWithCount root, int k) {
+        if (root == null) {
+            return -1;
+        }
+
+        if (root.left != null) {
+            if (k <= root.left.count) {
+                return kthSmallest(root.left, k);
+            } else if (k == root.left.count + 1) {
+                return root.val;
             } else {
-                temp = root.left;
-                while (temp.right != null && temp.right != root) {
-                    temp = temp.right;
-                }
-                if (temp.right == null) {
-                    temp.right = root;
-                    root = root.left;
-                } else {
-                    temp.right = null;
-                    if (--k == 0) {
-                        return root.val;
-                    }
-                    root = root.right;
-                }
+                return kthSmallest(root.right, k - root.left.count - 1);
             }
         }
-        throw new IllegalStateException();
+
+        if (k == 1) {
+            return root.val;
+        } else {
+            return kthSmallest(root.right, k - 1);
+        }
+    }
+
+    private TreeNodeWithCount buildTreeWithCount(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNodeWithCount nroot = new TreeNodeWithCount(root.val);
+        nroot.left = buildTreeWithCount(root.left);
+        nroot.right = buildTreeWithCount(root.right);
+
+        if (nroot.left != null) {
+            nroot.count += nroot.left.count;
+        }
+
+        if (nroot.right != null) {
+            nroot.count += nroot.right.count;
+        }
+        return nroot;
+    }
+
+    class TreeNodeWithCount {
+        TreeNodeWithCount left, right;
+        int count, val;
+
+        TreeNodeWithCount(int val) {
+            this.val = val;
+            this.count = 1;
+        }
     }
 }
