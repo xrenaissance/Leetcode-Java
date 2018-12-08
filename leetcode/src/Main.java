@@ -6,28 +6,33 @@ public class Main {
 
     public static class Solution {
 
-        public TreeNode constructMaximumBinaryTree(int[] nums) {
-            return helper(nums, 0, nums.length - 1);
+        public int diameterOfBinaryTree(TreeNode root) {
+            if (root == null) {
+                return 0;
+            }
+            return dfs(root, new int[1]) - 1;
         }
 
-        private TreeNode helper(int[] nums, int start, int end) {
-            if (start > end) {
-                return null;
+        private int dfs(TreeNode root, int[] len) {
+            if (root == null) {
+                return 0;
             }
-            int index, max = start;
-            for (index = start + 1; index <= end; index++) {
-                if (nums[index] > nums[max]) {
-                    max = index;
-                }
-            }
-            TreeNode root = new TreeNode(nums[max]);
-            root.left = helper(nums, start, max - 1);
-            root.right = helper(nums, max + 1, end);
-            return root;
+
+            int[] lt = new int[1];
+            int[] rt = new int[1];
+
+            int left = dfs(root.left, lt);
+            int right = dfs(root.right, rt);
+
+            len[0] = Math.max(lt[0], rt[0]) + 1;
+
+            return Math.max(Math.max(left, right), lt[0] + rt[0] + 1);
         }
     }
 
     public static void main(String[] args) {
-
+        Solution s = new Solution();
+        TreeNode root1 = new TreeNode(1);
+        System.out.println(f);
     }
 }
