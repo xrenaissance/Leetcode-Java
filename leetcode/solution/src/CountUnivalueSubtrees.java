@@ -1,5 +1,8 @@
 public class CountUnivalueSubtrees {
 
+    /**
+     * 先分别判断左右子树是不是unival，如果是再判断带上root后是不是unival
+     */
     public int countUnivalSubtrees(TreeNode root) {
         int[] count = new int[1];
         helper(root, count);

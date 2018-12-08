@@ -391,6 +391,7 @@
 |681|[Next Closest Time](https://leetcode.com/problems/next-closest-time/)|[Java](leetcode/solution/src/NextClosestTime.java)|80|这题多做几遍|
 |683|[K Empty Slots](https://leetcode.com/problems/k-empty-slots/)|[Java](leetcode/solution/src/KEmptySlots.java)|80||
 |684|[Redundant Connection](https://leetcode.com/problems/redundant-connection/)| [Java](leetcode/solution/src/RedundantConnection.java)|||
+|687|[Longest Univalue Path](https://leetcode.com/problems/longest-univalue-path/)|[Java](leetcode/solution/src/longestUnivaluePath.java)|70||
 |695|[Max Area of Island](https://leetcode.com/problems/max-area-of-island/)|[Java](leetcode/solution/src/MaxAreaOfIsland.java)|100||
 |703|[Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)|[Java](leetcode/solution/src/KthLargestElementInAStream.java)|100||
 |771|[Jewels and Stones](https://leetcode.com/problems/jewels-and-stones/)|[Java](leetcode/solution/src/JewelsAndStones.java)|100||
