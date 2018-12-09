@@ -1,6 +1,14 @@
 /**
  * https://leetcode.com/articles/construct-string-from-binary-tree/
  */
+
+/**
+ * 这题不难，主要是搞清楚题目意思
+ * 即返回root + (左子树) + (右子树)
+ * 不过要注意几个特殊情况，如果左右子树都为null，则只返回root
+ * 如果左子树为null，右子树非null，则返回root + () + (右子树)
+ * 如果左子树非null，右子树为null，则返回root + (左子树)
+ */
 public class ConstructStringFromBinaryTree {
 
     /**
