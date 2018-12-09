@@ -35,7 +35,7 @@ public class InorderSuccessorInBST {
         if (root == null) {
             return null;
         }
-        if (root.val > p.val) {
+        if (p.val < root.val) {
             TreeNode node = inorderSuccessor(root.left, p);
             return node != null ? node : root;
         } else {
@@ -60,7 +60,7 @@ public class InorderSuccessorInBST {
     public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
         TreeNode res = null;
         while (root != null) {
-            if (root.val > p.val) {
+            if (p.val < root.val) {
                 res = root;
                 root = root.left;
             } else {
