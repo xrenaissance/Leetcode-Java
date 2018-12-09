@@ -16,13 +16,12 @@ public class PathSumII {
         }
 
         list.add(node.val);
-        sum -= node.val;
 
-        if (node.left == null && node.right == null && sum == 0) {
+        if (node.left == null && node.right == null && sum == node.val) {
             result.add(new ArrayList<>(list));
         } else {
-            helper(node.left, sum, result, list);
-            helper(node.right, sum, result, list);
+            helper(node.left, sum - node.val, result, list);
+            helper(node.right, sum - node.val, result, list);
         }
 
         list.remove(list.size() - 1);
