@@ -6,18 +6,21 @@ public class Main {
 
     public static class Solution {
 
-        public boolean isSubtree(TreeNode s, TreeNode t) {
-            return isEqual(s, t) || (s != null && (isSubtree(s.left, t) || isSubtree(s.right, t)));
+        int tilt = 0;
+
+        public int findTilt(TreeNode root) {
+            helper(root);
+            return tilt;
         }
 
-        private boolean isEqual(TreeNode s, TreeNode t) {
-            if (t == null && s == null) {
-                return true;
+        private int helper(TreeNode root) {
+            if (root == null) {
+                return 0;
             }
-            if (t == null || s == null) {
-                return false;
-            }
-            return s.val == t.val && isEqual(s.left, t.left) && isEqual(s.right, t.right);
+            int left = helper(root.left);
+            int right = helper(root.right);
+            tilt += Math.abs(left - right);
+            return left + right + root.val;
         }
     }
 
