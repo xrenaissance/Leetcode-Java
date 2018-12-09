@@ -50,7 +50,7 @@ public class Codec {
         return root;
     }
 
-    /** 下面是非递归版的DFS */
+    /** 下面是非递归版的，前序遍历 */
     public String serialize2(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         if (root == null) {
@@ -74,7 +74,10 @@ public class Codec {
         return sb.toString();
     }
 
-    // Decodes your encoded data to tree.
+    /**
+     * 前序访问一遍所有结点
+     * 在设置node时，从queue中取出值
+     */
     public TreeNode deserialize2(String data) {
         String[] texts = data.split(SEP);
         Queue<String> queue = new LinkedList<String>(Arrays.asList(texts));
