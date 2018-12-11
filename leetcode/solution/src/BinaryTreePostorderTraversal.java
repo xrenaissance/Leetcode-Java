@@ -23,52 +23,12 @@ public class BinaryTreePostorderTraversal {
         return results;
     }
 
-
-    public ArrayList<Integer> postorderTraversal2(TreeNode root) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode prev = null; // previously traversed node
-        TreeNode curr = root;
-
-        if (root == null) {
-            return result;
-        }
-
-        stack.push(root);
-        while (!stack.empty()) {
-            curr = stack.peek();
-            if (prev == null || prev.left == curr || prev.right == curr) { // traverse down the tree
-                if (curr.left != null) {
-                    stack.push(curr.left);
-                } else if (curr.right != null) {
-                    stack.push(curr.right);
-                }
-            } else if (curr.left == prev) { // traverse up the tree from the left
-                if (curr.right != null) {
-                    stack.push(curr.right);
-                }
-            } else { // traverse up the tree from the right
-                result.add(curr.val);
-                stack.pop();
-            }
-            prev = curr;
-        }
-
-        return result;
-    }
-
-    public List<Integer> postorderTraversal3(TreeNode root) {
+    // root为null表示栈顶的左子树都访问完了，该看右子树了
+    public List<Integer> postorderTraversal2(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-
-        if (root == null) {
-            return result;
-        }
-
         Stack<TreeNode> stack = new Stack<>();
 
-        TreeNode last = null;
-
-        while (!stack.isEmpty() || root != null) {
+        for (TreeNode last = null; !stack.isEmpty() || root != null; ) {
             if (root != null) {
                 stack.push(root);
                 root = root.left;

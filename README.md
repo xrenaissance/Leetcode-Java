@@ -404,5 +404,6 @@
 |849|[Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/)|[Java](leetcode/solution/src/MaximizeDistanceToClosestPerson.java)|80||
 |857|[Minimum Cost to Hire K Workers](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/)|[Java](leetcode/solution/src/MinimumCostToHireKWorkers.java)|70||
 |872|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/)|[Java](leetcode/solution/src/LeafSimilarTrees.java)|80||
+|889|[Construct Binary Tree from Preorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)|[Java](leetcode/solution/src/ConstructBinaryTreeFromPreorderAndPostorderTraversal.java)|80||
 |904|[Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)|[Java](leetcode/solution/src/FruitIntoBaskets.java)|90||
 |929|[Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)|[Java](leetcode/solution/src/UniqueEmailAddresses.java)|90||

@@ -5,9 +5,6 @@ public class SimplifyPath {
 
     public String simplifyPath(String path) {
         String[] ss = path.split("/");
-        /**
-         * 注意这里要用双端队列，因为后面要生成路径需要从前往后
-         */
         Deque<String> queue = new LinkedList<>();
         for (String s : ss) {
             /**
