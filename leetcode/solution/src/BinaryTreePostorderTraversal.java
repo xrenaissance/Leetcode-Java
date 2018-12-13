@@ -35,10 +35,11 @@ public class BinaryTreePostorderTraversal {
             } else {
                 TreeNode peek = stack.peek();
                 if (peek.right != null && last != peek.right) {
-                    root = peek.right;
+                    root = peek.right; // 只有这里要设置root
                 } else {
                     result.add(peek.val);
                     last = stack.pop();
+                    // 此时root仍为null
                 }
             }
         }

@@ -16,6 +16,7 @@
  - [Facebook面试总结](https://github.com/dingjikerbo/leetcode/blob/master/doc/Facebook.md)
  - [Bitset技巧](https://github.com/dingjikerbo/leetcode/blob/master/doc/BitSet.md)
  - [Map新接口](https://github.com/dingjikerbo/leetcode/blob/master/doc/Map.md)
+ - [其它题目](extras.md)
 
 <br/><br/>
 

@@ -53,6 +53,7 @@ public class MaximumGap {
             maxGap = Math.max(maxGap, mins[i] - last);
             last = maxs[i];
         }
+        // 最后的max别忘了
         maxGap = Math.max(maxGap, max - last);
         return maxGap;
     }
