@@ -7,29 +7,51 @@ public class RemoveDuplicateList {
     public ListNode removeDup(ListNode head) {
         ListNode dummy = new ListNode(0), cur = dummy;
 
-        ListNode node = null;
+        ListNode last = null;
         int count = 0;
 
         for (ListNode p = head; p != null; p = p.next) {
-            if (node == null || node.val == p.val) {
-                node = p;
+            if (last == null || last.val == p.val) {
+                last = p;
                 count++;
             } else {
                 if (count == 1) {
-                    cur.next = node;
+                    cur.next = last;
                     cur = cur.next;
                 }
-                node = p;
+                last = p;
                 count = 1;
             }
         }
 
-        if (node != null && count == 1) {
-            cur.next = node;
+        if (last != null && count == 1) {
+            cur.next = last;
             cur = cur.next;
         }
 
         cur.next = null;
+        return dummy.next;
+    }
+
+    // 可在上面的基础上精简
+    // count是可以去掉的
+    public ListNode removeDup2(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode dummy = new ListNode(0), cur = dummy;
+        ListNode last = head;
+
+        for (ListNode p = head.next; p != null; p = p.next) {
+            if (last.val != p.val) {
+                if (last.next == p) {
+                    cur.next = last;
+                    cur = cur.next;
+                }
+                last = p;
+            }
+        }
+        cur.next = (last.next == null ? last : null);
         return dummy.next;
     }
 }

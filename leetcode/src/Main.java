@@ -3,56 +3,23 @@ public class Main {
 
     public static class Solution {
 
-        ListNode removeDup(ListNode head) {
-            ListNode dummy = new ListNode(0), cur = dummy;
-
-            ListNode node = null;
-            int count = 0;
-
-            for (ListNode p = head; p != null; p = p.next) {
-                if (node == null || node.val == p.val) {
-                    node = p;
-                    count++;
-                } else {
-                    if (count == 1) {
-                        cur.next = node;
-                        cur = cur.next;
-                    }
-                    node = p;
-                    count = 1;
-                }
+        int reversePairs(int[] arr, int m) {
+            int pairs = 0;
+            for (int i = m - 1, j = arr.length - 1; j >= m; j--) {
+                for ( ; i >= 0 && arr[i] > arr[j]; i--);
+                pairs += m - 1 - i;
             }
-
-            if (node != null && count == 1) {
-                cur.next = node;
-                cur = cur.next;
-            }
-
-            cur.next = null;
-            return dummy.next;
+            return pairs;
         }
-
-        ListNode make(int[] arr) {
-            ListNode dummy = new ListNode(0), cur = dummy;
-            for (int n : arr) {
-                cur.next = new ListNode(n);
-                cur = cur.next;
-            }
-            return dummy.next;
-        }
-
     }
 
 
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] arr = {
-                1, 3, 3, 3, 1, 2, 4, 4, 1
+                1, 4, 8, 9, 2, 3, 6, 7
         };
-        ListNode head = s.make(arr);
-        head = s.removeDup(head);
-        for (ListNode p = head; p != null; p = p.next) {
-            System.out.print(p.val + " ");
-        }
+        int n = s.reversePairs(arr, 4);
+        System.out.println(n);
     }
 }
